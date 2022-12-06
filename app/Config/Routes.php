@@ -37,8 +37,11 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group("user", function($routes){
-    $routes->get('home',"UserController::index",['as'=>'user.home']);
+$routes->group("admin", function($routes){
+    $routes->group("user", function($routes){
+        //home in get == home in as
+        $routes->get('home',"Admin\UserController::index",['as'=>'user.home']);
+    });
 });
 
 /*
