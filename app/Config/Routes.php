@@ -38,7 +38,16 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->group("admin", function($routes){
-    $routes->get('auth',"Admin\Auth::index",['as'=>'auth']);
+    
+
+    $routes->group("auth", function($routes){
+        //home in get == home in as
+        $routes->get('auth',"Admin\Auth::index",['as'=>'auth']);
+        $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+        $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
+        $routes->get('save',"Admin\Auth::save",['as'=>'auth.save']);
+    });
+
     $routes->group("user", function($routes){
         //home in get == home in as
         $routes->get('home',"Admin\UserController::index",['as'=>'user.home']);
