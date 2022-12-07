@@ -22,25 +22,37 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="../../index3.html" method="post">
+      <?php if(!empty(session()->getFlashdata('fail'))) : ?>
+        <p class="login-box-msg text-danger"><?= session()->getFlashdata('fail'); ?></p>
+      <?php endif ?>
+
+      <?php if(!empty(session()->getFlashdata('success'))) : ?>
+        <p class="login-box-msg text-success"><?= session()->getFlashdata('success'); ?></p>
+      <?php endif ?>
+      
+      <!-- <p class="login-box-msg">Sign in to start your session</p> -->
+
+      <form action="<?= base_url('admin/auth/check'); ?>" method="post">
+        <?= csrf_field(); ?>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></p>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'password') : '' ?></p>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

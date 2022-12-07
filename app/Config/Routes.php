@@ -43,10 +43,18 @@ $routes->group("admin", function($routes){
     $routes->group("auth", function($routes){
         //home in get == home in as
         $routes->get('auth',"Admin\Auth::index",['as'=>'auth']);
-        $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+        
         $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
         $routes->get('save',"Admin\Auth::save",['as'=>'auth.save']);
+        $routes->post('save',"Admin\Auth::save",['as'=>'auth.save']);
+
+        $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+
+        $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+        $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+
     });
+    $routes->get('dashboard',"Admin\DashboardController::index",['as'=>'dashboard']);
 
     $routes->group("user", function($routes){
         //home in get == home in as

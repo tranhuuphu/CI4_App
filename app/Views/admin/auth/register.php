@@ -17,25 +17,39 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="#"><b>Admin</b>LTE</a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+
+      <?php if(!empty(session()->getFlashdata('fail'))) : ?>
+        <p class="login-box-msg text-danger"><?= session()->getFlashdata('fail'); ?></p>
+      <?php endif ?>
+
+      <?php if(!empty(session()->getFlashdata('success'))) : ?>
+        <p class="login-box-msg text-success"><?= session()->getFlashdata('success'); ?></p>
+      <?php endif ?>
+      <!-- <p class="login-box-msg">Register a new membership</p> -->
 
       <form action="<?= base_url('admin/auth/save'); ?>" method="post">
       	<?= csrf_field(); ?>
+        <p class="text-left text-bold">Your Full Name</p>
         <div class="input-group mb-3">
+
           <input type="text" name="name" class="form-control" placeholder="Full name" value="<?= set_value('name'); ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
             </div>
+
           </div>
 
+
         </div>
-        <span class="text-danger"><?= isset($validation) ? display_error($validation, 'name') : '' ?> </span>
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'name') : '' ?></p>
+
+        <p class="text-left text-bold">Email</p>
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
           <div class="input-group-append">
@@ -44,7 +58,10 @@
             </div>
           </div>
         </div>
-        <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?> </span>
+
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></p>
+
+        <p class="text-left text-bold">Password</p>
         <div class="input-group mb-3">
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
@@ -53,7 +70,10 @@
             </div>
           </div>
         </div>
-        <span class="text-danger"><?= isset($validation) ? display_error($validation, 'password') : '' ?> </span>
+
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'password') : '' ?></p>
+
+        <p class="text-left text-bold">Retype Password</p>
         <div class="input-group mb-3">
           <input type="password" name="re_password" class="form-control" placeholder="Retype password">
           <div class="input-group-append">
@@ -62,7 +82,9 @@
             </div>
           </div>
         </div>
-        <span class="text-danger"><?= isset($validation) ? display_error($validation, 're_password') : '' ?> </span>
+        <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 're_password') : '' ?></p>
+
+        
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

@@ -7,3 +7,72 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 19:05:42 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', '', '', 'ci4-app', 3306, '', 0)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('jonh@gmail.com', 'email', Array, NULL, 'email')
+#6 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jonh@gmail.com', Array, Array)
+#7 D:\Code\Xampp\htdocs\CI4_App\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\Auth.php(31): CodeIgniter\Controller->validate(Array)
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\Admin\Auth->save()
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+#11 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('jonh@gmail.com', 'email', Array, NULL, 'email')
+#5 D:\Code\Xampp\htdocs\CI4_App\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jonh@gmail.com', Array, Array)
+#6 D:\Code\Xampp\htdocs\CI4_App\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\Auth.php(31): CodeIgniter\Controller->validate(Array)
+#8 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\Admin\Auth->save()
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-06 19:05:42 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('jonh@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jonh@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Admin\Auth.php(31): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\Auth->save()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 19:14:47 --> Undefined variable $email
+in APPPATH\Controllers\Admin\Auth.php on line 68.
+ 1 APPPATH\Controllers\Admin\Auth.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email', 'APPPATH\\Controllers\\Admin\\Auth.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\Auth->save()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 19:15:09 --> Undefined variable $value
+in APPPATH\Controllers\Admin\Auth.php on line 73.
+ 1 APPPATH\Controllers\Admin\Auth.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH\\Controllers\\Admin\\Auth.php', 73)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\Auth->save()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 20:05:56 --> Call to a member function first() on string
+in APPPATH\Controllers\Admin\Auth.php on line 115.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\Auth->checkLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
