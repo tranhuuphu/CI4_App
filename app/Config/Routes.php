@@ -38,30 +38,45 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 //login before acess admin board
-$routes->group("auth", function($routes){
-    //home in get == home in as
+// $routes->group("auth", function($routes){
+//     //home in get == home in as
 
-    // $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
+//     // $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
 
-    $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+//     $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+
+//     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+//     $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+
+
+// });
+
+$routes->group("admin", function($routes){
+    
+
+    $routes->group("auth", function($routes){
+        //home in get == home in as
+        $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
 
     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
     $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
 
+    });
 
+    
 });
 
-$routes->group('', ['filter'=>'AlreadyLoggedIn'], function($routes){
+// $routes->group('', ['filter'=>'AlreadyLoggedIn'], function($routes){
     
 
-    $routes->group("admin", function($routes){
-        //home in get == home in as
-        $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
+//     $routes->group("", function($routes){
+//         //home in get == home in as
+//         $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
         
-        // $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
+//         // $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
 
-    });
-});
+//     });
+// });
 
 
 // filter Auth to access Admin Page

@@ -75,9 +75,9 @@ class Auth extends BaseController
             if(!$query){
                 return redirect()->back()->with('fail', 'Some thing went wrong');
             }else{
-                $last_id = $usersModel->insertID();
-                session()->set('loggedUser', $last_id);
-                return redirect()->to('admin/dashboard');
+                // $last_id = $usersModel->insertID();
+                // session()->set('loggedUser', $last_id);
+                return redirect()->to('admin/auth/login');
             }
 
         }
@@ -90,9 +90,11 @@ class Auth extends BaseController
 
             'email'=>[
                 'rules'=>'required|valid_email|is_not_unique[users.email]',
-                'required'=>'Email is required',
-                'valid_email'=>'Your must enter valid email',
-                'is_not_unique'=> 'This email is not registed on our service'
+                'errors' => [
+                    'required' => 'Email is required.',
+                    'valid_email' => 'Please check the Email field. It does not appear to be valid.',
+                    'is_not_unique' => 'Email not registered in our server.',
+                ],
 
             ],
             'password'=>[
@@ -119,7 +121,7 @@ class Auth extends BaseController
 
             if(!$check_password){
                 session()->setFlashdata('fail', 'Incorrect Password');
-                return redirect()->to('/admin/auth/login')->withInput();
+                return redirect()->to('admin/auth/login')->withInput();
 
             }else{
                 $user_id = $user_info['id'];
@@ -131,9 +133,9 @@ class Auth extends BaseController
     function logout(){
         if(session()->has('loggedUser')){
             session()->remove('loggedUser');
-            return redirect()->to('auth/login?access-out')->with('fail', 'You are logged out!');
+            return redirect()->to('admin/auth/login?access-out')->with('fail', 'You are logged out!');
         }else{
-           return redirect()->to('auth/login?access-out')->with('fail', 'You are ready logged out!'); 
+           return redirect()->to('admin/auth/login?access-out')->with('fail', 'You are ready logged out!'); 
         }
     }
 }

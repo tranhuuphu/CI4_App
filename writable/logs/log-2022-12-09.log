@@ -1,0 +1,247 @@
+CRITICAL - 2022-12-09 12:19:06 --> Undefined variable $userInfo
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfo', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(56): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:19:20 --> Undefined variable $dataLogin
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataLogin', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(56): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:19:36 --> Undefined variable $dataLogin
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataLogin', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(56): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:19:44 --> Undefined variable $userInfo
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfo', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(56): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:20:03 --> Undefined variable $userInfo
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfo', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(56): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:29:39 --> Undefined variable $dataLogin
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataLogin', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:30:08 --> Attempt to read property "name" on array
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:30:20 --> Undefined array key 1
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:30:22 --> Undefined array key 1
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:30:28 --> Undefined array key 1
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:34:05 --> Undefined array key "name"
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(57): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:48:30 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:49:39 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:52:08 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:53:47 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:53:48 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 12:53:49 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(86): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Debug\Toolbar\Collectors\Database::collect(Object(CodeIgniter\Database\Query))
+ 7 SYSTEMPATH\Database\BaseConnection.php(622): CodeIgniter\Events\Events::trigger('DBQuery', Object(CodeIgniter\Database\Query))
+ 8 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 9 SYSTEMPATH\Model.php(178): CodeIgniter\Database\BaseBuilder->get()
+10 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, [...])
+11 APPPATH\Controllers\BaseController.php(53): CodeIgniter\BaseModel->find([...])
+12 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

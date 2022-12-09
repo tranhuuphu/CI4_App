@@ -49,9 +49,12 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
         $usersModel = new \App\Models\usersModel();
-        $loggerUserID = session()-> get('loggedUser');
-        $userInfo = $usersModel->find($loggerUserID);
-        $dataLogin = ['userinfo'=> $userInfo];
+        $loggerUserID = session()->get('loggedUser');
+        // dd($loggerUserID);
+        // $userInfo = $usersModel->find($loggerUserID);
+        // dd($userInfo);
+        $dataLogin = ['userinfo'=> $loggerUserID];
+        // dd($dataLogin);
         return view('admin/admin-layout', $dataLogin);
     }
 }

@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1670609771;_ci_previous_url|s:35:"http://localhost/CI4_App/auth/login";fail|s:18:"Incorrect Password";__ci_vars|a:2:{s:4:"fail";s:3:"old";s:13:"_ci_old_input";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:3:{s:14:"csrf_test_name";s:32:"35e470b75ec09b035af5ab6c1057d892";s:5:"email";s:15:"john3@gmail.com";s:8:"password";s:9:"334455666";}}
