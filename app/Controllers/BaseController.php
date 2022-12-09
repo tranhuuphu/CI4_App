@@ -48,5 +48,10 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $usersModel = new \App\Models\usersModel();
+        $loggerUserID = session()-> get('loggedUser');
+        $userInfo = $usersModel->find($loggerUserID);
+        $dataLogin = ['userinfo'=> $userInfo];
+        return view('admin/admin-layout', $dataLogin);
     }
 }

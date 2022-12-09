@@ -176,7 +176,13 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php if(isset($dataLogin)){$userinfo['name']; } ?></a>
+        </div>
+      </div>
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex col-md-12">
+        <div class="info">
+          <button type="button" class="btn btn-block btn-info">
+          <a href="<?= site_url('admin/auth/logout'); ?>" class="d-block">Logout</a><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
       </div>
 

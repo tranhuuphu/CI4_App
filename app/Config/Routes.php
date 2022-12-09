@@ -37,30 +37,55 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group("admin", function($routes){
+//login before acess admin board
+$routes->group("auth", function($routes){
+    //home in get == home in as
+
+    // $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
+
+    $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+
+    $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+    $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+
+
+});
+
+$routes->group('', ['filter'=>'AlreadyLoggedIn'], function($routes){
+    
+
+    $routes->group("admin", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
+        
+        // $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
+
+    });
+});
+
+
+// filter Auth to access Admin Page
+
+$routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
     
 
     $routes->group("auth", function($routes){
         //home in get == home in as
-        $routes->get('auth',"Admin\Auth::index",['as'=>'auth']);
+        $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
         
         $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
         $routes->get('save',"Admin\Auth::save",['as'=>'auth.save']);
         $routes->post('save',"Admin\Auth::save",['as'=>'auth.save']);
 
-        $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
-
-        $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
-        $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+        $routes->get('logout',"Admin\Auth::logout",['as'=>'auth.logout']);
 
     });
     $routes->get('dashboard',"Admin\DashboardController::index",['as'=>'dashboard']);
 
-    $routes->group("user", function($routes){
-        //home in get == home in as
-        $routes->get('home',"Admin\UserController::index",['as'=>'user.home']);
-    });
+    
 });
+
+
 
 /*
  * --------------------------------------------------------------------

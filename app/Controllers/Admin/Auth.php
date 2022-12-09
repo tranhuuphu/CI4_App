@@ -10,7 +10,7 @@ class Auth extends BaseController
         helper(['url', 'form']);
     }
     public function index(){
-    	return view('admin/auth/login');
+    	return view('admin/dashboard');
     }
 
     public function login(){
@@ -36,7 +36,7 @@ class Auth extends BaseController
             'email'=>[
                 'rules'=>'required|valid_email|is_unique[users.email]',
                 'valid_email'=>'Your must enter valid email',
-                'is_unique'=> 'Email already taken'
+                'is_unique'=> 'Email already taken, please login'
 
             ],
             'password'=>[
@@ -75,7 +75,9 @@ class Auth extends BaseController
             if(!$query){
                 return redirect()->back()->with('fail', 'Some thing went wrong');
             }else{
-                return redirect()->to('admin/auth/register')->with('success', 'You are now registed successfully');
+                $last_id = $usersModel->insertID();
+                session()->set('loggedUser', $last_id);
+                return redirect()->to('admin/dashboard');
             }
 
         }
@@ -122,8 +124,16 @@ class Auth extends BaseController
             }else{
                 $user_id = $user_info['id'];
                 session()->set('loggedUser', $user_id);
-                return redirect()->to('/admin/dashboard');
+                return redirect()->to('/admin/dashboard/');
             }
+        }
+    }
+    function logout(){
+        if(session()->has('loggedUser')){
+            session()->remove('loggedUser');
+            return redirect()->to('auth/login?access-out')->with('fail', 'You are logged out!');
+        }else{
+           return redirect()->to('auth/login?access-out')->with('fail', 'You are ready logged out!'); 
         }
     }
 }

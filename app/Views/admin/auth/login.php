@@ -33,7 +33,7 @@
       
       <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-      <form action="<?= base_url('admin/auth/check'); ?>" method="post">
+      <form action="<?= base_url('auth/check/'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="input-group mb-3">
           <input type="" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
@@ -81,9 +81,9 @@
       </div>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      <!-- <p class="mb-1">
         <a href="#">I forgot my password</a>
-      </p>
+      </p> -->
       <p class="mb-0">
         <a href="<?= site_url('admin/auth/register'); ?>" class="text-center">Register a new membership</a>
       </p>
