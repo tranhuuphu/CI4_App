@@ -41,8 +41,6 @@ $routes->get('/', 'Home::index');
 $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
     //home in get == home in as
 
-    // $routes->get('/',"Admin\Auth::index",['as'=>'auth']);
-
     $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
 
     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
@@ -50,8 +48,6 @@ $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
 
 
 });
-
-
 
 
 // filter Auth to access Admin Page
@@ -66,6 +62,15 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('save',"Admin\Auth::save",['as'=>'auth.save']);
         $routes->post('save',"Admin\Auth::save",['as'=>'auth.save']);
         $routes->get('logout',"Admin\Auth::logout",['as'=>'auth.logout']);
+
+    });
+
+    $routes->group("post", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\PostController::index");
+
+        $routes->get('create',"Admin\PostController::getPost");
+        $routes->post('create',"Admin\PostController::savePost");
 
     });
     

@@ -1,0 +1,37 @@
+CRITICAL - 2022-12-10 03:24:36 --> Call to undefined function set_value()
+in APPPATH\Views\admin\post\post.php on line 12.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/post', [], true)
+ 4 APPPATH\Controllers\Admin\PostController.php(11): view('admin/post/post')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 05:09:52 --> syntax error, unexpected single-quoted string " ?>/",", expecting "," or ";"
+in APPPATH\Views\admin\admin-layout.php on line 67.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 3 APPPATH\Controllers\BaseController.php(55): view('admin/admin-layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 5 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 05:11:45 --> syntax error, unexpected token "echo"
+in APPPATH\Views\admin\admin-layout.php on line 31.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 3 APPPATH\Controllers\BaseController.php(55): view('admin/admin-layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 5 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 05:12:07 --> syntax error, unexpected token "echo"
+in APPPATH\Views\admin\admin-layout.php on line 31.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 3 APPPATH\Controllers\BaseController.php(55): view('admin/admin-layout', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 5 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

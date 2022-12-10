@@ -32,7 +32,7 @@
       <?php endif ?>
       <!-- <p class="login-box-msg">Register a new membership</p> -->
 
-      <form action="<?= base_url('admin/auth/save'); ?>" method="post">
+      <form action="<?= base_url('admin/auth/save'); ?>" method="post" enctype="multipart/form-data">
       	<?= csrf_field(); ?>
         <p class="text-left text-bold">Your Full Name</p>
         <div class="input-group mb-3">
