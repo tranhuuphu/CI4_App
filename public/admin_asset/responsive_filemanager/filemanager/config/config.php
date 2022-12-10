@@ -76,7 +76,7 @@ $config = array(
     | with start and final /
     |
     */
-    'upload_dir' => '/public/upload/tinymce/',
+    'upload_dir' => 'public/upload/tinymce/',
     /*
     |--------------------------------------------------------------------------
     | relative path from filemanager folder to upload folder
@@ -85,7 +85,7 @@ $config = array(
     | with final /
     |
     */
-    'current_path' => '/public/upload/tinymce/',
+    'current_path' => 'public/upload/tinymce/',
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_base_path' => '/public/upload/tinymce/thumbs/',
+    'thumbs_base_path' => 'public/upload/tinymce/thumbs/',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_upload_dir' => '/public/upload/tinymce/thumbs/',
+    'thumbs_upload_dir' => 'public/upload/tinymce/thumbs/',
 
 
     /*
@@ -219,7 +219,7 @@ $config = array(
     |--------------------------------------------------------------------------
     |
     */
-    'filePermission' => 0755,
+    'filePermission' => 0777,
     'folderPermission' => 0777,
 
 
