@@ -245,3 +245,108 @@ WHERE `users`.`id` IN :users.id:', [...], false)
 13 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
 14 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 15 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 20:59:28 --> Cannot access offset of type string on string
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 4 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:01:35 --> Cannot access offset of type string on string
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 4 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:02:26 --> Cannot access offset of type string on string
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 4 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:03:31 --> Cannot access offset of type string on string
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 4 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:03:47 --> Uninitialized string offset 2
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:03:54 --> Uninitialized string offset 2
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:17:46 --> Undefined array key "name"
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:19:11 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-09 21:20:11 --> Undefined array key "name"
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:20:43 --> Undefined array key "name"
+in APPPATH\Views\admin\admin-layout.php on line 179.
+ 1 APPPATH\Views\admin\admin-layout.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Views\\admin\\admin-layout.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\admin-layout.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/admin-layout', [], true)
+ 5 APPPATH\Controllers\BaseController.php(58): view('admin/admin-layout', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-09 21:55:39 --> Undefined variable $userInfo
+in APPPATH\Controllers\Admin\DashboardController.php on line 13.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfo', 'APPPATH\\Controllers\\Admin\\DashboardController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\DashboardController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

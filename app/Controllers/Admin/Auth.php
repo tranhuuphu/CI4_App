@@ -120,7 +120,7 @@ class Auth extends BaseController
             $check_password = Hash::check($password, $user_info['password']);
 
             if(!$check_password){
-                session()->setFlashdata('fail', 'Incorrect Password');
+                session()->setFlashdata('fail', 'Incorrect Email or Password');
                 return redirect()->to('admin/auth/login')->withInput();
 
             }else{
@@ -133,9 +133,9 @@ class Auth extends BaseController
     function logout(){
         if(session()->has('loggedUser')){
             session()->remove('loggedUser');
-            return redirect()->to('admin/auth/login?access-out')->with('fail', 'You are logged out!');
+            return redirect()->to('auth/login?access-out')->with('fail', 'You are logged out!');
         }else{
-           return redirect()->to('admin/auth/login?access-out')->with('fail', 'You are ready logged out!'); 
+           return redirect()->to('auth/login?access-out')->with('fail', 'You are ready logged out!'); 
         }
     }
 }
