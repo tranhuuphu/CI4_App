@@ -40,8 +40,7 @@ $routes->get('/', 'Home::index');
 // login before acess admin board, and direct to admin page if already login
 $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
     //home in get == home in as
-
-    $routes->get('login',"Admin\Auth::login",['as'=>'auth.login']);
+    $routes->get('/',"Admin\Auth::login",['as'=>'auth.login']);
 
     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
     $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
@@ -73,6 +72,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('create',"Admin\PostController::savePost");
 
     });
+
+    $routes->add('filemanager/(:any)', '\Filemanager\Controllers\Filemanager::run');
     
     
 
