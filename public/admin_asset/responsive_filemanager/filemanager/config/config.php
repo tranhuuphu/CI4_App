@@ -67,7 +67,8 @@ $config = array(
     | without final / (DON'T TOUCH)
     |
     */
-    'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'],
+    // 'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'],
+    'base_url' => 'http://localhost/CI4_App',
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder
@@ -85,7 +86,7 @@ $config = array(
     | with final /
     |
     */
-    'current_path' => '/public/upload/tinymce/',
+    'current_path' => '../public/upload/tinymce/',
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +97,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_base_path' => '/public/upload/tinymce/thumbs/',
+    'thumbs_base_path' => '../public/upload/tinymce/thumbs/',
 
     /*
     |--------------------------------------------------------------------------
@@ -219,7 +220,7 @@ $config = array(
     |--------------------------------------------------------------------------
     |
     */
-    'filePermission' => 0777,
+    'filePermission' => 0755,
     'folderPermission' => 0777,
 
 
@@ -534,7 +535,7 @@ $config = array(
     // just simply add a value in the array
     // The image creation path is always relative so if i'm inside source/test/test1 and I upload an image, the path start from here
     //
-    'relative_image_creation'                 => false, //activate or not the creation of one or more image resized with relative path from upload folder
+    'relative_image_creation'                 => true, //activate or not the creation of one or more image resized with relative path from upload folder
     'relative_path_from_current_pos'          => array( './', './' ), //relative path of the image folder from the current position on upload folder
     'relative_image_creation_name_to_prepend' => array( '', '' ), //name to prepend on filename
     'relative_image_creation_name_to_append'  => array( '_thumb', '_thumb1' ), //name to append on filename

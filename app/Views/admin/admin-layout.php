@@ -182,9 +182,15 @@
 		  image_advtab: true ,
    
 			external_filemanager_path:"<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/",
-			filemanager_title:"Responsive Filemanager" ,
-			external_plugins: { "filemanager" : "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js"},
-			filemanager_access_key:"myPrivateKey" ,
+			filemanager_title:"Quản Lý Ảnh & File" ,
+			// external_plugins: { "filemanager" : "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js"},
+
+			external_plugins: {
+				"responsivefilemanager": "<?= base_url('public/admin_asset'); ?>/tinymce_5.10.7/plugins/responsivefilemanager/plugin.min.js",
+				"filemanager": "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js",
+			},
+
+
 
       content_style: ".mce-content-body {font-size:16px;font-family: Andale Mono;}",
       // image_uploadtab: true,
