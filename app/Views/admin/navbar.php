@@ -290,7 +290,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
-              Charts
+              Bài Viết
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -298,13 +298,13 @@
             <li class="nav-item">
               <a href="pages/charts/chartjs.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>ChartJS</p>
+                <p>Post</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/flot.html" class="nav-link">
+              <a href="<?= base_url('admin/post/create'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Flot</p>
+                <p>Thêm bài viết</p>
               </a>
             </li>
             <li class="nav-item">

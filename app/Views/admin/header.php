@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
+
+
+
     <script src="<?= base_url('public/admin_asset'); ?>/tinymce_5.10.7/tinymce.min.js" referrerpolicy="origin"></script>
     <!-- <script>tinymce.init({selector:'textarea'});</script> -->
 

@@ -212,7 +212,7 @@ $config = array(
     | in Megabytes
     |
     */
-    'MaxSizeUpload' => 10,
+    'MaxSizeUpload' => 100,
 
     /*
     |--------------------------------------------------------------------------
@@ -535,7 +535,7 @@ $config = array(
     // just simply add a value in the array
     // The image creation path is always relative so if i'm inside source/test/test1 and I upload an image, the path start from here
     //
-    'relative_image_creation'                 => true, //activate or not the creation of one or more image resized with relative path from upload folder
+    'relative_image_creation'                 => false, //activate or not the creation of one or more image resized with relative path from upload folder
     'relative_path_from_current_pos'          => array( './', './' ), //relative path of the image folder from the current position on upload folder
     'relative_image_creation_name_to_prepend' => array( '', '' ), //name to prepend on filename
     'relative_image_creation_name_to_append'  => array( '_thumb', '_thumb1' ), //name to append on filename
@@ -548,7 +548,7 @@ $config = array(
      *              3 / auto = auto;
      *              4 / crop= resize and crop;
      */
-    'relative_image_creation_option'          => array( 'crop', 'crop', 'portrait' ), //set the type of the crop
+    'relative_image_creation_option'          => array( 'crop', 'crop'), //set the type of the crop
 
 
     // Remember text filter after close filemanager for future session

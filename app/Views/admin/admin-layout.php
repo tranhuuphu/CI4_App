@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?= $this->include('admin/header'); ?>
+	<style>
+		.content-wrapper{
+			background-color: #ffffff !important;
+		}
+	</style>
 	
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition dark-mode2 sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 	<div class="wrapper">
 
 
@@ -62,6 +67,8 @@
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/pages/dashboard2.js"></script>
 
 
+
+
 	
 
 	<script>
@@ -112,6 +119,7 @@
 				"responsivefilemanager": "<?= base_url('public/admin_asset'); ?>/tinymce_5.10.7/plugins/responsivefilemanager/plugin.min.js",
 				"filemanager": "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js",
 			},
+			filemanager_access_key:"tranhuuphu",
 
 
 
@@ -126,6 +134,9 @@
 
     tinymce.init(editor_config);
   </script>
+
+
+
 
 
 
