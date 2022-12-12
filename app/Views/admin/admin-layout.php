@@ -8,7 +8,7 @@
 	</style>
 	
 <body class="hold-transition dark-mode2 sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-	<div class="wrapper">
+	<div class="wrapper mb-5">
 
 
 
@@ -32,7 +32,7 @@
 	  <!-- /.control-sidebar -->
 
 	  <!-- Main Footer -->
-	  <footer class="main-footer">
+	  <footer class="main-footer" style="background-color: #343a40;">
 	    <strong>Copyright &copy; <?= date("Y"); ?> <a href="<?= base_url('admin'); ?>">AdminLTE.io</a>.</strong>
 	    All rights reserved.
 	    <div class="float-right d-none d-sm-inline-block">
@@ -65,6 +65,8 @@
 	<!-- <script src="<?= base_url('public/admin_asset'); ?>/dist/js/demo.js"></script> -->
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/pages/dashboard2.js"></script>
+
+	<script src="<?= base_url('public/admin_asset'); ?>/bootstrap-select/bootstrap-select.min.js"></script>
 
 
 
@@ -134,6 +136,8 @@
 
     tinymce.init(editor_config);
   </script>
+
+
 
 
 

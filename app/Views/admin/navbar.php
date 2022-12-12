@@ -161,7 +161,7 @@
         <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-sign-out-alt"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text"><a href="<?= site_url('admin/auth/logout'); ?>" class="d-block" style="color: white; text-decoration:none;">Logout</a></span>
+          <span class="info-box-text"><a href="<?= site_url('admin/auth/logout'); ?>" class="d-block" style="color: black; text-decoration:none; font-weight: bold;">Logout</a></span>
         </div>
         <!-- /.info-box-content -->
       </div>

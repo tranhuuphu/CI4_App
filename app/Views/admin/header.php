@@ -12,6 +12,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
 
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/bootstrap-select/bootstrap-select.min.css">
+
 
 
     <script src="<?= base_url('public/admin_asset'); ?>/tinymce_5.10.7/tinymce.min.js" referrerpolicy="origin"></script>
