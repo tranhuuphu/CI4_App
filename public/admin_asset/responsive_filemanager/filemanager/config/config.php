@@ -220,7 +220,7 @@ $config = array(
     |--------------------------------------------------------------------------
     |
     */
-    'filePermission' => 0755,
+    'filePermission' => 0777,
     'folderPermission' => 0777,
 
 
@@ -548,7 +548,7 @@ $config = array(
      *              3 / auto = auto;
      *              4 / crop= resize and crop;
      */
-    'relative_image_creation_option'          => array( 'crop', 'crop' ), //set the type of the crop
+    'relative_image_creation_option'          => array( 'crop', 'crop', 'portrait' ), //set the type of the crop
 
 
     // Remember text filter after close filemanager for future session
