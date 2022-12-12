@@ -39,7 +39,7 @@ define('USE_ACCESS_KEYS', false); // TRUE or FALSE
 |--------------------------------------------------------------------------
 */
 
-define('DEBUG_ERROR_MESSAGE', false); // TRUE or FALSE
+define('DEBUG_ERROR_MESSAGE', true); // TRUE or FALSE
 
 /*
 |--------------------------------------------------------------------------
@@ -86,7 +86,7 @@ $config = array(
     | with final /
     |
     */
-    'current_path' => '../public/upload/tinymce/',
+    'current_path' => '../../../upload/tinymce/',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_base_path' => '../public/upload/tinymce/thumbs/',
+    'thumbs_base_path' => 'public/upload/tinymce/',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ $config = array(
     | DO NOT put inside upload folder
     |
     */
-    'thumbs_upload_dir' => '/public/upload/tinymce/thumbs/',
+    'thumbs_upload_dir' => 'public/upload/tinymce/',
 
 
     /*
