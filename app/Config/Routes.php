@@ -69,7 +69,18 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('/',"Admin\PostController::index");
 
         $routes->get('create',"Admin\PostController::getPost");
-        $routes->post('create',"Admin\PostController::savePost");
+        $routes->post('save',"Admin\PostController::savePost");
+
+    });
+
+    $routes->group("cate", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\CateController::index");
+
+        $routes->get('create',"Admin\CateController::getCate");
+        $routes->post('save',"Admin\CateController::save");
+        $routes->get('edit/(:num)',"Admin\CateController::getEditCate/$1");
+        $routes->post('edit/(:num)',"Admin\CateController::postEditCate/$1");
 
     });
 

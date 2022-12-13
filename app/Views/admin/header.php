@@ -13,10 +13,17 @@
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
 
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/bootstrap-select/bootstrap-select.min.css">
+    
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/tagify-input/tagify.css">
+
+
+    <!-- DataTables -->
+<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 
 
-    <script src="<?= base_url('public/admin_asset'); ?>/tinymce_5.10.7/tinymce.min.js" referrerpolicy="origin"></script>
-    <!-- <script>tinymce.init({selector:'textarea'});</script> -->
+    
 
   </head>

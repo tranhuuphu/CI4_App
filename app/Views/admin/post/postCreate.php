@@ -40,18 +40,18 @@
 	                <div class="card-body">
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1">Tiêu đề bài viết</label>
-	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết">
+	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= old('post_title'); ?>">
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1">Tóm tắt</label>
-	                    <textarea class="form-control" value="" required style="height:100px" name="post_intro" maxlength="160"></textarea>
+	                    <textarea class="form-control" value="<?= old('post_intro'); ?>" style="height:100px" name="post_intro" maxlength="160"></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
 									      <label>Nội dung bài viết</label>
-									      <textarea class="form-control" id="content" rows="3" placeholder="Enter ..." height="800px"></textarea>
+									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content'); ?></textarea>
 									    </div>
 									  </div>
 
@@ -67,11 +67,6 @@
 	            <!-- /.card -->
 
 
-	            
-
-	            
-	            
-
 	          </div>
 	          <!--/.col (left) -->
 	          <!-- right column -->
@@ -85,7 +80,7 @@
 
 	              	<div class="form-group">
                     <label>Ảnh bài viết</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_image" accept="image" required onchange="loadFile(event)" style="overflow: hidden;">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_img" accept="image" required onchange="loadFile(event)" style="overflow: hidden;">
                     <hr>
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -97,10 +92,6 @@
                         }
                       };
                     </script>
-
-
-
-
                   </div>
 
 	              	<div class="form-group">
@@ -193,7 +184,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Desc:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255">{{old('post_meta_desc')}}</textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><<?= old('post_meta_desc'); ?>/textarea>
                       </div>
 
                       
@@ -202,7 +193,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Key:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255">{{old('post_meta_key')}}</textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= old('post_meta_key'); ?></textarea>
                       </div>
                     </div>
                     <hr>
@@ -212,7 +203,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" id="tagsinput" name="tagsinput" value="{{old('tagsinput')}}" data-role="tagsinput" />
+                          <input type="text" class="form-control-file" id="tagsinput" name="tagsinput" value="<?= old('tagsinput'); ?>" data-role="tagsinput" />
                       </div>
 
                     </div>
