@@ -272,3 +272,131 @@ in SYSTEMPATH\BaseModel.php on line 1598.
  6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\CateController))
  7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 05:34:45 --> Invalid file: admin/post/postCreate.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/post/postCreate.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/postCreate', [], true)
+ 3 APPPATH\Controllers\Admin\PostController.php(16): view('admin/post/postCreate')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 06:08:39 --> Undefined variable $cateModel
+in APPPATH\Controllers\Admin\PostController.php on line 16.
+ 1 APPPATH\Controllers\Admin\PostController.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cateModel', 'APPPATH\\Controllers\\Admin\\PostController.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 06:09:14 --> Undefined variable $cateModel
+in APPPATH\Controllers\Admin\PostController.php on line 17.
+ 1 APPPATH\Controllers\Admin\PostController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cateModel', 'APPPATH\\Controllers\\Admin\\PostController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 06:09:30 --> Attempt to read property "cate_parent_id" on array
+in APPPATH\Views\admin\post\create.php on line 101.
+ 1 APPPATH\Views\admin\post\create.php(101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "cate_parent_id" on array', 'APPPATH\\Views\\admin\\post\\create.php', 101)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/create', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(18): view('admin/post/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 06:21:43 --> Attempt to read property "cate_parent_id" on array
+in APPPATH\Views\admin\post\create.php on line 108.
+ 1 APPPATH\Views\admin\post\create.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "cate_parent_id" on array', 'APPPATH\\Views\\admin\\post\\create.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/create', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(18): view('admin/post/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 06:23:40 --> Attempt to read property "id" on array
+in APPPATH\Views\admin\post\create.php on line 110.
+ 1 APPPATH\Views\admin\post\create.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Views\\admin\\post\\create.php', 110)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/create', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(18): view('admin/post/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getPost()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 08:37:25 --> Could not move file php7BA8.tmp to D:\Code\Xampp\htdocs\CI4_App\public/upload/tinymce/image_asset/ ()
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php7BA8.tmp', 'FCPATH\\public\\upload\\tinymce\\image_asset', 'D:\\Code\\Xampp\\htdocs\\CI4_App')
+ 2 APPPATH\Controllers\Admin\PostController.php(62): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH\\public\\upload\\tinymce\\image_asset', 'test-nua.image/jpeg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->savePost()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 08:38:03 --> Could not move file php1134.tmp to D:\Code\Xampp\htdocs\CI4_App\public/upload/tinymce/image_asset/ ()
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php1134.tmp', 'FCPATH\\public\\upload\\tinymce\\image_asset', 'D:\\Code\\Xampp\\htdocs\\CI4_App')
+ 2 APPPATH\Controllers\Admin\PostController.php(62): CodeIgniter\HTTP\Files\UploadedFile->move('FCPATH\\public\\upload\\tinymce\\image_asset', 'test-nua.image/jpeg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->savePost()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 08:40:02 --> syntax error, unexpected variable "$type"
+in APPPATH\Controllers\Admin\PostController.php on line 45.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PostController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PostController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PostController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PostController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 08:42:52 --> Undefined variable $fileName
+in APPPATH\Controllers\Admin\PostController.php on line 45.
+ 1 APPPATH\Controllers\Admin\PostController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'APPPATH\\Controllers\\Admin\\PostController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->savePost()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 09:10:27 --> Undefined variable $cate
+in APPPATH\Views\admin\post\index.php on line 40.
+ 1 APPPATH\Views\admin\post\index.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\post\\index.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/index', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(17): view('admin/post/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 09:12:38 --> Undefined array key "cate_name"
+in APPPATH\Views\admin\post\index.php on line 44.
+ 1 APPPATH\Views\admin\post\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_name"', 'APPPATH\\Views\\admin\\post\\index.php', 44)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/index', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(17): view('admin/post/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 09:27:08 --> syntax error, unexpected token "->", expecting identifier or variable or "{" or "$"
+in APPPATH\Controllers\Admin\PostController.php on line 53.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PostController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PostController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PostController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PostController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-14 09:58:30 --> syntax error, unexpected token "}", expecting "," or ";"
+in APPPATH\Views\admin\post\index.php on line 53.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/index', [], true)
+ 3 APPPATH\Controllers\Admin\PostController.php(21): view('admin/post/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -177,6 +177,11 @@
 		$('[name=tagsinput]').tagify();
 	</script>
 
+	<?= $this->renderSection('script'); ?>
+
+
+
+
 
 
 

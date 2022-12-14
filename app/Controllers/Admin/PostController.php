@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
+use App\Models\PostModel;
+use App\Models\CateModel;
 
 
 class PostController extends BaseController
@@ -9,34 +11,59 @@ class PostController extends BaseController
     public function __construct(){
         helper(['url', 'form', 'text_helper']);
     }
+    public function index(){
+        $postModel = new PostModel();
+        $data['post'] = $postModel->findAll();
+
+        $cateModel = new CateModel();
+        $data['cate'] = $cateModel->findAll();
+
+        return view('admin/post/index', $data);
+    }
+
     public function getPost()
-    {
-        
-        return view('admin/post/postCreate');
+    {   
+        $cateModel = new CateModel();
+        $data['cate'] = $cateModel->findAll();
+        return view('admin/post/create', $data);
     }
 
     public function savePost()
     {
         // $this->validate();
 
-
+        $postModel = new PostModel();
 
         $post_title = $this->request->getPost('post_title');
         $data['post_title'] = $post_title;
 
         $post_title_slug = convert_name($post_title);
 
-        $data['post_title_slug'] = $post_title_slug;
+        
 
-        $data['post_intro'] = $this->request->getPost('post_intro');
-        $data['post_content'] = $this->request->getPost('post_content');
-        $data['post_featured'] = $this->request->getPost('post_featured');
-        $data['post_price'] = $this->request->getPost('post_price');
+        $post_cate_id = $this->request->getPost('post_cate_id');
+
+        $data['post_slug'] = $post_title_slug;
+        $data['post_intro']     = $this->request->getPost('post_intro');
+        $data['post_content']   = $this->request->getPost('post_content');
+        $data['post_cate_id']   = $post_cate_id;
+        $data['post_featured']  = $this->request->getPost('post_featured');
+        $data['post_price']     = $this->request->getPost('post_price');
+        $data['post_sale']      = $this->request->getPost('post_sale');
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
-        $data['post_meta_key'] = $this->request->getPost('post_meta_key');
-        $data['tagsinput'] = $this->request->getPost('tagsinput');
-        $data['post_img'] = $this->request->getFile('post_img');
-        dd($data);
+        $data['post_meta_key']  = $this->request->getPost('post_meta_key');
+        $data['tagsinput']      = $this->request->getPost('tagsinput');
+
+        $cateModel = new CateModel();
+        $cate_slug = $cateModel->selectMax('cate_slug')->where('id', $post_cate_id)->first();
+
+        $data['post_cate_slug']   = $cate_slug['cate_slug'];
+        
+        $img = $this->request->getFile('post_image');
+
+        $type = $img->guessExtension();
+        $post_title_slug2 = $post_title_slug.'.'.$type;
+        $data['post_image']       = $post_title_slug2;
 
         // $input = $this->validate([
         //     'post_img' => [
@@ -46,12 +73,15 @@ class PostController extends BaseController
         //     ]
         // ]);
 
-        if($img = $this->request->getFile('post_img'))
+        $postModel->insert($data);
+
+        if($img = $this->request->getFile('post_image'))
         {
             if ($img->isValid() && ! $img->hasMoved())
             {
-                $newName = $img->getRandomName();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $newName);
+                // $newName = $img->getRandomName();
+                $type = $img->getClientMimeType();
+                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_title_slug2);
  
                 // You can continue here to write a code to save the name to database
                 // db_connect() or model format
@@ -59,21 +89,7 @@ class PostController extends BaseController
             }
         }
     
-        // if (!$input) {
-        //     dd('Choose a valid file');
-        // } else {
-        //     $img = $this->request->getFile('post_img');
-        //     $img->move(base_url('/') . '/public/upload/tinymce/image_asset/');
-    
-        //     // $data = [
-        //     //    'name' =>  $img->getName(),
-        //     //    'type'  => $img->getClientMimeType()
-        //     // ];
-    
-        //     // $save = $db->insert($data);
-        //     dd('File has successfully uploaded');        
-        // }
 
-        return view('admin/post/postCreate');
+        return redirect()->to('admin/post');
     }
 }

@@ -236,49 +236,14 @@
             </li>
             <li class="nav-item">
               <a href="<?= base_url('admin/cate/create'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-plus-circle nav-icon"></i>
                 <p>Thêm mới</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="pages/UI/buttons.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Buttons</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/sliders.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Sliders</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/modals.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Modals & Alerts</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/navbar.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Navbar & Tabs</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/timeline.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Timeline</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/ribbons.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Ribbons</p>
-              </a>
-            </li>
+            
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item post_active">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
@@ -286,29 +251,17 @@
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
+          <ul class="nav nav-treeview post_tree_active">
             <li class="nav-item">
-              <a href="pages/charts/chartjs.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Post</p>
+              <a href="<?= base_url('admin/post'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item post_tree_active2">
               <a href="<?= base_url('admin/post/create'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-plus nav-icon"></i>
                 <p>Thêm bài viết</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/charts/inline.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Inline</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/charts/uplot.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>uPlot</p>
               </a>
             </li>
           </ul>

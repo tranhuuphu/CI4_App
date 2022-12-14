@@ -32,8 +32,8 @@ class CateController extends BaseController
 
         $cateModel = new CateModel();
 
-        $cate_name = $this->request->getPost('cate_name');
-        $data['cate_name']         = $cate_name;
+        $cate_name              = $this->request->getPost('cate_name');
+        $data['cate_name']      = $cate_name;
 
         $cate_slug                  = mb_strtolower(convert_name($cate_name));
 
