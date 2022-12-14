@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      	<form action="<?= base_url('admin/cate/save'); ?>" method="post" enctype="multipart/form-data">
+      	<form action="<?= base_url('admin/cate/save/'.$cate['id']); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
 	          <!-- left column -->
@@ -48,10 +48,10 @@
 
 
 	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_parent_id">
-	                  	<option <?php if($cate['parent_cate_id'] == 0){echo "selected";} ?> data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
+	                  	<option <?php if($cate['cate_parent_id'] == 0){echo "selected";} ?> data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate_all as $c): ?>
-                        <option value="<?= $c['cate_id']; ?>" <?php if($c['cate_id'] == $cate['parent_cate_id']){echo "selected";} ?> ><?= $c['cate_name']; ?></option>
+                        <option value="<?= $c['id']; ?>" <?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?> ><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
 
                       

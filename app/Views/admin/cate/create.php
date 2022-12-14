@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      	<form action="<?= base_url('admin/cate/save'); ?>" method="post" enctype="multipart/form-data">
+      	<form action="<?= base_url('admin/cate/save/'); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
 	          <!-- left column -->
@@ -51,7 +51,7 @@
 	                  	<option selected="selected" data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate as $c): ?>
-                        <option value="<?= $c['cate_id']; ?>"><?= $c['cate_name']; ?></option>
+                        <option value="<?= $c['id']; ?>"><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
 
                       

@@ -42,10 +42,10 @@
                       
 		                  <tr>
 		                    <td><?= $c['cate_name']; ?></td>
-		                    <td><?php if($c['parent_cate_id'] == 0){echo "danh mục lớn";}else{echo "danh mục con";} ?></td>
+		                    <td><?php if($c['cate_parent_id'] == 0){echo "danh mục lớn";}else{echo "danh mục con";} ?></td>
 		                    <td><?php if($c['cate_status'] == 1){echo "<span class='text-bold'>danh mục nổi bật</span>";}else{echo "danh mục thường";} ?></td>
 		                    <td></td>
-		                    <td><a href="<?= base_url('admin/cate/edit/'.$c['cate_id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/cate/del/'.$c['cate_id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+		                    <td><a href="<?= base_url('admin/cate/edit/'.$c['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/cate/del/'.$c['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   

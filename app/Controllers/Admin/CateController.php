@@ -21,12 +21,12 @@ class CateController extends BaseController
     public function getCate()
     {
         $cateModel = new CateModel();
-        $data['cate'] = $cateModel->where('parent_cate_id', 0)->findAll();
+        $data['cate'] = $cateModel->where('cate_parent_id', 0)->findAll();
         // dd($data);
         return view('admin/cate/create', $data);
     }
 
-    public function save()
+    public function store()
     {
         // $this->validate();
 
@@ -54,18 +54,21 @@ class CateController extends BaseController
     public function getEditCate($cate_id){
 
         $cateModel = new CateModel();
-        $data['cate'] = $cateModel->where('cate_id', $cate_id)->first();
+        
+        $data['cate'] = $cateModel->where('id', $cate_id)->first();
 
-        $data['cate_all'] = $cateModel->where('parent_cate_id', 0)->findAll();
+        $data['cate_all'] = $cateModel->where('cate_parent_id', 0)->findAll();
         
         return view('admin/cate/edit', $data);
     }
 
     public function PostEditCate($cate_id){
 
-        $cateModel = new CateModel;
+        
+        $cateModel = new CateModel();
+        // dd($cate_id);
 
-        $cate_edit = $cateModel->where('cate_id', $cate_id)->first();
+        // $cate_edit = $cateModel->where('cate_id', $cate_id)->first();
 
         $cate_name = $this->request->getPost('cate_name');
         $data['cate_name']         = $cate_name;
@@ -81,7 +84,8 @@ class CateController extends BaseController
         // dd($data);
 
         
-        $cate_edit->find('cate_id', $cate_id)->update($data);
+        // $cateModel->where('id', $cate_id)->update($data);
+        $cateModel->update($cate_id, $data);
 
         
 

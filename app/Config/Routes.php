@@ -78,9 +78,9 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('/',"Admin\CateController::index");
 
         $routes->get('create',"Admin\CateController::getCate");
-        $routes->post('save',"Admin\CateController::save");
+        $routes->post('store',"Admin\CateController::store");
         $routes->get('edit/(:num)',"Admin\CateController::getEditCate/$1");
-        $routes->post('edit/(:num)',"Admin\CateController::postEditCate/$1");
+        $routes->post('save/(:num)',"Admin\CateController::postEditCate/$1");
 
     });
 
