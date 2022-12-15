@@ -152,7 +152,7 @@
         <img src="<?= base_url('public/admin_asset'); ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="javascript:void(0)" class="d-block"><span style="color: white;">Hello:</span> <?php if($loggerUserID != null){echo $userinfo['name']; } ?></a>
+        <a href="<?= site_url('admin/auth/detail'); ?>" class="d-block"><span style="color: white;">Hello:</span> <?php if($loggerUserID != null){echo $userinfo['name']; } ?></a>
       </div>
     </div>
 

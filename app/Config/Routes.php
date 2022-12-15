@@ -40,10 +40,12 @@ $routes->get('/', 'Home::index');
 // login before acess admin board, and direct to admin page if already login
 $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
     //home in get == home in as
-    $routes->get('/',"Admin\Auth::login",['as'=>'auth.login']);
+    $routes->get('/',"Admin\Auth::login",['as'=>'auth']);
 
     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
     $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
+
+
 
 
 });
@@ -81,6 +83,19 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('store',"Admin\CateController::store");
         $routes->get('edit/(:num)',"Admin\CateController::getEditCate/$1");
         $routes->post('save/(:num)',"Admin\CateController::postEditCate/$1");
+
+    });
+
+
+    $routes->group("auth", function($routes){
+        //home in get == home in as
+        $routes->get('detail',"Admin\Auth::getEdit",['as'=>'auth.detail']);
+        $routes->post('edit/(:num)',"Admin\Auth::postEdit/$1");
+
+
+
+        
+
 
     });
 

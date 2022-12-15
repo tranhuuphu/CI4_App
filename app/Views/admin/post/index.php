@@ -61,14 +61,15 @@
                           </button>
 
 
-                          <div class="modal fade" id="modal-xl<?=$p['id']?>">
-                            <div class="modal-dialog modal-xl">
+                          <div class="modal fade" id="modal-xl<?=$p['id']?>" aria-labelledby="exampleModalScrollableTitle">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <h4 class="modal-title text-bold"><?= $p['post_title']; ?></h4>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
+
                                 </div>
                                 <div class="modal-body">
 
@@ -100,31 +101,51 @@
                                       
                                       <tr>
                                         <th scope="row">Ảnh</th>
-                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" ></td>
+                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" style="width: 60% " ></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Loại bài viết</th>
+                                        <td>
+                                          <?php 
+                                            
+                                            if($p['post_featured'] == 1){
+                                              echo "bài viết nổi bật";
+                                            }else{
+                                              echo "bài viết thường";
+                                            }
+                                            
+                                          ?>
+                                        </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Bài viết bán hàng</th>
+                                        <td>
+                                          <?php 
+                                            
+                                            if($p['post_status'] == 1){
+                                              echo "bài viết bán hàng";
+                                            }else{
+                                              echo "bài viết thường";
+                                            }
+                                            
+                                          ?>
+                                        </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Nội dung</th>
+                                        <td><?= $p['post_content'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Meta Desc</th>
+                                        <td><?= $p['post_meta_desc'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Meta Key</th>
+                                        <td><?= $p['post_meta_key'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
+                                        <th scope="row">Ngày viết bài</th>
+                                        <td><?= $p['created_at'] ?></td>
                                       </tr>
                                     </tbody>
                                   </table>
@@ -132,7 +153,7 @@
                                 </div>
                                 <div class="modal-footer justify-content-between">
                                   <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-                                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" style="color: #000000;">Edit Post</a></button>
                                 </div>
                               </div>
                               <!-- /.modal-content -->
