@@ -133,7 +133,7 @@
                                       </tr>
                                       <tr>
                                         <th scope="row">Nội dung</th>
-                                        <td><?= $p['post_content'] ?></td>
+                                        <td><?php echo $p['post_content'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Meta Desc</th>

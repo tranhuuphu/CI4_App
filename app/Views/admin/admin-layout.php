@@ -174,7 +174,7 @@
   </script>
 
   <script>
-		$('[name=tagsinput]').tagify();
+		$('[name=taginput]').tagify();
 	</script>
 
 	<?= $this->renderSection('script'); ?>

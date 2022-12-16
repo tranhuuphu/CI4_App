@@ -24,7 +24,16 @@
           <div class="card-body register-card-body">
 
             <?php if(!empty(session()->getFlashdata('fail'))) : ?>
-              <p class="login-box-msg text-danger"><?= session()->getFlashdata('fail'); ?></p>
+
+              <div class="alert alert-warning" role="alert">
+                <?= session()->getFlashdata('fail'); ?>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('success'))) : ?>
+            <div class="alert alert-primary" role="alert">
+              <?= session()->getFlashdata('success'); ?>
+            </div>
             <?php endif ?>
 
             <?php if(!empty(session()->getFlashdata('password'))) : ?>

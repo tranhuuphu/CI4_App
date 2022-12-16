@@ -1,0 +1,150 @@
+CRITICAL - 2022-12-16 10:14:26 --> Undefined variable $userInfo
+in APPPATH\Views\admin\auth\detail.php on line 41.
+ 1 APPPATH\Views\admin\auth\detail.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userInfo', 'APPPATH\\Views\\admin\\auth\\detail.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\auth\\detail.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/auth/detail', [], true)
+ 5 APPPATH\Controllers\Admin\Auth.php(202): view('admin/auth/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\Auth->postEdit('17')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 10:15:44 --> syntax error, unexpected token "=>", expecting ")"
+in APPPATH\Controllers\Admin\Auth.php on line 202.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\Auth.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\Auth')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\Auth')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\Auth', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:09:07 --> Too few arguments to function App\Controllers\Admin\PostController::getEdit(), 0 passed in D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php on line 927 and exactly 1 expected
+in APPPATH\Controllers\Admin\PostController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:10:08 --> Too few arguments to function App\Controllers\Admin\PostController::getEdit(), 0 passed in D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php on line 927 and exactly 1 expected
+in APPPATH\Controllers\Admin\PostController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:11:33 --> syntax error, unexpected token "->"
+in APPPATH\Controllers\Admin\PostController.php on line 91.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PostController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PostController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PostController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PostController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:21:15 --> Invalid file: admin.post.editPost
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin.post.editPost')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin.post.editPost', [], true)
+ 3 APPPATH\Controllers\Admin\PostController.php(92): view('admin.post.editPost', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('24')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:22:00 --> Undefined variable $postDetail
+in APPPATH\Views\admin\post\editPost.php on line 25.
+ 1 APPPATH\Views\admin\post\editPost.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\post\\editPost.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(92): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('24')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:22:32 --> Undefined variable $postDetail
+in APPPATH\Controllers\Admin\PostController.php on line 92.
+ 1 APPPATH\Controllers\Admin\PostController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Controllers\\Admin\\PostController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:22:39 --> Undefined variable $cate
+in APPPATH\Views\admin\post\editPost.php on line 99.
+ 1 APPPATH\Views\admin\post\editPost.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\post\\editPost.php', 99)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(92): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('24')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:31:07 --> syntax error, unexpected token "}", expecting "," or ";"
+in APPPATH\Views\admin\post\editPost.php on line 124.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 3 APPPATH\Controllers\Admin\PostController.php(94): view('admin/post/editPost', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('25')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 11:33:47 --> Undefined array key "post_price"
+in APPPATH\Views\admin\post\editPost.php on line 165.
+ 1 APPPATH\Views\admin\post\editPost.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_price"', 'APPPATH\\Views\\admin\\post\\editPost.php', 165)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(95): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('25')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 12:09:15 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Views\admin\post\editPost.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-16 12:09:17 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Views\admin\post\editPost.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-16 12:09:52 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Views\admin\post\editPost.php on line 48.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-16 12:25:04 --> Undefined variable $post_title
+in APPPATH\Controllers\Admin\PostController.php on line 108.
+ 1 APPPATH\Controllers\Admin\PostController.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_title', 'APPPATH\\Controllers\\Admin\\PostController.php', 108)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('25')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 12:31:33 --> Undefined variable $post_cate_id
+in APPPATH\Controllers\Admin\PostController.php on line 148.
+ 1 APPPATH\Controllers\Admin\PostController.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_cate_id', 'APPPATH\\Controllers\\Admin\\PostController.php', 148)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('25')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 12:34:57 --> Undefined variable $post_title
+in APPPATH\Controllers\Admin\PostController.php on line 111.
+ 1 APPPATH\Controllers\Admin\PostController.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_title', 'APPPATH\\Controllers\\Admin\\PostController.php', 111)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('25')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 12:45:45 --> syntax error, unexpected identifier "dd"
+in APPPATH\Controllers\Admin\PostController.php on line 107.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PostController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PostController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PostController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PostController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 12:49:13 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Controllers\Admin\PostController.php on line 157.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-16 12:52:38 --> syntax error, unexpected token "if"
+in APPPATH\Controllers\Admin\PostController.php on line 112.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PostController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PostController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PostController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PostController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

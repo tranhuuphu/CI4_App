@@ -167,7 +167,8 @@ class Auth extends BaseController
         ]);
 
         if(!$validation){
-            return redirect()->to('admin/auth/detail')->with('validation',$this->validator);
+            // return redirect()->to('admin/auth/detail')->with('validation',$this->validator);
+            return view('admin/auth/detail', ['validation'=>$this->validator]);
             // return view('admin/auth/detail', ['validation'=>$this->validator]);
         }else{
             // echo 'Form validate successfully';
@@ -197,13 +198,18 @@ class Auth extends BaseController
 
                 ]);
                 if(!$validation){
-                    return redirect()->to('admin/auth/detail')->with('validation',$this->validator);
+                    return view('admin/auth/detail', ['validation'=>$this->validator, 'userInfo'=>$userInfo]);
                     // return view('admin/auth/detail', ['validation'=>$this->validator]);
                 }
                 $data['password'] = Hash::make($password);
                 session()->setFlashdata('password', 'Bạn đã cập nhật password mới');
                 
             }
+
+            if($userInfo['name'] == $this->request->getPost('name') && $this->request->getPost('password') == null && $this->request->getPost('re_password') == null){
+                return redirect()->back()->with('fail', 'Bạn chưa cập nhật thông tin');
+            }
+
             
             // dd($data);
             $usersModel = new \App\Models\usersModel();
@@ -215,7 +221,7 @@ class Auth extends BaseController
                 // session()->set('loggedUser', $last_id);
                 
                 
-                return redirect()->to('admin/auth/detail');
+                return redirect()->to('admin/auth/detail')->with('success', 'Đã cập nhật thông tin tài khoản');
 
             }
 
