@@ -148,3 +148,25 @@ in APPPATH\Controllers\Admin\PostController.php on line 112.
  5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 23:26:45 --> Undefined variable $cate
+in APPPATH\Views\admin\post\create.php on line 99.
+ 1 APPPATH\Views\admin\post\create.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\post\\create.php', 99)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/create', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(77): view('admin/post/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->savePost()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-16 23:27:53 --> Undefined variable $cate
+in APPPATH\Views\admin\post\create.php on line 99.
+ 1 APPPATH\Views\admin\post\create.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\post\\create.php', 99)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/create', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(79): view('admin/post/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->savePost()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

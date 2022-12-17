@@ -31,6 +31,66 @@ class PostController extends BaseController
     public function savePost()
     {
         // $this->validate();
+        $cateModel = new CateModel();
+        $data['cate'] = $cateModel->findAll();
+
+        $validation = $this->validate([
+
+            'post_title'=>[
+                'rules'=>'required|is_unique[post.post_title]',
+                'errors' => [
+                    'required' => 'Tiêu đề không được để trống.',
+                    'is_unique' => 'Tiêu đề trùng với bài viết khác.',
+                ],
+
+            ],
+            'post_title'=>[
+                'rules'=>'required|is_unique[post.post_title]',
+                'errors' => [
+                    'required' => 'Tiêu đề không được để trống.',
+                    'is_unique' => 'Tiêu đề trùng với bài viết khác.',
+                ],
+
+            ],
+            'post_content'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung bài viết không được để trống.',
+                ],
+
+            ],
+            'post_image' => [
+                'label' => 'Image File',
+                'rules' => 'uploaded[post_image]'
+                    . '|is_image[post_image]'
+                    . '|mime_in[post_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|max_size[post_image,1000]',
+                    // . '|max_dims[post_image,1024,768]',
+                    'errors' => [
+                    'uploaded' => 'Bạn chưa chọn ảnh cho bài viết.',
+                    'max_size' => 'Kích trước file quá lớn.',
+                ],
+            ],
+            'post_meta_desc'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Description này không được để trống.',
+                ],
+
+            ],
+            'post_meta_key'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Key này không được để trống.',
+                ],
+
+            ],
+
+        ]);
+        if(!$validation){
+            return view('admin/post/create', ['validation'=>$this->validator, 'cate'=>$data['cate']]);
+        }
+
 
         $postModel = new PostModel();
 

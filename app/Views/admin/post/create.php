@@ -40,18 +40,20 @@
 	                <div class="card-body">
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1">Tiêu đề bài viết</label>
-	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= old('post_title'); ?>">
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_title') : '' ?></p>
+	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= set_value('post_title'); ?>">
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1">Tóm tắt</label>
-	                    <textarea class="form-control" value="<?= old('post_intro'); ?>" style="height:100px" name="post_intro" maxlength="160"></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?= set_value('post_intro'); ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
 									      <label>Nội dung bài viết</label>
-									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content'); ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
+									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= set_value('post_content'); ?></textarea>
 									    </div>
 									  </div>
 
@@ -80,7 +82,8 @@
 
 	              	<div class="form-group">
                     <label>Ảnh bài viết</label>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" required onchange="loadFile(event)" style="overflow: hidden;">
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_image') : '' ?></p>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                     
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -106,12 +109,12 @@
                       <?php foreach($cate as $c): ?>
                         <?php if($c['cate_parent_id'] == 0): ?>
                           <?php if(!(in_array($c['id'], $c_t))): ?>
-                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(old('post_cate_id')  == $c['id']){ echo "selected"; } ?>> <?= $c['cate_name']; ?></option>
+                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(set_value('post_cate_id')  == $c['id']){ echo "selected"; } ?>> <?= $c['cate_name']; ?></option>
                           <?php elseif(in_array($c->id, $c_t)): ?>
                             <optgroup data-icon="fas fa-circle" label="{{$c->cate_name}}">
                               <?php foreach($cate as $c2): ?>
                                 <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                                  <option data-icon="fas f-long-arrow-alt-right" value="{{$c2->id}}" <?php if(old('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
+                                  <option data-icon="fas f-long-arrow-alt-right" value="{{$c2->id}}" <?php if(set_value('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
                                 <?php endif; ?>
                               <?php endforeach; ?>
                             </optgroup>
@@ -222,7 +225,8 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Desc:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= old('post_meta_desc'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= set_value('post_meta_desc'); ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_desc') : '' ?></p>
                       </div>
 
                       
@@ -231,7 +235,8 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Key:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= old('post_meta_key'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= set_value('post_meta_key'); ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_key') : '' ?></p>
                       </div>
                     </div>
                     <hr>
@@ -241,7 +246,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="tagsinput" name="tagsinput" value="<?= old('tagsinput'); ?>" data-role="tagsinput" />
+                          <input type="text" class="form-control-file" id="tagsinput" name="tagsinput" value="<?= set_value('tagsinput'); ?>" data-role="tagsinput" />
                       </div>
 
                     </div>

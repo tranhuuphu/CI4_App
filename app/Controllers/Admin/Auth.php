@@ -77,7 +77,7 @@ class Auth extends BaseController
             }else{
                 // $last_id = $usersModel->insertID();
                 // session()->set('loggedUser', $last_id);
-                return redirect()->to('admin/auth/login');
+                return redirect()->to('admin/auth');
             }
 
         }

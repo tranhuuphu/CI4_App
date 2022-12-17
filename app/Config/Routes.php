@@ -57,12 +57,16 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
     
     $routes->get('/',"Admin\AdminController::index");
     $routes->get('dashboard',"Admin\DashboardController::index",['as'=>'dashboard']);
+
     $routes->group("auth", function($routes){
         //home in get == home in as
         $routes->get('register',"Admin\Auth::register",['as'=>'auth.register']);
         $routes->get('save',"Admin\Auth::save",['as'=>'auth.save']);
         $routes->post('save',"Admin\Auth::save",['as'=>'auth.save']);
         $routes->get('logout',"Admin\Auth::logout",['as'=>'auth.logout']);
+
+        $routes->get('detail',"Admin\Auth::getEdit",['as'=>'auth.detail']);
+        $routes->post('edit/(:num)',"Admin\Auth::postEdit/$1");
 
     });
 
@@ -89,18 +93,6 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     });
 
-
-    $routes->group("auth", function($routes){
-        //home in get == home in as
-        $routes->get('detail',"Admin\Auth::getEdit",['as'=>'auth.detail']);
-        $routes->post('edit/(:num)',"Admin\Auth::postEdit/$1");
-
-
-
-        
-
-
-    });
 
     $routes->add('filemanager/(:any)', '\Filemanager\Controllers\Filemanager::run');
     
