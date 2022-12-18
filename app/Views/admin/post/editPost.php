@@ -211,7 +211,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?= $postDetail['post_title']; ?>" data-role="taginput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(old('taginput') != null){echo old('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
                       </div>
 
                     </div>

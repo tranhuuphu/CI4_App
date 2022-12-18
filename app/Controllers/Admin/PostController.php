@@ -168,6 +168,7 @@ class PostController extends BaseController
         $data['cate'] = $cateModel->findAll();
         $data['postDetail'] = $postModel->find($id);
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
+        // dd($data['tagModel']);
         return view('admin/post/editPost', $data);
     }
 
@@ -177,11 +178,17 @@ class PostController extends BaseController
         // $this->validate();
         // dd($id);
         $postModel = new PostModel();
+        $cateModel = new CateModel();
+        $tagModel = new TagModel();
+
+        $data['cate'] = $cateModel->findAll();
         $detailPost = $postModel->find($id);
         $post_title = $this->request->getPost('post_title');
 
-        $tagModel = new TagModel();
-        $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
+        
+
+        
+        
 
         if($detailPost['post_title'] == $post_title){
             $data['post_title'] = $post_title;
@@ -264,7 +271,7 @@ class PostController extends BaseController
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
         $data['tagsinput']      = $this->request->getPost('tagsinput');
 
-        $cateModel = new CateModel();
+        
         $cate_slug = $cateModel->select('cate_slug')->where('id', $post_cate_id)->first();
 
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
@@ -289,20 +296,27 @@ class PostController extends BaseController
 
         $post_tag = $this->request->getPost('taginput');
         $post_tag = json_decode($post_tag, true);
+        $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
 
         foreach($post_tag as $t_a){
             $ta[] = $t_a['value'];
         }
 
         if($postModel){
-            $post_id = $postModel->insertID();
+            
             if($post_tag != null){
-                $tag_create = new TagModel();
-                foreach($ta as $t_a){
-                    $tag_create->insert(
-                        ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_view' => 0],
-                    );
+                $tag_update = new TagModel();
+                foreach ($tagList as $tagItem) {
+                    foreach($ta as $t_a){
+                        if($tagItem['tag_post_slug'] != mb_strtolower(convert_name($t_a))){
+                            $tag_update->update($id,
+                            [
+                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_view' => 0
+                            ]);
+                        }
+                    }
                 }
+                
             }
         }
 

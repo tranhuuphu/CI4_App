@@ -1,0 +1,9 @@
+CRITICAL - 2022-12-18 05:35:08 --> Unclosed '{' on line 214
+in APPPATH\Views\admin\post\editPost.php on line 247.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 3 APPPATH\Controllers\Admin\PostController.php(172): view('admin/post/editPost', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->getEdit('33')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
