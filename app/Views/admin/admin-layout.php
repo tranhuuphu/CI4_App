@@ -62,7 +62,7 @@
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/chart.js/Chart.min.js"></script>
 
 	<!-- AdminLTE for demo purposes -->
-	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/demo.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/dist/js/demo.js"></script> -->
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/pages/dashboard.js"></script>
 
@@ -87,6 +87,11 @@
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
+
+	<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.pack.js" referrerpolicy="origin"></script>
+
 
 
 
@@ -175,6 +180,28 @@
 
   <script>
 		$('[name=taginput]').tagify();
+
+
+		$('.iframe-btn').fancybox({	
+	'width'		: 900,
+	'height'	: 600,
+	'type'		: 'iframe',
+        'autoScale'    	: false
+    });
+
+    function close_window() {
+    parent.$.fancybox.close();
+}
+
+function responsive_filemanager_callback(field_id){
+	console.log(field_id);
+	var url=jQuery('#'+field_id).val();
+	alert('update '+field_id+" with "+url);
+	//your code
+}
+
+
+
 	</script>
 
 	<?= $this->renderSection('script'); ?>

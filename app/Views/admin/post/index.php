@@ -15,15 +15,27 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
+            
+            <?php if(!empty(session()->getFlashdata('success'))) : ?>
+              <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                <?= session()->getFlashdata('success'); ?>
+              </div>
+            <?php endif ?>
+
             <div class="card">
               <div class="card-header card-danger">
                 <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
               </div>
+
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">

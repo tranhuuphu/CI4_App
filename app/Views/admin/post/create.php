@@ -18,7 +18,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
+    
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -84,6 +84,13 @@
                     <label>Ảnh bài viết</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_image') : '' ?></p>
                     <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+
+
+                    <!-- <input type="button" href="<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/dialog.php?field_id=imgField&lang=en_EN&akey=tranhuuphu" class="btn iframe-btn" value="Files"> -->
+
+                    <!-- <a href="<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/dialog.php?type=1" class="btn iframe-btn" type="button">Open Filemanager</a> -->
+
+                    
                     
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -150,12 +157,12 @@
                     <label>Thể loại bài viết</label>
                     <br>
                     <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="post_status" name="r1" value="normal">
+                      <input type="radio" id="radioPrimary1" name="post_status" name="r1" value="normal" checked>
                       <label for="radioPrimary1">bài viết thường
                       </label>
                     </div>
                     <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="post_status" value="san-pham" name="r1" checked>
+                      <input type="radio" id="radioPrimary2" name="post_status" value="san-pham" name="r1">
                       <label for="radioPrimary2">Bài viết là sản phẩm
                       </label>
                     </div>
@@ -192,12 +199,6 @@
 
                     <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm <small class="text-red">(Ảnh sẽ không được up nếu không phải là sản phẩm)</small></label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="images[]" accept="image" multiple>
-                    
-                    
-                    
-
-
-
                   </div>
 
 
@@ -246,7 +247,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="tagsinput" name="tagsinput" value="<?= set_value('tagsinput'); ?>" data-role="tagsinput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?= set_value('taginput'); ?>" data-role="tagsinput" />
                       </div>
 
                     </div>

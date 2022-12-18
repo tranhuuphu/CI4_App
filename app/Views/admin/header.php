@@ -18,9 +18,13 @@
 
 
     <!-- DataTables -->
-<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.css">
+
 
 
 
