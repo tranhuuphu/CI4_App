@@ -182,10 +182,13 @@ class PostController extends BaseController
         $tagModel = new TagModel();
 
         $data['cate'] = $cateModel->findAll();
+        $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
+        // dd($tagList);
+        $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         $detailPost = $postModel->find($id);
         $post_title = $this->request->getPost('post_title');
+        $data['postDetail'] = $detailPost;
 
-        
 
         
         
@@ -221,18 +224,6 @@ class PostController extends BaseController
                 ],
 
             ],
-            'post_image' => [
-                'label' => 'Image File',
-                'rules' => 'uploaded[post_image]'
-                    . '|is_image[post_image]'
-                    . '|mime_in[post_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-                    . '|max_size[post_image,1000]',
-                    // . '|max_dims[post_image,1024,768]',
-                    'errors' => [
-                    'uploaded' => 'Bạn chưa chọn ảnh cho bài viết.',
-                    'max_size' => 'Kích trước file quá lớn.',
-                ],
-            ],
             'post_meta_desc'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -250,7 +241,8 @@ class PostController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/post/create', ['validation'=>$this->validator, 'cate'=>$data['cate']]);
+            $data['validation'] = $this->validator;
+            return view('admin/post/editPost', $data);
         }
 
 
@@ -296,7 +288,8 @@ class PostController extends BaseController
 
         $post_tag = $this->request->getPost('taginput');
         $post_tag = json_decode($post_tag, true);
-        $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
+        
+        $tagId = $tagModel->where('tag_post_id', $id)->first();
 
         foreach($post_tag as $t_a){
             $ta[] = $t_a['value'];
@@ -309,14 +302,14 @@ class PostController extends BaseController
                 foreach ($tagList as $tagItem) {
                     foreach($ta as $t_a){
                         if($tagItem['tag_post_slug'] != mb_strtolower(convert_name($t_a))){
-                            $tag_update->update($tagList['id'],
+                            $tag_update->insert(
                             [
-                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1,
+                                'tag_cate_id' => $detailPost['post_cate_id'], 'tag_cate_slug' => $detailPost['post_cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1,
                             ]);
                         }else{
-                            $tag_update->update($tagList['id'],
+                            $tag_update->update($tagItem['id'],
                             [
-                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $tagItem['cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $tagItem['tag_post_title'], 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 0, 'tag_view' => $tagItem['tag_view'],
+                                'tag_cate_id' => $detailPost['post_cate_id'], 'tag_cate_slug' => $detailPost['post_cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $tagItem['tag_post_title'], 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 0, 'tag_view' => $tagItem['tag_view'],
                             ]);
                         }
                     }

@@ -35,3 +35,112 @@ in APPPATH\Controllers\Admin\PostController.php on line 312.
  3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:18:20 --> Undefined variable $postDetail
+in APPPATH\Views\admin\post\editPost.php on line 25.
+ 1 APPPATH\Views\admin\post\editPost.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\post\\editPost.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(252): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:19:57 --> Undefined array key "detailPost"
+in APPPATH\Controllers\Admin\PostController.php on line 253.
+ 1 APPPATH\Controllers\Admin\PostController.php(253): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detailPost"', 'APPPATH\\Controllers\\Admin\\PostController.php', 253)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:21:01 --> Undefined variable $postDetail
+in APPPATH\Views\admin\post\editPost.php on line 25.
+ 1 APPPATH\Views\admin\post\editPost.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\post\\editPost.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(253): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:21:35 --> Undefined array key "detailPost"
+in APPPATH\Controllers\Admin\PostController.php on line 253.
+ 1 APPPATH\Controllers\Admin\PostController.php(253): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detailPost"', 'APPPATH\\Controllers\\Admin\\PostController.php', 253)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:22:04 --> Call to a member function first() on array
+in APPPATH\Controllers\Admin\PostController.php on line 185.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:22:24 --> Call to a member function getResultArray() on array
+in APPPATH\Controllers\Admin\PostController.php on line 185.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:22:53 --> Undefined variable $postDetail
+in APPPATH\Views\admin\post\editPost.php on line 25.
+ 1 APPPATH\Views\admin\post\editPost.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\post\\editPost.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(253): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:23:13 --> Undefined array key "detailPost"
+in APPPATH\Controllers\Admin\PostController.php on line 253.
+ 1 APPPATH\Controllers\Admin\PostController.php(253): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detailPost"', 'APPPATH\\Controllers\\Admin\\PostController.php', 253)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:23:54 --> Undefined array key "detailPost"
+in APPPATH\Controllers\Admin\PostController.php on line 253.
+ 1 APPPATH\Controllers\Admin\PostController.php(253): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detailPost"', 'APPPATH\\Controllers\\Admin\\PostController.php', 253)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:26:23 --> Undefined variable $tagModel
+in APPPATH\Views\admin\post\editPost.php on line 214.
+ 1 APPPATH\Views\admin\post\editPost.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tagModel', 'APPPATH\\Views\\admin\\post\\editPost.php', 214)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(254): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:28:45 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\post\editPost.php on line 214.
+ 1 APPPATH\Views\admin\post\editPost.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\admin\\post\\editPost.php', 214)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\editPost.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/editPost', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(256): view('admin/post/editPost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:32:19 --> Undefined array key "cate_slug"
+in APPPATH\Controllers\Admin\PostController.php on line 324.
+ 1 APPPATH\Controllers\Admin\PostController.php(324): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Controllers\\Admin\\PostController.php', 324)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 08:34:30 --> Undefined array key "cate_slug"
+in APPPATH\Controllers\Admin\PostController.php on line 324.
+ 1 APPPATH\Controllers\Admin\PostController.php(324): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Controllers\\Admin\\PostController.php', 324)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('33')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

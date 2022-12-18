@@ -40,18 +40,18 @@
 	                <div class="card-body">
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1">Tiêu đề bài viết</label>
-	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo old('post_title');}else{echo $postDetail['post_title'];} ?>">
+	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $postDetail['post_title'];} ?>">
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1">Tóm tắt</label>
-	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo old('post_intro');}else{echo $postDetail['post_intro'];} ?></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo set_value('post_intro');}else{echo $postDetail['post_intro'];} ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
 									      <label>Nội dung bài viết</label>
-									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo old('post_content');}else{echo $postDetail['post_content'];} ?></textarea>
+									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $postDetail['post_content'];} ?></textarea>
 									    </div>
 									  </div>
 	                </div>
@@ -194,14 +194,14 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Desc:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(old('post_meta_desc') != null){echo old('post_meta_desc');}else{echo $postDetail['post_meta_desc'];} ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(old('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $postDetail['post_meta_desc'];} ?></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <strong>Meta Key:</strong>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?php if(old('post_meta_key') != null){echo old('post_meta_key');}else{echo $postDetail['post_meta_key'];} ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?php if(old('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $postDetail['post_meta_key'];} ?></textarea>
                       </div>
                     </div>
                     <hr>
@@ -211,7 +211,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(old('taginput') != null){echo old('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(old('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
                       </div>
 
                     </div>
