@@ -7,3 +7,31 @@ in APPPATH\Views\admin\post\editPost.php on line 247.
  5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 06:29:48 --> Undefined array key "id"
+in APPPATH\Controllers\Admin\PostController.php on line 314.
+ 1 APPPATH\Controllers\Admin\PostController.php(314): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Controllers\\Admin\\PostController.php', 314)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('37')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 06:31:19 --> Undefined array key "id"
+in APPPATH\Controllers\Admin\PostController.php on line 314.
+ 1 APPPATH\Controllers\Admin\PostController.php(314): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Controllers\\Admin\\PostController.php', 314)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('37')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 06:31:42 --> Undefined variable $post_id
+in APPPATH\Controllers\Admin\PostController.php on line 314.
+ 1 APPPATH\Controllers\Admin\PostController.php(314): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_id', 'APPPATH\\Controllers\\Admin\\PostController.php', 314)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('37')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-18 06:33:18 --> Undefined array key "id"
+in APPPATH\Controllers\Admin\PostController.php on line 312.
+ 1 APPPATH\Controllers\Admin\PostController.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Controllers\\Admin\\PostController.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('37')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

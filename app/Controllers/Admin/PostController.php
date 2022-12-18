@@ -150,7 +150,7 @@ class PostController extends BaseController
                 $tag_create = new TagModel();
                 foreach($ta as $t_a){
                     $tag_create->insert(
-                        ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_view' => 0],
+                        ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1, 'tag_view' => 0],
                     );
                 }
             }
@@ -272,7 +272,7 @@ class PostController extends BaseController
         $data['tagsinput']      = $this->request->getPost('tagsinput');
 
         
-        $cate_slug = $cateModel->select('cate_slug')->where('id', $post_cate_id)->first();
+        $cate_slug = $cateModel->where('id', $post_cate_id)->first();
 
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
         
@@ -309,9 +309,14 @@ class PostController extends BaseController
                 foreach ($tagList as $tagItem) {
                     foreach($ta as $t_a){
                         if($tagItem['tag_post_slug'] != mb_strtolower(convert_name($t_a))){
-                            $tag_update->update($id,
+                            $tag_update->update($tagList['id'],
                             [
-                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_view' => 0
+                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1,
+                            ]);
+                        }else{
+                            $tag_update->update($tagList['id'],
+                            [
+                                'tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $tagItem['cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $tagItem['tag_post_title'], 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 0, 'tag_view' => $tagItem['tag_view'],
                             ]);
                         }
                     }
