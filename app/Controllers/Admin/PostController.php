@@ -155,9 +155,6 @@ class PostController extends BaseController
                 }
             }
         }
-        
-    
-
         return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
     }
 
@@ -291,26 +288,24 @@ class PostController extends BaseController
         
         $tagId = $tagModel->where('tag_post_id', $id)->first();
 
-        foreach($post_tag as $t_a){
-            $ta[] = $t_a['value'];
-        }
 
         if($postModel){
             
             if($post_tag != null){
-                $tag_update = new TagModel();
-                foreach ($tagList as $tagItem) {
-                    foreach($ta as $t_a){
-                        if($tagItem['tag_post_slug'] != mb_strtolower(convert_name($t_a))){
-                            $tag_update->insert(
-                            [
-                                'tag_cate_id' => $detailPost['post_cate_id'], 'tag_cate_slug' => $detailPost['post_cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1,
-                            ]);
-                        }else{
-                            $tag_update->update($tagItem['id'],
-                            [
-                                'tag_cate_id' => $detailPost['post_cate_id'], 'tag_cate_slug' => $detailPost['post_cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $tagItem['tag_post_title'], 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 0, 'tag_view' => $tagItem['tag_view'],
-                            ]);
+
+                $tagModel->where('tag_post_id', $id)->delete();
+                $post_tag = json_decode($post_tag, true);
+
+                foreach($post_tag as $t_a){
+                    $ta[] = $t_a['value'];
+                }
+
+                if($postModel){
+                    if($post_tag != null){
+                        foreach($ta as $t_a){
+                            $tagModel->insert(
+                                ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1, 'tag_view' => 0],
+                            );
                         }
                     }
                 }
