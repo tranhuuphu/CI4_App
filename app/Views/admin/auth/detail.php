@@ -73,10 +73,44 @@
                   </div>
                 </div>
               </div>
+              <hr>
 
-              <p class="text-left text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></p>
+              <div class="form-group">
+                <label>Ảnh Người Dùng</label>
+                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_image') : '' ?></p>
+                <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="user_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                <img id="output"/ style="width: 20%" class="pt-1">
+                <script>
+                  var loadFile = function(event) {
+                    var output = document.getElementById('output');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function() {
+                      URL.revokeObjectURL(output.src) // free memory
+                    }
+                  };
+                </script>
+              </div>
+              <hr>
+              <div class="form-group">
+                <label>Ảnh Admin Favicon Website</label>
+                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'favicon_image') : '' ?></p>
+                <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="favicon_image" accept="image" onchange="loadFile2(event)" style="overflow: hidden;">
+                <img id="output2"/ style="width: 20%" class="pt-1">
+                <script>
+                  var loadFile2 = function(event) {
+                    var output = document.getElementById('output2');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function() {
+                      URL.revokeObjectURL(output.src) // free memory
+                    }
+                  };
+                </script>
+              </div>
+              <hr>
 
-              <p class="text-left text-bold">Nếu thay đổi password thì nhập vào, không muốn thay đổi thì để trống</p>
+              <div class="alert alert-warning text-bold" role="alert">
+                Nếu thay đổi password thì nhập vào, không muốn thay đổi thì để trống
+              </div>
               <div class="input-group mb-3">
                 <input type="password" name="password" class="form-control" placeholder="Password">
                 <div class="input-group-append">

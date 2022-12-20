@@ -106,7 +106,8 @@ class PostController extends BaseController
         $data['post_status']    = $this->request->getPost('post_status');
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
-        // $data['taginput']      = $this->request->getPost('taginput');
+        $data['post_view']      = 0;
+        $data['post_show']      = 1;
 
         // dd($data);
 
@@ -186,68 +187,49 @@ class PostController extends BaseController
         $post_title = $this->request->getPost('post_title');
         $data['postDetail'] = $detailPost;
 
-
-        
-        
-
         if($detailPost['post_title'] == $post_title){
             $data['post_title'] = $post_title;
 
         }elseif($detailPost['post_title'] != $post_title){
             $validation = $this->validate([
-
                 'post_title'=>[
                     'rules'=>'required|is_unique[post.post_title]',
                     'errors' => [
                         'required' => 'Tiêu đề không được để trống.',
                         'is_unique' => 'Tiêu đề trùng với bài viết khác.',
                     ],
-
                 ],
-
             ]);
             if(!$validation){
                 return view('admin/post/editPost', ['validation'=>$this->validator]);
             }
         }
-
         $validation = $this->validate([
-
-            
             'post_content'=>[
                 'rules'=>'required',
                 'errors' => [
                     'required' => 'Nội dung bài viết không được để trống.',
                 ],
-
             ],
             'post_meta_desc'=>[
                 'rules'=>'required',
                 'errors' => [
                     'required' => 'Nội dung Meta Description này không được để trống.',
                 ],
-
             ],
             'post_meta_key'=>[
                 'rules'=>'required',
                 'errors' => [
                     'required' => 'Nội dung Meta Key này không được để trống.',
                 ],
-
             ],
-
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
             return view('admin/post/editPost', $data);
         }
-
-
         $post_title_slug = convert_name($post_title);
-
-        
         $post_cate_id           = $this->request->getPost('post_cate_id');
-
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
@@ -258,11 +240,10 @@ class PostController extends BaseController
         $data['post_status']    = $this->request->getPost('post_status');
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
-        $data['tagsinput']      = $this->request->getPost('tagsinput');
+        $data['post_view']      = $detailPost['post_view'];
+        $data['post_show']      = $detailPost['post_show';
 
-        
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
-
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
         
         

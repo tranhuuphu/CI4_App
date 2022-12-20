@@ -7,7 +7,7 @@ use App\Libraries\Hash;
 class Auth extends BaseController
 {
     public function __construct(){
-        helper(['url', 'form']);
+        helper(['url', 'form', 'text_helper']);
     }
     public function index(){
     	return view('admin/dashboard');
@@ -172,8 +172,33 @@ class Auth extends BaseController
             // return view('admin/auth/detail', ['validation'=>$this->validator]);
         }else{
             // echo 'Form validate successfully';
-            $data['name'] = $this->request->getPost('name');
-            $data['email'] = $this->request->getPost('email');
+            $data['name']   = $this->request->getPost('name');
+            $data['email']  = $this->request->getPost('email');
+            if(!empty($this->request->getFile('user_image'))){
+
+                $img = $this->request->getFile('user_image');
+                $type = $img->guessExtension();
+                
+                $user_image = 'user_'.mb_strtolower(convert_name($this->request->getPost('name'))).'-'.random_string('alnum', 5).'.'.$type;
+
+                $data['user_image']       = $user_image;
+            }else{
+                $data['user_image'] = $userInfo['user_image'];
+            }
+
+            if(!empty($this->request->getFile('favicon_image'))){
+
+                $img2 = $this->request->getFile('favicon_image');
+                $type2 = $img2->guessExtension();
+                
+                $favicon_image = 'favicon_admin'.'-'.random_string('alnum', 5).'.'.$type2;
+
+                $data['favicon_image']       = $favicon_image;
+            }else{
+                $data['favicon_image'] = $userInfo['favicon_image'];
+            }
+            // dd($data);
+
             $password = $this->request->getPost('password');
             if($password != null){
                 
@@ -206,7 +231,7 @@ class Auth extends BaseController
                 
             }
 
-            if($userInfo['name'] == $this->request->getPost('name') && $this->request->getPost('password') == null && $this->request->getPost('re_password') == null){
+            if($userInfo['name'] == $this->request->getPost('name') && $this->request->getPost('password') == null && $this->request->getPost('re_password') == null && empty($this->request->getFile('user_image')) && empty($this->request->getFile('favicon_image'))){
                 return redirect()->back()->with('fail', 'Bạn chưa cập nhật thông tin');
             }
 
@@ -214,12 +239,43 @@ class Auth extends BaseController
             // dd($data);
             $usersModel = new \App\Models\usersModel();
             $usersModel->update($id, $data);
+
+
+            
+
+
             if(!$usersModel){
                 return redirect()->back()->with('fail', 'Some thing went wrong');
             }else{
                 // $last_id = $usersModel->insertID();
                 // session()->set('loggedUser', $last_id);
-                
+                if($img = $this->request->getFile('user_image'))
+                {
+                    if ($img->isValid() && ! $img->hasMoved())
+                    {
+                        // $newName = $img->getRandomName();
+                        $type = $img->getClientMimeType();
+                        $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $user_image);
+         
+                        // You can continue here to write a code to save the name to database
+                        // db_connect() or model format
+                                    
+                    }
+                }
+
+                if($img = $this->request->getFile('favicon_image'))
+                {
+                    if ($img->isValid() && ! $img->hasMoved())
+                    {
+                        // $newName = $img->getRandomName();
+                        $type = $img->getClientMimeType();
+                        $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $favicon_image);
+         
+                        // You can continue here to write a code to save the name to database
+                        // db_connect() or model format
+                                    
+                    }
+                }
                 
                 return redirect()->to('admin/auth/detail')->with('success', 'Đã cập nhật thông tin tài khoản');
 
