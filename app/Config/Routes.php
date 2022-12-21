@@ -68,6 +68,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('detail',"Admin\Auth::getEdit",['as'=>'auth.detail']);
         $routes->post('edit/(:num)',"Admin\Auth::postEdit/$1");
 
+
+
     });
 
     $routes->group("post", function($routes){
@@ -79,6 +81,30 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
         $routes->get('edit/(:num)',"Admin\PostController::getEdit/$1");
         $routes->post('edit/(:num)',"Admin\PostController::SaveEdit/$1");
+
+        $routes->get('show/(:num)',"Admin\PostController::show/$1");
+        $routes->post('show/(:num)',"Admin\PostController::show/$1");
+
+        $routes->get('hidden/(:num)',"Admin\PostController::hidden/$1");
+        $routes->post('hidden/(:num)',"Admin\PostController::hidden/$1");
+
+    });
+
+    $routes->group("page", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\PageController::index");
+
+        $routes->get('create',"Admin\PageController::getPost");
+        $routes->post('save',"Admin\PageController::savePost");
+
+        $routes->get('edit/(:num)',"Admin\PageController::getEdit/$1");
+        $routes->post('edit/(:num)',"Admin\PageController::SaveEdit/$1");
+
+        $routes->get('show/(:num)',"Admin\PageController::show/$1");
+        $routes->post('show/(:num)',"Admin\PageController::show/$1");
+
+        $routes->get('hidden/(:num)',"Admin\PageController::hidden/$1");
+        $routes->post('hidden/(:num)',"Admin\PageController::hidden/$1");
 
     });
 

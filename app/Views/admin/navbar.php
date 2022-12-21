@@ -252,33 +252,21 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
-              Forms
+              Trang <small>(Page)</small>
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
+          <ul class="nav nav-treeview page_tree_active">
             <li class="nav-item">
-              <a href="pages/forms/general.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>General Elements</p>
+              <a href="<?= base_url('admin/page'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="pages/forms/advanced.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Advanced Elements</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/forms/editors.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Editors</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/forms/validation.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Validation</p>
+            <li class="nav-item page_tree_active2">
+              <a href="<?= base_url('admin/page/create'); ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Thêm bài viết</p>
               </a>
             </li>
           </ul>

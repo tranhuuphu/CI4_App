@@ -2,31 +2,28 @@
 
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
-use App\Models\PostModel;
+use App\Models\PageModel;
 use App\Models\CateModel;
 use App\Models\TagModel;
 
 
-class PostController extends BaseController
+class PageController extends BaseController
 {   
     public function __construct(){
         helper(['url', 'form', 'text_helper']);
     }
     public function index(){
-        $postModel = new PostModel();
-        $data['post'] = $postModel->findAll();
+        $pageModel = new PageModel();
+        $data['page'] = $pageModel->findAll();
 
-        $cateModel = new CateModel();
-        $data['cate'] = $cateModel->findAll();
-
-        return view('admin/post/index', $data);
+        return view('admin/page/index', $data);
     }
 
     public function getPost()
     {   
-        $cateModel = new CateModel();
+        $pageModel = new PageModel();
         $data['cate'] = $cateModel->findAll();
-        return view('admin/post/create', $data);
+        return view('admin/page/create', $data);
     }
 
     public function savePost()

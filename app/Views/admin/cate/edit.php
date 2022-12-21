@@ -127,3 +127,12 @@
 
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+  <script type="text/javascript">
+    $(".cate_active").addClass("menu-open");
+    $(".cate_active a:first").addClass("active");
+    $(".cate_active .cate_tree_active a:first").addClass("active");
+  </script>
+
+<?= $this->endSection(); ?>
