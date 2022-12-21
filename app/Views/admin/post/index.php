@@ -44,6 +44,7 @@
 	                    <th>Tiêu đề bài viết</th>
 	                    <th>Danh Mục</th>
 	                    <th>Trạng thái</th>
+                      <th>Ẩn/Hiện bài viết</th>
 	                    <th>Show</th>
 	                    <th>Option</th>
 	                  </tr>
@@ -64,15 +65,22 @@
                           ?>
                         </td>
 
+                        
+
                         <td>
                           <?php if($p['post_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
+                        </td>
+                        
+                        <td>
+                          <a href="<?php if($p['post_show'] == 0){echo base_url('admin/post/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
+                          <a href="<?php if($p['post_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
                             <i class="fas fa-folder-open"></i> Show
                           </button>
 
-
+                          <!-- /.modal -->
                           <div class="modal fade" id="modal-xl<?=$p['id']?>" aria-labelledby="exampleModalScrollableTitle">
                             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                               <div class="modal-content">
@@ -110,7 +118,10 @@
                                         <th scope="row">Tóm Tắt</th>
                                         <td><?= $p['post_intro'] ?></td>
                                       </tr>
-                                      
+                                      <tr>
+                                        <th scope="row">Lượt Xem</th>
+                                        <td><?= $p['post_view'] ?></td>
+                                      </tr>
                                       <tr>
                                         <th scope="row">Ảnh</th>
                                         <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" style="width: 60% " ></td>
@@ -177,7 +188,10 @@
 
 
                         </td>
-		                    <td><a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+		                    <td>
+
+                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   
@@ -188,6 +202,7 @@
                     <th>Tên</th>
                     <th>Danh mục loại</th>
                     <th>Trạng thái</th>
+                    <th>Ẩn/Hiện bài viết</th>
                     <th>Show</th>
                     <th>Option</th>
                   </tr>
@@ -217,6 +232,15 @@
 
   
 
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+  <script type="text/javascript">
+    $(".post_active").addClass("menu-open");
+    $(".post_active a:first").addClass("active");
+    $(".post_active .post_tree_active a:first").addClass("active");
+  </script>
 
 <?= $this->endSection(); ?>
 
