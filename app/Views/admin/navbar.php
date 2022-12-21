@@ -200,7 +200,7 @@
         </li>
         
         
-        <li class="nav-item">
+        <li class="nav-item cate_active">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tree"></i>
             <p>
@@ -208,14 +208,14 @@
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
+          <ul class="nav nav-treeview cate_tree_active">
+            <li class="nav-item cate_tree_active">
               <a href="<?= base_url('admin/cate'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh Sách</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item cate_tree_active2">
               <a href="<?= base_url('admin/cate/create'); ?>" class="nav-link">
                 <i class="fas fa-plus-circle nav-icon"></i>
                 <p>Thêm mới</p>

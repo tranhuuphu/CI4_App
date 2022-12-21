@@ -221,11 +221,4 @@
 <?= $this->endSection(); ?>
 
 
-<?= $this->section('script'); ?>
-  <script type="text/javascript">
-    $(".post_active").addClass("menu-open");
-    $(".post_active a:first").addClass("active");
-    $(".post_active .post_tree_active a:first").addClass("active");
-  </script>
 
-<?= $this->endSection(); ?>

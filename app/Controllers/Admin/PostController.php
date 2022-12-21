@@ -241,7 +241,7 @@ class PostController extends BaseController
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
         $data['post_view']      = $detailPost['post_view'];
-        $data['post_show']      = $detailPost['post_show';
+        $data['post_show']      = $detailPost['post_show'];
 
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
         $data['post_cate_slug']   = $cate_slug['cate_slug'];

@@ -154,6 +154,8 @@ class Auth extends BaseController
 
         $userCheck = new \App\Models\usersModel();
         $userInfo = $userCheck->find($id);
+
+
         
         if($userInfo['name'] != $this->request->getPost('name')){
             session()->setFlashdata('user', 'Bạn đã cập nhật tên mới');
@@ -174,7 +176,7 @@ class Auth extends BaseController
             // echo 'Form validate successfully';
             $data['name']   = $this->request->getPost('name');
             $data['email']  = $this->request->getPost('email');
-            if(!empty($this->request->getFile('user_image'))){
+            if($this->request->getFile('user_image')->guessExtension() != null){
 
                 $img = $this->request->getFile('user_image');
                 $type = $img->guessExtension();
@@ -186,7 +188,7 @@ class Auth extends BaseController
                 $data['user_image'] = $userInfo['user_image'];
             }
 
-            if(!empty($this->request->getFile('favicon_image'))){
+            if($this->request->getFile('favicon_image')->guessExtension() != null){
 
                 $img2 = $this->request->getFile('favicon_image');
                 $type2 = $img2->guessExtension();
@@ -197,7 +199,6 @@ class Auth extends BaseController
             }else{
                 $data['favicon_image'] = $userInfo['favicon_image'];
             }
-            // dd($data);
 
             $password = $this->request->getPost('password');
             if($password != null){
@@ -236,7 +237,7 @@ class Auth extends BaseController
             }
 
             
-            // dd($data);
+            
             $usersModel = new \App\Models\usersModel();
             $usersModel->update($id, $data);
 
@@ -254,7 +255,7 @@ class Auth extends BaseController
                     if ($img->isValid() && ! $img->hasMoved())
                     {
                         // $newName = $img->getRandomName();
-                        $type = $img->getClientMimeType();
+                        // $type = $img->getClientMimeType();
                         $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $user_image);
          
                         // You can continue here to write a code to save the name to database
@@ -263,13 +264,13 @@ class Auth extends BaseController
                     }
                 }
 
-                if($img = $this->request->getFile('favicon_image'))
+                if($img2 = $this->request->getFile('favicon_image'))
                 {
-                    if ($img->isValid() && ! $img->hasMoved())
+                    if ($img2->isValid() && ! $img2->hasMoved())
                     {
                         // $newName = $img->getRandomName();
-                        $type = $img->getClientMimeType();
-                        $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $favicon_image);
+                        // $type = $img2->getClientMimeType();
+                        $img2->move(ROOTPATH . 'public/upload/tinymce/image_asset', $favicon_image);
          
                         // You can continue here to write a code to save the name to database
                         // db_connect() or model format
