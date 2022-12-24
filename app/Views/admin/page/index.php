@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/page/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
               </div>
 
               <!-- /.card-header -->
@@ -41,11 +41,11 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
 	                  <tr>
-	                    <th>Tiêu đề bài viết</th>
+                      <th>Tên Trang (Url)</th>
+	                    <th>Tiêu đề Trang</th>
 	                    <th>Danh Mục</th>
 	                    <th>Trạng thái</th>
                       <th>Ẩn/Hiện bài viết</th>
-	                    <th>Show</th>
 	                    <th>Option</th>
 	                  </tr>
                   </thead>
@@ -54,27 +54,20 @@
                         
                       
 		                  <tr>
+                        <td><?= $p['page_name']; ?></td>
 		                    <td><?= $p['page_title']; ?></td>
-		                    <td>
-                          <?php 
-                            foreach ($cate as $c) {
-                              if($c['id'] == $p['page_cate_id']){
-                                echo $c['cate_name'];
-                              }
-                            } 
-                          ?>
-                        </td>
+		                    
 
                         
 
                         <td>
-                          <?php if($p['page_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
+                          <?php if($p['page_status'] == 1){echo "<span class='text-bold'>Trang Chủ</span>"; }else{echo "Trang thường"; } ?>
                           <p class="text-bold text-red"><?php if($p['page_show'] == 0){echo "Đang Ẩn";} ?></p>
                         </td>
                         
                         <td>
-                          <a href="<?php if($p['page_show'] == 0){echo base_url('admin/post/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
-                          <a href="<?php if($p['page_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
+                          <a href="<?php if($p['page_show'] == 0){echo base_url('admin/page/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
+                          <a href="<?php if($p['page_show'] == 1){echo base_url('admin/page/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
@@ -103,21 +96,29 @@
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <th scope="row">Danh Mục</th>
+                                        <th scope="row">Tên Trang</th>
                                         <td>
-                                          <?php 
-                                            foreach ($cate as $c) {
-                                              if($c['id'] == $p['page_cate_id']){
-                                                echo $c['cate_name'];
-                                              }
-                                            } 
-                                          ?>
+                                          <?= $p['page_name'] ?>
                                         </td>
                                       </tr>
 
                                       <tr>
-                                        <th scope="row">Tóm Tắt</th>
-                                        <td><?= $p['page_intro'] ?></td>
+                                        <th scope="row">Tiêu Đề</th>
+                                        <td><?= $p['page_title'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Là Trang Chủ?</th>
+                                        <td>
+                                          <?php 
+                                            
+                                            if($p['page_status'] == 1){
+                                              echo "Trang Chủ";
+                                            }else{
+                                              echo "Trang thường";
+                                            }
+                                            
+                                          ?>
+                                        </td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Lượt Xem</th>
@@ -127,34 +128,8 @@
                                         <th scope="row">Ảnh</th>
                                         <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['page_image'] ?>" style="width: 60% " ></td>
                                       </tr>
-                                      <tr>
-                                        <th scope="row">Loại bài viết</th>
-                                        <td>
-                                          <?php 
-                                            
-                                            if($p['page_featured'] == 1){
-                                              echo "bài viết nổi bật";
-                                            }else{
-                                              echo "bài viết thường";
-                                            }
-                                            
-                                          ?>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">Bài viết bán hàng</th>
-                                        <td>
-                                          <?php 
-                                            
-                                            if($p['page_status'] == 1){
-                                              echo "bài viết bán hàng";
-                                            }else{
-                                              echo "bài viết thường";
-                                            }
-                                            
-                                          ?>
-                                        </td>
-                                      </tr>
+                                      
+                                      
                                       <tr>
                                         <th scope="row">Nội dung</th>
                                         <td><?php echo $p['page_content'] ?></td>
@@ -177,7 +152,7 @@
                                 </div>
                                 <div class="modal-footer justify-content-between">
                                   <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-                                  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" style="color: #000000;">Edit Post</a></button>
+                                  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> <a href="<?= base_url('admin/page/edit/'.$p['id']) ?>" style="color: #000000;">Edit Page</a></button>
                                 </div>
                               </div>
                               <!-- /.modal-content -->
@@ -191,8 +166,8 @@
                         </td>
 		                    <td>
 
-                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/page/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="<?= base_url('admin/page/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   
@@ -200,12 +175,12 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Tên</th>
-                    <th>Danh mục loại</th>
+                    <th>Tên Trang (Url)</th>
+                    <th>Tiêu đề Trang</th>
+                    <th>Danh Mục</th>
                     <th>Trạng thái</th>
                     <th>Ẩn/Hiện bài viết</th>
                     <th>Show</th>
-                    <th>Option</th>
                   </tr>
                   </tfoot>
                 </table>

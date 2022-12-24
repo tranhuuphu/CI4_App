@@ -32,7 +32,7 @@
 	            <!-- general form elements -->
 	            <div class="card card-primary">
 	              <div class="card-header">
-	                <h3 class="card-title">Nội dung chính trang</h3>
+	                <h3 class="card-title">Nội dung chính Trang</h3>
 	              </div>
 	              <!-- /.card-header -->
 	              <!-- form start -->
@@ -102,7 +102,7 @@
                   <hr>
 
 	                <div class="form-group clearfix">
-                    <label>Là Trang Chính</label>
+                    <label><abbr title="Toàn bộ thông tin trừ trang này sẽ hiển thị lên trang chủ, nội dung sẽ có vị trị footer, thẻ tiêu đề là tiêu đề website, cũng như các thẻ SEO">Là Trang Chính</abbr></label>
                     <br>
                     <div class="icheck-primary d-inline pr-3">
                       <input type="radio" id="radioPrimary1" name="page_status" name="r1" value="1">
@@ -123,8 +123,6 @@
 	              <!-- /.card-body -->
 	            </div>
 	            <!-- /.card -->
-
-	            
 
 	            
 	          </div>
@@ -175,7 +173,7 @@
 	        		<div class="card card-success">
 	        			<div class="card-footer">
                   <button type="submit" class="btn btn-info">Save Post</button>
-	                  <button type="submit" class="btn btn-default float-right">Cancel</button>
+	                  <button type="submit" class="btn btn-default float-right"><a href="<?= base_url('admin/page/'); ?>">Cancel</a></button>
                 </div>
 	        		</div>
 	        	</div>
@@ -195,9 +193,9 @@
 
 <?= $this->section('script'); ?>
   <<script type="text/javascript">
-    $(".post_active").addClass("menu-open");
-    $(".post_active a:first").addClass("active");
-    $(".post_active .post_tree_active2 a:first").addClass("active");
+    $(".page_active").addClass("menu-open");
+    $(".page_active a:first").addClass("active");
+    $(".page_active .page_tree_active2 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

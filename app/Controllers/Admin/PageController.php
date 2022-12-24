@@ -15,7 +15,6 @@ class PageController extends BaseController
     public function index(){
         $pageModel = new PageModel();
         $data['page'] = $pageModel->findAll();
-
         return view('admin/page/index', $data);
     }
 
@@ -30,6 +29,25 @@ class PageController extends BaseController
     {
         // $this->validate();
         $pageModel = new PageModel();
+
+        $pageHome = $pageModel->where('page_status', 1)->first();
+        // dd($check);
+        if($this->request->getPost('page_status') == 1 && $pageHome != null){
+            $data['page_status'] = 1;
+            $data2['page_slug']         = $pageHome['page_slug'];
+            $data2['page_name']         = $pageHome['page_name'];
+            $data2['page_title']        = $pageHome['page_title'];
+            $data2['page_image']        = $pageHome['page_image'];
+            $data2['page_status']       = 0;
+            $data2['page_content']      = $pageHome['page_content'];
+            $data2['page_view']         = $pageHome['page_view'];
+            $data2['page_show']         = $pageHome['page_show'];;
+            $data2['page_meta_desc']    = $pageHome['page_meta_desc'];
+            $data2['page_meta_key']     = $pageHome['page_meta_key'];
+            $pageModel->update($pageHome['id'], $data2);
+        }else{
+            $data['page_status']    = $this->request->getPost('page_status');
+        }
 
         $validation = $this->validate([
 
@@ -47,7 +65,6 @@ class PageController extends BaseController
                     'required' => 'Tiêu đề không được để trống.',
                     'is_unique' => 'Tiêu đề trùng với bài viết khác.',
                 ],
-
             ],
             'page_content'=>[
                 'rules'=>'required',
@@ -131,36 +148,46 @@ class PageController extends BaseController
     }
 
     public function getEdit($id){
-        $pageModel = new PostModel();
+        $pageModel = new PageModel();
 
-        $data['page'] = $pageModel->findAll();
+        $data['pageDetail'] = $pageModel->find($id);
         // dd($data['tagModel']);
-        return view('admin/page/editPost', $data);
+        return view('admin/page/editPage', $data);
     }
 
 
     public function SaveEdit($id)
     {
-        // $this->validate();
-        // dd($id);
-        $postModel = new PostModel();
-        $cateModel = new CateModel();
-        $tagModel = new TagModel();
+        $pageModel = new PageModel();
+        $check = $pageModel->find($id);
 
-        $data['cate'] = $cateModel->findAll();
-        $tagList = $tagModel->where('tag_page_id', $id)->get()->getResultArray();
-        // dd($tagList);
-        $data['tagModel'] = $tagModel->where('tag_page_id', $id)->get()->getResultArray();
-        $detailPost = $postModel->find($id);
-        $page_title = $this->request->getPost('page_title');
-        $data['postDetail'] = $detailPost;
+        if($check['page_status'] == 1){
+            $data['page_status'] = 1;
+        }elseif($check['page_status'] != 1 && $this->request->getPost('page_status') == 1){
+            $data['page_status'] = 1;
+            $pageHome = $pageModel->where('page_status', 1)->first();
+            $data2['page_slug']         = $pageHome['page_slug'];
+            $data2['page_name']         = $pageHome['page_name'];
+            $data2['page_title']        = $pageHome['page_title'];
+            $data2['page_image']        = $pageHome['page_image'];
+            $data2['page_status']       = 0;
+            $data2['page_content']      = $pageHome['page_content'];
+            $data2['page_view']         = $pageHome['page_view'];
+            $data2['page_show']         = $pageHome['page_show'];;
+            $data2['page_meta_desc']    = $pageHome['page_meta_desc'];
+            $data2['page_meta_key']     = $pageHome['page_meta_key'];
+            $pageModel->update($pageHome['id'], $data2);
+        }else{
+            $data['page_status']    = $this->request->getPost('page_status');
+        }
 
-        if($detailPost['page_title'] == $page_title){
-            $data['page_title'] = $page_title;
+        $page_name = $this->request->getPost('page_name');
+        if($check['page_name'] == $page_name){
+            $data['page_name'] = $page_name;
 
-        }elseif($detailPost['page_title'] != $page_title){
+        }elseif($check['page_name'] != $page_name){
             $validation = $this->validate([
-                'page_title'=>[
+                'page_name'=>[
                     'rules'=>'required|is_unique[post.page_title]',
                     'errors' => [
                         'required' => 'Tiêu đề không được để trống.',
@@ -169,7 +196,7 @@ class PageController extends BaseController
                 ],
             ]);
             if(!$validation){
-                return view('admin/post/editPost', ['validation'=>$this->validator]);
+                return view('admin/page/editPage', ['validation'=>$this->validator]);
             }
         }
         $validation = $this->validate([
@@ -192,75 +219,33 @@ class PageController extends BaseController
                 ],
             ],
         ]);
+        $data['pageDetail'] = $check;
         if(!$validation){
             $data['validation'] = $this->validator;
-            return view('admin/post/editPost', $data);
+            return view('admin/page/editPage', $data);
         }
-        $page_title_slug = convert_name($page_title);
-        $page_cate_id           = $this->request->getPost('page_cate_id');
-        $data['page_slug']      = $page_title_slug;
-        $data['page_intro']     = $this->request->getPost('page_intro');
+
+        $page_slug = mb_strtolower(convert_name($page_name));
+
+        $data['page_title']     = $this->request->getPost('page_title');
+        $data['page_slug']      = $page_slug;
         $data['page_content']   = $this->request->getPost('page_content');
-        $data['page_cate_id']   = $page_cate_id;
-        $data['page_featured']  = $this->request->getPost('page_featured');
-        $data['page_price']     = $this->request->getPost('page_price');
-        $data['page_sale']      = $this->request->getPost('page_sale');
-        $data['page_status']    = $this->request->getPost('page_status');
         $data['page_meta_desc'] = $this->request->getPost('page_meta_desc');
         $data['page_meta_key']  = $this->request->getPost('page_meta_key');
-        $data['page_view']      = $detailPost['page_view'];
-        $data['page_show']      = $detailPost['page_show'];
+        $data['page_view']      = $check['page_view'];
+        $data['page_show']      = $check['page_show'];
 
-        $cate_slug = $cateModel->where('id', $page_cate_id)->first();
-        $data['page_cate_slug']   = $cate_slug['cate_slug'];
+        // dd($data);
+
         
-        
-        if(!empty($this->request->getFile('page_image'))){
+        $img = $this->request->getFile('page_image');
 
-            $img = $this->request->getFile('page_image');
-            $type = $img->guessExtension();
-            
-            $page_title_slug2 = $page_title_slug.'-'.random_string('alnum', 16).'.'.$type;
-
-            $data['page_image']       = $page_title_slug2;
-        }else{
-            $data['page_image'] = $detailPost['page_image'];
-        }
-        
+        $type = $img->guessExtension();
+        $image_name = $page_slug.'-'.random_string('alnum', 16).'.'.$type;
+        $data['page_image']       = $image_name;
 
 
-        $postModel->update($id, $data);
-
-
-        $page_tag = $this->request->getPost('taginput');
-        $page_tag = json_decode($page_tag, true);
-        
-        $tagId = $tagModel->where('tag_page_id', $id)->first();
-
-
-        if($postModel){
-            
-            if($page_tag != null){
-
-                $tagModel->where('tag_page_id', $id)->delete();
-                $page_tag = json_decode($page_tag, true);
-
-                foreach($page_tag as $t_a){
-                    $ta[] = $t_a['value'];
-                }
-
-                if($postModel){
-                    if($page_tag != null){
-                        foreach($ta as $t_a){
-                            $tagModel->insert(
-                                ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_page_id' => $id, 'tag_page_title' => $t_a, 'tag_page_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1, 'tag_view' => 0],
-                            );
-                        }
-                    }
-                }
-                
-            }
-        }
+        $pageModel->update($id, $data);
 
         if($img = $this->request->getFile('page_image'))
         {
@@ -268,16 +253,15 @@ class PageController extends BaseController
             {
                 // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $page_title_slug2);
+                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $image_name);
  
                 // You can continue here to write a code to save the name to database
                 // db_connect() or model format
                             
             }
         }
-    
-
-        return redirect()->to('admin/post');
+        return redirect()->to('admin/page')->with('success', 'Chỉnh sửa thành công bài viết: '.$data['page_title'] );
+        
     }
 
 

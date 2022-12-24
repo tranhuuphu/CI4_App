@@ -45,3 +45,140 @@ in APPPATH\Views\admin\page\index.php on line 60.
  7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
  8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:42:10 --> Undefined variable $cate
+in APPPATH\Views\admin\page\index.php on line 103.
+ 1 APPPATH\Views\admin\page\index.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\page\\index.php', 103)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\page\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/index', [], true)
+ 5 APPPATH\Controllers\Admin\PageController.php(19): view('admin/page/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:44:53 --> Undefined array key "page_intro"
+in APPPATH\Views\admin\page\index.php on line 108.
+ 1 APPPATH\Views\admin\page\index.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "page_intro"', 'APPPATH\\Views\\admin\\page\\index.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\page\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/index', [], true)
+ 5 APPPATH\Controllers\Admin\PageController.php(19): view('admin/page/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:45:32 --> Undefined array key "page_featured"
+in APPPATH\Views\admin\page\index.php on line 123.
+ 1 APPPATH\Views\admin\page\index.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "page_featured"', 'APPPATH\\Views\\admin\\page\\index.php', 123)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\page\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/index', [], true)
+ 5 APPPATH\Controllers\Admin\PageController.php(19): view('admin/page/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:48:32 --> Class "App\Controllers\Admin\PostModel" not found
+in APPPATH\Controllers\Admin\PageController.php on line 134.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->getEdit('0')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:52:29 --> Class "App\Controllers\Admin\PostModel" not found
+in APPPATH\Controllers\Admin\PageController.php on line 134.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->getEdit('0')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:52:57 --> Invalid file: admin/page/editPost.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/page/editPost.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/editPost', [], true)
+ 3 APPPATH\Controllers\Admin\PageController.php(138): view('admin/page/editPost', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->getEdit('0')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:53:11 --> Undefined variable $pageDetail
+in APPPATH\Views\admin\page\editPage.php on line 25.
+ 1 APPPATH\Views\admin\page\editPage.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pageDetail', 'APPPATH\\Views\\admin\\page\\editPage.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\page\\editPage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/editPage', [], true)
+ 5 APPPATH\Controllers\Admin\PageController.php(138): view('admin/page/editPage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->getEdit('0')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 07:53:49 --> Undefined variable $postDetail
+in APPPATH\Views\admin\page\editPage.php on line 43.
+ 1 APPPATH\Views\admin\page\editPage.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\page\\editPage.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\page\\editPage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/editPage', [], true)
+ 5 APPPATH\Controllers\Admin\PageController.php(138): view('admin/page/editPage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->getEdit('0')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-24 12:06:05 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pa...', 0)
+#1 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 D:\Dev\xampp\htdocs\CI4_App\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Dev\xampp\htdocs\CI4_App\system\BaseModel.php(749): CodeIgniter\Model->doInsert(Array)
+#6 D:\Dev\xampp\htdocs\CI4_App\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\Dev\xampp\htdocs\CI4_App\app\Controllers\Admin\PageController.php(115): CodeIgniter\Model->insert(Array)
+#8 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\Admin\PageController->savePage()
+#9 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+#10 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Dev\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-24 12:06:05 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `page` (`page_name`, `page_title`, `page_slug`, `page_content`, `page_status`, `page_meta_desc`, `page_meta_key`, `page_view`, `page_show`, `page_image`, `created_at`, `updated_at`) VALUES (\'About Us\', \'Giới thiệu về chúng tôi\', \'about-us\', \'<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>\', \'0\', \'gioi thieu ve chung toi\', \'gioi thieu, chung toi, hướng dẫn\', 0, 1, \'about-us-2MNRpjb1fOKkgCta.jpg\', \'2022-12-24 12:06:05\', \'2022-12-24 12:06:05\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `page` (`page_name`, `page_title`, `page_slug`, `page_content`, `page_status`, `page_meta_desc`, `page_meta_key`, `page_view`, `page_show`, `page_image`, `created_at`, `updated_at`) VALUES (\'About Us\', \'Giới thiệu về chúng tôi\', \'about-us\', \'<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>\', \'0\', \'gioi thieu ve chung toi\', \'gioi thieu, chung toi, hướng dẫn\', 0, 1, \'about-us-2MNRpjb1fOKkgCta.jpg\', \'2022-12-24 12:06:05\', \'2022-12-24 12:06:05\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `page` (`page_name`, `page_title`, `page_slug`, `page_content`, `page_status`, `page_meta_desc`, `page_meta_key`, `page_view`, `page_show`, `page_image`, `created_at`, `updated_at`) VALUES (\'About Us\', \'Giới thiệu về chúng tôi\', \'about-us\', \'<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>\', \'0\', \'gioi thieu ve chung toi\', \'gioi thieu, chung toi, hướng dẫn\', 0, 1, \'about-us-2MNRpjb1fOKkgCta.jpg\', \'2022-12-24 12:06:05\', \'2022-12-24 12:06:05\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `page` (`page_name`, `page_title`, `page_slug`, `page_content`, `page_status`, `page_meta_desc`, `page_meta_key`, `page_view`, `page_show`, `page_image`, `created_at`, `updated_at`) VALUES (:page_name:, :page_title:, :page_slug:, :page_content:, :page_status:, :page_meta_desc:, :page_meta_key:, :page_view:, :page_show:, :page_image:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(749): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Admin\PageController.php(115): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->savePage()
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 12:08:18 --> Class "App\Controllers\Admin\PostModel" not found
+in APPPATH\Controllers\Admin\PageController.php on line 146.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->SaveEdit('2')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 12:27:19 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::first()
+in APPPATH\Controllers\Admin\PageController.php on line 148.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->SaveEdit('2')
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 12:47:05 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::first()
+in APPPATH\Controllers\Admin\PageController.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->savePage()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 12:49:41 --> Call to undefined method App\Models\PageModel::getFirstRow
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Admin\PageController.php(33): CodeIgniter\Model->__call('getFirstRow', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->savePage()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 12:49:49 --> Call to undefined method App\Models\PageModel::getRow
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Admin\PageController.php(33): CodeIgniter\Model->__call('getRow', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->savePage()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
