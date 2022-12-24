@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 06:32 AM
+-- Generation Time: Dec 24, 2022 at 07:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -115,14 +115,15 @@ CREATE TABLE `image_tinycme` (
 
 CREATE TABLE `page` (
   `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `page_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `page_image_status` int(2) DEFAULT NULL,
   `page_status` int(11) NOT NULL,
   `page_content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_view` int(10) DEFAULT NULL,
+  `page_show` int(3) DEFAULT NULL,
   `facebook` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `youtube` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `twitter` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -131,12 +132,21 @@ CREATE TABLE `page` (
   `f_app` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `g_app` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `google_image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_image_maps` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `page_meta_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_meta_desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `page`
+--
+
+INSERT INTO `page` (`id`, `user_id`, `page_name`, `page_slug`, `page_title`, `page_image`, `page_status`, `page_content`, `page_view`, `page_show`, `facebook`, `youtube`, `twitter`, `pinterest`, `maps`, `f_app`, `g_app`, `phone`, `google_image_maps`, `page_meta_key`, `page_meta_desc`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Trang Chủ', 'trang-chu', 'Trang Chủ Công Ty Đại Long', 'trang-chu-0oKds8QMBNptjXFk.jpg', 0, '<p>Noi dung</p>', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'page chủ k', 'page chủ d', '2022-12-23 23:13:14', '2022-12-24 05:43:09'),
+(2, NULL, 'About Us', 'about-us', 'Giới thiệu về chúng tôi', 'about-us-ybnDzwcLfMJsjV0W.', 0, '<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gioi thieu, chung toi, hướng dẫn', 'gioi thieu ve chung toi', '2022-12-24 05:06:50', '2022-12-24 05:55:17'),
+(3, NULL, 'ád', 'ad', 'aef', 'ad-I6wDjU3ElmPK2oST.jpg', 1, '<p>&agrave;</p>', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ádwe', 'á', '2022-12-24 05:55:46', '2022-12-24 05:55:46');
 
 -- --------------------------------------------------------
 
@@ -186,7 +196,7 @@ CREATE TABLE `post` (
   `post_price` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `post_sale` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `post_view` int(10) NOT NULL,
-  `post_show` int(2) DEFAULT NULL,
+  `post_show` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
   `post_meta_desc` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `post_meta_key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -207,12 +217,12 @@ INSERT INTO `post` (`id`, `post_cate_id`, `post_cate_slug`, `post_title`, `post_
 (25, 8, 'dich-vu-du-lich', 'Bài viết có ảnh 444 555', 'Bai-viet-co-anh-444-555', 'Bài viết có ảnh', 'Bai-viet-co-anh-444-555-Y8qHKyJTUzS1rgpl.jpg', '', 0, '<p>B&agrave;i viết c&oacute; ảnhB&agrave;i viết c&oacute; ảnh</p>', '', '', 0, NULL, 'Bài viết có ảnhBài viết có ảnhBài viết có ảnh', 'Bài viết có ảnh', '2022-12-15 03:43:12', '2022-12-16 06:07:42', NULL),
 (26, 14, 'blog-222', 'Bài viết có ảnh 2', 'Bai-viet-co-anh-2', 'Bài viết có ảnh i', 'Bai-viet-co-anh-2.jpg', '', 0, '<p>B&agrave;i viết c&oacute; ảnh 22</p>', NULL, NULL, 0, NULL, 'Bài viết có ảnh d', 'Bài viết có ảnh k', '2022-12-15 03:45:00', '2022-12-15 03:45:00', NULL),
 (27, 8, 'dich-vu-du-lich', 'Bài viết có ảnh 3', 'Bai-viet-co-anh-3', 'Bài viết có ảnh i', 'Bai-viet-co-anh-3.jpg', '', 0, '<p>B&agrave;i viết c&oacute; ảnh <img src=\"http://localhost/CI4_App/public/upload/tinymce/Giay%20in%20h%C3%B3a%20%C4%91%C6%A1n%20carbonless.jpg\" alt=\"Giay in h&oacute;a đơn carbonless\" width=\"100%\" height=\"100%\" />&nbsp;</p>', NULL, NULL, 0, NULL, '100% 100% d', '100% lk', '2022-12-15 03:46:03', '2022-12-15 03:46:03', NULL),
-(28, 1, 'dich-vu-van-tai', 'bai viet show last id insert', 'bai-viet-show-last-id-insert', 'bai viet show last id insert bai viet show last id insert', 'bai-viet-show-last-id-insert.jpg', 'normal', 0, '<p>bai viet show last id insert bai viet show last id insert</p>', '', '', 0, NULL, 'bai viet show last id insert', 'bai viet show last id insert', '2022-12-17 02:25:27', '2022-12-17 02:25:27', NULL),
+(28, 1, 'dich-vu-van-tai', 'bai viet show last id insert', 'bai-viet-show-last-id-insert', 'bai viet show last id insert bai viet show last id insert', 'bai-viet-show-last-id-insert.jpg', 'normal', 0, '<p>bai viet show last id insert bai viet show last id insert</p>', '', '', 0, '0', 'bai viet show last id insert', 'bai viet show last id insert', '2022-12-17 02:25:27', '2022-12-21 03:09:51', NULL),
 (33, 8, 'dich-vu-du-lich', 'bài này có tag', 'bai-nay-co-tag', 'bài này có tag ', 'bai-nay-co-tag-YmNQhvXqbsc56BFW.', 'normal', 0, '<p>b&agrave;i n&agrave;y c&oacute; tag b&agrave;i n&agrave;y c&oacute; tag</p>', '', '', 0, NULL, 'bài này có tag  dssda', 'bài này có tag dưe', '2022-12-17 03:33:43', '2022-12-19 15:34:54', NULL),
-(34, 1, 'dich-vu-van-tai', 'bài viết mới có tag 22', 'bai-viet-moi-co-tag-22', 'bài viết mới có tag 22', 'bai-viet-moi-co-tag-22.jpg', 'normal', 0, '<p>b&agrave;i viết mới c&oacute; tag 22</p>', '', '', 0, NULL, 'bài viết mới có tag 22', 'bài viết mới có tag 22', '2022-12-17 03:37:55', '2022-12-17 03:37:55', NULL),
+(34, 1, 'dich-vu-van-tai', 'bài viết mới có tag 22', 'bai-viet-moi-co-tag-22', 'bài viết mới có tag 22', 'bai-viet-moi-co-tag-22.jpg', 'normal', 0, '<p>b&agrave;i viết mới c&oacute; tag 22</p>', '', '', 0, '1', 'bài viết mới có tag 22', 'bài viết mới có tag 22', '2022-12-17 03:37:55', '2022-12-21 03:13:31', NULL),
 (35, 14, 'blog-222', 'bai viets success', 'bai-viets-success', 'bai viets success', 'bai-viets-success.jpg', 'normal', 0, '<p>bai viets success</p>', '', '', 0, NULL, 'bai viets success', 'bai viets success', '2022-12-17 03:41:59', '2022-12-17 03:41:59', NULL),
 (36, 1, 'dich-vu-van-tai', 'test alert', 'test-alert', 'test alert', 'test-alert.jpg', 'normal', 0, '<p>test alert</p>', '', '', 0, NULL, 'test alert', 'test alert', '2022-12-17 03:52:07', '2022-12-17 03:52:07', NULL),
-(37, 14, 'blog-222', 'bài này có tag thay doi', 'bai-viet-co-id-la-37-va-tag-thay-doi', 'bài này có tag ', 'bai-viet-co-id-la-37-va-tag-thay-doi-ajV9nXAuWwo1fEqi.png', 'normal', 0, '<p>b&agrave;i n&agrave;y c&oacute; tag thay doi</p>', '', '', 0, NULL, 'bài này có tag  dssda', 'bài này có tag dưe', '2022-12-17 23:26:52', '2022-12-17 23:33:18', NULL);
+(37, 14, 'blog-222', 'bài này có tag thay doi', 'bai-viet-co-id-la-37-va-tag-thay-doi', 'bài này có tag ', 'bai-viet-co-id-la-37-va-tag-thay-doi-ajV9nXAuWwo1fEqi.png', 'normal', 0, '<p>b&agrave;i n&agrave;y c&oacute; tag thay doi</p>', '', '', 0, '1', 'bài này có tag  dssda', 'bài này có tag dưe', '2022-12-17 23:26:52', '2022-12-21 03:13:37', NULL);
 
 -- --------------------------------------------------------
 
@@ -382,6 +392,12 @@ ALTER TABLE `home_page_info`
 --
 ALTER TABLE `image_tinycme`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `page`
+--
+ALTER TABLE `page`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `permissions`
