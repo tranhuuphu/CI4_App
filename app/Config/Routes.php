@@ -94,8 +94,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         //home in get == home in as
         $routes->get('/',"Admin\PageController::index");
 
-        $routes->get('create',"Admin\PageController::getPost");
-        $routes->post('save',"Admin\PageController::savePost");
+        $routes->get('create',"Admin\PageController::getPage");
+        $routes->post('save',"Admin\PageController::savePage");
 
         $routes->get('edit/(:num)',"Admin\PageController::getEdit/$1");
         $routes->post('edit/(:num)',"Admin\PageController::SaveEdit/$1");

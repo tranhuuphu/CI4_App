@@ -50,15 +50,15 @@
 	                  </tr>
                   </thead>
                   <tbody>
-                  	<?php foreach($post as $p): ?>
+                  	<?php foreach($page as $p): ?>
                         
                       
 		                  <tr>
-		                    <td><?= $p['post_title']; ?></td>
+		                    <td><?= $p['page_title']; ?></td>
 		                    <td>
                           <?php 
                             foreach ($cate as $c) {
-                              if($c['id'] == $p['post_cate_id']){
+                              if($c['id'] == $p['page_cate_id']){
                                 echo $c['cate_name'];
                               }
                             } 
@@ -68,13 +68,13 @@
                         
 
                         <td>
-                          <?php if($p['post_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
-                          <p class="text-bold text-red"><?php if($p['post_show'] == 0){echo "Đang Ẩn";} ?></p>
+                          <?php if($p['page_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
+                          <p class="text-bold text-red"><?php if($p['page_show'] == 0){echo "Đang Ẩn";} ?></p>
                         </td>
                         
                         <td>
-                          <a href="<?php if($p['post_show'] == 0){echo base_url('admin/post/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
-                          <a href="<?php if($p['post_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
+                          <a href="<?php if($p['page_show'] == 0){echo base_url('admin/post/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
+                          <a href="<?php if($p['page_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
@@ -86,7 +86,7 @@
                             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h4 class="modal-title text-bold"><?= $p['post_title']; ?></h4>
+                                  <h4 class="modal-title text-bold"><?= $p['page_title']; ?></h4>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -107,7 +107,7 @@
                                         <td>
                                           <?php 
                                             foreach ($cate as $c) {
-                                              if($c['id'] == $p['post_cate_id']){
+                                              if($c['id'] == $p['page_cate_id']){
                                                 echo $c['cate_name'];
                                               }
                                             } 
@@ -117,22 +117,22 @@
 
                                       <tr>
                                         <th scope="row">Tóm Tắt</th>
-                                        <td><?= $p['post_intro'] ?></td>
+                                        <td><?= $p['page_intro'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Lượt Xem</th>
-                                        <td><?= $p['post_view'] ?></td>
+                                        <td><?= $p['page_view'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Ảnh</th>
-                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" style="width: 60% " ></td>
+                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['page_image'] ?>" style="width: 60% " ></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Loại bài viết</th>
                                         <td>
                                           <?php 
                                             
-                                            if($p['post_featured'] == 1){
+                                            if($p['page_featured'] == 1){
                                               echo "bài viết nổi bật";
                                             }else{
                                               echo "bài viết thường";
@@ -146,7 +146,7 @@
                                         <td>
                                           <?php 
                                             
-                                            if($p['post_status'] == 1){
+                                            if($p['page_status'] == 1){
                                               echo "bài viết bán hàng";
                                             }else{
                                               echo "bài viết thường";
@@ -157,15 +157,15 @@
                                       </tr>
                                       <tr>
                                         <th scope="row">Nội dung</th>
-                                        <td><?php echo $p['post_content'] ?></td>
+                                        <td><?php echo $p['page_content'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Meta Desc</th>
-                                        <td><?= $p['post_meta_desc'] ?></td>
+                                        <td><?= $p['page_meta_desc'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Meta Key</th>
-                                        <td><?= $p['post_meta_key'] ?></td>
+                                        <td><?= $p['page_meta_key'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Ngày viết bài</th>
@@ -238,9 +238,9 @@
 
 <?= $this->section('script'); ?>
   <script type="text/javascript">
-    $(".post_active").addClass("menu-open");
-    $(".post_active a:first").addClass("active");
-    $(".post_active .post_tree_active a:first").addClass("active");
+    $(".page_active").addClass("menu-open");
+    $(".page_active a:first").addClass("active");
+    $(".page_active .page_tree_active a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

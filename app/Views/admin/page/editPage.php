@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      	<form action="<?= base_url('admin/post/edit/'.$postDetail['id']); ?>" method="post" enctype="multipart/form-data">
+      	<form action="<?= base_url('admin/page/edit/'.$pageDetail['id']); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
 	          <!-- left column -->
