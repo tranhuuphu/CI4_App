@@ -24,46 +24,77 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header card-danger">
-              <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/cate/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
+
+              <h3 class="card-title text-bold">All Image <span class="badge badge-light"><?php echo count($img)+count($img2); ?> ảnh</span><span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/compress') ?>" class="btn btn-primary ml-3"><i class="fas fa-compress-alt"></i> Compress All</a></h3>
+
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example2" class="table table-bordered table-hover table-sm">
+              <table id="example2" class="table table-bordered table-hover table-md" style="width:100%">
                 <thead class="thead-dark">
                   <tr>
                     <th>Ảnh</th>
-                    <th>Trạng Thái</th>
+                    <th>Name Image</th>
+                    <th>Dung Lượng</th>
                     <th>Thư Mục Chứa</th>
                   </tr>
                 </thead>
                 <tbody>
-                	<?php foreach($img as $imgMCE): ?>
-	                	<tr>
-	                		<td>
-	                        <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/').'/'.$imgMCE ?>" height="60"></div>
-	                    </td>
-	                    <td>
-	                        Chưa nén
-	                    </td>
-	                    <td>
-	                        <i class="fas fa-folder"></i> TinyMce
-	                    </td>
-	                	</tr>
-	                <?php endforeach; ?>
+                	
 
-	                <?php foreach($img2 as $imgMCE2): ?>
-	                	<tr>
-	                		<td>
-	                        <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$imgMCE2 ?>" height="60"></div>
-	                    </td>
-	                    <td>
-	                        Chưa nén
-	                    </td>
-	                    <td>
-	                        <i class="fas fa-folder"></i> Site Asset
-	                    </td>
-	                	</tr>
-	                <?php endforeach; ?>
+                  <?php $count = count($img); ?>
+                    
+                  
+                  <?php for ($row = 0; $row < $count; $row++): ?>
+                    
+                      <tr>
+                        <td>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60"></div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center"><?= $img[$row][0] ?></div>
+                        </td>
+                        <td>
+                            <?php
+                              echo floor($img[$row][1]/1024).' Kb';
+                            ?>
+                        </td>
+                        <td>
+                            <i class="fas fa-folder"></i> TinyMce
+                        </td>
+                      </tr>
+                    
+                  <?php endfor; ?>
+
+
+                  <?php $count2 = count($img2); ?>
+                    
+                  
+                  <?php for ($row = 0; $row < $count2; $row++): ?>
+                    
+                      <tr>
+                        <td>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60"></div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center"><?= $img2[$row][0] ?></div>
+                        </td>
+                        <td>
+                            <?php
+                              echo floor($img2[$row][1]/1024).' Kb';
+                              if($img2[$row][1]/1024 > 1024){
+                                echo "<p class='text-bold'>".number_format($img2[$row][1]/1048576, 2).' Mb'.'</p>';
+                              }
+                            ?>
+                        </td>
+                        <td>
+                            <i class="fas fa-folder"></i> Image Asset
+                        </td>
+                      </tr>
+                    
+                  <?php endfor; ?>
+
+	                
                 	
                 
                 
@@ -71,7 +102,8 @@
                 <tfoot>
                 <tr>
                   <th>Ảnh</th>
-                  <th>Trạng Thái</th>
+                  <th>Name Image</th>
+                  <th>Dung Lượng</th>
                   <th>Thư Mục Chứa</th>
                 </tr>
                 </tfoot>

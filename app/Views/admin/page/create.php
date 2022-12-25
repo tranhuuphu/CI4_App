@@ -192,7 +192,7 @@
 
 
 <?= $this->section('script'); ?>
-  <<script type="text/javascript">
+  <script type="text/javascript">
     $(".page_active").addClass("menu-open");
     $(".page_active a:first").addClass("active");
     $(".page_active .page_tree_active2 a:first").addClass("active");

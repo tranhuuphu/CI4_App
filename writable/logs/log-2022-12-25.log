@@ -1,0 +1,327 @@
+CRITICAL - 2022-12-25 02:03:19 --> Array to string conversion
+in APPPATH\Views\admin\image\TinyMce.php on line 43.
+ 1 APPPATH\Views\admin\image\TinyMce.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:08:06 --> Array to string conversion
+in APPPATH\Views\admin\image\TinyMce.php on line 52.
+ 1 APPPATH\Views\admin\image\TinyMce.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 52)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:08:58 --> Array to string conversion
+in APPPATH\Views\admin\image\TinyMce.php on line 52.
+ 1 APPPATH\Views\admin\image\TinyMce.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 52)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:17:38 --> Undefined variable $students
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 APPPATH\Views\admin\image\TinyMce.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $students', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:17:47 --> Undefined array key 2
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 APPPATH\Views\admin\image\TinyMce.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:17:56 --> Undefined array key 2
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 APPPATH\Views\admin\image\TinyMce.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:18:01 --> Undefined array key 2
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 APPPATH\Views\admin\image\TinyMce.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:20:19 --> Array to string conversion
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 APPPATH\Views\admin\image\TinyMce.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:23:44 --> Undefined variable $count
+in APPPATH\Views\admin\image\TinyMce.php on line 62.
+ 1 APPPATH\Views\admin\image\TinyMce.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 62)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:34:40 --> syntax error, unexpected single-quoted string " Kb", expecting "," or ";"
+in APPPATH\Views\admin\image\TinyMce.php on line 79.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 3 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:37:19 --> syntax error, unexpected token "<"
+in APPPATH\Views\admin\image\TinyMce.php on line 74.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 3 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 02:47:36 --> syntax error, unexpected token "=>"
+in APPPATH\Views\admin\image\TinyMce.php on line 64.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 3 APPPATH\Controllers\Admin\ImageController.php(35): view('admin/image/TinyMce', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:00:15 --> getimagesize(./public/upload/tinymce/image_asset/./public/upload/tinymce/image_asset/1670928097_936bc09d00422e16318a.jpg): Failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\ImageController.php on line 29.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'getimagesize(./public/upload/tinymce/image_asset/./public/upload/tinymce/image_asset/1670928097_936bc09d00422e16318a.jpg): Failed to open stream: No such file or directory', 'APPPATH\\Controllers\\Admin\\ImageController.php', 29)
+ 2 APPPATH\Controllers\Admin\ImageController.php(29): getimagesize('./public/upload/tinymce/image_asset/./public/upload/tinymce/image_asset/1670928097_936bc09d00422e16318a.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:31:12 --> Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+in APPPATH\Config\Routes.php on line 126.
+ 1 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(129): CodeIgniter\Router\RouteCollection->group('image', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 4 APPPATH\Config\Routes.php(137): CodeIgniter\Router\RouteCollection->group('admin', [...], Object(Closure))
+ 5 SYSTEMPATH\CodeIgniter.php(789): require('APPPATH\\Config\\Routes.php')
+ 6 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:31:15 --> Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+in APPPATH\Config\Routes.php on line 126.
+ 1 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(129): CodeIgniter\Router\RouteCollection->group('image', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(645): CodeIgniter\CodeIgniter->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 4 APPPATH\Config\Routes.php(137): CodeIgniter\Router\RouteCollection->group('admin', [...], Object(Closure))
+ 5 SYSTEMPATH\CodeIgniter.php(789): require('APPPATH\\Config\\Routes.php')
+ 6 SYSTEMPATH\CodeIgniter.php(430): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:43:33 --> Undefined variable $image
+in APPPATH\Controllers\Admin\ImageController.php on line 58.
+ 1 APPPATH\Controllers\Admin\ImageController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $image', 'APPPATH\\Controllers\\Admin\\ImageController.php', 58)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:44:06 --> Undefined variable $images_array_check
+in APPPATH\Controllers\Admin\ImageController.php on line 65.
+ 1 APPPATH\Controllers\Admin\ImageController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images_array_check', 'APPPATH\\Controllers\\Admin\\ImageController.php', 65)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:44:56 --> Undefined variable $images_array_check
+in APPPATH\Controllers\Admin\ImageController.php on line 62.
+ 1 APPPATH\Controllers\Admin\ImageController.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images_array_check', 'APPPATH\\Controllers\\Admin\\ImageController.php', 62)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:45:28 --> Undefined variable $images_array_check
+in APPPATH\Controllers\Admin\ImageController.php on line 62.
+ 1 APPPATH\Controllers\Admin\ImageController.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images_array_check', 'APPPATH\\Controllers\\Admin\\ImageController.php', 62)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:46:09 --> Undefined variable $images_array_check
+in APPPATH\Controllers\Admin\ImageController.php on line 64.
+ 1 APPPATH\Controllers\Admin\ImageController.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images_array_check', 'APPPATH\\Controllers\\Admin\\ImageController.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:47:43 --> Undefined variable $images
+in APPPATH\Controllers\Admin\ImageController.php on line 68.
+ 1 APPPATH\Controllers\Admin\ImageController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images', 'APPPATH\\Controllers\\Admin\\ImageController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:48:05 --> Undefined variable $images
+in APPPATH\Controllers\Admin\ImageController.php on line 73.
+ 1 APPPATH\Controllers\Admin\ImageController.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $images', 'APPPATH\\Controllers\\Admin\\ImageController.php', 73)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:49:08 --> Undefined variable $TinyCME
+in APPPATH\Controllers\Admin\ImageController.php on line 80.
+ 1 APPPATH\Controllers\Admin\ImageController.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $TinyCME', 'APPPATH\\Controllers\\Admin\\ImageController.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:52:05 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 1598.
+ 1 SYSTEMPATH\BaseModel.php(1598): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\BaseModel.php(709): CodeIgniter\BaseModel->transformDataToArray(null, 'insert')
+ 3 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert(null, true)
+ 4 APPPATH\Controllers\Admin\ImageController.php(80): CodeIgniter\Model->insert()
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 03:57:44 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\admin\image\TinyMce.php on line 28.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 4 APPPATH\Controllers\Admin\ImageController.php(97): view('admin/image/TinyMce', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 06:44:30 --> in_array(): Argument #2 ($haystack) must be of type array, string given
+in APPPATH\Controllers\Admin\ImageController.php on line 66.
+ 1 APPPATH\Controllers\Admin\ImageController.php(66): in_array('0_0002_DSC02725.jpg', 'Giay in hóa đơn carbonless.jpg', false)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 06:45:11 --> in_array(): Argument #2 ($haystack) must be of type array, string given
+in APPPATH\Controllers\Admin\ImageController.php on line 66.
+ 1 APPPATH\Controllers\Admin\ImageController.php(66): in_array('0_0002_DSC02725.jpg', 'Giay in hóa đơn carbonless.jpg', false)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 06:47:00 --> Cannot use object of type mysqli as array
+in APPPATH\Controllers\Admin\ImageController.php on line 60.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compress()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 06:50:59 --> Maximum execution time of 120 seconds exceeded
+in FCPATH\vendor\tinify\tinify\lib\Tinify\Client.php on line 105.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-25 09:20:29 --> syntax error, unexpected token "}", expecting ";"
+in APPPATH\Controllers\Admin\ImageController.php on line 126.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\ImageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\ImageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\ImageController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\ImageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 09:21:14 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\admin\image\index.php on line 46.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/index', [], true)
+ 4 APPPATH\Controllers\Admin\ImageController.php(48): view('admin/image/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->imageTiny()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 09:22:44 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\admin\image\index.php on line 46.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/index', [], true)
+ 4 APPPATH\Controllers\Admin\ImageController.php(48): view('admin/image/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->imageTiny()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 09:29:08 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\admin\image\index.php on line 70.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/index', [], true)
+ 4 APPPATH\Controllers\Admin\ImageController.php(48): view('admin/image/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->imageTiny()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 09:45:01 --> syntax error, unexpected token "if"
+in APPPATH\Views\admin\image\index.php on line 53.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/index', [], true)
+ 3 APPPATH\Controllers\Admin\ImageController.php(48): view('admin/image/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->imageTiny()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 10:23:57 --> floor() expects exactly 1 argument, 2 given
+in APPPATH\Views\admin\image\TinyMce.php on line 86.
+ 1 APPPATH\Views\admin\image\TinyMce.php(86): floor('1.01', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(43): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 12:34:48 --> fopen(public/upload/tinymce//0): Failed to open stream: No such file or directory
+in APPPATH\Controllers\Admin\ImageController.php on line 172.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(public/upload/tinymce//0): Failed to open stream: No such file or directory', 'APPPATH\\Controllers\\Admin\\ImageController.php', 172)
+ 2 APPPATH\Controllers\Admin\ImageController.php(172): fopen('public/upload/tinymce//0', 'rb')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compressAgain()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-25 12:35:29 --> Undefined variable $data
+in APPPATH\Controllers\Admin\ImageController.php on line 181.
+ 1 APPPATH\Controllers\Admin\ImageController.php(181): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\Admin\\ImageController.php', 181)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->compressAgain()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

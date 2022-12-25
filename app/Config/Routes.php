@@ -123,10 +123,13 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         //home in get == home in as
         $routes->get('/',"Admin\ImageController::index");
 
-        $routes->get('create',"Admin\CateController::getCate");
-        $routes->post('store',"Admin\CateController::store");
-        $routes->get('edit/(:num)',"Admin\CateController::getEditCate/$1");
-        $routes->post('save/(:num)',"Admin\CateController::postEditCate/$1");
+        $routes->get('imageTiny',"Admin\ImageController::imageTiny");
+
+        $routes->get('compress',"Admin\ImageController::compress");
+        $routes->post('compress',"Admin\ImageController::compress");
+
+        $routes->get('again',"Admin\ImageController::compressAgain");
+        $routes->post('again',"Admin\ImageController::compressAgain");
 
     });
 

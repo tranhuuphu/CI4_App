@@ -5,6 +5,7 @@
 		.content-wrapper{
 			background-color: #ffffff !important;
 		}
+		
 	</style>
 	
 <body class="hold-transition dark-mode2 sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -110,6 +111,7 @@
 	      "info": true,
 	      "autoWidth": false,
 	      "responsive": true,
+	      "pageLength": 20,
 	    });
 	  });
 	</script>
@@ -182,23 +184,9 @@
 		$('[name=taginput]').tagify();
 
 
-		$('.iframe-btn').fancybox({	
-	'width'		: 900,
-	'height'	: 600,
-	'type'		: 'iframe',
-        'autoScale'    	: false
-    });
 
-    function close_window() {
-    parent.$.fancybox.close();
-}
 
-function responsive_filemanager_callback(field_id){
-	console.log(field_id);
-	var url=jQuery('#'+field_id).val();
-	alert('update '+field_id+" with "+url);
-	//your code
-}
+
 
 
 
