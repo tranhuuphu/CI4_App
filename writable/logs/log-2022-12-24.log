@@ -182,3 +182,54 @@ in SYSTEMPATH\Model.php on line 774.
  3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:06:09 --> Undefined variable $cate
+in APPPATH\Views\admin\image\TinyMce.php on line 42.
+ 1 APPPATH\Views\admin\image\TinyMce.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate', 'APPPATH\\Views\\admin\\image\\TinyMce.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image\\TinyMce.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/image/TinyMce', [], true)
+ 5 APPPATH\Controllers\Admin\ImageController.php(19): view('admin/image/TinyMce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:25:08 --> Call to undefined function App\Controllers\Admin\public_path()
+in APPPATH\Controllers\Admin\ImageController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:29:03 --> syntax error, unexpected token "as"
+in APPPATH\Controllers\Admin\ImageController.php on line 19.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\ImageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\ImageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\ImageController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\ImageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:29:11 --> Class "App\Controllers\Admin\DirectoryIterator" not found
+in APPPATH\Controllers\Admin\ImageController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:29:19 --> Class "App\Controllers\Admin\DirectoryIterator" not found
+in APPPATH\Controllers\Admin\ImageController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:32:51 --> Class "App\Controllers\Admin\File" not found
+in APPPATH\Controllers\Admin\ImageController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-24 20:42:03 --> Undefined variable $data2
+in APPPATH\Controllers\Admin\ImageController.php on line 26.
+ 1 APPPATH\Controllers\Admin\ImageController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data2', 'APPPATH\\Controllers\\Admin\\ImageController.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\ImageController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ImageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

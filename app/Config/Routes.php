@@ -119,6 +119,17 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     });
 
+    $routes->group("image", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\ImageController::index");
+
+        $routes->get('create',"Admin\CateController::getCate");
+        $routes->post('store',"Admin\CateController::store");
+        $routes->get('edit/(:num)',"Admin\CateController::getEditCate/$1");
+        $routes->post('save/(:num)',"Admin\CateController::postEditCate/$1");
+
+    });
+
 
     $routes->add('filemanager/(:any)', '\Filemanager\Controllers\Filemanager::run');
     
