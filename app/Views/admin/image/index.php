@@ -24,8 +24,12 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header card-danger">
-
-              <h3 class="card-title text-bold">Danh Sách <span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/again') ?>" class="btn btn-success ml-3"><i class="fas fa-compress-arrows-alt"></i> Compress All Again</a></h3>
+              <?php if(session()->getFlashdata('success') != null): ?>
+                <div class="alert alert-primary" role="alert">
+                  <?php echo session()->getFlashdata('success'); ?>
+                </div>
+              <?php endif; ?>
+              <h3 class="card-title text-bold">Danh Sách <span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/again') ?>" class="btn btn-success ml-3"><i class="fas fa-compress-arrows-alt"></i> Compress Again</a></h3>
 
             </div>
             <!-- /.card-header -->

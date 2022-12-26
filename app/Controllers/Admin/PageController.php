@@ -313,5 +313,13 @@ class PageController extends BaseController
         return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['page_title']."---"." sẽ không hiển thị trên trang web");
     }
 
+    public function add($id){
+        $pageModel = new PageModel();
+
+        $data['pageDetail'] = $pageModel->find($id);
+
+        return view('admin/page/add', $data);
+    }
+
 
 }

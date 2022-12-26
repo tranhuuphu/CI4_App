@@ -47,6 +47,7 @@
 	                    <th>Trạng thái</th>
                       <th>Ẩn/Hiện bài viết</th>
 	                    <th>Option</th>
+                      <th>Add Infomation</th>
 	                  </tr>
                   </thead>
                   <tbody>
@@ -167,8 +168,15 @@
 		                    <td>
 
                           <a href="<?= base_url('admin/page/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/page/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/page/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a>
+                        </td>
+                        <td>
+                          <?php if($p['page_status'] == 1): ?>
+                            <a href="<?= base_url('admin/page/add/'.$p['id']) ?>" class="btn btn-primary ml-3"><i class="fas fa-plus"></i>  Social</a>
+                          <?php endif; ?>
+                        </td>
 		                  </tr>
+                      
 	                  <?php endforeach; ?>
                   
                   
@@ -180,7 +188,8 @@
                     <th>Danh Mục</th>
                     <th>Trạng thái</th>
                     <th>Ẩn/Hiện bài viết</th>
-                    <th>Show</th>
+                    <th>Option</th>
+                    <th>Add Infomation</th>
                   </tr>
                   </tfoot>
                 </table>

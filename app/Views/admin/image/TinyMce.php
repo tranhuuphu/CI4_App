@@ -25,7 +25,7 @@
           <div class="card">
             <div class="card-header card-danger">
 
-              <h3 class="card-title text-bold">All Image <span class="badge badge-light"><?php echo count($img)+count($img2); ?> ảnh</span><span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/compress') ?>" class="btn btn-primary ml-3"><i class="fas fa-compress-alt"></i> Compress All</a></h3>
+              <h3 class="card-title text-bold">All Image <span class="badge badge-light"><?php echo count($img)+count($img2); ?> ảnh</span><span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/compress') ?>" class="btn btn-danger ml-3"><i class="fas fa-compress-alt"></i> Compress First Times</a></h3>
 
             </div>
             <!-- /.card-header -->

@@ -106,6 +106,9 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('hidden/(:num)',"Admin\PageController::hidden/$1");
         $routes->post('hidden/(:num)',"Admin\PageController::hidden/$1");
 
+        $routes->get('add/(:num)',"Admin\PageController::add/$1");
+        $routes->post('add/(:num)',"Admin\PageController::add/$1");
+
     });
 
     $routes->group("cate", function($routes){

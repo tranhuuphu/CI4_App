@@ -82,6 +82,8 @@ class Client {
             }
 
             $request = curl_init();
+            curl_setopt($request, CURLOPT_CONNECTTIMEOUT, 0); 
+            curl_setopt($request, CURLOPT_TIMEOUT, 400000); //timeout in seconds
             if ($request === false || $request === null) {
                 throw new ConnectionException(
                     "Error while connecting: curl extension is not functional or disabled."

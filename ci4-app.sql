@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2022 at 07:56 PM
+-- Generation Time: Dec 26, 2022 at 05:31 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -103,9 +103,25 @@ CREATE TABLE `image_tinycme` (
   `id` int(11) NOT NULL,
   `image_TinyCME_name` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image_TinyCME_status` int(2) DEFAULT NULL,
+  `image_size_original` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_size_compress` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_folder` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `image_tinycme`
+--
+
+INSERT INTO `image_tinycme` (`id`, `image_TinyCME_name`, `image_TinyCME_status`, `image_size_original`, `image_size_compress`, `image_folder`, `created_at`, `updated_at`) VALUES
+(17, '0_0002_DSC02725.jpg', 4, '520519', '520519', 'tinymce', '2022-12-24 20:57:34', '2022-12-26 02:50:25'),
+(18, 'Giay in hóa đơn carbonless.jpg', 4, '305005', '118619', 'tinymce', '2022-12-24 20:57:44', '2022-12-26 02:50:42'),
+(31, 'bai-viet-show-last-id-insert.jpg', 4, '795994', '87651', 'image_asset', '2022-12-24 23:51:06', '2022-12-26 02:50:56'),
+(32, 'bai-viets-success.jpg', 3, '630726', '148053', 'image_asset', '2022-12-24 23:51:11', '2022-12-26 02:51:14'),
+(33, 'favicon_admin-TLGvH.jpg', 3, '163170', '69885', 'image_asset', '2022-12-24 23:51:17', '2022-12-26 02:51:25'),
+(34, 'fsad-adfasdf-sd.jpg', 2, '305005', '122965', 'image_asset', '2022-12-24 23:51:22', '2022-12-26 02:51:39'),
+(35, 'fsad-adfasdf-sd_1.jpg', 2, '305005', '122965', 'image_asset', '2022-12-24 23:51:28', '2022-12-26 02:51:43');
 
 -- --------------------------------------------------------
 
@@ -391,7 +407,7 @@ ALTER TABLE `home_page_info`
 -- AUTO_INCREMENT for table `image_tinycme`
 --
 ALTER TABLE `image_tinycme`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `page`
