@@ -43,7 +43,6 @@
 	                  <tr>
                       <th>Tên Trang (Url)</th>
 	                    <th>Tiêu đề Trang</th>
-	                    <th>Danh Mục</th>
 	                    <th>Trạng thái</th>
                       <th>Ẩn/Hiện bài viết</th>
 	                    <th>Option</th>
@@ -55,16 +54,17 @@
                         
                       
 		                  <tr>
-                        <td><?= $p['page_name']; ?></td>
+                        <td>
+                          <?= $p['page_name']; ?>
+                          <p><?php if($p['page_status'] == 1){echo "<span class='text-bold'>Trang Chủ</span>"; }else{echo "Trang thường"; } ?></p>
+                          <p class="text-bold text-red"><?php if($p['page_show'] == 0){echo "Đang Ẩn";} ?></p>
+
+                        </td>
 		                    <td><?= $p['page_title']; ?></td>
 		                    
 
                         
 
-                        <td>
-                          <?php if($p['page_status'] == 1){echo "<span class='text-bold'>Trang Chủ</span>"; }else{echo "Trang thường"; } ?>
-                          <p class="text-bold text-red"><?php if($p['page_show'] == 0){echo "Đang Ẩn";} ?></p>
-                        </td>
                         
                         <td>
                           <a href="<?php if($p['page_show'] == 0){echo base_url('admin/page/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
@@ -166,14 +166,22 @@
 
                         </td>
 		                    <td>
-
-                          <a href="<?= base_url('admin/page/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/page/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a>
+                          <div class="alert alert-primary" role="alert">
+                            <a href="<?= base_url('admin/page/edit/'.$p['id']) ?>" class="ml-3 text-decoration-none"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="<?= base_url('admin/page/del/'.$p['id']) ?>" class="ml-3 text-decoration-none text-warning"><i class="fas fa-trash"></i> Delete</a>
+                          </div>
                         </td>
                         <td>
-                          <?php if($p['page_status'] == 1): ?>
-                            <a href="<?= base_url('admin/page/add/'.$p['id']) ?>" class="btn btn-primary ml-3"><i class="fas fa-plus"></i>  Social</a>
-                          <?php endif; ?>
+
+                          
+                        <?php if($p['page_status'] == 1): ?>
+                          <div class="alert alert-dark" role="alert">
+                            <a href="<?= base_url('admin/page/add/'.$p['id']) ?>" class="text-decoration-none ml-3"><i class="fas fa-share-alt-square"></i>  Social</a>
+                          </div>
+                        <?php endif; ?>
+                          
+                          
+                          
                         </td>
 		                  </tr>
                       
@@ -185,7 +193,6 @@
                   <tr>
                     <th>Tên Trang (Url)</th>
                     <th>Tiêu đề Trang</th>
-                    <th>Danh Mục</th>
                     <th>Trạng thái</th>
                     <th>Ẩn/Hiện bài viết</th>
                     <th>Option</th>

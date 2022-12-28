@@ -1,0 +1,62 @@
+CRITICAL - 2022-12-28 05:11:18 --> Attempt to read property "cate_parent_id" on array
+in APPPATH\Views\front_end\canvas_site\navbar.php on line 107.
+ 1 APPPATH\Views\front_end\canvas_site\navbar.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "cate_parent_id" on array', 'APPPATH\\Views\\front_end\\canvas_site\\navbar.php', 107)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\navbar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('front_end/canvas_site/navbar', null, true)
+ 5 APPPATH\Views\front_end\canvas_site\layout.php(22): CodeIgniter\View\View->include('front_end/canvas_site/navbar')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/layout', [], true)
+ 9 APPPATH\Controllers\BaseController.php(59): view('front_end/canvas_site/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+11 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-28 05:25:41 --> Undefined variable $loggerUserID
+in APPPATH\Views\front_end\canvas_site\navbar.php on line 4.
+ 1 APPPATH\Views\front_end\canvas_site\navbar.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $loggerUserID', 'APPPATH\\Views\\front_end\\canvas_site\\navbar.php', 4)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\navbar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('front_end/canvas_site/navbar', null, true)
+ 5 APPPATH\Views\front_end\canvas_site\layout.php(22): CodeIgniter\View\View->include('front_end/canvas_site/navbar')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\layout.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/layout', [], true)
+ 9 APPPATH\Controllers\BaseController.php(59): view('front_end/canvas_site/layout', [...])
+10 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+11 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-28 10:26:02 --> Undefined variable $page_slug
+in APPPATH\Controllers\Admin\PageController.php on line 343.
+ 1 APPPATH\Controllers\Admin\PageController.php(343): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $page_slug', 'APPPATH\\Controllers\\Admin\\PageController.php', 343)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->addThis('3')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-28 10:30:16 --> Undefined variable $check
+in APPPATH\Controllers\Admin\PageController.php on line 379.
+ 1 APPPATH\Controllers\Admin\PageController.php(379): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $check', 'APPPATH\\Controllers\\Admin\\PageController.php', 379)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->addThis('3')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-28 10:38:12 --> Invalid file: admin/page/.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/page/.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page/', [], true)
+ 3 APPPATH\Controllers\Admin\PageController.php(421): view('admin/page/', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->addThis('3')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-28 10:40:10 --> Invalid file: admin/page.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/page.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/page', [], true)
+ 3 APPPATH\Controllers\Admin\PageController.php(421): view('admin/page', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PageController->addThis('3')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PageController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

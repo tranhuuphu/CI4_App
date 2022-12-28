@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 05:31 PM
+-- Generation Time: Dec 28, 2022 at 05:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -136,6 +136,7 @@ CREATE TABLE `page` (
   `page_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_favicon` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `page_status` int(11) NOT NULL,
   `page_content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_view` int(10) DEFAULT NULL,
@@ -159,10 +160,10 @@ CREATE TABLE `page` (
 -- Dumping data for table `page`
 --
 
-INSERT INTO `page` (`id`, `user_id`, `page_name`, `page_slug`, `page_title`, `page_image`, `page_status`, `page_content`, `page_view`, `page_show`, `facebook`, `youtube`, `twitter`, `pinterest`, `maps`, `f_app`, `g_app`, `phone`, `google_image_maps`, `page_meta_key`, `page_meta_desc`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Trang Chủ', 'trang-chu', 'Trang Chủ Công Ty Đại Long', 'trang-chu-0oKds8QMBNptjXFk.jpg', 0, '<p>Noi dung</p>', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'page chủ k', 'page chủ d', '2022-12-23 23:13:14', '2022-12-24 05:43:09'),
-(2, NULL, 'About Us', 'about-us', 'Giới thiệu về chúng tôi', 'about-us-ybnDzwcLfMJsjV0W.', 0, '<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gioi thieu, chung toi, hướng dẫn', 'gioi thieu ve chung toi', '2022-12-24 05:06:50', '2022-12-24 05:55:17'),
-(3, NULL, 'ád', 'ad', 'aef', 'ad-I6wDjU3ElmPK2oST.jpg', 1, '<p>&agrave;</p>', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ádwe', 'á', '2022-12-24 05:55:46', '2022-12-24 05:55:46');
+INSERT INTO `page` (`id`, `user_id`, `page_name`, `page_slug`, `page_title`, `page_image`, `page_favicon`, `page_status`, `page_content`, `page_view`, `page_show`, `facebook`, `youtube`, `twitter`, `pinterest`, `maps`, `f_app`, `g_app`, `phone`, `google_image_maps`, `page_meta_key`, `page_meta_desc`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Trang Chủ', 'trang-chu', 'Trang Chủ Công Ty Đại Long', 'trang-chu-0oKds8QMBNptjXFk.jpg', NULL, 0, '<p>Noi dung</p>', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'page chủ k', 'page chủ d', '2022-12-23 23:13:14', '2022-12-24 05:43:09'),
+(2, NULL, 'About Us', 'about-us', 'Giới thiệu về chúng tôi', 'about-us-ybnDzwcLfMJsjV0W.', NULL, 0, '<p>C&ocirc;ng ty ch&uacute;ng t&ocirc;i</p>', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gioi thieu, chung toi, hướng dẫn', 'gioi thieu ve chung toi', '2022-12-24 05:06:50', '2022-12-24 05:55:17'),
+(3, NULL, 'ád', 'ad', 'aef', 'ad-I6wDjU3ElmPK2oST.jpg', 'favicon_ad-sSCdQvXm6actGPOg.', 1, '<p>&agrave;</p>', 55, 1, 'https://www.facebook.com/profile.php?id=100070762602051', 'https://www.youtube.com/channel/UCSvNFyqDpZ-Jd3M7kkaAmmw', 'Twitter', 'Pinterest', 'https://www.google.com/maps/place/Curie+Viet+Nam+Limited+Company/@11.096299,106.6651825,15z/data=!4m2!3m1!1s0x0:0xe5bc84542907690d?sa=X&ved=2ahUKEwifiZDH35z8AhUpGbcAHYymBWEQ_BJ6BAhXEAg', '1', '1', '0974953600', 'ad-cQ0R3LAN57utPIw9.', 'ádwe', 'á', '2022-12-24 05:55:46', '2022-12-28 03:55:26');
 
 -- --------------------------------------------------------
 

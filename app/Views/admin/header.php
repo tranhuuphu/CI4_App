@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="<?= base_url('public/upload/tinymce/image_asset'); ?>/<?php if($loggerUserID != null){echo $userinfo['favicon_image']; } ?>">
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> -->
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->

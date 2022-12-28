@@ -235,9 +235,6 @@ class PageController extends BaseController
         $data['page_view']      = $check['page_view'];
         $data['page_show']      = $check['page_show'];
 
-        // dd($data);
-
-        
         $img = $this->request->getFile('page_image');
 
         $type = $img->guessExtension();
@@ -254,9 +251,6 @@ class PageController extends BaseController
                 // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
                 $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $image_name);
- 
-                // You can continue here to write a code to save the name to database
-                // db_connect() or model format
                             
             }
         }
@@ -316,9 +310,97 @@ class PageController extends BaseController
     public function add($id){
         $pageModel = new PageModel();
 
-        $data['pageDetail'] = $pageModel->find($id);
+        $data['page_detail'] = $pageModel->find($id);
 
         return view('admin/page/add', $data);
+    }
+    
+    public function addThis($id){
+        $pageModel = new PageModel();
+
+        $page_detail = $pageModel->find($id);
+        $data['page_detail'] = $page_detail;
+
+        $validation = $this->validate([
+            'facebook'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Facebook Page không được để trống.',
+                ],
+            ],
+            'youtube'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Youtube Channel không được để trống.',
+                ],
+            ],
+            'maps'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Link Google Maps không được để trống.',
+                ],
+            ],
+
+            'g_app'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Google Verification không được để trống.',
+                ],
+            ],
+
+            'phone'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Số điện thoại không được để trống.',
+                ],
+            ],
+        ]);
+        if(!$validation){
+            $data['validation'] = $this->validator;
+            return view('admin/page/add', $data);
+        }
+        $data['facebook']   = $this->request->getPost('facebook');
+        $data['youtube']    = $this->request->getPost('youtube');
+        $data['twitter']    = $this->request->getPost('twitter');
+        $data['pinterest']  = $this->request->getPost('pinterest');
+        $data['maps']       = $this->request->getPost('maps');
+        $data['f_app']      = $this->request->getPost('f_app');
+        $data['g_app']      = $this->request->getPost('g_app');
+        $data['phone']      = $this->request->getPost('phone');
+
+        $img = $this->request->getFile('google_image_maps');
+        $type = $img->guessExtension();
+        $image_name = $page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type;
+        $data['google_image_maps']       = $image_name;
+
+        $img2           = $this->request->getFile('page_favicon');
+        $type2          = $img2->guessExtension();
+        $image_name2    = 'favicon_'.$page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type2;
+        $data['page_favicon']       = $image_name2;
+
+        // dd($data);
+        $pageModel->update($id, $data);
+
+        if($img = $this->request->getFile('google_image_maps'))
+        {
+            if ($img->isValid() && ! $img->hasMoved())
+            {
+                // $newName = $img->getRandomName();
+                $type = $img->getClientMimeType();
+                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $image_name);
+            }
+        }
+
+        if($img2 = $this->request->getFile('page_favicon'))
+        {
+            if ($img2->isValid() && ! $img->hasMoved())
+            {
+                // $newName = $img->getRandomName();
+                $type2 = $img2->getClientMimeType();
+                $img2->move(ROOTPATH . 'public/upload/tinymce/image_asset', $image_name2);
+            }
+        }
+        return redirect()->to('admin/page')->with('page_detail', $page_detail);
     }
 
 

@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use App\Models\CateModel;
 
 /**
  * Class BaseController
@@ -52,6 +53,10 @@ abstract class BaseController extends Controller
         $loggerUserID = session()->get('loggedUser');
         $userInfo = $usersModel->find($loggerUserID);
         $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];
-        return view('admin/admin-layout', $dataLogin);
+        $cateModel = new \App\Models\CateModel();
+        $data['cate'] = $cateModel->findAll();
+
+        return view('front_end/canvas_site/layout', $data).view('admin/admin-layout', $dataLogin);
+
     }
 }

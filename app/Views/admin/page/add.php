@@ -12,7 +12,8 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
-              <li class="breadcrumb-item active">Add New Page</li>
+              <li class="breadcrumb-item"><a href="<?= base_url('admin/page'); ?>">Trang</a></li>
+              <li class="breadcrumb-item active">Add Social Info</li>
             </ol>
           </div>
         </div>
@@ -22,43 +23,80 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      	<form action="<?= base_url('admin/page/save'); ?>" method="post" enctype="multipart/form-data">
+      	<form action="<?= base_url('admin/page/addThis/'.$page_detail['id']); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
 	          <!-- left column -->
         
             
-	          <div class="col-md-8">
+	          <div class="col-md-9">
 	            <!-- general form elements -->
 	            <div class="card card-primary">
 	              <div class="card-header">
-	                <h3 class="card-title">Nội dung chính Trang</h3>
+	                <h3 class="card-title">Link Social & Image</h3>
 	              </div>
 	              <!-- /.card-header -->
 	              <!-- form start -->
 	              
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1">Tên Trang</label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_name') : '' ?></p>
-	                    <input type="text" name="page_name" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?= set_value('page_name'); ?>">
+	                    <label for="exampleInputEmail1"><i class="fab fa-facebook"></i> Facebook Page</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'facebook') : '' ?></p>
+	                    <input type="text" name="facebook" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('facebook') != null){echo set_value('facebook');}else{echo $page_detail['facebook'];} ?>">
 	                  </div>
 	                  <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Tiêu Đề Trang</label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_title') : '' ?></p>
-                      <input type="text" name="page_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Trang" value="<?= set_value('page_title'); ?>">
+                      <label for="exampleInputEmail1"><i class="fab fa-youtube"></i> Youtube Channel</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'youtube') : '' ?></p>
+                      <input type="text" name="youtube" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('youtube') != null){echo set_value('youtube');}else{echo $page_detail['youtube'];} ?>">
                     </div>
                     <hr>
 
-	                  <div class="form-group">
-									    <div class="form-group">
-									      <label>Nội dung Trang</label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_content') : '' ?></p>
-									      <textarea class="form-control" id="content" name="page_content" rows="3" placeholder="Enter ..." height="800px"><?= set_value('page_content'); ?></textarea>
-									    </div>
-									  </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fab fa-twitter"></i> Twitter</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'twitter') : '' ?></p>
+                      <input type="text" name="twitter" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('twitter') != null){echo set_value('twitter');}else{echo $page_detail['twitter'];} ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fab fa-pinterest"></i> Pinterest</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'pinterest') : '' ?></p>
+                      <input type="text" name="pinterest" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('pinterest') != null){echo set_value('pinterest');}else{echo $page_detail['pinterest'];} ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-map-marker-alt"></i> Google Maps Link</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'maps') : '' ?></p>
+                      <input type="text" name="maps" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('twimapstter') != null){echo set_value('maps');}else{echo $page_detail['maps'];} ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-code"></i> Facebook Code</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'f_app') : '' ?></p>
+                      <input type="text" name="f_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('f_app') != null){echo set_value('f_app');}else{echo $page_detail['f_app'];} ?>">
+                    </div>
+                    <hr>
+
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-code"></i> Google Code Verification</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'g_app') : '' ?></p>
+                      <input type="text" name="g_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('g_app') != null){echo set_value('g_app');}else{echo $page_detail['g_app'];} ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-phone-alt"></i> Phone</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('phone') != null){echo set_value('phone');}else{echo $page_detail['phone'];} ?>">
+                    </div>
+                    <hr>
+
+                    
 
 	                </div>
 	                <!-- /.card-body -->
@@ -70,7 +108,7 @@
 	          </div>
 	          <!--/.col (left) -->
 	          <!-- right column -->
-	          <div class="col-md-4">
+	          <div class="col-md-3">
 	            <!-- Form Element sizes -->
 	            <div class="card card-success">
 	              <div class="card-header">
@@ -79,12 +117,15 @@
 	              <div class="card-body">
 
 	              	<div class="form-group">
-                    <label>Ảnh Trang</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <label>Ảnh Google Maps</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'google_image_maps') : '' ?></p>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="google_image_maps" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
 
-
-                    
+                    <hr>
+                    <label>Ảnh cũ</label>
+                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$page_detail['page_image']) ?>" width="100%">
+                    <hr>
+                    <label>Ảnh mới (nếu có)</label>
                     
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -98,25 +139,31 @@
                     </script>
                   </div>
 
-	              	
-                  <hr>
 
-	                <div class="form-group clearfix">
-                    <label><abbr title="Toàn bộ thông tin trừ trang này sẽ hiển thị lên trang chủ, nội dung sẽ có vị trị footer, thẻ tiêu đề là tiêu đề website, cũng như các thẻ SEO">Là Trang Chính</abbr></label>
-                    <br>
-                    <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="page_status" name="r1" value="1">
-                      <label for="radioPrimary1">Có
-                      </label>
-                    </div>
-                    <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="page_status" value="0" name="r1" checked>
-                      <label for="radioPrimary2">Không
-                      </label>
-                    </div>
+                  <div class="form-group">
+                    <label>Ảnh Favicon</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'google_image_maps') : '' ?></p>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_favicon" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+
+                    <hr>
+                    <label>Image Favicon</label>
+                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$page_detail['page_favicon']) ?>" width="100%">
+                    <hr>
+                    <label>Image Favicon mới (nếu có)</label>
+                    
+                    <img id="output2"/ style="width: 100%" class="pt-1">
+                    <script>
+                      var loadFile = function(event) {
+                        var output2 = document.getElementById('output2');
+                        output2.src = URL.createObjectURL(event.target.files[0]);
+                        output2.onload = function() {
+                          URL.revokeObjectURL(output2.src) // free memory
+                        }
+                      };
+                    </script>
                   </div>
 
-                  <hr>
+
                   
 
 	              </div>
@@ -130,49 +177,13 @@
           
 	        </div>
 
-	        <!-- Seo -->
-	        <div class="row">
-	        	<div class="col-md-12">
-	        		<div class="card card-warning">
-                <div class="card-header">
-                  <h3 class="card-title"><strong>Seo Page Info</strong></h3>
-                </div>
-                <div class="card-body">
-
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <strong>Meta Desc:</strong>
-                        <textarea class="form-control" style="height:120px" name="page_meta_desc" maxlength="255"><?= set_value('page_meta_desc'); ?></textarea>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_meta_desc') : '' ?></p>
-                      </div>
-
-                      
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <strong>Meta Key:</strong>
-                        <textarea class="form-control" style="height:120px" name="page_meta_key" maxlength="255"><?= set_value('page_meta_key'); ?></textarea>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_meta_key') : '' ?></p>
-                      </div>
-                    </div>
-                    <hr>
-
-
-                  </div>
-
-                </div>
-              </div>
-	        	</div>
-	        </div>
-	        <!-- /.row -->
+	        
 
 	        <div class="row">
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save Post</button>
+                  <button type="submit" class="btn btn-info">Save This</button>
 	                  <button type="submit" class="btn btn-default float-right"><a href="<?= base_url('admin/page/'); ?>">Cancel</a></button>
                 </div>
 	        		</div>

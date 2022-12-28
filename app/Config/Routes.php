@@ -18,6 +18,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
+// $routes->setDefaultController('CanvasController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,7 +36,9 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+
+// Canvas Site
+$routes->get('/', 'CanvasController::index');
 
 // login before acess admin board, and direct to admin page if already login
 $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
@@ -107,7 +110,7 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('hidden/(:num)',"Admin\PageController::hidden/$1");
 
         $routes->get('add/(:num)',"Admin\PageController::add/$1");
-        $routes->post('add/(:num)',"Admin\PageController::add/$1");
+        $routes->post('addThis/(:num)',"Admin\PageController::addThis/$1");
 
     });
 
