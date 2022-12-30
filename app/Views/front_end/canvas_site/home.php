@@ -1007,3 +1007,58 @@
 
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('yoast_seo'); ?>
+  <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
+  <meta rel="canonical" href="<?= base_url() ?>"/>
+
+  <title><?= $title ?></title>
+
+  
+  <meta name="description" content="{{$home_meta->page_meta_desc}}" />
+  <meta name="keywords" content="{{$home_meta->page_meta_key}}" />
+  <meta name="title" content="{{$home_meta->page_title}}" />
+  
+
+
+  <meta name="copyright" content="<?= base_url() ?>" />
+
+
+
+  <!-- Schema.org markup for Google+ -->
+  
+  <meta itemprop="name" content="<?= $title ?>">
+  <meta itemprop="image" content="{{url('public/upload/page/'.$home_meta->page_image)}}">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="article">
+  <meta name="twitter:site" content="<?= $title ?>">
+  <meta name="twitter:title" content="<?= $title ?>">
+  <meta name="twitter:description" content="{{$home_meta->page_meta_desc}}">
+  <meta name="twitter:creator" content="<?= base_url() ?>">
+  <meta name="twitter:image" content="{{url('public/upload/page/'.$home_meta->page_image)}}">
+
+  <!-- Open Graph data -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="{{$home_meta->page_title}}" />
+  <meta property="og:title" content="{{$home_meta->page_title}}" />
+  <meta property="og:url" content="<?= base_url() ?>" />
+  <meta property="og:image" content="{{url('public/upload/page/'.$home_meta->page_image)}}" />
+  <meta property="og:description" content="{{$home_meta->page_meta_desc}}" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta name="format-detection" content="telephone=0974953600">
+  <meta name="thumbnail" content="{{url('public/upload/page/'.$home_meta->page_image)}}" />
+  <meta property="og:image:secure_url" content="{{url('public/upload/page/'.$home_meta->page_image)}}" />
+
+  
+
+
+  <meta content="news" itemprop="genre" name="medium"/>
+  <meta content="vi-VN" itemprop="inLanguage"/>
+  <meta content="" itemprop="articleSection"/>
+  <meta content="{{$home_meta->created_at}}" itemprop="datePublished" name="pubdate"/>
+  <meta content="{{$home_meta->updated_at}}" itemprop="dateModified" name="lastmod"/>
+  <meta content="{{$home_meta->created_at}}" itemprop="dateCreated"/>
+
+  
+<?= $this->endSection(); ?>
