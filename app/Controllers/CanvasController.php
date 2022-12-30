@@ -17,10 +17,12 @@ class CanvasController extends BaseController
         // dd($page_home);
         $data = [
             'title' => $page_home['page_title'],
+            'meta_desc' => $page_home['page_meta_desc'],
+            'meta_key' => $page_home['page_meta_key'],
+            'image' => $page_home['page_image'],
             'title' => $page_home['page_title'],
-            'title' => $page_home['page_title'],
-            'title' => $page_home['page_title'],
-            'title' => $page_home['page_title'],
+            'created_at' => $page_home['created_at'],
+            'updated_at' => $page_home['updated_at'],
         ];
 
         // dd($data);

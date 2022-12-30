@@ -5,6 +5,10 @@
     <meta name="author" content="<?= base_url() ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <?= $this->renderSection('yoast_seo'); ?>
+
+    <meta name="format-detection" content="telephone=0974953600">
+
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css" type="text/css" />
@@ -15,7 +19,7 @@
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/custom.css" type="text/css" />
     
 
-    <?= $this->renderSection('yoast_seo'); ?>
+    
   </head>
   <body class="stretched">
     <div id="wrapper" class="clearfix">
