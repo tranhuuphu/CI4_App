@@ -79,6 +79,30 @@
 	                <h3 class="card-title">Nội dung thêm</h3>
 	              </div>
 	              <div class="card-body">
+                  <?php foreach($cate as $c3): ?>
+                    <?php $c_t[] = $c3['cate_parent_id']; ?>
+                  <?php endforeach; ?>
+                  <div class="form-group">
+                    <label>Thuộc danh mục</label>
+                    <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
+                      <option value=""> ---Lựa chọn danh mục</option><i class="fas fa-long-arrow-alt-right"></i>
+                      <?php foreach($cate as $c): ?>
+                        <?php if($c['cate_parent_id'] == 0): ?>
+                          <?php if(!(in_array($c['id'], $c_t))): ?>
+                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(set_value('post_cate_id')  == $c['id']){ echo "selected"; } ?>> <?= $c['cate_name']; ?></option>
+                          <?php elseif(in_array($c['id'], $c_t)): ?>
+                            <optgroup data-icon="fas fa-circle" label="<?= $c['cate_name'] ?>">
+                              <?php foreach($cate as $c2): ?>
+                                <?php if($c2['cate_parent_id'] == $c['id']): ?>
+                                  <option data-icon="fas f-long-arrow-alt-right" value="{{$c2->id}}" <?php if(set_value('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
+                                <?php endif; ?>
+                              <?php endforeach; ?>
+                            </optgroup>
+                          <?php endif; ?>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
 
 	              	<div class="form-group">
                     <label>Ảnh bài viết</label>
@@ -105,31 +129,7 @@
                   </div>
 
 	              	
-                  <hr>
-                  <?php foreach($cate as $c3): ?>
-                    <?php $c_t[] = $c3['cate_parent_id']; ?>
-                  <?php endforeach; ?>
-                  <div class="form-group">
-                    <label>Thuộc danh mục</label>
-                    <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
-                      <option value=""> ---Lựa chọn danh mục</option><i class="fas fa-long-arrow-alt-right"></i>
-                      <?php foreach($cate as $c): ?>
-                        <?php if($c['cate_parent_id'] == 0): ?>
-                          <?php if(!(in_array($c['id'], $c_t))): ?>
-                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(set_value('post_cate_id')  == $c['id']){ echo "selected"; } ?>> <?= $c['cate_name']; ?></option>
-                          <?php elseif(in_array($c->id, $c_t)): ?>
-                            <optgroup data-icon="fas fa-circle" label="{{$c->cate_name}}">
-                              <?php foreach($cate as $c2): ?>
-                                <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                                  <option data-icon="fas f-long-arrow-alt-right" value="{{$c2->id}}" <?php if(set_value('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
-                                <?php endif; ?>
-                              <?php endforeach; ?>
-                            </optgroup>
-                          <?php endif; ?>
-                        <?php endif; ?>
-                      <?php endforeach; ?>
-                    </select>
-                  </div>
+                  
 
 
 

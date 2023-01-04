@@ -58,6 +58,8 @@ abstract class BaseController extends Controller
         $data['cate'] = $cateModel->findAll();
         $pageModel = new PageModel();
         $data['page_home'] = $pageModel->where('page_status', 1)->first();
+        $data['link_page'] = $pageModel->where('page_status !=', 1)->findAll();
+        // dd($data['link_page']);
 
         return view('front_end/canvas_site/layout', $data).view('admin/admin-layout', $dataLogin);
 

@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="<?= base_url() ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>">
 
     <?= $this->renderSection('yoast_seo'); ?>
 
@@ -17,6 +18,9 @@
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/custom.css" type="text/css" />
+
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/seo.css" type="text/css" />
     
 
     

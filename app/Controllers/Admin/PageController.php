@@ -234,12 +234,18 @@ class PageController extends BaseController
         $data['page_meta_key']  = $this->request->getPost('page_meta_key');
         $data['page_view']      = $check['page_view'];
         $data['page_show']      = $check['page_show'];
+        
 
-        $img = $this->request->getFile('page_image');
+        if($this->request->getFile('page_image')->guessExtension() != null){
+            $img = $this->request->getFile('page_image');
 
-        $type = $img->guessExtension();
-        $image_name = $page_slug.'-'.random_string('alnum', 16).'.'.$type;
-        $data['page_image']       = $image_name;
+            $type = $img->guessExtension();
+            $image_name = $page_slug.'-'.random_string('alnum', 16).'.'.$type;
+            $data['page_image']       = $image_name;
+        }else{
+            $data['page_image'] = $check['page_image'];
+        }
+        
 
 
         $pageModel->update($id, $data);
@@ -368,15 +374,35 @@ class PageController extends BaseController
         $data['g_app']      = $this->request->getPost('g_app');
         $data['phone']      = $this->request->getPost('phone');
 
-        $img = $this->request->getFile('google_image_maps');
-        $type = $img->guessExtension();
-        $image_name = $page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type;
-        $data['google_image_maps']       = $image_name;
 
-        $img2           = $this->request->getFile('page_favicon');
-        $type2          = $img2->guessExtension();
-        $image_name2    = 'favicon_'.$page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type2;
-        $data['page_favicon']       = $image_name2;
+        if($this->request->getFile('google_image_maps')->guessExtension() != null){
+
+            $img = $this->request->getFile('google_image_maps');
+            $type = $img->guessExtension();
+            
+            $image_name = $page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type;
+
+            $data['google_image_maps']       = $image_name;
+        }else{
+            $data['google_image_maps'] = $page_detail['google_image_maps'];
+        }
+
+
+        if($this->request->getFile('page_favicon')->guessExtension() != null){
+
+            $img2 = $this->request->getFile('page_favicon');
+            $type2 = $img2->guessExtension();
+            
+            $image_name2 = 'favicon_'.$page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type2;
+
+            $data['page_favicon']       = $image_name2;
+        }else{
+            $data['page_favicon'] = $page_detail['page_favicon'];
+        }
+
+        
+
+        
 
         // dd($data);
         $pageModel->update($id, $data);
@@ -393,7 +419,7 @@ class PageController extends BaseController
 
         if($img2 = $this->request->getFile('page_favicon'))
         {
-            if ($img2->isValid() && ! $img->hasMoved())
+            if ($img2->isValid() && ! $img2->hasMoved())
             {
                 // $newName = $img->getRandomName();
                 $type2 = $img2->getClientMimeType();

@@ -22,7 +22,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/cate/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/cate/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Thêm mới</a></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

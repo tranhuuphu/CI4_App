@@ -247,7 +247,7 @@ class PostController extends BaseController
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
         
         
-        if(!empty($this->request->getFile('post_image'))){
+        if($this->request->getFile('post_image')->guessExtension() != null){
 
             $img = $this->request->getFile('post_image');
             $type = $img->guessExtension();
