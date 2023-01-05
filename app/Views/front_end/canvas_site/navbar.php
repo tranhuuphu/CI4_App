@@ -20,45 +20,57 @@
       <div class="col-12 col-md-auto dark">
         <ul id="top-social">
 
-          <?php if(isset($page_home->facebook)): ?>
+          
+
+          <?php if(isset($page_home['facebook'])): ?>
             <li>
-              <a href="{{$page_favicon->facebook}}" target="_blank" class="si-facebook">
+              <a href="<?= $page_home['facebook']; ?>" target="_blank" class="si-facebook">
                 <span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span>
               </a>
             </li>
           <?php endif; ?>
-          <li>
-            <a href="https://facebook.com/semicolonweb" class="si-facebook" target="_blank">
-              <span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/__semicolon" class="si-twitter" target="_blank">
-              <span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://youtube.com/semicolonweb" class="si-youtube" target="_blank">
-              <span class="ts-icon"><i class="icon-youtube"></i></span><span class="ts-text">Youtube</span>
-            </a>
-          </li>
-          <li>
+
+          <?php if(isset($page_home['youtube'])): ?>
+            <li>
+              <a href="<?= $page_home['youtube']; ?>" target="_blank" class="si-youtube">
+                <span class="ts-icon"><i class="icon-youtube"></i></span><span class="ts-text">Youtube</span>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php if(isset($page_home['twitter'])): ?>
+            <li>
+              <a href="<?= $page_home['twitter']; ?>" target="_blank" class="si-twitter">
+                <span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php if(isset($page_home['pinterest'])): ?>
+            <li>
+              <a href="<?= $page_home['pinterest']; ?>" target="_blank" class="si-pinterest">
+                <span class="ts-icon"><i class="icon-pinterest"></i></span><span class="ts-text">Pinterest</span>
+              </a>
+            </li>
+          <?php endif; ?>
+          
+          
+          <!-- <li>
             <a href="https://instagram.com/semicolonweb" class="si-instagram" target="_blank">
               <span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span>
             </a>
-          </li>
+          </li> -->
+
+          <?php if(isset($page_home['phone'])): ?>
+            <li>
+              <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call">
+                <span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text"><?= $page_home['phone']; ?></span>
+              </a>
+            </li>
+          <?php endif; ?>
 
 
-          <li>
-            <a href="tel:+10.11.85412542" class="si-call">
-              <span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+10.11.85412542</span>
-            </a>
-          </li>
-          <li>
-            <a href="/cdn-cgi/l/email-protection#9af3f4fcf5daf9fbf4ecfbe9b4f9f5f7" class="si-email3">
-              <span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text"><span class="__cf_email__" data-cfemail="96fff8f0f9d6f5f7f8e0f7e5b8f5f9fb">[email&#160;protected]</span></span>
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -138,7 +150,7 @@
               transition: opacity .3s ease;
           }
         </style>
-        <form class="top-search-form" action="{{url('/')}}/search/" method="get">
+        <form class="top-search-form" action="<?php base_url('/'); ?>/search/" method="get">
           <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off" />
           <button class="btn border-0 bg-secondary rounded-end h-bg-alt" type="submit"><i class="icon-search2"></i></button>
 
