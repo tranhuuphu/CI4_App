@@ -95,7 +95,7 @@ class PostController extends BaseController
         
 
         $post_cate_id = $this->request->getPost('post_cate_id');
-
+        // dd($post_cate_id);
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
@@ -113,7 +113,7 @@ class PostController extends BaseController
 
         $cateModel = new CateModel();
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
-
+        // dd($cate_slug);
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
         
         $img = $this->request->getFile('post_image');
@@ -230,6 +230,7 @@ class PostController extends BaseController
         }
         $post_title_slug = convert_name($post_title);
         $post_cate_id           = $this->request->getPost('post_cate_id');
+        // dd($post_cate_id);
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');

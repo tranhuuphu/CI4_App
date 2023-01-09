@@ -41,7 +41,7 @@
                 <table id="example2" class="table table-bordered table-hover" style="width:100%">
                   <thead>
 	                  <tr>
-	                    <th>Tiêu đề bài viết</th>
+	                    <th width="30%">Tiêu đề bài viết</th>
 	                    <th>Danh Mục</th>
 	                    <th>Trạng thái</th>
                       <th>Ẩn/Hiện bài viết</th>
@@ -191,8 +191,8 @@
                         </td>
 		                    <td>
 
-                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   

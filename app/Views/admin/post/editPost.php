@@ -88,7 +88,7 @@
                               <optgroup data-icon="fas fa-circle" label="<?= $c['cate_name'] ?>">
                                 <?php foreach($cate as $c2): ?>
                                   <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                                    <option data-icon="fas f-long-arrow-alt-right" value="{{$c2->id}}" <?php if($postDetail['post_cate_id']  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
+                                    <option data-icon="fas f-long-arrow-alt-right" value="<?= $c2['id'] ?>" <?php if($postDetail['post_cate_id']  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
                                   <?php endif; ?>
                                 <?php endforeach; ?>
                               </optgroup>

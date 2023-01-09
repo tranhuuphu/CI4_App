@@ -1,0 +1,260 @@
+CRITICAL - 2023-01-09 09:26:26 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Admin\PostController.php on line 247.
+ 1 APPPATH\Controllers\Admin\PostController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Admin\\PostController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 09:27:26 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Admin\PostController.php on line 247.
+ 1 APPPATH\Controllers\Admin\PostController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Admin\\PostController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 09:29:31 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Admin\PostController.php on line 247.
+ 1 APPPATH\Controllers\Admin\PostController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Admin\\PostController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 09:36:21 --> syntax error, unexpected single-quoted string "/", expecting "," or ";"
+in APPPATH\Views\front_end\canvas_site\home.php on line 10.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 3 APPPATH\Controllers\CanvasController.php(84): view('front_end/canvas_site/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 09:36:28 --> syntax error, unexpected single-quoted string "/", expecting "," or ";"
+in APPPATH\Views\front_end\canvas_site\home.php on line 10.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 3 APPPATH\Controllers\CanvasController.php(84): view('front_end/canvas_site/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:32:44 --> Undefined variable $a
+in APPPATH\Views\front_end\canvas_site\home.php on line 60.
+ 1 APPPATH\Views\front_end\canvas_site\home.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'APPPATH\\Views\\front_end\\canvas_site\\home.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:33:17 --> Undefined variable $a
+in APPPATH\Views\front_end\canvas_site\home.php on line 60.
+ 1 APPPATH\Views\front_end\canvas_site\home.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'APPPATH\\Views\\front_end\\canvas_site\\home.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:33:31 --> Undefined variable $a
+in APPPATH\Views\front_end\canvas_site\home.php on line 60.
+ 1 APPPATH\Views\front_end\canvas_site\home.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'APPPATH\\Views\\front_end\\canvas_site\\home.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:33:43 --> Call to a member function shift() on array
+in APPPATH\Views\front_end\canvas_site\home.php on line 62.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 4 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:34:52 --> Call to a member function array_shift() on array
+in APPPATH\Views\front_end\canvas_site\home.php on line 62.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 4 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:36:02 --> Undefined constant "iffor"
+in APPPATH\Views\front_end\canvas_site\home.php on line 234.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 4 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:36:20 --> syntax error, unexpected token "endfor", expecting end of file
+in APPPATH\Views\front_end\canvas_site\home.php on line 235.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 3 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:36:26 --> syntax error, unexpected token "endif"
+in APPPATH\Views\front_end\canvas_site\home.php on line 234.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 3 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-09 10:49:34 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\canvas_site\home.php on line 84.
+ 1 APPPATH\Views\front_end\canvas_site\home.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\canvas_site\\home.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/home', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(86): view('front_end/canvas_site/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-09 10:50:28 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`...', 0)
+#1 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`...')
+#2 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`...')
+#3 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`...', Array, false)
+#4 D:\Dev\xampp\htdocs\CI4_App\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Dev\xampp\htdocs\CI4_App\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Dev\xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+#7 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+#8 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#9 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Dev\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-09 10:50:28 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = :post_cate_id:
+ORDER BY `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-09 10:51:40 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`...', 0)
+#1 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`...')
+#2 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`...')
+#3 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`...', Array, false)
+#4 D:\Dev\xampp\htdocs\CI4_App\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Dev\xampp\htdocs\CI4_App\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Dev\xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+#7 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+#8 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#9 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Dev\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-09 10:51:40 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = :post_cate_id:
+ORDER BY `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-09 10:52:08 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Dev\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`...', 0)
+#1 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`...')
+#2 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`...')
+#3 D:\Dev\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`...', Array, false)
+#4 D:\Dev\xampp\htdocs\CI4_App\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Dev\xampp\htdocs\CI4_App\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Dev\xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+#7 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+#8 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#9 D:\Dev\xampp\htdocs\CI4_App\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Dev\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-09 10:52:08 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = \'14\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `cate`.`cate_name`, `cate`.`id`, `cate`.`cate_slug`, `post`.*
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` = :post_cate_id:
+ORDER BY `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\CanvasController.php(44): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\CanvasController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

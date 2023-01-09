@@ -2,280 +2,267 @@
 
 <?= $this->section('content'); ?>
 
+	<?php if(isset($featured)): ?> 
+		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+		  
+			<?php foreach($featured as $key): ?>
+			  <div class="oc-item">
+			    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+			    <div class="bg-overlay">
+			      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
+			        <div>
+			          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
+			          <div class="portfolio-desc px-0">
+			            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+			            <span>
+			            	<?php
+			            		$datetime = (new \CodeIgniter\I18n\Time);
+			            		$yearNow = $datetime::now()->getYear();
+			            		$yearMonthsNow = $datetime::now()->getMonth();
+			            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
+			            		
+			            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
+			            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+			            			echo $datetime::parse($key['updated_at'])->humanize();
+			            		}
+			            		if(($yearNow - $yearPost) > 1){
+			            			echo $datetime::parse($key['updated_at'])->humanize();
+			            		}else{
+			            			echo $datetime::parse($key['updated_at'])->toDateString();
+			            		}
+			            		
 
-	<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/1.jpg" alt="Image 1" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>CJI defends collegium system, says don't defame judiciary</h3>
-	            <span>14th Sep 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="75" data-width="3" data-animate="3000">7.5</div>
-	    </div>
-	  </div>
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/4.jpg" alt="Image 2" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>Nutrition pursue these aspirations network respect focus</h3>
-	            <span>21st Aug 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="50" data-width="3" data-animate="3000">5.0</div>
-	    </div>
-	  </div>
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/6.jpg" alt="Image 3" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>Political, vulnerable citizens eradicate philanthropy</h3>
-	            <span>8th Nov 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="60" data-width="3" data-animate="3000">6.0</div>
-	    </div>
-	  </div>
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/11.jpg" alt="Image 4" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>Revitalize Bloomberg accelerate human potential</h3>
-	            <span>30th Jan 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="80" data-width="3" data-animate="3000">8.0</div>
-	    </div>
-	  </div>
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/13.jpg" alt="Image 5" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>Momentum tackling cross-agency coordination volunteer revitalize</h3>
-	            <span>11th Feb 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="40" data-width="3" data-animate="3000">4.0</div>
-	    </div>
-	  </div>
-	  <div class="oc-item">
-	    <a href="#"><img src="images/magazine/carousel/14.jpg" alt="Image 6" /></a>
-	    <div class="bg-overlay">
-	      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-	        <div>
-	          <span class="badge bg-danger">World</span>
-	          <div class="portfolio-desc px-0">
-	            <h3>Social responsibility Aga Khan health institutions</h3>
-	            <span>27th Mar 2021</span>
-	          </div>
-	          <a href="#" class="btn btn-sm btn-outline-light mx-0 mb-2">Read Story</a>
-	        </div>
-	      </div>
-	      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="62" data-width="3" data-animate="3000">6.2</div>
-	    </div>
-	  </div>
-	</div>
+			            	?>
+			            </span>
+			          </div>
+			        </div>
+			      </div>
+			      <!-- <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="75" data-width="3" data-animate="3000">7.5</div> -->
+			    </div>
+			  </div>
+		  <?php endforeach; ?>
+		  
+		  
+		  
+		  
+		</div>
+
+	<?php endif; ?>
+
+
+	
 
 	<div class="container clearfix">
-	  <div class="bottommargin-lg">
+	  <!-- <div class="bottommargin-lg">
 	    <img src="images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0" />
-	  </div>
-	  <div class="fancy-title title-border">
-	    <h3>Technology</h3>
-	  </div>
-	  <div class="row col-mb-50 mb-0">
-	    <div class="col-lg-8">
-	      <div class="posts-md">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/7.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-sm">
-	            <h3><a href="blog-single.html">Toyota's next minivan will let you shout at your kids without turning around</a></h3>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 17th Jan 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 31</a>
-	              </li>
-	              <li>
-	                <a href="#"><i class="icon-camera-retro"></i></a>
-	              </li>
-	            </ul>
-	          </div>
-	          <div class="entry-content">
-	            <p class="mb-0">
-	              Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
-	              repudiandae.
-	            </p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="col-lg-4">
-	      <div class="posts-sm row col-mb-30">
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/1.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">UK government weighs Tesla's Model S for its 5 million electric vehicle fleet</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 32</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/2.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">MIT's new robot glove can give you extra fingers</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 11</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/3.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">You can now listen to headphones through your hoodie</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 27th July 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 13</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/4.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 7</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/5.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">Combat malaria solve, disruption advancement socio-economic</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 22nd Jan 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 55</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/6.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">Interconnectivity raise awareness fighting</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 15th Feb 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 55</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+	  </div> -->
+
+	  <?php for($a = 1; $a <= $i; $a++): ?>
+	  	<?php if(count($post_cate[$a]) > 0): ?>
+		  	<?php $post_cate_i = array_shift($post_cate[$a]); ?>
+		  	<?php //dd($post_cate_i); ?>
+		  	<?php foreach($cate_all as $key_cate): ?>
+		  		<?php if($post_cate_i['post_cate_id'] == $key_cate['id'] && $key_cate['cate_parent_id'] == 0): ?>
+					  <div class="fancy-title title-border">
+					    <h3><?= $key_cate['cate_name'] ?></h3>
+					  </div>
+					 <?php elseif($post_cate_i['post_cate_id'] == $key_cate['id']): ?>
+					 	<div class="fancy-title title-border">
+					    <h3><?= $key_cate['cate_name'] ?></h3>
+					  </div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			  <div class="row col-mb-50 mb-0">
+
+			    <div class="col-lg-7">
+			      <div class="posts-md">
+			        <div class="entry">
+			          <div class="entry-image">
+			            <a href="<?= base_url('').'/'.$post_cate_i['post_cate_slug'].'/'.$post_cate_i['post_slug'].'-'.$post_cate_i['id'].'.html'; ?>" title="<?= $post_cate_i['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_i['post_image']; ?>" alt="<?= $post_cate_i['post_title']; ?>"/></a>
+			          </div>
+			          <div class="entry-title title-sm">
+			            <h3><a href="<?= base_url('').'/'.$post_cate_i['post_cate_slug'].'/'.$post_cate_i['post_slug'].'-'.$post_cate_i['id'].'.html'; ?>" title="<?= $post_cate_i['post_title']; ?>"><?= $post_cate_i['post_title'] ?></a></h3>
+			          </div>
+			          <div class="entry-meta">
+			            <ul>
+			              <li><i class="icon-calendar3"></i>
+			              	<?php
+				            		$datetime = (new \CodeIgniter\I18n\Time);
+				            		$yearNow = $datetime::now()->getYear();
+				            		$yearMonthsNow = $datetime::now()->getMonth();
+				            		$yearPost = $datetime::parse($post_cate_i['updated_at'])->getYear();
+				            		
+				            		$yearMonthsPost = $datetime::parse($post_cate_i['updated_at'])->getMonth();
+				            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+				            			echo $datetime::parse($post_cate_i['updated_at'])->humanize();
+				            		}
+				            		if(($yearNow - $yearPost) > 1){
+				            			echo $datetime::parse($post_cate_i['updated_at'])->humanize();
+				            		}else{
+				            			echo $datetime::parse($post_cate_i['updated_at'])->toDateString();
+				            		}
+				            		
+
+				            	?>
+			              </li>
+			              <!-- <li>
+			                <a href="blog-single.html#comments"><i class="icon-comments"></i> 31</a>
+			              </li> -->
+			              <li>
+			                <a href="javascript:void(0)"><i class="icon-camera-retro"></i></a>
+			              </li>
+			            </ul>
+			          </div>
+			          <div class="entry-content">
+			            <p class="mb-0">
+			              <?= $post_cate_i['post_intro'] ?>
+			            </p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="col-lg-5">
+			      <div class="posts-sm row col-mb-30">
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/1.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">UK government weighs Tesla's Model S for its 5 million electric vehicle fleet</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 32</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/2.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">MIT's new robot glove can give you extra fingers</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 11</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/3.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">You can now listen to headphones through your hoodie</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 27th July 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 13</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/4.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 7</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/5.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">Combat malaria solve, disruption advancement socio-economic</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 22nd Jan 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 55</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="entry col-12">
+			          <div class="grid-inner row g-0">
+			            <div class="col-auto">
+			              <div class="entry-image">
+			                <a href="#"><img src="images/magazine/small/6.jpg" alt="Image" /></a>
+			              </div>
+			            </div>
+			            <div class="col ps-3">
+			              <div class="entry-title">
+			                <h4><a href="#">Interconnectivity raise awareness fighting</a></h4>
+			              </div>
+			              <div class="entry-meta">
+			                <ul>
+			                  <li><i class="icon-calendar3"></i> 15th Feb 2021</li>
+			                  <li>
+			                    <a href="#"><i class="icon-comments"></i> 55</a>
+			                  </li>
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+		  <?php endif; ?>
+		<?php endfor; ?>
+
+
 	  <div class="fancy-title title-border">
 	    <h3>Entertainment</h3>
 	  </div>
