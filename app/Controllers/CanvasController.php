@@ -22,13 +22,14 @@ class CanvasController extends BaseController
         $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->findAll();
         // dd($featured);
 
-        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->findAll();
+        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_blog', null)->findAll();
         // dd($cate_all);
         $cate_2 = $cate->findAll();
         $i = 0;
         foreach($cate_all as $key){
             $i++;
             $id = $key['id'];
+            $cate_name[$i] = $key['cate_name'];
             foreach($cate_2 as $row){
                 if($row['cate_parent_id'] == $id){
                     // $sub_id = array();
@@ -44,15 +45,20 @@ class CanvasController extends BaseController
                 $post_cate[$i] = $post->orderBy('id', 'DESC')->where('post_cate_id', $key['id'])->limit(5)->findAll();
             }
 
-            if($key['cate_slug'] = "blog"){
-                $cate_blog = $key['id'];
-                $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog)->limit(6)->findAll();
-            }
+            // if($key['cate_blog'] = 1){
+            //     $cate_blog = $key['id'];
+            //     $blog = $post->orderBy('id', 'DESC')->where('cate_blog', 1)->limit(6)->findAll();
+            // }
 
         }
         // dd($i);
 
+
+        $cate_blog = $cate->where('cate_blog', 1)->first();
+        $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog['id'])->limit(6)->findAll();
+
         $recent_post = $post->orderBy('id', 'DESC')->limit(5)->findAll();
+        $most_view = $post->orderBy('post_view', 'DESC')->limit(4)->findAll();
 
 
         
@@ -75,7 +81,10 @@ class CanvasController extends BaseController
             'updated_at'    => $page_home['updated_at'],
             'featured'      => $featured,
             'recent_post'   => $recent_post,
+            'most_view'     => $most_view,
             'cate_all'      => $cate_all,
+            'cate_2'        => $cate_2,
+            'cate_name'     => $cate_name,
             'post_cate'     => $post_cate,
             'blog'          => $blog,
             'i'             => $i,

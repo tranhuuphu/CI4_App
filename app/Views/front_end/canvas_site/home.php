@@ -61,17 +61,9 @@
 	  	<?php if(count($post_cate[$a]) > 0): ?>
 		  	<?php $post_cate_i = array_shift($post_cate[$a]); ?>
 		  	<?php //dd($post_cate_i); ?>
-		  	<?php foreach($cate_all as $key_cate): ?>
-		  		<?php if($post_cate_i['post_cate_id'] == $key_cate['id'] && $key_cate['cate_parent_id'] == 0): ?>
-					  <div class="fancy-title title-border">
-					    <h3><?= $key_cate['cate_name'] ?></h3>
-					  </div>
-					 <?php elseif($post_cate_i['post_cate_id'] == $key_cate['id']): ?>
-					 	<div class="fancy-title title-border">
-					    <h3><?= $key_cate['cate_name'] ?></h3>
-					  </div>
-					<?php endif; ?>
-				<?php endforeach; ?>
+			  <div class="fancy-title title-border">
+			    <h3><?= $cate_name[$a] ?></h3>
+			  </div>
 			  <div class="row col-mb-50 mb-0">
 
 			    <div class="col-lg-7">
@@ -114,7 +106,7 @@
 			            </ul>
 			          </div>
 			          <div class="entry-content">
-			            <p class="mb-0">
+			            <p class="mb-0 text-secondary">
 			              <?= $post_cate_i['post_intro'] ?>
 			            </p>
 			          </div>
@@ -124,138 +116,55 @@
 
 			    <div class="col-lg-5">
 			      <div class="posts-sm row col-mb-30">
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/1.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">UK government weighs Tesla's Model S for its 5 million electric vehicle fleet</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 32</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/2.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">MIT's new robot glove can give you extra fingers</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 11</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/3.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">You can now listen to headphones through your hoodie</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 27th July 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 13</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/4.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 7</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/5.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">Combat malaria solve, disruption advancement socio-economic</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 22nd Jan 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 55</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="entry col-12">
-			          <div class="grid-inner row g-0">
-			            <div class="col-auto">
-			              <div class="entry-image">
-			                <a href="#"><img src="images/magazine/small/6.jpg" alt="Image" /></a>
-			              </div>
-			            </div>
-			            <div class="col ps-3">
-			              <div class="entry-title">
-			                <h4><a href="#">Interconnectivity raise awareness fighting</a></h4>
-			              </div>
-			              <div class="entry-meta">
-			                <ul>
-			                  <li><i class="icon-calendar3"></i> 15th Feb 2021</li>
-			                  <li>
-			                    <a href="#"><i class="icon-comments"></i> 55</a>
-			                  </li>
-			                </ul>
-			              </div>
-			            </div>
-			          </div>
-			        </div>
+
+			      	<?php if(count($post_cate[$a]) > 0): ?>
+			      		<?php foreach($post_cate[$a] as $key_post): ?>
+					        <div class="entry col-12">
+					          <div class="grid-inner row g-0">
+					            <div class="col-auto">
+					              <div class="entry-image">
+					                <a href="<?= base_url('').'/'.$key_post['post_cate_slug'].'/'.$key_post['post_slug'].'-'.$key_post['id'].'.html'; ?>" title="<?= $key_post['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key_post['post_image']; ?>" alt="<?= $key_post['post_title']; ?>"/></a>
+					              </div>
+					            </div>
+					            <div class="col ps-3">
+					              <div class="entry-title">
+					                <h4><a href="#"><?= $key_post['post_title']; ?></a></h4>
+					              </div>
+					              <div class="entry-meta">
+					                <ul>
+					                  <li><i class="icon-calendar3"></i>
+					                  	<?php
+								            		$datetime = (new \CodeIgniter\I18n\Time);
+								            		$yearNow = $datetime::now()->getYear();
+								            		$yearMonthsNow = $datetime::now()->getMonth();
+								            		$yearPost = $datetime::parse($key_post['updated_at'])->getYear();
+								            		
+								            		$yearMonthsPost = $datetime::parse($key_post['updated_at'])->getMonth();
+								            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+								            			echo $datetime::parse($key_post['updated_at'])->humanize();
+								            		}
+								            		if(($yearNow - $yearPost) > 1){
+								            			echo $datetime::parse($key_post['updated_at'])->humanize();
+								            		}else{
+								            			echo $datetime::parse($key_post['updated_at'])->toDateString();
+								            		}
+								            		
+
+								            	?>
+
+					                  </li>
+					                  <!-- <li>
+					                    <a href="#"><i class="icon-comments"></i> 32</a>
+					                  </li> -->
+					                </ul>
+					              </div>
+					            </div>
+					          </div>
+					        </div>
+				        <?php endforeach; ?>
+			        <?php endif; ?>
+
+			        
 			      </div>
 			    </div>
 			  </div>
@@ -263,332 +172,328 @@
 		<?php endfor; ?>
 
 
-	  <div class="fancy-title title-border">
-	    <h3>Entertainment</h3>
-	  </div>
-	  <div class="row col-mb-50 mb-0">
-	    <div class="col-lg-8">
-	      <div class="posts-md">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/13.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-sm">
-	            <h3><a href="blog-single.html">Effectiveness emergent catalyst combat malaria positive social change</a></h3>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 10th Feb 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 22</a>
-	              </li>
-	              <li>
-	                <a href="#"><i class="icon-camera-retro"></i></a>
-	              </li>
-	            </ul>
-	          </div>
-	          <div class="entry-content">
-	            <p class="mb-0">
-	              Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae,
-	              repudiandae.
-	            </p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="col-lg-4">
-	      <div class="posts-sm row col-mb-30">
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/1.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">UK government weighs Tesla's Model S for its 5 million electric vehicle fleet</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 1st Aug 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 32</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/2.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">MIT's new robot glove can give you extra fingers</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 13th Sep 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 11</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/3.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">You can now listen to headphones through your hoodie</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 27th July 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 13</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/4.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">How would you change Kobo's Aura HD e-reader?</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 31st Jan 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 7</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/5.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">Combat malaria solve, disruption advancement socio-economic</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 22nd Jan 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 55</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="entry col-12">
-	          <div class="grid-inner row g-0">
-	            <div class="col-auto">
-	              <div class="entry-image">
-	                <a href="#"><img src="images/magazine/small/6.jpg" alt="Image" /></a>
-	              </div>
-	            </div>
-	            <div class="col ps-3">
-	              <div class="entry-title">
-	                <h4><a href="#">Interconnectivity raise awareness fighting</a></h4>
-	              </div>
-	              <div class="entry-meta">
-	                <ul>
-	                  <li><i class="icon-calendar3"></i> 15th Feb 2021</li>
-	                  <li>
-	                    <a href="#"><i class="icon-comments"></i> 55</a>
-	                  </li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="fancy-title title-border title-center">
+
+	  <!-- <div class="fancy-title title-border title-center">
 	    <h3>Featured Video</h3>
 	  </div>
-	  <iframe src="https://player.vimeo.com/video/99895335" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
+	  <iframe src="https://player.vimeo.com/video/99895335" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
 	</div>
-	<div class="section dark">
+	<div class="section dark" style="margin-bottom: 15px !important;">
 	  <div class="container clearfix">
-	    <h3 class="text-center">Featured News</h3>
+	    <h3 class="text-center">Tin mới</h3>
 	    <div id="oc-images2" class="owl-carousel image-carousel carousel-widget posts-md" data-margin="20" data-pagi="false" data-rewind="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/1.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">A Baseball Team Blew Up A Bunch Of Justin Bieber And Miley Cyrus Merch</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 17th Feb 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 32</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/2.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">UK government weighs Tesla's Model S for its ??5 million electric vehicle fleet</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 1st Apr 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 21</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/3.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">MIT's new robot glove can give you extra fingers</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 21th Apr 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 30</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/4.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">Yen dips on modest reduction in risk aversion, markets still wary</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 2nd Jun 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 61</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/5.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">Beyonce Dropped A '50 Shades Of Grey', Teaser On Instagram Last Night</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 10th Sep 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 49</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/6.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">Want To Know The New 'Star Wars' Plot? Then This Is The Post For You</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 12th Mar 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 74</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/7.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">Toyotas next minivan will let you shout at your kids without turning around</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 23rd Aug 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 06</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="oc-item">
-	        <div class="entry">
-	          <div class="entry-image">
-	            <a href="#"><img src="images/magazine/thumb/8.jpg" alt="Image" /></a>
-	          </div>
-	          <div class="entry-title title-xs nott">
-	            <h4><a href="blog-single.html">You can now listen to headphones through your hoodie</a></h4>
-	          </div>
-	          <div class="entry-meta">
-	            <ul>
-	              <li><i class="icon-calendar3"></i> 26th Nov 2021</li>
-	              <li>
-	                <a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
+	      
+	      <?php if(count($blog) > 0): ?>
+	      	<?php foreach($blog as $key_blog): ?>
+			      <div class="oc-item">
+			        <div class="entry">
+			          <div class="entry-image">
+			            <a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key_blog['post_image']; ?>" alt="<?= $key_blog['post_title']; ?>"/></a>
+			          </div>
+			          <div class="entry-title title-xs nott">
+			            <h4><a href="blog-single.html"><?= $key_blog['post_title']; ?></a></h4>
+			          </div>
+			          <div class="entry-content">
+			            <p class="mb-0 text-secondary">
+			              <?= $post_cate_i['post_intro'] ?>
+			            </p>
+			          </div>
+			          <div class="entry-meta">
+			            <ul>
+			              <li><i class="icon-calendar3"></i>
+			              	<?php
+				            		$datetime = (new \CodeIgniter\I18n\Time);
+				            		$yearNow = $datetime::now()->getYear();
+				            		$yearMonthsNow = $datetime::now()->getMonth();
+				            		$yearPost = $datetime::parse($key_blog['updated_at'])->getYear();
+				            		
+				            		$yearMonthsPost = $datetime::parse($key_blog['updated_at'])->getMonth();
+				            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+				            			echo $datetime::parse($key_blog['updated_at'])->humanize();
+				            		}
+				            		if(($yearNow - $yearPost) > 1){
+				            			echo $datetime::parse($key_blog['updated_at'])->humanize();
+				            		}else{
+				            			echo $datetime::parse($key_blog['updated_at'])->toDateString();
+				            		}
+				            		
+
+				            	?>
+			              </li>
+			              <!-- <li>
+			                <a href="blog-single.html#comments"><i class="icon-comments"></i> 32</a>
+			              </li> -->
+			            </ul>
+			          </div>
+			        </div>
+			      </div>
+		      <?php endforeach; ?>
+	      <?php endif; ?>
+
+	      
 	    </div>
 	  </div>
 	</div>
+	<br>
+	<div class="container clearfix" style="margin-top: 50px !important">
+      
+      <div class="row gutter-20 col-mb-80">
+        <div class="postcontent col-lg-9">
+          <div id="posts" class="row grid-container gutter-40">
+            <?php foreach($recent_post as $pr): ?>
+              <?php foreach($cate_2 as $ct): ?>
+                <?php if($pr['post_cate_id'] == $ct['id']): ?>
+
+                  <div class="entry col-12" style="margin-bottom: 10px !important; margin-top: 5px !important">
+                    <div class="grid-inner row g-0">
+                      <div class="col-md-4">
+                        <a class="entry-image" href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$pr['post_image']; ?>" data-lightbox="image"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$pr['post_image']; ?>" alt="<?= $pr['post_title']; ?>"/></a>
+                      </div>
+                      <div class="col-md-8 ps-md-4">
+                        <div class="entry-title title-sm">
+                          <h2><a href="<?= base_url('').'/'.$pr['post_cate_slug'].'/'.$pr['post_slug'].'-'.$pr['id'].'.html'; ?>" title="<?= $pr['post_title']; ?>"><?= $pr['post_title']; ?></a></h2>
+                        </div>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><i class="icon-calendar3"></i>
+                            	<?php
+								            		$datetime = (new \CodeIgniter\I18n\Time);
+								            		$yearNow = $datetime::now()->getYear();
+								            		$yearMonthsNow = $datetime::now()->getMonth();
+								            		$yearPost = $datetime::parse($key_post['updated_at'])->getYear();
+								            		
+								            		$yearMonthsPost = $datetime::parse($key_post['updated_at'])->getMonth();
+								            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+								            			echo $datetime::parse($key_post['updated_at'])->humanize();
+								            		}
+								            		if(($yearNow - $yearPost) > 1){
+								            			echo $datetime::parse($key_post['updated_at'])->humanize();
+								            		}else{
+								            			echo $datetime::parse($key_post['updated_at'])->toDateString();
+								            		}
+								            		
+
+								            	?>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="entry-content " style="margin-top: 5px !important">
+                          <p class="text-secondary" style="margin-bottom: 0px !important"><?= $pr['post_intro']; ?></p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php endforeach; ?>
+
+
+            
+          </div>
+        </div>
+
+        <div class="sidebar col-lg-3">
+          <div class="sidebar-widgets-wrap">
+            <div class="widget subscribe-widget2 clearfix">
+              <div class="dark" style="padding: 25px; background-color: #383838; border-radius: 2px;">
+                <div class="fancy-title title-border">
+                  <h4>Search Google</h4>
+                </div>
+
+
+                <form method="get" action="http:www.google.com/search" target="_blank">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
+                    <button type="submit" class="button button-3d w-100 button-small m-0" style="margin-top: 25px !important;" type="submit">Tìm kiếm</button>
+                    <input type="hidden" name="sitesearch" value="{{url('/')}}" />
+                  </div>
+
+                </form>
+              
+
+                
+
+              </div>
+            </div>
+
+
+            <div class="widget clearfix">
+              <h4>Có thể bạn sẽ thích</h4>
+              <div class="posts-sm row col-mb-30" id="post-list-sidebar">
+
+                
+
+                <?php if($most_view): ?>
+                  <?php foreach($most_view as $mv): ?>
+                  <div class="entry col-12">
+                    <div class="grid-inner row g-0">
+                      <div class="col-auto">
+                        <div class="entry-image">
+                          <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$mv['post_image']; ?>" alt="<?= $mv['post_title']; ?>"/></a>
+                        </div>
+                      </div>
+                      <div class="col ps-3">
+                        <div class="entry-title">
+                          <h4><a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><?= $mv['post_title']; ?></a></h4>
+                        </div>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><i class="icon-calendar1"></i>
+                            	<?php
+								            		$datetime = (new \CodeIgniter\I18n\Time);
+								            		$yearNow = $datetime::now()->getYear();
+								            		$yearMonthsNow = $datetime::now()->getMonth();
+								            		$yearPost = $datetime::parse($mv['updated_at'])->getYear();
+								            		
+								            		$yearMonthsPost = $datetime::parse($mv['updated_at'])->getMonth();
+								            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+								            			echo $datetime::parse($mv['updated_at'])->humanize();
+								            		}
+								            		if(($yearNow - $yearPost) > 1){
+								            			echo $datetime::parse($mv['updated_at'])->humanize();
+								            		}else{
+								            			echo $datetime::parse($mv['updated_at'])->toDateString();
+								            		}
+								            		
+
+								            	?>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+
+
+                
+
+              </div>
+            </div>
+            <div class="widget clearfix">
+              <h4>Connect with Us</h4>
+              <?php if(isset($page_favicon->facebook)): ?>
+                <a href="{{$page_favicon->facebook}}" target="_blank" class="social-icon si-colored si-small si-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+              <?php endif; ?>
+
+              <?php if(isset($page_favicon->youtube)): ?>
+              <a href="{{$page_favicon->youtube}}" target="_blank" class="social-icon si-colored si-small si-delicious" data-bs-toggle="tooltip" data-bs-placement="top" title="youtube">
+                <i class="icon-youtube"></i>
+                <i class="icon-youtube"></i>
+              </a>
+              <?php endif; ?>
+
+              <?php if(isset($page_favicon->twitter)): ?>
+              <a href="{{$page_favicon->twitter}}" target="_blank" class="social-icon si-colored si-small si-android" data-bs-toggle="tooltip" data-bs-placement="top" title="twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+              </a>
+              <?php endif; ?>
+
+              <?php if(isset($page_favicon->pinterest)): ?>
+              <a href="{{$page_favicon->pinterest}}" target="_blank" class="social-icon si-colored si-small si-gplus" data-bs-toggle="tooltip" data-bs-placement="top" title="pinterest">
+                <i class="icon-pinterest"></i>
+                <i class="icon-pinterest"></i>
+              </a>
+              <?php endif; ?>
+              {{-- 
+              <a href="#" class="social-icon si-colored si-small si-stumbleupon" data-bs-toggle="tooltip" data-bs-placement="top" title="Stumbleupon">
+                <i class="icon-stumbleupon"></i>
+                <i class="icon-stumbleupon"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-foursquare" data-bs-toggle="tooltip" data-bs-placement="top" title="Foursquare">
+                <i class="icon-foursquare"></i>
+                <i class="icon-foursquare"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-forrst" data-bs-toggle="tooltip" data-bs-placement="top" title="Forrst">
+                <i class="icon-forrst"></i>
+                <i class="icon-forrst"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-digg" data-bs-toggle="tooltip" data-bs-placement="top" title="Digg">
+                <i class="icon-digg"></i>
+                <i class="icon-digg"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-spotify" data-bs-toggle="tooltip" data-bs-placement="top" title="Spotify">
+                <i class="icon-spotify"></i>
+                <i class="icon-spotify"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-reddit" data-bs-toggle="tooltip" data-bs-placement="top" title="Reddit">
+                <i class="icon-reddit"></i>
+                <i class="icon-reddit"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-blogger" data-bs-toggle="tooltip" data-bs-placement="top" title="Blogger">
+                <i class="icon-blogger"></i>
+                <i class="icon-blogger"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-dribbble" data-bs-toggle="tooltip" data-bs-placement="top" title="Dribbble">
+                <i class="icon-dribbble"></i>
+                <i class="icon-dribbble"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-flickr" data-bs-toggle="tooltip" data-bs-placement="top" title="Flickr">
+                <i class="icon-flickr"></i>
+                <i class="icon-flickr"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-linkedin" data-bs-toggle="tooltip" data-bs-placement="top" title="Linked In">
+                <i class="icon-linkedin"></i>
+                <i class="icon-linkedin"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-rss" data-bs-toggle="tooltip" data-bs-placement="top" title="RSS">
+                <i class="icon-rss"></i>
+                <i class="icon-rss"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-skype" data-bs-toggle="tooltip" data-bs-placement="top" title="Skype">
+                <i class="icon-skype"></i>
+                <i class="icon-skype"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-youtube" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube">
+                <i class="icon-youtube"></i>
+                <i class="icon-youtube"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-vimeo" data-bs-toggle="tooltip" data-bs-placement="top" title="Vimeo">
+                <i class="icon-vimeo"></i>
+                <i class="icon-vimeo"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-yahoo" data-bs-toggle="tooltip" data-bs-placement="top" title="Yahoo">
+                <i class="icon-yahoo"></i>
+                <i class="icon-yahoo"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-github" data-bs-toggle="tooltip" data-bs-placement="top" title="Github">
+                <i class="icon-github-circled"></i>
+                <i class="icon-github-circled"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-tumblr" data-bs-toggle="tooltip" data-bs-placement="top" title="Trumblr">
+                <i class="icon-tumblr"></i>
+                <i class="icon-tumblr"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-instagram" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram">
+                <i class="icon-instagram"></i>
+                <i class="icon-instagram"></i>
+              </a>
+              <a href="#" class="social-icon si-colored si-small si-pinterest" data-bs-toggle="tooltip" data-bs-placement="top" title="Pinterst">
+                <i class="icon-pinterest"></i>
+                <i class="icon-pinterest"></i>
+              </a> --}}
+            </div>
+            {{-- <div class="widget clearfix">
+              <h4>Embed Videos</h4>
+              <iframe src="player.vimeo.com/video/103927232" width="500" height="250" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div> --}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 	<div class="container clearfix">
 	  <div class="row col-mb-50">
 	    <div class="col-12">
