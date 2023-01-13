@@ -12,7 +12,8 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
-              <li class="breadcrumb-item active">Edit Post</li>
+              <li class="breadcrumb-item"><a href="<?= base_url('admin/post'); ?>">Danh Sách Bài Viết</a></li>
+              <li class="breadcrumb-item active">Edit Post: <span class="text-red text-bold"><?= $postDetail['post_title'] ?></span></li>
             </ol>
           </div>
         </div>
@@ -32,7 +33,7 @@
 	            <!-- general form elements -->
 	            <div class="card card-primary">
 	              <div class="card-header">
-	                <h3 class="card-title">Nội dung chính</h3>
+	                <h3 class="card-title text-bold">Main Content</h3>
 	              </div>
 	              <!-- /.card-header -->
 	              <!-- form start -->
@@ -99,13 +100,12 @@
                     </div>
                     <hr>
                   
-                    <label>Ảnh bài viết</label>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-                    <hr>
-                    <label>Ảnh cũ</label>
+                    
+                    <label>Ảnh Cũ</label>
                     <img src="<?= base_url('public/upload/tinymce/image_asset/'.$postDetail['post_image']) ?>" width="100%">
                     <hr>
-                    <label>Ảnh mới (nếu có)</label>
+                    <label>Ảnh Mới (nếu cập nhật)</label>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
                       var loadFile = function(event) {
@@ -196,14 +196,14 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <strong>Meta Desc:</strong>
+                        <label>Meta Desc</label>
                         <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(old('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $postDetail['post_meta_desc'];} ?></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <strong>Meta Key:</strong>
+                        <label>Meta Key</label>
                         <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?php if(old('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $postDetail['post_meta_key'];} ?></textarea>
                       </div>
                     </div>
@@ -256,4 +256,8 @@
     $(".post_active .post_tree_active a:first").addClass("active");
   </script>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+  Chỉnh sửa bài: <?= $postDetail['post_title'] ?> | AdminLTE 3
 <?= $this->endSection(); ?>

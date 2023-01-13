@@ -117,16 +117,14 @@
 	              <div class="card-body">
 
 	              	<div class="form-group">
-                    <label>Ảnh Google Maps</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'google_image_maps') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="google_image_maps" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
 
-                    <hr>
-                    <label>Ảnh cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$page_detail['page_image']) ?>" width="100%">
-                    <hr>
-                    <label>Ảnh mới (nếu có)</label>
+
+                    <label>Image Google Maps Current</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'google_image_maps') : '' ?></p>
+                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$page_detail['google_image_maps']) ?>" width="100%">
                     
+                    <label class="mt-2">New Maps Image (If Update)</label>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="google_image_maps" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
                       var loadFile = function(event) {
@@ -137,27 +135,24 @@
                         }
                       };
                     </script>
+                    
                   </div>
 
-
+                  <hr>
                   <div class="form-group">
-                    <label>Ảnh Favicon</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'google_image_maps') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_favicon" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-
-                    <hr>
-                    <label>Image Favicon</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_favicon') : '' ?></p>
+                    <label class="mt-2">Image Favicon Current</label>
                     <img src="<?= base_url('public/upload/tinymce/image_asset/'.$page_detail['page_favicon']) ?>" width="100%">
-                    <hr>
-                    <label>Image Favicon mới (nếu có)</label>
                     
-                    <img id="output2"/ style="width: 100%" class="pt-1">
+                    <label>New Image Favicon (If Update)</label>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_favicon" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <img id="output3"/ style="width: 100%" class="pt-1">
                     <script>
                       var loadFile = function(event) {
-                        var output2 = document.getElementById('output2');
-                        output2.src = URL.createObjectURL(event.target.files[0]);
-                        output2.onload = function() {
-                          URL.revokeObjectURL(output2.src) // free memory
+                        var output3 = document.getElementById('output3');
+                        output3.src = URL.createObjectURL(event.target.files[0]);
+                        output3.onload = function() {
+                          URL.revokeObjectURL(output3.src) // free memory
                         }
                       };
                     </script>

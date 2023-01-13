@@ -40,11 +40,12 @@
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover" style="width:100%">
                   <thead>
-	                  <tr>
+	                  <tr class="thead-dark">
+                      <th>Order</th>
 	                    <th width="30%">Tiêu đề bài viết</th>
 	                    <th>Danh Mục</th>
 	                    <th>Trạng thái</th>
-                      <th>Ẩn/Hiện bài viết</th>
+                      <th>Ẩn/Hiện</th>
 	                    <th>Show</th>
 	                    <th>Option</th>
 	                  </tr>
@@ -53,7 +54,14 @@
                   	<?php foreach($post as $p): ?>
                         
                       
-		                  <tr>
+		                  <tr <?php 
+                            if(isset($id)){
+                              if($p['id'] == $id){echo "class='table-primary'";}
+                            }
+                            
+
+                          ?>>
+                        <td style="text-align: center;" class="text-bold"><?= $p['id']; ?></td>
 		                    <td><?= $p['post_title']; ?></td>
 		                    <td>
                           <?php 
@@ -67,7 +75,7 @@
 
                         
 
-                        <td>
+                        <td >
                           <?php if($p['post_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
                           <p class="text-bold text-red"><?php if($p['post_show'] == 0){echo "Đang Ẩn";} ?></p>
                         </td>
@@ -200,10 +208,11 @@
                   </tbody>
                   <tfoot>
                   <tr>
+                    <th>Order</th>
                     <th>Tên</th>
-                    <th>Danh mục loại</th>
+                    <th>Danh Mục</th>
                     <th>Trạng thái</th>
-                    <th>Ẩn/Hiện bài viết</th>
+                    <th>Ẩn/Hiện</th>
                     <th>Show</th>
                     <th>Option</th>
                   </tr>
@@ -243,6 +252,10 @@
     $(".post_active .post_tree_active a:first").addClass("active");
   </script>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+  Danh sách bài viết | AdminLTE 3
 <?= $this->endSection(); ?>
 
 

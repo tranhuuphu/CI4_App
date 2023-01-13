@@ -19,10 +19,10 @@ class CanvasController extends BaseController
 
         $cate = new CateModel;
 
-        $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->findAll();
+        $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->find();
         // dd($featured);
 
-        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_blog', null)->findAll();
+        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_blog', null)->find();
         // dd($cate_all);
         $cate_2 = $cate->findAll();
         $i = 0;
@@ -55,12 +55,12 @@ class CanvasController extends BaseController
 
 
         $cate_blog = $cate->where('cate_blog', 1)->first();
-        $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog['id'])->limit(6)->findAll();
+        $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog['id'])->limit(8)->find();
 
-        $recent_post = $post->orderBy('id', 'DESC')->limit(5)->findAll();
-        $most_view = $post->orderBy('post_view', 'DESC')->limit(4)->findAll();
+        $recent_post = $post->orderBy('id', 'DESC')->limit(8)->find();
+        $most_view = $post->orderBy('post_view', 'DESC')->limit(4)->find();
 
-
+        // dd($most_view);
         
         // dd($data['recent_post']);
 

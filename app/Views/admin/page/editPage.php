@@ -76,14 +76,12 @@
 	              <div class="card-body">
 
 	              	<div class="form-group">
-                    <label>Ảnh Trang</label>
+                    <label>Ảnh Hiện Tại Trang</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-                    <hr>
-                    <label>Current Image</label>
                     <img src="<?= base_url('public/upload/tinymce/image_asset/'.$pageDetail['page_image']) ?>" width="100%">
                     <hr>
-                    <label>New Image (If Upload)</label>
+                    <label>Ảnh Mới (Nếu Cập Nhật)</label>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="page_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
                       var loadFile = function(event) {

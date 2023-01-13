@@ -156,7 +156,8 @@ class PostController extends BaseController
                 }
             }
         }
-        return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
+        // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
+        return redirect()->to('admin/post')->with('id', $id = $postModel->insertID());
     }
 
     public function getEdit($id){
@@ -309,8 +310,8 @@ class PostController extends BaseController
             }
         }
     
-
-        return redirect()->to('admin/post');
+        return redirect()->to('admin/post')->with('id', $id);
+        // return redirect()->to('admin/post');
     }
 
 

@@ -1,0 +1,13 @@
+CRITICAL - 2023-01-13 04:44:16 --> syntax error, unexpected token "echo"
+in APPPATH\Views\front_end\canvas_site\footer.php on line 139.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('front_end/canvas_site/footer', null, true)
+ 3 APPPATH\Views\front_end\canvas_site\layout.php(44): CodeIgniter\View\View->include('front_end/canvas_site/footer')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\layout.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('front_end/canvas_site/layout', [], true)
+ 7 APPPATH\Controllers\BaseController.php(65): view('front_end/canvas_site/layout', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(890): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

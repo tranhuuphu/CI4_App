@@ -5,6 +5,9 @@
 		.content-wrapper{
 			background-color: #ffffff !important;
 		}
+		.dropdown-footer, .dropdown-header{
+			text-align: left;
+		}
 		
 	</style>
 	

@@ -407,8 +407,9 @@ class PageController extends BaseController
         // dd($data);
         $pageModel->update($id, $data);
 
-        if($img = $this->request->getFile('google_image_maps'))
+        if($this->request->getFile('google_image_maps')->guessExtension() != null)
         {
+            $img = $this->request->getFile('google_image_maps');
             if ($img->isValid() && ! $img->hasMoved())
             {
                 // $newName = $img->getRandomName();
@@ -417,8 +418,9 @@ class PageController extends BaseController
             }
         }
 
-        if($img2 = $this->request->getFile('page_favicon'))
+        if($this->request->getFile('page_favicon')->guessExtension() != null)
         {
+            $img2 = $this->request->getFile('page_favicon');
             if ($img2->isValid() && ! $img2->hasMoved())
             {
                 // $newName = $img->getRandomName();

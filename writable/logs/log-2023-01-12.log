@@ -1,0 +1,41 @@
+CRITICAL - 2023-01-12 11:34:55 --> syntax error, unexpected token "if"
+in APPPATH\Controllers\Admin\PageController.php on line 413.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Admin\\PageController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\PageController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\PageController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Admin\\PageController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 11:54:50 --> Undefined variable $id
+in APPPATH\Views\admin\post\index.php on line 57.
+ 1 APPPATH\Views\admin\post\index.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'APPPATH\\Views\\admin\\post\\index.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\post\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/post/index', [], true)
+ 5 APPPATH\Controllers\Admin\PostController.php(22): view('admin/post/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 11:56:11 --> CodeIgniter\HTTP\RedirectResponse::with(): Argument #1 ($key) must be of type string, array given, called in D:\Dev\xampp\htdocs\CI4_App\app\Controllers\Admin\PostController.php on line 313
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 134.
+ 1 APPPATH\Controllers\Admin\PostController.php(313): CodeIgniter\HTTP\RedirectResponse->with([...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 12:03:21 --> CodeIgniter\HTTP\RedirectResponse::with(): Argument #1 ($key) must be of type string, array given, called in D:\Dev\xampp\htdocs\CI4_App\app\Controllers\Admin\PostController.php on line 313
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 134.
+ 1 APPPATH\Controllers\Admin\PostController.php(313): CodeIgniter\HTTP\RedirectResponse->with([...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 12:03:28 --> CodeIgniter\HTTP\RedirectResponse::with(): Argument #1 ($key) must be of type string, array given, called in D:\Dev\xampp\htdocs\CI4_App\app\Controllers\Admin\PostController.php on line 313
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 134.
+ 1 APPPATH\Controllers\Admin\PostController.php(313): CodeIgniter\HTTP\RedirectResponse->with([...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\PostController->SaveEdit('24')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PostController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
