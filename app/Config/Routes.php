@@ -38,6 +38,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 // Canvas Site
+// $routes->get('(:any)', 'CanvasController::post_cate/$1');
+$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 $routes->get('/', 'CanvasController::index');
 
 // login before acess admin board, and direct to admin page if already login
