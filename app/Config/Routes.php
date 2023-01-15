@@ -17,11 +17,12 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-// $routes->setDefaultController('CanvasController');
+// $routes->setDefaultController('Home');
+$routes->setDefaultController('CanvasController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+$routes->setAutoRoute(true);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -37,10 +38,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// Canvas Site
-// $routes->get('(:any)', 'CanvasController::post_cate/$1');
-$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
-$routes->get('/', 'CanvasController::index');
+
+
 
 // login before acess admin board, and direct to admin page if already login
 $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
@@ -148,6 +147,31 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     
 });
+
+
+// Canvas Site
+$routes->get('/', 'CanvasController::index');
+
+$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
+
+
+// $routes->get('(:any)', 'CanvasController::postCate/$1');
+
+
+// $routes->get('/', 'HomeController::index');
+
+
+// $routes->get('(:any)/(:any).html', 'HomeController::getDetailPost/$1/$2');
+
+// $routes->get('(:any).html', 'HomeController::getPage/$1');
+
+// $routes->get('search', 'HomeController::getSearch');
+
+// $routes->get('tags/(:any)', 'HomeController::tags/$1');
+
+// $routes->get('site-map.xml', 'HomeController::siteMap');
+
+// $routes->get('(:any)', 'HomeController::catePost/$1');
 
 
 

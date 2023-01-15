@@ -86,7 +86,64 @@ class CanvasController extends BaseController
         // dd($data);
         return view('front_end/canvas_site/home', $data);
     }
-    public function post($slug, $title,$id){
+    
+    public function postCate($slug1000){
+        return view('front_end/canvas_site/postCate');
+
+    }
+    public function postCate2($slug){
+        // dd($slug);
+        // return view('front_end/canvas_site/404');
+        $post = new PostModel;
+
+        $cate = new CateModel;
+
+        $cate_detail = $cate->where('cate_slug', $slug)->get()->getRow();
+
+
+        if(!$cate_detail || $cate_detail == null){
+            return view('front_end/canvas_site/404');
+        }
+        
+
+        $cate_id = $cate_detail->id;
+        $cate_slug = $cate_detail->cate_slug;
+        $cate_title = $cate_detail->cate_name;
+        // dd($cate_slug);
+        $cate_parent = $cate_detail->cate_parent_id;
+
+        if($cate_parent == 0){
+            $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
+            if($cate_sub_id != null){
+                foreach($cate_sub_id as $c_s){
+                    $cate_sub_array[] = $c_s['id'];
+                }
+                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(11);
+                $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
+            }else{
+                $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+                $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            }
+        }else{
+            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            
+        }
+
+        $data['cate_slug'] = $cate_slug;
+        $data = [
+            'post_cate'         => $post_cate,
+            'cate_detail'       => $cate_detail,
+            'pager'             => $post->pager,
+            'post_count'        => $post_count,
+            'title'             => "cai dm",
+
+        ];
+
+        return view('front_end/canvas_site/postCate', $data);
+    }
+    
+    public function post($slug, $title, $id){
         $post = new PostModel;
         $cate = new CateModel;
         $tag = new TagModel;
@@ -130,9 +187,6 @@ class CanvasController extends BaseController
         return view('front_end/canvas_site/post', $data);
     }
     
-    public function post_cate($cate2){
-        // echo $cate2;
-        return view('front_end/canvas_site/post_cate');
-    }
+    
 
 }

@@ -38,7 +38,7 @@
 	          <div class="entry-content mt-0">
 
 	            <?= $post_detail['post_content']; ?>
-	            <hr>
+	            <hr class="mb-5">
 	            <div class="tagcloud clearfix bottommargin">
 	            	<?php foreach($tag_all as $tag): ?>
 		              <a href="<?= base_url().'/tag/'.$tag['tag_post_slug'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
