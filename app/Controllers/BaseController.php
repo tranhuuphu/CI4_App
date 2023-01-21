@@ -63,13 +63,13 @@ abstract class BaseController extends Controller
         $userInfo = $usersModel->find($loggerUserID);
         $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];
         $cateModel = new \App\Models\CateModel();
-        $data['cate'] = $cateModel->findAll();
+        $data2['cate'] = $cateModel->findAll();
         $pageModel = new PageModel();
-        $data['page_home'] = $pageModel->where('page_status', 1)->first();
-        $data['link_page'] = $pageModel->where('page_status !=', 1)->find();
+        $data2['page_home'] = $pageModel->where('page_status', 1)->first();
+        $data2['link_page'] = $pageModel->where('page_status !=', 1)->find();
         // dd($data['link_page']);
 
-        return view('front_end/canvas_site/layout', $data).view('admin/admin-layout', $dataLogin);
+        return view('front_end/canvas_site/layout', $data2).view('admin/admin-layout', $dataLogin);
 
 
         

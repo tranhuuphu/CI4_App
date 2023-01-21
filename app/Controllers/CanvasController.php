@@ -138,10 +138,7 @@ class CanvasController extends BaseController
     
     public function postCate($slug5){
         // dd($slug);
-        if($slug5 == null){
-            return redirect()->to(base_url());
-
-        }
+        
         // $post = new PostModel;
 
         // $cate = new CateModel;
@@ -189,7 +186,7 @@ class CanvasController extends BaseController
         // ];
 
         // return view('front_end/canvas_site/postCate', $data);
-        // return view('front_end/canvas_site/post_cate');
+        return view('front_end/canvas_site/post_cate');
     }
     
     
