@@ -8,9 +8,9 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+
 use App\Models\CateModel;
 use App\Models\PageModel;
-
 
 /**
  * Class BaseController
@@ -41,6 +41,12 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     /**
+     * Be sure to declare properties for any property fetch you initialized.
+     * The creation of dynamic property is deprecated in PHP 8.2.
+     */
+    // protected $session;
+
+    /**
      * Constructor.
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -51,6 +57,7 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+
         $usersModel = new \App\Models\usersModel();
         $loggerUserID = session()->get('loggedUser');
         $userInfo = $usersModel->find($loggerUserID);
@@ -64,5 +71,7 @@ abstract class BaseController extends Controller
 
         return view('front_end/canvas_site/layout', $data).view('admin/admin-layout', $dataLogin);
 
+
+        
     }
 }

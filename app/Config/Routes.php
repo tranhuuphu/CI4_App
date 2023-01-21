@@ -5,24 +5,17 @@ namespace Config;
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
-// Load the system's routing file first, so that the app and ENVIRONMENT
-// can override as needed.
-if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
-    require SYSTEMPATH . 'Config/Routes.php';
-}
-
 /*
  * --------------------------------------------------------------------
  * Router Setup
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-// $routes->setDefaultController('Home');
+$routes->setDefaultController('Home');
 $routes->setDefaultController('CanvasController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -37,8 +30,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-
-
+// $routes->get('/', 'Home::index');
 
 
 // login before acess admin board, and direct to admin page if already login
@@ -155,7 +147,7 @@ $routes->get('/', 'CanvasController::index');
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 
-// $routes->get('(:any)', 'CanvasController::postCate/$1');
+$routes->get('(:any)', 'CanvasController::postCate/$1');
 
 
 // $routes->get('/', 'HomeController::index');
@@ -172,8 +164,6 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 // $routes->get('site-map.xml', 'HomeController::siteMap');
 
 // $routes->get('(:any)', 'HomeController::catePost/$1');
-
-
 
 /*
  * --------------------------------------------------------------------

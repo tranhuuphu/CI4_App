@@ -6,25 +6,24 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "ext-curl": "*",
         "ext-intl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "kint-php/kint": "^4.2",
         "laminas/laminas-escaper": "^2.9",
-        "psr/log": "^1.1",
-        "tinify/tinify": "^1.6"
+        "psr/log": "^1.1"
     },
     "require-dev": {
+        "kint-php/kint": "^5.0.1",
         "codeigniter/coding-standard": "^1.5",
         "fakerphp/faker": "^1.9",
-        "friendsofphp/php-cs-fixer": "~3.13.0",
+        "friendsofphp/php-cs-fixer": "3.13.0",
         "mikey179/vfsstream": "^1.6",
         "nexusphp/cs-config": "^3.6",
         "phpunit/phpunit": "^9.1",
         "predis/predis": "^1.1 || ^2.0"
     },
     "suggest": {
+        "ext-curl": "If you use CURLRequest class",
         "ext-imagick": "If you use Image class ImageMagickHandler",
         "ext-gd": "If you use Image class GDHandler",
         "ext-exif": "If you run Image class tests",
@@ -58,7 +57,7 @@
         "test": "phpunit"
     },
     "support": {
-        "forum": "http://forum.codeigniter.com/",
+        "forum": "https://forum.codeigniter.com/",
         "source": "https://github.com/codeigniter4/CodeIgniter4",
         "slack": "https://codeigniterchat.slack.com"
     }

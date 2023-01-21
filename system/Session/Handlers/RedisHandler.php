@@ -11,8 +11,10 @@
 
 namespace CodeIgniter\Session\Handlers;
 
+use CodeIgniter\I18n\Time;
 use CodeIgniter\Session\Exceptions\SessionException;
 use Config\App as AppConfig;
+use Config\Session as SessionConfig;
 use Redis;
 use RedisException;
 use ReturnTypeWillChange;
@@ -68,15 +70,30 @@ class RedisHandler extends BaseHandler
     {
         parent::__construct($config, $ipAddress);
 
+        /** @var SessionConfig|null $session */
+        $session = config('Session');
+
+        // Store Session configurations
+        if ($session instanceof SessionConfig) {
+            $this->sessionExpiration = empty($session->expiration)
+                ? (int) ini_get('session.gc_maxlifetime')
+                : (int) $session->expiration;
+            // Add sessionCookieName for multiple session cookies.
+            $this->keyPrefix .= $session->cookieName . ':';
+        } else {
+            // `Config/Session.php` is absence
+            $this->sessionExpiration = empty($config->sessionExpiration)
+                ? (int) ini_get('session.gc_maxlifetime')
+                : (int) $config->sessionExpiration;
+            // Add sessionCookieName for multiple session cookies.
+            $this->keyPrefix .= $config->sessionCookieName . ':';
+        }
+
         $this->setSavePath();
 
         if ($this->matchIP === true) {
             $this->keyPrefix .= $this->ipAddress . ':';
         }
-
-        $this->sessionExpiration = empty($config->sessionExpiration)
-            ? (int) ini_get('session.gc_maxlifetime')
-            : (int) $config->sessionExpiration;
     }
 
     protected function setSavePath(): void
@@ -118,7 +135,7 @@ class RedisHandler extends BaseHandler
 
         $redis = new Redis();
 
-        if (! $redis->connect($this->savePath['host'], $this->savePath['port'], $this->savePath['timeout'])) {
+        if (! $redis->connect($this->savePath['host'], ($this->savePath['host'][0] === '/' ? 0 : $this->savePath['port']), $this->savePath['timeout'])) {
             $this->logger->error('Session: Unable to connect to Redis with the configured settings.');
         } elseif (isset($this->savePath['password']) && ! $redis->auth($this->savePath['password'])) {
             $this->logger->error('Session: Unable to authenticate to Redis instance.');
@@ -293,7 +310,7 @@ class RedisHandler extends BaseHandler
                 continue;
             }
 
-            if (! $this->redis->setex($lockKey, 300, (string) time())) {
+            if (! $this->redis->setex($lockKey, 300, (string) Time::now()->getTimestamp())) {
                 $this->logger->error('Session: Error while trying to obtain lock for ' . $this->keyPrefix . $sessionID);
 
                 return false;

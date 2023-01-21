@@ -439,6 +439,13 @@ class Router implements RouterInterface
                         $matched
                     );
 
+                    if ($this->collection->shouldUseSupportedLocalesOnly()
+                        && ! in_array($matched['locale'], config('App')->supportedLocales, true)) {
+                        // Throw exception to prevent the autorouter, if enabled,
+                        // from trying to find a route
+                        throw PageNotFoundException::forLocaleNotSupported($matched['locale']);
+                    }
+
                     $this->detectedLocale = $matched['locale'];
                     unset($matched);
                 }
@@ -574,8 +581,6 @@ class Router implements RouterInterface
     {
         if (empty($dir)) {
             $this->directory = null;
-
-            return;
         }
 
         if ($this->autoRouter instanceof AutoRouter) {
