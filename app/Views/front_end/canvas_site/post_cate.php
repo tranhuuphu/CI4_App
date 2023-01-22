@@ -1,8 +1,21 @@
 <?= $this->extend('front_end/canvas_site/layout'); ?>
 
 <?= $this->section('content'); ?>
-dfgsdfg
-<!-- <div class="container clearfix">
+<div class="container">
+	<section id="page-title">
+	  <div class="container clearfix">
+	    
+	    <ol class="breadcrumb">
+	      <li class="breadcrumb-item"><a href="#">Home</a></li>
+	      <li class="breadcrumb-item"><a href="#">Templates</a></li>
+	      <li class="breadcrumb-item active" aria-current="page">Widgets</li>
+	    </ol>
+	  </div>
+	</section>
+</div>
+	
+<div class="container clearfix">
+
 	<div class="row col-mb-50">
 	  <div class="col-lg-8">
 	    <div class="fancy-title title-border">
@@ -113,6 +126,11 @@ dfgsdfg
 	    </div>
 	  </div>
 	</div>
-</div> -->
+</div>
+
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('yoast_seo'); ?>
 
 <?= $this->endSection(); ?>

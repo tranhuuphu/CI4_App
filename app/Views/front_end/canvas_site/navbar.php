@@ -101,7 +101,7 @@
         <nav class="primary-menu">
           <ul class="menu-container">
             <li class="menu-item current">
-              <a class="menu-link" href="demo-seo.html"><div>Home</div></a>
+              <a class="menu-link" href="<?= site_url(); ?>"><div>Home</div></a>
             </li>
 
             <?php foreach($cate as $c3): ?>
@@ -111,7 +111,7 @@
             <?php foreach($cate as $c): ?>
               <?php if($c['cate_parent_id'] == 0): ?>
                 <li class="menu-item <?php if(in_array($c['id'], $c_t)): ?> mega-menu2 <?php endif; ?>">
-                  <a class="menu-link" href="<?= base_url('').'/'.$c['cate_slug']; ?>" title = "<?= $c['cate_name']; ?>"><?= $c['cate_name']; ?>
+                  <a class="menu-link" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><?= $c['cate_name']; ?>
                     <?php if(in_array($c['id'], $c_t)): ?>
                       <i class="icon-angle-down"></i>
                     <?php endif; ?>

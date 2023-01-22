@@ -13,6 +13,7 @@ class CanvasController extends BaseController
 {
     public function index()
     {
+        // dd(current_url());
         $pageModel = new PageModel();
 
         $post = new PostModel;
@@ -87,6 +88,64 @@ class CanvasController extends BaseController
         return view('front_end/canvas_site/home', $data);
     }
 
+    public function postCate($slug, $id){
+        // dd($slug);
+        
+        $post = new PostModel;
+
+        $cate = new CateModel;
+
+        $cate_detail = $cate->where('id', $id)->first();
+
+
+        if(!$cate_detail || $cate_detail == null){
+            return view('front_end/canvas_site/404');
+        }
+        
+
+        $cate_id = $cate_detail['id'];
+        $cate_parent = $cate_detail['cate_parent_id'];
+
+        if($cate_parent == 0){
+            $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
+            if($cate_sub_id != null){
+                foreach($cate_sub_id as $c_s){
+                    $cate_sub_array[] = $c_s['id'];
+                }
+                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(11);
+                $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
+            }else{
+                $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+                $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            }
+        }else{
+            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            
+        }
+
+
+        $link_full = base_url().'/'.$slug.'-'.$id;
+
+        $data = [
+            'title'         => $cate_detail['cate_name'],
+            'meta_desc'     => $cate_detail['cate_meta_desc'],
+            'meta_key'      => $cate_detail['cate_meta_key'],
+            'image'         => 'null',
+            'created_at'    => $cate_detail['created_at'],
+            'updated_at'    => $cate_detail['updated_at'],
+
+            'cate_name'     => $cate_detail['cate_name'],
+            'cate_slug'     => $slug,
+            'link_full'     => $link_full,
+
+
+        ];
+
+        return view('front_end/canvas_site/post_cate', $data);
+        // return view('front_end/canvas_site/post_cate');
+    }
+
 
 
     public function post($slug2, $title, $id){
@@ -136,58 +195,7 @@ class CanvasController extends BaseController
 
     
     
-    public function postCate($slug5){
-        // dd($slug);
-        
-        // $post = new PostModel;
-
-        // $cate = new CateModel;
-
-        // $cate_detail = $cate->where('cate_slug', $slug)->get()->getRow();
-
-
-        // if(!$cate_detail || $cate_detail == null){
-        //     return view('front_end/canvas_site/404');
-        // }
-        
-
-        // $cate_id = $cate_detail->id;
-        // $cate_slug = $cate_detail->cate_slug;
-        // $cate_title = $cate_detail->cate_name;
-        // // dd($cate_slug);
-        // $cate_parent = $cate_detail->cate_parent_id;
-
-        // if($cate_parent == 0){
-        //     $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
-        //     if($cate_sub_id != null){
-        //         foreach($cate_sub_id as $c_s){
-        //             $cate_sub_array[] = $c_s['id'];
-        //         }
-        //         $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(11);
-        //         $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
-        //     }else{
-        //         $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
-        //         $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-        //     }
-        // }else{
-        //     $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
-        //     $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-            
-        // }
-
-        // $data['cate_slug'] = $cate_slug;
-        // $data = [
-        //     'post_cate'         => $post_cate,
-        //     'cate_detail'       => $cate_detail,
-        //     'pager'             => $post->pager,
-        //     'post_count'        => $post_count,
-        //     'title'             => "cai dm",
-
-        // ];
-
-        // return view('front_end/canvas_site/postCate', $data);
-        return view('front_end/canvas_site/post_cate');
-    }
+    
     
     
     

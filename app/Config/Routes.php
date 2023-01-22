@@ -147,7 +147,7 @@ $routes->get('/', 'CanvasController::index');
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 
-$routes->get('(:any)', 'CanvasController::postCate/$1');
+$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
 
 // $routes->get('/', 'HomeController::index');
