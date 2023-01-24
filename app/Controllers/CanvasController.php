@@ -105,8 +105,10 @@ class CanvasController extends BaseController
 
         $cate_id = $cate_detail['id'];
         $cate_parent = $cate_detail['cate_parent_id'];
-
-        if($cate_parent == 0){
+        if($cate_parent == 0 && $cate_detail['cate_blog'] == 1){
+            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();   
+        }elseif($cate_parent == 0 && $cate_detail['cate_blog'] != 1){
             $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
             if($cate_sub_id != null){
                 foreach($cate_sub_id as $c_s){
@@ -124,6 +126,14 @@ class CanvasController extends BaseController
             
         }
 
+        // if($slug == "blog"){
+            
+        //     return view('canvas.cate_blog', compact('cate_detail', 'post_cate2', 'most_view', 'tags'));
+        // }else{
+        //     $most_view_product = Post::where('post_price', '<>', 0)->orderBy('post_view', 'DESC')->join('cate', 'cate.id', '=', 'post.post_cate_id')->select('cate.cate_name', 'cate.cate_slug', 'post.id', 'post.post_title', 'post.post_slug', 'post.post_intro', 'post.post_image', 'post.post_thumb_image', 'post.post_content')->take(4)->get();
+        //     return view('canvas.cate', compact('cate_detail', 'post_cate2', 'most_view', 'tags', 'most_view_product'));
+        // }
+
 
         $link_full = base_url().'/'.$slug.'-'.$id;
 
@@ -137,12 +147,19 @@ class CanvasController extends BaseController
 
             'cate_name'     => $cate_detail['cate_name'],
             'cate_slug'     => $slug,
+            'post_cate'     => $post_cate,
             'link_full'     => $link_full,
 
 
         ];
 
-        return view('front_end/canvas_site/post_cate', $data);
+        if($cate_detail['cate_blog'] == 1){
+            return view('front_end/canvas_site/blog_cate', $data);
+        }else{
+            return view('front_end/canvas_site/post_cate', $data);
+        }
+
+        
         // return view('front_end/canvas_site/post_cate');
     }
 

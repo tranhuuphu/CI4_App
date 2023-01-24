@@ -121,7 +121,7 @@
 
                       <?php foreach($cate as $c2): ?>
                         <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                          <li class="menu-item"><a class="menu-link" href="<?= base_url('').'/'.$c2['cate_slug']; ?>" title="<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a></li>
+                          <li class="menu-item"><a class="menu-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title="<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a></li>
                           
                         <?php endif; ?>
                       <?php endforeach; ?>
