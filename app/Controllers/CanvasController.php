@@ -95,6 +95,8 @@ class CanvasController extends BaseController
 
         $cate = new CateModel;
 
+        $tag = new TagModel;
+
         $cate_detail = $cate->where('id', $id)->first();
 
 
@@ -106,33 +108,38 @@ class CanvasController extends BaseController
         $cate_id = $cate_detail['id'];
         $cate_parent = $cate_detail['cate_parent_id'];
         if($cate_parent == 0 && $cate_detail['cate_blog'] == 1){
-            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
-            $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();   
+            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
+            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+            
         }elseif($cate_parent == 0 && $cate_detail['cate_blog'] != 1){
             $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
             if($cate_sub_id != null){
                 foreach($cate_sub_id as $c_s){
                     $cate_sub_array[] = $c_s['id'];
                 }
-                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(11);
+                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(2);
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
+                $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
+                $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+
+
             }else{
                 $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+                $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
+                $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+
+
             }
         }else{
             $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
+            $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
+            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
             
         }
-
-        // if($slug == "blog"){
-            
-        //     return view('canvas.cate_blog', compact('cate_detail', 'post_cate2', 'most_view', 'tags'));
-        // }else{
-        //     $most_view_product = Post::where('post_price', '<>', 0)->orderBy('post_view', 'DESC')->join('cate', 'cate.id', '=', 'post.post_cate_id')->select('cate.cate_name', 'cate.cate_slug', 'post.id', 'post.post_title', 'post.post_slug', 'post.post_intro', 'post.post_image', 'post.post_thumb_image', 'post.post_content')->take(4)->get();
-        //     return view('canvas.cate', compact('cate_detail', 'post_cate2', 'most_view', 'tags', 'most_view_product'));
-        // }
 
 
         $link_full = base_url().'/'.$slug.'-'.$id;
@@ -144,11 +151,16 @@ class CanvasController extends BaseController
             'image'         => 'null',
             'created_at'    => $cate_detail['created_at'],
             'updated_at'    => $cate_detail['updated_at'],
+            'link_full'     => $link_full,
 
             'cate_name'     => $cate_detail['cate_name'],
             'cate_slug'     => $slug,
+
             'post_cate'     => $post_cate,
-            'link_full'     => $link_full,
+            'most_view'     => $most_view,
+            'tag_this'      => $tag_this,
+
+            'pager'         => $post->pager,
 
 
         ];
