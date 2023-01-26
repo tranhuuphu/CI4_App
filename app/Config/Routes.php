@@ -163,6 +163,9 @@ $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
 // $routes->get('site-map.xml', 'HomeController::siteMap');
 
+$routes->get('site-map.xml', 'CanvasController::siteMap');
+
+
 // $routes->get('(:any)', 'HomeController::catePost/$1');
 
 /*

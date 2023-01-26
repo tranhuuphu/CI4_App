@@ -222,6 +222,70 @@ class CanvasController extends BaseController
     }
 
 
+
+    public function tags($tags){
+
+
+        $post = new Post_Model;
+        $tags_array = explode('-', $tags);
+        $tags_origin = implode(' ', $tags_array);
+
+
+        $post_tag = $post->join('cate', 'cate.cate_id = post.post_cate_id', 'left')->orderBy('post_id', 'DESC')->like('post_tag', $tags_origin)->paginate(10);
+
+        if(!$post_tag && $post_tag == NULL){
+            return view('errors/404');
+        }
+
+        $data = [
+            'post_tag'      => $post_tag,
+            'tags'          => $tags,
+            'tags_origin'   => $tags_origin,
+            'pager'         => $post->pager,
+        ];
+    }
+
+    public function siteMap(){
+        $post = new PostModel;
+
+        $cate = new CateModel;
+
+        $tag = new TagModel;
+
+        $page = new PageModel;
+
+        $page_info  = $page->findAll();
+
+        $cate_info  = $cate->findAll();
+
+        $tag_info   = $tag->findAll();
+
+
+        $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->findAll();
+        // dd($post_all);
+
+        $data = [
+            'page_info'     => $page_info,
+            'cate_info'     => $cate_info,
+            'tag_info'      => $tag_info,
+            'post_all'      => $post_all,
+        ];
+
+        return view("front_end/site_map", $data);
+    }
+
+    public function getSearch(){
+
+        $data['key'] = $_GET['q'];
+        if(!isset($data['key']) && $data['key'] == NULL || $data['key'] == '+' || $data['key'] == '++'){
+            return view('errors/404');
+        }
+
+        return view("site/getSearch", $data);
+    }
+
+
+
     
     
     
