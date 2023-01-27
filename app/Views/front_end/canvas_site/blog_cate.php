@@ -20,8 +20,8 @@
 
 <div class="container clearfix mt-5">
   <?php
-  	$blog_1 = array_slice($post_cate, 0, 1);
-  	$blog_2 = array_slice($post_cate, 1);
+  	$blog_1 = array_slice($post_cate, 0, 3);
+  	$blog_2 = array_slice($post_cate, 3);
   ?>
 
   <div id="posts" class="post-grid grid-container row" data-layout="fitRows">
@@ -79,7 +79,7 @@
 
 
   <div class="row gutter-40 col-mb-80 mt-2">
-    <div class="postcontent col-lg-9">
+    <div class="postcontent col-lg-8">
       <div id="posts" class="row grid-container gutter-40">
       	<?php foreach($blog_2 as $key2): ?>
 	      	<div class="entry col-12">
@@ -124,29 +124,18 @@
 	      
         
       </div>
-      <div class="line line-sm"></div>
-      <!-- Paginate -->
-      <ul class="pagination pagination-rounded pagination-3d">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&larr;</span></a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">5</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&rarr;</span></a>
-        </li>
-      </ul>
-      <?= $pager->links() ?>
+      <?php if($post_count > $paginate): ?>
+      
+        <div class="line line-sm"></div>
+        <?= $pager->links() ?>
+      <?php endif; ?>
 
 
 
 
     </div>
 
-    <div class="sidebar col-lg-3">
+    <div class="sidebar col-lg-4">
       <div class="sidebar-widgets-wrap">
 
       	<div class="card overflow-hidden" style="border-radius: 0">
@@ -169,44 +158,44 @@
           <h4>Recent Posts</h4>
           <div class="posts-sm row col-mb-30" id="post-list-sidebar">
           	<?php foreach($most_view as $key3): ?>
-            <div class="entry col-12">
-              <div class="grid-inner row g-0">
-                <div class="col-auto">
-                  <div class="entry-image">
-                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+              <div class="entry col-12">
+                <div class="grid-inner row g-0">
+                  <div class="col-auto">
+                    <div class="entry-image">
+                      <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                    </div>
                   </div>
-                </div>
-                <div class="col ps-3">
-                  <div class="entry-title">
-                    <h4><a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><?= $key3['post_title']; ?></a></h4>
-                  </div>
-                  <div class="entry-meta">
-                    <ul>
-                      <li>
-                      	<?php
-					            		$datetime = (new \CodeIgniter\I18n\Time);
-					            		$yearNow = $datetime::now()->getYear();
-					            		$yearMonthsNow = $datetime::now()->getMonth();
-					            		$yearPost = $datetime::parse($key3['updated_at'])->getYear();
-					            		
-					            		$yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
-					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-					            			echo $datetime::parse($key3['updated_at'])->humanize();
-					            		}
-					            		if(($yearNow - $yearPost) > 1){
-					            			echo $datetime::parse($key3['updated_at'])->humanize();
-					            		}else{
-					            			echo $datetime::parse($key3['updated_at'])->toDateString();
-					            		}
-					            		
+                  <div class="col ps-3">
+                    <div class="entry-title">
+                      <h4><a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><?= $key3['post_title']; ?></a></h4>
+                    </div>
+                    <div class="entry-meta">
+                      <ul>
+                        <li>
+                        	<?php
+  					            		$datetime = (new \CodeIgniter\I18n\Time);
+  					            		$yearNow = $datetime::now()->getYear();
+  					            		$yearMonthsNow = $datetime::now()->getMonth();
+  					            		$yearPost = $datetime::parse($key3['updated_at'])->getYear();
+  					            		
+  					            		$yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
+  					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+  					            			echo $datetime::parse($key3['updated_at'])->humanize();
+  					            		}
+  					            		if(($yearNow - $yearPost) > 1){
+  					            			echo $datetime::parse($key3['updated_at'])->humanize();
+  					            		}else{
+  					            			echo $datetime::parse($key3['updated_at'])->toDateString();
+  					            		}
+  					            		
 
-					            	?>
-                      </li>
-                    </ul>
+  					            	?>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             <?php endforeach; ?>
 
             

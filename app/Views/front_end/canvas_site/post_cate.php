@@ -14,22 +14,61 @@
 </div>
 	
 <div class="container clearfix mt-5">
-
+	<?php
+  	$post_cate_1 = array_slice($post_cate, 0, 1);
+  	$post_cate_2 = array_slice($post_cate, 1);
+  ?>
 	<div class="row col-mb-50">
 	  <div class="col-lg-8">
 	    
 	    <div class="row posts-md col-mb-30">
 
-	    	
+	    	<div class="col-12">
+          <div class="promo h-shadow-sm shadow-ts border rounded-5 overflow-hidden">
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <div class="p-4 p-lg-5">
+                  <h3 class="fw-semibold"><?= $post_cate_1[0]['post_title'] ?></h3>
+                  <p class="mb-3 text-black-50 mt-3"><i class="icon-calendar2"></i>
+                  	<?php
+			            		$datetime = (new \CodeIgniter\I18n\Time);
+			            		$yearNow = $datetime::now()->getYear();
+			            		$yearMonthsNow = $datetime::now()->getMonth();
+			            		$yearPost = $datetime::parse($post_cate_1[0]['updated_at'])->getYear();
+			            		
+			            		$yearMonthsPost = $datetime::parse($post_cate_1[0]['updated_at'])->getMonth();
+			            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
+			            		}
+			            		if(($yearNow - $yearPost) > 1){
+			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
+			            		}else{
+			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->toDateString();
+			            		}
+			            		
 
-			  <?php foreach($post_cate as $key): ?>
+			            	?>
+
+                  </p>
+                  <p class="mb-3 text-black-50"><?= $post_cate_1[0]['post_intro'] ?></p>
+                  <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="button button-rounde" style= "margin-left: 0 !important;">Read More</a>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-self-stretch order-first">
+                <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+			  <?php foreach($post_cate_2 as $key): ?>
 		      <div class="entry col-md-6">
 		        <div class="grid-inner">
 		          <div class="entry-image">
 		            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
 		          </div>
 		          <div class="entry-title title-sm nott">
-		            <h3><a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+		            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
 		          </div>
 		          <div class="entry-meta">
 		            <ul>
@@ -65,126 +104,78 @@
 		      </div>
 		    <?php endforeach; ?>
 
+		    <?php if($post_count > $paginate): ?>
+      
+	        <div class="line line-sm"></div>
+	        <?= $pager->links() ?>
+	      <?php endif; ?>
+
 	      
 	    </div>
 	  </div>
 	  <div class="col-lg-4">
-	    
-	    <div class="fslider testimonial p-0 border-0 shadow-none" data-animation="slide" data-arrows="false">
-	      <div class="flexslider">
-	        <div class="slider-wrap">
-	          <div class="slide">
-	            <div class="testi-image">
-	              <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails" /></a>
-	            </div>
-	            <div class="testi-content">
-	              <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
-	              <div class="testi-meta">
-	                Steve Jobs
-	                <span>Apple Inc.</span>
-	              </div>
-	            </div>
-	          </div>
-	          <div class="slide">
-	            <div class="testi-image">
-	              <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails" /></a>
-	            </div>
-	            <div class="testi-content">
-	              <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
-	              <div class="testi-meta">
-	                Collis Ta'eed
-	                <span>Envato Inc.</span>
-	              </div>
-	            </div>
-	          </div>
-	          <div class="slide">
-	            <div class="testi-image">
-	              <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails" /></a>
-	            </div>
-	            <div class="testi-content">
-	              <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
-	              <div class="testi-meta">
-	                John Doe
-	                <span>XYZ Inc.</span>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="card topmargin overflow-hidden">
+
+	  	<div class="card topmargin2 overflow-hidden">
 	      <div class="card-body">
 	        <h4>Opening Hours</h4>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit reprehenderit voluptates.</p>
+	        <!-- <p>Thời gian làm việc</p> -->
 	        <ul class="iconlist mb-0">
-	          <li><i class="icon-time color"></i> <strong>Mondays-Fridays:</strong> 10AM to 7PM</li>
-	          <li><i class="icon-time color"></i> <strong>Saturdays:</strong> 11AM to 3PM</li>
-	          <li><i class="icon-time text-danger"></i> <strong>Sundays:</strong> Closed</li>
+	          <li><i class="icon-time color"></i> <strong>Mondays-Fridays: </strong> 10AM to 7PM</li>
+	          <li><i class="icon-time color"></i> <strong>Saturdays: </strong> 11AM to 3PM</li>
+	          <li><i class="icon-time text-danger"></i> <strong>Sundays: </strong> Closed</li>
 	        </ul>
 	        <i class="icon-time bgicon"></i>
 	      </div>
 	    </div>
+	    
+	    
+	    
 
 	    <div class="widget clearfix">
         <h4>Most View</h4>
         <div class="posts-sm row col-mb-30" id="post-list-sidebar">
-          <div class="entry col-12">
-            <div class="grid-inner row g-0">
-              <div class="col-auto">
-                <div class="entry-image">
-                  <a href="#"><img src="images/magazine/small/3.jpg" alt="Image" /></a>
+
+        	<?php foreach($most_view as $key3): ?>
+            <div class="entry col-12">
+              <div class="grid-inner row g-0">
+                <div class="col-auto">
+                  <div class="entry-image">
+                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                  </div>
                 </div>
-              </div>
-              <div class="col ps-3">
-                <div class="entry-title">
-                  <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                </div>
-                <div class="entry-meta">
-                  <ul>
-                    <li>10th July 2021</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="entry col-12">
-            <div class="grid-inner row g-0">
-              <div class="col-auto">
-                <div class="entry-image">
-                  <a href="#"><img src="images/magazine/small/2.jpg" alt="Image" /></a>
-                </div>
-              </div>
-              <div class="col ps-3">
-                <div class="entry-title">
-                  <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                </div>
-                <div class="entry-meta">
-                  <ul>
-                    <li>10th July 2021</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="entry col-12">
-            <div class="grid-inner row g-0">
-              <div class="col-auto">
-                <div class="entry-image">
-                  <a href="#"><img src="images/magazine/small/1.jpg" alt="Image" /></a>
-                </div>
-              </div>
-              <div class="col ps-3">
-                <div class="entry-title">
-                  <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                </div>
-                <div class="entry-meta">
-                  <ul>
-                    <li>10th July 2021</li>
-                  </ul>
+                <div class="col ps-3">
+                  <div class="entry-title">
+                    <h4><a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><?= $key3['post_title']; ?></a></h4>
+                  </div>
+                  <div class="entry-meta">
+                    <ul>
+                      <li>
+                      	<?php
+					            		$datetime = (new \CodeIgniter\I18n\Time);
+					            		$yearNow = $datetime::now()->getYear();
+					            		$yearMonthsNow = $datetime::now()->getMonth();
+					            		$yearPost = $datetime::parse($key3['updated_at'])->getYear();
+					            		
+					            		$yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
+					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+					            			echo $datetime::parse($key3['updated_at'])->humanize();
+					            		}
+					            		if(($yearNow - $yearPost) > 1){
+					            			echo $datetime::parse($key3['updated_at'])->humanize();
+					            		}else{
+					            			echo $datetime::parse($key3['updated_at'])->toDateString();
+					            		}
+					            		
+
+					            	?>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <?php endforeach; ?>
+          
         </div>
       </div>
 

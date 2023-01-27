@@ -99,6 +99,8 @@ class CanvasController extends BaseController
 
         $cate_detail = $cate->where('id', $id)->first();
 
+        $paginate = 10;
+
 
         if(!$cate_detail || $cate_detail == null){
             return view('front_end/canvas_site/404');
@@ -119,14 +121,14 @@ class CanvasController extends BaseController
                 foreach($cate_sub_id as $c_s){
                     $cate_sub_array[] = $c_s['id'];
                 }
-                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('id', 'desc')->paginate(2);
+                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.*')->orderBy('id', 'desc')->paginate($paginate);
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
 
 
             }else{
-                $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+                $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
                 $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -134,7 +136,7 @@ class CanvasController extends BaseController
 
             }
         }else{
-            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -157,6 +159,8 @@ class CanvasController extends BaseController
             'cate_slug'     => $slug,
 
             'post_cate'     => $post_cate,
+            'paginate'      => $paginate,
+            'post_count'    => $post_count,
             'most_view'     => $most_view,
             'tag_this'      => $tag_this,
 
@@ -223,26 +227,54 @@ class CanvasController extends BaseController
 
 
 
-    public function tags($tags){
+    public function tag($tag_slug){
+        $post = new PostModel;
 
+        $tag = new TagModel;
+        
+        $tag_detail = $tag->where('tag_post_slug', $tag_slug)->select('tag.tag_post_id, tag.tag_post_title')->findAll();
+        // dd($tag_detail);
 
-        $post = new Post_Model;
-        $tags_array = explode('-', $tags);
-        $tags_origin = implode(' ', $tags_array);
+        if(!isset($tag_detail) || $tag_detail == null){
+            return view('front_end/canvas_site/404');
+        }
 
+        foreach($tag_detail as $key5){
+            $post_id_array[] = $key5['tag_post_id'];
+        }
 
-        $post_tag = $post->join('cate', 'cate.cate_id = post.post_cate_id', 'left')->orderBy('post_id', 'DESC')->like('post_tag', $tags_origin)->paginate(10);
+        // dd($post_id_array);
+
+        $post_tag = $post->whereIn('post.id', $post_id_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->paginate(10);
+
+        // dd($post_tag);
 
         if(!$post_tag && $post_tag == NULL){
-            return view('errors/404');
+            return view('front_end/canvas_site/404');
         }
 
         $data = [
-            'post_tag'      => $post_tag,
-            'tags'          => $tags,
-            'tags_origin'   => $tags_origin,
+            'title'         => $cate_detail['cate_name'],
+            'meta_desc'     => $cate_detail['cate_meta_desc'],
+            'meta_key'      => $cate_detail['cate_meta_key'],
+            'image'         => 'null',
+            'created_at'    => $cate_detail['created_at'],
+            'updated_at'    => $cate_detail['updated_at'],
+            'link_full'     => $link_full,
+
+            'cate_name'     => $cate_detail['cate_name'],
+            'cate_slug'     => $slug,
+
+            'post_cate'     => $post_cate,
+            'paginate'      => $paginate,
+            'post_count'    => $post_count,
+            'most_view'     => $most_view,
+            'tag_this'      => $tag_this,
+
             'pager'         => $post->pager,
         ];
+        return view("front_end/canvas_site/getTag", $data);
+
     }
 
     public function siteMap(){
@@ -270,18 +302,50 @@ class CanvasController extends BaseController
             'tag_info'      => $tag_info,
             'post_all'      => $post_all,
         ];
-
+        header("Content-Type: xml;");
         return view("front_end/site_map", $data);
     }
 
     public function getSearch(){
 
-        $data['key'] = $_GET['q'];
-        if(!isset($data['key']) && $data['key'] == NULL || $data['key'] == '+' || $data['key'] == '++'){
-            return view('errors/404');
+        $post = new PostModel;
+
+        $key = $_GET['q'];
+        $paginate = 10;
+        // dd($key);
+        if(!isset($key) || $key == null || $key == '+' || $key == '++'){
+            return view('front_end/canvas_site/404');
         }
 
-        return view("site/getSearch", $data);
+        $array = ['post_title' => $key, 'post_intro' => $key, 'post_content' => $key];
+        $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->paginate($paginate);
+        $post_count = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->countAllResults();
+
+
+        // dd($post_count);
+
+        $link_full = base_url().'search?q='.$key;
+        $data = [
+            'title'         => "kết quả tìm kiếm cụm từ: ".$key,
+            'meta_desc'     => "kết quả tìm kiếm cụm từ: ".$key,
+            'meta_key'      => "kết quả tìm kiếm cụm từ: ".$key,
+            'image'         => null,
+            'created_at'    => null,
+            'updated_at'    => null,
+            'pager'         => $post->pager,
+
+
+
+
+            'key'           => $key,
+            'paginate'      => $paginate,
+            'post_count'    => $post_count,
+            'result'        => $result,
+            'link_full'     => $link_full,
+
+        ];
+        
+        return view("front_end/canvas_site/getSearch", $data);
     }
 
 

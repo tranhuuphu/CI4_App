@@ -150,7 +150,7 @@
               transition: opacity .3s ease;
           }
         </style>
-        <form class="top-search-form" action="<?php base_url('/'); ?>/search/" method="get">
+        <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off" />
           <button class="btn border-0 bg-secondary rounded-end h-bg-alt" type="submit"><i class="icon-search2"></i></button>
 

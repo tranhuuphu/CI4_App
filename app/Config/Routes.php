@@ -147,7 +147,7 @@ $routes->get('/', 'CanvasController::index');
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 
-$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+
 
 
 // $routes->get('/', 'HomeController::index');
@@ -157,14 +157,17 @@ $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
 // $routes->get('(:any).html', 'HomeController::getPage/$1');
 
-// $routes->get('search', 'HomeController::getSearch');
+$routes->get('tag/(:any)', 'CanvasController::tag/$1');
 
-// $routes->get('tags/(:any)', 'HomeController::tags/$1');
+
+$routes->get('search', 'CanvasController::getSearch');
+
 
 // $routes->get('site-map.xml', 'HomeController::siteMap');
 
 $routes->get('site-map.xml', 'CanvasController::siteMap');
 
+$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
 // $routes->get('(:any)', 'HomeController::catePost/$1');
 
