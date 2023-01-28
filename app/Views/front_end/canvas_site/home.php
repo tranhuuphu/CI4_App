@@ -28,7 +28,7 @@
 			            		if(($yearNow - $yearPost) > 1){
 			            			echo $datetime::parse($key['updated_at'])->humanize();
 			            		}else{
-			            			echo $datetime::parse($key['updated_at'])->toDateString();
+			            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
 			            		}
 			            		
 
@@ -91,7 +91,7 @@
 				            		if(($yearNow - $yearPost) > 1){
 				            			echo $datetime::parse($post_cate_i['updated_at'])->humanize();
 				            		}else{
-				            			echo $datetime::parse($post_cate_i['updated_at'])->toDateString();
+				            			echo $datetime::parse($post_cate_i['updated_at'])->toLocalizedString('dd MMM yyyy');
 				            		}
 				            		
 
@@ -146,7 +146,7 @@
 								            		if(($yearNow - $yearPost) > 1){
 								            			echo $datetime::parse($key_post['updated_at'])->humanize();
 								            		}else{
-								            			echo $datetime::parse($key_post['updated_at'])->toDateString();
+								            			echo $datetime::parse($key_post['updated_at'])->toLocalizedString('dd MMM yyyy');
 								            		}
 								            		
 
@@ -214,7 +214,7 @@
 				            		if(($yearNow - $yearPost) > 1){
 				            			echo $datetime::parse($key_blog['updated_at'])->humanize();
 				            		}else{
-				            			echo $datetime::parse($key_blog['updated_at'])->toDateString();
+				            			echo $datetime::parse($key_blog['updated_at'])->toLocalizedString('dd MMM yyyy');
 				            		}
 				            		
 
@@ -269,7 +269,7 @@
 								            		if(($yearNow - $yearPost) > 1){
 								            			echo $datetime::parse($key_post['updated_at'])->humanize();
 								            		}else{
-								            			echo $datetime::parse($key_post['updated_at'])->toDateString();
+								            			echo $datetime::parse($key_post['updated_at'])->toLocalizedString('dd MMM yyyy');
 								            		}
 								            		
 
@@ -353,7 +353,7 @@
 								            		if(($yearNow - $yearPost) > 1){
 								            			echo $datetime::parse($mv['updated_at'])->humanize();
 								            		}else{
-								            			echo $datetime::parse($mv['updated_at'])->toDateString();
+								            			echo $datetime::parse($mv['updated_at'])->toLocalizedString('dd MMM yyyy');
 								            		}
 								            		
 

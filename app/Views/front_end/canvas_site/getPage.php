@@ -6,57 +6,81 @@
 
 
 <div class="container">
-	<section id="page-title" style="background-color: #17a2b8!important;">
+	<section id="page-title" style="background-color: #3fb7fc !important;">
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'/tag/'.$tag_slug ?>">Tag Result: <?= $tag_name ?></a></li>
+	      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
 	    </ol>
 	  </div>
 	</section>
 </div>
 
 <div class="container clearfix mt-5">
-  <div class="row align-items-center mw-sm mx-auto g-0">
-    <?php foreach($post_tag as $key2): ?>
-    <div class="col-12">
-      <div class="feature-box fbox-effect fbox-xl">
-        <div class="fbox-content">
-          <h3><?= $key2['post_title']; ?></h3>
-          <p>
-            <i class="icon-calendar3"></i> 
-            <?php
-              $datetime = (new \CodeIgniter\I18n\Time);
-              $yearNow = $datetime::now()->getYear();
-              $yearMonthsNow = $datetime::now()->getMonth();
-              $yearPost = $datetime::parse($key2['updated_at'])->getYear();
-              
-              $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
-              if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                echo $datetime::parse($key2['updated_at'])->humanize();
-              }
-              if(($yearNow - $yearPost) > 1){
-                echo $datetime::parse($key2['updated_at'])->humanize();
-              }else{
-                echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
-              }
-              
 
-            ?>
-            <i class="icon-clock"></i> 
-            <?= ceil(strlen($key2['post_content'])/700) ?> Minutes Read
-          </p>
-          <p><?= $key2['post_intro']; ?></p>
-          <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="more-link fst-normal mt-3 button button-large button-rounded m-0">Read More <i class="icon-line-arrow-right"></i></a>
+    
+  <div class="row gutter-40 col-mb-80">
+
+
+    <div class="postcontent col-lg-12">
+      <div class="single-post mb-0 card" style="border-radius: 0 !important; background: #f5f7f7; border: none !important">
+        <div class="card-body">
+          <div class="entry clearfix">
+
+            <div class="entry-title pt-2">
+              <h2><?= $page_info['page_title']; ?></h2>
+            </div>
+
+            <div class="entry-meta">
+              <ul>
+                <li><i class="icon-calendar3"></i>
+                  <?php
+                    $datetime = (new \CodeIgniter\I18n\Time);
+                    $yearNow = $datetime::now()->getYear();
+                    $yearMonthsNow = $datetime::now()->getMonth();
+                    $yearPost = $datetime::parse($page_info['updated_at'])->getYear();
+                    
+                    $yearMonthsPost = $datetime::parse($page_info['updated_at'])->getMonth();
+                    if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                      echo $datetime::parse($page_info['updated_at'])->humanize();
+                    }
+                    elseif(($yearNow - $yearPost) > 1){
+                      echo $datetime::parse($page_info['updated_at'])->humanize();
+                    }else{
+                      echo $datetime::parse($page_info['updated_at'])->toLocalizedString('dd MMM yyyy');
+                    }
+                    
+
+                  ?>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><i class="icon-eye"></i> <?= $page_info['page_view']; ?></a>
+                </li>
+                <li><i class="icon-folder-open"></i> <a href="javascript:void(0)">General</a></li>
+              </ul>
+            </div>
+
+            <!-- <div class="entry-image">
+              <a href="#"><img src="images/blog/full/1.jpg" alt="Blog Single" /></a>
+            </div> -->
+            <div class="line line-sm"></div>
+            <div class="entry-content mt-0">
+
+              <?= $page_info['page_content']; ?>
+              
+              <div class="clear"></div>
+
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="line my-5"></div>
-    <?php endforeach; ?>
-    
   </div>
 </div>
+
+
 
 	
 

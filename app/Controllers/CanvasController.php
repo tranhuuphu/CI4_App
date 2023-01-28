@@ -204,8 +204,19 @@ class CanvasController extends BaseController
             return redirect()->to(base_url().'/'.$cate_slug.'/'.$post_slug.'-'.$post_id.'.html');
         }
 
-        $link_full = base_url().'/'.$cate_slug.'/'.$post_slug.'-'.$post_id.'.html';
+        $related_1 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id <', $id)->groupEnd()->limit(3)->findAll();
+        $related_2 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id >', $id)->groupEnd()->limit(3)->findAll();
+        $related = array_merge($related_1, $related_2);
+        
 
+        $previous = $post->orderBy('id', 'desc')->where('id <', $id)->first();
+        $next = $post->orderBy('id', 'desc')->where('id >', $id)->first();
+        $most_view_this_cate = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.post_view', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id !=', $id)->groupEnd()->limit(6)->findAll();
+
+        // dd($most_view_this_cate);
+
+        $link_full = base_url().'/'.$cate_slug.'/'.$post_slug.'-'.$post_id.'.html';
+        // dd($next);
 
         $data = [
             'title'         => $post_detail['post_title'],
@@ -216,11 +227,35 @@ class CanvasController extends BaseController
             'updated_at'    => $post_detail['updated_at'],
 
             'post_detail'   => $post_detail,
+            'related'       => $related,
+            'previous'      => $previous,
+            'next'          => $next,
+            'most_view_this_cate'          => $most_view_this_cate,
             'cate_detail'   => $cate_detail,
             'tag_all'       => $tag_all,
             'link_full'     => $link_full,
 
         ];
+
+        // dd($post_session);
+        $sessionKey = 'post_' . $id;
+
+        $session = session();
+        
+        if (session()->get($sessionKey) == null) { //nếu chưa có session
+            $newdata = [
+                $sessionKey  => $sessionKey,
+            ];
+
+            $session->set($newdata);
+            $post_view = $post_detail['post_view'] + 1;
+            $post->set('post_view', $post_view)->where('id', $id)->update();
+
+        }
+        // dd(session()->get('sessionView'));
+
+
+        
 
         return view('front_end/canvas_site/post', $data);
     }
@@ -228,11 +263,14 @@ class CanvasController extends BaseController
 
 
     public function tag($tag_slug){
+        
         $post = new PostModel;
 
         $tag = new TagModel;
+
+        $paginate = 10;
         
-        $tag_detail = $tag->where('tag_post_slug', $tag_slug)->select('tag.tag_post_id, tag.tag_post_title')->findAll();
+        $tag_detail = $tag->where('tag_post_slug', $tag_slug)->select('tag.tag_post_id, tag.tag_post_title, tag.created_at, tag.updated_at')->findAll();
         // dd($tag_detail);
 
         if(!isset($tag_detail) || $tag_detail == null){
@@ -245,31 +283,33 @@ class CanvasController extends BaseController
 
         // dd($post_id_array);
 
-        $post_tag = $post->whereIn('post.id', $post_id_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->paginate(10);
+        $post_tag = $post->whereIn('post.id', $post_id_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->paginate($paginate);
 
         // dd($post_tag);
+        $post_count = count($post_tag);
+        // dd($post_count);
 
         if(!$post_tag && $post_tag == NULL){
             return view('front_end/canvas_site/404');
         }
 
+        $link_full = base_url().'/tag/'.$tag_slug;
+
         $data = [
-            'title'         => $cate_detail['cate_name'],
-            'meta_desc'     => $cate_detail['cate_meta_desc'],
-            'meta_key'      => $cate_detail['cate_meta_key'],
+            'title'         => "tag: ".$tag_slug,
+            'meta_desc'     => "tag: ".$tag_slug,
+            'meta_key'      => "tag: ".$tag_slug,
             'image'         => 'null',
-            'created_at'    => $cate_detail['created_at'],
-            'updated_at'    => $cate_detail['updated_at'],
+            'created_at'    => $tag_detail[0]['created_at'],
+            'updated_at'    => $tag_detail[0]['updated_at'],
             'link_full'     => $link_full,
 
-            'cate_name'     => $cate_detail['cate_name'],
-            'cate_slug'     => $slug,
+            'tag_slug'      => $tag_slug,
 
-            'post_cate'     => $post_cate,
+            'tag_name'      => $tag_detail[0]['tag_post_title'],
             'paginate'      => $paginate,
+            'post_tag'      => $post_tag,
             'post_count'    => $post_count,
-            'most_view'     => $most_view,
-            'tag_this'      => $tag_this,
 
             'pager'         => $post->pager,
         ];
@@ -324,7 +364,7 @@ class CanvasController extends BaseController
 
         // dd($post_count);
 
-        $link_full = base_url().'search?q='.$key;
+        $link_full = base_url().'/search?q='.$key;
         $data = [
             'title'         => "kết quả tìm kiếm cụm từ: ".$key,
             'meta_desc'     => "kết quả tìm kiếm cụm từ: ".$key,
@@ -346,6 +386,31 @@ class CanvasController extends BaseController
         ];
         
         return view("front_end/canvas_site/getSearch", $data);
+    }
+    public function getPage($page_slug, $id){
+
+
+        $page = new PageModel;
+        $page_info = $page->find($id);
+        if($page_info == null){
+            return view('front_end/canvas_site/404');
+        }
+
+        $link_full = base_url().'/'.$page_info['page_slug'].'-'.$page_info['id'].'.html';
+        $data = [
+            'title'         => $page_info['page_name'],
+            'meta_desc'     => $page_info['page_meta_desc'],
+            'meta_key'      => $page_info['page_meta_key'],
+            'image'         => $page_info['page_image'],
+            'created_at'    => $page_info['created_at'],
+            'updated_at'    => $page_info['updated_at'],
+
+            'page_info'     => $page_info,
+            'link_full'     => $link_full,
+
+        ];
+
+        return view("front_end/canvas_site/getPage", $data);
     }
 
 

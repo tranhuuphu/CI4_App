@@ -7,7 +7,7 @@
 	    
 	    <ol class="breadcrumb">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'/'.$cate_slug ?>"><?= $cate_name ?></a></li>
+	      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
 	    </ol>
 	  </div>
 	</section>
@@ -43,7 +43,7 @@
 			            		if(($yearNow - $yearPost) > 1){
 			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
 			            		}else{
-			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->toDateString();
+			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->toLocalizedString('dd MMM yyyy');
 			            		}
 			            		
 
@@ -86,7 +86,7 @@
 			            		if(($yearNow - $yearPost) > 1){
 			            			echo $datetime::parse($key['updated_at'])->humanize();
 			            		}else{
-			            			echo $datetime::parse($key['updated_at'])->toDateString();
+			            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
 			            		}
 			            		
 

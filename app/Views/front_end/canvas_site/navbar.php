@@ -11,7 +11,7 @@
             <li class="top-links-item"><a href="<?= base_url(''); ?>">Home</a></li>
 
             <?php foreach($link_page as $pl): ?>
-              <li class="top-links-item"><a href="<?= $pl['page_slug']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
+              <li class="top-links-item"><a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
             <?php endforeach; ?>
             
           </ul>

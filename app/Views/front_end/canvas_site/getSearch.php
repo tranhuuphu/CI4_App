@@ -11,7 +11,7 @@
 	    
 	    <ol class="breadcrumb">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'search?q='.'search?q='.$key ?>">Search Result: <?= $key ?></a></li>
+	      <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search Result: <?= $key ?></a></li>
 	    </ol>
 	  </div>
 	</section>
@@ -39,7 +39,7 @@
               if(($yearNow - $yearPost) > 1){
                 echo $datetime::parse($key2['updated_at'])->humanize();
               }else{
-                echo $datetime::parse($key2['updated_at'])->toDateString();
+                echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
               }
               
 

@@ -155,7 +155,7 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 // $routes->get('(:any)/(:any).html', 'HomeController::getDetailPost/$1/$2');
 
-// $routes->get('(:any).html', 'HomeController::getPage/$1');
+$routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
 $routes->get('tag/(:any)', 'CanvasController::tag/$1');
 
