@@ -71,7 +71,7 @@
 		            <div class="tagcloud clearfix bottommargin">
 		            	<a title="Tag"><i class="icon-tags"></i></a>
 		            	<?php foreach($tag_all as $tag): ?>
-			              <a href="<?= base_url().'/tag/'.$tag['tag_post_slug'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
+			              <a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
 			            <?php endforeach; ?>
 		            </div>
 		            <div class="clear"></div>

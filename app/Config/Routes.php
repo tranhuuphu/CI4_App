@@ -148,6 +148,7 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 
 
+$routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 
 
 // $routes->get('/', 'HomeController::index');
@@ -157,7 +158,7 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
-$routes->get('tag/(:any)', 'CanvasController::tag/$1');
+
 
 
 $routes->get('search', 'CanvasController::getSearch');

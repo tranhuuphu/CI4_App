@@ -262,7 +262,7 @@ class CanvasController extends BaseController
 
 
 
-    public function tag($tag_slug){
+    public function tag($tag_slug, $tag_id){
         
         $post = new PostModel;
 
