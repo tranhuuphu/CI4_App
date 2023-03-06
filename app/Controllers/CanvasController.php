@@ -11,6 +11,8 @@ use App\Models\TagModel;
 
 class CanvasController extends BaseController
 {
+
+
     public function index()
     {
         // dd(current_url());
@@ -121,14 +123,14 @@ class CanvasController extends BaseController
                 foreach($cate_sub_id as $c_s){
                     $cate_sub_array[] = $c_s['id'];
                 }
-                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.*')->orderBy('id', 'desc')->paginate($paginate);
+                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
 
 
             }else{
-                $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
+                $post_cate = $post->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
                 $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -136,7 +138,7 @@ class CanvasController extends BaseController
 
             }
         }else{
-            $post_cate = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
+            $post_cate = $post->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
