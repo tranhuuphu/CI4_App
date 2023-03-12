@@ -22,45 +22,47 @@
 	  <div class="col-lg-8">
 	    
 	    <div class="row posts-md col-mb-30">
+	    	<?php if($post_cate_1): ?>
+		    	<div class="col-12">
+	          <div class="promo h-shadow-sm shadow-ts border rounded-5 overflow-hidden">
+	            <div class="row align-items-center">
+	              <div class="col-lg-8">
+	                <div class="p-4 p-lg-5">
+	                  <h3 class="fw-semibold"><?= $post_cate_1[0]['post_title'] ?></h3>
+	                  <p class="mb-3 text-black-50 mt-3"><i class="icon-calendar2"></i>
+	                  	<?php
+				            		$datetime = (new \CodeIgniter\I18n\Time);
+				            		$yearNow = $datetime::now()->getYear();
+				            		$yearMonthsNow = $datetime::now()->getMonth();
+				            		$yearPost = $datetime::parse($post_cate_1[0]['updated_at'])->getYear();
+				            		
+				            		$yearMonthsPost = $datetime::parse($post_cate_1[0]['updated_at'])->getMonth();
+				            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+				            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
+				            		}
+				            		if(($yearNow - $yearPost) > 1){
+				            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
+				            		}else{
+				            			echo $datetime::parse($post_cate_1[0]['updated_at'])->toLocalizedString('dd MMM yyyy');
+				            		}
+				            		
 
-	    	<div class="col-12">
-          <div class="promo h-shadow-sm shadow-ts border rounded-5 overflow-hidden">
-            <div class="row align-items-center">
-              <div class="col-lg-8">
-                <div class="p-4 p-lg-5">
-                  <h3 class="fw-semibold"><?= $post_cate_1[0]['post_title'] ?></h3>
-                  <p class="mb-3 text-black-50 mt-3"><i class="icon-calendar2"></i>
-                  	<?php
-			            		$datetime = (new \CodeIgniter\I18n\Time);
-			            		$yearNow = $datetime::now()->getYear();
-			            		$yearMonthsNow = $datetime::now()->getMonth();
-			            		$yearPost = $datetime::parse($post_cate_1[0]['updated_at'])->getYear();
-			            		
-			            		$yearMonthsPost = $datetime::parse($post_cate_1[0]['updated_at'])->getMonth();
-			            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
-			            		}
-			            		if(($yearNow - $yearPost) > 1){
-			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->humanize();
-			            		}else{
-			            			echo $datetime::parse($post_cate_1[0]['updated_at'])->toLocalizedString('dd MMM yyyy');
-			            		}
-			            		
+				            	?>
 
-			            	?>
-
-                  </p>
-                  <p class="mb-3 text-black-50"><?= $post_cate_1[0]['post_intro'] ?></p>
-                  <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="button button-rounde" style= "margin-left: 0 !important;">Read More</a>
-                </div>
-              </div>
-              <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-self-stretch order-first">
-                <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
-              </div>
-            </div>
-          </div>
-        </div>
-
+	                  </p>
+	                  <p class="mb-3 text-black-50"><?= $post_cate_1[0]['post_intro'] ?></p>
+	                  <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="button button-rounde" style= "margin-left: 0 !important;">Read More</a>
+	                </div>
+	              </div>
+	              <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-self-stretch order-first">
+	                <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      <?php elseif(!$post_cate_1): ?>
+	      	<div class="col-12">Bài viết đang được cập nhật</div>
+	    	<?php endif; ?>
 			  <?php foreach($post_cate_2 as $key): ?>
 		      <div class="entry col-md-6">
 		        <div class="grid-inner">

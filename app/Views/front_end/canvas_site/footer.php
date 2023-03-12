@@ -16,62 +16,14 @@
                 <h4>Trang</h4>
                 <ul>
                   <?php foreach($link_page as $pl): ?>
-                    <li><a href="<?= $pl['page_slug']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
+                    <li><a href="<?= $pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
                   <?php endforeach; ?>
-                  <li><a href="<?= base_url('/'); ?>/sitemap.xml" title="SiteMap">SiteMap</a></li>
+                  <li><a href="<?= base_url('/'); ?>/site-map.xml" title="SiteMap">SiteMap</a></li>
                   
                 </ul>
               </div>
             </div>
-            <!-- <div class="col-md-4">
-              <div class="widget clearfix">
-                <h4>Random Post</h4>
-                <div class="posts-sm row col-mb-30" id="post-list-footer">
-                  <div class="entry col-12">
-                    <div class="grid-inner row">
-                      <div class="col">
-                        <div class="entry-title">
-                          <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                        </div>
-                        <div class="entry-meta">
-                          <ul>
-                            <li>10th July 2021</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry col-12">
-                    <div class="grid-inner row">
-                      <div class="col">
-                        <div class="entry-title">
-                          <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                        </div>
-                        <div class="entry-meta">
-                          <ul>
-                            <li>10th July 2021</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="entry col-12">
-                    <div class="grid-inner row">
-                      <div class="col">
-                        <div class="entry-title">
-                          <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                        </div>
-                        <div class="entry-meta">
-                          <ul>
-                            <li>10th July 2021</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+            
 
           </div>
         </div>
