@@ -19,7 +19,7 @@
 
 <?php foreach($page_info as $pi): ?>
 <url>
-  <loc><?php echo base_url('').'/'.$pi['page_slug'].'.html'; ?></loc>
+  <loc><?php echo base_url('').'/'.$pi['page_slug'].'-'.$pi['id'].'.html'; ?></loc>
   <lastmod><?php echo date('Y-m-d'); ?>T<?php echo date('H:i:s'); ?>+00:00</lastmod>
   <priority>0.8</priority>
 </url>
@@ -37,7 +37,7 @@
 <?php foreach($tag_info as $tag_detail): ?>
   
     <url>
-      <loc><?php echo base_url('').'/tag/'.$tag_detail['tag_post_slug']; ?></loc>
+      <loc><?php echo base_url('').'/tag/'.$tag_detail['tag_post_slug'].'-'.$tag_detail['id']; ?></loc>
       <lastmod><?php echo date('Y-m-d'); ?>T<?php echo date('H:i:s'); ?>+00:00</lastmod>
       <priority>0.6</priority>
     </url>
