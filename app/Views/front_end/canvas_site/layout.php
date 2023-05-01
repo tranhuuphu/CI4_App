@@ -25,7 +25,7 @@
 
     
   </head>
-  <body class="stretched">
+  <body class="stretched page-transition">
     <div id="wrapper" class="clearfix">
 
       <?= $this->include('front_end/canvas_site/navbar'); ?>

@@ -1,9 +1,9 @@
 <?= $this->extend('front_end/canvas_site/layout'); ?>
 
 <?= $this->section('content'); ?>
-
+	
 	<?php if(isset($featured)): ?> 
-		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
 		  
 			<?php foreach($featured as $key): ?>
 			  <div class="oc-item">

@@ -1,4 +1,4 @@
-﻿@media(prefers-reduced-motion:no-preference) {
+@media(prefers-reduced-motion:no-preference) {
     :root {
         scroll-behavior: auto
     }
@@ -3079,7 +3079,7 @@ html[xmlns] .slider-wrap {
 @media(min-width:992px) {
     .full-header #logo {
         padding-right: 30px;
-/*        border-right: 1px solid #eee*/
+        border-right: 1px solid #eee
     }
     #header.transparent-header.full-header #logo {
         border-right-color: rgba(0, 0, 0, .1)
@@ -3444,7 +3444,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
     .full-header .primary-menu .menu-container {
         padding-right: .5rem;
         margin-right: .5rem;
-/*        border-right: 1px solid #eee*/
+        border-right: 1px solid #eee
     }
     .transparent-header.full-header .primary-menu .menu-container {
         border-right-color: rgba(0, 0, 0, .1)
