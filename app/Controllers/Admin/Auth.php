@@ -163,7 +163,7 @@ class Auth extends BaseController
         $validation = $this->validate([
             'name'=>[
                 'rules'=>'required',
-                'errors'=>['required'=>'Không được để trống tên bạn']
+                'errors'=>['required'=>'Không được để trống tên']
             ],
 
         ]);
@@ -228,7 +228,7 @@ class Auth extends BaseController
                     // return view('admin/auth/detail', ['validation'=>$this->validator]);
                 }
                 $data['password'] = Hash::make($password);
-                session()->setFlashdata('password', 'Bạn đã cập nhật password mới');
+                session()->setFlashdata('password', 'Bạn đã cập nhật Password mới');
                 
             }
 
@@ -285,4 +285,62 @@ class Auth extends BaseController
         }
         return redirect()->to('admin/auth/detail');
     }
+
+    public function forgot(){
+        return view('admin/auth/forgot');
+    }
+
+    public function Resend(){
+        
+
+        // $data['email']  = $this->request->getPost('email');
+
+        $validation = $this->validate([
+            
+
+            'email'=>[
+                'rules'=>'required|valid_email|is_not_unique[users.email]',
+                'errors' => [
+                    'required' => 'Email is required.',
+                    'valid_email' => 'Please check the Email field. It does not appear to be valid.',
+                    'is_not_unique' => 'Email này không tồn tại trong hệ thống.',
+                ],
+
+            ],
+            
+
+        ]);
+
+        $adminEmail = "phuth.me@gmail.com";
+
+        if(!$validation){
+            return view('admin/auth/forgot', ['validation'=>$this->validator]);
+        }else{
+            $email_user = $this->request->getPost('email');
+            $usersModel = new \App\Models\usersModel();
+            $user_info = $usersModel->where('email', $email_user)->first();
+            $id = $user_info['id'];
+            $password       = random_string('alnum', 8);
+            $data['password']       = Hash::make($password);
+            
+            $usersModel->update($id, $data);
+        }
+
+        $email = \Config\Services::email();
+
+        $email->setFrom($adminEmail, 'Set New Password');
+        $email->setTo($email_user);
+
+        $email->setSubject('Mật Khẩu Reset');
+        $email->setMessage('Here is new Password: '. $password);
+
+        
+        if($email->send()){
+            echo "success";
+        }else{
+            echo "fail";
+        }
+        // return redirect()->to('auth')->with('success', 'Mật khẩu đã được cấp lại vui lòng kiểm tra Email');
+    }
+    
 }

@@ -191,7 +191,7 @@
 			            <a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key_blog['post_image']; ?>" alt="<?= $key_blog['post_title']; ?>"/></a>
 			          </div>
 			          <div class="entry-title title-xs nott">
-			            <h4><a href="blog-single.html"><?= $key_blog['post_title']; ?></a></h4>
+			            <h4><a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><?= $key_blog['post_title']; ?></a></h4>
 			          </div>
 			          <div class="entry-content">
 			            <p class="mb-0 text-secondary">

@@ -41,11 +41,17 @@ $routes->group("auth", ['filter'=>'AlreadyLoggedIn'], function($routes){
     $routes->get('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
     $routes->post('check',"Admin\Auth::checkLogin",['as'=>'auth.check']);
 
+    $routes->get('forgot',"Admin\Auth::save",['as'=>'auth.forgot']);
+    $routes->post('resend',"Admin\Auth::save",['as'=>'auth.resend']);
+
+    
+
 
 
 
 });
-
+$routes->get('forgotpw',"Admin\Auth::Forgot",['as'=>'forgotpw']);
+$routes->post('forgotpw',"Admin\Auth::Resend",['as'=>'forgotpw']);
 
 // filter Auth to access Admin Page
 
@@ -63,6 +69,9 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
         $routes->get('detail',"Admin\Auth::getEdit",['as'=>'auth.detail']);
         $routes->post('edit/(:num)',"Admin\Auth::postEdit/$1");
+
+
+        
 
 
 

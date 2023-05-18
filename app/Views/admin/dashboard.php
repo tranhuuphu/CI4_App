@@ -863,3 +863,7 @@
 
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+  Dash Board | AdminLTE 3
+<?= $this->endSection(); ?>

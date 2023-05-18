@@ -15,13 +15,16 @@
   <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
+
+  
 <div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
+  
   <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+        <a href="javascript:void(0)" class="h1"><b>Admin</b>LTE</a>
+      </div>
+    <div class="card-body login-card-body ">
 
       <?php if(!empty(session()->getFlashdata('fail'))) : ?>
         <p class="login-box-msg text-danger"><?= session()->getFlashdata('fail'); ?></p>
@@ -84,6 +87,9 @@
       <!-- <p class="mb-1">
         <a href="#">I forgot my password</a>
       </p> -->
+      <p class="mb-0">
+        <a href="<?= site_url('forgotpw'); ?>" class="text-center">Forgot my Password?</a>
+      </p>
       <p class="mb-0">
         <a href="<?= site_url('admin/auth/register'); ?>" class="text-center">Register a new membership</a>
       </p>
