@@ -326,21 +326,21 @@ class Auth extends BaseController
             $usersModel->update($id, $data);
         }
 
-        $email = \Config\Services::email();
+        // $email = \Config\Services::email();
 
-        $email->setFrom($adminEmail, 'Set New Password');
-        $email->setTo($email_user);
+        // $email->setFrom($adminEmail, 'Set New Password');
+        // $email->setTo($email_user);
 
-        $email->setSubject('Mật Khẩu Reset');
-        $email->setMessage('Here is new Password: '. $password);
+        // $email->setSubject('Mật Khẩu Reset');
+        // $email->setMessage('Here is new Password: '. $password);
 
         
-        if($email->send()){
-            echo "success";
-        }else{
-            echo "fail";
-        }
-        // return redirect()->to('auth')->with('success', 'Mật khẩu đã được cấp lại vui lòng kiểm tra Email');
+        // if($email->send()){
+        //     echo "success";
+        // }else{
+        //     echo "fail";
+        // }
+        return redirect()->to('auth')->with('success2', 'Mật khẩu mới của bạn là: '.$password);
     }
     
 }

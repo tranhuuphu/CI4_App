@@ -33,6 +33,10 @@
       <?php if(!empty(session()->getFlashdata('success'))) : ?>
         <p class="login-box-msg text-success"><?= session()->getFlashdata('success'); ?></p>
       <?php endif ?>
+
+      <?php if(!empty(session()->getFlashdata('success2'))) : ?>
+        <p class="login-box-msg text-success"><?= session()->getFlashdata('success2'); ?></p>
+      <?php endif ?>
       
       <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 

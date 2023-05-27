@@ -125,6 +125,8 @@ class CanvasController extends BaseController
                 foreach($cate_sub_id as $c_s){
                     $cate_sub_array[] = $c_s['id'];
                 }
+                $cate_sub_array[] = array_push($cate_sub_array, $cate_id);
+                // dd($cate_sub_array);
                 $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
@@ -346,7 +348,7 @@ class CanvasController extends BaseController
             'tag_info'      => $tag_info,
             'post_all'      => $post_all,
         ];
-        header("Content-Type: xml;");
+        header("Content-Type: text/xml;charset=iso-8859-1");
         return view("front_end/site_map", $data);
     }
 
