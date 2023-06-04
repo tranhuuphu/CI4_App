@@ -1,11 +1,12 @@
 <?= $this->extend('front_end/canvas_site/layout'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container mt-3">
-	<section id="page-title">
+
+<div class="container">
+	<section id="page-title" style="margin-bottom: 25px">
 	  <div class="container clearfix">
 	    
-	    <ol class="breadcrumb">
+	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
 	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'] ?>"><?= $cate_detail['cate_name'] ?></a></li>
 	      <li class="breadcrumb-item active"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html' ?>" title="<?= $post_detail['post_title']; ?>"><?= $post_detail['post_title']; ?></a></li>
@@ -13,14 +14,16 @@
 	  </div>
 	</section>
 </div>
-	<div class="container clearfix mt-5">
+
+
+	<div class="container clearfix mt-3">
 
 		
 	  <div class="row gutter-40 col-mb-80">
 
 
 	    <div class="postcontent col-lg-9">
-	      <div class="single-post mb-0 card" style="border-radius: 0 !important; background: #f5f7f7; border: none !important">
+	      <div class="single-post mb-0 card" style="border-radius: 0 !important; background: #fafafa; border: none !important">
 	      	<div class="card-body">
 		        <div class="entry clearfix">
 
@@ -30,7 +33,7 @@
 
 		          <div class="entry-meta">
 		            <ul>
-		              <li><i class="icon-calendar3"></i>
+		              <li><i class="fa-solid fa-clock"></i>
 		              	<?php
 			            		$datetime = (new \CodeIgniter\I18n\Time);
 			            		$yearNow = $datetime::now()->getYear();
@@ -51,11 +54,10 @@
 			            	?>
 		              </li>
 		              <li>
-		                <a href="javascript:void(0)"><i class="icon-eye"></i> <?= $post_detail['post_view']; ?></a>
+		                <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?></a>
 		              </li>
-		              <li><i class="icon-folder-open"></i> <a href="javascript:void(0)">General</a></li>
 		              <li>
-		                <a href="javascript:void(0)"><i class="icon-camera-retro"></i></a>
+		                <a href="javascript:void(0)"><i class="fa-solid fa-camera-retro"></i></a>
 		              </li>
 		            </ul>
 		          </div>
@@ -68,90 +70,92 @@
 
 		            <?= $post_detail['post_content']; ?>
 		            <hr class="mb-5">
-		            <div class="tagcloud clearfix bottommargin">
-		            	<a title="Tag"><i class="icon-tags"></i></a>
-		            	<?php foreach($tag_all as $tag): ?>
-			              <a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
-			            <?php endforeach; ?>
-		            </div>
+		            <?php if($tag_all): ?>
+			            <div class="tagcloud mb-3">
+			            	<?php foreach($tag_all as $tag): ?>
+	                  	<a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
+	                  <?php endforeach; ?>
+	                </div>
+	              <?php endif; ?>
+		            
 		            <div class="clear"></div>
+		            <div class="card my-2 border rounded border-default">
+                  <div class="card-body p-3">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
+                      <div class="d-flex">
 
-		            <div class="si-share border-0 d-flex justify-content-between align-items-center">
-		              <span>Share this Post:</span>
+                        <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
+                          <i class="fa-brands fa-facebook-f"></i>
+                          <i class="fa-brands fa-facebook-f"></i>
+                        </a>
 
-		              
+                        <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
+                          <i class="fa-brands fa-twitter"></i>
+                          <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
+                          <i class="fa-brands fa-pinterest-p"></i>
+                          <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                        <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+                          <i class="fa-brands fa-tumblr"></i>
+                          <i class="fa-brands fa-tumblr"></i>
+                        </a>
+                        
+                        <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
+                          <i class="fa-solid fa-envelope"></i>
+                          <i class="fa-solid fa-envelope"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-		              <div>
-		                <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-borderless si-facebook">
-		                  <i class="icon-facebook"></i>
-		                  <i class="icon-facebook"></i>
-		                </a>
-		                <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-twitter">
-		                  <i class="icon-twitter"></i>
-		                  <i class="icon-twitter"></i>
-		                </a>
-		                <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-pinterest">
-		                  <i class="icon-pinterest"></i>
-		                  <i class="icon-pinterest"></i>
-		                </a>
-		                <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-tumblr">
-		                  <i class="icon-tumblr"></i>
-		                  <i class="icon-tumblr"></i>
-		                </a>
-		                <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-borderless si-email3">
-		                  <i class="icon-email3"></i>
-		                  <i class="icon-email3"></i>
-		                </a>
-		              </div>
-		            </div>
+		            
 		          </div>
 		        </div>
 		        <div class="line line-sm"></div>
-		        <div class="row justify-content-between col-mb-30 post-navigation mt-5">
+		        <div class="row text-center text-md-start justify-content-between my-2">
 		        	<?php if(isset($previous)): ?>
-			          <div class="col-12 col-md-auto text-center">
-			            <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>"><i class="icon-long-arrow-left"></i> <?= $previous['post_title'] ?></a>
-			          </div>
-		          <?php endif; ?>
+	              <div class="col-md-auto">
+	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span><?= $previous['post_title'] ?></span></a>
+	              </div>
+              <?php endif; ?>
 		          <?php if(isset($next)): ?>
-			          <div class="col-12 col-md-auto text-center">
-			            <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>"><?= $next['post_title'] ?> <i class="icon-long-arrow-right"></i></a>
-			          </div>
-			        <?php endif; ?>
-		        </div>
+	              <div class="col-md-auto">
+	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
+	              </div>
+              <?php endif; ?>
+            </div>
+
+		        
 		        <div class="line line-sm"></div>
 
-		        <!-- <div class="card">
-		          <div class="card-header">
-		            <strong>Posted by <a href="#">John Doe</a></strong>
-		          </div>
-		          <div class="card-body">
-		            <div class="author-image">
-		              <img src="images/author/1.jpg" alt="Image" class="rounded-circle" />
-		            </div>
-		            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae ad repellendus recusandae blanditiis praesentium vitae ab sint earum voluptate velit
-		            beatae alias fugit accusantium laboriosam nisi reiciendis deleniti tenetur molestiae maxime id quaerat consequatur fugiat aliquam laborum nam aliquid. Consectetur, perferendis?
-		          </div>
-		        </div> -->
+		        
 
-		        <h4>Related Posts:</h4>
+		        <h4>Related Post:</h4>
 		        <div class="related-posts row posts-md col-mb-30">
 
+			        	
+
 		        	<?php foreach($related as $key2): ?>
-			        	<div class="entry col-12 col-md-6">
-			            <div class="grid-inner row align-items-center gutter-20">
-			              <div class="col-4">
-			                <div class="entry-image">
-			                  <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/></a>
-			                </div>
-			              </div>
-			              <div class="col-8">
-			                <div class="entry-title title-xs">
-			                  <h3><a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h3>
-			                </div>
-			                <div class="entry-meta">
-			                  <ul>
-			                    <li><i class="icon-calendar3"></i>
+
+		        		<div class="entry event col-md-6 imagescalein">
+	                <div class="grid-inner row g-0 p-4 border rounded">
+	                  <div class="col-lg-5 mb-lg-0">
+	                    <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
+	                      <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+	                    </a>
+	                  </div>
+	                  <div class="col-lg-7 ps-lg-4">
+	                    <div class="entry-title title-sm">
+	                      <h2><a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
+	                    </div>
+	                    <div class="entry-meta">
+	                      <ul>
+	                        <li>
+	                          <i class="icon-calendar3"></i>
 			                    	<?php
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
@@ -170,15 +174,20 @@
 							            		
 
 							            	?>
-			                    </li>
-			                    <li>
-			                      <a href="javascript:void(0)"><i class="icon-clock"></i> <?= ceil(strlen($key2['post_content'])/700) ?> Minutes Read</a>
-			                    </li>
-			                  </ul>
-			                </div>
-			              </div>
-			            </div>
-			          </div>
+	                        </li>
+	                        <!-- <li>
+	                          <a href="#"><i class="uil uil-map-marker"></i> Melbourne, Australia</a>
+	                        </li> -->
+	                      </ul>
+	                    </div>
+	                    <div class="entry-content2" style="padding-top: 7px;">
+	                      <p><?= $key2['post_intro']; ?></p>
+	                    </div>
+	                  </div>
+	                </div>
+	              </div>
+
+			        	
 		          <?php endforeach; ?>
 
 		          

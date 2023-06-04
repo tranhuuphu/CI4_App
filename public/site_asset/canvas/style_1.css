@@ -16111,8 +16111,7 @@ img.lazy:not([src]) {
 }
 
 .top-links-item:hover {
-/*    background-color: var(--cnvs-contrast-200);*/
-    background-color: rgba(255, 255, 255, .2)
+    background-color: var(--cnvs-contrast-200)
 }
 
 .top-links-section,
@@ -19906,13 +19905,13 @@ body:not(.has-plugin-html5video) .video-wrap video {
 
 #page-title,
 .page-title {
-    --cnvs-page-title-padding: 0rem;
+    --cnvs-page-title-padding: 4rem;
     --cnvs-page-title-parallax-padding: 6.25rem;
     --cnvs-page-title-mini-padding: 1.5rem;
     --cnvs-page-title-bg: var(--cnvs-contrast-bg-offset);
     --cnvs-page-title-color: var(--cnvs-contrast-900);
     --cnvs-page-title-font-size: 2.25rem;
-    --cnvs-page-title-font-weight: 700;
+    --cnvs-page-title-font-weight: 500;
     --cnvs-page-title-spacing: 0;
     --cnvs-page-title-subtitle-size: 1.125rem;
     --cnvs-page-title-parallax-font-size: calc(2rem + 1vw);
@@ -20814,8 +20813,7 @@ body:not(.has-plugin-html5video) .video-wrap video {
     --cnvs-post-image-size: 100%;
     --cnvs-post-image-rounded: 3px;
     --cnvs-post-image-mb: 1.5rem;
-    --cnvs-post-sm-image: 125px;
-/*    --cnvs-post-sm-image: 64px;*/
+    --cnvs-post-sm-image: 64px;
     --cnvs-post-title-font-size: 1.75rem;
     --cnvs-post-title-font-weight: 600;
     --cnvs-post-title-font-spacing: 0;
