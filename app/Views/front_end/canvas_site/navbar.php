@@ -59,7 +59,7 @@
         <nav class="primary-menu">
           <ul class="menu-container">
             <li class="menu-item current">
-              <a class="menu-link" href="#"><div>Home</div></a>
+              <a class="menu-link" href="<?= base_url(''); ?>"><div>Home</div></a>
             </li>
 
 

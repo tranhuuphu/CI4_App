@@ -127,14 +127,14 @@ class CanvasController extends BaseController
                 }
                 $cate_sub_array[] = array_push($cate_sub_array, $cate_id);
                 // dd($cate_sub_array);
-                $post_cate = $post->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
 
 
             }else{
-                $post_cate = $post->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
                 $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -142,12 +142,14 @@ class CanvasController extends BaseController
 
             }
         }else{
-            $post_cate = $post->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+            $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
             
         }
+
+        // dd($post_cate);
 
 
         $link_full = base_url().'/'.$slug.'-'.$id;

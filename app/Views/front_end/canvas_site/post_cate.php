@@ -41,6 +41,7 @@
 	<?php
   	$post_cate_1 = array_slice($post_cate, 0, 1);
   	$post_cate_2 = array_slice($post_cate, 1);
+  	// dd($post_cate_1[0]['id']);
   ?>
 	<div class="row col-mb-50">
 	  <div class="col-lg-8">
