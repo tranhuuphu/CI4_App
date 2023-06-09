@@ -92,7 +92,7 @@
         <a href="#">I forgot my password</a>
       </p> -->
       <p class="mb-0">
-        <a href="<?= site_url('forgotpw'); ?>" class="text-center">Forgot my Password?</a>
+        <a href="<?= site_url('forgotpw'); ?>" class="text-center">Forgot My Password?</a>
       </p>
       <p class="mb-0">
         <a href="<?= site_url('admin/auth/register'); ?>" class="text-center">Register a new membership</a>

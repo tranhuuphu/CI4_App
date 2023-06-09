@@ -129,23 +129,25 @@
     <div class="sidebar col-lg-4">
       <div class="sidebar-widgets-wrap">
 
-      	<div class="card overflow-hidden" style="border-radius: 0">
-		      <div class="card-body">
-		        <h4>Opening Hours</h4>
-		        <ul class="iconlist mb-0">
-		          <li><i class="icon-time color"></i> <strong>Mondays-Fridays:</strong> 10AM to 7PM</li>
-		          <li><i class="icon-time color"></i> <strong>Saturdays:</strong> 11AM to 3PM</li>
-		          <li><i class="icon-time text-danger"></i> <strong>Sundays:</strong> Closed</li>
-		        </ul>
-		        <i class="icon-time bgicon"></i>
-		      </div>
-		    </div>
+      	<div class="fancy-title title-border mt-5">
+          <h4>Opening Hours</h4>
+        </div>
+        <div class="position-relative overflow-hidden pb-4">
+          <ul class="iconlist mb-0">
+            <li><i class="bi-clock color"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
+            <li><i class="bi-clock color"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
+            <li><i class="bi-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
+          </ul>
+          <i class="bi-clock bg-icon" style="bottom: -70px;"></i>
+        </div>
 
 
         
         
         <div class="widget clearfix">
-          <h4>Recent Posts</h4>
+          <div class="fancy-title title-border mt-5">
+            <h4>Bài viết mới</h4>
+          </div>
           <div class="posts-sm row col-mb-30" id="post-list-sidebar">
           	<?php foreach($most_view as $key3): ?>
               <div class="entry col-12">
@@ -193,7 +195,9 @@
         </div>
 
         <div class="widget clearfix">
-          <h4>Tag Cloud</h4>
+          <div class="fancy-title title-border mt-5">
+            <h4>Tag Hot</h4>
+          </div>
           <div class="tagcloud">
           	<?php foreach($tag_this as $key4): ?>
             	<a href="<?= base_url('').'/'.'tag/'.$key4['tag_post_slug']; ?>" title="<?= 'tag: '.$key4['tag_post_title']; ?>"><?= $key4['tag_post_title']; ?></a>

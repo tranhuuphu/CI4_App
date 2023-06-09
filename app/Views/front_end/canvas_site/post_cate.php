@@ -15,11 +15,7 @@
 	    background-size: 100% 8px
 	}
 
-	.dark .color-underline,
-	.dark .widget>h4,
-	.dark .menu-item .menu-link {
-	    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25))
-	}
+	
 </style>
 
 <div class="container">
@@ -123,7 +119,7 @@
 		          </div>
 		          <div class="entry-meta">
 		            <ul>
-		              <li><i class="icon-calendar3"></i>
+		              <li><i class="uil uil-calendar"></i>
 		              	<?php
 			            		$datetime = (new \CodeIgniter\I18n\Time);
 			            		$yearNow = $datetime::now()->getYear();
@@ -166,24 +162,27 @@
 	  </div>
 	  <div class="col-lg-4">
 
-	  	<div class="card topmargin2 overflow-hidden">
-	      <div class="card-body">
-	        <h4>Opening Hours</h4>
-	        <!-- <p>Thời gian làm việc</p> -->
-	        <ul class="iconlist mb-0">
-	          <li><i class="icon-time color"></i> <strong>Mondays-Fridays: </strong> 10AM to 7PM</li>
-	          <li><i class="icon-time color"></i> <strong>Saturdays: </strong> 11AM to 3PM</li>
-	          <li><i class="icon-time text-danger"></i> <strong>Sundays: </strong> Closed</li>
-	        </ul>
-	        <i class="icon-time bgicon"></i>
-	      </div>
-	    </div>
+	  	
+
+	    <div class="fancy-title title-border mt-5">
+        <h4>Opening Hours</h4>
+      </div>
+      <div class="position-relative overflow-hidden pb-4">
+        <ul class="iconlist mb-0">
+          <li><i class="bi-clock color"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
+          <li><i class="bi-clock color"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
+          <li><i class="bi-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
+        </ul>
+        <i class="bi-clock bg-icon" style="bottom: -70px;"></i>
+      </div>
 	    
 	    
 	    
 
 	    <div class="widget clearfix">
-        <h4>Most View</h4>
+        <div class="fancy-title title-border mt-5">
+	        <h4>Xem Nhiều</h4>
+	      </div>
         <div class="posts-sm row col-mb-30" id="post-list-sidebar">
 
         	<?php foreach($most_view as $key3): ?>

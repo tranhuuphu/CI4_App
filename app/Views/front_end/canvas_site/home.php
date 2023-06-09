@@ -52,7 +52,10 @@
 
 	
 
-	<div class="container clearfix">
+	<div class="container clearfix mt-5">
+
+		
+
 	  <!-- <div class="bottommargin-lg">
 	    <img src="images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0" />
 	  </div> -->
@@ -62,7 +65,7 @@
 		  	<?php $post_cate_i = array_shift($post_cate[$a]); ?>
 		  	<?php //dd($post_cate_i); ?>
 			  <div class="fancy-title title-border">
-			    <h3><?= $cate_name[$a] ?></h3>
+			    <h3 class="mb-2 ls-1 text-uppercase fw-bold"><?= $cate_name[$a] ?></h3>
 			  </div>
 			  <div class="row col-mb-50 mb-0">
 
@@ -77,7 +80,7 @@
 			          </div>
 			          <div class="entry-meta">
 			            <ul>
-			              <li><i class="icon-calendar3"></i>
+			              <li><i class="uil uil-clock"></i>
 			              	<?php
 				            		$datetime = (new \CodeIgniter\I18n\Time);
 				            		$yearNow = $datetime::now()->getYear();
@@ -128,11 +131,11 @@
 					            </div>
 					            <div class="col ps-3">
 					              <div class="entry-title">
-					                <h4><a href="<?= base_url('').'/'.$key_post['post_cate_slug'].'/'.$key_post['post_slug'].'-'.$key_post['id'].'.html'; ?>" title="<?= $key_post['post_title']; ?>"><?= $key_post['post_title']; ?></a></h4>
+					                <h4 style="font-size: 18px"><a href="<?= base_url('').'/'.$key_post['post_cate_slug'].'/'.$key_post['post_slug'].'-'.$key_post['id'].'.html'; ?>" title="<?= $key_post['post_title']; ?>"><?= $key_post['post_title']; ?></a></h4>
 					              </div>
 					              <div class="entry-meta">
 					                <ul>
-					                  <li><i class="icon-calendar3"></i>
+					                  <li><i class="uil uil-clock"></i>
 					                  	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -178,30 +181,24 @@
 	  </div>
 	  <iframe src="https://player.vimeo.com/video/99895335" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
 	</div>
-	<div class="section dark" style="margin-bottom: 15px !important;">
-	  <div class="container clearfix">
-	    <!-- <h3 class="text-center">Tin mới</h3> -->
-	    <div id="oc-images2" class="owl-carousel image-carousel carousel-widget posts-md" data-margin="20" data-pagi="false" data-rewind="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
-	      
-	      <?php if(count($blog) > 0): ?>
+
+	<div class="section dark">
+    <div class="container">
+      <div id="oc-images2" class="owl-carousel image-carousel carousel-widget posts-md" data-margin="20" data-pagi="false" data-rewind="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
+      	<?php if(count($blog) > 0): ?>
 	      	<?php foreach($blog as $key_blog): ?>
-			      <div class="oc-item">
-			        <div class="entry">
-			          <div class="entry-image">
-			            <a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key_blog['post_image']; ?>" alt="<?= $key_blog['post_title']; ?>"/></a>
-			          </div>
-			          <div class="entry-title title-xs nott">
-			            <h4><a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><?= $key_blog['post_title']; ?></a></h4>
-			          </div>
-			          <div class="entry-content">
-			            <p class="mb-0 text-secondary">
-			              <?= $post_cate_i['post_intro'] ?>
-			            </p>
-			          </div>
-			          <div class="entry-meta">
-			            <ul>
-			              <li><i class="icon-calendar3"></i>
-			              	<?php
+		        <div class="oc-item">
+		          <div class="entry">
+		            <div class="entry-image">
+		              <a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key_blog['post_image']; ?>" alt="<?= $key_blog['post_title']; ?>"/></a>
+		            </div>
+		            <div class="entry-title title-xs text-transform-none">
+		              <h4><a href="<?= base_url('').'/'.$key_blog['post_cate_slug'].'/'.$key_blog['post_slug'].'-'.$key_blog['id'].'.html'; ?>" title="<?= $key_blog['post_title']; ?>"><?= $key_blog['post_title']; ?></a></h4>
+		            </div>
+		            <div class="entry-meta">
+		              <ul>
+		                <li><i class="uil uil-schedule"></i>
+		                	<?php
 				            		$datetime = (new \CodeIgniter\I18n\Time);
 				            		$yearNow = $datetime::now()->getYear();
 				            		$yearMonthsNow = $datetime::now()->getMonth();
@@ -219,23 +216,26 @@
 				            		
 
 				            	?>
-			              </li>
-			              <!-- <li>
-			                <a href="blog-single.html#comments"><i class="icon-comments"></i> 32</a>
-			              </li> -->
-			            </ul>
-			          </div>
-			        </div>
-			      </div>
-		      <?php endforeach; ?>
+		                </li>
+		                
+		              </ul>
+		            </div>
+		          </div>
+		        </div>
+
+
+        	<?php endforeach; ?>
 	      <?php endif; ?>
 
-	      
-	    </div>
-	  </div>
-	</div>
+        
+      </div>
+    </div>
+  </div>
+
+
 	<br>
-	<div class="container clearfix" style="margin-top: 50px !important">
+	<br>
+	<div class="container clearfix" style="margin-top: 0px !important">
       
       <div class="row gutter-20 col-mb-80">
         <div class="postcontent col-lg-9">
@@ -255,7 +255,7 @@
                         </div>
                         <div class="entry-meta">
                           <ul>
-                            <li><i class="icon-calendar3"></i>
+                            <li><i class="uil uil-clock"></i>
                             	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -318,8 +318,10 @@
             </div>
 
 
-            <div class="widget clearfix">
-              <h4>Có thể bạn sẽ thích</h4>
+            <div class="widget clearfix2">
+              <div class="fancy-title title-border mt-">
+				        <h4>Có thể bạn sẽ thích</h4>
+				      </div>
               <div class="posts-sm row col-mb-30" id="post-list-sidebar">
 
                 
@@ -339,7 +341,7 @@
                         </div>
                         <div class="entry-meta">
                           <ul>
-                            <li><i class="icon-calendar1"></i>
+                            <li><i class="uil uil-calendar"></i>
                             	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -372,40 +374,54 @@
 
               </div>
             </div>
-            <div class="widget clearfix">
-              <h4>Connect with Us</h4>
 
-              <?php if(isset($page_home['facebook'])): ?>
-                <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon si-colored si-small si-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
-                  <i class="icon-facebook"></i>
-                  <i class="icon-facebook"></i>
-                </a>
-              <?php endif; ?>
 
-              <?php if(isset($page_home['youtube'])): ?>
-              <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon si-colored si-small si-youtube" data-bs-toggle="tooltip" data-bs-placement="top" title="youtube">
-                <i class="icon-youtube"></i>
-                <i class="icon-youtube"></i>
-              </a>
-              <?php endif; ?>
+            <div class="widget">
+              <div class="row gutter-20 col-mb-30">
 
-              <?php if(isset($page_home['twitter'])): ?>
-              <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon si-colored si-small si-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="twitter">
-                <i class="icon-twitter"></i>
-                <i class="icon-twitter"></i>
-              </a>
-              <?php endif; ?>
+              	<?php if(isset($page_home['facebook'])): ?>
+                <div class="col-3">
+                  <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon bg-warning h-bg-facebook float-none mb-3">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                </div>
+                <?php endif; ?>
 
-              <?php if(isset($page_home['pinterest'])): ?>
-              <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon si-colored si-small si-pinterest" data-bs-toggle="tooltip" data-bs-placement="top" title="pinterest">
-                <i class="icon-pinterest"></i>
-                <i class="icon-pinterest"></i>
-              </a>
-              <?php endif; ?>
-              
+                <?php if(isset($page_home['youtube'])): ?>
+                <div class="col-3">
+                  <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon bg-warning h-bg-youtube float-none mb-3">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </div>
+                <?php endif; ?>
+
+                <?php if(isset($page_home['twitter'])): ?>
+                <div class="col-3">
+                  <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon bg-warning h-bg-twitter float-none mb-3">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+                <?php endif; ?>
+
+                <?php if(isset($page_home['pinterest'])): ?>
+                <div class="col-3">
+                  <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon bg-warning h-bg-pinterest float-none mb-3">
+                    <i class="fa-brands fa-pinterest"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                  </a>
+                </div>
+                <?php endif; ?>
+              </div>
             </div>
+
+            
             
           </div>
+
+
         </div>
       </div>
     </div>

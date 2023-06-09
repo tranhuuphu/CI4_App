@@ -4,16 +4,20 @@
       <div class="row col-mb-50">
         <div class="col-lg-8">
           <div class="row col-mb-50">
-            <div class="col-md-4">
+            <div class="col-md-7">
               <div class="widget clearfix">
-                <h4>Thông Tin</h4>
+                <div class="fancy-title title-border mt-">
+                  <h4>THÔNG TIN</h4>
+                </div>
                 <p><?= $page_home['page_content'] ?></p>
                 
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
               <div class="widget widget_links clearfix">
-                <h4>Trang</h4>
+                <div class="fancy-title title-border mt-">
+                  <h4>TRANG</h4>
+                </div>
                 <ul>
                   <?php foreach($link_page as $pl): ?>
                     <li><a href="<?= $pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
@@ -31,7 +35,9 @@
           <div class="row col-mb-50">
             <div class="col-md-4 col-lg-12">
               <div class="widget clearfix" style="margin-bottom: -20px;">
-                <h4>Google Maps</h4>
+                <div class="fancy-title title-border mt-">
+                  <h4>GOOGLE MAPS</h4>
+                </div>
                 <a href="<?= $page_home['maps']; ?>" title="us on maps" target="_blank">
                   <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$page_home['google_image_maps']; ?>" alt="<?= $page_home['page_name']; ?>"/>
                 </a>
