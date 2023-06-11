@@ -1,7 +1,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $this->renderSection('title'); ?></title>
+    
 
     <link rel="icon" type="image/x-icon" href="<?= base_url('public/upload/tinymce/image_asset'); ?>/<?php if($loggerUserID != null){echo $userinfo['favicon_image']; } ?>">
 

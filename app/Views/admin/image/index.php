@@ -120,3 +120,7 @@
 </script>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Ảnh Đã Nén
+<?= $this->endSection(); ?>

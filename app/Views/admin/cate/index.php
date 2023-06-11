@@ -91,3 +91,7 @@
   </script>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Menu Danh Mục
+<?= $this->endSection(); ?>

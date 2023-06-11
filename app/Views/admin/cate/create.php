@@ -135,3 +135,7 @@
   $(".cate_active .cate_tree_active2 a:first").addClass("active");
 </script>
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Thêm Mới Danh Mục
+<?= $this->endSection(); ?>

@@ -139,3 +139,7 @@
   $(".image_active .image_tree_active2 a:first").addClass("active");
 </script>
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Toàn bộ ảnh
+<?= $this->endSection(); ?>

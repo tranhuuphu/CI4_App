@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?= $this->include('admin/header'); ?>
+	<title><?= $this->renderSection('title'); ?></title>
 	<style>
 		.content-wrapper{
 			background-color: #ffffff !important;
@@ -114,7 +115,7 @@
 	      "info": true,
 	      "autoWidth": false,
 	      "responsive": true,
-	      "pageLength": 20,
+	      "pageLength": 30,
 	    });
 	  });
 	</script>

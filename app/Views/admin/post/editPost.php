@@ -80,7 +80,6 @@
                     <div class="form-group">
                       <label>Thuộc danh mục</label>
                       <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
-                        <option value=""> ---Lựa chọn danh mục</option><i class="fas fa-long-arrow-alt-right"></i>
                         <?php foreach($cate as $c): ?>
                           <?php if($c['cate_parent_id'] == 0): ?>
                             <?php if(!(in_array($c['id'], $c_t))): ?>

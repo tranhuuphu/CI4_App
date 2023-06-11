@@ -136,3 +136,7 @@
   </script>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Chỉnh Sửa Danh Mục: <?= $cate['cate_name'] ?>
+<?= $this->endSection(); ?>

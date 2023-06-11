@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> New</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Bài Mới</a></h3>
               </div>
 
               <!-- /.card-header -->
@@ -51,6 +51,7 @@
 	                  </tr>
                   </thead>
                   <tbody>
+                    <?php $i = 1; ?>
                   	<?php foreach($post as $p): ?>
                         
                       
@@ -61,7 +62,8 @@
                             
 
                           ?>>
-                        <td style="text-align: center;" class="text-bold"><?= $p['id']; ?></td>
+                        <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
+                        <?php $i = $i + 1; ?>
 		                    <td><?= $p['post_title']; ?></td>
 		                    <td>
                           <?php 
@@ -86,7 +88,7 @@
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
-                            <i class="fas fa-folder-open"></i> Show
+                            <i class="fas fa-eye"></i> Show
                           </button>
 
                           <!-- /.modal -->
@@ -94,7 +96,7 @@
                             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h4 class="modal-title text-bold"><?= $p['post_title']; ?></h4>
+                                  <h4 class="modal-title text-bold">Toàn bộ thông tin bài viết</h4>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -111,7 +113,14 @@
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <th scope="row">Danh Mục</th>
+
+                                        <th scope="row">01. Tiêu Đề</th>
+                                        <td><?= $p['post_title']; ?></td>
+                                      </tr>
+
+                                      <tr>
+                                        
+                                        <th scope="row">02. Danh Mục</th>
                                         <td>
                                           <?php 
                                             foreach ($cate as $c) {
@@ -124,59 +133,59 @@
                                       </tr>
 
                                       <tr>
-                                        <th scope="row">Tóm Tắt</th>
+                                        <th scope="row">03. Tóm Tắt</th>
                                         <td><?= $p['post_intro'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Lượt Xem</th>
+                                        <th scope="row">04. Lượt Xem</th>
                                         <td><?= $p['post_view'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Ảnh</th>
+                                        <th scope="row">05. Ảnh</th>
                                         <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" style="width: 60% " ></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Loại bài viết</th>
+                                        <th scope="row">06. Nổi bật</th>
                                         <td>
                                           <?php 
                                             
                                             if($p['post_featured'] == 1){
-                                              echo "bài viết nổi bật";
+                                              echo "Yes";
                                             }else{
-                                              echo "bài viết thường";
+                                              echo "No";
                                             }
                                             
                                           ?>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Bài viết bán hàng</th>
+                                        <th scope="row">07. Sản Phẩm</th>
                                         <td>
                                           <?php 
                                             
                                             if($p['post_status'] == 1){
-                                              echo "bài viết bán hàng";
+                                              echo "Yes";
                                             }else{
-                                              echo "bài viết thường";
+                                              echo "No";
                                             }
                                             
                                           ?>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Nội dung</th>
+                                        <th scope="row">08. Nội dung</th>
                                         <td><?php echo $p['post_content'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Meta Desc</th>
+                                        <th scope="row">09. Meta Desc</th>
                                         <td><?= $p['post_meta_desc'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Meta Key</th>
+                                        <th scope="row">10. Meta Key</th>
                                         <td><?= $p['post_meta_key'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">Ngày viết bài</th>
+                                        <th scope="row">11. Ngày viết bài</th>
                                         <td><?= $p['created_at'] ?></td>
                                       </tr>
                                     </tbody>

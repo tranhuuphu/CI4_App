@@ -102,7 +102,7 @@
                   <hr>
 
 	                <div class="form-group clearfix">
-                    <label><abbr title="Toàn bộ thông tin trừ trang này sẽ hiển thị lên trang chủ, nội dung sẽ có vị trị footer, thẻ tiêu đề là tiêu đề website, cũng như các thẻ SEO">Là Trang Chính</abbr></label>
+                    <label><abbr title="Toàn bộ thông tin trừ trang này sẽ hiển thị lên trang chủ, nội dung sẽ có vị trị footer, thẻ tiêu đề là tiêu đề website, cũng như các thẻ SEO">Là Trang Chủ</abbr></label>
                     <br>
                     <div class="icheck-primary d-inline pr-3">
                       <input type="radio" id="radioPrimary1" name="page_status" name="r1" value="1">
@@ -198,4 +198,8 @@
     $(".page_active .page_tree_active2 a:first").addClass("active");
   </script>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Thêm Trang
 <?= $this->endSection(); ?>

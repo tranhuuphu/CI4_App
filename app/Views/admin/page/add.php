@@ -205,3 +205,7 @@
   </script>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Thêm Trang
+<?= $this->endSection(); ?>

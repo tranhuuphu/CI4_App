@@ -76,7 +76,7 @@
               <hr>
 
               <div class="form-group">
-                <label>Ảnh Người Dùng</label>
+                <label>Ảnh Người Dùng (Nếu update thì chọn ảnh mới)</label>
                 <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_image') : '' ?></p>
                 <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="user_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                 <img id="output"/ style="width: 20%" class="pt-1">
@@ -92,7 +92,7 @@
               </div>
               <hr>
               <div class="form-group">
-                <label>Ảnh Admin Favicon Website</label>
+                <label>Admin Favicon (Nếu update thì chọn ảnh mới)</label>
                 <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'favicon_image') : '' ?></p>
                 <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="favicon_image" accept="image" onchange="loadFile2(event)" style="overflow: hidden;">
                 <img id="output2"/ style="width: 20%" class="pt-1">
@@ -162,4 +162,8 @@
   </section>
 </div>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Chi tiết Người Dùng
 <?= $this->endSection(); ?>

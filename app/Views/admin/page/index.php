@@ -56,7 +56,7 @@
 		                  <tr>
                         <td>
                           <?= $p['page_name']; ?>
-                          <p><?php if($p['page_status'] == 1){echo "<span class='text-bold'>Trang Chủ</span>"; }else{echo "Trang thường"; } ?></p>
+                          <p><?php if($p['page_status'] == 1){echo "<span class='text-bold'>Trang Chủ</span>"; }else{echo "<span style='color: red'>Trang Thường</span>"; } ?></p>
                           <p class="text-bold text-red"><?php if($p['page_show'] == 0){echo "Đang Ẩn";} ?></p>
 
                         </td>
@@ -234,6 +234,10 @@
     $(".page_active .page_tree_active a:first").addClass("active");
   </script>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Danh Sách Trang
 <?= $this->endSection(); ?>
 
 

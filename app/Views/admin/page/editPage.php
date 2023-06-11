@@ -188,3 +188,7 @@
   </script>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('title'); ?>
+Chỉnh Sửa Trang
+<?= $this->endSection(); ?>

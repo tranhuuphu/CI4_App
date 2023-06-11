@@ -14,7 +14,7 @@ class PostController extends BaseController
     }
     public function index(){
         $postModel = new PostModel();
-        $data['post'] = $postModel->findAll();
+        $data['post'] = $postModel->orderBy('id', 'DESC')->findAll();
 
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
@@ -119,8 +119,8 @@ class PostController extends BaseController
         $img = $this->request->getFile('post_image');
 
         $type = $img->guessExtension();
-        $post_title_slug2 = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
-        $data['post_image']       = $post_title_slug2;
+        $post_image_name = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+        $data['post_image']       = $post_image_name;
 
 
         $postModel->insert($data);
@@ -131,12 +131,19 @@ class PostController extends BaseController
             {
                 // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_title_slug2);
+
+                
+
+                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
+
+                
  
                 // You can continue here to write a code to save the name to database
                 // db_connect() or model format
                             
             }
+
+            
         }
         $post_tag = $this->request->getPost('taginput');
         $post_tag = json_decode($post_tag, true);
@@ -160,6 +167,8 @@ class PostController extends BaseController
         return redirect()->to('admin/post')->with('id', $id = $postModel->insertID());
     }
 
+
+    // 
     public function getEdit($id){
         $postModel = new PostModel();
         $cateModel = new CateModel();
@@ -180,13 +189,15 @@ class PostController extends BaseController
         $cateModel = new CateModel();
         $tagModel = new TagModel();
 
-        $data['cate'] = $cateModel->findAll();
+        
         $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         // dd($tagList);
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         $detailPost = $postModel->find($id);
         $post_title = $this->request->getPost('post_title');
         $data['postDetail'] = $detailPost;
+
+
 
         if($detailPost['post_title'] == $post_title){
             $data['post_title'] = $post_title;
@@ -245,7 +256,8 @@ class PostController extends BaseController
         $data['post_view']      = $detailPost['post_view'];
         $data['post_show']      = $detailPost['post_show'];
 
-        $cate_slug = $cateModel->where('id', $post_cate_id)->first();
+        $cate_slug = $cateModel->where('id', $this->request->getPost('post_cate_id'))->first();
+        // dd($cate_slug);
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
         
         
@@ -254,9 +266,9 @@ class PostController extends BaseController
             $img = $this->request->getFile('post_image');
             $type = $img->guessExtension();
             
-            $post_title_slug2 = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+            $post_image_name = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
 
-            $data['post_image']       = $post_title_slug2;
+            $data['post_image']       = $post_image_name;
         }else{
             $data['post_image'] = $detailPost['post_image'];
         }
@@ -302,11 +314,20 @@ class PostController extends BaseController
             {
                 // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_title_slug2);
+                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
+                // $path2 = ROOTPATH.'/public/upload/tinymce/image_asset/'.$post_image_name;
+                // \Config\Services::image('imagick')
+                // ->withFile($path2)
+                // ->resize(1200, 900, true, 'height')
+                // ->save($path2);
  
                 // You can continue here to write a code to save the name to database
                 // db_connect() or model format
-                            
+                $pathTo = ROOTPATH.'/public/upload/tinymce/image_asset/'.$detailPost['post_image'];
+                $pathTrash = ROOTPATH.'/public/upload/tinymce/image_asset/trash/'.$detailPost['post_image'];
+                if(file_exists($pathTo)){
+                    rename ($pathTo, $pathTrash);
+                }                            
             }
         }
     
