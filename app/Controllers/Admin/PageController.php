@@ -33,7 +33,8 @@ class PageController extends BaseController
         $pageHome = $pageModel->where('page_status', 1)->first();
         // dd($check);
         if($this->request->getPost('page_status') == 1 && $pageHome != null){
-            $data['page_status'] = 1;
+            $data['page_status']        = 1;
+
             $data2['page_slug']         = $pageHome['page_slug'];
             $data2['page_name']         = $pageHome['page_name'];
             $data2['page_title']        = $pageHome['page_title'];
@@ -44,6 +45,19 @@ class PageController extends BaseController
             $data2['page_show']         = $pageHome['page_show'];;
             $data2['page_meta_desc']    = $pageHome['page_meta_desc'];
             $data2['page_meta_key']     = $pageHome['page_meta_key'];
+
+            if($pageHome['facebook']    != null){$data['facebook']      = $pageHome['facebook'];}
+            if($pageHome['youtube']     != null){$data['youtube']       = $pageHome['youtube'];}
+            if($pageHome['twitter']     != null){$data['twitter']       = $pageHome['twitter'];}
+            if($pageHome['pinterest']   != null){$data['pinterest']     = $pageHome['pinterest'];}
+            if($pageHome['maps']        != null){$data['maps']          = $pageHome['maps'];}
+            if($pageHome['f_app']       != null){$data['f_app']         = $pageHome['f_app'];}
+            if($pageHome['g_app']       != null){$data['g_app']         = $pageHome['g_app'];}
+            if($pageHome['phone']       != null){$data['phone']         = $pageHome['phone'];}
+            if($pageHome['page_favicon']!= null){$data['page_favicon']  = $pageHome['page_favicon'];}
+
+
+
             $pageModel->update($pageHome['id'], $data2);
         }else{
             $data['page_status']    = $this->request->getPost('page_status');
@@ -57,7 +71,6 @@ class PageController extends BaseController
                     'required' => 'Tiêu đề không được để trống.',
                     'is_unique' => 'Tiêu đề trùng với bài viết khác.',
                 ],
-
             ],
             'page_title'=>[
                 'rules'=>'required|is_unique[page.page_title]',
@@ -71,13 +84,12 @@ class PageController extends BaseController
                 'errors' => [
                     'required' => 'Nội dung bài viết không được để trống.',
                 ],
-
             ],
             'page_image' => [
                 'label' => 'Image File',
                 'rules' => 'uploaded[page_image]'
                     . '|is_image[page_image]'
-                    . '|mime_in[page_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                    . '|mime_in[page_ismage,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
                     . '|max_size[page_image,10000]',
                     // . '|max_dims[page_image,1024,768]',
                     'errors' => [
@@ -176,6 +188,29 @@ class PageController extends BaseController
             $data2['page_show']         = $pageHome['page_show'];;
             $data2['page_meta_desc']    = $pageHome['page_meta_desc'];
             $data2['page_meta_key']     = $pageHome['page_meta_key'];
+
+            $data2['facebook']      = null;
+            $data2['youtube']       = null;
+            $data2['twitter']       = null;
+            $data2['pinterest']     = null;
+            $data2['maps']          = null;
+            $data2['f_app']         = null;
+            $data2['g_app']         = null;
+            $data2['phone']         = null;
+            $data2['page_favicon']  = null;
+
+
+            $data['facebook']       = $pageHome['facebook'];
+            $data['youtube']        = $pageHome['youtube'];
+            $data['twitter']        = $pageHome['twitter'];
+            $data['pinterest']      = $pageHome['pinterest'];
+            $data['maps']           = $pageHome['maps'];
+            $data['f_app']          = $pageHome['f_app'];
+            $data['g_app']          = $pageHome['g_app'];
+            $data['phone']          = $pageHome['phone'];
+            $data['page_favicon']   = $pageHome['page_favicon'];
+
+            // Update Home Page Status
             $pageModel->update($pageHome['id'], $data2);
         }else{
             $data['page_status']    = $this->request->getPost('page_status');
@@ -247,7 +282,7 @@ class PageController extends BaseController
         }
         
 
-
+        // dd($data);
         $pageModel->update($id, $data);
 
         if($img = $this->request->getFile('page_image'))
