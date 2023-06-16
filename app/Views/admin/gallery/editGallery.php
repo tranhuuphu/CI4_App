@@ -45,11 +45,11 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
                       <div class="form-group">
-                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_url" style="width: 100%;">
+                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
                           <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
                           <?php foreach($post_url as $p): ?>
-                            <?php $url = base_url().'/'.$p['cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html'; ?>
-                            <option data-icon="fas fa-circle" value="<?= $url ?>"> <?= $p['post_title']; ?></option>
+                            
+                            <option data-icon="fas fa-circle" value="<?= $p['id'] ?>" <?php if($gallery['gallery_post_id']  == $p['id']){echo "selected";} ?>> <?= $p['post_title']; ?></option>
                           <?php endforeach; ?>
                         </select>
                       </div>
@@ -80,7 +80,10 @@
                   </div>
                   <hr>
                   <div class="form-group">
-                    <label class="upper">Ảnh</label>
+                    <label style="color: red; margin-right: 7px;">Ảnh Cũ</label>
+                    <img src="<?= base_url('public/upload/tinymce/gallery_asset/'.$gallery['gallery_image']) ?>" width="30%">
+                    <hr>
+                    <label class="upper">Ảnh mới (nếu muốn thay đổi)</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
                     <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
 
@@ -116,7 +119,7 @@
                       <div class="form-group">
                         <label class="upper">Meta Desc</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?= set_value('gallery_meta_desc'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?php if(old('gallery_meta_desc') != null){echo set_value('gallery_meta_desc');}else{echo $gallery['gallery_meta_desc'];} ?></textarea>
                         
                       </div>
                     </div>
@@ -124,7 +127,7 @@
                       <div class="form-group">
                         <label class="upper">Meta Key</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?= set_value('gallery_meta_key'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?php if(old('gallery_meta_key') != null){echo set_value('gallery_meta_key');}else{echo $gallery['gallery_meta_key'];} ?></textarea>
                         
                       </div>
                     </div>
@@ -160,9 +163,9 @@
 
 <?= $this->section('script'); ?>
   <script type="text/javascript">
-    $(".post_active").addClass("menu-open");
-    $(".post_active a:first").addClass("active");
-    $(".post_active .post_tree_active a:first").addClass("active");
+    $(".gallery_active").addClass("menu-open");
+    $(".gallery_active a:first").addClass("active");
+    $(".gallery_active .gallery_tree_active a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

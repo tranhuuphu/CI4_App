@@ -41,13 +41,11 @@
                 <table id="example2" class="table table-bordered table-hover" style="width:100%">
                   <thead>
 	                  <tr class="thead-dark">
-                      <th>Order</th>
+                      <th>Thứ tự</th>
 	                    <th width="30%">Ảnh</th>
 	                    <th>Tiêu Đề</th>
-	                    <th>Url Liên Quan</th>
-                      <th>Ẩn/Hiện</th>
-	                    <th>Show</th>
-	                    <th>Option</th>
+	                    <th>Bài Viết Liên Quan</th>
+                      <th>Option</th>
 	                  </tr>
                   </thead>
                   <tbody>
@@ -71,19 +69,11 @@
                         <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
 		                    <td><?= $g['gallery_title']; ?></td>
 		                    
-
-                        
-
-                        
-                        
                         
 		                    <td>
                           <button type="button" class="btn btn-warning">
                             <i class="fas fa-eye"></i> <a href="<?= $g['gallery_post_url']; ?>" target="_blank">View Detail</a>
                           </button>
-
-                          
-
 
 
                         </td>
@@ -98,12 +88,10 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Order</th>
-                    <th>Tên</th>
-                    <th>Danh Mục</th>
-                    <th>Trạng thái</th>
-                    <th>Ẩn/Hiện</th>
-                    <th>Show</th>
+                    <th>Thứ tự</th>
+                    <th width="30%">Ảnh</th>
+                    <th>Tiêu Đề</th>
+                    <th>Bài Viết Liên Quan</th>
                     <th>Option</th>
                   </tr>
                   </tfoot>

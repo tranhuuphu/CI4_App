@@ -100,8 +100,8 @@
                     <hr>
                   
                     
-                    <label>Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$postDetail['post_image']) ?>" width="100%">
+                    <label style="color: red;">Ảnh Cũ</label>
+                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$postDetail['post_image']) ?>" width="30%">
                     <hr>
                     <label>Ảnh Mới (nếu cập nhật)</label>
                     <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">

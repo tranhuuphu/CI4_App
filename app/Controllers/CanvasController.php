@@ -7,6 +7,7 @@ use App\Models\PostModel;
 use App\Models\PageModel;
 use App\Models\CateModel;
 use App\Models\TagModel;
+use App\Models\GalleryModel;
 
 
 class CanvasController extends BaseController
@@ -58,6 +59,10 @@ class CanvasController extends BaseController
         $recent_post = $post->orderBy('id', 'DESC')->limit(8)->find();
         $most_view = $post->orderBy('post_view', 'DESC')->limit(4)->find();
 
+
+        $gallery = new GalleryModel;
+        $gallery_home  = $gallery->orderBy('gallery_view', 'DESC')->limit(12)->findAll();
+
         // dd($most_view);
         
         // dd($data['recent_post']);
@@ -85,6 +90,7 @@ class CanvasController extends BaseController
             'post_cate'     => $post_cate,
             'blog'          => $blog,
             'i'             => $i,
+            'gallery_home'  => $gallery_home,
 
         ];
 
@@ -118,8 +124,16 @@ class CanvasController extends BaseController
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
-            
-        }elseif($cate_parent == 0 && $cate_detail['cate_type'] != 'blog'){
+        }elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery'){
+
+            $gallery = new GalleryModel;
+
+            $post_cate  = $gallery->orderBy('id', 'desc')->paginate(11);
+            $post_count = $gallery->countAllResults();
+            $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
+            $tag_this = null;
+
+        }elseif($cate_parent == 0 && $cate_detail['cate_type'] != 'blog' && $cate_detail['cate_type'] != 'cate_gallery'){
             $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
             if($cate_sub_id != null){
                 foreach($cate_sub_id as $c_s){
@@ -179,7 +193,11 @@ class CanvasController extends BaseController
 
         if($cate_detail['cate_type'] == 'blog'){
             return view('front_end/canvas_site/blog_cate', $data);
-        }else{
+        }elseif($cate_detail['cate_type'] == 'cate_gallery'){
+
+            return view('front_end/canvas_site/gallery_cate', $data);
+        }
+        else{
             return view('front_end/canvas_site/post_cate', $data);
         }
 

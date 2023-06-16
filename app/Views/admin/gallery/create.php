@@ -49,11 +49,10 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
                       <div class="form-group">
-                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_url" style="width: 100%;">
+                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
                           <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
                           <?php foreach($post_url as $p): ?>
-                            <?php $url = base_url().'/'.$p['cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html'; ?>
-                            <option data-icon="fas fa-circle" value="<?= $url ?>"> <?= $p['post_title']; ?></option>
+                            <option data-icon="fas fa-circle" value="<?= $p['id']; ?>"> <?= $p['post_title']; ?></option>
                           <?php endforeach; ?>
                         </select>
                       </div>

@@ -187,29 +187,9 @@
   <script>
 		$('[name=taginput]').tagify();
 
-
-
-
-
-
-
-
 	</script>
 
 	<?= $this->renderSection('script'); ?>
-
-
-
-
-
-
-
-
-
-
-
-  
-
 
 </body>
 </html>
