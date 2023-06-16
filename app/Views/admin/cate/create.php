@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      	<form action="<?= base_url('admin/cate/save/'); ?>" method="post" enctype="multipart/form-data">
+      	<form action="<?= base_url('admin/cate/store/'); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
 	          <!-- left column -->
@@ -44,20 +44,38 @@
                   <hr>
 
                   <div class="form-group">
-	                  <label>Là danh mục lớn hay danh mục con</label>
+	                  <label>Là danh mục lớn hay danh mục con?</label>
 
 
 	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_parent_id">
 	                  	<option selected="selected" data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate as $c): ?>
-                        <option value="<?= $c['id']; ?>"><?= $c['cate_name']; ?></option>
+                        <option data-icon="fas fa-check" value="<?= $c['id']; ?>"><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
 
                       
 										</select>
 
 	                </div>
+
+	                <div class="form-group">
+	                  <label>Loại Danh Mục</label>
+
+
+	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_type">
+	                  	<option selected="selected" data-icon="fas fa-circle" value="normal" style="text-bold">Thường</option>
+	                  	
+	                  	<option data-icon="fas fa-circle" <?php if($cate_blog == null){}else{echo "disabled = 'disabled'";}  ?> value="blog" style="text-bold">Blog</option>
+
+	                  	<option data-icon="fas fa-circle" <?php if($cate_gallery == null){}else{echo "disabled = 'disabled'";}  ?> value="cate_gallery" style="text-bold">Ảnh Gallery</option>
+
+                      
+										</select>
+
+	                </div>
+
+
 	                <hr>
 	                <div class="form-group clearfix">
                     <label>Danh mục nổi bật?</label>

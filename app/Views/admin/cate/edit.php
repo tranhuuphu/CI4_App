@@ -12,7 +12,7 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
-              <li class="breadcrumb-item active">Sửa Danh Mục <small>(New Cate)</small></li>
+              <li class="breadcrumb-item active">Sửa Danh Mục <small>(<?= $cate['cate_name'] ?>)</small></li>
             </ol>
           </div>
         </div>
@@ -53,6 +53,36 @@
 	                  	<?php foreach($cate_all as $c): ?>
                         <option value="<?= $c['id']; ?>" <?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?> ><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
+
+                      
+										</select>
+
+	                </div>
+	                <hr>
+	                <div class="form-group">
+	                  <label>Loại Danh Mục</label>
+
+
+	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_type">
+	                  	<?php if($cate['cate_type'] == 'cate_gallery'): ?>
+		                  	<option  data-icon="fas fa-circle" disabled = 'disabled' value="normal" style="text-bold">Thường</option>
+		                  	
+		                  	<option data-icon="fas fa-circle" disabled = 'disabled' value="blog" style="text-bold">Blog</option>
+
+		                  	<option data-icon="fas fa-circle" selected="selected" value="cate_gallery" style="text-bold">Ảnh Gallery</option>
+		                  <?php elseif($cate['cate_type'] == 'blog'): ?>
+		                  	<option  data-icon="fas fa-circle" disabled = 'disabled' value="normal" style="text-bold">Thường</option>
+		                  	
+		                  	<option data-icon="fas fa-circle" selected="selected" value="blog" style="text-bold">Blog</option>
+
+		                  	<option data-icon="fas fa-circle" disabled = 'disabled' value="cate_gallery" style="text-bold">Ảnh Gallery</option>
+		                  <?php else: ?>
+		                  	<option  data-icon="fas fa-circle" selected="selected" value="normal" style="text-bold">Thường</option>
+		                  	
+		                  	<option data-icon="fas fa-circle" <?php if($cate_blog == null){}else{echo "disabled = 'disabled'";}  ?> value="blog" style="text-bold">Blog</option>
+
+		                  	<option data-icon="fas fa-circle" <?php if($cate_gallery == null){}else{echo "disabled = 'disabled'";}  ?> value="cate_gallery" style="text-bold">Ảnh Gallery</option>
+		                  <?php endif; ?>
 
                       
 										</select>
@@ -110,8 +140,8 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save</button>
-                  <button type="submit" class="btn btn-default float-right">Cancel</button>
+                  <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                  <button type="submit" class="btn btn-default float-right bg-danger"><i class="fa fa-window-close"></i> Cancel</button>
                 </div>
 	        		</div>
 	        	</div>

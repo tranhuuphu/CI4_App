@@ -22,9 +22,9 @@ class CanvasController extends BaseController
 
         $cate = new CateModel;
 
-        $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->find();
+        $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*, post.id as p_id')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->find();
 
-        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_blog', null)->find();
+        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_type', 'normal')->find();
         // dd($cate_all);
         $cate_2 = $cate->findAll();
         $i = 0;
@@ -50,7 +50,7 @@ class CanvasController extends BaseController
         }
 
 
-        $cate_blog = $cate->where('cate_blog', 1)->first();
+        $cate_blog = $cate->where('cate_type', 'blog')->first();
         if($cate_blog){
             $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog['id'])->limit(8)->find();
         }
@@ -113,13 +113,13 @@ class CanvasController extends BaseController
 
         $cate_id = $cate_detail['id'];
         $cate_parent = $cate_detail['cate_parent_id'];
-        if($cate_parent == 0 && $cate_detail['cate_blog'] == 1){
+        if($cate_parent == 0 && $cate_detail['cate_type'] == 'blog'){
             $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
             
-        }elseif($cate_parent == 0 && $cate_detail['cate_blog'] != 1){
+        }elseif($cate_parent == 0 && $cate_detail['cate_type'] != 'blog'){
             $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
             if($cate_sub_id != null){
                 foreach($cate_sub_id as $c_s){
@@ -177,7 +177,7 @@ class CanvasController extends BaseController
 
         ];
 
-        if($cate_detail['cate_blog'] == 1){
+        if($cate_detail['cate_type'] == 'blog'){
             return view('front_end/canvas_site/blog_cate', $data);
         }else{
             return view('front_end/canvas_site/post_cate', $data);

@@ -22,7 +22,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/cate/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Thêm mới</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/cate/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Thêm Mới</a></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -41,8 +41,8 @@
                         
                       
 		                  <tr>
-		                    <td><?= $c['cate_name']; ?></td>
-		                    <td><?php if($c['cate_parent_id'] == 0){echo "danh mục lớn";}else{echo "danh mục con";} ?></td>
+		                    <td><?= $c['cate_name']; ?> <small style="color: red"><?php if($c['cate_type'] == 'blog'){echo "Blog";}elseif($c['cate_type'] == 'cate_gallery'){echo "Cate Bộ Sưu Tập";} ?></small></td>
+		                    <td><?php if($c['cate_parent_id'] == 0){echo "danh mục lớn";}else{echo "<span style='color: blue'>danh mục con</span>";} ?></td>
 		                    <td><?php if($c['cate_status'] == 1){echo "<span class='text-bold'>danh mục nổi bật</span>";}else{echo "danh mục thường";} ?></td>
 		                    <td></td>
 		                    <td><a href="<?= base_url('admin/cate/edit/'.$c['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/cate/del/'.$c['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>

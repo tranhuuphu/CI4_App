@@ -95,6 +95,24 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     });
 
+    $routes->group("gallery", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\GalleryController::index");
+
+        $routes->get('create',"Admin\GalleryController::getGallery");
+        $routes->post('save',"Admin\GalleryController::saveGallery");
+
+        $routes->get('edit/(:num)',"Admin\GalleryController::getEdit/$1");
+        $routes->post('edit/(:num)',"Admin\GalleryController::SaveEdit/$1");
+
+        $routes->get('show/(:num)',"Admin\GalleryController::show/$1");
+        $routes->post('show/(:num)',"Admin\GalleryController::show/$1");
+
+        $routes->get('hidden/(:num)',"Admin\GalleryController::hidden/$1");
+        $routes->post('hidden/(:num)',"Admin\GalleryController::hidden/$1");
+
+    });
+
     $routes->group("page", function($routes){
         //home in get == home in as
         $routes->get('/',"Admin\PageController::index");

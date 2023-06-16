@@ -1,0 +1,530 @@
+INFO - 2023-06-16 02:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 02:43:04 --> Undefined variable $post
+in APPPATH\Controllers\Admin\GalleryController.php on line 30.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post', 'APPPATH\\Controllers\\Admin\\GalleryController.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getGallery()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 02:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:44:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:48:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:49:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 02:50:26 --> syntax error, unexpected token ")", expecting variable or "{" or "$"
+in APPPATH\Views\admin\gallery\create.php on line 60.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 3 APPPATH\Controllers\Admin\GalleryController.php(34): view('admin/gallery/create', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getGallery()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 02:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 02:55:45 --> Invalid file: "admin/galler/create.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/galler/create.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/galler/create', [], true)
+ 3 APPPATH\Controllers\Admin\GalleryController.php(83): view('admin/galler/create', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 02:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 02:55:56 --> Undefined variable $post_url
+in APPPATH\Views\admin\gallery\create.php on line 59.
+ 1 APPPATH\Views\admin\gallery\create.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_url', 'APPPATH\\Views\\admin\\gallery\\create.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(83): view('admin/gallery/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 02:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 02:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 02:56:05 --> Undefined variable $post_url
+in APPPATH\Views\admin\gallery\create.php on line 59.
+ 1 APPPATH\Views\admin\gallery\create.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_url', 'APPPATH\\Views\\admin\\gallery\\create.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(83): view('admin/gallery/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 03:26:50 --> Undefined variable $post_url
+in APPPATH\Views\admin\gallery\create.php on line 59.
+ 1 APPPATH\Views\admin\gallery\create.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_url', 'APPPATH\\Views\\admin\\gallery\\create.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(83): view('admin/gallery/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 03:32:54 --> Undefined variable $data
+in APPPATH\Controllers\Admin\GalleryController.php on line 82.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\Admin\\GalleryController.php', 82)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 03:33:51 --> Undefined variable $post_url
+in APPPATH\Views\admin\gallery\create.php on line 59.
+ 1 APPPATH\Views\admin\gallery\create.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_url', 'APPPATH\\Views\\admin\\gallery\\create.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(90): view('admin/gallery/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 03:34:15 --> Undefined variable $post_url
+in APPPATH\Views\admin\gallery\create.php on line 59.
+ 1 APPPATH\Views\admin\gallery\create.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_url', 'APPPATH\\Views\\admin\\gallery\\create.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(90): view('admin/gallery/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 03:36:00 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686886560.653238, 0.091, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 03:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 03:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:07:04 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686888424.251975, 0.143, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:14:24 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686888864.648939, 0.132, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:15:35 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686888935.379693, 0.087, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:15:38 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686888938.252034, 0.086, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:17:18 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686889038.411167, 0.082, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:18:34 --> date(): Argument #2 ($timestamp) must be of type ?int, bool given
+in FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php on line 185.
+ 1 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(185): date('Y', false)
+ 2 FCPATH\vendor\kint-php\kint\src\Zval\Representation\SplFileInfoRepresentation.php(151): Kint\Zval\Representation\SplFileInfoRepresentation->getMTime()
+ 3 FCPATH\vendor\kint-php\kint\src\Parser\SplFileInfoPlugin.php(53): Kint\Zval\Representation\SplFileInfoRepresentation->__construct(Object(CodeIgniter\HTTP\Files\UploadedFile))
+ 4 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(632): Kint\Parser\SplFileInfoPlugin->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 5 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(427): Kint\Parser\Parser->applyPlugins(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\InstanceValue), 8)
+ 6 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 7 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\UploadedFile), Object(Kint\Zval\Value))
+ 8 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+ 9 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+10 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+11 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\Files\FileCollection), Object(Kint\Zval\Value))
+12 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+13 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse(Object(CodeIgniter\HTTP\IncomingRequest), Object(Kint\Zval\Value))
+14 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+15 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(383): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\StrictRules\FileRules), Object(Kint\Zval\Value))
+16 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(131): Kint\Parser\Parser->parseArray([...], Object(Kint\Zval\Value))
+17 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(565): Kint\Parser\Parser->parse([...], Object(Kint\Zval\Value))
+18 FCPATH\vendor\kint-php\kint\src\Parser\Parser.php(138): Kint\Parser\Parser->parseObject(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+19 FCPATH\vendor\kint-php\kint\src\Kint.php(285): Kint\Parser\Parser->parse(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+20 FCPATH\vendor\kint-php\kint\src\Kint.php(268): Kint\Kint->dumpVar(Object(CodeIgniter\Validation\Validation), Object(Kint\Zval\Value))
+21 FCPATH\vendor\kint-php\kint\src\Kint.php(575): Kint\Kint->dumpAll([...], [...])
+22 SYSTEMPATH\Debug\Toolbar.php(110): Kint\Kint::dump(Object(CodeIgniter\Validation\Validation))
+23 SYSTEMPATH\Debug\Toolbar.php(371): CodeIgniter\Debug\Toolbar->run(1686889114.121519, 0.098, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+24 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+25 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+26 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('/admin/gallery/save', 'after')
+27 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+28 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:48:57 --> Undefined variable $post_title_slug
+in APPPATH\Controllers\Admin\GalleryController.php on line 118.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_title_slug', 'APPPATH\\Controllers\\Admin\\GalleryController.php', 118)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->saveGallery()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:51:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:52:07 --> Undefined variable $value
+in APPPATH\Views\admin\gallery\index.php on line 71.
+ 1 APPPATH\Views\admin\gallery\index.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH\\Views\\admin\\gallery\\index.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/index', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(22): view('admin/gallery/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:53:10 --> Undefined variable $value
+in APPPATH\Views\admin\gallery\index.php on line 71.
+ 1 APPPATH\Views\admin\gallery\index.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH\\Views\\admin\\gallery\\index.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/index', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(22): view('admin/gallery/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:53:38 --> Undefined array key "post_featured"
+in APPPATH\Views\admin\gallery\index.php on line 78.
+ 1 APPPATH\Views\admin\gallery\index.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_featured"', 'APPPATH\\Views\\admin\\gallery\\index.php', 78)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/index', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(22): view('admin/gallery/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 04:53:49 --> Undefined array key "post_show"
+in APPPATH\Views\admin\gallery\index.php on line 80.
+ 1 APPPATH\Views\admin\gallery\index.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_show"', 'APPPATH\\Views\\admin\\gallery\\index.php', 80)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/index', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(22): view('admin/gallery/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 04:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 04:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:22:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 05:22:54 --> Undefined variable $postDetail
+in APPPATH\Views\admin\gallery\editGallery.php on line 16.
+ 1 APPPATH\Views\admin\gallery\editGallery.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\gallery\\editGallery.php', 16)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\editGallery.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/editGallery', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(158): view('admin/gallery/editGallery', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getEdit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 05:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 05:24:02 --> Undefined variable $postDetail
+in APPPATH\Views\admin\gallery\editGallery.php on line 171.
+ 1 APPPATH\Views\admin\gallery\editGallery.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\gallery\\editGallery.php', 171)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\editGallery.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/editGallery', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(158): view('admin/gallery/editGallery', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getEdit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 05:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 05:24:58 --> syntax error, unexpected token "<"
+in APPPATH\Views\admin\gallery\editGallery.php on line 26.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/editGallery', [], true)
+ 3 APPPATH\Controllers\Admin\GalleryController.php(158): view('admin/gallery/editGallery', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getEdit('2')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 05:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 05:25:10 --> Undefined variable $postDetail
+in APPPATH\Views\admin\gallery\editGallery.php on line 171.
+ 1 APPPATH\Views\admin\gallery\editGallery.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\gallery\\editGallery.php', 171)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\editGallery.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/editGallery', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(158): view('admin/gallery/editGallery', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getEdit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 05:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-16 05:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-16 05:26:42 --> Undefined variable $postDetail
+in APPPATH\Views\admin\gallery\editGallery.php on line 42.
+ 1 APPPATH\Views\admin\gallery\editGallery.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $postDetail', 'APPPATH\\Views\\admin\\gallery\\editGallery.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\editGallery.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/editGallery', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(158): view('admin/gallery/editGallery', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\GalleryController->getEdit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-06-16 05:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

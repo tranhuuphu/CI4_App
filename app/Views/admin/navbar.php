@@ -1,5 +1,5 @@
 <!-- Navbar Top -->
-<nav class="main-header navbar navbar-expand navbar-dark">
+<nav class="main-header navbar navbar-expand navbar-white">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -198,6 +198,15 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item" >
+          <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link" style="background-color: #3f6791; font-weight: bold;">
+            <i class="nav-icon fas fa-cloud-sun"></i>
+            <p>
+              Watch Site
+            </p>
+          </a>
+        </li>
         
         
         <li class="nav-item cate_active">
@@ -271,14 +280,39 @@
             </li>
           </ul>
         </li>
+
+
+        <li class="nav-item gallery_active">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-images"></i>
+            <p>
+              Bộ Sưu Tập
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview gallery_tree_active">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/gallery'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách Ảnh</p>
+              </a>
+            </li>
+            <li class="nav-item gallery_tree_active2">
+              <a href="<?= base_url('admin/gallery/create'); ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Thêm Ảnh</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         
         
         
         <li class="nav-item image_active">
           <a href="#" class="nav-link">
-            <i class="nav-icon far fa-envelope"></i>
+            <i class="nav-icon fas fa-compress-arrows-alt"></i>
             <p>
-              Gallery
+              Image Compress
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>

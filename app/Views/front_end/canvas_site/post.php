@@ -305,10 +305,10 @@
 	        
 	        <div class="widget clearfix">
 	          <div class="tabs mb-0 clearfix" id="sidebar-tabs">
-	            <ul class="tab-nav clearfix">
-	              <li><a href="#tabs-1">Popular</a></li>
-	              
-	            </ul>
+	            
+	            <div class="fancy-title title-border">
+							    <h4 class="mb-2 ls-1 text- fw-bold">Popular</h4>
+							  </div>
 	            <div class="tab-container">
 	              <div class="tab-content clearfix" id="tabs-1">
 	                <div class="posts-sm row col-mb-30" id="popular-post-list-sidebar">

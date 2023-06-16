@@ -83,7 +83,7 @@
                         <?php foreach($cate as $c): ?>
                           <?php if($c['cate_parent_id'] == 0): ?>
                             <?php if(!(in_array($c['id'], $c_t))): ?>
-                              <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if($postDetail['post_cate_id']  == $c['id']){ echo "selected"; } ?>> <?= $c['cate_name']; ?></option>
+                              <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if($postDetail['post_cate_id']  == $c['id']){ echo "selected"; } ?> <?php if($c['cate_type'] == 'cate_gallery'){echo "disabled = 'disabled'";}  ?>> <?= $c['cate_name']; ?></option>
                             <?php elseif(in_array($c['id'], $c_t)): ?>
                               <optgroup data-icon="fas fa-circle" label="<?= $c['cate_name'] ?>">
                                 <?php foreach($cate as $c2): ?>

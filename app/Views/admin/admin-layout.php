@@ -172,7 +172,7 @@
 
 
 
-      content_style: ".mce-content-body {font-size:16px;font-family: Andale Mono;}",
+      content_style: ".mce-content-body {font-size:16px;font-family: arial;}",
       // image_uploadtab: true,
       contextmenu_never_use_native: true,
       

@@ -63,7 +63,7 @@ abstract class BaseController extends Controller
         $userInfo = $usersModel->find($loggerUserID);
         $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];
         $cateModel = new \App\Models\CateModel();
-        $data2['cate'] = $cateModel->orderBy('cate_blog', 'ASC')->findAll();
+        $data2['cate'] = $cateModel->orderBy('cate_type', 'DESC')->findAll();
         $pageModel = new PageModel();
         $data2['page_home'] = $pageModel->where('page_status', 1)->first();
         $data2['link_page'] = $pageModel->where('page_status !=', 1)->find();

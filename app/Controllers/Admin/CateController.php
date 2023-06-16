@@ -22,6 +22,8 @@ class CateController extends BaseController
     {
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->where('cate_parent_id', 0)->findAll();
+        $data['cate_blog'] = $cateModel->where('cate_type', 'blog')->first();
+        $data['cate_gallery'] = $cateModel->where('cate_type', 'cate_gallery')->first();
         // dd($data);
         return view('admin/cate/create', $data);
     }
@@ -32,6 +34,8 @@ class CateController extends BaseController
 
         $cateModel = new CateModel();
 
+        
+
         $cate_name              = $this->request->getPost('cate_name');
         $data['cate_name']      = $cate_name;
 
@@ -41,6 +45,7 @@ class CateController extends BaseController
 
         $data['cate_parent_id']     = $this->request->getPost('cate_parent_id');
         $data['cate_status']        = $this->request->getPost('cate_status');
+        $data['cate_type']          = $this->request->getPost('cate_type');
         $data['cate_meta_desc']     = $this->request->getPost('cate_meta_desc');
         $data['cate_meta_key']      = $this->request->getPost('cate_meta_key');
         // dd($data);
@@ -56,8 +61,11 @@ class CateController extends BaseController
         $cateModel = new CateModel();
         
         $data['cate'] = $cateModel->where('id', $cate_id)->first();
-
+        // dd($data);
         $data['cate_all'] = $cateModel->where('cate_parent_id', 0)->findAll();
+
+        $data['cate_blog']      = $cateModel->where('cate_type', 'blog')->first();
+        $data['cate_gallery']   = $cateModel->where('cate_type', 'cate_gallery')->first();
         
         return view('admin/cate/edit', $data);
     }
