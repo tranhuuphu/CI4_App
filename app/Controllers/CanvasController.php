@@ -205,6 +205,45 @@ class CanvasController extends BaseController
         // return view('front_end/canvas_site/post_cate');
     }
 
+    public function getPro(){
+        $post = new PostModel;
+
+        $cate = new CateModel;
+
+        
+
+        $paginate = 10;
+        $pro_cate = $post->select('cate.*, post.*, post.id as p_id, cate.id as c_id')->where('post_status', 'san-pham')->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+                $pro_count = $post->where('post_status', 'san-pham')->countAllResults();
+
+
+        $link_full = base_url().'/'.'san-pham';
+
+        $data = [
+            'title'         => 'danh sách sản phẩm',
+            'meta_desc'     => 'danh sách sản phẩm',
+            'meta_key'      => 'danh sách sản phẩm',
+            'image'         => '',
+            'created_at'    => '',
+            'updated_at'    => '',
+            'link_full'     => $link_full,
+
+            'cate_name'     => 'Sản Phẩm',
+            'cate_slug'     => 'san-pham',
+
+            'pro_cate'      => $pro_cate,
+            'paginate'      => $paginate,
+            'pro_count'     => $pro_count,
+
+            'pager'         => $post->pager,
+
+
+        ];
+        return view("front_end/canvas_site/pro_cate", $data);
+
+
+    }
+
 
 
     public function post($slug2, $title, $id){
@@ -413,6 +452,8 @@ class CanvasController extends BaseController
         
         return view("front_end/canvas_site/getSearch", $data);
     }
+
+
     public function getPage($page_slug, $id){
 
 

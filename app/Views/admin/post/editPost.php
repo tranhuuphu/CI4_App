@@ -120,32 +120,35 @@
                   
 
 	                <div class="form-group clearfix">
-                    <label>Bài viết nổi bật</label>
+
+                    <div class="form-group clearfix">
+                    <label class="upper">Bài viết nổi bật</label>
                     <br>
-                    <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="post_featured" name="r1" value="1" <?php if($postDetail['post_featured'] == 1){echo "checked";} ?>>
-                      <label for="radioPrimary1">Có
-                      </label>
-                    </div>
-                    <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="post_featured" value="0" name="r1" <?php if($postDetail['post_featured'] == 0){echo "checked";} ?>>
-                      <label for="radioPrimary2">Không
-                      </label>
+
+                    <div class="form-group clearfix">
+                      <div class="icheck-success d-inline">
+                        <input type="radio" name="post_featured" value="0" <?php if($postDetail['post_featured'] == 1){echo "checked";} ?> id="radioSuccess1" />
+                        <label for="radioSuccess1"> Không</label>
+                      </div>
+                      <div class="icheck-success d-inline ml-2">
+                        <input type="radio" name="post_featured" value="1" <?php if($postDetail['post_featured'] == 0){echo "checked";} ?> id="radioSuccess2" />
+                        <label for="radioSuccess2"> Có</label>
+                      </div>
                     </div>
                   </div>
+
                   <hr>
-                  <div class="form-group clearfix">
-                    <label>Thể loại bài viết</label>
+                  <div class="form-group clearfix ml-2">
+                    <label class="upper">Thể loại bài viết</label>
                     <br>
-                    <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="post_status" name="r1" value="normal" <?php if($postDetail['post_status'] == 'normal'){echo "checked";} ?>>
-                      <label for="radioPrimary1">bài viết thường
-                      </label>
+
+                    <div class="icheck-danger d-inline">
+                      <input type="radio" name="post_status" value="normal" <?php if($postDetail['post_status'] == 'normal'){echo "checked";} ?> id="radioDanger1" />
+                      <label for="radioDanger1"> Thường</label>
                     </div>
-                    <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="post_status" value="san-pham" name="r1" <?php if($postDetail['post_status'] == 'san-pham'){echo "checked";} ?>>
-                      <label for="radioPrimary2">Bài viết là sản phẩm
-                      </label>
+                    <div class="icheck-danger d-inline ml-2">
+                      <input type="radio" name="post_status" id="radioDanger2" value="san-pham" <?php if($postDetail['post_status'] == 'san-pham'){echo "checked";} ?>/>
+                      <label for="radioDanger2"> Sản Phẩm</label>
                     </div>
                   </div>
 

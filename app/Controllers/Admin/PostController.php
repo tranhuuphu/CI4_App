@@ -5,6 +5,7 @@ use App\Controllers\BaseController;
 use App\Models\PostModel;
 use App\Models\CateModel;
 use App\Models\TagModel;
+use App\Models\PostImageModel;
 
 
 class PostController extends BaseController
@@ -64,6 +65,7 @@ class PostController extends BaseController
                     'max_size' => 'Kích trước file quá lớn.',
                 ],
             ],
+
             'post_meta_desc'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -108,8 +110,7 @@ class PostController extends BaseController
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
         $data['post_view']      = 0;
         $data['post_show']      = 1;
-
-        // dd($data);
+        
 
         $cateModel = new CateModel();
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
@@ -129,42 +130,67 @@ class PostController extends BaseController
         {
             if ($img->isValid() && ! $img->hasMoved())
             {
-                // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
-
-                
-
                 $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
-
-                
- 
-                // You can continue here to write a code to save the name to database
-                // db_connect() or model format
-                            
             }
-
-            
         }
+
+        $post_id = $postModel->insertID();
+
         $post_tag = $this->request->getPost('taginput');
         $post_tag = json_decode($post_tag, true);
-
-        foreach($post_tag as $t_a){
-            $ta[] = $t_a['value'];
+        if($post_tag != null){
+            foreach($post_tag as $t_a){
+                $ta[] = $t_a['value'];
+            }
         }
 
         if($postModel){
-            $post_id = $postModel->insertID();
             if($post_tag != null){
                 $tag_create = new TagModel();
                 foreach($ta as $t_a){
-                    $tag_create->insert(
-                        ['tag_cate_id' => $cate_slug['id'], 'tag_cate_slug' => $cate_slug['cate_slug'], 'tag_post_id' => $post_id, 'tag_post_title' => $t_a, 'tag_post_slug' => mb_strtolower(convert_name($t_a)), 'tag_show' => 1, 'tag_view' => 0],
-                    );
+                    $tag_create->insert([
+                        'tag_cate_id'       => $cate_slug['id'],
+                        'tag_cate_slug'     => $cate_slug['cate_slug'],
+                        'tag_post_id'       => $post_id,
+                        'tag_post_title'    => $t_a,
+                        'tag_post_slug'     => mb_strtolower(convert_name($t_a)),
+                        'tag_show'          => 1,
+                        'tag_view'          => 0
+                    ]);
                 }
             }
         }
+
+        // Upload bộ ảnh nếu là sản phẩm & có ảnh được chọn
+        if($this->request->getPost('post_status') == 'san-pham'){
+            if(count($this->request->getFileMultiple('post_images')) > 0)
+            {
+                $files = $this->request->getFileMultiple('post_images');
+                foreach ($files as $file) {
+                    if ($file->isValid() && ! $file->hasMoved())
+                    {
+                        $type = $file->guessExtension();
+                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+                        $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
+                        $data = [
+                            'post_image_id'         => $post_id,
+                            'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
+                            'post_image_slug'       => $post_image_slug,
+                            'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
+                            'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
+                        ];
+                        $postImages = new PostImageModel();
+                        $postImages->insert($data);
+                    }
+                }
+            }
+        }
+            
+
+        
         // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
-        return redirect()->to('admin/post')->with('id', $id = $postModel->insertID());
+        return redirect()->to('admin/post')->with('id', $post_id);
     }
 
 

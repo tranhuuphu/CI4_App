@@ -124,33 +124,33 @@
 	                <div class="form-group clearfix">
                     <label class="upper">Bài viết nổi bật</label>
                     <br>
-                    <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="post_featured" name="r1" value="1">
-                      <label for="radioPrimary1">Có
-                      </label>
-                    </div>
-                    <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="post_featured" value="0" name="r1" checked>
-                      <label for="radioPrimary2">Không
-                      </label>
+
+                    <div class="form-group clearfix">
+                      <div class="icheck-success d-inline">
+                        <input type="radio" name="post_featured" value="0" checked id="radioSuccess1" />
+                        <label for="radioSuccess1"> Không</label>
+                      </div>
+                      <div class="icheck-success d-inline ml-2">
+                        <input type="radio" name="post_featured" value="1" id="radioSuccess2" />
+                        <label for="radioSuccess2"> Có</label>
+                      </div>
                     </div>
                   </div>
 
                   <hr>
-                  <div class="form-group clearfix">
+                  <div class="form-group clearfix ml-2">
                     <label class="upper">Thể loại bài viết</label>
                     <br>
-                    <div class="icheck-primary d-inline pr-3">
-                      <input type="radio" id="radioPrimary1" name="post_status" name="r1" value="normal" checked>
-                      <label for="radioPrimary1">bài viết thường
-                      </label>
+
+                    <div class="icheck-danger d-inline">
+                      <input type="radio" name="post_status" value="normal" checked id="radioDanger1" />
+                      <label for="radioDanger1"> Thường</label>
                     </div>
-                    <div class="icheck-primary d-inline">
-                      <input type="radio" id="radioPrimary2" name="post_status" value="san-pham" name="r1">
-                      <label for="radioPrimary2">Bài viết là sản phẩm
-                      </label>
+                    <div class="icheck-danger d-inline ml-2">
+                      <input type="radio" name="post_status" id="radioDanger2" value="san-pham"/>
+                      <label for="radioDanger2"> Sản Phẩm</label>
                     </div>
-                  </div>
+                  </div> 
 
 	              </div>
 	              <!-- /.card-body -->
@@ -182,7 +182,7 @@
                   <div class="form-group">
 
                     <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm <small class="text-red">(Ảnh sẽ không được up nếu không phải là sản phẩm)</small></label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="images[]" accept="image" multiple>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
                   </div>
 
 
