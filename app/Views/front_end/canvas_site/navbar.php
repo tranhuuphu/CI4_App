@@ -63,6 +63,11 @@
             </li>
 
 
+            <li class="menu-item">
+              <a class="menu-link" href="<?= base_url('san-pham'); ?>"><div>Sản Phẩm</div></a>
+            </li>
+
+
 
             <?php foreach($cate as $c3): ?>
               <?php $c_t[] = $c3['cate_parent_id']; ?>

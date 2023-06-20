@@ -8,6 +8,7 @@ use App\Models\PageModel;
 use App\Models\CateModel;
 use App\Models\TagModel;
 use App\Models\GalleryModel;
+use App\Models\PostImagesModel;
 
 
 class CanvasController extends BaseController
@@ -210,13 +211,20 @@ class CanvasController extends BaseController
 
         $cate = new CateModel;
 
+        $postImages = new PostImagesModel();
+
         
 
         $paginate = 10;
         $pro_cate = $post->select('cate.*, post.*, post.id as p_id, cate.id as c_id')->where('post_status', 'san-pham')->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $pro_count = $post->where('post_status', 'san-pham')->countAllResults();
-
-
+                
+        foreach($pro_cate as $value){
+            $pi_id[] = $value['p_id'];
+        }
+        // dd($pi_id);
+        $postImages = $postImages->whereIn('post_image_id', $pi_id)->findAll();
+        // dd($postImages);
         $link_full = base_url().'/'.'san-pham';
 
         $data = [
@@ -236,6 +244,7 @@ class CanvasController extends BaseController
             'pro_count'     => $pro_count,
 
             'pager'         => $post->pager,
+            'postImages'    => $postImages,
 
 
         ];
@@ -253,6 +262,7 @@ class CanvasController extends BaseController
 
 
         $post_detail = $post->find($id);
+
         if(!$post_detail){
             return view('front_end/canvas_site/404');
         }
@@ -320,9 +330,13 @@ class CanvasController extends BaseController
         // dd(session()->get('sessionView'));
 
 
-        
+        if($post_detail['post_status'] == 'san-pham' ){
+            return view('front_end/canvas_site/post_pro_detail', $data);
+        }else{
+            return view('front_end/canvas_site/post_detail', $data);
+        }
 
-        return view('front_end/canvas_site/post', $data);
+        
     }
 
 

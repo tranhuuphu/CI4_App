@@ -5,7 +5,7 @@ use App\Controllers\BaseController;
 use App\Models\PostModel;
 use App\Models\CateModel;
 use App\Models\TagModel;
-use App\Models\PostImageModel;
+use App\Models\PostImagesModel;
 
 
 class PostController extends BaseController
@@ -180,7 +180,7 @@ class PostController extends BaseController
                             'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
                             'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
                         ];
-                        $postImages = new PostImageModel();
+                        $postImages = new PostImagesModel();
                         $postImages->insert($data);
                     }
                 }

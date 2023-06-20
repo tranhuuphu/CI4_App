@@ -139,7 +139,7 @@
 
                   <hr>
                   <div class="form-group clearfix ml-2">
-                    <label class="upper">Thể loại bài viết</label>
+                    <label class="upper">Bài Viết Bán Hàng?</label>
                     <br>
 
                     <div class="icheck-danger d-inline">

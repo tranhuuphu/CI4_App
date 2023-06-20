@@ -73,78 +73,131 @@
 		        </div>
 
 		        <div class="modal fade text-start rounded-0"  id="myModal<?= $key['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		          <div class="modal-dialog modal-xl" >
+		          <div class="modal-dialog modal-lg" >
 		            <div class="modal-content" style="border-radius: 0;">
 		              <div class="modal-header">
 		                <h4 class="modal-title" id="myModalLabel"><?= $key['post_title']; ?></h4>
 		                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
 		              </div>
 		              <div class="modal-body">
-		                <div class="single-product shop-quick-view-ajax">
-		                  <div class="product modal-padding">
 
-		                      <div class="row gutter-40 col-mb-50">
-		                          <div class="col-md-6">
-		                              <div class="product-image">
-		                                  <div class="fslider" data-pagi="false">
-		                                      <div class="flexslider">
-		                                          <div class="slider-wrap">
-		                                              <div class="slide"><a href="https://canvastemplate.com/images/shop/dress/3.jpg" title="Pink Printed Dress - Front View"><img src="https://canvastemplate.com/images/shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
-		                                              <div class="slide"><a href="https://canvastemplate.com/images/shop/dress/3-1.jpg" title="Pink Printed Dress - Side View"><img src="https://canvastemplate.com/images/shop/dress/3-1.jpg" alt="Pink Printed Dress"></a></div>
-		                                              <div class="slide"><a href="https://canvastemplate.com/images/shop/dress/3-2.jpg" title="Pink Printed Dress - Back View"><img src="https://canvastemplate.com/images/shop/dress/3-2.jpg" alt="Pink Printed Dress"></a></div>
-		                                          </div>
-		                                      </div>
-		                                  </div>
-		                                  <div class="sale-flash badge bg-danger p-2">Sale!</div>
-		                              </div>
-		                          </div>
-		                          <div class="col-md-6 product-desc">
-		                              <div class="d-flex justify-content-between align-items-center">
-		                              	<?php if($key['post_sale']): ?>
-		                                  <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div>
-		                                <?php elseif($key['post_price']): ?>
-		                                  <div class="product-price"><ins>$24.99</ins></div>
-		                                <?php else: ?>
-		                                	<div class="product-price"><ins>Liên Hệ</ins></div>
-		                                <?php endif; ?>
+		              	<div class="single-product">
+				              <div class="product">
+				                <div class="row gutter-40">
+				                  <div class="col-md-6">
 
-		                                  <div class="product-rating">
-		                                      <i class="bi-star-fill"></i>
-		                                      <i class="bi-star-fill"></i>
-		                                      <i class="bi-star-fill"></i>
-		                                      <i class="bi-star-half"></i>
-		                                      <i class="bi-star"></i>
-		                                  </div>
-		                              </div>
 
-		                              <!-- Product Single - Quantity & Cart Button
-		                              ============================================= -->
-		                              <form class="cart py-4 my-4 border-top border-bottom border-default" method="post" enctype='multipart/form-data'>
-		                                  <div class="quantity">
-		                                      <input type="button" value="-" class="minus">
-		                                      <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4">
-		                                      <input type="button" value="+" class="plus">
-		                                  </div>
-		                                  <button type="submit" class="add-to-cart button m-0">Add to Cart</button>
-		                              </form><!-- Product Single - Quantity & Cart Button End -->
+				                    <div class="product-image">
+				                      
+				                    	
+				                      <div class="fslider" data-pagi="false">
+                                <div class="flexslider">
+                                  <div class="slider-wrap">
+                                  	<div class="slide"><a href="javascript:void(0)" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"></a></div>
+                                  	<?php foreach($postImages as $p_i): ?>
+                                  		<?php if($p_i['post_image_id'] == $key['p_id']): ?>
+                                        <div class="slide"><a href="javascript:void(0)" title="<?= $p_i['post_image_title']; ?>"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>"></a></div>
+                                      <?php endif; ?>
+                                    <?php endforeach; ?>
+                                  </div>
+                                </div>
+                              </div>
 
-		                              <p><?= $key['post_intro']; ?></p>
-		                              <!-- <ul class="iconlist">
-		                                  <li><i class="fa-solid fa-caret-right"></i> Dynamic Color Options</li>
-		                                  <li><i class="fa-solid fa-caret-right"></i> Lots of Size Options</li>
-		                                  <li><i class="fa-solid fa-caret-right"></i> 30-Day Return Policy</li>
-		                              </ul> -->
-		                              <!-- <div class="card product-meta mb-0">
-		                                  <div class="card-body">
-		                                      <span itemprop="productID" class="sku_wrapper">SKU: <span class="sku">8465415</span></span>
-		                                      <span class="posted_in">Category: <a href="#" rel="tag">Shoes</a>.</span>
-		                                      <span class="tagged_as">Tags: <a href="#" rel="tag">Barena</a>, <a href="#" rel="tag">Blazers</a>, <a href="#" rel="tag">Tailoring</a>, <a href="#" rel="tag">Unconstructed</a>.</span>
-		                                  </div>
-		                              </div> -->
-		                          </div>
-		                      </div>
-		                  </div>
-		              	</div>
+
+                              
+				                      <?php if($key['post_sale']): ?>
+                              	<div class="sale-flash badge bg-danger p-2">Sale!</div>
+                              <?php endif; ?>
+				                    </div>
+				                  </div>
+				                  <div class="col-md-6 product-desc">
+				                    <div class="d-flex align-items-center justify-content-between">
+
+				                      <?php if($key['post_sale']): ?>
+                                <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins></div>
+                              <?php elseif($key['post_price']): ?>
+                                <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins></div>
+                              <?php else: ?>
+                              	<div class="product-price"><ins>Liên Hệ</ins></div>
+                              <?php endif; ?>
+
+				                      <div class="d-flex align-items-center">
+				                        <div class="product-rating">
+				                          <i class="bi-star-fill"></i>
+				                          <i class="bi-star-fill"></i>
+				                          <i class="bi-star-fill"></i>
+				                          <i class="bi-star-half"></i>
+				                          <i class="bi-star"></i>
+				                        </div>
+				                        <button type="button" class="btn btn-sm btn-secondary ms-3"><i class="bi-heart-fill"></i></button>
+				                      </div>
+				                    </div>
+				                    <div class="line"></div>
+
+				                    <form class="cart mb-0 d-flex justify-content-between align-items-center" method="post" enctype="multipart/form-data">
+				                      <div class="quantity">
+				                        <input type="button" value="-" class="minus" />
+				                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
+				                        <input type="button" value="+" class="plus" />
+				                      </div>
+				                      <button type="submit" class="add-to-cart button m-0">Add to cart</button>
+				                    </form>
+				                    <div class="line"></div>
+
+				                    <p><?= $key['post_intro']; ?></p>
+				                    <div class="line"></div>
+				                    <!-- <ul class="list-group list-group-flush">
+				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Category</span><span class="text-dark fw-semibold">Dress</span></li>
+				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Color</span><span class="text-dark fw-semibold">Light Pink</span></li>
+				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Size</span><span class="text-dark fw-semibold">Medium, Large</span></li>
+				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Quantity</span><span class="text-dark fw-semibold">7 Pcs</span></li>
+				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Return Policy</span><span class="text-dark fw-semibold">30 days</span></li>
+															<li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">SKU</span><span class="text-dark fw-semibold">8465415</span></li>
+				                    </ul> -->
+
+				                    <div class="card mt-2 pt-4 border-0 border-top rounded-0 border-default">
+				                      <div class="card-body p-0">
+				                        <div class="d-flex align-items-center justify-content-between">
+				                          <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
+				                          <div class="d-flex">
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
+				                              <i class="fa-brands fa-facebook-f"></i>
+				                              <i class="fa-brands fa-facebook-f"></i>
+				                            </a>
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
+				                              <i class="fa-brands fa-twitter"></i>
+				                              <i class="fa-brands fa-twitter"></i>
+				                            </a>
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
+				                              <i class="fa-brands fa-pinterest-p"></i>
+				                              <i class="fa-brands fa-pinterest-p"></i>
+				                            </a>
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-whatsapp" title="Whatsapp">
+				                              <i class="fa-brands fa-whatsapp"></i>
+				                              <i class="fa-brands fa-whatsapp"></i>
+				                            </a>
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-rss" title="RSS">
+				                              <i class="fa-solid fa-rss"></i>
+				                              <i class="fa-solid fa-rss"></i>
+				                            </a>
+				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0" title="Mail">
+				                              <i class="fa-solid fa-envelope"></i>
+				                              <i class="fa-solid fa-envelope"></i>
+				                            </a>
+				                          </div>
+				                        </div>
+				                      </div>
+				                    </div>
+				                  </div>
+				                  
+				                  <!-- <div class="w-100"></div> -->
+				                  
+				                </div>
+				              </div>
+				            </div>
+
+
+		                
 		              </div>
 		              
 		            </div>
