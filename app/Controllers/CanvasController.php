@@ -331,6 +331,7 @@ class CanvasController extends BaseController
 
 
         if($post_detail['post_status'] == 'san-pham' ){
+            $data['postImages'] = $postImages->whereIn('post_image_id', $id)->findAll();
             return view('front_end/canvas_site/post_pro_detail', $data);
         }else{
             return view('front_end/canvas_site/post_detail', $data);
