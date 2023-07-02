@@ -80,8 +80,10 @@
     <div id="gotoTop" class="uil uil-angle-up"></div>
 
 
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js?<?php echo time(); ?>"></script>
 
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>
 
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.tools.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.revolution.min.js"></script>

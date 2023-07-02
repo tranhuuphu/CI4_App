@@ -1,0 +1,3 @@
+CRITICAL - 2023-06-28 08:53:20 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 195.
+ 1 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()

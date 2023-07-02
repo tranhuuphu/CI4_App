@@ -223,7 +223,10 @@ class CanvasController extends BaseController
             $pi_id[] = $value['p_id'];
         }
         // dd($pi_id);
-        $postImages = $postImages->whereIn('post_image_id', $pi_id)->findAll();
+        if($postImages->whereIn('post_image_id', $pi_id)->findAll()){
+            $postImages = $postImages->whereIn('post_image_id', $pi_id)->findAll();
+        }
+        
         // dd($postImages);
         $link_full = base_url().'/'.'san-pham';
 
@@ -329,9 +332,12 @@ class CanvasController extends BaseController
         }
         // dd(session()->get('sessionView'));
 
-
+        $postImages = new PostImagesModel();
         if($post_detail['post_status'] == 'san-pham' ){
-            $data['postImages'] = $postImages->whereIn('post_image_id', $id)->findAll();
+            if($postImages->where('post_image_id', $id)->findAll()){
+                $data['postImages'] = $postImages->whereIn('post_image_id', $id)->findAll();
+            }
+            
             return view('front_end/canvas_site/post_pro_detail', $data);
         }else{
             return view('front_end/canvas_site/post_detail', $data);

@@ -191,6 +191,7 @@ class CodeIgniter
         }
 
         // Set default locale on the server
+        
         Locale::setDefault($this->config->defaultLocale ?? 'en');
 
         // Set default timezone on the server
