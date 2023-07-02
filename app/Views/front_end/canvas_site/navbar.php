@@ -1,3 +1,5 @@
+
+
 <div id="top-bar" class="bg-color dark">
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -31,10 +33,10 @@
 
 
 
-<header id="header" style="background-color: #ffffff">
+<header id="header" class="header" style="background-color: #ffffff">
   <div id="header-wrap">
     <div class="container">
-      <div class="header-row">
+      <div class="header-row primary-menu2 sub-title2">
         <div id="logo">
           <a href="<?= base_url(''); ?>">
             <img class="logo-default" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
@@ -108,6 +110,9 @@
   </div>
   <div class="header-wrap-clone"></div>
 </header>
+
+
+
 
 
 
