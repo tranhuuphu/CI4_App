@@ -190,7 +190,7 @@ $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
 $routes->get('search', 'CanvasController::getSearch');
 
-$routes->get('san-pham', 'CanvasController::getPro');
+$routes->get('san-pham', 'CanvasController::getProd');
 
 
 // $routes->get('site-map.xml', 'HomeController::siteMap');

@@ -206,12 +206,12 @@ class CanvasController extends BaseController
         // return view('front_end/canvas_site/post_cate');
     }
 
-    public function getPro(){
+    public function getProd(){
         $post = new PostModel;
 
         $cate = new CateModel;
 
-        $postImages = new PostImagesModel();
+        $postImage = new PostImagesModel();
 
         
 
@@ -223,8 +223,12 @@ class CanvasController extends BaseController
             $pi_id[] = $value['p_id'];
         }
         // dd($pi_id);
-        if($postImages->whereIn('post_image_id', $pi_id)->findAll()){
-            $postImages = $postImages->whereIn('post_image_id', $pi_id)->findAll();
+        
+        if($postImage->whereIn('post_image_id', $pi_id)->findAll()){
+            $data['postImages'] = $postImage->whereIn('post_image_id', $pi_id)->findAll();
+            
+        }else{
+            $data['postImages'] = null;
         }
         
         // dd($postImages);
@@ -247,11 +251,10 @@ class CanvasController extends BaseController
             'pro_count'     => $pro_count,
 
             'pager'         => $post->pager,
-            'postImages'    => $postImages,
 
 
         ];
-        return view("front_end/canvas_site/pro_cate", $data);
+        return view("front_end/canvas_site/prod_cate", $data);
 
 
     }
