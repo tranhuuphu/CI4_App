@@ -94,7 +94,7 @@
                                 <div class="flexslider">
                                   <div class="slider-wrap">
                                   	<div class="slide"><a href="javascript:void(0)" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"></a></div>
-                                  	<?php if(count($postImages) > 0): ?>
+                                  	<?php if(isset($postImages)): ?>
 	                                  	<?php foreach($postImages as $p_i): ?>
 	                                  		<?php if($p_i['post_image_id'] == $key['p_id']): ?>
 	                                        <div class="slide"><a href="javascript:void(0)" title="<?= $p_i['post_image_title']; ?>"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>"></a></div>

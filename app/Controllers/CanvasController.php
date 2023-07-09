@@ -231,7 +231,7 @@ class CanvasController extends BaseController
             $data['postImages'] = null;
         }
         
-        // dd($postImages);
+        // dd($data['postImages']);
         $link_full = base_url().'/'.'san-pham';
 
         $data = [
