@@ -339,9 +339,11 @@ class CanvasController extends BaseController
         if($post_detail['post_status'] == 'san-pham' ){
             if($postImages->where('post_image_id', $id)->findAll()){
                 $data['postImages'] = $postImages->whereIn('post_image_id', $id)->findAll();
+            }else{
+                $data['postImages'] = null;
             }
             
-            return view('front_end/canvas_site/post_pro_detail', $data);
+            return view('front_end/canvas_site/post_prod_detail', $data);
         }else{
             return view('front_end/canvas_site/post_detail', $data);
         }
@@ -425,13 +427,15 @@ class CanvasController extends BaseController
         $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->findAll();
         // dd($post_all);
 
-        $data = [
+        $data2 = [
             'page_info'     => $page_info,
             'cate_info'     => $cate_info,
             'tag_info'      => $tag_info,
             'post_all'      => $post_all,
         ];
         header("Content-Type: text/xml;charset=iso-8859-1");
+
+        $data = $this->response->setXML($data2);
         return view("front_end/site_map", $data);
     }
 

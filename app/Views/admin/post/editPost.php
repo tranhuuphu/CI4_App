@@ -63,23 +63,21 @@
 
 	          </div>
 	          <!--/.col (left) -->
-	          <!-- right column -->
-	          <div class="col-md-4">
-	            <!-- Form Element sizes -->
-	            <div class="card card-success">
-	              <div class="card-header">
-	                <h3 class="card-title">Nội dung thêm</h3>
-	              </div>
-	              <div class="card-body">
 
-	              	<div class="form-group">
-
-                    <?php foreach($cate as $c3): ?>
-                      <?php $c_t[] = $c3['cate_parent_id']; ?>
-                    <?php endforeach; ?>
-                    <div class="form-group">
-                      <label>Thuộc danh mục</label>
-                      <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
+            <!-- right column -->
+            <div class="col-md-4">
+              <!-- Form Element sizes -->
+              <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">Nội dung thêm</h3>
+                </div>
+                <div class="card-body">
+                  <?php foreach($cate as $c3): ?>
+                    <?php $c_t[] = $c3['cate_parent_id']; ?>
+                  <?php endforeach; ?>
+                  <div class="form-group">
+                    <label class="upper">Thuộc danh mục</label>
+                    <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
                         <?php foreach($cate as $c): ?>
                           <?php if($c['cate_parent_id'] == 0): ?>
                             <?php if(!(in_array($c['id'], $c_t))): ?>
@@ -96,14 +94,13 @@
                           <?php endif; ?>
                         <?php endforeach; ?>
                       </select>
-                    </div>
-                    <hr>
-                  
-                    
+                  </div>
+                  <hr>
+                  <div class="form-group">
                     <label style="color: red;">Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$postDetail['post_image']) ?>" width="30%">
+                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$postDetail['post_image']) ?>" width="30%" class="ml-3">
                     <hr>
-                    <label>Ảnh Mới (nếu cập nhật)</label>
+                    <label>Ảnh Mới (Nếu cập nhật)</label>
                     <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -116,30 +113,30 @@
                       };
                     </script>
                   </div>
+
                   <hr>
-                  
 
-	                <div class="form-group clearfix">
-
-                    <div class="form-group clearfix">
+                  <div class="form-group clearfix">
                     <label class="upper">Bài viết nổi bật</label>
                     <br>
 
                     <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="post_featured" value="0" <?php if($postDetail['post_featured'] == 1){echo "checked";} ?> id="radioSuccess1" />
+                        <input type="radio" name="post_featured" value="0" <?php if($postDetail['post_featured'] == 0){echo "checked";} ?> id="radioSuccess1" />
                         <label for="radioSuccess1"> Không</label>
                       </div>
                       <div class="icheck-success d-inline ml-2">
-                        <input type="radio" name="post_featured" value="1" <?php if($postDetail['post_featured'] == 0){echo "checked";} ?> id="radioSuccess2" />
+                        <input type="radio" name="post_featured" value="1" <?php if($postDetail['post_featured'] == 1){echo "checked";} ?> id="radioSuccess2" />
                         <label for="radioSuccess2"> Có</label>
                       </div>
                     </div>
+
+                    
                   </div>
 
                   <hr>
                   <div class="form-group clearfix ml-2">
-                    <label class="upper">Thể loại bài viết</label>
+                    <label class="upper">Bài viết thường hay sản phẩm?</label>
                     <br>
 
                     <div class="icheck-danger d-inline">
@@ -150,42 +147,106 @@
                       <input type="radio" name="post_status" id="radioDanger2" value="san-pham" <?php if($postDetail['post_status'] == 'san-pham'){echo "checked";} ?>/>
                       <label for="radioDanger2"> Sản Phẩm</label>
                     </div>
-                  </div>
 
-	              </div>
-	              <!-- /.card-body -->
-	            </div>
-	            <!-- /.card -->
+                    
+                  </div> 
 
-	            <div class="card card-info">
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+
+              <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Dành Cho Sản Phẩm Bán Hàng</h3>
+                  <h3 class="card-title" class="upper">Dành Cho Sản Phẩm Bán Hàng</h3>
                 </div>
                 <div class="card-body">
                   
                   
                   <div class="row">
+
                     <div class="col-6">
-                      <strong>Giá bán</strong>
+                      <strong>Giá Gốc</strong>
                       <input type="text" name="post_price" value="<?= $postDetail['post_price']; ?>" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
                       <strong>Giá Khuyến Mại</strong>
                       <input type="text" name="post_sale" class="form-control" value="<?= $postDetail['post_sale']; ?>" placeholder="Giá khuyến mãi">
                     </div>
+
+                    
                   </div>
                   <hr>
+
+
+
+                
                   <div class="form-group">
-                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm <small class="text-red">(Ảnh sẽ không được up nếu không phải là sản phẩm)</small></label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="images[]" accept="image" multiple>
+
+                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
                   </div>
+
+
                 </div>
                 <!-- /.card-body -->
               </div>
-	          </div>
-	          <!--/.col (right) -->
+
+              
+
+
+              
+
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h4 class="card-title">Bộ Ảnh Cũ <span>(Chọn để xóa ảnh cũ)</span></h4>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+
+
+                    <div class="col-sm-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label">
+                          <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=4" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
+                            <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=4" class="img-fluid mb-2" alt="red sample"/>
+                          </a>
+                      
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox">
+                        <label class="form-check-label">
+                          <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
+                            <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
+                          </a>
+                      
+                        </label>
+                      </div>
+                    </div>
+
+
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+
+              
+            </div>
+            <!--/.col (right) -->
+
+
+	          
           
 	        </div>
+        </div>
 
 	        <!-- Seo -->
 	        <div class="row">

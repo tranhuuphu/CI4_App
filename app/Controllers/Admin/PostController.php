@@ -356,6 +356,31 @@ class PostController extends BaseController
                 }                            
             }
         }
+
+        // Upload bộ ảnh nếu là sản phẩm & có ảnh được chọn
+        if($this->request->getPost('post_status') == 'san-pham'){
+            if(count($this->request->getFileMultiple('post_images')) > 0)
+            {
+                $files = $this->request->getFileMultiple('post_images');
+                foreach ($files as $file) {
+                    if ($file->isValid() && ! $file->hasMoved())
+                    {
+                        $type = $file->guessExtension();
+                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+                        $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
+                        $data = [
+                            'post_image_id'         => $post_id,
+                            'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
+                            'post_image_slug'       => $post_image_slug,
+                            'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
+                            'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
+                        ];
+                        $postImages = new PostImagesModel();
+                        $postImages->insert($data);
+                    }
+                }
+            }
+        }
     
         return redirect()->to('admin/post')->with('id', $id);
         // return redirect()->to('admin/post');

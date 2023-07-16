@@ -139,7 +139,7 @@
 
                   <hr>
                   <div class="form-group clearfix ml-2">
-                    <label class="upper">Bài Viết Bán Hàng?</label>
+                    <label class="upper">Bài viết thường hay sản phẩm?</label>
                     <br>
 
                     <div class="icheck-danger d-inline">
@@ -166,7 +166,7 @@
                   
                   <div class="row">
                     <div class="col-6">
-                      <strong>Giá bán</strong>
+                      <strong>Giá Gốc</strong>
                       <input type="text" name="post_price" value="" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
@@ -181,7 +181,7 @@
                 
                   <div class="form-group">
 
-                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm <small class="text-red">(Ảnh sẽ không được up nếu không phải là sản phẩm)</small></label>
+                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
                   </div>
 

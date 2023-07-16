@@ -148,14 +148,7 @@
 
 				                    <p><?= $key['post_intro']; ?></p>
 				                    <div class="line"></div>
-				                    <!-- <ul class="list-group list-group-flush">
-				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Category</span><span class="text-dark fw-semibold">Dress</span></li>
-				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Color</span><span class="text-dark fw-semibold">Light Pink</span></li>
-				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Size</span><span class="text-dark fw-semibold">Medium, Large</span></li>
-				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Quantity</span><span class="text-dark fw-semibold">7 Pcs</span></li>
-				                      <li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">Return Policy</span><span class="text-dark fw-semibold">30 days</span></li>
-															<li class="list-group-item d-flex justify-content-between align-items-center px-0"><span class="text-muted">SKU</span><span class="text-dark fw-semibold">8465415</span></li>
-				                    </ul> -->
+				                    
 
 				                    <div class="card mt-2 pt-4 border-0 border-top rounded-0 border-default">
 				                      <div class="card-body p-0">
