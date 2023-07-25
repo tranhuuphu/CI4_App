@@ -2,20 +2,19 @@
 
 <?= $this->section('content'); ?>
 
-
-
-
 <div class="container">
-	<section id="page-title" style="background-color: #3fb7fc !important;">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-	      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
-	    </ol>
-	  </div>
-	</section>
+  <section id="page-title" style="margin-bottom: 25px">
+    <div class="container clearfix" style="background-color: #b3e2fc">
+      
+      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+        <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
+      </ol>
+    </div>
+  </section>
 </div>
+
+
 
 <div class="container clearfix mt-5">
 
@@ -34,7 +33,7 @@
 
             <div class="entry-meta">
               <ul>
-                <li><i class="icon-calendar3"></i>
+                <li><i class="fa-solid fa-clock"></i>
                   <?php
                     $datetime = (new \CodeIgniter\I18n\Time);
                     $yearNow = $datetime::now()->getYear();
@@ -55,9 +54,8 @@
                   ?>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"><i class="icon-eye"></i> <?= $page_info['page_view']; ?></a>
+                  <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $page_info['page_view']; ?></a>
                 </li>
-                <li><i class="icon-folder-open"></i> <a href="javascript:void(0)">General</a></li>
               </ul>
             </div>
 

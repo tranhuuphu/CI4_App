@@ -110,7 +110,7 @@
             navigation: {},
             responsiveLevels: [1200, 992, 768, 480, 320],
             gridwidth: 1140,
-            gridheight: 500,
+            gridheight: 300,
             lazyType: "none",
             shadow: 0,
             spinner: "off",

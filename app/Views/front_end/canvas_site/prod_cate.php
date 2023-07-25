@@ -147,38 +147,36 @@
 				                    <div class="line"></div>
 
 				                    <p><?= $key['post_intro']; ?></p>
-				                    <div class="line"></div>
 				                    
 
 				                    <div class="card mt-2 pt-4 border-0 border-top rounded-0 border-default">
 				                      <div class="card-body p-0">
 				                        <div class="d-flex align-items-center justify-content-between">
 				                          <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
+				                          <?php $link_full = base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>
 				                          <div class="d-flex">
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
-				                              <i class="fa-brands fa-facebook-f"></i>
-				                              <i class="fa-brands fa-facebook-f"></i>
-				                            </a>
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
-				                              <i class="fa-brands fa-twitter"></i>
-				                              <i class="fa-brands fa-twitter"></i>
-				                            </a>
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
-				                              <i class="fa-brands fa-pinterest-p"></i>
-				                              <i class="fa-brands fa-pinterest-p"></i>
-				                            </a>
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-whatsapp" title="Whatsapp">
-				                              <i class="fa-brands fa-whatsapp"></i>
-				                              <i class="fa-brands fa-whatsapp"></i>
-				                            </a>
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-rss" title="RSS">
-				                              <i class="fa-solid fa-rss"></i>
-				                              <i class="fa-solid fa-rss"></i>
-				                            </a>
-				                            <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0" title="Mail">
-				                              <i class="fa-solid fa-envelope"></i>
-				                              <i class="fa-solid fa-envelope"></i>
-				                            </a>
+				                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $key['post_title']; ?>" target="_blank" title="share facebook: <?= $key['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
+			                                <i class="fa-brands fa-facebook-f"></i>
+			                                <i class="fa-brands fa-facebook-f"></i>
+			                              </a>
+
+			                              <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share twitter: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
+			                                <i class="fa-brands fa-twitter"></i>
+			                                <i class="fa-brands fa-twitter"></i>
+			                              </a>
+			                              <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share pinterest: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
+			                                <i class="fa-brands fa-pinterest-p"></i>
+			                                <i class="fa-brands fa-pinterest-p"></i>
+			                              </a>
+			                              <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $key['post_intro']; ?>" title="share tumblr: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+			                                <i class="fa-brands fa-tumblr"></i>
+			                                <i class="fa-brands fa-tumblr"></i>
+			                              </a>
+			                              
+			                              <a href="mailto:?subject=<?= $key['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
+			                                <i class="fa-solid fa-envelope"></i>
+			                                <i class="fa-solid fa-envelope"></i>
+			                              </a>
 				                          </div>
 				                        </div>
 				                      </div>

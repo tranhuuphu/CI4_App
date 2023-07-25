@@ -4,7 +4,7 @@
 
 <div class="container">
 	<section id="page-title" style="margin-bottom: 25px">
-	  <div class="container clearfix">
+	  <div class="container clearfix" style="background-color: #b3e2fc">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
@@ -16,16 +16,13 @@
 </div>
 
 
-	<div class="container clearfix mt-3">
+	<div class="container clearfix mt-5">
 
 		
 	  <div class="row gutter-40 col-mb-80">
 
-
 	    <div class="postcontent col-lg-9">
-
-	    	
-        <div class="container">
+        <div class="">
           <div class="row gx-5 col-mb-80">
             <main class="postcontent col-lg-12">
               <div class="single-product">
@@ -47,24 +44,58 @@
                               <?php endif; ?>
 
 
-                              <div class="slide" data-thumb="images/shop/thumbs/dress/3.jpg">
-                                <a href="images/shop/dress/3.jpg" title="Pink Printed Dress - Front View" data-lightbox="gallery-item"><img src="images/shop/dress/3.jpg" alt="Pink Printed Dress" /></a>
-                              </div>
-                              <div class="slide" data-thumb="images/shop/thumbs/dress/3-1.jpg">
-                                <a href="images/shop/dress/3-1.jpg" title="Pink Printed Dress - Side View" data-lightbox="gallery-item"><img src="images/shop/dress/3-1.jpg" alt="Pink Printed Dress" /></a>
-                              </div>
-                              <div class="slide" data-thumb="images/shop/thumbs/dress/3-2.jpg">
-                                <a href="images/shop/dress/3-2.jpg" title="Pink Printed Dress - Back View" data-lightbox="gallery-item"><img src="images/shop/dress/3-2.jpg" alt="Pink Printed Dress" /></a>
-                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="sale-flash badge bg-danger p-2">Sale!</div>
+                        <?php if($post_detail['post_sale']): ?>
+                          <div class="sale-flash badge bg-danger p-2">Sale!</div>
+                        <?php endif; ?>
                       </div>
                     </div>
-                    <div class="col-md-6 product-desc">
+                    <div class="col-md-6 product-desc" style="margin-top: 17px !important">
+                      <div class="entry-title">
+                        <h2 style="color: #0026ff"><?= $post_detail['post_title']; ?></h2>
+                      </div>
+
+                      <div class="entry-meta mb-4">
+                        <ul>
+                          <li><i class="fa-solid fa-clock"></i>
+                            <?php
+                              $datetime = (new \CodeIgniter\I18n\Time);
+                              $yearNow = $datetime::now()->getYear();
+                              $yearMonthsNow = $datetime::now()->getMonth();
+                              $yearPost = $datetime::parse($post_detail['updated_at'])->getYear();
+                              
+                              $yearMonthsPost = $datetime::parse($post_detail['updated_at'])->getMonth();
+                              if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                                echo $datetime::parse($post_detail['updated_at'])->humanize();
+                              }
+                              elseif(($yearNow - $yearPost) > 1){
+                                echo $datetime::parse($post_detail['updated_at'])->humanize();
+                              }else{
+                                echo $datetime::parse($post_detail['updated_at'])->toLocalizedString('dd MMM yyyy');
+                              }
+                              
+
+                            ?>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?></a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)"><i class="fa-solid fa-camera-retro"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+
                       <div class="d-flex align-items-center justify-content-between">
-                        <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div>
+                        <?php if($post_detail['post_sale']): ?>
+                          <div class="product-price"><del><?= $post_detail['post_price']/1000; ?>K</del> <ins><?= $post_detail['post_sale']/1000; ?>K</ins> <small>VNĐ</small></div>
+                        <?php elseif($post_detail['post_price']): ?>
+                          <div class="product-price"><ins>Giá: <?= $post_detail['post_price']/1000; ?>K</ins></div>
+                        <?php else: ?>
+                          <div class="product-price"><ins>Giá: Liên Hệ</ins></div>
+                        <?php endif; ?>
 
                         <div class="product-rating">
                           <i class="bi-star-fill"></i>
@@ -86,8 +117,7 @@
                       </form>
                       <div class="line"></div>
 
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at nisi optio dolor!</p>
-                      <p>Perspiciatis ad eveniet ea quasi debitis quos laborum eum reprehenderit eaque explicabo assumenda rem modi.</p>
+                      <p><?= $post_detail['post_intro']; ?></p>
                       <ul class="iconlist">
                         <li><i class="fa-solid fa-caret-right"></i> Dynamic Color Options</li>
                         <li><i class="fa-solid fa-caret-right"></i> Lots of Size Options</li>
@@ -96,9 +126,16 @@
 
                       <div class="card product-meta">
                         <div class="card-body">
-                          <span itemprop="productID" class="sku_wrapper">SKU: <span class="sku">8465415</span></span>
-                          <span class="posted_in">Category: <a href="#" rel="tag">Dress</a>.</span>
-                          <span class="tagged_as">Tags: <a href="#" rel="tag">Pink</a>, <a href="#" rel="tag">Short</a>, <a href="#" rel="tag">Dress</a>, <a href="#" rel="tag">Printed</a>.</span>
+                          <span class="posted_in">Category: <a href="<?= base_url('san-pham'); ?>" rel="tag">Sản Phẩm</a>.</span>
+
+                          <?php if($tag_all): ?>
+                            <span class="tagged_as">Tags: 
+                              <?php foreach($tag_all as $tag): ?>
+                                <a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" rel="tag" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>,
+                              <?php endforeach; ?>
+                            </span>
+                          <?php endif; ?>
+
                         </div>
                       </div>
 
@@ -107,27 +144,25 @@
                           <div class="d-flex align-items-center justify-content-between">
                             <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
                             <div class="d-flex">
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
+                              <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
                                 <i class="fa-brands fa-facebook-f"></i>
                                 <i class="fa-brands fa-facebook-f"></i>
                               </a>
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
+
+                              <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
                                 <i class="fa-brands fa-twitter"></i>
                                 <i class="fa-brands fa-twitter"></i>
                               </a>
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
+                              <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
                                 <i class="fa-brands fa-pinterest-p"></i>
                                 <i class="fa-brands fa-pinterest-p"></i>
                               </a>
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-whatsapp" title="Whatsapp">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <i class="fa-brands fa-whatsapp"></i>
+                              <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+                                <i class="fa-brands fa-tumblr"></i>
+                                <i class="fa-brands fa-tumblr"></i>
                               </a>
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-rss" title="RSS">
-                                <i class="fa-solid fa-rss"></i>
-                                <i class="fa-solid fa-rss"></i>
-                              </a>
-                              <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0" title="Mail">
+                              
+                              <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
                                 <i class="fa-solid fa-envelope"></i>
                                 <i class="fa-solid fa-envelope"></i>
                               </a>
@@ -150,11 +185,7 @@
 
                         <div id="canvas-tab-alt-content" class="tab-content">
                           <div class="tab-pane fade show active" id="tabs-1" role="tabpanel" aria-labelledby="canvas-tabs-1-tab" tabindex="0">
-                            <p>
-                              Pink printed dress, woven, round neck with a keyhole and buttoned closure at the back, sleeveless, concealed zip up at left side seam, belt loops along waist with slight gathers beneath, brand appliqu?? above
-                              left front hem, has an attached lining.
-                            </p>
-                            Comes with a white, slim synthetic belt that has a tang clasp.
+                            <?= $post_detail['post_content']; ?>
                           </div>
 
                           
@@ -162,10 +193,10 @@
                       </div>
                       <div class="line"></div>
                       <div class="row">
-                        <div class="col-md-4 d-none d-md-block">
+                        <!-- <div class="col-md-4 d-none d-md-block">
                           <a href="#" title="Brand Logo"><img src="images/shop/brand2.jpg" alt="Brand Logo" /></a>
-                        </div>
-                        <div class="col-md-8">
+                        </div> -->
+                        <div class="col-md-12">
                           <div class="row gutter-30">
                             <div class="col-lg-6">
                               <div class="feature-box fbox-plain fbox-dark fbox-sm">
@@ -219,7 +250,8 @@
                 </div>
               </div>
               <div class="line"></div>
-              <div class="w-100">
+
+              <!-- <div class="w-100 mb-3">
                 <h4>Related Products</h4>
                 <div class="owl-carousel product-carousel carousel-widget" data-margin="30" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
                   <div class="oc-item">
@@ -251,121 +283,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="oc-item">
-                    <div class="product">
-                      <div class="product-image">
-                        <a href="#"><img src="images/shop/pants/1-1.jpg" alt="Slim Fit Chinos" /></a>
-                        <a href="#"><img src="images/shop/pants/1.jpg" alt="Slim Fit Chinos" /></a>
-                        <div class="bg-overlay">
-                          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
-                            <a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
-                            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
-                          </div>
-                          <div class="bg-overlay-bg bg-transparent"></div>
-                        </div>
-                      </div>
-                      <div class="product-desc text-center">
-                        <div class="product-title">
-                          <h3><a href="#">Slim Fit Chinos</a></h3>
-                        </div>
-                        <div class="product-price">$39.99</div>
-                        <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-half"></i>
-                          <i class="bi-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="oc-item">
-                    <div class="product">
-                      <div class="product-image">
-                        <a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Dark Brown Boots" /></a>
-                        <a href="#"><img src="images/shop/shoes/1.jpg" alt="Dark Brown Boots" /></a>
-                        <div class="bg-overlay">
-                          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
-                            <a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
-                            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
-                          </div>
-                          <div class="bg-overlay-bg bg-transparent"></div>
-                        </div>
-                      </div>
-                      <div class="product-desc text-center">
-                        <div class="product-title">
-                          <h3><a href="#">Dark Brown Boots</a></h3>
-                        </div>
-                        <div class="product-price">$49</div>
-                        <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star"></i>
-                          <i class="bi-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="oc-item">
-                    <div class="product">
-                      <div class="product-image">
-                        <a href="#"><img src="images/shop/dress/2.jpg" alt="Light Blue Denim Dress" /></a>
-                        <a href="#"><img src="images/shop/dress/2-2.jpg" alt="Light Blue Denim Dress" /></a>
-                        <div class="bg-overlay">
-                          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
-                            <a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
-                            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
-                          </div>
-                          <div class="bg-overlay-bg bg-transparent"></div>
-                        </div>
-                      </div>
-                      <div class="product-desc text-center">
-                        <div class="product-title">
-                          <h3><a href="#">Light Blue Denim Dress</a></h3>
-                        </div>
-                        <div class="product-price">$19.95</div>
-                        <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="oc-item">
-                    <div class="product">
-                      <div class="product-image">
-                        <a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses" /></a>
-                        <a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses" /></a>
-                        <div class="sale-flash badge bg-success p-2">Sale!</div>
-                        <div class="bg-overlay">
-                          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
-                            <a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
-                            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
-                          </div>
-                          <div class="bg-overlay-bg bg-transparent"></div>
-                        </div>
-                      </div>
-                      <div class="product-desc text-center">
-                        <div class="product-title">
-                          <h3><a href="#">Unisex Sunglasses</a></h3>
-                        </div>
-                        <div class="product-price"><del>$19.99</del> <ins>$11.99</ins></div>
-                        <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star"></i>
-                          <i class="bi-star"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
-              </div>
+              </div> -->
+
             </main>
             
           </div>
@@ -375,97 +296,7 @@
 
 	      <div class="single-post mb-0 card" style="border-radius: 0 !important; background: #fafafa; border: none !important">
 	      	<div class="card-body">
-		        <div class="entry clearfix">
-
-		          <div class="entry-title pt-2">
-		            <h2><?= $post_detail['post_title']; ?></h2>
-		          </div>
-
-		          <div class="entry-meta">
-		            <ul>
-		              <li><i class="fa-solid fa-clock"></i>
-		              	<?php
-			            		$datetime = (new \CodeIgniter\I18n\Time);
-			            		$yearNow = $datetime::now()->getYear();
-			            		$yearMonthsNow = $datetime::now()->getMonth();
-			            		$yearPost = $datetime::parse($post_detail['updated_at'])->getYear();
-			            		
-			            		$yearMonthsPost = $datetime::parse($post_detail['updated_at'])->getMonth();
-			            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-			            			echo $datetime::parse($post_detail['updated_at'])->humanize();
-			            		}
-			            		elseif(($yearNow - $yearPost) > 1){
-			            			echo $datetime::parse($post_detail['updated_at'])->humanize();
-			            		}else{
-			            			echo $datetime::parse($post_detail['updated_at'])->toLocalizedString('dd MMM yyyy');
-			            		}
-			            		
-
-			            	?>
-		              </li>
-		              <li>
-		                <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?></a>
-		              </li>
-		              <li>
-		                <a href="javascript:void(0)"><i class="fa-solid fa-camera-retro"></i></a>
-		              </li>
-		            </ul>
-		          </div>
-
-		          <!-- <div class="entry-image">
-		            <a href="#"><img src="images/blog/full/1.jpg" alt="Blog Single" /></a>
-		          </div> -->
-		          <div class="line line-sm"></div>
-		          <div class="entry-content mt-0">
-
-		            <?= $post_detail['post_content']; ?>
-		            <hr class="mb-5">
-		            <?php if($tag_all): ?>
-			            <div class="tagcloud mb-3">
-			            	<?php foreach($tag_all as $tag): ?>
-	                  	<a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
-	                  <?php endforeach; ?>
-	                </div>
-	              <?php endif; ?>
-		            
-		            <div class="clear"></div>
-		            <div class="card my-2 border rounded border-default">
-                  <div class="card-body p-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
-                      <div class="d-flex">
-
-                        <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
-                          <i class="fa-brands fa-facebook-f"></i>
-                          <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-
-                        <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
-                          <i class="fa-brands fa-twitter"></i>
-                          <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
-                          <i class="fa-brands fa-pinterest-p"></i>
-                          <i class="fa-brands fa-pinterest-p"></i>
-                        </a>
-                        <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-                          <i class="fa-brands fa-tumblr"></i>
-                          <i class="fa-brands fa-tumblr"></i>
-                        </a>
-                        
-                        <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
-                          <i class="fa-solid fa-envelope"></i>
-                          <i class="fa-solid fa-envelope"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-		            
-		          </div>
-		        </div>
-		        <div class="line line-sm"></div>
+		        
 		        <div class="row text-center text-md-start justify-content-between my-2">
 		        	<?php if(isset($previous)): ?>
 	              <div class="col-md-auto">
