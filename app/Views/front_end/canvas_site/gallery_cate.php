@@ -37,7 +37,7 @@
                     
                       <a
                         href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
-                        class="overlay-trigger-icon bg-light text-dark"
+                        class="overlay-trigger-icon bg-light text-dark text-bold fw-bold fs-4"
                         data-hover-animate="fadeInDownSmall"
                         data-hover-animate-out="fadeOutUpSmall"
                         data-hover-speed="350"
@@ -53,6 +53,7 @@
                         <i class="uil uil-link"></i>
                       </a>
                     <?php endif; ?>
+                    <a class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i></a>
 
                   </div>
                   <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
@@ -61,7 +62,13 @@
 
               <div class="portfolio-desc">
                 <h3><a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> ><?= $key['gallery_title'] ?></a></h3>
-                <span><i class="fas fa-camera"></i> <i class="fas fa-image"></i> <i class="fas fa-images"></i> <i class="fas fa-comment-dots"></i> <i class="fas fa-compress-arrows-alt"></i> <i class="fas fa-link"></i> <i class="fas fa-external-link-alt"></i></span>
+                <span>
+                  <a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" target="_blank"><i class="fas fa-images"></i></a>
+
+
+
+                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+                </span>
               </div>
             </div>
           </article>

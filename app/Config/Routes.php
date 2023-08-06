@@ -186,7 +186,7 @@ $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
 
-
+$routes->get('cart', 'CanvasController::cart');
 
 $routes->get('search', 'CanvasController::getSearch');
 
@@ -198,6 +198,8 @@ $routes->get('san-pham', 'CanvasController::getProd');
 $routes->get('site-map.xml', 'CanvasController::siteMap');
 
 $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+
+$routes->get('page/download/(:any)', 'CanvasController::download/$1');
 
 // $routes->get('(:any)', 'HomeController::catePost/$1');
 

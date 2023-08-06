@@ -351,6 +351,28 @@ class CanvasController extends BaseController
         
     }
 
+    public function cart(){
+        $cart = \Config\Services::cart();
+        $cart = [];
+        $cart->insert(array(
+           'id'      => 'sku_1234ABCD',
+           'qty'     => 1,
+           'price'   => '19.56',
+           'name'    => 'T-Shirt',
+           'options' => array('Size' => 'L', 'Color' => 'Red')
+        ));
+        dd($cart);
+    }
+
+    public function download($image){
+        // $galleryModel = new GalleryModel();
+        // $img_detail = $galleryModel->where('gallery_image', $image)->first();
+        // $img = base_url('public/upload/tinymce/gallery_asset/').'/'.$image;
+
+
+        return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);
+    }
+
 
 
     public function tag($tag_slug, $tag_id){

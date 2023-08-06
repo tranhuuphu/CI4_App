@@ -13,7 +13,7 @@
 			        <div>
 			          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
 			          <div class="portfolio-desc px-0">
-			            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+			            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold fs-4" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
 			            <span>
 			            	<?php
 			            		$datetime = (new \CodeIgniter\I18n\Time);
@@ -76,7 +76,7 @@
 			            <a href="<?= base_url('').'/'.$post_cate_i['post_cate_slug'].'/'.$post_cate_i['post_slug'].'-'.$post_cate_i['id'].'.html'; ?>" title="<?= $post_cate_i['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_i['post_image']; ?>" alt="<?= $post_cate_i['post_title']; ?>"/></a>
 			          </div>
 			          <div class="entry-title title-sm">
-			            <h3><a href="<?= base_url('').'/'.$post_cate_i['post_cate_slug'].'/'.$post_cate_i['post_slug'].'-'.$post_cate_i['id'].'.html'; ?>" title="<?= $post_cate_i['post_title']; ?>"><?= $post_cate_i['post_title'] ?></a></h3>
+			            <h3><a href="<?= base_url('').'/'.$post_cate_i['post_cate_slug'].'/'.$post_cate_i['post_slug'].'-'.$post_cate_i['id'].'.html'; ?>" class="fs-4" title="<?= $post_cate_i['post_title']; ?>"><?= $post_cate_i['post_title'] ?></a></h3>
 			          </div>
 			          <div class="entry-meta">
 			            <ul>
@@ -285,7 +285,9 @@
                       </div>
                     </div>
                   </div>
+                  
                 </div>
+
               <?php endif; ?>
             <?php endforeach; ?>
           <?php endforeach; ?>
@@ -293,6 +295,7 @@
 
           
         </div>
+
       </div>
 
       <div class="sidebar col-lg-3">
@@ -435,6 +438,8 @@
 		  <section id="content" style="background-color: #f0f1f2">
 		    <div class="content-wrap py-0">
 		      <div id="portfolio" class="portfolio row grid-container portfolio-reveal g-0" data-layout="fitRows">
+		        
+
 		        <?php foreach($gallery_home as $key): ?>
 		        <article class="portfolio-item col-12 col-sm-4 col-md-2 pf-media pf-icons">
 		          <div class="grid-inner">
@@ -457,8 +462,8 @@
 		                  >
 		                    <i class="uil uil-expand-alt"></i>
 		                  </a>
-		                  <a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-		                    <i class="uil uil-link"></i>
+		                  <a href="<?= base_url('page/download/'.$key['gallery_image'])  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
+		                    <i class="uil uil-image-download"></i>
 		                  </a>
 		                </div>
 		                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
@@ -466,8 +471,14 @@
 		            </div>
 
 		            <div class="portfolio-desc">
-		              <h3><a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> ><?= $key['gallery_title'] ?></a></h3>
-		              <span><i class="fas fa-camera"></i> <i class="fas fa-image"></i> <i class="fas fa-images"></i> <i class="fas fa-comment-dots"></i> <i class="fas fa-compress-arrows-alt"></i> <i class="fas fa-link"></i> <i class="fas fa-external-link-alt"></i></span>
+		              <h3><a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
+		              <span>
+		              	<a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" target="_blank"><i class="fas fa-images"></i></a>
+
+
+
+		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+		              </span>
 		            </div>
 		          </div>
 		        </article>

@@ -64,10 +64,16 @@
 		            </div>
 		            <div class="product-desc text-center">
 		              <div class="product-title">
-		                <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+		                <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
 		              </div>
-		              <div class="product-price">$13.49</div>
-		              <a href="#" class="btn btn-sm btn-dark px-3 mt-2"><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
+		              <?php if($key['post_sale']): ?>
+                    <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins> <small>VNĐ</small></div>
+                  <?php elseif($key['post_price']): ?>
+                    <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins></div>
+                  <?php else: ?>
+                  	<div class="product-price text-danger">Liên Hệ</div>
+                  <?php endif; ?>
+		              <a href="<?= base_url('cart'); ?>" class="btn btn-sm btn-dark px-3 mt-2"><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
 		            </div>
 		          </div>
 		        </div>

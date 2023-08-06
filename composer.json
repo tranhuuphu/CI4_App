@@ -12,7 +12,7 @@
         "laminas/laminas-escaper": "^2.9",
         "psr/log": "^1.1",
         "tinify/tinify": "^1.6",
-        "jason-napolitano/codeigniter4-cart-module": "^1.0"
+        "jason-napolitano/codeigniter4-cart-module": "*"
     },
     "require-dev": {
         "kint-php/kint": "^5.0.1",
