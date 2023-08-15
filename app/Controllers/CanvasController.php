@@ -352,16 +352,76 @@ class CanvasController extends BaseController
     }
 
     public function cart(){
-        $cart = \Config\Services::cart();
-        $cart = [];
-        $cart->insert(array(
-           'id'      => 'sku_1234ABCD',
-           'qty'     => 1,
-           'price'   => '19.56',
-           'name'    => 'T-Shirt',
-           'options' => array('Size' => 'L', 'Color' => 'Red')
-        ));
-        dd($cart);
+        $data['items'] = array_values(session('cart'));
+        $data['total'] = $this->total();
+        return view('cart/index', $data);
+    }
+    public function buy($id){
+        $post = new PostModel;
+
+
+        $post_prod = $post->find($id);
+        $item = array(
+            'id' => $post_prod['id'],
+            'prod_name' => $post_prod['post_title'],
+            'prod_image' => $post_prod['post_image'],
+            'prod_price' => $post_prod['post_price'],
+            'quantity' => 1
+        );
+        $session = session();
+        if($session->has('cart')){
+            $index = $this->exists($id);
+            $cart = array_values(session('cart'));
+            if($index = -1){
+                array_push($cart, $item);
+            }else{
+                $cart[$index]['quantity']++;
+            }
+
+        }else{
+            $cart = array($item);
+            $session->set('cart', $cart);
+        }
+        return $this->response->redirect(base_url('cart'));
+    }
+
+    public function remove($id){
+        $index = $this->exists($id);
+        $cart = array_values(session('cart'));
+        unset($cart[$index]);
+        $session = session();
+        $session->set('cart', $cart);
+        return $this->response->redirect(base_url('cart'));
+    }
+
+    public function update(){
+        $cart = array_values(session('cart'));
+        for($i = 0; $i < count($cart); $i++){
+            $cart[$i]['quantity'] = $_POST['quantity'][$id];
+        }
+
+        $session = session();
+        $session->set('cart', $cart);
+        return $this->response->redirect(base_url('cart'));
+    }
+
+    private function exists($id){
+        $items = array_values(session('cart'));
+        for($i = 0; $i , count($items); $i++){
+            if($items[$i]['id'] == $id){
+                return $i;
+            }
+        }
+        return -1;
+    }
+
+
+    private function total(){
+        $items = array_values(session('cart'));
+        foreach($items as $item){
+            $s += $item['price']*$item['quantity'];
+        }
+        return $s;
     }
 
     public function download($image){
