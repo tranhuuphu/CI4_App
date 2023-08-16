@@ -354,7 +354,8 @@ class CanvasController extends BaseController
     public function cart(){
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
-        return view('cart/index', $data);
+        dd($data['total']);
+        return view('front_end/canvas_site/cart', $data);
     }
     public function buy($id){
         $post = new PostModel;
@@ -382,7 +383,7 @@ class CanvasController extends BaseController
             $cart = array($item);
             $session->set('cart', $cart);
         }
-        return $this->response->redirect(base_url('cart'));
+        return $this->response->redirect(site_url('gio-hang'));
     }
 
     public function remove($id){
@@ -418,8 +419,9 @@ class CanvasController extends BaseController
 
     private function total(){
         $items = array_values(session('cart'));
+        $s = 0;
         foreach($items as $item){
-            $s += $item['price']*$item['quantity'];
+            $s += $item['prod_price']*$item['quantity'];
         }
         return $s;
     }

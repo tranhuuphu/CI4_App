@@ -177,6 +177,9 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 
+$routes->get('buy/(:num)', 'CanvasController::buy/$1');
+$routes->get('gio-hang', 'CanvasController::cart');
+
 
 // $routes->get('/', 'HomeController::index');
 
@@ -186,7 +189,7 @@ $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
 
-$routes->get('cart', 'CanvasController::cart');
+
 
 $routes->get('search', 'CanvasController::getSearch');
 

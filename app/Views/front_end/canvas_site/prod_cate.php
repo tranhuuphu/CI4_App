@@ -67,13 +67,13 @@
 		                <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
 		              </div>
 		              <?php if($key['post_sale']): ?>
-                    <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins> <small>VNĐ</small></div>
+                    <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins> VNĐ<small>VNĐ</small></div>
                   <?php elseif($key['post_price']): ?>
-                    <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins></div>
+                    <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins> VNĐ</div>
                   <?php else: ?>
                   	<div class="product-price text-danger">Liên Hệ</div>
                   <?php endif; ?>
-		              <a href="<?= base_url('cart'); ?>" class="btn btn-sm btn-dark px-3 mt-2"><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
+		              <a href="<?= site_url('buy').'/'.$key['id']; ?>"  <?php if($key['post_sale'] || $key['post_price']): ?> class="btn btn-sm btn-dark px-3 mt-2" <?php else: ?> class="btn btn-sm btn-dark px-3 mt-2 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
 		            </div>
 		          </div>
 		        </div>
