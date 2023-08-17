@@ -2,7 +2,72 @@
 
 <?= $this->section('content'); ?>
 
+<div class="container">
 
+
+
+  <section id="page-title" style="margin-bottom: 15px">
+    <div class="container clearfix">
+      
+      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+        <li class="breadcrumb-item active" ><a href="#" style="color: #299ef2">Giỏ Hàng</a></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="container">
+
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered caption-top">
+          <caption>Danh Sách Đơn Hàng</caption>
+          <thead class="table-info table-lg">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Ảnh</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Số Lượng</th>
+              <th scope="col">Tổng</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php if($items): ?>
+              <?php $i = 1; ?>
+              <?php foreach($items as $item): ?>
+                <tr>
+                  <th scope="row"><?= $i; ?></th>
+                  <td><?= $item['prod_name'] ?></td>
+                  <td><?= $item['prod_image'] ?></td>
+                  <td><?= number_format($item['prod_price'], 0, ',', '.'); ?></td>
+                  <td><?= $item['quantity'] ?></td>
+                  <td><?= number_format($item['prod_price']*$item['quantity'], 0, ',', '.'); ?></td>
+                  <td>
+                    <a href="<?= site_url('cart/remove/'.$item['id']) ?>"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+                <?php $i+=1; ?>
+              <?php endforeach; ?>
+            <?php endif; ?>
+            
+            <tr>
+              <td colspan="5" align="text-center">Grand Total</td>
+              <td colspan="2" style="text-align: center; font-weight: bold"><?= number_format($total, 0, ',', '.'); ?> VNĐ</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="<?= site_url('san-pham') ?>">Continue Shopping</a>
+      </div>
+
+
+    </div>
+  </div>
+</section>
 
 <?= $this->endSection(); ?>
 

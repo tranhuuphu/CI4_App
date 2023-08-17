@@ -354,7 +354,7 @@ class CanvasController extends BaseController
     public function cart(){
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
-        dd($data['total']);
+        // dd($data['total']);
         return view('front_end/canvas_site/cart', $data);
     }
     public function buy($id){
@@ -363,22 +363,24 @@ class CanvasController extends BaseController
 
         $post_prod = $post->find($id);
         $item = array(
-            'id' => $post_prod['id'],
-            'prod_name' => $post_prod['post_title'],
-            'prod_image' => $post_prod['post_image'],
-            'prod_price' => $post_prod['post_price'],
-            'quantity' => 1
+            'id'            => $post_prod['id'],
+            'prod_name'     => $post_prod['post_title'],
+            'prod_image'    => $post_prod['post_image'],
+            'prod_price'    => (int)$post_prod['post_price'],
+            'quantity'      => 1
         );
+        // dd($item);
         $session = session();
         if($session->has('cart')){
             $index = $this->exists($id);
             $cart = array_values(session('cart'));
-            if($index = -1){
+            if($index == -1){
                 array_push($cart, $item);
             }else{
                 $cart[$index]['quantity']++;
             }
-
+                $session->set('cart', $cart);
+            
         }else{
             $cart = array($item);
             $session->set('cart', $cart);
@@ -387,12 +389,15 @@ class CanvasController extends BaseController
     }
 
     public function remove($id){
+
         $index = $this->exists($id);
+        
         $cart = array_values(session('cart'));
+        // dd($cart[$index]);
         unset($cart[$index]);
         $session = session();
         $session->set('cart', $cart);
-        return $this->response->redirect(base_url('cart'));
+        return $this->response->redirect(base_url('gio-hang'));
     }
 
     public function update(){
@@ -408,12 +413,13 @@ class CanvasController extends BaseController
 
     private function exists($id){
         $items = array_values(session('cart'));
-        for($i = 0; $i , count($items); $i++){
+        for($i = 0; $i < count($items); $i++){
             if($items[$i]['id'] == $id){
                 return $i;
             }
         }
         return -1;
+        
     }
 
 
