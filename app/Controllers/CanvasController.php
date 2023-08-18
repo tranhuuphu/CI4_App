@@ -400,15 +400,17 @@ class CanvasController extends BaseController
         return $this->response->redirect(base_url('gio-hang'));
     }
 
+    
+
     public function update(){
         $cart = array_values(session('cart'));
         for($i = 0; $i < count($cart); $i++){
-            $cart[$i]['quantity'] = $_POST['quantity'][$id];
+            $cart[$i]['quantity'] = $_POST['quantity'][$i];
         }
 
         $session = session();
         $session->set('cart', $cart);
-        return $this->response->redirect(base_url('cart'));
+        return $this->response->redirect(site_url('gio-hang'));
     }
 
     private function exists($id){

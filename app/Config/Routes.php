@@ -178,6 +178,8 @@ $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 $routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
 $routes->get('buy/(:num)', 'CanvasController::buy/$1');
+$routes->get('gio-hang/cap-nhat', 'CanvasController::update');
+$routes->post('gio-hang/cap-nhat', 'CanvasController::update');
 $routes->get('gio-hang', 'CanvasController::cart');
 
 
