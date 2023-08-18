@@ -181,6 +181,7 @@ $routes->get('buy/(:num)', 'CanvasController::buy/$1');
 $routes->get('gio-hang/cap-nhat', 'CanvasController::update');
 $routes->post('gio-hang/cap-nhat', 'CanvasController::update');
 $routes->get('gio-hang', 'CanvasController::cart');
+$routes->get('dat-hang', 'CanvasController::order');
 
 
 

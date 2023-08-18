@@ -357,6 +357,16 @@ class CanvasController extends BaseController
         // dd($data['total']);
         return view('front_end/canvas_site/cart', $data);
     }
+
+    public function order(){
+        // dd(1);
+        // $data['items'] = array_values(session('cart'));
+        // $data['total'] = $this->total();
+        // dd($data['total']);
+        return view('front_end/canvas_site/check-out');
+    }
+
+
     public function buy($id){
         $post = new PostModel;
 

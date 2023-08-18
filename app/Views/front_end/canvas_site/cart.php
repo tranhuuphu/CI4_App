@@ -43,7 +43,7 @@
                   <tr class="cart_item">
                     <th scope="row"><?= $i; ?></th>
                     <td class="cart-product-thumbnail">
-                      <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/<?= $item['prod_image'] ?>" alt="Pink Printed Dress" /></a>
+                      <a href="#"><img width="64" height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
                     </td>
                     <td class="cart-product-name">
                       <a href="#"><?= $item['prod_name'] ?></a>
@@ -92,7 +92,7 @@
                     <div class="col-lg-auto pe-lg-0">
                       <!-- <a href="#" class="button button-small button-3d m-0">Update Cart</a> -->
                       <input type="submit" value="Update Quantity" class="button button-small button-3d m-0">
-                      <a href= "shop.html" class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0">Proceed to Checkout</a>
+                      <a href= "<?= site_url('dat-hang'); ?>" class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0">Proceed to Checkout</a>
                     </div>
                   </div>
                 </td>
@@ -108,7 +108,7 @@
           </table>
         </div>
       </form>
-      <a href="<?= site_url(''); ?>">Continue Shopping</a>
+      <a href="<?= site_url(''); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black">Continue Shopping <i class="fab fa-hive"></i></a>
       
     </div>
   </div>
