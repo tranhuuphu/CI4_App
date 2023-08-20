@@ -26,85 +26,64 @@
         <div class="w-100"></div>
 
         <div class="col-lg-7">
-          <h4>Your Orders</h4>
+          <h4>
+            Your Orders ||
+            <a href="<?= site_url('gio-hang') ?>" class="button button-3d"><i class="fa-solid fa-pen-to-square"></i> Edit Your Order</a>
+            || <a href="<?= site_url('san-pham') ?>" class="button button-3d button-success btn btn-success"><i class="fas fa-shopping-bag"></i> Continue Shopping</a>
+          </h4>
           <div class="table-responsive">
             <table class="table cart">
               <thead>
                 <tr>
-                  <th class="cart-product-thumbnail">&nbsp;</th>
-                  <th class="cart-product-name">Product</th>
+                  <th class="cart-product-thumbnail">#</th>
+                  <th class="cart-product-thumbnail">Image</th>
+                  <th class="cart-product-name">Name</th>
                   <th class="cart-product-quantity">Quantity</th>
+                  <th class="cart-product-quantity">Price</th>
                   <th class="cart-product-subtotal">Total</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="cart_item">
-                  <td class="cart-product-thumbnail">
-                    <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/dress-3.jpg" alt="Pink Printed Dress" /></a>
+                <?php if($items): ?>
+                  <?php $i = 1; ?>
+                    <?php foreach($items as $item): ?>
+
+                      <tr class="cart_item">
+                        <th scope="row"><?= $i; ?></th>
+                        <td class="cart-product-thumbnail">
+                          <a href="#"><img width="64" height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                        </td>
+                        <td class="cart-product-name">
+                          <a href="#"><?= $item['prod_name'] ?></a>
+                        </td>
+                        <td class="cart-product-quantity">
+                          <span><?= $item['quantity'] ?></span>
+                        </td>
+                        <td class="cart-product-price">
+                          <span class="amount"><?= number_format($item['prod_price'], 0, ',', '.'); ?></span>
+                        </td>
+                        
+                        <td class="cart-product-subtotal">
+                          <span class="amount"><strong><?= number_format($item['prod_price']*$item['quantity'], 0, ',', '.'); ?></strong></span>
+                        </td>
+                      </tr>
+                    <?php $i+=1; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                <tr class="cart_item table-primary">
+                  <td class="cart-product-name" colspan="4">
+                    <strong>Total</strong>
                   </td>
-                  <td class="cart-product-name">
-                    <a href="#">Pink Printed Dress</a>
-                  </td>
-                  <td class="cart-product-quantity">
-                    <div class="quantity">
-                      1x2
-                    </div>
-                  </td>
-                  <td class="cart-product-subtotal">
-                    <span class="amount">$39.98</span>
-                  </td>
-                </tr>
-                <tr class="cart_item">
-                  <td class="cart-product-thumbnail">
-                    <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/shoes-2.jpg" alt="Checked Canvas Shoes" /></a>
-                  </td>
-                  <td class="cart-product-name">
-                    <a href="#">Checked Canvas Shoes</a>
-                  </td>
-                  <td class="cart-product-quantity">
-                    <div class="quantity">
-                      1x1
-                    </div>
-                  </td>
-                  <td class="cart-product-subtotal">
-                    <span class="amount">$24.99</span>
-                  </td>
-                </tr>
-                <tr class="cart_item">
-                  <td class="cart-product-thumbnail">
-                    <a href="#"><img width="64" height="64" src="images/shop/thumbs/small/tshirt-2.jpg" alt="Pink Printed Dress" /></a>
-                  </td>
-                  <td class="cart-product-name">
-                    <a href="#">Blue Men Tshirt</a>
-                  </td>
-                  <td class="cart-product-quantity">
-                    <div class="quantity">
-                      1x3
-                    </div>
-                  </td>
-                  <td class="cart-product-subtotal">
-                    <span class="amount">$41.97</span>
+                  <td class="color" colspan="2" style="text-align: right; ">
+                    <strong><?= number_format($total, 0, ',', '.'); ?> VNĐ</strong>
                   </td>
                 </tr>
+                
               </tbody>
             </table>
           </div>
 
-          <div class="table-responsive">
-            <table class="table cart">
-              <tbody>
-                
-                <tr class="cart_item">
-                  <td class="cart-product-name">
-                    <strong>Total</strong>
-                  </td>
-                  <td class="cart-product-name">
-                    <span class="amount color lead"><strong>$106.94</strong></span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          
           <div class="accordion">
             <div class="accordion-header">
               <div class="accordion-icon">
@@ -116,7 +95,14 @@
               </div>
             </div>
             <div class="accordion-content">
-              Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+              Ngân Hàng: Vietcombank (VCB) <br>
+              STK: 0011004116016 <br>
+              Chi Nhánh: Quận Tây Hồ Hà Nội <br>
+              Chủ Tài Khoản: Trần Hữu Phú <br>
+
+              STK Momo: 0974953600 <br>
+              Tên TK: Tran Huu Phu <br>
+              Nội dung chuyển khoản: ghi tên và loại hàng đặt
             </div>
             <div class="accordion-header">
               <div class="accordion-icon">
@@ -128,42 +114,37 @@
               </div>
             </div>
             <div class="accordion-content">
-              Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
+              Liên hệ trực tiếp ĐT/Zalo: 0974 953 600 để tư vấn
             </div>
-            <div class="accordion-header">
-              <div class="accordion-icon">
-                <i class="accordion-closed uil uil-minus"></i>
-                <i class="accordion-open bi-check-lg"></i>
-              </div>
-              <div class="accordion-title">
-                Paypal
-              </div>
-            </div>
-            <div class="accordion-content">
-              Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
-            </div>
+            
           </div>
 
         </div>
         <div class="col-lg-5">
           <h4>Thông tin</h4>
-          <div class="col-md-12 form-group">
-            <label for="shipping-form-lname">Họ và tên</label>
-            <input type="text" id="shipping-form-lname" name="shipping-form-lname" value class="form-control" />
-          </div>
-          <div class="col-md-12 form-group">
-            <label for="shipping-form-lname">Điện Thoại</label>
-            <input type="text" id="shipping-form-lname" name="shipping-form-lname" value class="form-control" />
-          </div>
-          <div class="w-100"></div>
-          <div class="col-12 form-group">
-            <label for="shipping-form-companyname">Địa chỉ</label>
-            <textarea class="form-control"></textarea>
-          </div>
-          
-          <div class="d-flex justify-content-end">
-            <a href="#" class="button button-3d">Place Order</a>
-          </div>
+          <form method="post" action="<?= site_url('hoan-thanh-dat-hang') ?>">
+            <?= csrf_field(); ?>
+            <div class="col-md-12 form-group">
+              <label for="shipping-form-lname">Họ và tên</label>
+              <label class="text-left text-danger" for="shipping-form-lname"><?= isset($validation) ? display_error($validation, 'name') : '' ?></label>
+              <input type="text" value="<?= set_value('name'); ?>" id="shipping-form-lname" name="name" value class="form-control" />
+            </div>
+            <div class="col-md-12 form-group">
+              <label for="shipping-form-lname">Điện Thoại</label>
+              <label class="text-left text-danger" for="shipping-form-lname"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></label>
+              <input type="text" id="shipping-form-lname" name="phone" value="<?= set_value('phone'); ?>" value class="form-control" />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-12 form-group">
+              <label for="shipping-form-companyname">Địa chỉ & ghi chú</label>
+              <label class="text-left text-danger" for="shipping-form-lname"><?= isset($validation) ? display_error($validation, 'address') : '' ?></label>
+              <textarea class="form-control" name="address"><?= set_value('address'); ?></textarea>
+            </div>
+            
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="button button-3d">Place Order <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -180,7 +161,7 @@
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
   <meta rel="canonical" href="<?= base_url() ?>"/>
 
-  <title>danh sach gio hang</title>
+  <title>danh sach gio hang || hoan tat don hang</title>
 
   
   <meta name="description" content="danh sach gio hang" />

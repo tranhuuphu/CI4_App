@@ -105,6 +105,18 @@
         <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           <input type="text" name="q" class="form-control" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
         </form>
+
+          <div id="top-cart" class="header-misc-icon d-none d-sm-block">
+            <a href="<?= site_url('gio-hang') ?>"><i class="uil uil-shopping-bag"></i></a>
+            
+            </div>
+          </div>
+        
+
+
+                
+
+
       </div>
     </div>
   </div>

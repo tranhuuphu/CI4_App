@@ -113,7 +113,8 @@
                           <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
                           <input type="button" value="+" class="plus" />
                         </div>
-                        <button type="submit" class="add-to-cart button m-0">Add to cart</button>
+
+                        <a href="<?= site_url('buy').'/'.$post_detail['id']; ?>"  <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
                       </form>
                       <div class="line"></div>
 

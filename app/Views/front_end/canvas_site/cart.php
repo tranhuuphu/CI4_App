@@ -11,7 +11,7 @@
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
         <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-        <li class="breadcrumb-item active" ><a href="#" style="color: #299ef2">Giỏ Hàng</a></li>
+        <li class="breadcrumb-item active" ><a href="<?= site_url('gio-hang') ?>" style="color: #299ef2">Giỏ Hàng</a></li>
       </ol>
     </div>
   </section>
@@ -43,10 +43,10 @@
                   <tr class="cart_item">
                     <th scope="row"><?= $i; ?></th>
                     <td class="cart-product-thumbnail">
-                      <a href="#"><img width="64" height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><img height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
                     </td>
                     <td class="cart-product-name">
-                      <a href="#"><?= $item['prod_name'] ?></a>
+                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><?= $item['prod_name'] ?></a>
                     </td>
                     <td class="cart-product-price">
                       <span class="amount"><?= number_format($item['prod_price'], 0, ',', '.'); ?></span>
@@ -65,17 +65,20 @@
                     <td class="cart-product-remove">
                       <a href="<?= site_url('cart/remove/'.$item['id']) ?>" class="remove" title="Remove this item" style="text-align: center;"><i class="fa-solid fa-trash-alt"></i></a>
                     </td>
-
-
-
-
                     
                   </tr>
 
 
-                  </tr>
+                  
                 <?php $i+=1; ?>
               <?php endforeach; ?>
+            <?php elseif(!$items): ?>
+            <tr>
+              <td class="cart-product-remove" colspan="7">
+                Giỏ hàng trống
+              </td>
+              
+            </tr>
             <?php endif; ?>
 
 
@@ -91,8 +94,8 @@
                     </div>
                     <div class="col-lg-auto pe-lg-0">
                       <!-- <a href="#" class="button button-small button-3d m-0">Update Cart</a> -->
-                      <input type="submit" value="Update Quantity" class="button button-small button-3d m-0">
-                      <a href= "<?= site_url('dat-hang'); ?>" class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0">Proceed to Checkout</a>
+                      <button type="submit" class="button button-small button-3d m-0">Update Quantity <i class="fas fa-sync"></i></button>
+                      <a href= "<?= site_url('dat-hang'); ?>" class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0 button-black">Proceed to Checkout  <i class="fas fa-shopping-cart"></i></a>
                     </div>
                   </div>
                 </td>
@@ -108,7 +111,7 @@
           </table>
         </div>
       </form>
-      <a href="<?= site_url(''); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black">Continue Shopping <i class="fab fa-hive"></i></a>
+      <a href="<?= site_url('san-pham'); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black">Continue Shopping <i class="fab fa-hive"></i></a>
       
     </div>
   </div>

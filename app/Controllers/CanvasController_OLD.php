@@ -360,13 +360,15 @@ class CanvasController extends BaseController
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
-        // dd(array_values(session('cart')));
+        
         return view('front_end/canvas_site/cart', $data);
     }
 
-    public function order(){    
+    public function order(){
+        // dd(1);
+
         if(session('cart') == null){
-            return view('front_end/canvas_site/404');
+            return $this->response->redirect(site_url('gio-hang'));
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
@@ -377,6 +379,7 @@ class CanvasController extends BaseController
         if(session('cart') == null){
             return view('front_end/canvas_site/404');
         }
+        dd(array_values(session('cart')));
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
         $validation = $this->validate([
@@ -412,7 +415,7 @@ class CanvasController extends BaseController
         $data2['order_name']        = $this->request->getPost('name');
         $data2['order_phone']       = $this->request->getPost('phone');
         $data2['order_adress']      = $this->request->getPost('address');
-        $data2['order_content']    = json_encode(array_values(session('cart')));
+        $data2['order_content ']    = json_encode(array_values(session('cart')));
         $data2['order_total']       = $this->total();
         
 
@@ -420,9 +423,11 @@ class CanvasController extends BaseController
 
         $donHang->insert($data2);
 
-        session_destroy();
+        $session('cart')->destroy();
 
         return redirect()->to('/')->with('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ và xác nhận lại đơn hàng");
+
+
     }
 
 
@@ -446,6 +451,7 @@ class CanvasController extends BaseController
             'cate_slug'     => $cate_detail['cate_slug'],
             'quantity'      => 1,
         );
+
         // dd($item);
         $session = session();
         if($session->has('cart')){
@@ -491,6 +497,7 @@ class CanvasController extends BaseController
     }
 
     private function exists($id){
+        
         $items = array_values(session('cart'));
         for($i = 0; $i < count($items); $i++){
             if($items[$i]['id'] == $id){
@@ -512,7 +519,9 @@ class CanvasController extends BaseController
     }
 
     public function download($image){
-
+        // $galleryModel = new GalleryModel();
+        // $img_detail = $galleryModel->where('gallery_image', $image)->first();
+        // $img = base_url('public/upload/tinymce/gallery_asset/').'/'.$image;
 
 
         return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);

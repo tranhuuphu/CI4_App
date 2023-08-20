@@ -12,7 +12,7 @@
         <h4>Ooopps.! The Page you were looking for, couldn't be found.</h4>
         <span>Try searching for the best match or browse the links below:</span>
       </div>
-      <form action="#" method="get" class="mb-5">
+      <form class="top-search-form mb-5" action="<?= base_url('/'); ?>/search" method="get" class="">
         <div class="input-group input-group-lg">
           <input type="text" class="form-control" placeholder="Search for Pages..." />
           <button class="btn btn-danger" type="button">Search</button>
@@ -22,7 +22,7 @@
       <div class="row gutter-40 col-mb-80">
 		    <div class="postcontent col-lg-9">
 
-		      <a href="<?= base_url(); ?>" class="button button-3d button-rounded button-dirtygreen"><i class="icon-home"></i>Back Home</a>
+		      <a href="<?= base_url(); ?>" class="button button-3d button-rounded button-dirtygreen"><i class="fas fa-home"></i> Go Home</a>
 		    </div>
 		  </div>
 
@@ -39,4 +39,15 @@
       
 
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('yoast_seo'); ?>
+  <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
+  <meta rel="canonical" href="<?= base_url() ?>"/>
+
+  <title>Error 404</title>
+
+  
+
+  
 <?= $this->endSection(); ?>
