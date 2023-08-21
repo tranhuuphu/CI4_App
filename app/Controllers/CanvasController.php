@@ -356,7 +356,9 @@ class CanvasController extends BaseController
 
     public function cart(){
         if(session('cart') == null){
-            return view('front_end/canvas_site/404');
+            $data['items'] = null;
+            $data['total'] = null;
+            return view('front_end/canvas_site/cart', $data);
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
@@ -412,8 +414,9 @@ class CanvasController extends BaseController
         $data2['order_name']        = $this->request->getPost('name');
         $data2['order_phone']       = $this->request->getPost('phone');
         $data2['order_adress']      = $this->request->getPost('address');
-        $data2['order_content']    = json_encode(array_values(session('cart')));
+        $data2['order_content']     = json_encode(array_values(session('cart')));
         $data2['order_total']       = $this->total();
+        $data2['checked_order']     = 0;
         
 
         $donHang = new DonHangModel();
@@ -436,7 +439,22 @@ class CanvasController extends BaseController
         }
         $cate = new CateModel;
         $cate_detail = $cate->where("id", $post_prod['post_cate_id'])->first();
-        
+        // if($this->request->getPost('quantity')){
+        //     $quantity  = $this->request->getPost('quantity');
+        //     $item = array(
+        //         'id'            => $post_prod['id'],
+        //     'prod_name'     => $post_prod['post_title'],
+        //     'prod_image'    => $post_prod['post_image'],
+        //     'prod_price'    => (int)$post_prod['post_price'],
+        //     'prod_slug'     => $post_prod['post_slug'],
+        //     'cate_slug'     => $cate_detail['cate_slug'],
+        //         'quantity'      => (int)$quantity,
+        //     );
+        // }else{
+        //     $item = array(
+        //         'quantity'      => 1,
+        //     );
+        // }
         $item = array(
             'id'            => $post_prod['id'],
             'prod_name'     => $post_prod['post_title'],
@@ -466,7 +484,13 @@ class CanvasController extends BaseController
     }
 
     public function remove($id){
+        $post = new PostModel;
 
+
+        $post_prod = $post->find($id);
+        if(!$post_prod){
+            return view('front_end/canvas_site/404');
+        }
         $index = $this->exists($id);
         
         $cart = array_values(session('cart'));

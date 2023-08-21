@@ -53,6 +53,7 @@ abstract class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
+        $session = \Config\Services::session();
 
         // Preload any models, libraries, etc, here.
 
@@ -68,6 +69,7 @@ abstract class BaseController extends Controller
         $data2['page_home'] = $pageModel->where('page_status', 1)->first();
         $data2['link_page'] = $pageModel->where('page_status !=', 1)->find();
         // dd($data['link_page']);
+        $data2['items'] = $session->get('cart');
         
         
         

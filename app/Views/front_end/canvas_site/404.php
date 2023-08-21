@@ -12,17 +12,17 @@
         <h4>Ooopps.! The Page you were looking for, couldn't be found.</h4>
         <span>Try searching for the best match or browse the links below:</span>
       </div>
-      <form class="top-search-form mb-5" action="<?= base_url('/'); ?>/search" method="get" class="">
+      <form action="<?= base_url('/'); ?>/search" method="get" class="mb-5">
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="Search for Pages..." />
-          <button class="btn btn-danger" type="button">Search</button>
+          <input type="text" name="q" class="form-control" placeholder="Search for Pages..." />
+          <button class="btn btn-danger" type="submit">Search</button>
         </div>
       </form>
 
       <div class="row gutter-40 col-mb-80">
 		    <div class="postcontent col-lg-9">
 
-		      <a href="<?= base_url(); ?>" class="button button-3d button-rounded button-dirtygreen"><i class="fas fa-home"></i> Go Home</a>
+		      <a href="<?= base_url(); ?>" class="button button-3d button-rounded button-dirtygreen"><i class="fas fa-home"></i>Back Home</a>
 		    </div>
 		  </div>
 

@@ -4,8 +4,6 @@
 
 <div class="container">
 
-
-
   <section id="page-title" style="margin-bottom: 15px">
     <div class="container clearfix">
       
@@ -20,7 +18,7 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      
+      <a href="<?= site_url('san-pham'); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black mb-3">Continue Shopping <i class="fab fa-hive"></i></a>
       <form method="post" action="<?= site_url('gio-hang/cap-nhat') ?>">
         <?= csrf_field(); ?>
         <div class="table-responsive">
@@ -111,7 +109,7 @@
           </table>
         </div>
       </form>
-      <a href="<?= site_url('san-pham'); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black">Continue Shopping <i class="fab fa-hive"></i></a>
+      
       
     </div>
   </div>

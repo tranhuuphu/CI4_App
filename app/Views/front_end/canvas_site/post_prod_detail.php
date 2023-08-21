@@ -107,14 +107,16 @@
                       </div>
                       <div class="line"></div>
 
-                      <form class="cart mb-0 d-flex justify-content-between align-items-center" method="post" enctype="multipart/form-data">
+                      <form class="cart mb-0 d-flex justify-content-between align-items-center" action="<?= site_url('buy').'/'.$post_detail['id']; ?>" method="post" enctype="multipart/form-data">
+                        <?= csrf_field(); ?>
                         <div class="quantity">
                           <input type="button" value="-" class="minus" />
                           <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
                           <input type="button" value="+" class="plus" />
                         </div>
 
-                        <a href="<?= site_url('buy').'/'.$post_detail['id']; ?>"  <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
+                        <!-- <a href="<?= site_url('buy').'/'.$post_detail['id']; ?>"  <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a> -->
+                        <button type="submit" <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?>><i class="uil uil-shopping-cart me-1"></i> Add to Cart</button>
                       </form>
                       <div class="line"></div>
 

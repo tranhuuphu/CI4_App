@@ -33,6 +33,9 @@
 
 
 
+
+
+
 <header id="header" class="header" style="background-color: #ffffff">
   <div id="header-wrap">
     <div class="container">
@@ -43,15 +46,54 @@
             <img class="logo-dark" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
           </a>
         </div>
+
+
         <div class="header-misc">
           <div id="top-search" class="header-misc-icon">
-            <a href="#" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
+            <a href="javascript:void(0)" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
           </div>
 
-          
+          <?php if(isset($items)): ?>
+            <div id="top-cart" class="header-misc-icon d-none d-sm-block">
+              
+              <a href="#" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number"><?= count($items) ?></span></a>
+              <div class="top-cart-content">
+                <div class="top-cart-title">
+                  <h4>Shopping Cart</h4>
+                </div>
+                <div class="top-cart-items">
+                  <?php foreach($items as $item): ?>
+                    <div class="top-cart-item">
+                      <div class="top-cart-item-image">
+                        <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" title="<?= $item['prod_name'] ?>" target="_blank"><img src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                      </div>
+                      <div class="top-cart-item-desc">
+                        <div class="top-cart-item-desc-title">
+                          <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" title="<?= $item['prod_name'] ?>" target="_blank"><strong><?= $item['prod_name'] ?></strong></a>
+                          <span class="top-cart-item-price d-block"><?= number_format($item['prod_price'], 0, ',', '.'); ?> VNĐ</span>
+                        </div>
+                        <div class="top-cart-item-quantity">x <?= $item['quantity'] ?></div>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
 
-          
+                  
+                </div>
+                <div class="top-cart-action">
+                  <span class="top-checkout-price"><strong></strong></span>
+                  <a href="<?= site_url('gio-hang') ?>" class="button button-3d button-small m-0">View Cart</a>
+                </div>
+              </div>
+              
+
+
+            </div>
+          <?php endif; ?>
+
+
         </div>
+
+
         <div class="primary-menu-trigger">
           <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
             <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
@@ -102,21 +144,12 @@
             
           </ul>
         </nav>
+
         <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
-          <input type="text" name="q" class="form-control" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
+          <input type="text" name="q" class="form-control" id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
         </form>
 
-          <div id="top-cart" class="header-misc-icon d-none d-sm-block">
-            <a href="<?= site_url('gio-hang') ?>"><i class="uil uil-shopping-bag"></i></a>
-            
-            </div>
-          </div>
         
-
-
-                
-
-
       </div>
     </div>
   </div>

@@ -12821,7 +12821,8 @@ fieldset:disabled .btn {
     --cnvs-margin-base: 3rem;
     --cnvs-margin-sm: 2rem;
     --cnvs-margin-lg: 5rem;
-    --cnvs-content-padding: 5rem;
+    --cnvs-content-padding: 1rem;
+    /*--cnvs-content-padding: 5rem;*/
     --cnvs-section-margin: 4rem;
     --cnvs-section-padding: var(--cnvs-section-margin);
     --cnvs-col-padding: var(--cnvs-section-padding);
