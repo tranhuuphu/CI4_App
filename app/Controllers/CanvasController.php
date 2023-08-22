@@ -16,7 +16,7 @@ class CanvasController extends BaseController
 {
 
     public function __construct(){
-        helper(['url', 'form', 'text_helper']);
+        helper(['url', 'form', 'text_helper', 'xml']);
     }
     public function index()
     {
@@ -606,6 +606,7 @@ class CanvasController extends BaseController
     }
 
     public function siteMap(){
+        
         $post = new PostModel;
 
         $cate = new CateModel;
@@ -614,11 +615,11 @@ class CanvasController extends BaseController
 
         $page = new PageModel;
 
-        $page_info  = $page->findAll();
+        $page_info  = $page->select('page_slug, id')->findAll();
 
-        $cate_info  = $cate->findAll();
+        $cate_info  = $cate->select('cate_slug, id')->findAll();
 
-        $tag_info   = $tag->findAll();
+        $tag_info   = $tag->select('tag_post_slug, id')->findAll();
 
 
         $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->findAll();
@@ -630,10 +631,11 @@ class CanvasController extends BaseController
             'tag_info'      => $tag_info,
             'post_all'      => $post_all,
         ];
-        header("Content-Type: text/xml;charset=iso-8859-1");
+        header("Content-Type: text/xml;");
 
-        $data = $this->response->setXML($data2);
-        return view("front_end/site_map", $data);
+        // $data = $this->response->setXML($data2);
+        return $this->response->setXML(view('front_end/sitemap', $data2));
+        // return view('front_end/sitemap', $data2);
     }
 
     public function getSearch(){

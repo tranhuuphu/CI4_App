@@ -22,7 +22,7 @@
                   <?php foreach($link_page as $pl): ?>
                     <li><a href="<?= $pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
                   <?php endforeach; ?>
-                  <li><a href="<?= base_url('/'); ?>/site-map.xml" title="SiteMap">SiteMap</a></li>
+                  <li><a href="<?= base_url('/'); ?>/sitemap.xml" title="SiteMap" target="_blank">sitemap</a></li>
                   
                 </ul>
               </div>

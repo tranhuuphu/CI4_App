@@ -173,7 +173,7 @@ $routes->get('/', 'CanvasController::index');
 
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
-
+$routes->get('sitemap.xml', 'CanvasController::siteMap');
 
 $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 $routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
@@ -205,7 +205,7 @@ $routes->get('san-pham', 'CanvasController::getProd');
 
 // $routes->get('site-map.xml', 'HomeController::siteMap');
 
-$routes->get('site-map.xml', 'CanvasController::siteMap');
+
 
 $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 

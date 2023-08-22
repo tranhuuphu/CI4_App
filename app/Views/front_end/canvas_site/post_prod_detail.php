@@ -122,9 +122,9 @@
 
                       <p><?= $post_detail['post_intro']; ?></p>
                       <ul class="iconlist">
-                        <li><i class="fa-solid fa-caret-right"></i> Dynamic Color Options</li>
-                        <li><i class="fa-solid fa-caret-right"></i> Lots of Size Options</li>
-                        <li><i class="fa-solid fa-caret-right"></i> 30-Day Return Policy</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Nhiều lựa chọn mẫu</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Kích thước đa dạng</li>
+                        <li><i class="fa-solid fa-caret-right"></i> Giao hàng nhanh</li>
                       </ul>
 
                       <div class="card product-meta">
@@ -194,12 +194,12 @@
                           
                         </div>
                       </div>
-                      <div class="line"></div>
+                      <!-- <div class="line"></div> -->
                       <div class="row">
                         <!-- <div class="col-md-4 d-none d-md-block">
                           <a href="#" title="Brand Logo"><img src="images/shop/brand2.jpg" alt="Brand Logo" /></a>
                         </div> -->
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                           <div class="row gutter-30">
                             <div class="col-lg-6">
                               <div class="feature-box fbox-plain fbox-dark fbox-sm">
@@ -246,7 +246,7 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </div>
