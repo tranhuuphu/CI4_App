@@ -439,31 +439,37 @@ class CanvasController extends BaseController
         }
         $cate = new CateModel;
         $cate_detail = $cate->where("id", $post_prod['post_cate_id'])->first();
-        // if($this->request->getPost('quantity')){
-        //     $quantity  = $this->request->getPost('quantity');
-        //     $item = array(
-        //         'id'            => $post_prod['id'],
-        //     'prod_name'     => $post_prod['post_title'],
-        //     'prod_image'    => $post_prod['post_image'],
-        //     'prod_price'    => (int)$post_prod['post_price'],
-        //     'prod_slug'     => $post_prod['post_slug'],
-        //     'cate_slug'     => $cate_detail['cate_slug'],
-        //         'quantity'      => (int)$quantity,
-        //     );
-        // }else{
-        //     $item = array(
-        //         'quantity'      => 1,
-        //     );
-        // }
-        $item = array(
-            'id'            => $post_prod['id'],
+        if($this->request->getPost('quantity') != null){
+            $quantity  = $this->request->getPost('quantity');
+            $item = array(
+                'id'            => $post_prod['id'],
             'prod_name'     => $post_prod['post_title'],
             'prod_image'    => $post_prod['post_image'],
             'prod_price'    => (int)$post_prod['post_price'],
             'prod_slug'     => $post_prod['post_slug'],
             'cate_slug'     => $cate_detail['cate_slug'],
-            'quantity'      => 1,
-        );
+            'quantity'      => (int)$quantity,
+            );
+        }else{
+            $item = array(
+                'id'            => $post_prod['id'],
+                'prod_name'     => $post_prod['post_title'],
+                'prod_image'    => $post_prod['post_image'],
+                'prod_price'    => (int)$post_prod['post_price'],
+                'prod_slug'     => $post_prod['post_slug'],
+                'cate_slug'     => $cate_detail['cate_slug'],
+                'quantity'      => 1,
+            );
+        }
+        // $item = array(
+        //     'id'            => $post_prod['id'],
+        //     'prod_name'     => $post_prod['post_title'],
+        //     'prod_image'    => $post_prod['post_image'],
+        //     'prod_price'    => (int)$post_prod['post_price'],
+        //     'prod_slug'     => $post_prod['post_slug'],
+        //     'cate_slug'     => $cate_detail['cate_slug'],
+        //     'quantity'      => 1,
+        // );
         // dd($item);
         $session = session();
         if($session->has('cart')){

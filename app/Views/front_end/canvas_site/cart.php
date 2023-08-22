@@ -92,8 +92,8 @@
                     </div>
                     <div class="col-lg-auto pe-lg-0">
                       <!-- <a href="#" class="button button-small button-3d m-0">Update Cart</a> -->
-                      <button type="submit" class="button button-small button-3d m-0">Update Quantity <i class="fas fa-sync"></i></button>
-                      <a href= "<?= site_url('dat-hang'); ?>" class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0 button-black">Proceed to Checkout  <i class="fas fa-shopping-cart"></i></a>
+                      <button type="submit"  <?php if($items): ?> class="button button-small button-3d m-0" <?php elseif(!$items): ?> class="button button-small button-3d m-0 disabled" <?php endif; ?>>Update Quantity <i class="fas fa-sync"></i></button>
+                      <a href= "<?= site_url('dat-hang'); ?>" <?php if($items): ?> class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0 button-black" <?php elseif(!$items): ?> class="button button-small button-3d mt-2 mt-sm-0 me-0 mb-0 button-black disabled" <?php endif; ?>>Proceed to Checkout  <i class="fas fa-shopping-cart"></i></a>
                     </div>
                   </div>
                 </td>

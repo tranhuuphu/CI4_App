@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2023 at 06:56 PM
+-- Generation Time: Aug 22, 2023 at 07:06 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -90,6 +90,7 @@ CREATE TABLE `don-hang` (
   `order_adress` text DEFAULT NULL,
   `order_content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`order_content`)),
   `order_total` float DEFAULT NULL,
+  `checked_order` int(2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -293,8 +294,8 @@ INSERT INTO `post` (`id`, `post_cate_id`, `post_cate_slug`, `post_title`, `post_
 (38, 14, 'blog-222', 'bài này có ảnh 1200x900', 'bai-nay-co-anh-1200x900', 'ảnh bài viết mới', 'bai-nay-co-anh-1200x900-IaVqzN6cuFXfrSkJ.jpg', 'normal', 0, '<p>b&agrave;i viết c&oacute; ảnh mới</p>', 0, 0, 2, '1', 'bài viết có ảnh mới', 'bài viết có ảnh mới', '2023-06-10 09:11:03', '2023-07-25 09:21:11', NULL),
 (39, 14, 'blog-222', '1200', '1200', '1200', '1200-xlQFEpCr9LajWug0.jpg', 'normal', 0, '<p>1212212</p>', 0, 0, 0, '1', '1212', '1212', '2023-06-10 09:24:55', '2023-06-10 20:51:12', NULL),
 (40, 14, 'blog-222', '1200222', '1200222', '1200', '1200222-dWYBqo1xIFALTtPp.jpg', 'normal', 0, '<p>1212212</p>', 0, 0, 0, '1', '1212', '1212', '2023-06-10 09:37:54', '2023-06-11 07:15:59', NULL),
-(41, 18, 'danh-muc-moi', 'bài viết bán hàng', 'bai-viet-ban-hang', 'bài viết bán hàng', 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 'san-pham', 1, '<p>b&agrave;i viết b&aacute;n h&agrave;ng</p>', 2000, 0, 2, '1', 'bài viết bán hàng desc', 'bài viết bán hàng key', '2023-06-17 01:43:27', '2023-08-20 08:51:25', NULL),
-(42, 8, 'dich-vu-du-lich', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 'san-pham', 0, '<p>b&agrave;i viết b&aacute;n h&agrave;ng 2</p>', 5000, 0, 11, '1', 'bài viết bán hàng 2bài viết bán hàng 2', 'bài viết bán hàng 2', '2023-06-17 01:45:40', '2023-08-20 07:45:18', NULL);
+(41, 18, 'danh-muc-moi', 'bài viết bán hàng', 'bai-viet-ban-hang', 'bài viết bán hàng', 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 'san-pham', 1, '<p>b&agrave;i viết b&aacute;n h&agrave;ng</p>', 2000, 0, 6, '1', 'bài viết bán hàng desc', 'bài viết bán hàng key', '2023-06-17 01:43:27', '2023-08-21 21:45:03', NULL),
+(42, 8, 'dich-vu-du-lich', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 'san-pham', 0, '<p>b&agrave;i viết b&aacute;n h&agrave;ng 2</p>', 5000, 0, 12, '1', 'bài viết bán hàng 2bài viết bán hàng 2', 'bài viết bán hàng 2', '2023-06-17 01:45:40', '2023-08-21 09:52:26', NULL);
 
 -- --------------------------------------------------------
 
