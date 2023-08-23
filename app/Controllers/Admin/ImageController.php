@@ -138,6 +138,41 @@ class ImageController extends BaseController
             }
         }
 
+        // Part 3
+        $path3 = './public/upload/tinymce/post_images/';
+        foreach(glob($path2.'*.{jpg,JPG,jpeg,JPEG,png,PNG}',GLOB_BRACE) as $file3){
+            $img3[] =  array(basename($file3), filesize($file3));
+        }
+
+        $count = count($img3);
+        for ($i=0; $i < $count; $i++) {
+            // Kiểm tra ảnh này có trong database chưa?
+            // Nếu chưa thì update trong database và nén online
+            if(!in_array($img3[$i][0], $images_array_check, false)){
+                $data4['image_TinyCME_name']    = $img3[$i][0];
+                $data4['image_TinyCME_status']  = 1;
+                $data4['image_size_original']   = $img3[$i][1];
+
+                
+                $path = 'public/upload/tinymce/post_images'.'/'.$img3[$i][0];
+                $fp = fopen($path, "rb");
+                
+                // dd($images[$i]);
+                try {
+                    $source = \Tinify\fromFile($path);
+                    $source->toFile($path);
+                    $data3['image_size_compress']   = filesize($path);
+                    $data3['image_folder']          = 'post_images';
+                    // dd($data);
+                    $imageModel->insert($data3);
+                }
+                catch (\Tinify\Exception $e){
+                    session()->setFlashdata('success', "Has Error");
+                    return redirect()->to('admin/image/imageTiny')->with('image', $image);
+                }
+            }
+        }
+
         session()->setFlashdata('success', "Nén thành công");
         return redirect()->to('admin/image/imageTiny', $data2);
     }

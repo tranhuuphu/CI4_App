@@ -10,6 +10,7 @@ use App\Models\TagModel;
 use App\Models\GalleryModel;
 use App\Models\PostImagesModel;
 use App\Models\DonHangModel;
+use App\Models\ImageModel;
 
 
 class CanvasController extends BaseController
@@ -424,8 +425,9 @@ class CanvasController extends BaseController
         $donHang->insert($data2);
 
         session_destroy();
+        session()->setFlashdata('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại và xử lý sớm nhất có thể");
 
-        return redirect()->to('/')->with('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ và xác nhận lại đơn hàng");
+        return redirect()->to('/');
     }
 
 
@@ -551,6 +553,8 @@ class CanvasController extends BaseController
 
 
     public function tag($tag_slug, $tag_id){
+
+
         
         $post = new PostModel;
 
@@ -615,26 +619,38 @@ class CanvasController extends BaseController
 
         $page = new PageModel;
 
-        $page_info  = $page->select('page_slug, id')->findAll();
+        $gallery = new GalleryModel;
 
-        $cate_info  = $cate->select('cate_slug, id')->findAll();
-
-        $tag_info   = $tag->select('tag_post_slug, id')->findAll();
+        $image = new ImageModel;
 
 
-        $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->findAll();
+        $page_info  = $page->select('page_slug, id')->orderBy('id', 'DESC')->findAll();
+
+        $cate_info  = $cate->select('cate_slug, id')->orderBy('id', 'DESC')->findAll();
+
+        $tag_info   = $tag->select('tag_post_slug, id')->orderBy('id', 'DESC')->findAll();
+
+        $gallery_info   = $gallery->select('gallery_image')->orderBy('id', 'DESC')->findAll();
+
+        $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder')->orderBy('id', 'DESC')->findAll();
+
+
+
+        $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->orderBy('post.id', 'DESC')->findAll();
         // dd($post_all);
 
-        $data2 = [
-            'page_info'     => $page_info,
-            'cate_info'     => $cate_info,
-            'tag_info'      => $tag_info,
-            'post_all'      => $post_all,
+        $data = [
+            'page_info'             => $page_info,
+            'cate_info'             => $cate_info,
+            'tag_info'              => $tag_info,
+            'post_all'              => $post_all,
+            'gallery_info'          => $gallery_info,
+            'imgTinyCME_info'       => $imgTinyCME_info,
         ];
         header("Content-Type: text/xml;");
 
         // $data = $this->response->setXML($data2);
-        return $this->response->setXML(view('front_end/sitemap', $data2));
+        return $this->response->setXML(view('front_end/sitemap', $data));
         // return view('front_end/sitemap', $data2);
     }
 

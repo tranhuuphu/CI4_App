@@ -66,6 +66,14 @@
       <section id="content">
         <div class="content-wrap">
           
+          <?php if(!empty(session()->getFlashdata('success'))) : ?>
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-check"></i> Alert!</h5>
+              <?= session()->getFlashdata('success'); ?>
+            </div>
+          <?php endif ?>
+          
           <?= $this->renderSection('content'); ?>
 
           

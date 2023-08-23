@@ -111,6 +111,9 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('hidden/(:num)',"Admin\GalleryController::hidden/$1");
         $routes->post('hidden/(:num)',"Admin\GalleryController::hidden/$1");
 
+        $routes->get('compress',"Admin\GalleryController::compressGallerryImage");
+
+
     });
 
     $routes->group("page", function($routes){

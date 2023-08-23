@@ -6,6 +6,16 @@ use App\Models\PostModel;
 use App\Models\CateModel;
 use App\Models\GalleryModel;
 
+\Tinify\setKey("dqfNvv6jcrg3zVgWJ5PHBt5qkxRCWVbD");
+\Tinify\validate();
+
+$compressionsThisMonth = \Tinify\compressionCount();
+if ($compressionsThisMonth > 499) {
+  \Tinify\setKey("7sl7bwWF53lqNKYGWQbFmDr8zyGdJvvV");
+  \Tinify\validate();
+  $compressionsThisMonth2 = \Tinify\compressionCount();
+}
+
 
 class GalleryController extends BaseController
 {   
@@ -120,6 +130,7 @@ class GalleryController extends BaseController
         $data['gallery_meta_desc']      = $this->request->getPost('gallery_meta_desc');
         $data['gallery_meta_key']       = $this->request->getPost('gallery_meta_key');
         $data['gallery_view']           = 0;
+        $data['gallery_compress_times'] = 0;
 
         
 
@@ -138,6 +149,7 @@ class GalleryController extends BaseController
         {
             if ($img->isValid() && ! $img->hasMoved())
             {
+                
                 // $newName = $img->getRandomName();
                 $type = $img->getClientMimeType();
 
@@ -239,6 +251,7 @@ class GalleryController extends BaseController
         $data['gallery_meta_desc']      = $this->request->getPost('gallery_meta_desc');
         $data['gallery_meta_key']       = $this->request->getPost('gallery_meta_key');
         $data['gallery_view']           = $gallery_detail['gallery_view'];
+        $data['gallery_compress_times'] = $gallery_detail['gallery_compress_times'];
 
 
         if($this->request->getPost('gallery_post_id') != null){
@@ -353,6 +366,33 @@ class GalleryController extends BaseController
 
         $postModel->update($id, $data);
         return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
+    }
+    public function compressGallerryImage(){
+        $imageModel = new GalleryModel();
+        $imageGallery = $imageModel->findAll();
+
+
+
+        foreach($imageGallery as $iG){
+            if($iG['gallery_compress_times'] < 4){
+                $path = 'public/upload/tinymce/gallery_asset'.'/'.$iG['gallery_image'];
+                try {
+                    $source = \Tinify\fromFile($path);
+                    $source->toFile($path);
+                    $data['gallery_compress_times'] = $iG['gallery_compress_times'] + 1;
+                    $imageModel->update($iG['id'], $data);
+                }
+                catch (\Tinify\Exception $e){
+                    session()->setFlashdata('success', "Has Error");
+                    return redirect()->to('admin/gallery')->with('image', "Có Lỗi");
+                }
+            }
+        }
+
+
+        session()->setFlashdata('success', "Nén ảnh thành công");
+        return redirect()->to('admin/gallery');
+
     }
 
 

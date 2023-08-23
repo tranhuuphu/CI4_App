@@ -1,0 +1,264 @@
+CRITICAL - 2023-08-23 03:59:36 --> syntax error, unexpected token "use"
+in APPPATH\Controllers\CanvasController.php on line 557.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\CanvasController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CanvasController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CanvasController')
+ 4 SYSTEMPATH\CodeIgniter.php(893): class_exists('\\App\\Controllers\\CanvasController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(487): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 03:59:38 --> syntax error, unexpected token "use"
+in APPPATH\Controllers\CanvasController.php on line 557.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\CanvasController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CanvasController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CanvasController')
+ 4 SYSTEMPATH\CodeIgniter.php(893): class_exists('\\App\\Controllers\\CanvasController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(487): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 03:59:41 --> syntax error, unexpected token "use"
+in APPPATH\Controllers\CanvasController.php on line 557.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\CanvasController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CanvasController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CanvasController')
+ 4 SYSTEMPATH\CodeIgniter.php(893): class_exists('\\App\\Controllers\\CanvasController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(487): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 03:59:44 --> syntax error, unexpected token "use"
+in APPPATH\Controllers\CanvasController.php on line 557.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\CanvasController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CanvasController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CanvasController')
+ 4 SYSTEMPATH\CodeIgniter.php(893): class_exists('\\App\\Controllers\\CanvasController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(487): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 03:59:53 --> Cannot use App\Models\GalleryModel as GalleryModel because the name is already in use
+in APPPATH\Controllers\CanvasController.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-23 04:00:16 --> Cannot use App\Models\GalleryModel as GalleryModel because the name is already in use
+in APPPATH\Controllers\CanvasController.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-23 04:00:57 --> Cannot use App\Models\GalleryModel as GalleryModel because the name is already in use
+in APPPATH\Controllers\CanvasController.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-23 04:01:07 --> Cannot use App\Models\GalleryModel as GalleryModel because the name is already in use
+in APPPATH\Controllers\CanvasController.php on line 14.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-23 19:19:13 --> CodeIgniter\HTTP\RedirectResponse::to(): Argument #2 ($code) must be of type ?int, array given, called in E:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\GalleryController.php on line 399
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 32.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(399): CodeIgniter\HTTP\RedirectResponse->to('admin/gallery', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\GalleryController->compressGallerryImage()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 19:21:53 --> CodeIgniter\HTTP\RedirectResponse::to(): Argument #2 ($code) must be of type ?int, array given, called in E:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\GalleryController.php on line 399
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 32.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(399): CodeIgniter\HTTP\RedirectResponse->to('admin/gallery', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\GalleryController->compressGallerryImage()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-23 19:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-23 19:32:11 --> CodeIgniter\HTTP\RedirectResponse::to(): Argument #2 ($code) must be of type ?int, array given, called in E:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\GalleryController.php on line 399
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 32.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(399): CodeIgniter\HTTP\RedirectResponse->to('admin/gallery', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\GalleryController->compressGallerryImage()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-23 19:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-23 19:34:36 --> CodeIgniter\HTTP\RedirectResponse::to(): Argument #2 ($code) must be of type ?int, array given, called in E:\Code\Xampp\htdocs\CI4_App\app\Controllers\Admin\GalleryController.php on line 398
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 32.
+ 1 APPPATH\Controllers\Admin\GalleryController.php(398): CodeIgniter\HTTP\RedirectResponse->to('admin/gallery', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\GalleryController->compressGallerryImage()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-23 19:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 19:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-23 20:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-23 20:16:06 --> mysqli_sql_exception: Unknown column 'gallery_image' in 'field list' in E:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `gallery...', 0)
+#1 E:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `gallery...')
+#2 E:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `gallery...')
+#3 E:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT `gallery...', Array, false)
+#4 E:\Code\Xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Code\Xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(633): CodeIgniter\BaseModel->findAll()
+#7 E:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+#8 E:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#9 E:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-08-23 20:16:06 --> Unknown column 'gallery_image' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT `gallery_image`
+FROM `tag`
+ORDER BY `id` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\CanvasController.php(633): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 7 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-23 20:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-23 20:23:00 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:23:17 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:23:45 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:25:17 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:25:59 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:26:54 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:27:06 --> Undefined array key "created_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:27:48 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:27:53 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:28:01 --> Undefined array key "updated_at"
+in APPPATH\Views\front_end\sitemap.php on line 57.
+ 1 APPPATH\Views\front_end\sitemap.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated_at"', 'APPPATH\\Views\\front_end\\sitemap.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-23 20:32:06 --> Undefined array key "gallery_image"
+in APPPATH\Views\front_end\sitemap.php on line 66.
+ 1 APPPATH\Views\front_end\sitemap.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "gallery_image"', 'APPPATH\\Views\\front_end\\sitemap.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\sitemap.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/sitemap', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(653): view('front_end/sitemap', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->siteMap()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
