@@ -4,12 +4,12 @@
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-12 col-md-auto">
-        <p class="mb-0 py-2 text-center text-md-start"><strong>Call:</strong> 
+        <p class="mb-0 py-2 text-center text-md-start">
         <?php if(isset($page_home['phone'])): ?>
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
-                <span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text"><?= $page_home['phone']; ?></span>
+                <i class="fa-sharp fa-solid fa-phone"></i> <span class="ts-text"><?= $page_home['phone']; ?></span>
             </a>
-          <?php endif; ?> | <strong>Email:</strong> phuth@gmail.com</p>
+          <?php endif; ?> || <i class="fa-light fa-envelope fa-fade"></i> phuth@gmail.com</p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">
@@ -18,7 +18,7 @@
 
             <?php foreach($link_page as $pl): ?>
               <li class="top-links-item">
-                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a>
+                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fa-solid fa-circle"></i> <?= $pl['page_name']; ?></a>
               </li>
             <?php endforeach; ?>
             
@@ -102,9 +102,9 @@
 
         <nav class="primary-menu">
           <ul class="menu-container">
-            <li class="menu-item current">
+            <!-- <li class="menu-item current">
               <a class="menu-link" href="<?= base_url(''); ?>"><div>Home</div></a>
-            </li>
+            </li> -->
 
 
             <li class="menu-item">

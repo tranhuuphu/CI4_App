@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/custom.css"> -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('public/site_asset/canvas'); ?>/css/icons/font-awesome-x/css/all.min.css">
+
 
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen">

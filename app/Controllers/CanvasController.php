@@ -270,7 +270,13 @@ class CanvasController extends BaseController
         $cate = new CateModel;
         $tag = new TagModel;
 
+        
+        $cate_gallery = $cate->where('cate_slug', $slug2)->first();
+        // dd($cate_gallery);
+        if($cate_gallery != null){
+            return view('front_end/canvas_site/gallery_img_detail');
 
+        }
         $post_detail = $post->find($id);
 
         if(!$post_detail){
@@ -339,6 +345,8 @@ class CanvasController extends BaseController
         }
         // dd(session()->get('sessionView'));
 
+
+
         $postImages = new PostImagesModel();
         if($post_detail['post_status'] == 'san-pham' ){
             if($postImages->where('post_image_id', $id)->findAll()){
@@ -354,6 +362,9 @@ class CanvasController extends BaseController
 
         
     }
+
+
+
 
     public function cart(){
         if(session('cart') == null){
