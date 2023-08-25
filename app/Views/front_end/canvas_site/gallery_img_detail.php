@@ -3,13 +3,13 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-	<section id="page-title" style="margin-bottom: 25px; background-color: #a0c4fa;">
+	<section id="page-title" style="margin-bottom: 25px; margin-top: 30px; background-color: #ededed;">
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
 	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
-	      <li class="breadcrumb-item"><a href="#"><i class="far fa-images"></i></a></li>
-	      <li class="breadcrumb-item active"><a href="#" title="#">Ảnh</a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><i class="far fa-images"></i></a></li>
+	      <li class="breadcrumb-item active"><?= $gallery_img['gallery_title'] ?></li>
 	    </ol>
 	  </div>
 	</section>
@@ -19,65 +19,88 @@
   <div class="content-wrap">
     <div class="container">
       <div class="row g-5 py-md-5">
-        <div class="col-lg-7 col-xl-8 portfolio-single-image">
-          <a href="#">
-            <img src="https://source.unsplash.com/yTWq8n3-4k0/900x900" alt="Image" class="rounded-6" />
+        <div class="col-lg-5 col-xl-8 portfolio-single-image">
+          <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
+            <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
           </a>
         </div>
 
-        <div class="col-lg-5 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
-          <h2 class="fs-3 fw-bold">About this Project</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, dolores, facere, corrupti delectus ex quidem adipisci tempore.</p>
-          <p>Illum molestias cupiditate eveniet dolore obcaecati voluptatibus est quos eos id recusandae officia. Cupiditate, voluptates quibusdam ipsum vel corporis laboriosam id est doloremque?</p>
+        <div class="col-lg-7 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
+          <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
+          
+          
 
           <div class="row g-4 mt-4 mb-6">
             <div class="col-6">
               <h5 class="mb-2">Created by</h5>
-              <p class="text-medium op-08 mb-0">John Doe</p>
+              <p class="text-medium op-08 mb-0">Admin</p>
             </div>
             <div class="col-6">
               <h5 class="mb-2">Completed on</h5>
-              <p class="text-medium op-08 mb-0">17th March 2022</p>
+              <p class="text-medium op-08 mb-0">
+                <?php
+                  $datetime = (new \CodeIgniter\I18n\Time);
+                  $yearNow = $datetime::now()->getYear();
+                  $yearMonthsNow = $datetime::now()->getMonth();
+                  $yearPost = $datetime::parse($gallery_img['updated_at'])->getYear();
+                  
+                  $yearMonthsPost = $datetime::parse($gallery_img['updated_at'])->getMonth();
+                  if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                    echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                  }
+                  if(($yearNow - $yearPost) > 1){
+                    echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                  }else{
+                    echo $datetime::parse($gallery_img['updated_at'])->toLocalizedString('dd MMM yyyy');
+                  }
+                  
+
+                ?>
+              </p>
             </div>
+
             <div class="col-6">
-              <h5 class="mb-2">Skills</h5>
-              <div><a href="#" class="badge bg-color h-bg-dark h-text-light all-ts py-2 px-3">HTML</a> <a href="#" class="badge bg-color h-bg-dark h-text-light all-ts py-2 px-3">CSS3</a></div>
+              <h5 class="mb-2">Demension</h5>
+              <p class="text-medium op-08 mb-0">
+                <?php
+                  $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
+                  $image_width = $image_info[0];
+                  $image_height = $image_info[1];
+                  echo "<i class='fa-light fa-ruler fa-rotate-90'></i>".' '.$image_width.'x'.$image_height.'px';
+                ?>
+              </p>
             </div>
+
             <div class="col-6">
-              <h5 class="mb-2">Client</h5>
-              <p class="text-medium op-08 mb-0"><a href="#">Google Inc.</a></p>
+              <h5 class="mb-2">Download this Image</h5>
+              <p class="text-medium op-082 mb-0"><a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fa-duotone fa-download"></i></a></p>
             </div>
+            
           </div>
-          <a href="#" class="text-medium">Visit this Project <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
+          <?php if($gallery_img['gallery_post_url'] != null): ?>
+            <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Visit post Related <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
+          <?php endif; ?>
 
           <div class="card mt-6 pt-4 border-0 border-top rounded-0 border-default">
             <div class="card-body p-0">
               <div class="d-flex align-items-center justify-content-between">
                 <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
                 <div class="d-flex">
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                  </a>
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
+                  <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share pinterest: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
                     <i class="fa-brands fa-pinterest-p"></i>
                     <i class="fa-brands fa-pinterest-p"></i>
                   </a>
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-whatsapp" title="Whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
+                  <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $gallery_img['gallery_title']; ?>" target="_blank" title="share facebook: <?= $gallery_img['gallery_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
                   </a>
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-rss" title="RSS">
-                    <i class="fa-solid fa-rss"></i>
-                    <i class="fa-solid fa-rss"></i>
+                  <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share twitter: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-twitter"></i>
                   </a>
-                  <a href="#" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0" title="Mail">
-                    <i class="fa-solid fa-envelope"></i>
-                    <i class="fa-solid fa-envelope"></i>
+                  <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $gallery_img['gallery_title']; ?>" title="share tumblr: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+                    <i class="fa-brands fa-tumblr"></i>
+                    <i class="fa-brands fa-tumblr"></i>
                   </a>
                 </div>
               </div>
@@ -91,7 +114,7 @@
           <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span>Previous Project</span></a>
         </div>
         <div class="col text-center">
-          <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
+          <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
         </div>
         <div class="col text-end">
           <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><span>Next Project</span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
@@ -374,5 +397,61 @@
   </div>
 </section>
 
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('yoast_seo'); ?>
+  <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
+  <meta rel="canonical" href="<?= base_url() ?>"/>
+
+  <title><?= $title ?></title>
+
+  
+  <meta name="description" content="<?= $meta_desc ?>" />
+  <meta name="keywords" content="<?= $meta_key ?>" />
+  <meta name="title" content="<?= $title ?>" />
+  
+
+
+  <meta name="copyright" content="<?= base_url() ?>" />
+
+
+
+  <!-- Schema.org markup for Google+ -->
+  
+  <meta itemprop="name" content="<?= $title ?>">
+  <meta itemprop="image" content="<?= $image ?>">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="article">
+  <meta name="twitter:site" content="<?= $title ?>">
+  <meta name="twitter:title" content="<?= $title ?>">
+  <meta name="twitter:description" content="<?= $meta_desc ?>">
+  <meta name="twitter:creator" content="<?= base_url() ?>">
+  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$image ?>">
+
+  <!-- Open Graph data -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="<?= $title ?>" />
+  <meta property="og:title" content="<?= $title ?>" />
+  <meta property="og:url" content="<?= base_url() ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$image ?>" />
+  <meta property="og:description" content="<?= $meta_desc ?>" />
+  <meta property="og:locale" content="vi_VN" />
+  
+  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$image ?>" />
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$image ?>" />
+
+  
+
+
+  <meta content="news" itemprop="genre" name="medium"/>
+  <meta content="vi-VN" itemprop="inLanguage"/>
+  <meta content="" itemprop="articleSection"/>
+  <meta content="<?= $created_at ?>" itemprop="datePublished" name="pubdate"/>
+  <meta content="<?= $updated_at ?>" itemprop="dateModified" name="lastmod"/>
+  <meta content="<?= $created_at ?>" itemprop="dateCreated"/>
+
+  
 <?= $this->endSection(); ?>
 

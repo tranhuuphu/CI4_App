@@ -273,8 +273,35 @@ class CanvasController extends BaseController
         
         $cate_gallery = $cate->where('cate_slug', $slug2)->first();
         // dd($cate_gallery);
-        if($cate_gallery != null){
-            return view('front_end/canvas_site/gallery_img_detail');
+        if($cate_gallery['cate_type'] == "cate_gallery"){
+
+            $gallery = new GalleryModel;
+            $gallery_img = $gallery->where('id', $id)->first();
+            if($gallery_img == null){
+                return view('front_end/canvas_site/404');
+            }
+
+            $link_full = base_url().'/'.$slug2.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html';
+            $data = [
+                'title'         => $gallery_img['gallery_title'],
+                'meta_desc'     => $gallery_img['gallery_meta_desc'],
+                'meta_key'      => $gallery_img['gallery_meta_key'],
+                'image'         => $gallery_img['gallery_image'],
+                'created_at'    => $gallery_img['created_at'],
+                'updated_at'    => $gallery_img['updated_at'],
+
+                'related'       => '',
+                'previous'      => '',
+                'next'          => '',
+                'cate_detail'   => $cate_gallery,
+
+                'gallery_img'   => $gallery_img,
+                'link_full'     => $link_full,
+
+
+
+            ];
+            return view('front_end/canvas_site/gallery_img_detail', $data);
 
         }
         $post_detail = $post->find($id);
@@ -566,7 +593,6 @@ class CanvasController extends BaseController
     public function tag($tag_slug, $tag_id){
 
 
-        
         $post = new PostModel;
 
         $tag = new TagModel;
@@ -577,7 +603,8 @@ class CanvasController extends BaseController
         // dd($tag_detail);
 
         if(!isset($tag_detail) || $tag_detail == null){
-            return view('front_end/canvas_site/404');
+            $data['error'] = "Tag không tồn tại hoặc không đúng hoặc không liên kết với bài viết nào";
+            return view('front_end/canvas_site/404', $data);
         }
 
         foreach($tag_detail as $key5){

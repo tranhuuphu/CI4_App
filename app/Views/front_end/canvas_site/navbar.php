@@ -9,7 +9,7 @@
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
                 <i class="fa-sharp fa-solid fa-phone"></i> <span class="ts-text"><?= $page_home['phone']; ?></span>
             </a>
-          <?php endif; ?> || <i class="fa-light fa-envelope fa-fade"></i> phuth@gmail.com</p>
+          <?php endif; ?> || <i class="fa-duotone fa-envelope"></i> phuth@gmail.com</p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">
