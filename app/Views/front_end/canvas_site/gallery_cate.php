@@ -5,8 +5,6 @@
 
 <div class="container">
 
-
-
   <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
     <div class="container clearfix">
       
@@ -19,73 +17,72 @@
 </div>
 
 <?php if(count($post_cate) > 0): ?>
-  <div class="container mt-5">
+<section id="content">
+  <div class="content-wrap">
+    <div class="container">
+      
 
-    <section id="content">
-      <div class="content-wrap py-0">
-        <div id="portfolio" class="portfolio row grid-container portfolio-reveal g-0" data-layout="fitRows">
-          <?php foreach($post_cate as $key): ?>
-          <article class="portfolio-item col-12 col-sm-6 col-md-3 pf-media pf-icons">
-            <div class="grid-inner">
-              <div class="portfolio-image">
-                <a href="<?= $key['gallery_post_url'] ?>">
-                  <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" />
-                </a>
+      <div id="portfolio" class="portfolio row grid-container gutter-20" data-layout="fitRows">
 
-                <div class="bg-overlay">
-                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                    
-                      <a
-                        href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
-                        class="overlay-trigger-icon bg-light text-dark text-bold fw-bold fs-4"
-                        data-hover-animate="fadeInDownSmall"
-                        data-hover-animate-out="fadeOutUpSmall"
-                        data-hover-speed="350"
-                        data-hover-parent=".portfolio-item"
-                        data-lightbox="image"
-                        title="<?= $key['gallery_title'] ?>"
-                      >
-                        <i class="uil uil-expand-alt"></i>
-                      </a>
-                    <?php if($key['gallery_post_url'] == null): ?>
-                    <?php else: ?>
-                      <a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-                        <i class="uil uil-link"></i>
-                      </a>
-                    <?php endif; ?>
-                    <a class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i></a>
+        <?php foreach($post_cate as $key): ?>
+        <article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+          <div class="grid-inner">
+            <div class="portfolio-image">
+              <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
+                <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
+              </a>
 
-                  </div>
-                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
+              <div class="bg-overlay">
+                <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                  <a
+                    href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
+                    class="overlay-trigger-icon bg-light text-dark"
+                    data-hover-animate="fadeInDownSmall"
+                    data-hover-animate-out="fadeOutUpSmall"
+                    data-hover-speed="350"
+                    data-lightbox="image"
+                    title="<?= $key['gallery_title'] ?>"
+                  >
+                    <i class="fa-duotone fa-expand"></i>
+                  </a>
+
+                  <?php if($key['gallery_post_url'] == null): ?>
+                  <?php else: ?>
+                    <a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
+                      <i class="uil uil-link"></i>
+                    </a>
+                  <?php endif; ?>
+
+                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                    <i class="fas fa-download"></i>
+                  </a>
                 </div>
-              </div>
-
-              <div class="portfolio-desc">
-                <h3><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" ><?= $key['gallery_title'] ?></a></h3>
-                <span>
-                  <a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" target="_blank"><i class="fas fa-images"></i></a>
-
-
-
-                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
-                </span>
+                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
               </div>
             </div>
-          </article>
-          <?php endforeach; ?>
 
-          
-        </div>
+            <div class="portfolio-desc">
+              <h3><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
+              
+              <span><i class="fa-solid fa-image"></i>  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a></span>
+            </div>
+          </div>
+        </article>
+        <?php endforeach; ?>
+
         
       </div>
-    </section>
-
+    </div>
   </div>
+</section>
+
 <?php else: ?>
-  	<div class="container mt-5">
-      <p>Chưa có ảnh nào trong bộ sưu tập</p>
+    <div class="container mt-5">
+      <p>Ảnh đang được cập nhật</p>
     </div>
 <?php endif; ?>
+      
+
 
 
 <?= $this->endSection(); ?>

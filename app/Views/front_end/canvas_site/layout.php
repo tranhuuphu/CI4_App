@@ -51,7 +51,36 @@
 
       .tp-caption { white-space: nowrap; }
 
+      .search{
+         position: relative;
+         margin-top: 2.3%;
+         box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+         
+       }
 
+       .search input{
+
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid ;
+       }
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid;
+       }
+       .search button{
+
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          height: 50px;
+          width: 110px;
+          background: grey;
+          border-radius: 0;
+          font-weight: bold;
+
+       }
       
     </style>
 

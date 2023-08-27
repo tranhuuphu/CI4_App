@@ -3,19 +3,19 @@
 <?= $this->section('content'); ?>
 
 
-
-
 <div class="container">
-	<section id="page-title" style="background-color: #17a2b8!important;">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'/tag/'.$tag_slug ?>">Tag Result: <?= $tag_name ?></a></li>
-	    </ol>
-	  </div>
-	</section>
+  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #FE9603;">
+    <div class="container clearfix">
+      
+      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-light fa-house"></i></a></li>
+        <li class="breadcrumb-item active"><a href="<?= base_url().'/tag/'.$tag_slug ?>">Tag Result: <?= $tag_name ?></a></li>
+      </ol>
+    </div>
+  </section>
 </div>
+
+
 
 <div class="container clearfix mt-5">
   <div class="row align-items-center mw-sm mx-auto g-0">
@@ -23,9 +23,9 @@
     <div class="col-12">
       <div class="feature-box fbox-effect fbox-xl">
         <div class="fbox-content">
-          <h3><?= $key2['post_title']; ?></h3>
+          <h3 class="fw-bold"><?= $key2['post_title']; ?></h3>
           <p>
-            <i class="icon-calendar3"></i> 
+            <i class="fa-solid fa-calendar-days"></i>
             <?php
               $datetime = (new \CodeIgniter\I18n\Time);
               $yearNow = $datetime::now()->getYear();
@@ -44,7 +44,7 @@
               
 
             ?>
-            <i class="icon-clock"></i> 
+            <i class="fa-sharp fa-solid fa-clock"></i>
             <?= ceil(strlen($key2['post_content'])/700) ?> Minutes Read
           </p>
           <p><?= $key2['post_intro']; ?></p>

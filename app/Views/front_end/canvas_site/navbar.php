@@ -20,10 +20,7 @@
               <li class="top-links-item">
                 <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fa-solid fa-circle"></i> <?= $pl['page_name']; ?></a>
               </li>
-            <?php endforeach; ?>
-            
-            
-            
+            <?php endforeach; ?>            
           </ul>
         </div>
       </div>
@@ -145,9 +142,23 @@
           </ul>
         </nav>
 
-        <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
+        <!-- <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           <input type="text" name="q" class="form-control" id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
+        </form> -->
+
+
+        <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
+          <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+              <div class="search">
+                  <input type="text" name="q" class="form-control" placeholder="Type text...">
+                  <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+            </div>
+            
+          </div>
         </form>
+                    
 
         
       </div>

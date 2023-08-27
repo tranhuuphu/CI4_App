@@ -19,9 +19,6 @@
 </style>
 
 <div class="container">
-
-
-
 	<section id="page-title" style="margin-bottom: 15px; margin-top: 30px;">
 	  <div class="container clearfix">
 	    
