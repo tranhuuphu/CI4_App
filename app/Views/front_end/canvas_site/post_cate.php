@@ -61,7 +61,7 @@
                         </div>
                         <div class="entry-meta">
                           <ul>
-                            <li><a href="javascript:void(0)">
+                            <li><a href="javascript:void(0)"><i class="fa-solid fa-calendar-days"></i> 
                             	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -81,6 +81,9 @@
 
 								            	?>
                             </a></li>
+                            <li>
+							                <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-clock"></i> <?= ceil(strlen($post_cate_1[0]['post_content'])/700) ?> Minutes Read</a>
+							              </li>
                           </ul>
                         </div>
                         <div class="entry-content">
@@ -116,7 +119,7 @@
 		          </div>
 		          <div class="entry-meta">
 		            <ul>
-		              <li><i class="uil uil-calendar"></i>
+		              <li><i class="fa-solid fa-calendar-days"></i>
 		              	<?php
 			            		$datetime = (new \CodeIgniter\I18n\Time);
 			            		$yearNow = $datetime::now()->getYear();

@@ -149,10 +149,10 @@
 
         <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-8">
               <div class="search">
                   <input type="text" name="q" class="form-control" placeholder="Type text...">
-                  <button type="submit" class="btn btn-primary">Search</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
               </div>
             </div>
             

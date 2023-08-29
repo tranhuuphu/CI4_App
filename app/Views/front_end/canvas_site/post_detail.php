@@ -7,9 +7,9 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-light fa-house"></i></a></li>
 	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><?= $cate_detail['cate_name'] ?></a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html' ?>" title="<?= $post_detail['post_title']; ?>"><?= $post_detail['post_title']; ?></a></li>
+	      <li class="breadcrumb-item active"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html' ?>" title="<?= $post_detail['post_title']; ?>" class="fw-bold"><?= $post_detail['post_title']; ?></a></li>
 	    </ol>
 	  </div>
 	</section>
@@ -54,10 +54,13 @@
 			            	?>
 		              </li>
 		              <li>
-		                <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?></a>
+		                <i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?>
 		              </li>
 		              <li>
-		                <a href="javascript:void(0)"><i class="fa-solid fa-camera-retro"></i></a>
+		                <i class="fa-solid fa-camera-retro"></i>
+		              </li>
+		              <li>
+		                <i class="fa-sharp fa-solid fa-clock"></i> <?= ceil(strlen($post_detail['post_content'])/700) ?> Minutes Read
 		              </li>
 		            </ul>
 		          </div>
@@ -122,6 +125,9 @@
 	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span><?= $previous['post_title'] ?></span></a>
 	              </div>
               <?php endif; ?>
+              <div class="col text-center">
+                <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
+              </div>
 		          <?php if(isset($next)): ?>
 	              <div class="col-md-auto">
 	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>

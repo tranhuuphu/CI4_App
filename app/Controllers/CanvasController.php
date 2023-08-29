@@ -662,19 +662,23 @@ class CanvasController extends BaseController
         $image = new ImageModel;
 
 
-        $page_info  = $page->select('page_slug, id')->orderBy('id', 'DESC')->findAll();
+        $page_info  = $page->select('page_slug, id, updated_at')->orderBy('id', 'DESC')->findAll();
 
-        $cate_info  = $cate->select('cate_slug, id')->orderBy('id', 'DESC')->findAll();
+        $cate_info  = $cate->select('cate_slug, id, cate_type, updated_at')->orderBy('id', 'DESC')->findAll();
 
-        $tag_info   = $tag->select('tag_post_slug, id')->orderBy('id', 'DESC')->findAll();
+        $tag_info   = $tag->select('tag_post_slug, id, updated_at')->orderBy('id', 'DESC')->findAll();
 
-        $gallery_info   = $gallery->select('gallery_image')->orderBy('id', 'DESC')->findAll();
+        $gallery_info   = $gallery->select('gallery_image, gallery_title_slug, id, updated_at')->orderBy('id', 'DESC')->findAll();
 
-        $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder')->orderBy('id', 'DESC')->findAll();
+        $cate_gallery  = $cate->select('cate_slug, updated_at')->where('cate_type', 'cate_gallery')->first();
 
 
 
-        $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id')->orderBy('post.id', 'DESC')->findAll();
+        $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder, updated_at')->orderBy('id', 'DESC')->findAll();
+
+
+
+        $post_all = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.updated_at')->orderBy('post.id', 'DESC')->findAll();
         // dd($post_all);
 
         $data = [
@@ -684,6 +688,7 @@ class CanvasController extends BaseController
             'post_all'              => $post_all,
             'gallery_info'          => $gallery_info,
             'imgTinyCME_info'       => $imgTinyCME_info,
+            'cate_gallery'          => $cate_gallery,
         ];
         header("Content-Type: text/xml;");
 
