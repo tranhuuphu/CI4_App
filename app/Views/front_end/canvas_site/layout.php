@@ -117,7 +117,7 @@
 
     <div id="gotoTop" class="uil uil-angle-up"></div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js?<?php echo time(); ?>"></script>
@@ -201,6 +201,13 @@
           SEMICOLON.Base.sliderDimensions();
         });
       }); //ready
+    </script>
+
+    <script type="text/javascript">
+      var url      = window.location.href;
+      var data = $('.menu-item').data('title');
+      // alert(data);
+
     </script>
   </body>
 </html>

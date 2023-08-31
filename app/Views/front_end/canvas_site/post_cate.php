@@ -84,6 +84,11 @@
                             <li>
 							                <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-clock"></i> <?= ceil(strlen($post_cate_1[0]['post_content'])/700) ?> Minutes Read</a>
 							              </li>
+							              <?php if($post_cate_1[0]['post_status'] == "san-pham"): ?>
+								              <li>
+								                <i class="fa-solid fa-cart-shopping"></i>
+								              </li>
+								            <?php endif; ?>
                           </ul>
                         </div>
                         <div class="entry-content">
@@ -139,9 +144,11 @@
 
 			            	?>
 		              </li>
-		              <!-- <li>
-		                <a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a>
-		              </li> -->
+		              <?php if($key['post_status'] == "san-pham"): ?>
+			              <li>
+			                <i class="fa-solid fa-cart-shopping"></i>
+			              </li>
+			            <?php endif; ?>
 		            </ul>
 		          </div>
 		          <div class="entry-content">
@@ -199,7 +206,7 @@
                   </div>
                   <div class="entry-meta">
                     <ul>
-                      <li>
+                      <li><i class="fa-duotone fa-calendar-days"></i>
                       	<?php
 					            		$datetime = (new \CodeIgniter\I18n\Time);
 					            		$yearNow = $datetime::now()->getYear();

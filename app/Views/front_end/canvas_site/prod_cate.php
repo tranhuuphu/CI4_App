@@ -73,7 +73,7 @@
                   <?php else: ?>
                   	<div class="product-price text-danger">Liên Hệ</div>
                   <?php endif; ?>
-		              <a href="<?= site_url('buy').'/'.$key['id']; ?>"  <?php if($key['post_sale'] || $key['post_price']): ?> class="btn btn-sm btn-dark px-3 mt-2" <?php else: ?> class="btn btn-sm btn-dark px-3 mt-2 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a>
+		              <a href="<?= site_url('buy').'/'.$key['id']; ?>"  <?php if($key['post_sale'] || $key['post_price']): ?> class="btn btn-sm btn-dark px-3 mt-2" <?php else: ?> class="btn btn-sm btn-dark px-3 mt-2 disabled" <?php endif; ?> ><i class="fa-regular fa-cart-shopping"></i>&nbsp; &nbsp;Add to Cart</a>
 		            </div>
 		          </div>
 		        </div>

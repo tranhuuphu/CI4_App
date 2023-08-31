@@ -104,7 +104,7 @@
             </li> -->
 
 
-            <li class="menu-item">
+            <li class="menu-item" data-title2="san-pham">
               <a class="menu-link" href="<?= base_url('san-pham'); ?>"><div>Sản Phẩm</div></a>
             </li>
 
@@ -118,7 +118,7 @@
 
             <?php foreach($cate as $c): ?>
               <?php if($c['cate_parent_id'] == 0): ?>
-                <li class="menu-item">
+                <li class="menu-item" data-title="<?= $c['cate_slug'].'-'.$c['id'] ?>">
                   <a class="menu-link" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><div><?= $c['cate_name']; ?></div></a>
                   
                   <?php if(in_array($c['id'], $c_t)): ?>

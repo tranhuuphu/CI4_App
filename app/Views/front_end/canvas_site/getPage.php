@@ -54,7 +54,7 @@
                   ?>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $page_info['page_view']; ?></a>
+                  <i class="fa-solid fa-eye"></i> <?= $page_info['page_view']; ?>
                 </li>
               </ul>
             </div>
