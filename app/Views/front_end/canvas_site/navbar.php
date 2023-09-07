@@ -142,12 +142,15 @@
           </ul>
         </nav>
 
-        <!-- <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
-          <input type="text" name="q" class="form-control" id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
-        </form> -->
-
-
         <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
+          
+          <input type="text" name="q" class="form-control " id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
+          <button type="submit" class="btn btn-primary search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+          
+        </form>
+
+
+        <!-- <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           <div class="row height d-flex justify-content-center align-items-center">
             <div class="col-md-8 col-sm-8">
               <div class="search">
@@ -157,7 +160,7 @@
             </div>
             
           </div>
-        </form>
+        </form> -->
                     
 
         

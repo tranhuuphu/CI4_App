@@ -201,6 +201,11 @@ class PostController extends BaseController
         $tagModel = new TagModel();
         $data['cate'] = $cateModel->findAll();
         $data['postDetail'] = $postModel->find($id);
+
+        if($data['postDetail'] == null){
+            return view('admin/404_admin');
+        }
+
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         // dd($data['tagModel']);
         return view('admin/post/editPost', $data);
@@ -433,6 +438,18 @@ class PostController extends BaseController
 
         $postModel->update($id, $data);
         return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
+    }
+
+    public function getDelete($id){
+
+        $postModel = new PostModel();
+        $post = $postModel->find($id);
+        if($post == null){
+            return view('admin/404_admin');
+        }
+
+        $postModel->delete(['id' => $id]);
+        return redirect()->to('admin/post');
     }
 
 

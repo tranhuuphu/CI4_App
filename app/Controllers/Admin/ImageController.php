@@ -133,7 +133,7 @@ class ImageController extends BaseController
                 }
                 catch (\Tinify\Exception $e){
                     session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/image/imageTiny')->with('image', $image);
+                    return redirect()->to('admin/image')->with('image', $image);
                 }
             }
         }
@@ -168,13 +168,13 @@ class ImageController extends BaseController
                 }
                 catch (\Tinify\Exception $e){
                     session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/image/imageTiny')->with('image', $image);
+                    return redirect()->to('admin/image')->with('image', $image);
                 }
             }
         }
 
         session()->setFlashdata('success', "Nén thành công");
-        return redirect()->to('admin/image/imageTiny', $data2);
+        return redirect()->to('admin/image', $data2);
     }
 
 
@@ -208,7 +208,7 @@ class ImageController extends BaseController
                     }
                     catch (\Tinify\Exception $e){
                         session()->setFlashdata('success', "Has Error");
-                        return redirect()->to('admin/image/imageTiny')->with('image', $image);
+                        return redirect()->to('admin/image')->with('image', $image);
                     }
                 }
 
@@ -234,7 +234,7 @@ class ImageController extends BaseController
                     }
                     catch (\Tinify\Exception $e){
                         session()->setFlashdata('success', "Has Error");
-                        return redirect()->to('admin/image/imageTiny')->with('image', $image);
+                        return redirect()->to('admin/image')->with('image', $image);
                     }
                 }
             }
@@ -242,7 +242,7 @@ class ImageController extends BaseController
         
 
         session()->setFlashdata('success', "Nén thành công");
-        return redirect()->to('admin/image/imageTiny')->with('image', $image);
+        return redirect()->to('admin/image')->with('image', $image);
 
     }
 

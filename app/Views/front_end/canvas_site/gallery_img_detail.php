@@ -19,13 +19,13 @@
   <div class="content-wrap">
     <div class="container">
       <div class="row g-5 py-md-5">
-        <div class="col-lg-5 col-xl-8 portfolio-single-image">
+        <div class="col-lg-4 col-xl-8 portfolio-single-image">
           <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
             <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
           </a>
         </div>
 
-        <div class="col-lg-7 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
+        <div class="col-lg-8 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
           <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
           
           
@@ -66,14 +66,23 @@
                   $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
                   $image_width = $image_info[0];
                   $image_height = $image_info[1];
-                  echo "<i class='fa-light fa-ruler fa-rotate-90'></i>".' '.$image_width.'x'.$image_height.'px';
+                  echo "<i class='fa-solid fa-ruler'></i>".' '.$image_width.'x'.$image_height.' pixel';
                 ?>
+
+                <?php
+
+                  $img = get_headers(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']), 1);
+                  echo ceil($img["Content-Length"]/1024)."Kb";
+                ?>
+
               </p>
             </div>
 
             <div class="col-6">
               <h5 class="mb-2">Download this Image</h5>
-              <p class="text-medium op-082 mb-0"><a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fa-duotone fa-download"></i></a></p>
+              <p class="text-medium op-082 mb-0">
+                <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fa-duotone fa-download"></i></a>
+              </p>
             </div>
             
           </div>

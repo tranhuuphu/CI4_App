@@ -24,7 +24,7 @@
 	  </div>
 
 	  <!-- navbar -->
-	  <?= $this->include('admin/navbar'); ?>
+	  <?= $this->include('admin/navbar_admin'); ?>
 
 	  <?= $this->renderSection('content'); ?>
 
@@ -137,6 +137,8 @@
 	      "pageLength": 30,
 	    });
 	  });
+
+	  
 	</script>
 
 	<script>

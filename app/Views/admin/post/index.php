@@ -38,7 +38,7 @@
 
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover" style="width:100%">
+                <table id="example1" class="table table-bordered table-hover" style="width:100%">
                   <thead>
 	                  <tr class="thead-dark">
                       <th>Order</th>
@@ -209,7 +209,7 @@
 		                    <td>
 
                           <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   

@@ -10,8 +10,8 @@
     <div class="container clearfix">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-        <li class="breadcrumb-item active" ><a href="#" style="color: #299ef2">Đặt Hàng</a></li>
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
+        <li class="breadcrumb-item active" ><a href="<?= base_url('dat-hang') ?>" style="color: #299ef2">Đặt Hàng</a></li>
       </ol>
     </div>
   </section>
@@ -38,9 +38,9 @@
                   <th class="cart-product-thumbnail">#</th>
                   <th class="cart-product-thumbnail">Image</th>
                   <th class="cart-product-name">Name</th>
-                  <th class="cart-product-quantity">Quantity</th>
                   <th class="cart-product-quantity">Price</th>
-                  <th class="cart-product-subtotal">Total</th>
+                  <th class="cart-product-quantity">Quantity</th>
+                  <th class="cart-product-subtotal">Total (VNĐ)</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,12 +56,13 @@
                         <td class="cart-product-name">
                           <a href="#"><?= $item['prod_name'] ?></a>
                         </td>
-                        <td class="cart-product-quantity">
-                          <span><?= $item['quantity'] ?></span>
-                        </td>
                         <td class="cart-product-price">
                           <span class="amount"><?= number_format($item['prod_price'], 0, ',', '.'); ?></span>
                         </td>
+                        <td class="cart-product-quantity">
+                          <span>x<?= $item['quantity'] ?></span>
+                        </td>
+                        
                         
                         <td class="cart-product-subtotal">
                           <span class="amount"><strong><?= number_format($item['prod_price']*$item['quantity'], 0, ',', '.'); ?></strong></span>

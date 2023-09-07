@@ -93,6 +93,20 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('hidden/(:num)',"Admin\PostController::hidden/$1");
         $routes->post('hidden/(:num)',"Admin\PostController::hidden/$1");
 
+        $routes->get('del/(:num)',"Admin\PostController::getDelete/$1");
+
+
+    });
+
+    $routes->group("don-hang", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\DonHangController::index");
+        $routes->get('edit/(:num)/(:num)',"Admin\DonHangController::getEdit/$1/$2");
+        $routes->post('edit/(:num)/(:num)',"Admin\DonHangController::SaveEdit/$1/$2");
+        $routes->get('del/(:num)',"Admin\DonHangController::getDelete/$1");
+
+        
+
     });
 
     $routes->group("gallery", function($routes){

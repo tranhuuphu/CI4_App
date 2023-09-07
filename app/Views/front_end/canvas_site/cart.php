@@ -8,7 +8,7 @@
     <div class="container clearfix">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
         <li class="breadcrumb-item active" ><a href="<?= site_url('gio-hang') ?>" style="color: #299ef2">Giỏ Hàng</a></li>
       </ol>
     </div>

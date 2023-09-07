@@ -449,7 +449,8 @@ class CanvasController extends BaseController
             // return $this->response->redirect(site_url('gio-hang'), ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
             return view('front_end/canvas_site/check-out', ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
         }
-        
+
+
         $data2['order_name']        = $this->request->getPost('name');
         $data2['order_phone']       = $this->request->getPost('phone');
         $data2['order_adress']      = $this->request->getPost('address');

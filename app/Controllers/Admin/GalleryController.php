@@ -29,7 +29,7 @@ class GalleryController extends BaseController
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
-        return view('admin/gallery/index', $data);
+        return view('admin/gallery/index_gallery', $data);
     }
 
     public function getGallery()
@@ -41,7 +41,7 @@ class GalleryController extends BaseController
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
         // dd($data);
-        return view('admin/gallery/create', $data);
+        return view('admin/gallery/create_gallery', $data);
     }
 
     public function saveGallery()
@@ -97,7 +97,7 @@ class GalleryController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/gallery/create', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url]);
+            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url]);
         }
 
 
@@ -112,6 +112,12 @@ class GalleryController extends BaseController
         }else{
             $data['gallery_post_url']       = null;
             $data['gallery_post_id']        = null; 
+        }
+
+        if($this->request->getPost('gallery_file_download') != null){
+            $data['gallery_file_download']       = $this->request->getPost('gallery_post_id');
+        }else{
+            $data['gallery_file_download']       = null;
         }
         
 
@@ -263,6 +269,12 @@ class GalleryController extends BaseController
         }else{
             $data['gallery_post_url']       = null;
             $data['gallery_post_id']        = null; 
+        }
+
+        if($this->request->getPost('gallery_file_download') != null){
+            $data['gallery_file_download']       = $this->request->getPost('gallery_post_id');
+        }else{
+            $data['gallery_file_download']       = null;
         }
 
 

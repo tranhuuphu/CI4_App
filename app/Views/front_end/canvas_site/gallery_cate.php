@@ -63,8 +63,19 @@
 
             <div class="portfolio-desc">
               <h3><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
+
+
               
-              <span><i class="fa-solid fa-image"></i>  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a></span>
+              <span>
+                <i class="fa-solid fa-image"></i>
+                <?php
+                  $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
+                  $image_width = $image_info[0];
+                  $image_height = $image_info[1];
+                  echo $image_width.'x'.$image_height.' pixel';
+                ?>
+                <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+              </span>
             </div>
           </div>
         </article>

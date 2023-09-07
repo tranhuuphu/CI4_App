@@ -23,7 +23,7 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-light fa-house"></i></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-solid fa-house"></i></a></li>
 	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>" style="color: #299ef2"><?= $cate_name ?></a></li>
 	    </ol>
 	  </div>
@@ -86,7 +86,9 @@
 							              </li>
 							              <?php if($post_cate_1[0]['post_status'] == "san-pham"): ?>
 								              <li>
-								                <i class="fa-solid fa-cart-shopping"></i>
+								              	<a href="<?= site_url('buy').'/'.$post_cate_1[0]['id']; ?>">
+									                <i class="fa-solid fa-cart-shopping"></i>
+									              </a>
 								              </li>
 								            <?php endif; ?>
                           </ul>
