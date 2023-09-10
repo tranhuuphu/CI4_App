@@ -24,10 +24,10 @@
           <div class="col-12">
             
             <?php if(!empty(session()->getFlashdata('success'))) : ?>
-              <div class="alert alert-success alert-dismissible">
+              <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fas fa-check"></i> Alert!</h5>
-                <?= session()->getFlashdata('success'); ?>
+                Bạn vừa thêm mới hoặc chỉnh sửa nội dung: <strong><?= session()->getFlashdata('success'); ?></strong>
               </div>
             <?php endif ?>
 
@@ -42,9 +42,10 @@
                   <thead>
 	                  <tr class="thead-dark">
                       <th>Thứ tự</th>
-	                    <th width="30%">Ảnh</th>
                       <th>Tiêu Đề</th>
-	                    <th>Số Lần Đã Nén</th>
+	                    <th>Ảnh</th>
+	                    <th>Thuộc Phân Loại</th>
+                      <th>Link File</th>
 	                    <th>Bài Viết Liên Quan</th>
                       <th>Option</th>
 	                  </tr>
@@ -54,28 +55,24 @@
                   	<?php foreach($gallery as $g): ?>
                         
                       
-		                  <tr
-                        <?php 
-                            if(isset($id)){
-                              if($g['id'] == $id){echo "class='table-primary'";}
-                            }
-                            
-
-                          ?>>
+		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $g['gallery_title'] ): ?> class="table-primary" <?php endif; ?>>
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
 
                         
 
-                        <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
-		                    <td><?= $g['gallery_title']; ?></td>
-                        <td><?= $g['gallery_compress_times']; ?></td>
-		                    
                         
+		                    <td><?= $g['gallery_title']; ?></td>
+                        <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
+                        <td><strong><?= $g['gallery_type_name']; ?></strong></td>
+		                    
+                        <td><?= $g['gallery_file_download']; ?></td>
 		                    <td>
-                          <button type="button" class="btn btn-warning">
-                            <i class="fas fa-eye"></i> <a href="<?= $g['gallery_post_url']; ?>" target="_blank">View Detail</a>
-                          </button>
+                          <?php if($g['gallery_post_url'] != null): ?>
+                            <button type="button" class="btn btn-warning">
+                              <i class="fas fa-eye"></i> <a href="<?= $g['gallery_post_url']; ?>" target="_blank">View Detail</a>
+                            </button>
+                          <?php endif; ?>
 
 
                         </td>
@@ -91,9 +88,10 @@
                   <tfoot>
                   <tr>
                     <th>Thứ tự</th>
-                    <th width="30%">Ảnh</th>
                     <th>Tiêu Đề</th>
-                    <th>Số Lần Đã Nén</th>
+                    <th>Ảnh</th>
+                    <th>Thuộc Phân Loại</th>
+                    <th>Link File</th>
                     <th>Bài Viết Liên Quan</th>
                     <th>Option</th>
                   </tr>

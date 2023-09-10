@@ -109,6 +109,17 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     });
 
+     $routes->group("type_gallery", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\GalleryTypeController::index");
+
+        $routes->get('create_type',"Admin\GalleryTypeController::getType");
+        $routes->post('store',"Admin\GalleryTypeController::store");
+        $routes->get('edit/(:num)',"Admin\GalleryTypeController::getEditType/$1");
+        $routes->post('save/(:num)',"Admin\GalleryTypeController::postEditType/$1");
+
+    });
+
     $routes->group("gallery", function($routes){
         //home in get == home in as
         $routes->get('/',"Admin\GalleryController::index");
@@ -164,15 +175,15 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     $routes->group("image", function($routes){
         //home in get == home in as
-        $routes->get('/',"Admin\ImageController::index");
+        $routes->get('/',"Admin\ImageCompressController::index");
 
-        $routes->get('imageTiny',"Admin\ImageController::imageTiny");
+        $routes->get('imageTiny',"Admin\ImageCompressController::imageTiny");
 
-        $routes->get('compress',"Admin\ImageController::compress");
-        $routes->post('compress',"Admin\ImageController::compress");
+        $routes->get('compress',"Admin\ImageCompressController::compress");
+        $routes->post('compress',"Admin\ImageCompressController::compress");
 
-        $routes->get('again',"Admin\ImageController::compressAgain");
-        $routes->post('again',"Admin\ImageController::compressAgain");
+        $routes->get('again',"Admin\ImageCompressController::compressAgain");
+        $routes->post('again',"Admin\ImageCompressController::compressAgain");
 
     });
 

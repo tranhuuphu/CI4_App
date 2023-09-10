@@ -2,7 +2,13 @@
 
 <?= $this->section('content'); ?>
 
-
+<?php if(!empty(session()->getFlashdata('success'))) : ?>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h5><i class="icon fas fa-check"></i> Alert!</h5>
+    <?= session()->getFlashdata('success'); ?>
+  </div>
+<?php endif ?>
 	
 	<?php if(isset($featured)): ?> 
 		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2" style="margin-top: -10px !important;">

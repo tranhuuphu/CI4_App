@@ -20,14 +20,14 @@ class PostController extends BaseController
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
 
-        return view('admin/post/index', $data);
+        return view('admin/post/index_post', $data);
     }
 
     public function getPost()
     {   
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
-        return view('admin/post/create', $data);
+        return view('admin/post/create_post', $data);
     }
 
     public function savePost()
@@ -83,7 +83,7 @@ class PostController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/post/create', ['validation'=>$this->validator, 'cate'=>$data['cate']]);
+            return view('admin/post/create_post', ['validation'=>$this->validator, 'cate'=>$data['cate']]);
         }
 
 
@@ -190,7 +190,7 @@ class PostController extends BaseController
 
         
         // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
-        return redirect()->to('admin/post')->with('id', $post_id);
+        return redirect()->to('admin/post')->with('success', $post_title);
     }
 
 
@@ -200,15 +200,15 @@ class PostController extends BaseController
         $cateModel = new CateModel();
         $tagModel = new TagModel();
         $data['cate'] = $cateModel->findAll();
-        $data['postDetail'] = $postModel->find($id);
+        $data['post_detail'] = $postModel->find($id);
 
-        if($data['postDetail'] == null){
+        if($data['post_detail'] == null){
             return view('admin/404_admin');
         }
 
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         // dd($data['tagModel']);
-        return view('admin/post/editPost', $data);
+        return view('admin/post/edit_post', $data);
     }
 
 
@@ -219,14 +219,14 @@ class PostController extends BaseController
         $postModel = new PostModel();
         $cateModel = new CateModel();
         $tagModel = new TagModel();
-
+        $data['cate'] = $cateModel->findAll();
         
         $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         // dd($tagList);
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         $detailPost = $postModel->find($id);
         $post_title = $this->request->getPost('post_title');
-        $data['postDetail'] = $detailPost;
+        $data['post_detail'] = $detailPost;
 
 
 
@@ -244,7 +244,7 @@ class PostController extends BaseController
                 ],
             ]);
             if(!$validation){
-                return view('admin/post/editPost', ['validation'=>$this->validator]);
+                return view('admin/post/edit_post', ['validation'=>$this->validator]);
             }
         }
         $validation = $this->validate([
@@ -271,6 +271,7 @@ class PostController extends BaseController
             $data['validation'] = $this->validator;
             return view('admin/post/editPost', $data);
         }
+        $data['post_title'] = $post_title;
         $post_title_slug = convert_name($post_title);
         $post_cate_id           = $this->request->getPost('post_cate_id');
         // dd($post_cate_id);
@@ -387,7 +388,7 @@ class PostController extends BaseController
             }
         }
     
-        return redirect()->to('admin/post')->with('id', $id);
+        return redirect()->to('admin/post')->with('success', $post_title);
         // return redirect()->to('admin/post');
     }
 
@@ -395,49 +396,27 @@ class PostController extends BaseController
     public function show($id){
         $postModel = new PostModel();
         
-        $postDetail = $postModel->find($id);
-        $data['post_cate_id']   = $postDetail['post_cate_id'];
-        $data['post_cate_slug'] = $postDetail['post_cate_slug'];
-        $data['post_title']     = $postDetail['post_title'];
-        $data['post_slug']      = $postDetail['post_slug'];
-        $data['post_intro']     = $postDetail['post_intro'];
-        $data['post_image']     = $postDetail['post_image'];
-        $data['post_status']    = $postDetail['post_status'];
-        $data['post_featured']  = $postDetail['post_featured'];
-        $data['post_content']   = $postDetail['post_content'];
-        $data['post_price']     = $postDetail['post_price'];
-        $data['post_sale']      = $postDetail['post_sale'];
-        $data['post_view']      = $postDetail['post_view'];
+        $post_detail = $postModel->find($id);
+        if($post_detail == null){
+            return view('admin/404_admin');
+        }
         $data['post_show']      = 1;
-        $data['post_meta_desc'] = $postDetail['post_meta_desc'];
-        $data['post_meta_key']  = $postDetail['post_meta_key'];
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ được hiển thị trên trang web");
+        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$post_detail['post_title']."---"." sẽ được hiển thị trên trang web");
     }
 
     public function hidden($id){
         $postModel = new PostModel();
         
-        $postDetail = $postModel->find($id);
-        $data['post_cate_id']   = $postDetail['post_cate_id'];
-        $data['post_cate_slug'] = $postDetail['post_cate_slug'];
-        $data['post_title']     = $postDetail['post_title'];
-        $data['post_slug']      = $postDetail['post_slug'];
-        $data['post_intro']     = $postDetail['post_intro'];
-        $data['post_image']     = $postDetail['post_image'];
-        $data['post_status']    = $postDetail['post_status'];
-        $data['post_featured']  = $postDetail['post_featured'];
-        $data['post_content']   = $postDetail['post_content'];
-        $data['post_price']     = $postDetail['post_price'];
-        $data['post_sale']      = $postDetail['post_sale'];
-        $data['post_view']      = $postDetail['post_view'];
+        $post_detail = $postModel->find($id);
+        if($post_detail == null){
+            return view('admin/404_admin');
+        }
         $data['post_show']      = 0;
-        $data['post_meta_desc'] = $postDetail['post_meta_desc'];
-        $data['post_meta_key']  = $postDetail['post_meta_key'];
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
+        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$post_detail['post_title']."---"." sẽ không hiển thị trên trang web");
     }
 
     public function getDelete($id){

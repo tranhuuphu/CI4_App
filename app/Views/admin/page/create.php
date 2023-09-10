@@ -39,7 +39,7 @@
 	              
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1">Tên Trang</label>
+	                    <label for="exampleInputEmail1">Tên Trang (URL)</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_name') : '' ?></p>
 	                    <input type="text" name="page_name" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?= set_value('page_name'); ?>">
 	                  </div>

@@ -162,16 +162,73 @@ class PageController extends BaseController
     public function getEdit($id){
         $pageModel = new PageModel();
 
-        $data['pageDetail'] = $pageModel->find($id);
+        $data['page_detail'] = $pageModel->find($id);
         // dd($data['tagModel']);
-        return view('admin/page/editPage', $data);
+        if($data['page_detail'] == null){
+            return view('admin/404_admin');
+        }
+
+        return view('admin/page/edit_page', $data);
     }
 
 
     public function SaveEdit($id)
     {
         $pageModel = new PageModel();
+        
         $check = $pageModel->find($id);
+        if($check == null){
+            return view('admin/404_admin');
+        }
+
+        $data['page_detail'] = $check;
+
+        $page_name = $this->request->getPost('page_name');
+
+        if($check['page_name'] == $page_name){
+            $data['page_name'] = $page_name;
+
+        }elseif($check['page_name'] != $page_name){
+            $validation = $this->validate([
+                'page_name'=>[
+                    'rules'=>'required|is_unique[page.page_title]',
+                    'errors' => [
+                        'required' => 'Tiêu đề không được để trống.',
+                        'is_unique' => 'Tiêu đề trùng với bài viết khác.',
+                    ],
+                ],
+            ]);
+            if(!$validation){
+                $data['validation'] = $this->validator;
+                return view('admin/page/edit_page', $data);
+            }
+        }
+        $validation = $this->validate([
+            'page_content'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung bài viết không được để trống.',
+                ],
+            ],
+            'page_meta_desc'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Description này không được để trống.',
+                ],
+            ],
+            'page_meta_key'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Key này không được để trống.',
+                ],
+            ],
+        ]);
+        
+        if(!$validation){
+            $data['validation'] = $this->validator;
+            return view('admin/page/edit_page', $data);
+        }
+
 
         if($check['page_status'] == 1){
             $data['page_status'] = 1;
@@ -216,49 +273,7 @@ class PageController extends BaseController
             $data['page_status']    = $this->request->getPost('page_status');
         }
 
-        $page_name = $this->request->getPost('page_name');
-        if($check['page_name'] == $page_name){
-            $data['page_name'] = $page_name;
-
-        }elseif($check['page_name'] != $page_name){
-            $validation = $this->validate([
-                'page_name'=>[
-                    'rules'=>'required|is_unique[post.page_title]',
-                    'errors' => [
-                        'required' => 'Tiêu đề không được để trống.',
-                        'is_unique' => 'Tiêu đề trùng với bài viết khác.',
-                    ],
-                ],
-            ]);
-            if(!$validation){
-                return view('admin/page/editPage', ['validation'=>$this->validator]);
-            }
-        }
-        $validation = $this->validate([
-            'page_content'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung bài viết không được để trống.',
-                ],
-            ],
-            'page_meta_desc'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Description này không được để trống.',
-                ],
-            ],
-            'page_meta_key'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Key này không được để trống.',
-                ],
-            ],
-        ]);
-        $data['pageDetail'] = $check;
-        if(!$validation){
-            $data['validation'] = $this->validator;
-            return view('admin/page/editPage', $data);
-        }
+        
 
         $page_slug = mb_strtolower(convert_name($page_name));
 

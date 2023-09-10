@@ -45,12 +45,23 @@
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></p>
 	                    <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?= set_value('gallery_title'); ?>">
 	                  </div>
+                    <hr>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper" style="color: red">Lựa chọn phân loại cho ảnh</label>
+                      <div class="form-group">
+                        <select class="selectpicker show-tick form-control select2 select2-danger" data-style="btn-default" data-live-search="true" name="gallery_type_id" style="width: 100%;">
+                          <?php foreach($gellary_type as $gt): ?>
+                            <option data-icon="fas fa-long-arrow-alt-right" value="<?= $gt['id']; ?>"> <?= $gt['gallery_type_name']; ?></option>
+                          <?php endforeach; ?>
+                        </select>
+                      </div>
+                    </div>
 	                  <hr>
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
                       <div class="form-group">
                         <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
-                          <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
+                          <option value=""> --- Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
                           <?php foreach($post_url as $p): ?>
                             <option data-icon="fas fa-circle" value="<?= $p['id']; ?>"> <?= $p['post_title']; ?></option>
                           <?php endforeach; ?>
@@ -59,10 +70,11 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link File (Nếu Có)</label>
+                      <label for="exampleInputEmail1" class="upper">Link File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
                       <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_file_download'); ?>">
                     </div>
+                    
 	                </div>
 	                <!-- /.card-body -->
 	            </div>
@@ -149,8 +161,8 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save This</button>
-                  <button type="submit" class="btn btn-danger float-right">Cancel</button>
+                  <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Save This</button>
+                  <a href="<?= base_url('admin/gallery'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
 	        		</div>
 	        	</div>
@@ -179,5 +191,5 @@
 
 
 <?= $this->section('title'); ?>
-  Thêm bài viết mới | AdminLTE 3
+  Thêm ảnh mới | bộ sưu tập
 <?= $this->endSection(); ?>

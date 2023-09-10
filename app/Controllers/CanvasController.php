@@ -112,6 +112,8 @@ class CanvasController extends BaseController
 
         $tag = new TagModel;
 
+        $gallery = new GalleryModel;
+
         $cate_detail = $cate->where('id', $id)->first();
 
         $paginate = 10;
@@ -125,15 +127,15 @@ class CanvasController extends BaseController
         $cate_id = $cate_detail['id'];
         $cate_parent = $cate_detail['cate_parent_id'];
         if($cate_parent == 0 && $cate_detail['cate_type'] == 'blog'){
-            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate(11);
+            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
         }elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery'){
 
-            $gallery = new GalleryModel;
+            
 
-            $post_cate  = $gallery->orderBy('id', 'desc')->paginate(11);
+            $post_cate  = $gallery->orderBy('id', 'desc')->paginate($paginate);
             $post_count = $gallery->countAllResults();
             $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
             $tag_this = null;
@@ -281,6 +283,9 @@ class CanvasController extends BaseController
                 return view('front_end/canvas_site/404');
             }
 
+            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->findAll();
+            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(3)->findAll();
+            
             $link_full = base_url().'/'.$slug2.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html';
             $data = [
                 'title'         => $gallery_img['gallery_title'],
@@ -290,7 +295,8 @@ class CanvasController extends BaseController
                 'created_at'    => $gallery_img['created_at'],
                 'updated_at'    => $gallery_img['updated_at'],
 
-                'related'       => '',
+                'related_1'       => $related_1,
+                'related_2'       => $related_2,
                 'previous'      => '',
                 'next'          => '',
                 'cate_detail'   => $cate_gallery,
@@ -301,6 +307,9 @@ class CanvasController extends BaseController
 
 
             ];
+
+
+
             return view('front_end/canvas_site/gallery_img_detail', $data);
 
         }
@@ -464,9 +473,8 @@ class CanvasController extends BaseController
         $donHang->insert($data2);
 
         session_destroy();
-        session()->setFlashdata('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại và xử lý sớm nhất có thể");
 
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại với bạn để xác nhận đơn hàng");
     }
 
 

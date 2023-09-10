@@ -5,16 +5,9 @@ use App\Controllers\BaseController;
 use App\Models\PostModel;
 use App\Models\CateModel;
 use App\Models\GalleryModel;
+use App\Models\GalleryTypeModel;
 
-\Tinify\setKey("dqfNvv6jcrg3zVgWJ5PHBt5qkxRCWVbD");
-\Tinify\validate();
 
-$compressionsThisMonth = \Tinify\compressionCount();
-if ($compressionsThisMonth > 499) {
-  \Tinify\setKey("7sl7bwWF53lqNKYGWQbFmDr8zyGdJvvV");
-  \Tinify\validate();
-  $compressionsThisMonth2 = \Tinify\compressionCount();
-}
 
 
 class GalleryController extends BaseController
@@ -34,10 +27,13 @@ class GalleryController extends BaseController
 
     public function getGallery()
     {   
-        $cateModel = new CateModel();
-        $post = new PostModel();
+        $cateModel      = new CateModel();
+        $post           = new PostModel();
+        $gellaryType    = new GalleryTypeModel();
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
+
+        $data['gellary_type'] = $gellaryType->findAll();
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
         // dd($data);
@@ -51,10 +47,11 @@ class GalleryController extends BaseController
         $galleryModel = new GalleryModel();
         $cateModel = new CateModel();
         $post = new PostModel();
+        $gellaryType    = new GalleryTypeModel();
 
         $cate = $cateModel->where('cate_type', 'cate_gallery')->first();
+        $gellary_type = $gellaryType->findAll();
 
-        // $post_url = $post->select('cate.id, cate.cate_slug, post.post_cate_id, post.post_slug, post.id, post.post_title, post.id as p_id')->join('cate', 'cate.id = post.post_cate_id', 'left')->find();
         $post_url = $post->select('post.id, post.post_title')->findAll();
 
 
@@ -80,6 +77,7 @@ class GalleryController extends BaseController
                     'max_size' => 'Kích trước file quá lớn.',
                 ],
             ],
+
             'gallery_meta_desc'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -97,10 +95,10 @@ class GalleryController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url]);
+            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url, 'gellary_type'=> $gellary_type]);
         }
 
-
+        
         
         
         if($this->request->getPost('gallery_post_id') != null){
@@ -121,13 +119,17 @@ class GalleryController extends BaseController
         }
         
 
+        
 
+        $gallery_id = $this->request->getPost('gallery_type_id');
+        $gellary_type = $gellaryType->find($gallery_id);
+        $data['gallery_type_id']        = $gallery_id;
+        $data['gallery_type_name']      = $gellary_type['gallery_type_name'];
+        $data['gallery_type_slug']      = $gellary_type['gallery_type_slug'];
 
 
         $gallery_title = $this->request->getPost('gallery_title');
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
-
-        
 
         $data['gallery_title']          = $gallery_title;
         $data['gallery_title_slug']     = $gallery_title_slug;
@@ -171,7 +173,7 @@ class GalleryController extends BaseController
         }
         
         // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
-        return redirect()->to('admin/gallery')->with('id', $id = $galleryModel->insertID());
+        return redirect()->to('admin/gallery')->with('success', $gallery_title);
     }
 
 
@@ -180,13 +182,22 @@ class GalleryController extends BaseController
         $cateModel = new CateModel();
         $post = new PostModel();
         $galleryModel = new GalleryModel();
+        $gellaryType    = new GalleryTypeModel();
+
+        $data['gallery'] = $galleryModel->find($id);
+
+        if($data['gallery'] == null){
+            return view('admin/404_admin');
+        }
+
+        $data['gellary_type'] = $gellaryType->findAll();
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
-        $data['gallery'] = $galleryModel->find($id);
-        // dd($data['tagModel']);
-        return view('admin/gallery/editGallery', $data);
+        
+        
+        return view('admin/gallery/edit_gallery', $data);
     }
 
 
@@ -195,12 +206,19 @@ class GalleryController extends BaseController
         $post = new PostModel();
         $cateModel = new CateModel();
         $galleryModel = new GalleryModel();
+        $gellaryType    = new GalleryTypeModel();
+
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
         
 
         $gallery_detail = $galleryModel->find($id);
+
+        if($gallery_detail == null){
+            return view('admin/404_admin');
+        }
+
         $data['gallery'] = $gallery_detail;
         $gallery_title = $this->request->getPost('gallery_title');
         $data['gallery_title'] = $gallery_title;
@@ -221,7 +239,7 @@ class GalleryController extends BaseController
                 ],
             ]);
             if(!$validation){
-                return view('admin/gallery/editGallery', ['validation'=>$this->validator]);
+                return view('admin/gallery/edit_gallery', ['validation'=>$this->validator]);
             }
         }
         $validation = $this->validate([
@@ -245,6 +263,14 @@ class GalleryController extends BaseController
             $data['validation'] = $this->validator;
             return view('admin/gallery/editGallery', $data);
         }
+
+        $gallery_id = $this->request->getPost('gallery_type_id');
+        $gellary_type = $gellaryType->find($gallery_id);
+
+        $data['gallery_type_id']        = $gallery_id;
+        $data['gallery_type_name']      = $gellary_type['gallery_type_name'];
+        $data['gallery_type_slug']      = $gellary_type['gallery_type_slug'];
+
 
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
 
@@ -272,7 +298,7 @@ class GalleryController extends BaseController
         }
 
         if($this->request->getPost('gallery_file_download') != null){
-            $data['gallery_file_download']       = $this->request->getPost('gallery_post_id');
+            $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
         }else{
             $data['gallery_file_download']       = null;
         }
@@ -327,7 +353,7 @@ class GalleryController extends BaseController
             }
         }
     
-        return redirect()->to('admin/gallery')->with('id', $id);
+        return redirect()->to('admin/gallery')->with('success', $gallery_title);
         // return redirect()->to('admin/post');
     }
 
