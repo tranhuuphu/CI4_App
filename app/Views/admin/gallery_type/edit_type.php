@@ -80,7 +80,7 @@
   <script type="text/javascript">
     $(".type_gallery_active").addClass("menu-open");
     $(".type_gallery_active a:first").addClass("active");
-    $(".type_gallery_active .type_gallery_tree_active a:first").addClass("active");
+    $(".type_gallery_active .type_gallery_tree_active3 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

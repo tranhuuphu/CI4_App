@@ -186,7 +186,7 @@
   <script type="text/javascript">
     $(".gallery_active").addClass("menu-open");
     $(".gallery_active a:first").addClass("active");
-    $(".gallery_active .gallery_tree_active a:first").addClass("active");
+    $(".gallery_active .gallery_tree_active3 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

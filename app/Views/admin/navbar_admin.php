@@ -240,6 +240,13 @@
                 <p>Thêm mới</p>
               </a>
             </li>
+
+            <li class="nav-item cate_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
+              </a>
+            </li>
             
           </ul>
         </li>
@@ -262,6 +269,12 @@
               <a href="<?= base_url('admin/post/create'); ?>" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Thêm bài viết</p>
+              </a>
+            </li>
+            <li class="nav-item post_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
               </a>
             </li>
           </ul>
@@ -288,6 +301,12 @@
                 <p>Thêm bài viết</p>
               </a>
             </li>
+            <li class="nav-item page_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
+              </a>
+            </li>
           </ul>
         </li>
 
@@ -310,6 +329,12 @@
               <a href="<?= base_url('admin/type_gallery/create_type'); ?>" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Thêm Loại Gallery</p>
+              </a>
+            </li>
+            <li class="nav-item type_gallery_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
               </a>
             </li>
           </ul>
@@ -335,6 +360,12 @@
               <a href="<?= base_url('admin/gallery/create'); ?>" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Thêm Ảnh</p>
+              </a>
+            </li>
+            <li class="nav-item gallery_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
               </a>
             </li>
           </ul>

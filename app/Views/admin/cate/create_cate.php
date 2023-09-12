@@ -39,22 +39,22 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tiêu đề danh mục</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_name') : '' ?></p>
                     <input type="text" name="cate_name" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề" value="<?= old('cate_name'); ?>">
                   </div>
                   <hr>
 
                   <div class="form-group">
-	                  <label>Là danh mục lớn hay danh mục con?</label>
+	                  <label>Là danh mục lớn hay danh mục con của?</label>
 
 
 	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_parent_id">
-	                  	<option selected="selected" data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
+	                  	<option selected="selected" data-icon="fas fa-dot-circle" value="0" style="text-bold">Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate as $c): ?>
-                        <option data-icon="fas fa-check" value="<?= $c['id']; ?>"><?= $c['cate_name']; ?></option>
+                        <option data-icon="fas fa-minus" <?php if($c['cate_type']== "blog" || $c['cate_type']== "cate_gallery"): ?> disabled <?php endif; ?> value="<?= $c['id']; ?>"><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
 
-                      
 										</select>
 
 	                </div>
@@ -107,10 +107,12 @@
 
 	              	<div class="form-group">
                     <strong>Meta Desc:</strong>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_meta_desc') : '' ?></p>
                     <textarea class="form-control" style="height:120px" name="cate_meta_desc" maxlength="255"><?= old('cate_meta_desc'); ?></textarea>
                   </div>
                   <div class="form-group">
                     <strong>Meta Key:</strong>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_meta_key') : '' ?></p>
                     <textarea class="form-control" style="height:120px" name="cate_meta_key" maxlength="255"><?= old('cate_meta_key'); ?></textarea>
                   </div>
 
@@ -128,8 +130,8 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save</button>
-                  <button type="submit" class="btn btn-default float-right">Cancel</button>
+                  <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Save this</button>
+                  <a href="<?= base_url('admin/cate'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
 	        		</div>
 	        	</div>

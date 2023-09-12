@@ -285,6 +285,9 @@ class CanvasController extends BaseController
 
             $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->findAll();
             $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(3)->findAll();
+
+            $previous = $gallery->orderBy('id', 'desc')->where('id <', $id)->first();
+            $next = $gallery->orderBy('id', 'desc')->where('id >', $id)->first();
             
             $link_full = base_url().'/'.$slug2.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html';
             $data = [
@@ -297,8 +300,8 @@ class CanvasController extends BaseController
 
                 'related_1'       => $related_1,
                 'related_2'       => $related_2,
-                'previous'      => '',
-                'next'          => '',
+                'previous'      => $previous,
+                'next'          => $next,
                 'cate_detail'   => $cate_gallery,
 
                 'gallery_img'   => $gallery_img,
@@ -709,6 +712,7 @@ class CanvasController extends BaseController
     public function getSearch(){
 
         $post = new PostModel;
+        $gallery = new GalleryModel;
 
         $key = $_GET['q'];
         $paginate = 10;

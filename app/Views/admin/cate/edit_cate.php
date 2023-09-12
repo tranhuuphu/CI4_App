@@ -28,6 +28,16 @@
 	        <div class="row">
 	          <!-- left column -->
 
+	          <div class="col-md-12">
+	          	<?php if(!empty(session()->getFlashdata('errors'))) : ?>
+	              <div class="alert alert-danger alert-dismissible">
+	                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+	                Lỗi: <strong><?= session()->getFlashdata('errors'); ?> <span style="color:yellow;">"để khắc phục lỗi hãy chuyển danh mục con thành các danh mục lớn sau đó thực hiện lại thao tác!"</span></strong>
+	              </div>
+	            <?php endif ?>
+	          </div>
+
 	          <div class="col-md-7">
 	            <!-- general form elements -->
 	            <div class="card card-primary">
@@ -40,19 +50,20 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tiêu đề danh mục</label>
-                    <input type="text" name="cate_name" value="<?= $cate['cate_name'] ?>" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề">
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_name') : '' ?></p>
+                    <input type="text" name="cate_name" value="<?php if(old('cate_name') != null){echo set_value('cate_name');}else{echo $cate['cate_name'];} ?>" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề">
                   </div>
                   <hr>
 
                   <div class="form-group">
-	                  <label>Là danh mục lớn hay danh mục con</label>
+	                  <label>Là danh mục lớn hay danh mục con của?</label>
 
 
 	                  <select class="selectpicker show-tick show-menu-arrow form-control" data-live-search="true" name="cate_parent_id">
-	                  	<option <?php if($cate['cate_parent_id'] == 0){echo "selected";} ?> data-icon="fas fa-star-of-lif" value="0" style="text-bold">--- Danh Mục Lớn</option>
+	                  	<option <?php if($cate['cate_parent_id'] == 0){echo "selected";} ?> data-icon="fas fa-dot-circle" value="0" style="text-bold">Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate_all as $c): ?>
-                        <option value="<?= $c['id']; ?>" <?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?> ><?= $c['cate_name']; ?></option>
+                        <option data-icon="fas fa-minus" value="<?= $c['id']; ?>" <?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?> <?php if($c['cate_type']== "blog" || $c['cate_type']== "cate_gallery"): ?> disabled <?php endif; ?> <?php if($cate['cate_name']== $c['cate_name'] ): ?> disabled <?php endif; ?> ><?= $c['cate_name']; ?></option>
                       <?php endforeach; ?>
 
                       
@@ -120,11 +131,13 @@
 
 	              	<div class="form-group">
                     <strong>Meta Desc:</strong>
-                    <textarea class="form-control" style="height:120px" name="cate_meta_desc" maxlength="255"><?= $cate['cate_meta_desc'] ?></textarea>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_meta_desc') : '' ?></p>
+                    <textarea class="form-control" style="height:120px" name="cate_meta_desc" maxlength="255"><?php if(old('cate_meta_desc') != null){echo set_value('cate_meta_desc');}else{echo $cate['cate_meta_desc'];} ?></textarea>
                   </div>
                   <div class="form-group">
                     <strong>Meta Key:</strong>
-                    <textarea class="form-control" style="height:120px" name="cate_meta_key" maxlength="255"><?= $cate['cate_meta_key'] ?></textarea>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_meta_key') : '' ?></p>
+                    <textarea class="form-control" style="height:120px" name="cate_meta_key" maxlength="255"><?php if(old('cate_meta_key') != null){echo set_value('cate_meta_key');}else{echo $cate['cate_meta_key'];} ?></textarea>
                   </div>
 
 	              </div>
@@ -142,7 +155,7 @@
 	        		<div class="card card-success">
 	        			<div class="card-footer">
                   <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Save this</button>
-                  <a href="<?= base_url('admin/post'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
+                  <a href="<?= base_url('admin/cate'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
 	        		</div>
 	        	</div>
@@ -163,7 +176,7 @@
   <script type="text/javascript">
     $(".cate_active").addClass("menu-open");
     $(".cate_active a:first").addClass("active");
-    $(".cate_active .cate_tree_active a:first").addClass("active");
+    $(".cate_active .cate_tree_active3 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

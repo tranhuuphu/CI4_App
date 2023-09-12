@@ -185,7 +185,7 @@
   <script type="text/javascript">
     $(".page_active").addClass("menu-open");
     $(".page_active a:first").addClass("active");
-    $(".page_active .page_tree_active a:first").addClass("active");
+    $(".page_active .page_tree_active3 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>

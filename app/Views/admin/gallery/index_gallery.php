@@ -66,12 +66,12 @@
                         <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
                         <td><strong><?= $g['gallery_type_name']; ?></strong></td>
 		                    
-                        <td><?= $g['gallery_file_download']; ?></td>
+                        <td><?php if($g['gallery_file_download'] != null): ?> <a href="<?= $g['gallery_file_download']; ?>" target="_blank"><button type="button" class="btn btn-info"><i class="fas fa-link"></i> Link File</button></a> <?php endif; ?></td>
 		                    <td>
                           <?php if($g['gallery_post_url'] != null): ?>
-                            <button type="button" class="btn btn-warning">
-                              <i class="fas fa-eye"></i> <a href="<?= $g['gallery_post_url']; ?>" target="_blank">View Detail</a>
-                            </button>
+                            
+                            <a href="<?= $g['gallery_post_url']; ?>" target="_blank"><button type="button" class="btn btn-success"><i class="fas fa-eye"></i> View Detail</button></a>
+                            
                           <?php endif; ?>
 
 

@@ -71,11 +71,26 @@
                         <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $c['cate_name'] ): ?> class="table-info" <?php endif; ?>
                       >
                         <td><?= $i; ?></td>
-		                    <td><?= $c['cate_name']; ?> <small style="color: red"><?php if($c['cate_type'] == 'blog'){echo "Blog";}elseif($c['cate_type'] == 'cate_gallery'){echo "Cate Bộ Sưu Tập";} ?></small></td>
-		                    <td><?php if($c['cate_parent_id'] == 0){echo "danh mục lớn";}else{echo "<span style='color: blue'>danh mục con</span>";} ?></td>
-		                    <td><?php if($c['cate_status'] == 1){echo "<span class='text-bold'>danh mục nổi bật</span>";}else{echo "danh mục thường";} ?></td>
+		                    <td><strong><?= $c['cate_name']; ?></strong> <small style="color: red"><?php if($c['cate_type'] == 'blog'){echo "Blog";}elseif($c['cate_type'] == 'cate_gallery'){echo "Bộ Sưu Tập";} ?></small></td>
+		                    <td><?php if($c['cate_parent_id'] == 0){echo "<span class='text-bold' style='color:'>danh mục lớn</span>";}else{echo "<span style='color: blue'>danh mục con</span>";} ?></td>
+		                    <td><?php if($c['cate_status'] == 1){echo "<span class='text-bold' style='color: red'>danh mục nổi bật</span>";}else{echo "danh mục thường";} ?></td>
 		                    <td><a href="<?= base_url('admin/cate/edit/'.$c['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/cate/del/'.$c['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
+
+                      <?php foreach($cate2 as $c2): ?>
+                        <?php if($c2['cate_parent_id'] == $c['id']): ?>
+                          <tr
+                            <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $c2['cate_name'] ): ?> class="table-success" <?php endif; ?>
+                            <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $c2['cate_name'] ): ?> class="table-info" <?php endif; ?>
+                          >
+                            <td><?= $i+1; ?></td>
+                            <td><i class="fas fa-long-arrow-alt-right"></i> <?= $c2['cate_name']; ?></td>
+                            <td>danh mục con</span></td>
+                            <td><?php if($c2['cate_status'] == 1){echo "<span class='text-bold' style='color: red'>danh mục nổi bật</span>";}else{echo "danh mục thường";} ?></td>
+                            <td><a href="<?= base_url('admin/cate/edit/'.$c2['id']) ?>" class="btn btn-success ml-3"><i class="fas fa-edit"></i> Edit</a> <a href="<?= base_url('admin/cate/del/'.$c2['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-trash"></i> Delete</a></td>
+                      </tr>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
                       <?php $i += 1; ?>
 	                  <?php endforeach; ?>
                   

@@ -14,7 +14,8 @@ class CateController extends BaseController
 
     public function index(){
         $cateModel = new \App\Models\CateModel();
-        $data['cate'] = $cateModel->orderBy('id', 'DESC')->findAll();
+        $data['cate'] = $cateModel->orderBy('id', 'DESC')->where("cate_parent_id", 0)->findAll();
+        $data['cate2'] = $cateModel->orderBy('id', 'DESC')->where("cate_parent_id !=", 0)->findAll();
         return view('admin/cate/index_cate', $data);
     }
 
@@ -22,11 +23,12 @@ class CateController extends BaseController
     public function getCate()
     {
         $cateModel = new CateModel();
-        $data['cate'] = $cateModel->where('cate_parent_id', 0)->findAll();
+
+        $data['cate'] = $cateModel->orderBy("cate_type", 'DESC')->where('cate_parent_id', 0)->findAll();
         $data['cate_blog'] = $cateModel->where('cate_type', 'blog')->first();
         $data['cate_gallery'] = $cateModel->where('cate_type', 'cate_gallery')->first();
         // dd($data);
-        return view('admin/cate/create', $data);
+        return view('admin/cate/create_cate', $data);
     }
 
     public function store()
@@ -34,6 +36,40 @@ class CateController extends BaseController
         // $this->validate();
 
         $cateModel = new CateModel();
+
+        $data['cate'] = $cateModel->orderBy("cate_type", 'DESC')->where('cate_parent_id', 0)->findAll();
+        $data['cate_blog'] = $cateModel->where('cate_type', 'blog')->first();
+        $data['cate_gallery'] = $cateModel->where('cate_type', 'cate_gallery')->first();
+
+
+        $validation = $this->validate([
+            'cate_name'=>[
+                'rules'=>'required|is_unique[cate.cate_name]',
+                'errors' => [
+                    'required' => 'Tiêu đề không được để trống.',
+                    'is_unique' => 'Tiêu đề này đã được dùng.',
+                ],
+            ],
+            'cate_meta_desc'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Meta Desc không được để trống.',
+                ],
+
+            ],
+            'cate_meta_key'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Meta Key không được để trống.',
+                ],
+
+            ],
+            
+        ]);
+        if(!$validation){
+            $data['validation'] = $this->validator;
+            return view('admin/cate/edit_cate', $data);
+        }
 
         
 
@@ -55,15 +91,19 @@ class CateController extends BaseController
 
         
 
-        return redirect()->to('admin/cate')->with('success', $cate_name);
+        return redirect()->to('admin/create_cate')->with('success', $cate_name);
     }
     public function getEditCate($cate_id){
 
         $cateModel = new CateModel();
         
-        $data['cate'] = $cateModel->where('id', $cate_id)->first();
+        $data['cate'] = $cateModel->orderBy("cate_type", 'DESC')->where('id', $cate_id)->first();
+
+        if($data['cate'] == null){
+            return view('admin/404_admin');
+        }
         // dd($data);
-        $data['cate_all'] = $cateModel->where('cate_parent_id', 0)->findAll();
+        $data['cate_all'] = $cateModel->orderBy("cate_type", 'DESC')->where('cate_parent_id', 0)->findAll();
 
         $data['cate_blog']      = $cateModel->where('cate_type', 'blog')->first();
         $data['cate_gallery']   = $cateModel->where('cate_type', 'cate_gallery')->first();
@@ -76,22 +116,30 @@ class CateController extends BaseController
         
         $cateModel = new CateModel();
 
+
+
         $cate_detail = $cateModel->where('id', $cate_id)->first();
         if($cate_detail == null){
             return view('admin/404_admin');
         }
 
+
+
         $cate_name = $this->request->getPost('cate_name');
-        $data['cate_name']         = $cate_name;
+        $data['cate']         = $cate_detail;
 
-        $data['cate'] = $cateModel->where('id', $cate_id)->first();
         // dd($data);
-        $data['cate_all'] = $cateModel->where('cate_parent_id', 0)->findAll();
-
+        $data['cate_all'] = $cateModel->orderBy("cate_type", 'DESC')->where('cate_parent_id', 0)->findAll();
         $data['cate_blog']      = $cateModel->where('cate_type', 'blog')->first();
         $data['cate_gallery']   = $cateModel->where('cate_type', 'cate_gallery')->first();
 
-
+        if($cate_detail['cate_parent_id'] == 0){
+            $cate_sub = $cateModel->where('cate_parent_id', $cate_detail['cate_parent_id'])->findAll();
+            if($cate_sub != null && $this->request->getPost('cate_parent_id') != 0){
+                // return view('admin/cate/edit_cate', $data)->with("errors", "có lỗi vì danh mục này chứa danh mục con");
+                return redirect()->to('admin/cate/edit/'.$cate_detail['id'])->with("errors", "Danh mục này chứa danh mục con");
+            }
+        }
 
         if($cate_detail['cate_name'] == $cate_name){
             $data['cate_name'] = $cate_name;
@@ -123,7 +171,7 @@ class CateController extends BaseController
             ]);
             if(!$validation){
                 $data['validation'] = $this->validator;
-                return view('admin/gallery/edit_cate', $data);
+                return view('admin/cate/edit_cate', $data);
             }
         }
 
@@ -152,7 +200,7 @@ class CateController extends BaseController
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
-            return view('admin/gallery/edit_cate', $data);
+            return view('admin/cate/edit_cate', $data);
         }
 
 
@@ -181,7 +229,8 @@ class CateController extends BaseController
             }
             
         }
-        
+
+
 
         return redirect()->to('admin/cate')->with('update', $cate_name);
     }
