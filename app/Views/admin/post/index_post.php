@@ -205,7 +205,11 @@
 		                    <td>
 
                           <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a>
+
+                          <a href="<?= base_url('admin/post/del_img/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post with image?')"><i class="fas fa-trash-alt"></i> <strong>Delete with Image</strong></a>
+                        </td>
+
 		                  </tr>
 	                  <?php endforeach; ?>
                   
