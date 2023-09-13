@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2023 at 04:07 PM
+-- Generation Time: Sep 13, 2023 at 05:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -72,8 +72,8 @@ CREATE TABLE `cate` (
 
 INSERT INTO `cate` (`id`, `cate_name`, `cate_slug`, `cate_parent_id`, `cate_status`, `cate_type`, `cate_meta_desc`, `cate_meta_key`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'In Kỹ Thuật Số', 'in-ky-thuat-so', 0, 1, 'normal', 'In Kỹ Thuật Số', 'In Kỹ Thuật Số, in, ngành in KTS', '2020-05-30 04:29:07', '2023-08-22 09:02:13', '2020-07-23 15:00:58'),
-(8, 'Dịch Vụ Du Lịch', 'dich-vu-du-lich', 1, 0, 'normal', 'Dịch Vụ Du Lịch', 'Dịch Vụ Du Lịch', '2020-07-23 15:12:15', '2023-09-10 07:01:57', NULL),
-(14, 'Blog', 'blog', 0, 0, 'blog', 'Blog Tin Tức Thiết Kế, Sản Phẩm', 'Blog Tin Tức Thiết Kế, Sản Phẩm', '2020-07-23 17:19:57', '2023-08-22 09:04:17', NULL),
+(8, 'Dịch Vụ Du Lịch', 'dich-vu-du-lich', 1, 0, 'normal', 'Dịch Vụ Du Lịch', 'Dịch Vụ Du Lịch', '2020-07-23 15:12:15', '2023-09-12 10:22:20', NULL),
+(14, 'Blog', 'blog', 0, 0, 'blog', 'Blog Tin Tức Thiết Kế, Sản Phẩm', 'Blog Tin Tức Thiết Kế, Sản Phẩm', '2020-07-23 17:19:57', '2023-09-12 10:09:56', NULL),
 (18, 'In Offset', 'in-offset', 0, 0, 'normal', 'In Offset, dịch vụ in nhanh bằng offset', 'In Offset, dịch vụ in nhanh bằng offset, offset 1 màu, offset 4 màu', '2022-12-13 04:34:44', '2023-08-22 09:03:01', NULL),
 (26, 'Bộ Sưu Tập', 'bo-suu-tap', 0, 0, 'cate_gallery', 'Bộ sưu tập ảnh PNG JPG chất lượng cao dung lượng thấp dành cho thiết kế tham khảo', 'Bộ sưu tập ảnh PNG JPG chất lượng cao dung lượng thấp dành cho thiết kế tham khảo', '2023-06-12 06:37:52', '2023-06-12 06:37:52', NULL);
 
@@ -126,10 +126,10 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `gallery_type_id`, `gallery_type_name`, `gallery_type_slug`, `gallery_title`, `gallery_title_slug`, `gallery_cate_id`, `gallery_image`, `gallery_post_url`, `gallery_file_download`, `gallery_post_id`, `gallery_view`, `gallery_compress_times`, `gallery_meta_key`, `gallery_meta_desc`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, NULL, 'test và xóa', 'test-va-xoa', 26, 'test-va-xoa-LYV2UJWfpdORZP6t.jpg', NULL, NULL, NULL, NULL, 4, 'test và xóa 2', 'test và xóa', '2023-06-15 21:52:07', '2023-08-23 12:34:19'),
-(2, NULL, NULL, NULL, 'Ảnh mới 2', 'anh-moi-2', 26, 'anh-moi-2-umAtOzgrxs0pBMF9.png', 'http://localhost/CI4_App/dich-vu-du-lich/Xe-tai-cho-thue-tai-binh-duong-2-24.html', NULL, NULL, 0, 4, 'Ảnh mới 2', 'Ảnh mới 2', '2023-06-15 22:07:18', '2023-08-23 12:34:25'),
-(3, NULL, NULL, NULL, 'có post id 2 moi sua', 'co-post-id-2-moi-sua', 26, 'co-post-id-2-moi-sua-RzMPpS4vtfqLysQ8.png', 'http://localhost/CI4_App/dich-vu-du-lich/Xe-tai-cho-thue-tai-binh-duong-2-24.html', NULL, 24, 0, 4, 'ertyn sfdhgjg', 'ertyn sfdhgjg', '2023-06-16 02:39:26', '2023-08-23 12:34:30'),
-(4, NULL, NULL, NULL, 'bài mới test gallery', 'bai-moi-test-gallery', 26, 'bai-moi-test-gallery-j6pvkyzSPwMeWIas.jpg', NULL, NULL, NULL, 0, 4, 'bài mới nhé', 'bài mới nhé', '2023-06-16 09:10:04', '2023-08-23 12:37:12'),
+(1, 2, 'phương tiện - xe cộ', 'phuong-tien---xe-co', 'test và xóa', 'test-va-xoa', 26, 'test-va-xoa-LYV2UJWfpdORZP6t.jpg', NULL, NULL, NULL, NULL, 4, 'test và xóa 2', 'test và xóa', '2023-06-15 21:52:07', '2023-09-10 10:19:44'),
+(2, 1, 'ẩm thực', 'am-thuc', 'Ảnh mới 2', 'anh-moi-2', 26, 'anh-moi-2-umAtOzgrxs0pBMF9.png', NULL, NULL, NULL, 0, 4, 'Ảnh mới 2', 'Ảnh mới 2', '2023-06-15 22:07:18', '2023-09-10 10:19:35'),
+(3, 1, 'ẩm thực', 'am-thuc', 'có post id 2 moi sua', 'co-post-id-2-moi-sua', 26, 'co-post-id-2-moi-sua-RzMPpS4vtfqLysQ8.png', 'http://localhost/CI4_App/dich-vu-du-lich/bai-viet-ban-hang-2-42.html', NULL, 42, 0, 4, 'ertyn sfdhgjg', 'ertyn sfdhgjg', '2023-06-16 02:39:26', '2023-09-10 09:42:52'),
+(4, 1, 'ẩm thực', 'am-thuc', 'bài mới test gallery', 'bai-moi-test-gallery', 26, 'bai-moi-test-gallery-j6pvkyzSPwMeWIas.jpg', NULL, 'https://getbootstrap.com/docs/5.0/content/tables/', NULL, 0, 4, 'bài mới nhé', 'bài mới nhé', '2023-06-16 09:10:04', '2023-09-10 10:19:21'),
 (5, 2, 'phương tiện - xe cộ', 'phuong-tien---xe-co', 'bài test có type', 'bai-test-co-type', 26, 'bai-test-co-type-LG0cOaVPDqt7U8Hh.jpg', NULL, NULL, NULL, 0, 0, 'bài test có type', 'bài test có type', '2023-09-10 05:07:08', '2023-09-10 06:06:21');
 
 -- --------------------------------------------------------
@@ -194,23 +194,16 @@ CREATE TABLE `image_tinycme` (
 --
 
 INSERT INTO `image_tinycme` (`id`, `image_TinyCME_name`, `image_TinyCME_status`, `image_size_original`, `image_size_compress`, `image_folder`, `created_at`, `updated_at`) VALUES
-(17, '0_0002_DSC02725.jpg', 4, '520519', '520519', 'tinymce', '2022-12-24 20:57:34', '2022-12-26 02:50:25'),
-(18, 'Giay in hóa đơn carbonless.jpg', 4, '305005', '118619', 'tinymce', '2022-12-24 20:57:44', '2022-12-26 02:50:42'),
-(31, 'bai-viet-show-last-id-insert.jpg', 4, '795994', '87651', 'image_asset', '2022-12-24 23:51:06', '2022-12-26 02:50:56'),
-(32, 'bai-viets-success.jpg', 3, '630726', '148053', 'image_asset', '2022-12-24 23:51:11', '2022-12-26 02:51:14'),
-(33, 'favicon_admin-TLGvH.jpg', 3, '163170', '69885', 'image_asset', '2022-12-24 23:51:17', '2022-12-26 02:51:25'),
-(34, 'fsad-adfasdf-sd.jpg', 2, '305005', '122965', 'image_asset', '2022-12-24 23:51:22', '2022-12-26 02:51:39'),
-(35, 'fsad-adfasdf-sd_1.jpg', 2, '305005', '122965', 'image_asset', '2022-12-24 23:51:28', '2022-12-26 02:51:43'),
-(36, 'favicon_admin-FrRLo.png', 1, '3062', '3008', 'tinymce', '2023-09-07 17:46:02', '2023-09-07 17:46:02'),
-(37, 'user_tran-huu-phu-2-pkbwK.png', 1, '437012', '419849', 'tinymce', '2023-09-07 17:46:16', '2023-09-07 17:46:16'),
-(38, '1200222-dWYBqo1xIFALTtPp.jpg', 1, '780831', '143469', 'image_asset', '2023-09-07 17:46:42', '2023-09-07 17:46:42'),
-(39, 'bai-nay-co-anh-1200x900-IaVqzN6cuFXfrSkJ.jpg', 1, '595284', '118152', 'image_asset', '2023-09-07 17:46:51', '2023-09-07 17:46:51'),
-(40, 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 1, '780831', '143469', 'image_asset', '2023-09-07 17:47:01', '2023-09-07 17:47:01'),
-(41, 'bai-viet-ban-hang-co-bo-anh-nDBe7YdVkLy908CO.jpg', 1, '1351534', '387330', 'image_asset', '2023-09-07 17:47:13', '2023-09-07 17:47:13'),
-(42, 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 1, '267801', '152967', 'image_asset', '2023-09-07 17:47:21', '2023-09-07 17:47:21'),
-(43, 'user_tran-huu-phu-ewP7q.jpg', 1, '1009168', '350284', 'image_asset', '2023-09-07 17:47:32', '2023-09-07 17:47:32'),
-(44, 'bai-viet-ban-hang-co-bo-anh-oEkXcybM7JK1tzTA.jpeg', 1, '220648', '103685', 'image_asset', '2023-09-07 17:47:40', '2023-09-07 17:47:40'),
-(45, 'favicon_admin-FJlfT.png', 1, '564317', '198135', 'image_asset', '2023-09-07 17:47:47', '2023-09-07 17:47:47');
+(36, 'favicon_admin-FrRLo.png', 3, '3062', '2891', 'tinymce', '2023-09-07 17:46:02', '2023-09-13 04:09:25'),
+(37, 'user_tran-huu-phu-2-pkbwK.png', 3, '437012', '400218', 'tinymce', '2023-09-07 17:46:16', '2023-09-13 04:09:36'),
+(38, '1200222-dWYBqo1xIFALTtPp.jpg', 3, '780831', '125339', 'image_asset', '2023-09-07 17:46:42', '2023-09-13 04:09:43'),
+(39, 'bai-nay-co-anh-1200x900-IaVqzN6cuFXfrSkJ.jpg', 3, '595284', '94547', 'image_asset', '2023-09-07 17:46:51', '2023-09-13 04:09:48'),
+(40, 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 3, '780831', '125339', 'image_asset', '2023-09-07 17:47:01', '2023-09-13 04:09:53'),
+(41, 'bai-viet-ban-hang-co-bo-anh-nDBe7YdVkLy908CO.jpg', 3, '1351534', '360019', 'image_asset', '2023-09-07 17:47:13', '2023-09-13 04:10:04'),
+(42, 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 3, '267801', '137935', 'image_asset', '2023-09-07 17:47:21', '2023-09-13 04:10:09'),
+(43, 'user_tran-huu-phu-ewP7q.jpg', 3, '1009168', '322846', 'image_asset', '2023-09-07 17:47:32', '2023-09-13 04:10:24'),
+(44, 'bai-viet-ban-hang-co-bo-anh-oEkXcybM7JK1tzTA.jpeg', 3, '220648', '69052', 'image_asset', '2023-09-07 17:47:40', '2023-09-13 04:10:36'),
+(45, 'favicon_admin-FJlfT.png', 2, '564317', '186045', 'image_asset', '2023-09-07 17:47:47', '2023-09-13 04:10:42');
 
 -- --------------------------------------------------------
 
@@ -316,7 +309,7 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `post_cate_id`, `post_cate_name`, `post_cate_slug`, `post_title`, `post_slug`, `post_intro`, `post_image`, `post_status`, `post_featured`, `post_content`, `post_price`, `post_sale`, `post_view`, `post_show`, `post_meta_desc`, `post_meta_key`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(42, 8, 'Dịch Vụ Du Lịch', 'dich-vu-du-lich', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2', 'bài viết bán hàng 2', 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 'san-pham', 0, '<p>b&agrave;i viết b&aacute;n h&agrave;ng 2</p>', 5000, 0, 19, '0', 'bài viết bán hàng 2bài viết bán hàng 2', 'bài viết bán hàng 2', '2023-06-17 01:45:40', '2023-09-10 06:57:05', NULL);
+(47, 14, NULL, 'blog', 'GIẤY DÙNG IN HÓA ĐƠN – BÁO BIỂU', 'giay-dung-in-hoa-don-–-bao-bieu', 'Mọi sản phẩm tới tay người tiêu dùng đều phải có nguyên liệu mới tạo được sản phẩm hoàn chỉnh, với mục đích phục vụ hoạt động kinh doanh sản xuất', 'giay-dung-in-hoa-don-–-bao-bieu-NmDWayK3xqObhzkL.jpg', 'normal', 0, '<div class=\"separator\"><em><strong>Mọi sản phẩm tới tay người ti&ecirc;u d&ugrave;ng đều phải c&oacute; nguy&ecirc;n liệu mới tạo được sản phẩm ho&agrave;n chỉnh, với mục đ&iacute;ch phục vụ hoạt động kinh doanh sản xuất, trong b&agrave;i viết n&agrave;y ch&uacute;ng ta sẽ t&igrave;m hiểu giấy dụng&nbsp;in h&oacute;a đơn &ndash; b&aacute;o biểu, l&agrave; nguy&ecirc;n liệu đầu ti&ecirc;n để phục vụ qu&aacute; tr&igrave;nh tạo n&ecirc;n cuốn&nbsp;h&oacute;a đơn. Ngo&agrave;i giấy th&igrave; th&igrave; c&ograve;n sử dụng c&aacute;c dụng cụ m&aacute;y m&oacute;c kh&aacute;c như: m&aacute;y in Riso MD5, m&aacute;y x&eacute;n, m&aacute;y cấn &hellip;, trong b&agrave;i viết n&agrave;y ch&uacute;ng ta chỉ t&igrave;m hiểu c&aacute;c loại giấy được sử dụng trong qu&aacute; tr&igrave;nh&nbsp;<a href=\"https://dailong.asia/\">in ấn</a>.</strong></em></div>\r\n<div class=\"separator\">&nbsp;</div>\r\n<div class=\"separator\"><em><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeIB9EqG7ESBAV4Ol0bSpDvGRL0GRWhqI-MDrxs8brusU1mV9Q6LsQOds69hIPjpzOQWYnNFkUeeWKY5AxJV9ZoJxEGDcS55YaxBHKlMxNuA7CRJozYEs5TO3EdlyDJcMKlRGFynEJ-DWCv_KCFp74CpaZOu8Ho_o_dkg2jwR5gQjSRibPTGb5IsWu/s2560/gi%E1%BA%A5y%20for%20in%20h%C3%B3a%20%C4%91%C6%A1n.jpg\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeIB9EqG7ESBAV4Ol0bSpDvGRL0GRWhqI-MDrxs8brusU1mV9Q6LsQOds69hIPjpzOQWYnNFkUeeWKY5AxJV9ZoJxEGDcS55YaxBHKlMxNuA7CRJozYEs5TO3EdlyDJcMKlRGFynEJ-DWCv_KCFp74CpaZOu8Ho_o_dkg2jwR5gQjSRibPTGb5IsWu/s320/gi%E1%BA%A5y%20for%20in%20h%C3%B3a%20%C4%91%C6%A1n.jpg\" width=\"320\" height=\"240\" border=\"0\" data-original-height=\"1920\" data-original-width=\"2560\" /></a></em></div>\r\n<h2 id=\"mcetoc_1ggfmn16714\">Thế n&agrave;o l&agrave; giấy in h&oacute;a đơn</h2>\r\n<p>L&agrave; loại giấy c&oacute; k&iacute;ch thước lớn hơn giấy in A4 th&ocirc;ng thường, định lượng thấp hơn giấy A4 thường d&ugrave;ng 70Gram, mục đ&iacute;ch của việc k&iacute;ch thước lớn hơn giấy in A4 th&ocirc;ng thường để cắt x&eacute;n ra 2 cuốn A5 m&agrave; kh&ocirc;ng bị thiếu k&iacute;ch thước khi cắt đ&ocirc;i tờ giấy A4, bởi v&igrave; th&ocirc;ng thường để c&oacute; 1 cuốn h&oacute;a đơn c&oacute; 4 g&oacute;c phẳng đẹp th&igrave; việc xếp bằng l&agrave; kh&ocirc;ng thể, thay v&agrave;o đ&oacute; người thợ l&agrave;m giấy sẽ cắt từng g&oacute;c cạnh. Với k&iacute;ch thước lớn hơn khổ giấy A4 th&igrave; sau khi cắt đ&ocirc;i để được khổ A5 th&igrave; xung quanh viền vẫn dư thừa 1 khoảng nhỏ để cắt gọt vu&ocirc;ng vức. Vậy n&ecirc;n l&yacute; do của việc d&ugrave;ng giấy c&oacute; k&iacute;ch thước lớn hơn khổ A4.</p>\r\n<p>&nbsp;</p>\r\n<div class=\"separator\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUjlVfOYeK-lfEwmODHCOlYB7V0HIZyBKr6WuIUkgab4DYIyuPjxUUPS91pRBFSrPMF43dX41LC1lbM0J-z--Q5UQcUYoGJW4rtgpfydqDODcOLV71VkYcO7Ygg1fBFPpyOKaMrazADTBd-vOcgXzgvxehOdjjLvWsimyFJwQ13nkzL9wAvG_7Wysa/s2560/H%C3%B3a%20%C4%91%C6%A1n.jpg\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUjlVfOYeK-lfEwmODHCOlYB7V0HIZyBKr6WuIUkgab4DYIyuPjxUUPS91pRBFSrPMF43dX41LC1lbM0J-z--Q5UQcUYoGJW4rtgpfydqDODcOLV71VkYcO7Ygg1fBFPpyOKaMrazADTBd-vOcgXzgvxehOdjjLvWsimyFJwQ13nkzL9wAvG_7Wysa/s320/H%C3%B3a%20%C4%91%C6%A1n.jpg\" width=\"320\" height=\"240\" border=\"0\" data-original-height=\"1920\" data-original-width=\"2560\" /></a></div>\r\n<h2 id=\"mcetoc_1ggfmn16715\">Giấy Ford</h2>\r\n<p>L&agrave; loại giấy d&ugrave;ng phổ biến nhất bởi v&igrave; bất cứ cuốn h&oacute;a đơn &ndash; b&aacute;o biểu n&agrave;o đều sử dụng, giấy n&agrave;y với mục đ&iacute;ch ghi trực tiếp l&ecirc;n đối với h&oacute;a đơn 1 li&ecirc;n, v&agrave; l&agrave; li&ecirc;n cuối c&ugrave;ng đối với h&oacute;a đơn từ 2 li&ecirc;n trở l&ecirc;n.</p>\r\n<p>K&iacute;ch thước: lớn hơn khổ giấy A4, định lượng thấp hơn 70 gram.</p>\r\n<p>&nbsp;</p>\r\n<div class=\"separator\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZmyokviZTdtkiUHsiSu6RSxKdwIS7Ch5OlJSEYMkWs4sTEYAC29LG4Nw0zDsLPaf26tr7GxyQLe290FVAuW0Sf_RkVQPyEtCf6YwqWDMVVF70sgfN7UmNA8lH7TwPubp09ra_pNbG3aUa2IKoeObrJQzdAxcpPTy5ucROvroRpuu4JlO-BvNKhMfe/s2560/gi%E1%BA%A5y%20for%20in%20h%C3%B3a%20%C4%91%C6%A1n.jpg\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZmyokviZTdtkiUHsiSu6RSxKdwIS7Ch5OlJSEYMkWs4sTEYAC29LG4Nw0zDsLPaf26tr7GxyQLe290FVAuW0Sf_RkVQPyEtCf6YwqWDMVVF70sgfN7UmNA8lH7TwPubp09ra_pNbG3aUa2IKoeObrJQzdAxcpPTy5ucROvroRpuu4JlO-BvNKhMfe/s320/gi%E1%BA%A5y%20for%20in%20h%C3%B3a%20%C4%91%C6%A1n.jpg\" width=\"320\" height=\"240\" border=\"0\" data-original-height=\"1920\" data-original-width=\"2560\" /></a></div>\r\n<h2 id=\"mcetoc_1ggfmn16716\">Giấy Carbonless</h2>\r\n<p>L&agrave; giấy được sử dụng cho h&oacute;a đơn từ 2 li&ecirc;n trở l&ecirc;n, với h&oacute;a đơn 2 li&ecirc;n th&igrave; sử dụng giấy carbonless m&agrave;u v&agrave;ng, nhiều hơn 2 li&ecirc;n th&igrave; d&ugrave;ng th&ecirc;m giấy m&agrave;u v&agrave;ng, m&agrave;u trắng. Với chức năng như giấy than copy nội dung từ bản tr&ecirc;n xuống bản dưới c&ugrave;ng l&agrave; giấy ford</p>\r\n<p>&nbsp;</p>\r\n<div class=\"separator\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlaP65H7zaoE452eBZktlaj2K9s_Xgnt1L1hCAKvi7p60DeHX8gyN7nAg7ioPOOjprjIx74Rgf7ijS8aoxmbi8PHBDcDVwWmZlLjd6BFPOmRjHj6lUg08IuP1HBan1huI6krPGEvotQ7hdkGZ0jATWdJ7f4uw0kmHMsGNtbb1m5VHvdpKPSS5yFa5L/s2048/Giay%20in%20h%C3%B3a%20%C4%91%C6%A1n%20carbonless.jpg\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlaP65H7zaoE452eBZktlaj2K9s_Xgnt1L1hCAKvi7p60DeHX8gyN7nAg7ioPOOjprjIx74Rgf7ijS8aoxmbi8PHBDcDVwWmZlLjd6BFPOmRjHj6lUg08IuP1HBan1huI6krPGEvotQ7hdkGZ0jATWdJ7f4uw0kmHMsGNtbb1m5VHvdpKPSS5yFa5L/s320/Giay%20in%20h%C3%B3a%20%C4%91%C6%A1n%20carbonless.jpg\" width=\"320\" height=\"240\" border=\"0\" data-original-height=\"1536\" data-original-width=\"2048\" /></a></div>\r\n<h2 id=\"mcetoc_1ggfmn16717\">Giấy b&igrave;a</h2>\r\n<p>Chỉ c&oacute; chức năng l&agrave;m b&igrave;a cuốn h&oacute;a đơn, ghi th&ocirc;ng tin cuốn h&oacute;a đơn g&igrave;, như: h&oacute;a đơn b&aacute;n lẻ, phiếu xuất kho, sổ nhập xuất, b&aacute;o biểu h&agrave;ng h&oacute;a,&hellip;</p>\r\n<p><em>M&agrave;u sắc:</em>&nbsp;tại C&ocirc;ng Ty Curie Việt Nam sử dụng m&agrave;u xanh da trời, m&agrave;u hồng nh&aacute;m.</p>\r\n<p>Như vậy qua b&agrave;i viết n&agrave;y c&aacute;c bạn đ&atilde; c&oacute; ch&uacute;t th&ocirc;ng tin về giấy in trong lĩnh vực in H&oacute;a Đơn &ndash; B&aacute;o Biểu</p>\r\n<p><strong>Li&ecirc;n hệ in h&oacute;a đơn &ndash; b&aacute;o biểu</strong></p>\r\n<p><em><strong>C&Ocirc;NG TY TNHH CURIE VIỆT NAM</strong></em></p>\r\n<p><em><strong>ĐỊA CHỈ: KHU PHỐ AN H&Ograve;A, PHƯỜNG H&Ograve;A LỢI, BẾN C&Aacute;T, B&Igrave;NH DƯƠNG</strong></em></p>\r\n<p><em><strong>HOTLINE: 0974 953 600 &ndash; Mr Ph&uacute;</strong></em></p>\r\n<p><em><strong>Email: phuth.me@gmail.com</strong></em></p>', NULL, NULL, 0, '1', 'Mọi sản phẩm tới tay người tiêu dùng đều phải có nguyên liệu mới tạo được sản phẩm hoàn chỉnh, với mục đích phục vụ hoạt động kinh doanh sản xuất', 'Mọi sản phẩm tới tay người tiêu dùng đều phải có nguyên liệu mới tạo được sản phẩm hoàn chỉnh, với mục đích phục vụ hoạt động kinh doanh sản xuất', '2023-09-13 03:02:31', '2023-09-13 03:02:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -562,7 +555,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `post_images`
