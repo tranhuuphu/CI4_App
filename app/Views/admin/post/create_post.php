@@ -248,8 +248,8 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Save This</button>
-                  <a href="<?= base_url('admin/post'); ?>" class="btn btn-danger float-right"><i class="far fa-window-close"></i> Cancel</a>
+                  <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Save this</button>
+                  <a href="<?= base_url('admin/post'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
 	        		</div>
 	        	</div>

@@ -27,7 +27,23 @@
               <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fas fa-check"></i> Alert!</h5>
-                Bạn vừa thêm mới hoặc chỉnh sửa bài viết: <strong><?= session()->getFlashdata('success'); ?></strong>
+                Bạn vừa thêm mới thành công bài viết: <strong><?= session()->getFlashdata('success'); ?></strong>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('update'))) : ?>
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                Bạn vừa chỉnh sửa thành công bài viết: <strong><?= session()->getFlashdata('update'); ?></strong>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('delete'))) : ?>
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                Bạn vừa xóa bài viết: <strong><?= session()->getFlashdata('delete'); ?></strong> <span style="color: yellow;"> & không thể phục hồi</span>
               </div>
             <?php endif ?>
 
@@ -35,7 +51,7 @@
 
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Thêm Bài Viết Mới</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/post/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus"></i> Thêm Bài Viết</a></h3>
               </div>
 
               <!-- /.card-header -->
@@ -57,7 +73,7 @@
                   	<?php foreach($post as $p): ?>
                         
                       
-		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $p['post_title'] ): ?> class="table-primary" <?php endif; ?>>
+		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $p['post_title'] ): ?> class="table-primary" <?php endif; ?> <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $p['post_title'] ): ?> class="table-info" <?php endif; ?>>
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
 		                    <td><?= $p['post_title']; ?></td>
@@ -83,8 +99,8 @@
                           <a href="<?php if($p['post_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
                         </td>
 		                    <td>
-                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
-                            <i class="fas fa-eye"></i> View
+                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
+                            <i class="fas fa-eye"></i>
                           </button>
 
                           <!-- /.modal -->
@@ -96,10 +112,8 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
-
                                 </div>
                                 <div class="modal-body">
-
                                   <table class="table table-striped">
                                     <thead>
                                       <tr>
@@ -143,29 +157,13 @@
                                       <tr>
                                         <th scope="row">06. Nổi bật</th>
                                         <td>
-                                          <?php 
-                                            
-                                            if($p['post_featured'] == 1){
-                                              echo "Yes";
-                                            }else{
-                                              echo "No";
-                                            }
-                                            
-                                          ?>
+                                          <?php if($p['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
                                         </td>
                                       </tr>
                                       <tr>
                                         <th scope="row">07. Sản Phẩm</th>
                                         <td>
-                                          <?php 
-                                            
-                                            if($p['post_status'] == 1){
-                                              echo "Yes";
-                                            }else{
-                                              echo "No";
-                                            }
-                                            
-                                          ?>
+                                          <?php if($p['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
                                         </td>
                                       </tr>
                                       <tr>
@@ -188,9 +186,11 @@
                                   </table>
 
                                 </div>
-                                <div class="modal-footer justify-content-between">
+                                <div class="modal-footer justify-content-">
+                                  <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Post</button></a>
+
                                   <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-                                  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" style="color: #000000;">Edit Post</a></button>
+                                  
                                 </div>
                               </div>
                               <!-- /.modal-content -->
@@ -204,10 +204,10 @@
                         </td>
 		                    <td>
 
-                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a>
+                          <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-primary ml-3"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 btn btn-warning" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a>
 
-                          <a href="<?= base_url('admin/post/del_img/'.$p['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this post with image?')"><i class="fas fa-trash-alt"></i> <strong>Delete with Image</strong></a>
+                          <a href="<?= base_url('admin/post/del_img/'.$p['id']) ?>" class="ml-3 btn btn-danger mt-3" onclick="return confirm('are you sure delete this post with image?')"><i class="fas fa-trash-alt"></i> <strong>Delete with Image</strong></a>
                         </td>
 
 		                  </tr>

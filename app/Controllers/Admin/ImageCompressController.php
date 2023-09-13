@@ -41,14 +41,38 @@ class ImageCompressController extends BaseController
         $data['compressionsThisMonth'] = \Tinify\compressionCount();
 
         // dd($img2);
-        return view('admin/image/TinyMce', $data);
+        return view('admin/image_tinify/index_image', $data);
     }
 
     function imageTiny(){
         $imageModel = new ImageModel();
         $data['image'] = $imageModel->findAll();
-        // $data['compressionsThisMonth'] = \Tinify\compressionCount();
-        return view('admin/image/index', $data);
+        $data['compressionsThisMonth'] = \Tinify\compressionCount();
+        return view('admin/image_tinify/index_compress', $data);
+    }
+
+    function check_image(){
+        $imageModel = new ImageModel();
+        $image = $imageModel->findAll();
+
+        foreach ($image as $value) {
+            if($value['image_folder'] == 'image_asset'){                    
+                $path = 'public/upload/tinymce/image_asset/'.'/'.$value['image_TinyCME_name'];
+                
+                if (!file_exists($path)){
+                    $imageModel->delete(['id' => $value['id']]);
+                }
+            }
+
+            if($value['image_folder'] == 'tinymce'){
+                $path2 = 'public/upload/tinymce/'.'/'.$value['image_TinyCME_name'];
+                if (!file_exists($path2)){
+                    $imageModel->delete(['id' => $value['id']]);
+                }
+            }
+        }
+
+        return redirect()->to('admin/image/imageTiny')->with('ok', "Ảnh đã được cập nhật");
     }
 
     public function compress()
@@ -95,8 +119,7 @@ class ImageCompressController extends BaseController
                     $imageModel->insert($data);
                 }
                 catch (\Tinify\Exception $e){
-                    session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/image')->with('image', $image);
+                    return redirect()->to('admin/image')->with('error', "Có lỗi xảy ra");
                 }
             }
         }
@@ -132,8 +155,7 @@ class ImageCompressController extends BaseController
                     $imageModel->insert($data3);
                 }
                 catch (\Tinify\Exception $e){
-                    session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/image')->with('image', $image);
+                    return redirect()->to('admin/image')->with('error', "Có lỗi xảy ra");
                 }
             }
         }
@@ -167,14 +189,13 @@ class ImageCompressController extends BaseController
                     $imageModel->insert($data3);
                 }
                 catch (\Tinify\Exception $e){
-                    session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/image')->with('image', $image);
+                    return redirect()->to('admin/image')->with('error', "Có lỗi xảy ra");
                 }
             }
         }
 
-        session()->setFlashdata('success', "Nén thành công");
-        return redirect()->to('admin/image', $data2);
+
+        return redirect()->to('admin/image', $data2)->with('success', "Nén thành công ảnh");
     }
 
 
@@ -207,8 +228,8 @@ class ImageCompressController extends BaseController
                         $imageModel->update($value['id'], $data);
                     }
                     catch (\Tinify\Exception $e){
-                        session()->setFlashdata('success', "Has Error");
-                        return redirect()->to('admin/image')->with('image', $image);
+
+                        return redirect()->to('admin/image/imageTiny')->with('image', $image);
                     }
                 }
 

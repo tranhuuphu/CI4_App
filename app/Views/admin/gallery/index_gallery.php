@@ -33,7 +33,7 @@
 
             <div class="card">
               <div class="card-header card-danger">
-                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/gallery/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus-circle"></i> Thêm Ảnh</a><a href="<?= base_url('admin/gallery/compress') ?>" class="btn btn-danger ml-3"><i class="fas fa-compress-arrows-alt"></i> Nén Ảnh</a></h3>
+                <h3 class="card-title text-bold">Danh Sách<a href="<?= base_url('admin/gallery/create') ?>" class="btn btn-primary ml-3"><i class="fas fa-plus"></i> Thêm Ảnh</a><a href="<?= base_url('admin/gallery/compress') ?>" class="btn btn-danger ml-3"><i class="fas fa-compress-arrows-alt"></i> Nén Ảnh</a></h3>
               </div>
 
               <!-- /.card-header -->
@@ -79,7 +79,7 @@
 		                    <td>
 
                           <a href="<?= base_url('admin/gallery/edit/'.$g['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/gallery/del/'.$g['id']) ?>" class="ml-3 text-red"><i class="fas fa-trash"></i> Delete</a></td>
+                          <a href="<?= base_url('admin/gallery/del/'.$g['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this image?')"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
                   

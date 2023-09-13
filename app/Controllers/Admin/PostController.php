@@ -97,14 +97,12 @@ class PostController extends BaseController
         
 
         $post_cate_id = $this->request->getPost('post_cate_id');
-        // dd($post_cate_id);
+        
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
-        $data['post_price']     = $this->request->getPost('post_price');
-        $data['post_sale']      = $this->request->getPost('post_sale');
         $data['post_status']    = $this->request->getPost('post_status');
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
@@ -114,8 +112,16 @@ class PostController extends BaseController
 
         $cateModel = new CateModel();
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
-        // dd($cate_slug);
+
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
+
+        if($cate_slug['cate_type'] == "blog"){
+            $data['post_price']     = null;
+            $data['post_sale']      = null;
+        }else{
+            $data['post_price']     = $this->request->getPost('post_price');
+            $data['post_sale']      = $this->request->getPost('post_sale');
+        }
         
         $img = $this->request->getFile('post_image');
 
@@ -225,6 +231,9 @@ class PostController extends BaseController
         // dd($tagList);
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         $detailPost = $postModel->find($id);
+        if($detailPost == null){
+            return view('admin/404_admin');
+        }
         $post_title = $this->request->getPost('post_title');
         $data['post_detail'] = $detailPost;
 
@@ -274,14 +283,12 @@ class PostController extends BaseController
         $data['post_title'] = $post_title;
         $post_title_slug = convert_name($post_title);
         $post_cate_id           = $this->request->getPost('post_cate_id');
-        // dd($post_cate_id);
+
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
-        $data['post_price']     = $this->request->getPost('post_price');
-        $data['post_sale']      = $this->request->getPost('post_sale');
         $data['post_status']    = $this->request->getPost('post_status');
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
@@ -289,8 +296,16 @@ class PostController extends BaseController
         $data['post_show']      = $detailPost['post_show'];
 
         $cate_slug = $cateModel->where('id', $this->request->getPost('post_cate_id'))->first();
-        // dd($cate_slug);
+
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
+
+        if($cate_slug['cate_type'] == "blog"){
+            $data['post_price']     = null;
+            $data['post_sale']      = null;
+        }else{
+            $data['post_price']     = $this->request->getPost('post_price');
+            $data['post_sale']      = $this->request->getPost('post_sale');
+        }
         
         
         if($this->request->getFile('post_image')->guessExtension() != null){
@@ -388,7 +403,7 @@ class PostController extends BaseController
             }
         }
     
-        return redirect()->to('admin/post')->with('success', $post_title);
+        return redirect()->to('admin/post')->with('update', $post_title);
         // return redirect()->to('admin/post');
     }
 
@@ -427,9 +442,16 @@ class PostController extends BaseController
             return view('admin/404_admin');
         }
 
+        $pathTo = ROOTPATH.'/public/upload/tinymce/image_asset/'.$post['post_image'];
+        $pathTrash = ROOTPATH.'/public/upload/tinymce/image_asset/trash/'.$post['post_image'];
+        if(file_exists($pathTo)){
+            rename ($pathTo, $pathTrash);
+        }
+
         $postModel->delete(['id' => $id]);
-        return redirect()->to('admin/post');
+        return redirect()->to('admin/post')->with('delete', $post['post_title']);
     }
+
 
 
 }

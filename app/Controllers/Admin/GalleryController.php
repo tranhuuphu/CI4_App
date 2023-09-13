@@ -349,7 +349,7 @@ class GalleryController extends BaseController
                 $pathTrash = ROOTPATH.'/public/upload/tinymce/gallery_asset/trash/'.$gallery_detail['gallery_image'];
                 if(file_exists($pathTo)){
                     rename ($pathTo, $pathTrash);
-                }                            
+                }                 
             }
         }
     

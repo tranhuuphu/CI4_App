@@ -63,7 +63,15 @@
 	                  	<option <?php if($cate['cate_parent_id'] == 0){echo "selected";} ?> data-icon="fas fa-dot-circle" value="0" style="text-bold">Danh Mục Lớn</option>
 	                  	<option data-divider="true"></option>
 	                  	<?php foreach($cate_all as $c): ?>
-                        <option data-icon="fas fa-minus" value="<?= $c['id']; ?>" <?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?> <?php if($c['cate_type']== "blog" || $c['cate_type']== "cate_gallery"): ?> disabled <?php endif; ?> <?php if($cate['cate_name']== $c['cate_name'] ): ?> disabled <?php endif; ?> ><?= $c['cate_name']; ?></option>
+                        <option data-icon="fas fa-minus" value="<?= $c['id']; ?>" 
+                        	<?php if($c['id'] == $cate['cate_parent_id']){echo "selected";} ?>
+                        	<?php if($c['cate_type']== "blog" || $c['cate_type']== "cate_gallery"): ?> disabled <?php endif; ?>
+                        	<?php if($cate['cate_name']== $c['cate_name'] ): ?> disabled <?php endif; ?>
+                        	<?php if($cate['cate_type']== "blog" || $cate['cate_type']== "cate_gallery"): ?> disabled <?php endif; ?>
+                        	>
+                        	<?= $c['cate_name']; ?>
+                        		
+                      	</option>
                       <?php endforeach; ?>
 
                       

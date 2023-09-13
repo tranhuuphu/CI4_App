@@ -94,6 +94,7 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('hidden/(:num)',"Admin\PostController::hidden/$1");
 
         $routes->get('del/(:num)',"Admin\PostController::getDelete/$1");
+        $routes->get('del_img/(:num)',"Admin\PostController::del_img/$1");
 
 
     });
@@ -137,6 +138,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('hidden/(:num)',"Admin\GalleryController::hidden/$1");
 
         $routes->get('compress',"Admin\GalleryController::compressGallerryImage");
+
+        
 
 
     });
@@ -184,6 +187,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
         $routes->get('again',"Admin\ImageCompressController::compressAgain");
         $routes->post('again',"Admin\ImageCompressController::compressAgain");
+
+        $routes->get('check_again',"Admin\ImageCompressController::check_image");
 
     });
 
