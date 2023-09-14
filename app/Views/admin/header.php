@@ -10,8 +10,10 @@
     <!-- Font Awesome Icons -->
     <!-- <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/fontawesome-free/css/all.min.css"> -->
 
-    <link rel="stylesheet" type="text/css" href="<?= base_url('public/site_asset/canvas'); ?>/css/icons/font-awesome-x/css/all.min.css">
+
     <!-- overlayScrollbars -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
+
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">

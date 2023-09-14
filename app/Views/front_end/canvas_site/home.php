@@ -389,8 +389,8 @@
             	<?php if(isset($page_home['facebook'])): ?>
               <div class="col-3">
                 <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon bg-warning h-bg-facebook float-none mb-3">
-                  <i class="fa-brands fa-facebook-f"></i>
-                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-facebook-f"></i>
                 </a>
               </div>
               <?php endif; ?>
@@ -398,8 +398,8 @@
               <?php if(isset($page_home['youtube'])): ?>
               <div class="col-3">
                 <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon bg-warning h-bg-youtube float-none mb-3">
-                  <i class="fa-brands fa-youtube"></i>
-                  <i class="fa-brands fa-youtube"></i>
+                  <i class="fab fa-youtube"></i>
+                  <i class="fab fa-youtube"></i>
                 </a>
               </div>
               <?php endif; ?>
@@ -407,8 +407,8 @@
               <?php if(isset($page_home['twitter'])): ?>
               <div class="col-3">
                 <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon bg-warning h-bg-twitter float-none mb-3">
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-twitter"></i>
                 </a>
               </div>
               <?php endif; ?>
@@ -416,8 +416,8 @@
               <?php if(isset($page_home['pinterest'])): ?>
               <div class="col-3">
                 <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon bg-warning h-bg-pinterest float-none mb-3">
-                  <i class="fa-brands fa-pinterest"></i>
-                  <i class="fa-brands fa-pinterest"></i>
+                  <i class="fab fa-pinterest"></i>
+                  <i class="fab fa-pinterest"></i>
                 </a>
               </div>
               <?php endif; ?>

@@ -49,6 +49,7 @@
 
 	<!-- REQUIRED SCRIPTS -->
 	<!-- jQuery -->
+
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap -->
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -99,7 +100,7 @@
 
 
 
-	<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.pack.js" referrerpolicy="origin"></script>
+<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.pack.js" referrerpolicy="origin"></script>
 
 
 

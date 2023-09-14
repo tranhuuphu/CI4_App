@@ -314,6 +314,9 @@ class CanvasController extends BaseController
 
             ];
 
+            $data2['gallery_view'] = $gallery_img['gallery_view'] + 1;
+            $gallery->update($id, $data2);
+
 
 
             return view('front_end/canvas_site/gallery_img_detail', $data);
@@ -516,16 +519,6 @@ class CanvasController extends BaseController
                 'quantity'      => 1,
             );
         }
-        // $item = array(
-        //     'id'            => $post_prod['id'],
-        //     'prod_name'     => $post_prod['post_title'],
-        //     'prod_image'    => $post_prod['post_image'],
-        //     'prod_price'    => (int)$post_prod['post_price'],
-        //     'prod_slug'     => $post_prod['post_slug'],
-        //     'cate_slug'     => $cate_detail['cate_slug'],
-        //     'quantity'      => 1,
-        // );
-        // dd($item);
         $session = session();
         if($session->has('cart')){
             $index = $this->exists($id);

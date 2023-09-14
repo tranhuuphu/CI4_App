@@ -16094,7 +16094,7 @@ img.lazy:not([src]) {
 }
 
 .top-links-item>a>i {
-    vertical-align: top
+    vertical-align: center
 }
 
 .top-links-item>a>i.sub-menu-indicator {
@@ -16907,7 +16907,7 @@ body:not(.top-search-open) .top-search-parent .primary-menu-trigger {
     width: var(--cnvs-primary-menu-icon-size);
     text-align: center;
     margin-right: .625rem;
-    vertical-align: top
+    vertical-align: center
 }
 
 .menu-link div>i.sub-menu-indicator {

@@ -43,7 +43,7 @@
                     data-lightbox="image"
                     title="<?= $key['gallery_title'] ?>"
                   >
-                    <i class="fa-duotone fa-expand"></i>
+                    <i class="fas fa-expand-alt"></i>
                   </a>
 
                   <?php if($key['gallery_post_url'] == null): ?>
@@ -67,7 +67,7 @@
 
               
               <span>
-                <i class="fa-solid fa-image"></i>
+                
                 <?php
                   $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
                   $image_width = $image_info[0];
@@ -75,6 +75,12 @@
                   echo $image_width.'x'.$image_height.' pixel';
                 ?>
                 <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+                
+                <?php if($key['gallery_file_download'] != null): ?>
+                  <i class="fas fa-grip-lines-vertical"></i>
+                  <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-file-download"></i></a>
+                  
+                <?php endif; ?>
               </span>
             </div>
           </div>

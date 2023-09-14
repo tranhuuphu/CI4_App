@@ -7,9 +7,9 @@
         <p class="mb-0 py-2 text-center text-md-start">
         <?php if(isset($page_home['phone'])): ?>
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
-                <i class="fa-sharp fa-solid fa-phone"></i> <span class="ts-text"><?= $page_home['phone']; ?></span>
+                <i class="fas fa-phone-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
             </a>
-          <?php endif; ?> || <i class="fa-duotone fa-envelope"></i> phuth@gmail.com</p>
+          <?php endif; ?> || <i class="far fa-envelope"></i> <strong>phuth.me@gmail.com</strong></p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">
@@ -18,7 +18,7 @@
 
             <?php foreach($link_page as $pl): ?>
               <li class="top-links-item">
-                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fa-solid fa-circle"></i> <?= $pl['page_name']; ?></a>
+                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fas fa-dot-circle"></i> <?= $pl['page_name']; ?></a>
               </li>
             <?php endforeach; ?>            
           </ul>
@@ -39,8 +39,8 @@
       <div class="header-row primary-menu2 sub-title2">
         <div id="logo">
           <a href="<?= base_url(''); ?>">
-            <img class="logo-default" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
-            <img class="logo-dark" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
+            <img class="logo-default" style="padding: 7px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
+            <img class="logo-dark" style="padding: 7px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
           </a>
         </div>
 
@@ -128,7 +128,7 @@
                       <?php foreach($cate as $c2): ?>
                         <?php if($c2['cate_parent_id'] == $c['id']): ?>
                           <li class="menu-item">
-                            <a class="menu-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title="<?= $c2['cate_name']; ?>"><div><?= $c2['cate_name']; ?></div></a>
+                            <a class="menu-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title="<?= $c2['cate_name']; ?>"><div><i class="fas fa-minus"></i> <?= $c2['cate_name']; ?></div></a>
                             
                           </li>
                         <?php endif; ?>
@@ -147,7 +147,7 @@
         <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
           
           <input type="text" name="q" class="form-control " id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
-          <button type="submit" class="btn btn-primary search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+          <button type="submit" class="btn btn-primary search"><i class="fas fa-search"></i></button>
           
         </form>
 

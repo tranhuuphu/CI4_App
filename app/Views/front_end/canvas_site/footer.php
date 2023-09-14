@@ -74,26 +74,26 @@
             
             <?php if(isset($page_home['facebook'])): ?>
             <a href="<?= $page_home['facebook']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-facebook-f"></i>
             </a>
             <?php endif; ?>
             <?php if(isset($page_home['youtube'])): ?>
             <a href="<?= $page_home['youtube']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-youtube">
-              <i class="fa-brands fa-youtube"></i>
-              <i class="fa-brands fa-youtube"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-youtube"></i>
             </a>
             <?php endif; ?>
             <?php if(isset($page_home['twitter'])): ?>
             <a href="<?= $page_home['twitter']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-twitter">
-              <i class="fa-brands fa-google"></i>
-              <i class="fa-brands fa-google"></i>
+              <i class="fab fa-google"></i>
+              <i class="fab fa-google"></i>
             </a>
             <?php endif; ?>
             <?php if(isset($page_home['pinterest'])): ?>
             <a href="<?= $page_home['pinterest']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-pinterest">
-              <i class="fa-brands fa-pinterest-p"></i>
-              <i class="fa-brands fa-pinterest-p"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-pinterest-p"></i>
             </a>
             <?php endif; ?>
             

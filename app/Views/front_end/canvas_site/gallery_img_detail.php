@@ -7,7 +7,7 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
 	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><i class="far fa-images"></i></a></li>
 	      <li class="breadcrumb-item active"><?= $gallery_img['gallery_title'] ?></li>
 	    </ol>
@@ -66,13 +66,13 @@
                   $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
                   $image_width = $image_info[0];
                   $image_height = $image_info[1];
-                  echo "<i class='fa-solid fa-ruler'></i>".' '.$image_width.'x'.$image_height.' pixel';
+                  echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
                 ?>
-
+                <hr>
                 <?php
 
                   $img = get_headers(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']), 1);
-                  echo ceil($img["Content-Length"]/1024)."Kb";
+                  echo "<i class='fas fa-hdd'></i> ".ceil($img["Content-Length"]/1024)."Kb";
                 ?>
 
               </p>
@@ -81,14 +81,14 @@
             <div class="col-6">
               <h5 class="mb-2">Download Image</h5>
               <p class="text-medium op-082 mb-0">
-                <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fa-duotone fa-download"></i></a>
+                <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i></a>
               </p>
             </div>
             <?php if($gallery_img['gallery_file_download'] != null): ?>
               <div class="col-6">
                 <h5 class="mb-2">Download File</h5>
-                <p class="text-medium op-082 mb-0">
-                  <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank"><i class="fa-solid fa-folder-arrow-down"></i></a>
+                <p class="text-medium text-white op-082 mb-0">
+                  <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-info">Download <i class="fas fa-file-download"></i></a>
                 </p>
               </div>
             <?php endif; ?>
