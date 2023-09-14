@@ -224,17 +224,20 @@ class CanvasController extends BaseController
         $paginate = 10;
         $pro_cate = $post->select('cate.*, post.*, post.id as p_id, cate.id as c_id')->where('post_status', 'san-pham')->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
                 $pro_count = $post->where('post_status', 'san-pham')->countAllResults();
-                
-        foreach($pro_cate as $value){
-            $pi_id[] = $value['p_id'];
-        }
-        // dd($pi_id);
-        
-        if($postImage->whereIn('post_image_id', $pi_id)->findAll()){
-            $data['postImages'] = $postImage->whereIn('post_image_id', $pi_id)->findAll();
+
+        if($pro_cate != null){
+            foreach($pro_cate as $value){
+                $pi_id = array();
+                $pi_id[] = $value['p_id'];
+            }
+
             
-        }else{
-            $data['postImages'] = null;
+            if($postImage->whereIn('post_image_id', $pi_id)->findAll()){
+                $data['postImages'] = $postImage->whereIn('post_image_id', $pi_id)->findAll();
+                
+            }else{
+                $data['postImages'] = null;
+            }
         }
         
         // dd($data['postImages']);
@@ -458,7 +461,7 @@ class CanvasController extends BaseController
 
         ]);
         if(!$validation){
-            // return $this->response->redirect(site_url('gio-hang'), ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
+            
             return view('front_end/canvas_site/check-out', ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
         }
 
@@ -477,7 +480,7 @@ class CanvasController extends BaseController
 
         session_destroy();
 
-        return redirect()->to('/')->with('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại với bạn để xác nhận đơn hàng");
+        return redirect()->to(site_url())->with('success', "Cám ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại với bạn để xác nhận đơn hàng");
     }
 
 
@@ -776,7 +779,10 @@ class CanvasController extends BaseController
 
         ];
 
-        return view("front_end/canvas_site/getPage", $data);
+        $data2['page_view'] = $page_info['page_view'] + 1;
+        $page->update($id, $data2);
+
+        return view("front_end/canvas_site/get_page", $data);
     }
 
 

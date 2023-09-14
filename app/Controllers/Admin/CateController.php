@@ -91,7 +91,7 @@ class CateController extends BaseController
 
         
 
-        return redirect()->to('admin/create_cate')->with('success', $cate_name);
+        return redirect()->to('admin/cate')->with('success', $cate_name);
     }
     public function getEditCate($cate_id){
 

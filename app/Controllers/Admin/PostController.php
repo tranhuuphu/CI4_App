@@ -113,6 +113,7 @@ class PostController extends BaseController
         $cateModel = new CateModel();
         $cate_slug = $cateModel->where('id', $post_cate_id)->first();
 
+        $data['post_cate_name']   = $cate_slug['cate_name'];
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
 
         if($cate_slug['cate_type'] == "blog"){
@@ -297,6 +298,7 @@ class PostController extends BaseController
 
         $cate_slug = $cateModel->where('id', $this->request->getPost('post_cate_id'))->first();
 
+        $data['post_cate_name']   = $cate_slug['cate_name'];
         $data['post_cate_slug']   = $cate_slug['cate_slug'];
 
         if($cate_slug['cate_type'] == "blog"){

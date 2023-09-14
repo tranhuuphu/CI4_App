@@ -15,7 +15,7 @@ class PageController extends BaseController
     public function index(){
         $pageModel = new PageModel();
         $data['page'] = $pageModel->findAll();
-        return view('admin/page/index', $data);
+        return view('admin/page/index_page', $data);
     }
 
     public function getPage()
@@ -156,7 +156,7 @@ class PageController extends BaseController
                             
             }
         }
-        return redirect()->to('admin/page')->with('success', 'Thêm thành công bài viết: '.$data['page_title'] );
+        return redirect()->to('admin/page')->with('success', 'Thêm thành công bài viết: '.$data['page_name'] );
     }
 
     public function getEdit($id){
@@ -310,57 +310,30 @@ class PageController extends BaseController
                             
             }
         }
-        return redirect()->to('admin/page')->with('success', 'Chỉnh sửa thành công bài viết: '.$data['page_title'] );
+        return redirect()->to('admin/page')->with('update', $data['page_name']);
         
     }
 
 
     public function show($id){
-        $postModel = new PostModel();
+        $pageModel = new PageModel();
         
-        $postDetail = $postModel->find($id);
-        $data['page_cate_id']   = $postDetail['page_cate_id'];
-        $data['page_cate_slug'] = $postDetail['page_cate_slug'];
-        $data['page_title']     = $postDetail['page_title'];
-        $data['page_slug']      = $postDetail['page_slug'];
-        $data['page_intro']     = $postDetail['page_intro'];
-        $data['page_image']     = $postDetail['page_image'];
-        $data['page_status']    = $postDetail['page_status'];
-        $data['page_featured']  = $postDetail['page_featured'];
-        $data['page_content']   = $postDetail['page_content'];
-        $data['page_price']     = $postDetail['page_price'];
-        $data['page_sale']      = $postDetail['page_sale'];
-        $data['page_view']      = $postDetail['page_view'];
+        $pageDetail = $pageModel->find($id);
         $data['page_show']      = 1;
-        $data['page_meta_desc'] = $postDetail['page_meta_desc'];
-        $data['page_meta_key']  = $postDetail['page_meta_key'];
 
-        $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['page_title']."---"." sẽ được hiển thị trên trang web");
+        $pageModel->update($id, $data);
+        return redirect()->to('admin/page')->with("show", $pageDetail['page_name']);
     }
 
     public function hidden($id){
-        $postModel = new PostModel();
+        $pageModel = new PageModel();
         
-        $postDetail = $postModel->find($id);
-        $data['page_cate_id']   = $postDetail['page_cate_id'];
-        $data['page_cate_slug'] = $postDetail['page_cate_slug'];
-        $data['page_title']     = $postDetail['page_title'];
-        $data['page_slug']      = $postDetail['page_slug'];
-        $data['page_intro']     = $postDetail['page_intro'];
-        $data['page_image']     = $postDetail['page_image'];
-        $data['page_status']    = $postDetail['page_status'];
-        $data['page_featured']  = $postDetail['page_featured'];
-        $data['page_content']   = $postDetail['page_content'];
-        $data['page_price']     = $postDetail['page_price'];
-        $data['page_sale']      = $postDetail['page_sale'];
-        $data['page_view']      = $postDetail['page_view'];
-        $data['page_show']      = 0;
-        $data['page_meta_desc'] = $postDetail['page_meta_desc'];
-        $data['page_meta_key']  = $postDetail['page_meta_key'];
+        $pageDetail = $pageModel->find($id);
 
-        $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['page_title']."---"." sẽ không hiển thị trên trang web");
+        $data['page_show']      = 0;
+
+        $pageModel->update($id, $data);
+        return redirect()->to('admin/page')->with("hidden", $pageDetail['page_name']);
     }
 
     public function add($id){

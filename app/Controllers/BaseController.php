@@ -67,7 +67,7 @@ abstract class BaseController extends Controller
         $data2['cate'] = $cateModel->orderBy('cate_type', 'DESC')->findAll();
         $pageModel = new PageModel();
         $data2['page_home'] = $pageModel->where('page_status', 1)->first();
-        $data2['link_page'] = $pageModel->where('page_status !=', 1)->find();
+        $data2['link_page'] = $pageModel->where('page_status !=', 1)->where('page_show', 1)->findAll();
         // dd($data['link_page']);
         $data2['items'] = $session->get('cart');
         

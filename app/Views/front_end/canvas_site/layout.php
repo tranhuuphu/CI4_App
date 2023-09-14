@@ -14,13 +14,14 @@
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
-    <link rel="stylesheet" type="text/css" href="<?= base_url('public/site_asset/canvas'); ?>/css/icons/font-awesome-x/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
 
 
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen">
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css">
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/navigation.css">
+
     <style>
       .revo-slider-emphasis-text {
         font-size: 58px;
@@ -67,8 +68,45 @@
           border: none;
 
        }
-      
+
+       .mce-toc{
+          background-color: #ffffff;
+          padding: 20px 20px 1px 20px;
+          margin-bottom: 15px;
+          border-radius: 20px;
+          border: solid #000000 1px;
+        }
+        .mce-toc h2{
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        .mce-toc li {
+          list-style: none;
+          position: relative;
+          padding: 0 0 0 20px;
+        }
+        .mce-toc li::before {
+          content: ""; 
+          position: absolute; 
+          left: 2px; 
+          top: 5px; 
+          width: 6px;
+          height: 10px;
+          border: solid #000000;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+
+        .sub::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f078";
+            padding-left: 7px;
+          }
+  
     </style>
+
+
 
     
   </head>
@@ -195,5 +233,8 @@
       // alert(data);
 
     </script>
+
+    <?= $this->renderSection('script'); ?>
+
   </body>
 </html>

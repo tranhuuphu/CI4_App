@@ -94,7 +94,6 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->post('hidden/(:num)',"Admin\PostController::hidden/$1");
 
         $routes->get('del/(:num)',"Admin\PostController::getDelete/$1");
-        $routes->get('del_img/(:num)',"Admin\PostController::del_img/$1");
 
 
     });

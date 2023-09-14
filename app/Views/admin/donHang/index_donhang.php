@@ -30,6 +30,7 @@
                 <table id="example1" class="table table-bordered table-hover table-strip" style="width:100%">
                   <thead>
 	                  <tr>
+                      <th>#</th>
 	                    <th>Khách Hàng</th>
 	                    <th>SĐT</th>
 	                    <th>Địa Chỉ</th>
@@ -40,7 +41,7 @@
 	                  </tr>
                   </thead>
                   <tbody>
-                    
+                    <?php $i = 1 ?>
                   	<?php foreach($cart as $c): ?>
                         <?php
                           $order = json_decode($c['order_content'], true);
@@ -50,11 +51,12 @@
                          ?>
                       
 		                  <tr>
+                        <td ><?= $i ?></td>
                         <td ><?= $c['order_name']; ?></td>
                         <td ><?= $c['order_phone']; ?></td>
                         <td ><?= $c['order_adress']; ?></td>
                         <td>
-                            <?php $i = 1 ?>
+                            
                             <?php foreach($order as $ord) : ?>
                                 
                                 <div class="card mb-3" style="max-width: 540px;">
@@ -72,7 +74,7 @@
                                           <br>
                                           Quantity: <strong>x<?= $ord['quantity'] ?> Ea</strong>
                                           <br>
-                                          Total: <strong><?= number_format($ord['prod_price']*$ord['quantity']) ?> VNĐ</strong>
+                                          Total: <strong style="color: red"><?= number_format($ord['prod_price']*$ord['quantity']) ?> VNĐ</strong>
                                         </p>
                                         <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
                                       </div>
@@ -94,6 +96,8 @@
                             <strong>ĐH chưa được xử lý</strong>
                             <hr>
                             <a href="<?= base_url('admin/don-hang/edit/'.$c['id'].'/'.'1') ?>" class="btn btn-success mt-1"><i class="fas fa-check"></i> Đã xử lý</a>
+                            <hr>
+                            <a href="<?= base_url('admin/don-hang/del/'.$c['id']) ?>" class="btn btn-danger mt-1" onclick="return confirm('are you sure?')"><i class="fa-solid fa-trash"></i> Xóa đơn hàng</a>
                           <?php elseif($c['checked_order'] == 1): ?>
                             <strong>Đơn hàng đã được xử lý</strong>
                             <hr>
@@ -115,6 +119,7 @@
                   </tbody>
                   <tfoot>
                   <tr>
+                    <th>#</th>
                     <th>Khách Hàng</th>
                     <th>SĐT</th>
                     <th>Địa Chỉ</th>

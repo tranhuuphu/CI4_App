@@ -12,7 +12,7 @@ class DonHangController extends BaseController
     }
     public function index(){
         $donHang = new DonHangModel();
-        $data['cart'] = $donHang->orderBy('id', 'ASC')->findAll();
+        $data['cart'] = $donHang->orderBy('id', 'DESC')->findAll();
         return view('admin/donHang/index_donhang', $data);
     }
 

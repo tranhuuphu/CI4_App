@@ -110,6 +110,8 @@
 
 
 
+
+
             <?php foreach($cate as $c3): ?>
               <?php $c_t[] = $c3['cate_parent_id']; ?>
             <?php endforeach; ?>
@@ -119,7 +121,7 @@
             <?php foreach($cate as $c): ?>
               <?php if($c['cate_parent_id'] == 0): ?>
                 <li class="menu-item" data-title="<?= $c['cate_slug'].'-'.$c['id'] ?>">
-                  <a class="menu-link" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><div><?= $c['cate_name']; ?></div></a>
+                  <a class="menu-link" <?php if(in_array($c['id'], $c_t)): ?> class="sub" <?php endif; ?> href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><div <?php if(in_array($c['id'], $c_t)): ?> class="sub" <?php endif; ?>><?= $c['cate_name']; ?></div></a>
                   
                   <?php if(in_array($c['id'], $c_t)): ?>
                     <ul class="sub-menu-container">

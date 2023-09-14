@@ -43,7 +43,7 @@
             <h2><a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
           </div>
 
-          <h3><?= $key2['post_intro']; ?></h3>
+          <h3 class="mb-0 text-secondary"><?= $key2['post_intro']; ?></h3>
         </div>
       </div>
     </div>

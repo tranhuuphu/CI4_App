@@ -2,13 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<?php if(!empty(session()->getFlashdata('success'))) : ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <h5><i class="icon fas fa-check"></i> Alert!</h5>
-    <?= session()->getFlashdata('success'); ?>
-  </div>
-<?php endif ?>
+
 	
 	<?php if(isset($featured)): ?> 
 		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2" style="margin-top: -10px !important;">
@@ -270,16 +264,16 @@
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
 							            		$yearMonthsNow = $datetime::now()->getMonth();
-							            		$yearPost = $datetime::parse($key_post['updated_at'])->getYear();
+							            		$yearPost = $datetime::parse($pr['updated_at'])->getYear();
 							            		
-							            		$yearMonthsPost = $datetime::parse($key_post['updated_at'])->getMonth();
+							            		$yearMonthsPost = $datetime::parse($pr['updated_at'])->getMonth();
 							            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-							            			echo $datetime::parse($key_post['updated_at'])->humanize();
+							            			echo $datetime::parse($pr['updated_at'])->humanize();
 							            		}
 							            		if(($yearNow - $yearPost) > 1){
-							            			echo $datetime::parse($key_post['updated_at'])->humanize();
+							            			echo $datetime::parse($pr['updated_at'])->humanize();
 							            		}else{
-							            			echo $datetime::parse($key_post['updated_at'])->toLocalizedString('dd MMM yyyy');
+							            			echo $datetime::parse($pr['updated_at'])->toLocalizedString('dd MMM yyyy');
 							            		}
 							            		
 
@@ -339,7 +333,7 @@
 
               
 
-              <?php if($most_view): ?>
+              <?php if($most_view != null): ?>
                 <?php foreach($most_view as $mv): ?>
                 <div class="entry col-12">
                   <div class="grid-inner row g-0">
