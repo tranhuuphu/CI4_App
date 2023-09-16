@@ -26,8 +26,8 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
-	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>" style="color: #299ef2"><?= $cate_name ?></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
 	    </ol>
 	  </div>
 	</section>
@@ -73,7 +73,7 @@
                   <?php else: ?>
                   	<div class="product-price text-danger">Liên Hệ</div>
                   <?php endif; ?>
-		              <a href="<?= site_url('buy').'/'.$key['id']; ?>"  <?php if($key['post_sale'] || $key['post_price']): ?> class="btn btn-sm btn-dark px-3 mt-2" <?php else: ?> class="btn btn-sm btn-dark px-3 mt-2 disabled" <?php endif; ?> ><i class="fa-regular fa-cart-shopping"></i>&nbsp; &nbsp;Add to Cart</a>
+		              <a href="<?= site_url('buy').'/'.$key['id']; ?>"  <?php if($key['post_sale'] || $key['post_price']): ?> class="btn btn-sm btn-dark px-3 mt-2" <?php else: ?> class="btn btn-sm btn-dark px-3 mt-2 disabled" <?php endif; ?> ><i class="fas fa-shopping-cart"></i>&nbsp; &nbsp;Add to Cart</a>
 		            </div>
 		          </div>
 		        </div>
@@ -142,13 +142,14 @@
 				                    </div>
 				                    <div class="line"></div>
 
-				                    <form class="cart mb-0 d-flex justify-content-between align-items-center" method="post" enctype="multipart/form-data">
+				                    <form class="cart mb-0 d-flex justify-content-between align-items-center" action="<?= site_url('buy').'/'.$key['id']; ?>" method="post" enctype="multipart/form-data">
+				                    	<?= csrf_field(); ?>
 				                      <div class="quantity">
 				                        <input type="button" value="-" class="minus" />
 				                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
 				                        <input type="button" value="+" class="plus" />
 				                      </div>
-				                      <button type="submit" class="add-to-cart button m-0">Add to cart</button>
+				                      <button type="submit" class="add-to-cart button m-0"><i class="uil uil-shopping-cart me-1"></i> Add to cart</button>
 				                    </form>
 				                    <div class="line"></div>
 
@@ -162,26 +163,26 @@
 				                          <?php $link_full = base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>
 				                          <div class="d-flex">
 				                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $key['post_title']; ?>" target="_blank" title="share facebook: <?= $key['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
-			                                <i class="fa-brands fa-facebook-f"></i>
-			                                <i class="fa-brands fa-facebook-f"></i>
+			                                <i class="fab fa-facebook-f"></i>
+			                                <i class="fab fa-facebook-f"></i>
 			                              </a>
 
 			                              <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share twitter: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
-			                                <i class="fa-brands fa-twitter"></i>
-			                                <i class="fa-brands fa-twitter"></i>
+			                                <i class="fab fa-twitter"></i>
+			                                <i class="fab fa-twitter"></i>
 			                              </a>
 			                              <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share pinterest: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
-			                                <i class="fa-brands fa-pinterest-p"></i>
-			                                <i class="fa-brands fa-pinterest-p"></i>
+			                                <i class="fab fa-pinterest-p"></i>
+			                                <i class="fab fa-pinterest-p"></i>
 			                              </a>
 			                              <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $key['post_intro']; ?>" title="share tumblr: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-			                                <i class="fa-brands fa-tumblr"></i>
-			                                <i class="fa-brands fa-tumblr"></i>
+			                                <i class="fab fa-tumblr"></i>
+			                                <i class="fab fa-tumblr"></i>
 			                              </a>
 			                              
 			                              <a href="mailto:?subject=<?= $key['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
-			                                <i class="fa-solid fa-envelope"></i>
-			                                <i class="fa-solid fa-envelope"></i>
+			                                <i class="fas fa-envelope"></i>
+			                                <i class="fas fa-envelope"></i>
 			                              </a>
 				                          </div>
 				                        </div>

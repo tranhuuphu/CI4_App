@@ -282,7 +282,7 @@ class PostController extends BaseController
             return view('admin/post/editPost', $data);
         }
         $data['post_title'] = $post_title;
-        $post_title_slug = convert_name($post_title);
+        $post_title_slug = mb_strtolower(convert_name($post_title));
         $post_cate_id           = $this->request->getPost('post_cate_id');
 
         $data['post_slug']      = $post_title_slug;
@@ -451,6 +451,13 @@ class PostController extends BaseController
         }
 
         $postModel->delete(['id' => $id]);
+        $tagModel = new TagModel();
+        $tag_all = $tagModel->where('tag_post_id', $id)->findAll();
+        if($tag_all != null){
+            foreach($tag_all as $ta){
+                $tagModel->delete($ta['id']);
+            }
+        }
         return redirect()->to('admin/post')->with('delete', $post['post_title']);
     }
 

@@ -140,6 +140,7 @@ class CateController extends BaseController
                 return redirect()->to('admin/cate/edit/'.$cate_detail['id'])->with("errors", "Danh mục này chứa danh mục con");
             }
         }
+        $data['cate_name'] = $cate_name;
 
         if($cate_detail['cate_name'] == $cate_name){
             $data['cate_name'] = $cate_name;
@@ -203,7 +204,6 @@ class CateController extends BaseController
             return view('admin/cate/edit_cate', $data);
         }
 
-
         $cate_slug                  = mb_strtolower(convert_name($cate_name));
         $data['cate_slug']          = $cate_slug;
         $data['cate_parent_id']     = $this->request->getPost('cate_parent_id');
@@ -226,6 +226,20 @@ class CateController extends BaseController
                     $data2['post_cate_slug'] = $cate_slug;
                     $postModel->update($id, $data2);
                 }
+            }
+
+            
+            if($cate_detail['cate_type'] == 'cate_gallery'){
+                $galleryModel = new GalleryModel();
+                $gallery_all = $galleryModel->findAll();
+                if($gallery_all != null){
+                    foreach($gallery_all as $ga){
+                        $id = $ga['id'];
+                        $data2['gallery_cate_slug'] = $cate_slug;
+                        $galleryModel->update($id, $data2);
+                    }
+                }
+
             }
             
         }

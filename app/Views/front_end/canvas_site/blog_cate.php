@@ -11,7 +11,7 @@
     <div class="container clearfix">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house fa-flip-horizontal"></i></a></li>
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
         <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
       </ol>
     </div>

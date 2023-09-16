@@ -277,7 +277,9 @@ class CanvasController extends BaseController
 
         
         $cate_gallery = $cate->where('cate_slug', $slug2)->first();
-        // dd($cate_gallery);
+        if($cate_gallery == null){
+            return view('front_end/canvas_site/404');
+        }
         if($cate_gallery['cate_type'] == "cate_gallery"){
 
             $gallery = new GalleryModel;
@@ -591,7 +593,18 @@ class CanvasController extends BaseController
 
     public function download($image){
 
+        $gallery = new GalleryModel;
 
+        $gallery_detail = $gallery->where('gallery_image', $image)->first();
+
+        if($gallery_detail == null){
+            return view('front_end/canvas_site/404');
+        }
+
+        $times = $gallery_detail['gallery_img_download_times'] + 1;
+
+        $data2['gallery_img_download_times'] = $times;
+        $gallery->update($gallery_detail['id'], $data2);
 
         return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);
     }
@@ -721,8 +734,11 @@ class CanvasController extends BaseController
         $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->paginate($paginate);
         $post_count = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->countAllResults();
 
+        $array2 = ['gallery_title' => $key, 'gallery_type_name' => $key];
+        $gallery_result = $gallery->like('gallery_title', $key)->like('gallery_type_name', $key)->get();
 
-        // dd($post_count);
+
+        dd($gallery_result);
 
         $link_full = base_url().'/search?q='.$key;
         $data = [
@@ -741,11 +757,12 @@ class CanvasController extends BaseController
             'paginate'      => $paginate,
             'post_count'    => $post_count,
             'result'        => $result,
+            'gallery_result'        => $gallery_result,
             'link_full'     => $link_full,
 
         ];
         
-        return view("front_end/canvas_site/getSearch", $data);
+        return view("front_end/canvas_site/get_search", $data);
     }
 
 

@@ -58,7 +58,7 @@ class GalleryController extends BaseController
         $validation = $this->validate([
 
             'gallery_title'=>[
-                'rules'=>'required|is_unique[gallery.gallery_title]',
+                'rules'=>'required|is_unique[gallery_image.gallery_title]',
                 'errors' => [
                     'required' => 'Tiêu đề không được để trống.',
                     'is_unique' => 'Tiêu đề trùng với bài viết khác.',
@@ -134,6 +134,7 @@ class GalleryController extends BaseController
         $data['gallery_title']          = $gallery_title;
         $data['gallery_title_slug']     = $gallery_title_slug;
         $data['gallery_cate_id']        = $this->request->getPost('gallery_cate_id');
+        $data['gallery_cate_slug']      = $cate['cate_slug'];
         
         $data['gallery_meta_desc']      = $this->request->getPost('gallery_meta_desc');
         $data['gallery_meta_key']       = $this->request->getPost('gallery_meta_key');
@@ -231,7 +232,7 @@ class GalleryController extends BaseController
         }elseif($gallery_detail['gallery_title'] != $gallery_title){
             $validation = $this->validate([
                 'gallery_title'=>[
-                    'rules'=>'required|is_unique[gallery.gallery_title]',
+                    'rules'=>'required|is_unique[gallery_image.gallery_title]',
                     'errors' => [
                         'required' => 'Tiêu đề không được để trống.',
                         'is_unique' => 'Tiêu đề trùng với bài viết khác.',

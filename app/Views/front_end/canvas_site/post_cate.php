@@ -23,8 +23,8 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-solid fa-house"></i></a></li>
-	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>" style="color: #299ef2"><?= $cate_name ?></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
 	    </ol>
 	  </div>
 	</section>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="entry-meta">
                           <ul>
-                            <li><a href="javascript:void(0)"><i class="fa-solid fa-calendar-days"></i> 
+                            <li><i class="fas fa-calendar-alt"></i> 
                             	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -80,10 +80,8 @@
 								            		
 
 								            	?>
-                            </a></li>
-                            <li>
-							                <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-clock"></i> <?= ceil(strlen($post_cate_1[0]['post_content'])/700) ?> Minutes Read</a>
-							              </li>
+                            </li>
+                            <li><i class="fas fa-clock"></i> <?= ceil(strlen($post_cate_1[0]['post_content'])/700) ?> Minutes Read</li>
 							              <?php if($post_cate_1[0]['post_status'] == "san-pham"): ?>
 								              <li>
 								              	<a href="<?= site_url('buy').'/'.$post_cate_1[0]['id']; ?>">
@@ -94,7 +92,7 @@
                           </ul>
                         </div>
                         <div class="entry-content">
-                          <p><?= $post_cate_1[0]['post_intro'] ?></p>
+                          <p class="mb-0 text-secondary"><?= $post_cate_1[0]['post_intro'] ?></p>
                         </div>
                       </div>
                     </div>

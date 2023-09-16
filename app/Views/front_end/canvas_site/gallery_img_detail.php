@@ -7,7 +7,7 @@
 	  <div class="container clearfix">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
 	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><i class="far fa-images"></i></a></li>
 	      <li class="breadcrumb-item active"><?= $gallery_img['gallery_title'] ?></li>
 	    </ol>
@@ -27,7 +27,7 @@
 
         <div class="col-lg-8 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
           <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
-          
+          <hr>
           
 
           <div class="row g-4 mt-4 mb-6">
@@ -95,7 +95,7 @@
             
           </div>
           <?php if($gallery_img['gallery_post_url'] != null): ?>
-            <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Visit post Related <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
+            <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Bài liên quan tới ảnh <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
           <?php endif; ?>
 
           <div class="card mt-6 pt-4 border-0 border-top rounded-0 border-default">
@@ -104,20 +104,20 @@
                 <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
                 <div class="d-flex">
                   <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share pinterest: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
-                    <i class="fa-brands fa-pinterest-p"></i>
-                    <i class="fa-brands fa-pinterest-p"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-pinterest-p"></i>
                   </a>
                   <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $gallery_img['gallery_title']; ?>" target="_blank" title="share facebook: <?= $gallery_img['gallery_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f"></i>
                   </a>
                   <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share twitter: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter"></i>
                   </a>
                   <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $gallery_img['gallery_title']; ?>" title="share tumblr: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-                    <i class="fa-brands fa-tumblr"></i>
-                    <i class="fa-brands fa-tumblr"></i>
+                    <i class="fab fa-tumblr"></i>
+                    <i class="fab fa-tumblr"></i>
                   </a>
                 </div>
               </div>
@@ -126,7 +126,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-between py-4 mt-4 mb-6 mx-0 gx-0 border-top border-bottom border-default">
+      <!-- <div class="row justify-content-between py-4 mt-4 mb-6 mx-0 gx-0 border-top border-bottom border-default">
         <div class="col">
           <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span>Previous Project</span></a>
         </div>
@@ -136,9 +136,11 @@
         <div class="col text-end">
           <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><span>Next Project</span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
         </div>
-      </div>
+      </div> -->
 
-      <h4 class="fs-4 fw-medium">Ảnh Liên Quan</h4>
+      <div class="fancy-title title-border">
+        <h3 class="mb-2 ls-1 text-uppercase fw-bold">Ảnh Liên Quan</h3>
+      </div>
       <div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
 
         
@@ -173,16 +175,16 @@
           <div class="oc-item">
             <div class="portfolio-item">
               <div class="portfolio-image">
-                <a href="#">
-                  <img src="images/portfolio/4/4.jpg" alt="<?= $r1['gallery_title'] ?>" />
+                <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>">
+                  <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" />
                 </a>
                 <div class="bg-overlay" data-lightbox="gallery">
                   <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                    <a href="images/portfolio/full/4.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
+                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
                       <i class="uil uil-images"></i>
                     </a>
-                    <a href="images/portfolio/full/4-1.jpg" class="d-none" data-lightbox="gallery-item"></a>
-                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="d-none" data-lightbox="gallery-item"></a>
+                    <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
                       <i class="uil uil-ellipsis-h"></i>
                     </a>
                   </div>
@@ -190,8 +192,8 @@
                 </div>
               </div>
               <div class="portfolio-desc">
-                <h3><a href="portfolio-single-gallery.html"><?= $r1['gallery_title'] ?></a></h3>
-                <span><a href="javascript:void(0)"><i class="fa-regular fa-icons"></i> Icons</a>, <i class="fa-solid fa-filter-list"></i> <a href="javascript:void(0)"><?= $r1['gallery_type_name'] ?></a></span>
+                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>"><?= $r1['gallery_title'] ?></a></h3>
+                
               </div>
             </div>
           </div>
@@ -201,16 +203,16 @@
           <div class="oc-item">
             <div class="portfolio-item">
               <div class="portfolio-image">
-                <a href="#">
-                  <img src="images/portfolio/4/4.jpg" alt="<?= $r2['gallery_title'] ?>" />
+                <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>">
+                  <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" />
                 </a>
                 <div class="bg-overlay" data-lightbox="gallery">
                   <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                    <a href="images/portfolio/full/4.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
+                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
                       <i class="uil uil-images"></i>
                     </a>
-                    <a href="images/portfolio/full/4-1.jpg" class="d-none" data-lightbox="gallery-item"></a>
-                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" class="d-none" data-lightbox="gallery-item"></a>
+                    <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
                       <i class="uil uil-ellipsis-h"></i>
                     </a>
                   </div>
@@ -218,8 +220,8 @@
                 </div>
               </div>
               <div class="portfolio-desc">
-                <h3><a href="portfolio-single-gallery.html"><?= $r2['gallery_title'] ?></a></h3>
-                <span><a href="javascript:void(0)"><i class="fa-regular fa-icons"></i> Icons</a>, <i class="fa-solid fa-filter-list"></i> <a href="javascript:void(0)"><?= $r2['gallery_type_name'] ?></a></span>
+                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>"><?= $r2['gallery_title'] ?></a></h3>
+                
               </div>
             </div>
           </div>

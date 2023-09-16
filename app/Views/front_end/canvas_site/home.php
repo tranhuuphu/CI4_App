@@ -309,7 +309,7 @@
               </div>
 
 
-              <form method="get" action="http:www.google.com/search" target="_blank">
+              <form method="get" action="https://google.com/search" target="_blank">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
                   <button type="submit" class="button button-3d w-100 button-small m-0" style="margin-top: 25px !important;" type="submit">Tìm kiếm</button>
@@ -473,7 +473,7 @@
 		            </div>
 
 		            <div class="portfolio-desc">
-		              <h3><a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
+		              <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" target="_blank" class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
 		              <span>
 		              	<a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" target="_blank"><i class="fas fa-images"></i></a>
 

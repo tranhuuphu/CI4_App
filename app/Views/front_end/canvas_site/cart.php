@@ -40,12 +40,13 @@
                 <?php foreach($items as $item): ?>
                   <tr class="cart_item">
                     <th scope="row"><?= $i; ?></th>
-                    <td class="cart-product-thumbnail">
-                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><img height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
-                    </td>
                     <td class="cart-product-name">
                       <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><?= $item['prod_name'] ?></a>
                     </td>
+                    <td class="cart-product-thumbnail">
+                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><img height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                    </td>
+                    
                     <td class="cart-product-price">
                       <span class="amount"><?= number_format($item['prod_price'], 0, ',', '.'); ?></span>
                     </td>
@@ -61,7 +62,7 @@
                     </td>
 
                     <td class="cart-product-remove">
-                      <a href="<?= site_url('cart/remove/'.$item['id']) ?>" class="remove" title="Remove this item" style="text-align: center;"><i class="fa-solid fa-trash-alt"></i></a>
+                      <a href="<?= site_url('cart/remove/'.$item['id']) ?>" class="remove" title="Remove this item" style="text-align: center;"><i class="fas fa-trash-alt"></i></a>
                     </td>
                     
                   </tr>

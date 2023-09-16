@@ -7,9 +7,9 @@
 	  <div class="container clearfix" style="background-color: #b3e2fc">
 	    
 	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-duotone fa-house"></i></a></li>
-	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><?= $cate_detail['cate_name'] ?></a></li>
-	      <li class="breadcrumb-item active"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html' ?>" title="<?= $post_detail['post_title']; ?>" class="fw-bold"><?= $post_detail['post_title']; ?></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
+	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
+	      <li class="breadcrumb-item active"><?= $post_detail['post_title']; ?></li>
 	    </ol>
 	  </div>
 	</section>
@@ -59,7 +59,7 @@
 
                       <div class="entry-meta mb-4">
                         <ul>
-                          <li><i class="fa-solid fa-clock"></i>
+                          <li><i class="fas fa-calendar-alt"></i>
                             <?php
                               $datetime = (new \CodeIgniter\I18n\Time);
                               $yearNow = $datetime::now()->getYear();
@@ -79,12 +79,8 @@
 
                             ?>
                           </li>
-                          <li>
-                            <a href="javascript:void(0)"><i class="fa-solid fa-eye"></i> <?= $post_detail['post_view']; ?></a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)"><i class="fa-solid fa-camera-retro"></i></a>
-                          </li>
+                          <li><i class="fas fa-eye"></i> <?= $post_detail['post_view']; ?></li>
+                          <li><i class="fas fa-camera-retro"></i></li>
                         </ul>
                       </div>
 
@@ -122,9 +118,9 @@
 
                       <p><?= $post_detail['post_intro']; ?></p>
                       <ul class="iconlist">
-                        <li><i class="fa-solid fa-caret-right"></i> Nhiều lựa chọn mẫu</li>
-                        <li><i class="fa-solid fa-caret-right"></i> Kích thước đa dạng</li>
-                        <li><i class="fa-solid fa-caret-right"></i> Giao hàng nhanh</li>
+                        <li><i class="fas fa-caret-right"></i> Nhiều lựa chọn mẫu</li>
+                        <li><i class="fas fa-caret-right"></i> Kích thước đa dạng</li>
+                        <li><i class="fas fa-caret-right"></i> Giao hàng nhanh</li>
                       </ul>
 
                       <div class="card product-meta">
@@ -148,26 +144,26 @@
                             <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
                             <div class="d-flex">
                               <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
-                                <i class="fa-brands fa-facebook-f"></i>
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook-f"></i>
                               </a>
 
                               <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
-                                <i class="fa-brands fa-twitter"></i>
-                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-twitter"></i>
                               </a>
                               <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
-                                <i class="fa-brands fa-pinterest-p"></i>
-                                <i class="fa-brands fa-pinterest-p"></i>
+                                <i class="fab fa-pinterest-p"></i>
+                                <i class="fab fa-pinterest-p"></i>
                               </a>
                               <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-                                <i class="fa-brands fa-tumblr"></i>
-                                <i class="fa-brands fa-tumblr"></i>
+                                <i class="fab fa-tumblr"></i>
+                                <i class="fab fa-tumblr"></i>
                               </a>
                               
                               <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
-                                <i class="fa-solid fa-envelope"></i>
-                                <i class="fa-solid fa-envelope"></i>
+                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope"></i>
                               </a>
                             </div>
                           </div>

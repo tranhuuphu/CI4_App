@@ -9,7 +9,7 @@
     <div class="container clearfix" style="background-color: #b3e2fc">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
         <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
       </ol>
     </div>
@@ -35,7 +35,7 @@
 
             <div class="entry-meta">
               <ul>
-                <li><i class="fa-solid fa-clock"></i>
+                <li><i class="fas fa-clock"></i>
                   <?php
                     $datetime = (new \CodeIgniter\I18n\Time);
                     $yearNow = $datetime::now()->getYear();
@@ -56,7 +56,7 @@
                   ?>
                 </li>
                 <li>
-                  <i class="fa-solid fa-eye"></i> <?= $page_info['page_view'] + 1; ?>
+                  <i class="fas fa-eye"></i> <?= $page_info['page_view'] + 1; ?>
                 </li>
               </ul>
             </div>
