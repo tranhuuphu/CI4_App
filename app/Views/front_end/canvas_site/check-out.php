@@ -141,9 +141,15 @@
               <label class="text-left text-danger" for="shipping-form-lname"><?= isset($validation) ? display_error($validation, 'address') : '' ?></label>
               <textarea class="form-control" name="address"><?= set_value('address'); ?></textarea>
             </div>
-            
+            <div class="col-12 form-group">
+              <div class="card mb-5 alert alert-info">
+                <div class="card-body "><strong>Khi bạn thực hiện thành công đơn hàng thì hệ thống sẽ chuyển bạn về trang chủ, chúng tôi sẽ liên hệ với bạn sớm nhất, thank!.</strong></div>
+              </div>
+
+              
+            </div>
             <div class="d-flex justify-content-end">
-              <button type="submit" class="button button-3d">Place Order <i class="fa-solid fa-cart-shopping"></i></button>
+              <button type="submit" class="button button-3d">Hoàn Thành Đặt Hàng <i class="fas fa-shopping-basket"></i></button>
             </div>
           </form>
         </div>

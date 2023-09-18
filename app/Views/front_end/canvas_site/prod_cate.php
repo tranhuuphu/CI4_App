@@ -209,6 +209,11 @@
 	    	<?php endif; ?>
 
 
+	    	<?php if($pro_count > $paginate): ?>
+	        <?= $pager->links() ?>
+	      <?php endif; ?>
+
+
       </div>
     </div>
 

@@ -25,7 +25,7 @@
           <div class="widget subscribe-widget2 clearfix">
             <div class="dark" style="padding: 25px; background-color: #383838; border-radius: 2px;">
               <div class="fancy-title title-border">
-                <h4>Or Using Search Google</h4>
+                <h4>Using Search Google</h4>
               </div>
 
 

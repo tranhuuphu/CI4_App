@@ -5,12 +5,12 @@
 
 
 <div class="container">
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #FE9603;">
+  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #d5e0f0;">
     <div class="container clearfix">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
         <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search Result Key: <?= $key ?></a></li>
+        <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <?= $key ?></a></li>
       </ol>
     </div>
   </section>
@@ -20,94 +20,153 @@
 <style type="text/css">
   form #q{
     background: #72bdf7 !important;
+    border:  #fefefe solid;
   }
 </style>
-<div class="container clearfix mt-5">
+<div class="container clearfix mt-5 mb-2">
   <div class="row">
-    <p>Tìm kiếm lại bằng công cụ Google</p>
+    <div class="fancy-title title-border">
+      <h3 class="mb-2 ls-1 text-uppercase fw-bold">Tìm kiếm lại bằng công cụ Google</h3>
+    </div>
     <form role="search" method="get" id="searchform" class="revtp-searchform" action="https://google.com/search">
       <input type="text" value name="q" id="q" placeholder="What are you looking for?" /><input type="submit" id="searchsubmit" value="Find" />
     </form>
   </div>
-  <div class="row align-items-center mw-sm mx-auto g-0">
+  
+  <?php if($result != null): ?>
+    <hr>
 
-    <?php foreach($gallery_result as $key3): ?>
-      <div class="col-12">
-        <div class="feature-box fbox-effect fbox-xl">
-          <div class="fbox-content">
-            <h3 class="fw-bold"><?= $key3['gallery_title']; ?></h3>
-            <p>
-              <i class="fas fa-calendar-days"></i>
-              <?php
-                $datetime = (new \CodeIgniter\I18n\Time);
-                $yearNow = $datetime::now()->getYear();
-                $yearMonthsNow = $datetime::now()->getMonth();
-                $yearPost = $datetime::parse($key3['updated_at'])->getYear();
-                
-                $yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
-                if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                  echo $datetime::parse($key3['updated_at'])->humanize();
-                }
-                if(($yearNow - $yearPost) > 1){
-                  echo $datetime::parse($key3['updated_at'])->humanize();
-                }else{
-                  echo $datetime::parse($key3['updated_at'])->toLocalizedString('dd MMM yyyy');
-                }
-                
+    <div class="row align-items-center mw-sm mx-auto g-0 mt-5">
 
-              ?>
+      <?php foreach($result as $key2): ?>
+        <div class="col-12">
+          <div class="feature-box fbox-effect fbox-xl">
+            <div class="fbox-content">
+              <h3 class="fw-bold"><?= $key2['post_title']; ?></h3>
+              <p>
+                <i class="fa-solid fa-calendar-days"></i>
+                <?php
+                  $datetime = (new \CodeIgniter\I18n\Time);
+                  $yearNow = $datetime::now()->getYear();
+                  $yearMonthsNow = $datetime::now()->getMonth();
+                  $yearPost = $datetime::parse($key2['updated_at'])->getYear();
+                  
+                  $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
+                  if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                    echo $datetime::parse($key2['updated_at'])->humanize();
+                  }
+                  if(($yearNow - $yearPost) > 1){
+                    echo $datetime::parse($key2['updated_at'])->humanize();
+                  }else{
+                    echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
+                  }
+                  
 
-            </p>
-            <p><?= $key3['post_intro']; ?></p>
-            <a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>" class="more-link fst-normal mt-3 button button-large button-rounded m-0">Read More <i class="fa-duotone fa-arrow-right"></i></a>
+                ?>
+                <i class="fas fa-clock"></i>
+                <?php
+                  echo ceil(strlen($key2['post_content'])/700)
+                ?>
+                Minutes Read
+              </p>
+              <p><?= $key2['post_intro']; ?></p>
+              <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class=" mt-3 button button-large button-rounded m-0">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-    <?php endforeach; ?>
+        <div class="line my-5"></div>
+      <?php endforeach; ?>
+      <?php if($post_count > $paginate): ?>
+        <?= $pager->links("post") ?>
+      <?php endif; ?>
 
-
-    <?php foreach($result as $key2): ?>
-      <div class="col-12">
-        <div class="feature-box fbox-effect fbox-xl">
-          <div class="fbox-content">
-            <h3 class="fw-bold"><?= $key2['post_title']; ?></h3>
-            <p>
-              <i class="fa-solid fa-calendar-days"></i>
-              <?php
-                $datetime = (new \CodeIgniter\I18n\Time);
-                $yearNow = $datetime::now()->getYear();
-                $yearMonthsNow = $datetime::now()->getMonth();
-                $yearPost = $datetime::parse($key2['updated_at'])->getYear();
-                
-                $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
-                if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                  echo $datetime::parse($key2['updated_at'])->humanize();
-                }
-                if(($yearNow - $yearPost) > 1){
-                  echo $datetime::parse($key2['updated_at'])->humanize();
-                }else{
-                  echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
-                }
-                
-
-              ?>
-              <i class="fas fa-clock"></i>
-              <?php
-                echo ceil(strlen($key2['post_content'])/700)
-              ?>
-              Minutes Read
-            </p>
-            <p><?= $key2['post_intro']; ?></p>
-            <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class=" mt-3 button button-large button-rounded m-0">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="line my-5"></div>
-    <?php endforeach; ?>
-    
-  </div>
+      
+    </div>
+  <?php endif; ?>
 </div>
 
+
+<?php if($gallery_result != null): ?>
+  <section id="content" class="mb-3">
+    <div class="content-wrap">
+      <div class="container">
+        <hr>
+        <div class="row justify-content-center gutter-50 col-mb-50 mt-5">
+          <div class="col-xl-6 col-lg-8 text-center">
+            <h3 class="h1 fw-bold mb-3">Danh sách Ảnh</h3>
+          </div>
+          <div class="clear"></div>
+
+
+
+
+
+          <?php foreach($gallery_result as $key3): ?>
+            <div class="entry event col-lg-6 col-md-6">
+              <div class="grid-inner row g-0 p-4 bg-transparent shadow-sm h-shadow all-ts h-translatey-sm card border">
+                <div class="entry-image">
+                  <a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>">
+                    <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$key3['gallery_image']) ?>" alt="<?= $key3['gallery_title'] ?>" />
+
+                  </a>
+                </div>
+                <div class="entry-title title-sm">
+                  <h2><a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>"><?= $key3['gallery_title']; ?></a></h2>
+                </div>
+                <div class="entry-meta">
+                  <ul>
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <?php
+                        $datetime = (new \CodeIgniter\I18n\Time);
+                        $yearNow = $datetime::now()->getYear();
+                        $yearMonthsNow = $datetime::now()->getMonth();
+                        $yearPost = $datetime::parse($key3['updated_at'])->getYear();
+                        
+                        $yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
+                        if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                          echo $datetime::parse($key3['updated_at'])->humanize();
+                        }
+                        if(($yearNow - $yearPost) > 1){
+                          echo $datetime::parse($key3['updated_at'])->humanize();
+                        }else{
+                          echo $datetime::parse($key3['updated_at'])->toLocalizedString('dd MMM yyyy');
+                        }
+                        
+
+                      ?>
+                    </li>
+                    <li>
+                      <i class="fas fa-atom"></i> <?= $key3['gallery_type_name']; ?>
+                    </li>
+                    <li>
+                      <a href="<?= base_url('page/download/'.$key3['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> Image</a>
+                    </li>
+                    <?php if($key3['gallery_file_download'] != null): ?>
+                      <li>
+                        <a href="<?= $key3['gallery_file_download'] ?>" target= "_blank"><i class="fas fa-file-download"></i> File</a>
+                      </li>
+                    <?php endif; ?>
+                  </ul>
+                </div>
+                <div class="entry-content">
+                  <a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>" class="btn btn-outline-secondary">Read More</a>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+          <?php if($gallery_count > $paginate): ?>
+            <?= $pager->links("gallery") ?>
+          <?php endif; ?>
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<?php endif; ?>
 	
 
 

@@ -730,15 +730,18 @@ class CanvasController extends BaseController
             return view('front_end/canvas_site/404');
         }
 
-        $array = ['post_title' => $key, 'post_intro' => $key, 'post_content' => $key];
-        $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->paginate($paginate);
-        $post_count = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like($array)->countAllResults();
-
-        $array2 = ['gallery_title' => $key, 'gallery_type_name' => $key];
-        $gallery_result = $gallery->like('gallery_title', $key)->like('gallery_type_name', $key)->get();
 
 
-        dd($gallery_result);
+        $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like('post_title', $key)->orLike('post_intro', $key)->orLike('post_content', $key)->paginate($paginate,'post');
+        $post_count = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like('post_title', $key)->orLike('post_intro', $key)->orLike('post_content', $key)->countAllResults();
+
+        // dd($post_count);
+
+        $gallery_result = $gallery->like('gallery_title', $key)->orLike('gallery_type_name', $key)->paginate($paginate,'gallery');
+        $gallery_count = $gallery->like('gallery_title', $key)->orLike('gallery_type_name', $key)->countAllResults();
+
+
+        // dd($result);
 
         $link_full = base_url().'/search?q='.$key;
         $data = [
@@ -757,7 +760,10 @@ class CanvasController extends BaseController
             'paginate'      => $paginate,
             'post_count'    => $post_count,
             'result'        => $result,
-            'gallery_result'        => $gallery_result,
+
+            'gallery_result'       => $gallery_result,
+            'gallery_count'        => $gallery_count,
+
             'link_full'     => $link_full,
 
         ];
