@@ -46,7 +46,7 @@
             </div>
             <div class="col-md-5 col-lg-12">
               <div class="widget subscribe-widget clearfix">
-                <h5 class="text-bold"> <a href="<?= $page_home['maps']; ?>"  target="_blank"><i class="fa-brands fa-maps"></i> Us on Maps Link</a></h5>
+                <h5 class="fw-bold"> <a href="<?= $page_home['maps']; ?>"  target="_blank"><i class="fa-brands fa-maps"></i><i class="fas fa-map-marker-alt"></i> SEE MAPS</a></h5>
                 
                 
               </div>
@@ -105,3 +105,7 @@
     </div>
   </div>
 </footer>
+
+
+<div id='arcontactus'></div>
+<a id="<?= $page_home['phone']; ?>" href="tel:<?= $page_home['phone']; ?>"><div class="call-btn2"><noscript><img src="<?= base_url('public'); ?>/upload/phone.svg"/></noscript><img class=" lazyloaded" src="<?= base_url('public'); ?>/upload/phone.svg" data-src="{{url('/')}}/public/public_image/phone.svg"> 0<?= number_format($page_home['phone'], 0, ',', ' ') ?></div></a>

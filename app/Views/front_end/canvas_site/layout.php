@@ -12,15 +12,17 @@
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
+    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css"> -->
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
 
 
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen">
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css">
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/navigation.css">
+    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css"> -->
+    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/navigation.css"> -->
+
+    <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
 
     <style>
       .revo-slider-emphasis-text {
@@ -58,11 +60,24 @@
        .search{
 
           position: absolute;
-          bottom: 30%;
+          bottom: 33%;
           right: 85px;
           height: auto;
           width: auto;
-          background: grey;
+          background: #1f8cff;
+          border-radius: 0;
+          font-weight: bold;
+          border: none;
+
+       }
+       .sticky-header .search{
+
+          position: absolute;
+          bottom: 22% !important;
+          right: 85px;
+          height: auto;
+          width: auto;
+          background: #1f8cff;
           border-radius: 0;
           font-weight: bold;
           border: none;
@@ -75,15 +90,19 @@
           margin-bottom: 15px;
           border-radius: 20px;
           border: solid #000000 1px;
+          margin-bottom: -10px !important;
         }
         .mce-toc h2{
             font-weight: bold;
             text-transform: uppercase;
+            font-size: 25px;
+            margin-bottom: 10px !important;
           }
         .mce-toc li {
           list-style: none;
           position: relative;
           padding: 0 0 0 20px;
+          margin-bottom: 10px !important;
         }
         .mce-toc li::before {
           content: ""; 
@@ -98,11 +117,61 @@
         }
 
         .sub::after {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            content: "\f078";
-            padding-left: 7px;
-          }
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f078";
+          padding-left: 7px;
+        }
+
+        textarea:focus, 
+        textarea.form-control:focus, 
+        input.form-control:focus, 
+        input[type=text]:focus, 
+        input[type=password]:focus, 
+        input[type=email]:focus, 
+        input[type=number]:focus, 
+        [type=text].form-control:focus, 
+        [type=password].form-control:focus, 
+        [type=email].form-control:focus, 
+        [type=tel].form-control:focus, 
+        [contenteditable].form-control:focus {
+          box-shadow: inset 0 -0px 0 #ddd;
+        }
+
+        .postcontent .button{margin-left: 0px !important;}
+
+        .call-btn2 {
+          position: fixed;
+          bottom: 60px;
+          left: 25px;
+          background: #345eeb;
+          text-align: center;
+          color: #fff;
+          box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+          z-index: 99;
+          transition: all .3s;
+          font-weight: 700;
+          border-radius: 5px;
+          padding: 1.5px 10px 1.5px 38px;
+          font-size: 18px;
+          line-height: 25px;
+        }
+        .call-btn2 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 5px 7px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 5px 0 0 5px;
+            animation: blinking 1s ease-in-out infinite;
+        }
+        .postcontent img{
+          margin: 0 0 15px 0;
+        }
+
+        .page-link{
+          border-radius: 0px !important;
+        }
   
     </style>
 
@@ -139,7 +208,7 @@
 
     </div>
 
-    <div id="gotoTop" class="uil uil-angle-up"></div>
+    <div id="gotoTop" class="uil uil-angle-up"><i class="fas fa-arrow-up"></i></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
@@ -149,14 +218,17 @@
 
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.tools.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.video.min.js"></script>
+    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.video.min.js"></script> -->
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.actions.min.js"></script> -->
+    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.layeranimation.min.js"></script> -->
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.kenburn.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.navigation.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.migration.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.parallax.min.js"></script>
+
+
+    <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>
     <script>
       var tpj = jQuery;
 

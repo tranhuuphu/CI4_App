@@ -18037,6 +18037,8 @@ body:not(.is-expanded-menu) .mobile-menu-floating .menu-container {
     margin: 0 8px
 }
 
+
+
 .header-misc-icon>a {
     display: flex;
     position: relative;
@@ -30491,9 +30493,9 @@ label.radio {
     animation-fill-mode: both;
     -webkit-perspective: 1000
 }
-
+/*preload icon*/
 .css3-spinner {
-    --cnvs-loader-color: var(--cnvs-contrast-300);
+    --cnvs-loader-color: #2977ff;
     position: relative;
     z-index: auto;
     background-color: transparent;

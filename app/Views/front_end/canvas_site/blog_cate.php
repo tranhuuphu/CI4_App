@@ -43,7 +43,7 @@
             <h2><a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
           </div>
 
-          <h3 class="mb-0 text-secondary"><?= $key2['post_intro']; ?></h3>
+          <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px"><?= $key2['post_intro']; ?></h3>
         </div>
       </div>
     </div>
@@ -118,8 +118,16 @@
       <?php if($post_count > $paginate): ?>
       
         <div class="line line-sm"></div>
-        <?= $pager->links() ?>
+
+        <div class="row">
+          <div class="col-md-12">
+            <?= $pager->links() ?>
+          </div>
+        </div>
       <?php endif; ?>
+
+
+      
 
 
 
@@ -163,7 +171,7 @@
                     </div>
                     <div class="entry-meta">
                       <ul>
-                        <li>
+                        <li><i class="far fa-calendar-alt"></i>
                         	<?php
   					            		$datetime = (new \CodeIgniter\I18n\Time);
   					            		$yearNow = $datetime::now()->getYear();

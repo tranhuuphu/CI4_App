@@ -82,7 +82,7 @@
 			          </div>
 			          <div class="entry-meta">
 			            <ul>
-			              <li><i class="uil uil-clock"></i>
+			              <li><i class="far fa-calendar-alt"></i>
 			              	<?php
 				            		$datetime = (new \CodeIgniter\I18n\Time);
 				            		$yearNow = $datetime::now()->getYear();
@@ -106,7 +106,7 @@
 			                <a href="blog-single.html#comments"><i class="icon-comments"></i> 31</a>
 			              </li> -->
 			              <li>
-			                <a href="javascript:void(0)"><i class="icon-camera-retro"></i></a>
+			                <a href="javascript:void(0)"><i class="fas fa-camera-retro"></i></a>
 			              </li>
 			            </ul>
 			          </div>
@@ -137,7 +137,7 @@
 					              </div>
 					              <div class="entry-meta">
 					                <ul>
-					                  <li><i class="uil uil-clock"></i>
+					                  <li><i class="far fa-calendar-alt"></i>
 					                  	<?php
 								            		$datetime = (new \CodeIgniter\I18n\Time);
 								            		$yearNow = $datetime::now()->getYear();
@@ -161,6 +161,7 @@
 					                  <!-- <li>
 					                    <a href="#"><i class="icon-comments"></i> 32</a>
 					                  </li> -->
+					                  <li><i class="fas fa-star"></i></li>
 					                </ul>
 					              </div>
 					            </div>
@@ -201,7 +202,7 @@
 		            </div>
 		            <div class="entry-meta">
 		              <ul>
-		                <li><i class="uil uil-schedule"></i>
+		                <li><i class="far fa-calendar-alt"></i>
 		                	<?php
 				            		$datetime = (new \CodeIgniter\I18n\Time);
 				            		$yearNow = $datetime::now()->getYear();
@@ -259,7 +260,7 @@
                       </div>
                       <div class="entry-meta">
                         <ul>
-                          <li><i class="uil uil-clock"></i>
+                          <li><i class="far fa-calendar-alt"></i>
                           	<?php
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
@@ -279,6 +280,7 @@
 
 							            	?>
                           </li>
+                          <li><i class="fas fa-user-edit"></i></li>
                         </ul>
                       </div>
                       <div class="entry-content " style="margin-top: 5px !important">
@@ -312,7 +314,7 @@
               <form method="get" action="https://google.com/search" target="_blank">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
-                  <button type="submit" class="button button-3d w-100 button-small m-0" style="margin-top: 25px !important;" type="submit">Tìm kiếm</button>
+                  <button type="submit" class="button button-3d w-100 button-small m-0 fw-bold" style="margin-top: 25px !important;" type="submit">FIND <i class="fas fa-search"></i></button>
                   <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
                 </div>
 
@@ -348,7 +350,7 @@
                       </div>
                       <div class="entry-meta">
                         <ul>
-                          <li><i class="uil uil-calendar"></i>
+                          <li><i class="far fa-calendar-alt"></i>
                           	<?php
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
@@ -368,6 +370,7 @@
 
 							            	?>
                           </li>
+
                         </ul>
                       </div>
                     </div>
@@ -460,12 +463,19 @@
 		                    data-hover-speed="350"
 		                    data-hover-parent=".portfolio-item"
 		                    data-lightbox="image"
-		                    title="<?= $key['gallery_title'] ?>"
+		                    title="
+		                    <?php
+				                  $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
+				                  $image_width = $image_info[0];
+				                  $image_height = $image_info[1];
+				                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
+				                ?>
+				                "
 		                  >
-		                    <i class="uil uil-expand-alt"></i>
+		                    <i class="fas fa-expand-alt"></i>
 		                  </a>
 		                  <a href="<?= base_url('page/download/'.$key['gallery_image'])  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-		                    <i class="uil uil-image-download"></i>
+		                    <i class="fas fa-save"></i>
 		                  </a>
 		                </div>
 		                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
@@ -473,9 +483,9 @@
 		            </div>
 
 		            <div class="portfolio-desc">
-		              <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" target="_blank" class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
+		              <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
 		              <span>
-		              	<a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" target="_blank"><i class="fas fa-images"></i></a>
+		              	<a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"><i class="fas fa-images"></i></a>
 
 
 

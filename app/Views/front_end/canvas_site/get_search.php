@@ -77,8 +77,14 @@
         <div class="line my-5"></div>
       <?php endforeach; ?>
       <?php if($post_count > $paginate): ?>
-        <?= $pager->links("post") ?>
+        <div class="row">
+          <div class="col-md-12">
+            <?= $pager->links("post") ?>
+          </div>
+        </div>
       <?php endif; ?>
+
+
 
       
     </div>

@@ -45,6 +45,7 @@
           </div>
         </div>
       </div>
+      <hr>
 
       <div class="row gutter-40 col-mb-80">
 		    <div class="postcontent col-lg-12">

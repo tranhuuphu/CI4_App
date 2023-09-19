@@ -66,20 +66,20 @@ class PostController extends BaseController
                 ],
             ],
 
-            'post_meta_desc'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Description này không được để trống.',
-                ],
+            // 'post_meta_desc'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Nội dung Meta Description này không được để trống.',
+            //     ],
 
-            ],
-            'post_meta_key'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Key này không được để trống.',
-                ],
+            // ],
+            // 'post_meta_key'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Nội dung Meta Key này không được để trống.',
+            //     ],
 
-            ],
+            // ],
 
         ]);
         if(!$validation){
@@ -264,18 +264,18 @@ class PostController extends BaseController
                     'required' => 'Nội dung bài viết không được để trống.',
                 ],
             ],
-            'post_meta_desc'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Description này không được để trống.',
-                ],
-            ],
-            'post_meta_key'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Nội dung Meta Key này không được để trống.',
-                ],
-            ],
+            // 'post_meta_desc'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Nội dung Meta Description này không được để trống.',
+            //     ],
+            // ],
+            // 'post_meta_key'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Nội dung Meta Key này không được để trống.',
+            //     ],
+            // ],
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
@@ -420,7 +420,7 @@ class PostController extends BaseController
         $data['post_show']      = 1;
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$post_detail['post_title']."---"." sẽ được hiển thị trên trang web");
+        return redirect()->to('admin/post')->with("show", $post_detail['post_title']);
     }
 
     public function hidden($id){
@@ -433,7 +433,7 @@ class PostController extends BaseController
         $data['post_show']      = 0;
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$post_detail['post_title']."---"." sẽ không hiển thị trên trang web");
+        return redirect()->to('admin/post')->with("hidden", $post_detail['post_title']);
     }
 
     public function getDelete($id){

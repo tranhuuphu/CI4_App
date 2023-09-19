@@ -33,7 +33,7 @@
 
 
 
-<header id="header" class="header" style="background-color: #ffffff">
+<header id="header" class="header dark2" style="background-color: #e0efff">
   <div id="header-wrap">
     <div class="container">
       <div class="header-row primary-menu2 sub-title2">
@@ -47,13 +47,13 @@
 
         <div class="header-misc">
           <div id="top-search" class="header-misc-icon">
-            <a href="javascript:void(0)" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
+            <a href="javascript:void(0)" id="top-search-trigger"><i class="fas fa-search"></i><i class="fas fa-times"></i></a>
           </div>
 
           <?php if(isset($items)): ?>
             <div id="top-cart" class="header-misc-icon d-none d-sm-block">
               
-              <a href="#" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number"><?= count($items) ?></span></a>
+              <a href="javascript:void(0)" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number"><?= count($items) ?></span></a>
               <div class="top-cart-content">
                 <div class="top-cart-title">
                   <h4>Shopping Cart</h4>
@@ -99,9 +99,7 @@
 
         <nav class="primary-menu">
           <ul class="menu-container">
-            <!-- <li class="menu-item current">
-              <a class="menu-link" href="<?= base_url(''); ?>"><div>Home</div></a>
-            </li> -->
+
 
 
             <li class="menu-item" data-title2="san-pham">
@@ -144,25 +142,14 @@
           </ul>
         </nav>
 
-        <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
+        <form class="top-search-form" id="searchform" action="<?= base_url('/'); ?>/search" method="get">
           
           <input type="text" name="q" class="form-control " id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
-          <button type="submit" class="btn btn-primary search"><i class="fas fa-search"></i></button>
+          <button type="submit" class="btn btn-primary search" ><i class="fas fa-search"></i></button>
           
         </form>
 
 
-        <!-- <form class="top-search-form" action="<?= base_url('/'); ?>/search" method="get">
-          <div class="row height d-flex justify-content-center align-items-center">
-            <div class="col-md-8 col-sm-8">
-              <div class="search">
-                  <input type="text" name="q" class="form-control" placeholder="Type text...">
-                  <button type="submit" class="btn btn-primary"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-              </div>
-            </div>
-            
-          </div>
-        </form> -->
                     
 
         

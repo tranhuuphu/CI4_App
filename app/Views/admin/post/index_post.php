@@ -26,7 +26,7 @@
             <?php if(!empty(session()->getFlashdata('success'))) : ?>
               <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                <h5><i class="icon fas fa-check"></i> Notice!</h5>
                 Bạn vừa thêm mới thành công bài viết: <strong><?= session()->getFlashdata('success'); ?></strong>
               </div>
             <?php endif ?>
@@ -34,7 +34,7 @@
             <?php if(!empty(session()->getFlashdata('update'))) : ?>
               <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                <h5><i class="icon fas fa-check"></i> Notice!</h5>
                 Bạn vừa chỉnh sửa thành công bài viết: <strong><?= session()->getFlashdata('update'); ?></strong>
               </div>
             <?php endif ?>
@@ -42,8 +42,24 @@
             <?php if(!empty(session()->getFlashdata('delete'))) : ?>
               <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                <h5><i class="icon fas fa-check"></i> Notice!</h5>
                 Bạn vừa xóa bài viết: <strong><?= session()->getFlashdata('delete'); ?></strong> <span style="color: yellow;"> & không thể phục hồi</span>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('show'))) : ?>
+              <div class="alert alert-primary alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Notice!</h5>
+                Bạn vừa cho hiện thị bài viết: <strong><?= session()->getFlashdata('show'); ?></strong>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('hidden'))) : ?>
+              <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Notice!</h5>
+                Bạn vừa ẩn bài viết: <strong><?= session()->getFlashdata('hidden'); ?></strong>
               </div>
             <?php endif ?>
 
@@ -73,7 +89,19 @@
                   	<?php foreach($post as $p): ?>
                         
                       
-		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $p['post_title'] ): ?> class="table-primary" <?php endif; ?> <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $p['post_title'] ): ?> class="table-info" <?php endif; ?>>
+		                  <tr
+                        <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $p['post_title'] ): ?> class="table-success" <?php endif; ?>
+
+                        <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $p['post_title'] ): ?> class="table-info" <?php endif; ?>
+
+                        <?php if(!empty(session()->getFlashdata('delete')) && session()->getFlashdata('delete') == $p['post_title'] ): ?> class="table-danger" <?php endif; ?>
+
+                        <?php if(!empty(session()->getFlashdata('show')) && session()->getFlashdata('show') == $p['post_title'] ): ?> class="table-primary" <?php endif; ?>
+
+                        <?php if(!empty(session()->getFlashdata('hidden')) && session()->getFlashdata('hidden') == $p['post_title'] ): ?> class="table-warning" <?php endif; ?>
+
+                        
+                      >
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
 		                    <td><?= $p['post_title']; ?></td>
@@ -95,8 +123,15 @@
                         </td>
                         
                         <td>
-                          <a href="<?php if($p['post_show'] == 0){echo base_url('admin/post/show/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class=" ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
-                          <a href="<?php if($p['post_show'] == 1){echo base_url('admin/post/hidden/'.$p['id']);}else{echo "javascript:void(0)";} ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
+                          <?php if($p['post_show'] == 0): ?>
+
+                            <a href="<?= base_url('admin/post/show/'.$p['id']) ?>" class="ml-3"><i class="fas fa-eye"></i></i> Hiện</a>
+                            <a href="javascript:void(0)" class="ml-3 text-secondary"><i class="fas fa-eye-slash"></i> Ẩn</a>
+                          <?php else: ?>
+                            <a href="javascript:void(0)" class="ml-3 text-secondary"><i class="fas fa-eye"></i></i> Hiện</a>
+                            <a href="<?= base_url('admin/post/hidden/'.$p['id']) ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
+                          <?php endif; ?>
+                          
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">

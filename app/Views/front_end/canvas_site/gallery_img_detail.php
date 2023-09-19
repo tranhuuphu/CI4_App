@@ -181,18 +181,18 @@
                 <div class="bg-overlay" data-lightbox="gallery">
                   <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
                     <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
-                      <i class="uil uil-images"></i>
+                      <i class="fas fa-image"></i>
                     </a>
                     <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="d-none" data-lightbox="gallery-item"></a>
                     <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                      <i class="uil uil-ellipsis-h"></i>
+                      <i class="fas fa-ellipsis-h"></i>
                     </a>
                   </div>
                   <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
                 </div>
               </div>
               <div class="portfolio-desc">
-                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>"><?= $r1['gallery_title'] ?></a></h3>
+                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="fw-bold"><?= $r1['gallery_title'] ?></a></h3>
                 
               </div>
             </div>
