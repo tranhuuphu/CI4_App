@@ -142,11 +142,11 @@
         </div>
         <div class="position-relative overflow-hidden pb-4">
           <ul class="iconlist mb-0">
-            <li><i class="bi-clock color"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
-            <li><i class="bi-clock color"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
-            <li><i class="bi-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
+            <li><i class="far fa-clock"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
+            <li><i class="far fa-clock"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
+            <li><i class="far fa-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
           </ul>
-          <i class="bi-clock bg-icon" style="bottom: -70px;"></i>
+          <i class="far fa-clock bg-icon" style="bottom: -70px;"></i>
         </div>
 
 

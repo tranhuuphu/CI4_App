@@ -91,7 +91,7 @@
 								            <?php endif; ?>
                           </ul>
                         </div>
-                        <div class="entry-content">
+                        <div class="entry-content" style="margin-top: 7px">
                           <p class="mb-0 text-secondary"><?= $post_cate_1[0]['post_intro'] ?></p>
                         </div>
                       </div>
@@ -120,11 +120,11 @@
 		            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
 		          </div>
 		          <div class="entry-title title-sm nott">
-		            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+		            <h2><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h2>
 		          </div>
 		          <div class="entry-meta">
 		            <ul>
-		              <li><i class="fa-solid fa-calendar-days"></i>
+		              <li><i class="fas far fa-calendar-alt"></i>
 		              	<?php
 			            		$datetime = (new \CodeIgniter\I18n\Time);
 			            		$yearNow = $datetime::now()->getYear();
@@ -146,13 +146,13 @@
 		              </li>
 		              <?php if($key['post_status'] == "san-pham"): ?>
 			              <li>
-			                <i class="fa-solid fa-cart-shopping"></i>
+			                <a href="<?= site_url('buy').'/'.$key['id']; ?>"><i class="fas fa-shopping-cart"></i></a>
 			              </li>
 			            <?php endif; ?>
 		            </ul>
 		          </div>
-		          <div class="entry-content">
-		            <p><?= $key['post_intro']; ?></p>
+		          <div class="entry-content" style="margin-top: 7px">
+		            <p class="text-secondary"><?= $key['post_intro']; ?></p>
 		          </div>
 		        </div>
 		      </div>
@@ -171,16 +171,16 @@
 
 	  	
 
-	    <div class="fancy-title title-border mt-5">
-        <h4>Opening Hours</h4>
+	    <div class="fancy-title title-border mt-1">
+        <h3><strong>Opening Hours</strong></h3>
       </div>
       <div class="position-relative overflow-hidden pb-4">
         <ul class="iconlist mb-0">
-          <li><i class="bi-clock color"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
-          <li><i class="bi-clock color"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
-          <li><i class="bi-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
+          <li><i class="far fa-clock color"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
+          <li><i class="far fa-clock color"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
+          <li><i class="far fa-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
         </ul>
-        <i class="bi-clock bg-icon" style="bottom: -70px;"></i>
+        <i class="far fa-clock bg-icon" style="bottom: -70px;"></i>
       </div>
 	    
 	    
@@ -206,7 +206,7 @@
                   </div>
                   <div class="entry-meta">
                     <ul>
-                      <li><i class="fa-duotone fa-calendar-days"></i>
+                      <li><i class="far fa-calendar-alt"></i>
                       	<?php
 					            		$datetime = (new \CodeIgniter\I18n\Time);
 					            		$yearNow = $datetime::now()->getYear();

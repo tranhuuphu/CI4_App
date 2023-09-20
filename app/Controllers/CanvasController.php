@@ -724,7 +724,7 @@ class CanvasController extends BaseController
         $gallery = new GalleryModel;
 
         $key = $_GET['q'];
-        $paginate = 1;
+        $paginate = 10;
         // dd($key);
         if(!isset($key) || $key == null || $key == '+' || $key == '++'){
             return view('front_end/canvas_site/404');

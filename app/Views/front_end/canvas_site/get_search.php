@@ -28,6 +28,7 @@
     <div class="fancy-title title-border">
       <h3 class="mb-2 ls-1 text-uppercase fw-bold">Tìm kiếm lại bằng công cụ Google</h3>
     </div>
+    
     <form role="search" method="get" id="searchform" class="revtp-searchform" action="https://google.com/search">
       <input type="text" value name="q" id="q" placeholder="What are you looking for?" /><input type="submit" id="searchsubmit" value="Find" />
     </form>
@@ -42,35 +43,45 @@
         <div class="col-12">
           <div class="feature-box fbox-effect fbox-xl">
             <div class="fbox-content">
-              <h3 class="fw-bold"><?= $key2['post_title']; ?></h3>
+              <h3 class="fw-bold"><a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h3>
               <p>
-                <i class="fa-solid fa-calendar-days"></i>
-                <?php
-                  $datetime = (new \CodeIgniter\I18n\Time);
-                  $yearNow = $datetime::now()->getYear();
-                  $yearMonthsNow = $datetime::now()->getMonth();
-                  $yearPost = $datetime::parse($key2['updated_at'])->getYear();
-                  
-                  $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
-                  if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                    echo $datetime::parse($key2['updated_at'])->humanize();
-                  }
-                  if(($yearNow - $yearPost) > 1){
-                    echo $datetime::parse($key2['updated_at'])->humanize();
-                  }else{
-                    echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
-                  }
-                  
+                <div class="entry-meta mb-4">
+                  <ul>
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <?php
+                        $datetime = (new \CodeIgniter\I18n\Time);
+                        $yearNow = $datetime::now()->getYear();
+                        $yearMonthsNow = $datetime::now()->getMonth();
+                        $yearPost = $datetime::parse($key2['updated_at'])->getYear();
+                        
+                        $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
+                        if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                          echo $datetime::parse($key2['updated_at'])->humanize();
+                        }
+                        if(($yearNow - $yearPost) > 1){
+                          echo $datetime::parse($key2['updated_at'])->humanize();
+                        }else{
+                          echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
+                        }
+                        
 
-                ?>
-                <i class="fas fa-clock"></i>
-                <?php
-                  echo ceil(strlen($key2['post_content'])/700)
-                ?>
-                Minutes Read
+                      ?>
+                    </li>
+                    <li>
+                    <i class="fas fa-clock"></i>
+                    <?php
+                      echo ceil(strlen($key2['post_content'])/700)
+                    ?>
+                    Minutes Read
+                    </li>
+                    
+                  </ul>
+                </div>
               </p>
-              <p><?= $key2['post_intro']; ?></p>
-              <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class=" mt-3 button button-large button-rounded m-0">Read More <i class="fas fa-arrow-right"></i></a>
+
+              <p style="margin-top: -20px !important"><?= $key2['post_intro']; ?></p>
+              <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class=" mt-3 button button-large btn-info button-rounded m-0">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -155,7 +166,7 @@
                     <?php endif; ?>
                   </ul>
                 </div>
-                <div class="entry-content">
+                <div class="entry-content" style="margin-top: 10px">
                   <a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>" class="btn btn-outline-secondary">Read More</a>
                 </div>
               </div>

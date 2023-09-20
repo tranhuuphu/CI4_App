@@ -83,22 +83,23 @@
                           <li><i class="fas fa-camera-retro"></i></li>
                         </ul>
                       </div>
-
+                      <div class="line line-sm"></div>
                       <div class="d-flex align-items-center justify-content-between">
                         <?php if($post_detail['post_sale']): ?>
                           <div class="product-price"><del><?= $post_detail['post_price']/1000; ?>K</del> <ins><?= $post_detail['post_sale']/1000; ?>K</ins> <small>VNĐ</small></div>
                         <?php elseif($post_detail['post_price']): ?>
-                          <div class="product-price"><ins>Giá: <?= $post_detail['post_price']/1000; ?>K</ins></div>
+                          <div class="product-price"><ins>Giá: <?= $post_detail['post_price']/1000; ?>K</ins> <small>VNĐ</small></div>
                         <?php else: ?>
                           <div class="product-price"><ins>Giá: Liên Hệ</ins></div>
                         <?php endif; ?>
 
                         <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-half"></i>
-                          <i class="bi-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star-half-alt"></i>
+
                         </div>
                       </div>
                       <div class="line"></div>
@@ -112,15 +113,16 @@
                         </div>
 
                         <!-- <a href="<?= site_url('buy').'/'.$post_detail['id']; ?>"  <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?> ><i class="uil uil-shopping-cart me-1"></i> Add to Cart</a> -->
-                        <button type="submit" <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?>><i class="uil uil-shopping-cart me-1"></i> Add to Cart</button>
+                        <button type="submit" <?php if($post_detail['post_sale'] || $post_detail['post_price']): ?> class="add-to-cart button m-0" <?php else: ?> class="add-to-cart button m-0 disabled" <?php endif; ?>><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                       </form>
                       <div class="line"></div>
 
                       <p><?= $post_detail['post_intro']; ?></p>
                       <ul class="iconlist">
-                        <li><i class="fas fa-caret-right"></i> Nhiều lựa chọn mẫu</li>
-                        <li><i class="fas fa-caret-right"></i> Kích thước đa dạng</li>
-                        <li><i class="fas fa-caret-right"></i> Giao hàng nhanh</li>
+                        <li><i class="fas fa-check"></i> Nhiều lựa chọn mẫu</li>
+                        <li><i class="fas fa-check"></i> Kích thước đa dạng</li>
+                        <li><i class="fas fa-check"></i> Giao hàng nhanh</li>
+                        <li><i class="fas fa-check"></i> Giá có thể thay đổi theo thời điểm</li>
                       </ul>
 
                       <div class="card product-meta">
@@ -191,11 +193,11 @@
                         </div>
                       </div>
                       <!-- <div class="line"></div> -->
-                      <div class="row">
-                        <!-- <div class="col-md-4 d-none d-md-block">
+                      <!-- <div class="row">
+                        <div class="col-md-4 d-none d-md-block">
                           <a href="#" title="Brand Logo"><img src="images/shop/brand2.jpg" alt="Brand Logo" /></a>
-                        </div> -->
-                        <!-- <div class="col-md-12">
+                        </div>
+                        <div class="col-md-12">
                           <div class="row gutter-30">
                             <div class="col-lg-6">
                               <div class="feature-box fbox-plain fbox-dark fbox-sm">
@@ -242,49 +244,16 @@
                               </div>
                             </div>
                           </div>
-                        </div> -->
-                      </div>
+                        </div>
+                      </div> -->
+
                     </div>
                   </div>
                 </div>
               </div>
               <div class="line"></div>
 
-              <!-- <div class="w-100 mb-3">
-                <h4>Related Products</h4>
-                <div class="owl-carousel product-carousel carousel-widget" data-margin="30" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
-                  <div class="oc-item">
-                    <div class="product">
-                      <div class="product-image">
-                        <a href="#"><img src="images/shop/dress/1.jpg" alt="Checked Short Dress" /></a>
-                        <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress" /></a>
-                        <div class="sale-flash badge bg-success p-2">50% Off*</div>
-                        <div class="bg-overlay">
-                          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
-                            <a href="#" class="btn btn-dark me-2" title="Add to Cart"><i class="bi-bag-plus"></i></a>
-                            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax" title="Quick View"><i class="bi-eye"></i></a>
-                          </div>
-                          <div class="bg-overlay-bg bg-transparent"></div>
-                        </div>
-                      </div>
-                      <div class="product-desc text-center">
-                        <div class="product-title">
-                          <h3><a href="#">Checked Short Dress</a></h3>
-                        </div>
-                        <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
-                        <div class="product-rating">
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-fill"></i>
-                          <i class="bi-star-half"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div> -->
+              
 
             </main>
             
@@ -299,15 +268,15 @@
 		        <div class="row text-center text-md-start justify-content-between my-2">
 		        	<?php if(isset($previous)): ?>
 	              <div class="col-md-auto">
-	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span><?= $previous['post_title'] ?></span></a>
+	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="fas fa-long-arrow-alt-left"></i>&nbsp;<span><?= $previous['post_title'] ?></span></a>
 	              </div>
               <?php endif; ?>
               <div class="col text-center">
-                <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
+                <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="fas fa-th-large"></i></a>
               </div>
 		          <?php if(isset($next)): ?>
 	              <div class="col-md-auto">
-	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
+	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span>&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
 	              </div>
               <?php endif; ?>
             </div>
@@ -324,8 +293,8 @@
 
 		        	<?php foreach($related as $key2): ?>
 
-		        		<div class="entry event col-md-6 imagescalein">
-	                <div class="grid-inner row g-0 p-4 border rounded">
+		        		<div class="entry event col-md-6 imagescalein" >
+	                <div class="grid-inner row g-0 p-4 border rounded bg-white" >
 	                  <div class="col-lg-5 mb-lg-0">
 	                    <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
 	                      <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
@@ -338,7 +307,7 @@
 	                    <div class="entry-meta">
 	                      <ul>
 	                        <li>
-	                          <i class="icon-calendar3"></i>
+	                          <i class="far fa-calendar-alt"></i>
 			                    	<?php
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
@@ -364,7 +333,7 @@
 	                      </ul>
 	                    </div>
 	                    <div class="entry-content2" style="padding-top: 7px;">
-	                      <p><?= $key2['post_intro']; ?></p>
+	                      <p class="text-secondary"><?= $key2['post_intro']; ?></p>
 	                    </div>
 	                  </div>
 	                </div>
@@ -509,7 +478,7 @@
 	                        </div>
 	                        <div class="entry-meta">
 	                          <ul>
-	                            <li><i class="icon-line-clock"></i>
+	                            <li><i class="far fa-calendar-alt"></i>
 	                            	<?php
 									            		$datetime = (new \CodeIgniter\I18n\Time);
 									            		$yearNow = $datetime::now()->getYear();

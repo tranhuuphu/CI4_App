@@ -10,16 +10,16 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
 
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css"> -->
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
 
 
 
     <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen"> -->
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css"> -->
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css">
     <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/navigation.css"> -->
 
     <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
@@ -86,11 +86,11 @@
 
        .mce-toc{
           background-color: #ffffff;
-          padding: 20px 20px 1px 20px;
+          padding: 20px 20px 0px 20px;
           margin-bottom: 15px;
           border-radius: 20px;
           border: solid #000000 1px;
-          margin-bottom: -10px !important;
+          margin-bottom: 10px !important;
         }
         .mce-toc h2{
             font-weight: bold;
@@ -167,6 +167,7 @@
         }
         .postcontent img{
           margin: 0 0 15px 0;
+          border-radius: 7px;
         }
 
         .page-link{
@@ -213,7 +214,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js?<?php echo time(); ?>"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>
 
 
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.tools.min.js"></script>

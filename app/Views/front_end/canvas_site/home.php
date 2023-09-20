@@ -16,26 +16,40 @@
 			          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
 			          <div class="portfolio-desc px-0">
 			            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold fs-4" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
-			            <span>
-			            	<?php
-			            		$datetime = (new \CodeIgniter\I18n\Time);
-			            		$yearNow = $datetime::now()->getYear();
-			            		$yearMonthsNow = $datetime::now()->getMonth();
-			            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
-			            		
-			            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
-			            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-			            			echo $datetime::parse($key['updated_at'])->humanize();
-			            		}
-			            		if(($yearNow - $yearPost) > 1){
-			            			echo $datetime::parse($key['updated_at'])->humanize();
-			            		}else{
-			            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
-			            		}
-			            		
+			            
+			            <div class="entry-meta">
+				            <ul>
+	                    <li><i class="fas fa-calendar-alt"></i> 
+	                    	<?php
+					            		$datetime = (new \CodeIgniter\I18n\Time);
+					            		$yearNow = $datetime::now()->getYear();
+					            		$yearMonthsNow = $datetime::now()->getMonth();
+					            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
+					            		
+					            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
+					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+					            			echo $datetime::parse($key['updated_at'])->humanize();
+					            		}
+					            		if(($yearNow - $yearPost) > 1){
+					            			echo $datetime::parse($key['updated_at'])->humanize();
+					            		}else{
+					            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
+					            		}
+					            		
 
-			            	?>
-			            </span>
+					            	?>
+	                    </li>
+	                    <li><i class="fas fa-star"></i></li>
+	                    <li><i class="fas fa-clock"></i> <?= ceil(strlen($key['post_content'])/700) ?> Minutes Read</li>
+				              <?php if($key['post_status'] == "san-pham"): ?>
+					              <li>
+					              	<a href="<?= site_url('buy').'/'.$key['id']; ?>">
+						                <i class="fa-solid fa-cart-shopping"></i>
+						              </a>
+					              </li>
+					            <?php endif; ?>
+	                  </ul>
+	                </div>
 			          </div>
 			        </div>
 			      </div>
@@ -105,9 +119,12 @@
 			              <!-- <li>
 			                <a href="blog-single.html#comments"><i class="icon-comments"></i> 31</a>
 			              </li> -->
-			              <li>
-			                <a href="javascript:void(0)"><i class="fas fa-camera-retro"></i></a>
-			              </li>
+			              <li><i class="fas fa-camera-retro"></i></li>
+			              <?php if($post_cate_i['post_status'] == 'san-pham'): ?>
+				              <li>
+				                <a href="javascript:void(0)"><i class="fas fa-shopping-cart"></i></a>
+				              </li>
+				            <?php endif; ?>
 			            </ul>
 			          </div>
 			          <div class="entry-content">
@@ -281,6 +298,11 @@
 							            	?>
                           </li>
                           <li><i class="fas fa-user-edit"></i></li>
+                          <?php if($pr['post_status'] == 'san-pham'): ?>
+							              <li>
+							                <a href="<?= site_url('buy').'/'.$pr['id']; ?>"><i class="fas fa-shopping-cart"></i></a>
+							              </li>
+							            <?php endif; ?>
                         </ul>
                       </div>
                       <div class="entry-content " style="margin-top: 5px !important">

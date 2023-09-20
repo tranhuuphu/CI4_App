@@ -5,7 +5,7 @@
 
 
 <div class="container">
-  <section id="page-title" style="margin-bottom: 25px; margin-top: 25px;">
+  <section id="page-title" style="margin-bottom: 25px; margin-top: 35px;">
     <div class="container clearfix" style="background-color: #b3e2fc">
       
       <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
@@ -35,7 +35,7 @@
 
             <div class="entry-meta">
               <ul>
-                <li><i class="fas fa-clock"></i>
+                <li><i class="fas fa-calendar-alt"></i>
                   <?php
                     $datetime = (new \CodeIgniter\I18n\Time);
                     $yearNow = $datetime::now()->getYear();

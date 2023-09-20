@@ -56,7 +56,7 @@
 		                    data-hover-parent=".product"
 		                  >
 		                    
-		                    <button class="btn btn- btn-lg" data-bs-toggle="modal" data-bs-target="#myModal<?= $key['id']; ?>" style="width: 100%; height: 100%; background-color: none; margin: 0px  !important; padding: 0px  !important;"><i class="bi-eye"></i> Quick View</button>
+		                    <button class="btn btn- btn-lg" data-bs-toggle="modal" data-bs-target="#myModal<?= $key['id']; ?>" style="width: 100%; height: 100%; background-color: none; margin: 0px  !important; padding: 0px  !important;"><i class="far fa-eye"></i> Quick View</button>
 		                  </a>
 		                </div>
 		                <div class="bg-overlay-bg bg-transparent"></div>
@@ -131,13 +131,13 @@
 
 				                      <div class="d-flex align-items-center">
 				                        <div class="product-rating">
-				                          <i class="bi-star-fill"></i>
-				                          <i class="bi-star-fill"></i>
-				                          <i class="bi-star-fill"></i>
-				                          <i class="bi-star-half"></i>
-				                          <i class="bi-star"></i>
+				                          <i class="fas fa-star"></i>
+				                          <i class="fas fa-star"></i>
+				                          <i class="fas fa-star"></i>
+				                          <i class="fas fa-star"></i>
+				                          <i class="fas fa-star-half-alt"></i>
 				                        </div>
-				                        <button type="button" class="btn btn-sm btn-secondary ms-3"><i class="bi-heart-fill"></i></button>
+				                        <button type="button" class="btn btn-sm btn-secondary ms-3"><i class="fas fa-heart"></i></button>
 				                      </div>
 				                    </div>
 				                    <div class="line"></div>
@@ -149,7 +149,7 @@
 				                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
 				                        <input type="button" value="+" class="plus" />
 				                      </div>
-				                      <button type="submit" class="add-to-cart button m-0"><i class="uil uil-shopping-cart me-1"></i> Add to cart</button>
+				                      <button type="submit" class="add-to-cart button m-0"><i class="fas fa-shopping-cart"></i> Add to cart</button>
 				                    </form>
 				                    <div class="line"></div>
 

@@ -5,11 +5,12 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-12 col-md-auto">
         <p class="mb-0 py-2 text-center text-md-start">
-        <?php if(isset($page_home['phone'])): ?>
+        <?php if($page_home['phone'] != null): ?>
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
-                <i class="fas fa-phone-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
+                <i class="fas fa-phone-square-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
             </a>
-          <?php endif; ?> || <i class="far fa-envelope"></i> <strong>phuth.me@gmail.com</strong></p>
+          <?php endif; ?>
+          <i class="far fa-envelope"></i> <strong>phuth.me@gmail.com</strong></p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">
@@ -50,10 +51,10 @@
             <a href="javascript:void(0)" id="top-search-trigger"><i class="fas fa-search"></i><i class="fas fa-times"></i></a>
           </div>
 
-          <?php if(isset($items)): ?>
+          <?php if($items != null): ?>
             <div id="top-cart" class="header-misc-icon d-none d-sm-block">
               
-              <a href="javascript:void(0)" id="top-cart-trigger"><i class="uil uil-shopping-bag"></i><span class="top-cart-number"><?= count($items) ?></span></a>
+              <a href="javascript:void(0)" id="top-cart-trigger"><i class="fas fa-shopping-basket"></i><span class="top-cart-number"><?= count($items) ?></span></a>
               <div class="top-cart-content">
                 <div class="top-cart-title">
                   <h4>Shopping Cart</h4>

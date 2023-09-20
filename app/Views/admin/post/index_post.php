@@ -240,7 +240,7 @@
 		                    <td>
 
                           <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-primary ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 btn btn-warning" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a>
+                          <!-- <a href="<?= base_url('admin/post/del/'.$p['id']) ?>" class="ml-3 btn btn-warning" onclick="return confirm('are you sure delete this post?')"><i class="fas fa-trash"></i> Delete</a> -->
 
                         </td>
 

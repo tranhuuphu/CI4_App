@@ -11,7 +11,7 @@ $pager->setSurroundCount(2);
 
 
 <div aria-label="<?= lang('Pager.pageNavigation') ?>">
-	<ul class="pagination pagination-transparent pagination-rounded">
+	<ul class="pager pagination pagination-transparent pagination-rounded">
 		<?php // var_dump($pager->hasNext()); ?>
 		<?php if ($pager->hasPrevious() == null) : ?>
 			<li class="page-item">

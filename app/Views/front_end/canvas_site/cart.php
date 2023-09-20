@@ -14,11 +14,15 @@
     </div>
   </section>
 </div>
-
+<style type="text/css">
+  .cart-a a:hover{
+    color: blue !important;
+  }
+</style>
 <section id="content">
   <div class="content-wrap">
-    <div class="container">
-      <a href="<?= site_url('san-pham'); ?>" class="button button-small button-3d m-0 button-3d m-0 button-black mb-3">Continue Shopping <i class="fab fa-hive"></i></a>
+    <div class="container cart-a">
+      <a href="<?= site_url('san-pham'); ?>" class="button button-small button-3d m-0 button-3d m-0 button-light mb-3 fw-bold">Continue Shopping <i class="fas fa-cart-plus"></i></a>
       <form method="post" action="<?= site_url('gio-hang/cap-nhat') ?>">
         <?= csrf_field(); ?>
         <div class="table-responsive">

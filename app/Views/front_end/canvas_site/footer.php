@@ -14,15 +14,15 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="widget widget_links clearfix">
+              <div class="widget widget_links2 clearfix">
                 <div class="fancy-title title-border mt-">
                   <h4>TRANG</h4>
                 </div>
                 <ul>
                   <?php foreach($link_page as $pl): ?>
-                    <li><a href="<?= $pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a></li>
+                    <li style="list-style-type: none"><a href="<?= $pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fas fa-caret-right"></i> &nbsp; <?= $pl['page_name']; ?></a></li>
                   <?php endforeach; ?>
-                  <li><a href="<?= base_url('/'); ?>/sitemap.xml" title="SiteMap" target="_blank">Sitemap</a></li>
+                  <li style="list-style-type: none"><a href="<?= base_url('/'); ?>/sitemap.xml" title="SiteMap" target="_blank"><i class="fas fa-caret-right"></i>  &nbsp; Sitemap</a></li>
                   
                 </ul>
               </div>

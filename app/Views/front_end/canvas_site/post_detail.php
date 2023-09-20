@@ -122,15 +122,15 @@
 		        <div class="row text-center text-md-start justify-content-between my-2">
 		        	<?php if(isset($previous)): ?>
 	              <div class="col-md-auto">
-	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span><?= $previous['post_title'] ?></span></a>
+	                <a href="<?= base_url('').'/'.$previous['post_cate_slug'].'/'.$previous['post_slug'].'-'.$previous['id'].'.html'; ?>" title="<?= $previous['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><i class="fas fa-long-arrow-alt-left"></i>&nbsp;<span><?= $previous['post_title'] ?></span></a>
 	              </div>
               <?php endif; ?>
               <div class="col text-center">
-                <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
+                <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="fas fa-th-large"></i></a>
               </div>
 		          <?php if(isset($next)): ?>
 	              <div class="col-md-auto">
-	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
+	                <a href="<?= base_url('').'/'.$next['post_cate_slug'].'/'.$next['post_slug'].'-'.$next['id'].'.html'; ?>" title="<?= $next['post_title']; ?>" class="d-inline-flex align-items-center text-dark h-text-color"><span><?= $next['post_title'] ?></span>&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
 	              </div>
               <?php endif; ?>
             </div>
@@ -148,7 +148,7 @@
 		        	<?php foreach($related as $key2): ?>
 
 		        		<div class="entry event col-md-6 imagescalein">
-	                <div class="grid-inner row g-0 p-4 border rounded">
+	                <div class="grid-inner row g-0 p-4 border rounded bg-white">
 	                  <div class="col-lg-5 mb-lg-0">
 	                    <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
 	                      <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
@@ -161,7 +161,7 @@
 	                    <div class="entry-meta">
 	                      <ul>
 	                        <li>
-	                          <i class="fa-regular fa-calendar-days"></i>
+	                          <i class="fas fa-calendar-alt"></i>
 			                    	<?php
 							            		$datetime = (new \CodeIgniter\I18n\Time);
 							            		$yearNow = $datetime::now()->getYear();
@@ -184,11 +184,21 @@
 	                        <!-- <li>
 	                          <a href="#"><i class="uil uil-map-marker"></i> Melbourne, Australia</a>
 	                        </li> -->
+
+	                        <?php if($key2['post_status'] == "san-pham"): ?>
+							              <li>
+							              	<a href="<?= site_url('buy').'/'.$key2['id']; ?>">
+								                <i class="fas fa-shopping-cart"></i>
+								              </a>
+							              </li>
+							            <?php endif; ?>
+
 	                      </ul>
 	                    </div>
 	                    <div class="entry-content2" style="padding-top: 7px;">
-	                      <p><?= $key2['post_intro']; ?></p>
+	                      <p class="text-secondary"><?= $key2['post_intro']; ?></p>
 	                    </div>
+
 	                  </div>
 	                </div>
 	              </div>
@@ -332,7 +342,7 @@
 	                        </div>
 	                        <div class="entry-meta">
 	                          <ul>
-	                            <li><i class="fa-duotone fa-clock"></i>
+	                            <li><i class="fas fa-calendar-alt"></i>
 	                            	<?php
 									            		$datetime = (new \CodeIgniter\I18n\Time);
 									            		$yearNow = $datetime::now()->getYear();
