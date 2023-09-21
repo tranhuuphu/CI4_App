@@ -13,7 +13,7 @@ use App\Models\GalleryTypeModel;
 class GalleryController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'text_helper']);
+        helper(['url', 'form', 'Text_helper']);
     }
     public function index(){
         $galleryModel = new GalleryModel();

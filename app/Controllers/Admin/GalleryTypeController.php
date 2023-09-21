@@ -9,7 +9,7 @@ use App\Models\GalleryModel;
 class GalleryTypeController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'text', 'text_helper']);
+        helper(['url', 'form', 'text', 'Text_helper']);
     }
 
     public function index(){

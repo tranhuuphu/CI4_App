@@ -7,7 +7,7 @@ use App\Libraries\Hash;
 class Auth extends BaseController
 {
     public function __construct(){
-        helper(['url', 'form', 'text_helper']);
+        helper(['url', 'form', 'Text_helper']);
     }
     public function index(){
     	return view('admin/dashboard');

@@ -8,7 +8,7 @@ use App\Models\DonHangModel;
 class DonHangController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'text_helper']);
+        helper(['url', 'form', 'Text_helper']);
     }
     public function index(){
         $donHang = new DonHangModel();

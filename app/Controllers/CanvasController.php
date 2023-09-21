@@ -17,7 +17,7 @@ class CanvasController extends BaseController
 {
 
     public function __construct(){
-        helper(['url', 'form', 'text_helper', 'xml']);
+        helper(['url', 'form', 'Text_helper', 'xml']);
     }
     public function index()
     {
@@ -605,8 +605,10 @@ class CanvasController extends BaseController
 
         $data2['gallery_img_download_times'] = $times;
         $gallery->update($gallery_detail['id'], $data2);
+        $name = base_url().'public/upload/tinymce/gallery_asset/'.$image;
 
-        return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);
+        // return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);
+        return $this->response->download($name, null);
     }
 
 

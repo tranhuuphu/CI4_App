@@ -3,67 +3,107 @@
 <?= $this->section('content'); ?>
 
 
-	
-	<?php if(isset($featured)): ?> 
-		<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2" style="margin-top: -10px !important;">
-		  
-			<?php foreach($featured as $key): ?>
-			  <div class="oc-item">
-			    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
-			    <div class="bg-overlay">
-			      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-			        <div>
-			          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
-			          <div class="portfolio-desc px-0">
-			            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold fs-4" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
-			            
-			            <div class="entry-meta">
-				            <ul>
-	                    <li><i class="fas fa-calendar-alt"></i> 
-	                    	<?php
-					            		$datetime = (new \CodeIgniter\I18n\Time);
-					            		$yearNow = $datetime::now()->getYear();
-					            		$yearMonthsNow = $datetime::now()->getMonth();
-					            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
-					            		
-					            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
-					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-					            			echo $datetime::parse($key['updated_at'])->humanize();
-					            		}
-					            		if(($yearNow - $yearPost) > 1){
-					            			echo $datetime::parse($key['updated_at'])->humanize();
-					            		}else{
-					            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
-					            		}
-					            		
+<?php if($featured != null): ?> 
+	<section id="content">
+  	<div class="content-wrap">
+			
+			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2" style="margin-top: -10px !important;">
+			  
+				<?php foreach($featured as $key): ?>
+				  <div class="oc-item">
+				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+				    <div class="bg-overlay">
+				      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
+				        <div>
+				          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
+				          <div class="portfolio-desc px-0">
+				            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold fs-4" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+				            <div class="entry-meta">
+					            <ul>
+		                    <li><i class="fas fa-calendar-alt"></i> 
+		                    	<?php
+						            		$datetime = (new \CodeIgniter\I18n\Time);
+						            		$yearNow = $datetime::now()->getYear();
+						            		$yearMonthsNow = $datetime::now()->getMonth();
+						            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
+						            		
+						            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
+						            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+						            			echo $datetime::parse($key['updated_at'])->humanize();
+						            		}
+						            		if(($yearNow - $yearPost) > 1){
+						            			echo $datetime::parse($key['updated_at'])->humanize();
+						            		}else{
+						            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
+						            		}
+						            	?>
+		                    </li>
+		                    <li><i class="fas fa-star"></i></li>
+		                    <li><i class="fas fa-clock"></i> <?= ceil(strlen($key['post_content'])/700) ?> Minutes Read</li>
+					              <?php if($key['post_status'] == "san-pham"): ?>
+						              <li>
+						              	<a href="<?= site_url('buy').'/'.$key['id']; ?>">
+							                <i class="fa-solid fa-cart-shopping"></i>
+							              </a>
+						              </li>
+						            <?php endif; ?>
+		                  </ul>
+		                </div>
+				          </div>
+				        </div>
+				      </div>
+				      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="75" data-width="3" data-animate="3000">7.5</div>
+				    </div>
+				  </div>
+			  <?php endforeach; ?>
+			  
+			  
+			  
+			  
+			</div>
 
-					            	?>
-	                    </li>
-	                    <li><i class="fas fa-star"></i></li>
-	                    <li><i class="fas fa-clock"></i> <?= ceil(strlen($key['post_content'])/700) ?> Minutes Read</li>
-				              <?php if($key['post_status'] == "san-pham"): ?>
-					              <li>
-					              	<a href="<?= site_url('buy').'/'.$key['id']; ?>">
-						                <i class="fa-solid fa-cart-shopping"></i>
-						              </a>
-					              </li>
-					            <?php endif; ?>
-	                  </ul>
-	                </div>
-			          </div>
-			        </div>
-			      </div>
-			      <!-- <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="75" data-width="3" data-animate="3000">7.5</div> -->
-			    </div>
-			  </div>
-		  <?php endforeach; ?>
-		  
-		  
-		  
-		  
+			
 		</div>
+	</section>
+<?php endif; ?>
 
-	<?php endif; ?>
+	<div class="row p-0 align-items-stretch">
+    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: var(--cnvs-themecolor);">
+      <div>
+        <h3 class="text-uppercase" style="font-weight: 600;">Why choose Us</h3>
+        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
+        <a href="javascript:void(0)" class="button button-border button-light button-rounded text-uppercase m-0"><i class="fas fa-cogs"></i></a>
+        <i class="bi-lightbulb bg-icon"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: #34495e;">
+      <div>
+        <h3 class="text-uppercase" style="font-weight: 600;">Our Mission</h3>
+        <p style="line-height: 1.8;">
+          Frontline respond, visionary collaborative cities advancement overcome injustice, UNHCR public-private partnerships cause. Giving, country educate rights-based approach; leverage disrupt solution.
+        </p>
+        <a href="javascript:void(0)" class="button button-border button-light button-rounded"><i class="fas fa-palette"></i></a>
+        <i class="fas fa-cog bg-icon"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: #e74c3c;">
+      <div>
+        <h3 class="text-uppercase" style="font-weight: 600;">What you get</h3>
+        <p style="line-height: 1.8;">
+          Sustainability involvement fundraising campaign connect carbon rights, collaborative cities convener truth. Synthesize change lives treatment fluctuation participatory monitoring underprivileged equal.
+        </p>
+        <a href="javascript:void(0)" class="button button-border button-light button-rounded text-uppercase m-0"><i class="fas fa-snowflake"></i></a>
+        <i class="bi-hand-thumbs-up bg-icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="section parallax scroll-detect m-0 border-0">
+    <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" />
+    <div class="heading-block text-center border-bottom-0 mb-0">
+      <h2>"Everything is designed, but some things are designed well."</h2>
+    </div>
+  </div>
 
 
 	
@@ -73,7 +113,7 @@
 		
 
 	  <!-- <div class="bottommargin-lg">
-	    <img src="images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0" />
+	    <img src="https://canvastemplate.com/images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0" />
 	  </div> -->
 
 	  <?php for($a = 1; $a <= $i; $a++): ?>
@@ -327,7 +367,7 @@
       <div class="sidebar col-lg-3">
         <div class="sidebar-widgets-wrap">
           <div class="widget subscribe-widget2 clearfix">
-            <div class="dark" style="padding: 25px; background-color: #383838; border-radius: 2px;">
+            <div class="dark" style="padding: 25px; background-color: #5cadff; border-radius: 2px;">
               <div class="fancy-title title-border">
                 <h4>Search Google</h4>
               </div>
@@ -511,7 +551,7 @@
 
 
 
-		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
 		              </span>
 		            </div>
 		          </div>

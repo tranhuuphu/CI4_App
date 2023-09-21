@@ -11,6 +11,7 @@ use Psr\Log\LoggerInterface;
 
 use App\Models\CateModel;
 use App\Models\PageModel;
+use App\Models\UsersModel;
 
 /**
  * Class BaseController
@@ -59,7 +60,7 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
 
-        $usersModel = new \App\Models\usersModel();
+        $usersModel = new usersModel();
         $loggerUserID = session()->get('loggedUser');
         $userInfo = $usersModel->find($loggerUserID);
         $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];

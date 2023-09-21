@@ -11,7 +11,7 @@ use App\Models\PostImagesModel;
 class PostController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'text_helper']);
+        helper(['url', 'form', 'Text_helper']);
     }
     public function index(){
         $postModel = new PostModel();
