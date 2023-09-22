@@ -16,12 +16,12 @@
   </section>
 </div>
 
-<?php if(count($post_cate) > 0): ?>
+<?php if($post_cate != null): ?>
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      
-
+      <a href="<?= site_url('table_image') ?>" class="btn btn-primary fw-bold button button-3d" style="border-radius: 0; text-transform: uppercase;">Chuyển sang dạng table  <i class="fas fa-arrow-right"></i></a>
+      <div class="line line-sm"></div>
       <div id="portfolio" class="portfolio row grid-container gutter-20" data-layout="fitRows">
 
         <?php foreach($post_cate as $key): ?>
@@ -74,7 +74,7 @@
                   $image_height = $image_info[1];
                   echo $image_width.'x'.$image_height.' pixel';
                 ?>
-                <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> download</a>
+                <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
                 
                 <?php if($key['gallery_file_download'] != null): ?>
                   <i class="fas fa-grip-lines-vertical"></i>
@@ -89,6 +89,10 @@
 
         
       </div>
+
+      <div class="line line-sm"></div>
+      <?= $pager->links('g'); ?>
+      
     </div>
   </div>
 </section>

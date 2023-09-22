@@ -377,20 +377,20 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-compress-arrows-alt"></i>
             <p>
-              Image Compress
+              Nén Ảnh
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview image_tree_active2">
             <li class="nav-item">
               <a href="<?= base_url('admin/image'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-images nav-icon"></i>
                 <p>All Image</p>
               </a>
             </li>
             <li class="nav-item image_tree_active3">
               <a href="<?= base_url('admin/image/imageTiny'); ?>" class="nav-link">
-                <i class="fas fa-circle nav-icon"></i>
+                <i class="fas fa-compress-alt nav-icon"></i>
                 <p>Image Compressed</p>
               </a>
             </li>

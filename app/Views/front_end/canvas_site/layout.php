@@ -8,6 +8,8 @@
 
     <?= $this->renderSection('yoast_seo'); ?>
 
+    <?= $this->renderSection('link_css'); ?>
+
     <meta name="format-detection" content="telephone=0974953600">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
@@ -15,6 +17,8 @@
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
+
+
 
 
 
@@ -115,14 +119,17 @@
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
         }
-
-        .sub::after {
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          content: "\f078";
-          padding-left: 7px;
+        @media(min-width:992px) {
+          .sub::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f078";
+            padding-left: 7px;
+          }
         }
-
+                
+        .pagination a:focus,
+        select:focus,
         textarea:focus, 
         textarea.form-control:focus, 
         input.form-control:focus, 
@@ -135,7 +142,7 @@
         [type=email].form-control:focus, 
         [type=tel].form-control:focus, 
         [contenteditable].form-control:focus {
-          box-shadow: inset 0 -0px 0 #ddd;
+          box-shadow: inset 0 -0px 0 #ddd !important;
         }
 
         .postcontent .button{margin-left: 0px !important;}
@@ -300,14 +307,23 @@
       }); //ready
     </script>
 
-    <script type="text/javascript">
-      var url      = window.location.href;
-      var data = $('.menu-item').data('title');
-      // alert(data);
 
-    </script>
 
     <?= $this->renderSection('script'); ?>
+
+    <script type="text/javascript" class="init">
+
+      $('#example').dataTable( {
+        "pageLength": 20,
+        "lengthMenu": [20, 50, 75, 100]
+      } );
+
+      
+    </script>
+    <script type="text/javascript">
+      // $('.sub-menu-trigger').removeClass('fa-solid');
+      $('.sub-menu-trigger').addClass('fas');
+    </script>
 
   </body>
 </html>

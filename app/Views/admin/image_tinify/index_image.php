@@ -37,9 +37,10 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example2" class="table table-bordered table-hover table-md" style="width:100%">
+              <table id="example1" class="table table-bordered table-hover table-md" style="width:100%">
                 <thead class="thead-dark">
                   <tr>
+                    <th>#</th>
                     <th>Ảnh</th>
                     <th>Name Image</th>
                     <th>Dung Lượng</th>
@@ -49,12 +50,15 @@
                 <tbody>
                 	
 
-                  <?php $count = count($img); ?>
+                  <?php $count = count($img); $i = 1; ?>
                     
                   
                   <?php for ($row = 0; $row < $count; $row++): ?>
-                    
+                    <?php //if(in_array($check, $img[$row][0])): ?>
                       <tr>
+                        <td>
+                            <?= $i ?>
+                        </td>
                         <td>
                             <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60"></div>
                         </td>
@@ -70,7 +74,8 @@
                             <i class="fas fa-folder"></i> TinyMce
                         </td>
                       </tr>
-                    
+                      <?php $i += 1; ?>
+                    <?php //endif; ?>
                   <?php endfor; ?>
 
 
@@ -80,6 +85,9 @@
                   <?php for ($row = 0; $row < $count2; $row++): ?>
                     
                       <tr>
+                        <td>
+                            <?= $i ?>
+                        </td>
                         <td>
                             <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60"></div>
                         </td>
@@ -98,6 +106,7 @@
                             <i class="fas fa-folder"></i> Image Asset
                         </td>
                       </tr>
+                      <?php $i += 1; ?>
                     
                   <?php endfor; ?>
 
@@ -108,6 +117,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                  <th>#</th>
                   <th>Ảnh</th>
                   <th>Name Image</th>
                   <th>Dung Lượng</th>

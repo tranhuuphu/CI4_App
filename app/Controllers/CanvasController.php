@@ -117,6 +117,7 @@ class CanvasController extends BaseController
         $cate_detail = $cate->where('id', $id)->first();
 
         $paginate = 10;
+        $paginate_gallery = 16;
 
 
         if(!$cate_detail || $cate_detail == null){
@@ -126,20 +127,24 @@ class CanvasController extends BaseController
 
         $cate_id = $cate_detail['id'];
         $cate_parent = $cate_detail['cate_parent_id'];
+
+        // Blog
         if($cate_parent == 0 && $cate_detail['cate_type'] == 'blog'){
-            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate);
+            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate, 'blog');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
-        }elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery'){
+        }
+        // Gallery
+        elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery')
+        {
 
-            
-
-            $post_cate  = $gallery->orderBy('id', 'desc')->paginate($paginate);
+            $post_cate  = $gallery->orderBy('id', 'desc')->paginate($paginate_gallery, 'g');
             $post_count = $gallery->countAllResults();
             $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
             $tag_this = null;
 
+        // Other
         }elseif($cate_parent == 0 && $cate_detail['cate_type'] != 'blog' && $cate_detail['cate_type'] != 'cate_gallery'){
             $cate_sub_id = $cate->where('cate_parent_id', $cate_id)->get()->getResultArray();
             if($cate_sub_id != null){
@@ -147,15 +152,14 @@ class CanvasController extends BaseController
                     $cate_sub_array[] = $c_s['id'];
                 }
                 $cate_sub_array[] = array_push($cate_sub_array, $cate_id);
-                // dd($cate_sub_array);
-                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
 
 
             }else{
-                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
                 $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
                 $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -163,7 +167,7 @@ class CanvasController extends BaseController
 
             }
         }else{
-            $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
+            $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
@@ -194,12 +198,14 @@ class CanvasController extends BaseController
             'tag_this'      => $tag_this,
 
             'pager'         => $post->pager,
+            'pager'         => $gallery->pager,
 
 
         ];
 
         if($cate_detail['cate_type'] == 'blog'){
             return view('front_end/canvas_site/blog_cate', $data);
+
         }elseif($cate_detail['cate_type'] == 'cate_gallery'){
 
             return view('front_end/canvas_site/gallery_cate', $data);
@@ -210,6 +216,48 @@ class CanvasController extends BaseController
 
         
         // return view('front_end/canvas_site/post_cate');
+    }
+    public function table_image(){
+
+        $cate = new CateModel;
+
+        
+
+        $gallery = new GalleryModel;
+
+        $cate_gallery = $cate->where('cate_type', "cate_gallery")->first();
+
+
+        $gallery_img  = $gallery->orderBy('id', 'desc')->findAll();
+
+        $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
+
+
+        $link_full = base_url('table_image');
+
+        $data = [
+            'title'             => $cate_gallery['cate_name'],
+            'meta_desc'         => $cate_gallery['cate_meta_desc'],
+            'meta_key'          => $cate_gallery['cate_meta_key'],
+            'image'             => 'null',
+            'created_at'        => $cate_gallery['created_at'],
+            'updated_at'        => $cate_gallery['updated_at'],
+            'link_full'         => $link_full,
+
+            'cate_name'         => $cate_gallery['cate_name'],
+            'cate_slug'         => $cate_gallery['cate_slug'],
+            'cate_gallery'      => $cate_gallery,
+
+            'gallery_img'       => $gallery_img,
+            'most_view'         => $most_view,
+
+
+            'pager'             => $gallery->pager,
+
+
+        ];
+
+        return view('front_end/canvas_site/gallery_cate_table', $data);
     }
 
     public function getProd(){
@@ -605,10 +653,9 @@ class CanvasController extends BaseController
 
         $data2['gallery_img_download_times'] = $times;
         $gallery->update($gallery_detail['id'], $data2);
-        $name = base_url().'public/upload/tinymce/gallery_asset/'.$image;
+        $name = base_url().'/public/upload/tinymce/gallery_asset/'.$image;
 
-        // return $this->response->download('public/upload/tinymce/gallery_asset/'.$image, null)->setFileName($image);
-        return $this->response->download($name, null);
+        return $this->response->download($name, $image);
     }
 
 

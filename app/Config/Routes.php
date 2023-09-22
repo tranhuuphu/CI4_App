@@ -177,17 +177,17 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     $routes->group("image", function($routes){
         //home in get == home in as
-        $routes->get('/',"Admin\ImageCompressController::index");
+        $routes->get('/',"Admin\CompressController::index");
 
-        $routes->get('imageTiny',"Admin\ImageCompressController::imageTiny");
+        $routes->get('imageTiny',"Admin\CompressController::imageTiny");
 
-        $routes->get('compress',"Admin\ImageCompressController::compress");
-        $routes->post('compress',"Admin\ImageCompressController::compress");
+        $routes->get('compress',"Admin\CompressController::compress");
+        $routes->post('compress',"Admin\CompressController::compress");
 
-        $routes->get('again',"Admin\ImageCompressController::compressAgain");
-        $routes->post('again',"Admin\ImageCompressController::compressAgain");
+        $routes->get('again',"Admin\CompressController::compressAgain");
+        $routes->post('again',"Admin\CompressController::compressAgain");
 
-        $routes->get('check_again',"Admin\ImageCompressController::check_image");
+        $routes->get('check_again',"Admin\CompressController::check_image");
 
     });
 
@@ -206,6 +206,7 @@ $routes->get('/', 'CanvasController::index');
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
 $routes->get('sitemap.xml', 'CanvasController::siteMap');
+$routes->get('table_image', 'CanvasController::table_image');
 
 $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
 $routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
