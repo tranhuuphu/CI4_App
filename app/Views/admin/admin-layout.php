@@ -9,6 +9,23 @@
 		.dropdown-footer, .dropdown-header{
 			text-align: left;
 		}
+
+		.pagination a:focus,
+      select:focus,
+      textarea:focus, 
+      textarea.form-control:focus, 
+      input.form-control:focus, 
+      input[type=text]:focus, 
+      input[type=password]:focus, 
+      input[type=email]:focus, 
+      input[type=number]:focus, 
+      [type=text].form-control:focus, 
+      [type=password].form-control:focus, 
+      [type=email].form-control:focus, 
+      [type=tel].form-control:focus, 
+      [contenteditable].form-control:focus {
+        box-shadow: inset 0 -0px 0 #ddd !important;
+        }
 		
 	</style>
 	
@@ -125,7 +142,8 @@
 	  $(function () {
 	    $("#example1").DataTable({
 	      "responsive": true, "lengthChange": false, "autoWidth": false,
-	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],"pageLength": 25,
+        "lengthMenu": [25, 50, 75, 100]
 	    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 	    $('#example2').DataTable({
 	      "paging": true,

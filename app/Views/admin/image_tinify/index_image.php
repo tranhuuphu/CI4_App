@@ -32,13 +32,148 @@
           <div class="card">
             <div class="card-header card-danger">
 
-              <h3 class="card-title text-bold">All Image <span class="badge badge-light"><?php echo count($img)+count($img2); ?> ảnh</span><span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/compress') ?>" class="btn btn-danger ml-3"><i class="fas fa-compress-alt"></i> Compress First Times</a></h3>
+              <h3 class="card-title text-bold">All Image <span class="badge badge-light"><?php echo count($img)+count($img2)+count($img3)+count($img4); ?> ảnh</span><span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span><a href="<?= base_url('admin/image/compress') ?>" class="btn btn-danger ml-3"><i class="fas fa-compress-alt"></i> Compress First Times</a></h3>
 
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-hover table-md" style="width:100%">
-                <thead class="thead-dark">
+              <div class="table-responsive">
+                <table id="example1" class="table table-bordered table-hover table-md align-middle" style="width:100%">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>#</th>
+                      <th>Ảnh</th>
+                      <th>Name Image</th>
+                      <th>Dung Lượng</th>
+                      <th>Thư Mục Chứa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  	
+
+                    <!-- Folder TinyMCE -->
+                    <?php $count = count($img); $i = 1; ?>
+                    <?php for ($row = 0; $row < $count; $row++): ?>
+                      <?php //if(in_array($check, $img[$row][0])): ?>
+                        <tr>
+                          <td>
+                              <?= $i ?>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60"></div>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><?= $img[$row][0] ?></div>
+                          </td>
+                          <td>
+                              <?php
+                                echo floor($img[$row][1]/1024).' Kb';
+                              ?>
+                          </td>
+                          <td>
+                              <i class="fas fa-folder"></i> TinyMce
+                          </td>
+                        </tr>
+                        <?php $i += 1; ?>
+                      <?php //endif; ?>
+                    <?php endfor; ?>
+
+
+                    <!-- Folder TinyMCE/image_asset -->
+                    <?php $count2 = count($img2); ?>
+                    <?php for ($row = 0; $row < $count2; $row++): ?>
+                      
+                        <tr>
+                          <td>
+                              <?= $i ?>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60"></div>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><?= $img2[$row][0] ?></div>
+                          </td>
+                          <td>
+                              <?php
+                                echo floor($img2[$row][1]/1024).' Kb';
+                                if($img2[$row][1]/1024 > 1024){
+                                  echo "<p class='text-bold'>".number_format($img2[$row][1]/1048576, 2).' Mb'.'</p>';
+                                }
+                              ?>
+                          </td>
+                          <td>
+                              <i class="far fa-folder"></i> Post Singer
+                          </td>
+                        </tr>
+                        <?php $i += 1; ?>
+                    <?php endfor; ?>
+
+
+                    <!-- Folder TinyMCE/post_images -->
+                    <?php $count3 = count($img3); ?>
+                    <?php for ($row = 0; $row < $count3; $row++): ?>
+                      
+                        <tr>
+                          <td>
+                              <?= $i ?>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/post_images').'/'.$img3[$row][0] ?>" height="60"></div>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><?= $img3[$row][0] ?></div>
+                          </td>
+                          <td>
+                              <?php
+                                echo floor($img3[$row][1]/1024).' Kb';
+                                if($img3[$row][1]/1024 > 1024){
+                                  echo "<p class='text-bold'>".number_format($img3[$row][1]/1048576, 2).' Mb'.'</p>';
+                                }
+                              ?>
+                          </td>
+                          <td>
+                              <i class="fas fa-folder-open"></i> Post Gallery
+                          </td>
+                        </tr>
+                        <?php $i += 1; ?>
+                    <?php endfor; ?>
+
+
+                    <!-- Folder TinyMCE/gallery_asset -->
+                    <?php $count4 = count($img4); ?>
+                    <?php for ($row = 0; $row < $count4; $row++): ?>
+                      
+                        <tr>
+                          <td>
+                              <?= $i ?>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$img4[$row][0] ?>" height="60"></div>
+                          </td>
+                          <td>
+                              <div class="d-flex align-items-center"><?= $img4[$row][0] ?></div>
+                          </td>
+                          <td>
+                              <?php
+                                echo floor($img4[$row][1]/1024).' Kb';
+                                if($img4[$row][1]/1024 > 1024){
+                                  echo "<p class='text-bold'>".number_format($img4[$row][1]/1048576, 2).' Mb'.'</p>';
+                                }
+                              ?>
+                          </td>
+                          <td>
+                              <i class="far fa-folder-open"></i> Gallery Image
+                          </td>
+                        </tr>
+                        <?php $i += 1; ?>
+                    <?php endfor; ?>
+
+  	                
+                  	
+                  
+                  
+                  </tbody>
+                  <tfoot>
                   <tr>
                     <th>#</th>
                     <th>Ảnh</th>
@@ -46,85 +181,9 @@
                     <th>Dung Lượng</th>
                     <th>Thư Mục Chứa</th>
                   </tr>
-                </thead>
-                <tbody>
-                	
-
-                  <?php $count = count($img); $i = 1; ?>
-                    
-                  
-                  <?php for ($row = 0; $row < $count; $row++): ?>
-                    <?php //if(in_array($check, $img[$row][0])): ?>
-                      <tr>
-                        <td>
-                            <?= $i ?>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60"></div>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center"><?= $img[$row][0] ?></div>
-                        </td>
-                        <td>
-                            <?php
-                              echo floor($img[$row][1]/1024).' Kb';
-                            ?>
-                        </td>
-                        <td>
-                            <i class="fas fa-folder"></i> TinyMce
-                        </td>
-                      </tr>
-                      <?php $i += 1; ?>
-                    <?php //endif; ?>
-                  <?php endfor; ?>
-
-
-                  <?php $count2 = count($img2); ?>
-                    
-                  
-                  <?php for ($row = 0; $row < $count2; $row++): ?>
-                    
-                      <tr>
-                        <td>
-                            <?= $i ?>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60"></div>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center"><?= $img2[$row][0] ?></div>
-                        </td>
-                        <td>
-                            <?php
-                              echo floor($img2[$row][1]/1024).' Kb';
-                              if($img2[$row][1]/1024 > 1024){
-                                echo "<p class='text-bold'>".number_format($img2[$row][1]/1048576, 2).' Mb'.'</p>';
-                              }
-                            ?>
-                        </td>
-                        <td>
-                            <i class="fas fa-folder"></i> Image Asset
-                        </td>
-                      </tr>
-                      <?php $i += 1; ?>
-                    
-                  <?php endfor; ?>
-
-	                
-                	
-                
-                
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>#</th>
-                  <th>Ảnh</th>
-                  <th>Name Image</th>
-                  <th>Dung Lượng</th>
-                  <th>Thư Mục Chứa</th>
-                </tr>
-                </tfoot>
-              </table>
+                  </tfoot>
+                </table>
+              </div>
             </div>
             <!-- /.card-body -->
           </div>

@@ -20,7 +20,8 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      <a href="<?= site_url('table_image') ?>" class="btn btn-primary fw-bold button button-3d" style="border-radius: 0; text-transform: uppercase;">Chuyển sang dạng table  <i class="fas fa-arrow-right"></i></a>
+      <a href="<?= site_url('table_image') ?>" class="btn btn-primary fw-bold button button-3d" style="border-radius: 0; text-transform: uppercase;">Chuyển sang table Tìm Kiếm <i class="fas fa-arrow-right"></i></a>
+
       <div class="line line-sm"></div>
       <div id="portfolio" class="portfolio row grid-container gutter-20" data-layout="fitRows">
 

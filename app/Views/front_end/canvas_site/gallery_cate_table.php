@@ -20,72 +20,78 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      <a href="<?= site_url('').$cate_gallery['cate_slug'].'-'.$cate_gallery['id'] ?>" class="btn btn-danger fw-bold" style="border-radius: 0; text-transform: uppercase;"><i class="fas fa-arrow-left"></i> Chuyển sang Phiên bản cũ</a>
+      <a href="<?= site_url('').$cate_gallery['cate_slug'].'-'.$cate_gallery['id'] ?>" class="btn btn-danger fw-bold mb-4" style="border-radius: 0; text-transform: uppercase;"><i class="fas fa-arrow-left"></i> Chuyển sang Phiên bản cũ</a>
 
 
 
 
 
-      <div class="line line-sm"></div>
-      
-      <div class="table-responsive">
-        <table id="example" class="table display table-bordered border-secondary table-light align-middle table-striped" style="width:100%">
-            <thead class="table-primary">
-                <tr class="border-primary">
-                    <th class="pt-3 pb-3">#</th>
-                    <th class="pt-3 pb-3">Ảnh - Image</th>
-                    <th class="pt-3 pb-3">Tiêu Đề - Title</th>
-                    <th class="pt-3 pb-3">Kích Thước - Demension</th>
-                    <th class="pt-3 pb-3">Download Image</th>
-                    <th class="pt-3 pb-3">Link Tải File</th>
-                </tr>
-            </thead>
-            <?php $i = 1; ?>
-            <tbody>
-              <?php foreach($gallery_img as $key): ?>
-                <tr>
-                  <td><?= $i; ?></td>
-                  <td>
-                    <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" height="120px" style="border-radius: 7px; border: 3px solid #fcfcfa; padding: 7px"/>
-                  </td>
-                  <td><?= $key['gallery_title'] ?></td>
-                  <td>
-                    <?php
-                      $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
-                      $image_width = $image_info[0];
-                      $image_height = $image_info[1];
-                      echo $image_width.'x'.$image_height.' pixel';
-                    ?>
-                  </td>
-                  <td><a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download now</a></td>
-                  <td>
-                    <?php if($key['gallery_file_download'] != null): ?>
-                      <i class="fas fa-grip-lines-vertical"></i>
-                      <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-file-download"></i></a>
-                      
-                    <?php endif; ?>
-                  </td>
-                </tr>
-                <?php $i += 1; ?>
-              <?php endforeach; ?>
-                
-                
-            </tbody>
-            <tfoot class="table-info">
-                <tr class="border-success">
-                    <th>#</th>
-                    <th>Ảnh - Image</th>
-                    <th>Tiêu Đề - Title</th>
-                    <th>Kích Thước - Demension</th>
-                    <th>Download Image</th>
-                    <th>Link Tải File</th>
-                </tr>
-            </tfoot>
-        </table>
+      <div class="card">
+        <div class="card-body">
+          
+          <div class="table-responsive">
+            <table id="example" class="table display table-bordered border-secondary table-light align-middle table-striped" style="width:100%">
+                <thead class="table-primary">
+                    <tr class="border-primary">
+                        <th class="pt-3 pb-3">#</th>
+                        <th class="pt-3 pb-3">Ảnh - Image</th>
+                        <th class="pt-3 pb-3">Tiêu Đề - Title</th>
+                        <th class="pt-3 pb-3">Kích Thước - Demension</th>
+                        <th class="pt-3 pb-3">Download Image</th>
+                        <th class="pt-3 pb-3">Link Tải File</th>
+                    </tr>
+                </thead>
+                <?php $i = 1; ?>
+                <tbody>
+                  <?php foreach($gallery_img as $key): ?>
+                    <tr>
+                      <td><?= $i; ?></td>
+                      <td>
+                        <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" height="120px" style="border-radius: 7px; border: 3px solid #fcfcfa; padding: 7px"/>
+                      </td>
+                      <td><strong><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>"><?= $key['gallery_title'] ?></a></strong></td>
+                      <td>
+                        <?php
+                          $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
+                          $image_width = $image_info[0];
+                          $image_height = $image_info[1];
+                          echo $image_width.'x'.$image_height.' pixel';
+                        ?>
+                      </td>
+                      <td><a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download now</a></td>
+                      <td>
+                        <?php if($key['gallery_file_download'] != null): ?>
+                          <i class="fas fa-grip-lines-vertical"></i>
+                          <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-file-download"></i></a>
+                          
+                        <?php endif; ?>
+                      </td>
+                    </tr>
+                    <?php $i += 1; ?>
+                  <?php endforeach; ?>
+                    
+                    
+                </tbody>
+                <tfoot class="table-info">
+                    <tr class="border-success">
+                        <th>#</th>
+                        <th>Ảnh - Image</th>
+                        <th>Tiêu Đề - Title</th>
+                        <th>Kích Thước - Demension</th>
+                        <th>Download Image</th>
+                        <th>Link Tải File</th>
+                    </tr>
+                </tfoot>
+            </table>
+          </div>
+
+
+        </div>
       </div>
+      
 
 
-      <div class="line line-sm"></div>
+      <!-- <div class="line line-sm"></div> -->
 
       
     </div>

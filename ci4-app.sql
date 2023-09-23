@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2023 at 02:23 PM
+-- Generation Time: Sep 23, 2023 at 09:31 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -132,9 +132,9 @@ INSERT INTO `gallery_image` (`id`, `gallery_type_id`, `gallery_type_name`, `gall
 (1, 3, 'Hoạt Hình', 'hoat-hinh', 'Sa Tăng', 'sa-tang', 26, 'bo-suu-tap', 'test-va-xoa-LYV2UJWfpdORZP6t.jpg', NULL, NULL, NULL, NULL, 1, 4, 'Sa Tăng', 'Sa Tăng', '2023-06-15 21:52:07', '2023-09-20 04:36:24'),
 (2, 1, 'ẩm thực', 'am-thuc', 'Ảnh mới 2', 'anh-moi-2', 26, 'bo-suu-tap', 'anh-moi-2-umAtOzgrxs0pBMF9.png', NULL, NULL, NULL, NULL, 1, 4, 'Ảnh mới 2', 'Ảnh mới 2', '2023-06-15 22:07:18', '2023-09-16 10:20:14'),
 (3, 4, 'Thiết Kế', 'thiet-ke', 'Admin Image Design', 'admin-image-design', 26, 'bo-suu-tap', 'co-post-id-2-moi-sua-RzMPpS4vtfqLysQ8.png', NULL, NULL, NULL, NULL, 3, 4, 'Admin Image Design', 'Admin Image Design', '2023-06-16 02:39:26', '2023-09-20 04:37:08'),
-(4, 3, 'Hoạt Hình', 'hoat-hinh', 'ảnh tôn nghộ không', 'anh-ton-ngho-khong', 26, 'bo-suu-tap', 'bai-moi-test-gallery-j6pvkyzSPwMeWIas.jpg', 2, NULL, NULL, NULL, 25, 4, 'ảnh tôn nghộ không', 'ảnh tôn nghộ không', '2023-06-16 09:10:04', '2023-09-20 04:35:24'),
-(5, 2, 'phương tiện - xe cộ', 'phuong-tien---xe-co', 'bài test có type', 'bai-test-co-type', 26, 'bo-suu-tap', 'bai-test-co-type-LG0cOaVPDqt7U8Hh.jpg', NULL, NULL, NULL, NULL, 19, 0, 'bài test có type', 'bài test có type', '2023-09-10 05:07:08', '2023-09-19 09:17:20'),
-(6, 5, 'Vector', 'vector', 'Logo Cơm Niêu Vector', 'logo-com-nieu-vector', 26, 'bo-suu-tap', 'bai-viet-co-anh-va-link-LAKUDoC9khjOvTFe.png', NULL, NULL, NULL, NULL, 41, 0, 'Logo Cơm Niêu Vector', 'Logo Cơm Niêu Vector', '2023-09-16 09:42:00', '2023-09-20 05:08:38');
+(4, 3, 'Hoạt Hình', 'hoat-hinh', 'ảnh tôn nghộ không', 'anh-ton-ngho-khong', 26, 'bo-suu-tap', 'bai-moi-test-gallery-j6pvkyzSPwMeWIas.jpg', 3, NULL, NULL, NULL, 25, 4, 'ảnh tôn nghộ không', 'ảnh tôn nghộ không', '2023-06-16 09:10:04', '2023-09-21 00:41:21'),
+(5, 2, 'phương tiện - xe cộ', 'phuong-tien---xe-co', 'bài test có type', 'bai-test-co-type', 26, 'bo-suu-tap', 'bai-test-co-type-LG0cOaVPDqt7U8Hh.jpg', 1, NULL, NULL, NULL, 20, 0, 'bài test có type', 'bài test có type', '2023-09-10 05:07:08', '2023-09-21 10:30:52'),
+(6, 5, 'Vector', 'vector', 'Logo Cơm Niêu Vector', 'logo-com-nieu-vector', 26, 'bo-suu-tap', 'bai-viet-co-anh-va-link-LAKUDoC9khjOvTFe.png', 3, NULL, NULL, NULL, 43, 0, 'Logo Cơm Niêu Vector', 'Logo Cơm Niêu Vector', '2023-09-16 09:42:00', '2023-09-23 08:46:24');
 
 -- --------------------------------------------------------
 
@@ -190,7 +190,9 @@ CREATE TABLE `image_tinycme` (
   `image_TinyCME_name` varchar(1000) DEFAULT NULL,
   `image_TinyCME_status` int(2) DEFAULT NULL,
   `image_size_original` varchar(20) DEFAULT NULL,
-  `image_size_compress` varchar(20) DEFAULT NULL,
+  `image_size_compressed` varchar(20) DEFAULT NULL,
+  `image_size_compressed_2` varchar(20) DEFAULT NULL,
+  `image_size_compressed_3` varchar(20) DEFAULT NULL,
   `image_folder` varchar(20) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -200,17 +202,41 @@ CREATE TABLE `image_tinycme` (
 -- Dumping data for table `image_tinycme`
 --
 
-INSERT INTO `image_tinycme` (`id`, `image_TinyCME_name`, `image_TinyCME_status`, `image_size_original`, `image_size_compress`, `image_folder`, `created_at`, `updated_at`) VALUES
-(36, 'favicon_admin-FrRLo.png', 3, '3062', '2891', 'tinymce', '2023-09-07 17:46:02', '2023-09-13 04:09:25'),
-(37, 'user_tran-huu-phu-2-pkbwK.png', 3, '437012', '400218', 'tinymce', '2023-09-07 17:46:16', '2023-09-13 04:09:36'),
-(38, '1200222-dWYBqo1xIFALTtPp.jpg', 3, '780831', '125339', 'image_asset', '2023-09-07 17:46:42', '2023-09-13 04:09:43'),
-(39, 'bai-nay-co-anh-1200x900-IaVqzN6cuFXfrSkJ.jpg', 3, '595284', '94547', 'image_asset', '2023-09-07 17:46:51', '2023-09-13 04:09:48'),
-(40, 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 3, '780831', '125339', 'image_asset', '2023-09-07 17:47:01', '2023-09-13 04:09:53'),
-(41, 'bai-viet-ban-hang-co-bo-anh-nDBe7YdVkLy908CO.jpg', 3, '1351534', '360019', 'image_asset', '2023-09-07 17:47:13', '2023-09-13 04:10:04'),
-(42, 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 3, '267801', '137935', 'image_asset', '2023-09-07 17:47:21', '2023-09-13 04:10:09'),
-(43, 'user_tran-huu-phu-ewP7q.jpg', 3, '1009168', '322846', 'image_asset', '2023-09-07 17:47:32', '2023-09-13 04:10:24'),
-(44, 'bai-viet-ban-hang-co-bo-anh-oEkXcybM7JK1tzTA.jpeg', 3, '220648', '69052', 'image_asset', '2023-09-07 17:47:40', '2023-09-13 04:10:36'),
-(45, 'favicon_admin-FJlfT.png', 2, '564317', '186045', 'image_asset', '2023-09-07 17:47:47', '2023-09-13 04:10:42');
+INSERT INTO `image_tinycme` (`id`, `image_TinyCME_name`, `image_TinyCME_status`, `image_size_original`, `image_size_compressed`, `image_size_compressed_2`, `image_size_compressed_3`, `image_folder`, `created_at`, `updated_at`) VALUES
+(36, 'favicon_admin-FrRLo.png', 3, '3062', '28', NULL, NULL, 'tinymce', '2023-09-07 17:46:02', '2023-09-13 04:09:25'),
+(37, 'user_tran-huu-phu-2-pkbwK.png', 3, '437012', '40', NULL, '389271', 'tinymce', '2023-09-07 17:46:16', '2023-09-23 12:05:58'),
+(38, '1200222-dWYBqo1xIFALTtPp.jpg', 3, '780831', '12', NULL, NULL, 'image_asset', '2023-09-07 17:46:42', '2023-09-13 04:09:43'),
+(39, 'bai-nay-co-anh-1200x900-IaVqzN6cuFXfrSkJ.jpg', 3, '595284', '94', NULL, NULL, 'image_asset', '2023-09-07 17:46:51', '2023-09-13 04:09:48'),
+(40, 'bai-viet-ban-hang-2-5FEGdH4RUA3j1rPW.jpg', 3, '780831', '12', NULL, NULL, 'image_asset', '2023-09-07 17:47:01', '2023-09-13 04:09:53'),
+(41, 'bai-viet-ban-hang-co-bo-anh-nDBe7YdVkLy908CO.jpg', 3, '1351534', '36', NULL, NULL, 'image_asset', '2023-09-07 17:47:13', '2023-09-13 04:10:04'),
+(42, 'bai-viet-ban-hang-kA98NiMmybvSTG50.jpg', 3, '267801', '13', NULL, NULL, 'image_asset', '2023-09-07 17:47:21', '2023-09-13 04:10:09'),
+(43, 'user_tran-huu-phu-ewP7q.jpg', 3, '1009168', '32', NULL, NULL, 'image_asset', '2023-09-07 17:47:32', '2023-09-13 04:10:24'),
+(44, 'bai-viet-ban-hang-co-bo-anh-oEkXcybM7JK1tzTA.jpeg', 3, '220648', '69', NULL, NULL, 'image_asset', '2023-09-07 17:47:40', '2023-09-13 04:10:36'),
+(45, 'favicon_admin-FJlfT.png', 3, '564317', '18', NULL, NULL, 'image_asset', '2023-09-07 17:47:47', '2023-09-23 11:04:02'),
+(46, 'bai-viet-test-session-ebpTF9GhsKJkYlI1.jpg', 2, '401389', '74', NULL, '70922', 'image_asset', '2023-09-23 09:32:44', '2023-09-23 11:04:09'),
+(47, 'dich-vu-in-hoa-don-ban-le-tCoHxnIT8i0BOyVr.jpg', 2, '32306', '32', NULL, '32306', 'image_asset', '2023-09-23 09:32:47', '2023-09-23 11:04:12'),
+(48, 'giay-dung-in-hoa-don-–-bao-bieu-NmDWayK3xqObhzkL.jpg', 2, '17861', '17', NULL, '17861', 'image_asset', '2023-09-23 09:32:50', '2023-09-23 11:04:15'),
+(49, 'hoa-don-bao-bieu-XfaE7PoVkGAsMdwI.jpg', 2, '433004', '99', NULL, '80203', 'image_asset', '2023-09-23 09:32:59', '2023-09-23 11:04:22'),
+(50, 'in-bang-ron---bang-hieu-W5ydhopj9s3AlKuU.jpg', 2, '1124813', '30', NULL, '298930', 'image_asset', '2023-09-23 09:33:55', '2023-09-23 11:04:36'),
+(51, 'in-bang-ron-bat-hiflex-vrO8ul2hzfQCj4SE.jpg', 2, '2213182', '45', NULL, '429984', 'image_asset', '2023-09-23 09:34:07', '2023-09-23 11:04:49'),
+(52, 'in-name-card---danh-thiep-kd4jANzO1tVHxvrB.jpg', 2, '36011', '36', NULL, '36011', 'image_asset', '2023-09-23 09:34:14', '2023-09-23 11:04:54'),
+(53, 'in-pp-can-mo-n9BlrUJ2Pzev0MXh.jpg', 3, '66621', '47', '44859', '46430', 'image_asset', '2023-09-23 09:34:19', '2023-09-23 12:29:22'),
+(54, 'quy-trinh-hoan-thien-hoa-don---bao-bieu-1-lien-pAhwjZrgEuvWXRJO.jpg', 2, '1056976', '38', NULL, '357077', 'image_asset', '2023-09-23 09:35:25', '2023-09-23 11:05:09'),
+(55, 'about-us-1YUEjZNCVdT4vm7f.png', 3, '85193', '75', '6752', '6986', 'image_asset', '2023-09-23 09:35:28', '2023-09-23 12:12:18'),
+(56, 'favicon_trang-chu-QF8ujlY3NqzaiSbc.png', 2, '127827', '16', NULL, '16978', 'image_asset', '2023-09-23 09:35:34', '2023-09-23 11:05:15'),
+(61, 'bai-viet-ban-hang-co-bo-anh-rA9whlkiQt3TfEUD.png', 1, '2222068', '38', NULL, NULL, 'post_images', '2023-09-23 09:39:57', '2023-09-23 09:39:57'),
+(62, 'bai-viet-test-upload-sp-OgcQYj0IhRPqyn69.png', 1, '2222068', '38', NULL, NULL, 'post_images', '2023-09-23 09:40:04', '2023-09-23 09:40:04'),
+(63, 'bai-moi-test-gallery-j6pvkyzSPwMeWIas.jpg', 1, '169456', '16', NULL, NULL, 'gallery_asset', '2023-09-23 09:40:16', '2023-09-23 09:40:16'),
+(64, 'bai-test-co-type-LG0cOaVPDqt7U8Hh.jpg', 1, '18764', '15', NULL, NULL, 'gallery_asset', '2023-09-23 09:40:19', '2023-09-23 09:40:19'),
+(65, 'test-va-xoa-LYV2UJWfpdORZP6t.jpg', 1, '97007', '96', NULL, NULL, 'gallery_asset', '2023-09-23 09:40:30', '2023-09-23 09:40:30'),
+(66, 'anh-moi-2-umAtOzgrxs0pBMF9.png', 2, '335067', '32', '318006', NULL, 'gallery_asset', '2023-09-23 09:40:46', '2023-09-23 12:10:59'),
+(67, 'bai-viet-co-anh-va-link-LAKUDoC9khjOvTFe.png', 2, '47398', '13', '13315', NULL, 'gallery_asset', '2023-09-23 09:40:50', '2023-09-23 12:10:04'),
+(68, 'co-post-id-2-moi-sua-RzMPpS4vtfqLysQ8.png', 1, '166117', '15', NULL, NULL, 'gallery_asset', '2023-09-23 09:40:55', '2023-09-23 09:40:55'),
+(77, 'Tap_doan_Tan_Hiep_Phat-168424.jpg', 3, '689594', '144341', '119241', '104656', 'gallery_asset', '2023-09-23 11:02:41', '2023-09-23 12:28:32'),
+(78, 'bai-viet-ban-hang-co-bo-anh-CqLJfuMpNoBhSOR0.jpg', 1, '32191', '31508', NULL, NULL, 'post_images', '2023-09-23 11:15:43', '2023-09-23 11:15:43'),
+(79, 'bai-viet-ban-hang-co-bo-anh-F4sjAdhTDKC8Gmb6.jpg', 1, '85079', '81663', NULL, NULL, 'post_images', '2023-09-23 11:15:49', '2023-09-23 11:15:49'),
+(80, 'bai-viet-test-upload-sp-8bzkLBpwZu6JAFI9.jpeg', 1, '80050', '69052', NULL, NULL, 'post_images', '2023-09-23 11:15:54', '2023-09-23 11:15:54'),
+(81, 'bai-viet-test-upload-sp-LQhk0waAlH1njEi3.jpeg', 3, '59158', '57515', '52203', '50121', 'post_images', '2023-09-23 11:16:02', '2023-09-23 11:53:46');
 
 -- --------------------------------------------------------
 
@@ -552,7 +578,7 @@ ALTER TABLE `home_page_info`
 -- AUTO_INCREMENT for table `image_tinycme`
 --
 ALTER TABLE `image_tinycme`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `page`

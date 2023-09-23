@@ -189,6 +189,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
         $routes->get('check_again',"Admin\CompressController::check_image");
 
+        $routes->get('single_compress/(:num)',"Admin\CompressController::single_compress/$1");
+
     });
 
 

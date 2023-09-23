@@ -19,13 +19,13 @@
   <div class="content-wrap">
     <div class="container">
       <div class="row g-5 py-md-5">
-        <div class="col-lg-4 col-xl-8 portfolio-single-image">
+        <div class="col-lg-4 col-xl-6 portfolio-single-image">
           <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
             <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
           </a>
         </div>
 
-        <div class="col-lg-8 col-xl-4 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
+        <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
           <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
           <hr>
           
