@@ -10,7 +10,7 @@ use App\Models\TagModel;
 class PageController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'Text_helper']);
+        helper(['Url', 'Form', 'text', 'Text_helper']);
     }
     public function index(){
         $pageModel = new PageModel();

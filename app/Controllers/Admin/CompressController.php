@@ -440,12 +440,143 @@ class CompressController extends BaseController
 
     }
 
-    public function single_compress($id){
+    public function single_compress($name){
 
         $imageModel = new ImageModel();
         $image = $imageModel->find($id);
         if($image == null){
             return view('admin/404_admin');
+        }
+
+        if($image['image_folder'] == 'tinymce'){
+
+            if($image['image_TinyCME_status'] < 3){
+                $data['image_TinyCME_status'] = $image['image_TinyCME_status'] + 1;
+            }else{
+                $data['image_TinyCME_status'] = $image['image_TinyCME_status'];
+            }
+            
+
+            
+            $path = 'public/upload/tinymce/'.'/'.$image['image_TinyCME_name'];
+            $fp = fopen($path, "rb");
+            
+            // dd($images[$i]);
+            try {
+                $source = \Tinify\fromFile($path);
+                $source->toFile($path);
+                if($data['image_TinyCME_status'] == 2){
+                    $data['image_size_compressed_2'] = filesize($path);
+                }elseif($data['image_TinyCME_status'] == 3){
+                    $data['image_size_compressed_3'] = filesize($path);
+                }else{
+                    $data['image_size_compressed_3'] = filesize($path);
+                }             
+                $data['image_folder'] = 'tinymce';
+                $imageModel->update($image['id'], $data);
+            }
+            catch (\Tinify\Exception $e){
+
+                return redirect()->to('admin/image/imageTiny')->with('error', "Has Error Khi Nén Lại Tại Folder TinyMce");
+            }
+        }
+        else{
+
+            if($image['image_TinyCME_status'] < 3){
+                $data2['image_TinyCME_status'] = $image['image_TinyCME_status'] + 1;
+            }else{
+                $data2['image_TinyCME_status'] = $image['image_TinyCME_status'];
+            }
+
+            
+            $path2 = 'public/upload/tinymce/'.'/'.$image['image_folder'].'/'.$image['image_TinyCME_name'];
+            $fp2 = fopen($path2, "rb");
+            
+            // dd($images[$i]);
+            try {
+                $source = \Tinify\fromFile($path2);
+                $source->toFile($path2);
+
+                if($image['image_size_compressed_2'] == null){
+                    $data2['image_size_compressed_2'] = filesize($path2);
+                }elseif($image['image_size_compressed_3'] == null){
+                    $data2['image_size_compressed_3'] = filesize($path2);
+                }else{
+                    $data2['image_size_compressed_3'] = filesize($path2);
+                }
+
+                $data2['image_folder'] = $image['image_folder'];
+                $imageModel->update($image['id'], $data2);
+            }
+            catch (\Tinify\Exception $e){
+
+                return redirect()->to('admin/image/imageTiny')->with('error', "Has Error Khi Nén Tại Folder Gallery Asset");
+            }
+        }
+        return redirect()->to('admin/image/imageTiny')->with('success_one', $image['image_TinyCME_name']);
+        
+
+    }
+
+    public function compress_one($folder, $name){
+
+
+        $imageModel = new ImageModel();
+        $image = $imageModel->where("image_TinyCME_name", $name)->first();
+
+        if($image == null){
+
+            if($folder == "tinymce"){
+                // nén ảnh trong Folder TinyMCE
+                $path = 'public/upload/tinymce/'.'/'.$name;
+
+                $data['image_TinyCME_name']   = $name;
+                $data['image_TinyCME_status'] = 1;
+                $data['image_size_original'] = filesize($path);
+                $data['image_folder'] = 'tinymce';                
+                $fp = fopen($path, "rb");
+                try {
+                    $source = \Tinify\fromFile($path);
+                    $source->toFile($path);
+                    
+                }
+                catch (\Tinify\Exception $e){
+                    return redirect()->to('admin/image')->with('error', "Có lỗi xảy ra khi nén tại Folder TinyMCE ngoài");
+                }
+                $data['image_size_compressed'] = filesize($path);
+
+                $imageModel->insert($data);
+
+                return redirect()->to('admin/image/imageTiny')->with('success_one', $name);
+                    
+            }
+
+            if($folder != "tinymce"){
+                $path_3 = 'public/upload/tinymce/'.'/'.$folder.'/'.$name;
+                $data3['image_TinyCME_name']    = $name;
+                $data3['image_TinyCME_status']  = 1;
+                $data3['image_size_original']   = filesize($path_3);
+                $data3['image_folder']          = $folder;
+
+                
+                
+                $fp3 = fopen($path_3, "rb");
+                
+                try {
+                    $source = \Tinify\fromFile($path_3);
+                    $source->toFile($path_3);
+                    
+                }
+                catch (\Tinify\Exception $e){
+                    return redirect()->to('admin/image')->with('error', "Có lỗi xảy ra khi nén tại Folder post_images");
+                }
+                $data3['image_size_compressed']   = filesize($path_3);
+
+                $imageModel->insert($data3);
+
+                return redirect()->to('admin/image/imageTiny')->with('success_one', $name);
+            }
+
         }
 
         if($image['image_folder'] == 'tinymce'){

@@ -46,6 +46,7 @@
                       <th>Name Image</th>
                       <th>Dung Lượng</th>
                       <th>Thư Mục Chứa</th>
+                      <th>Nén Đơn</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -72,6 +73,9 @@
                           </td>
                           <td>
                               <i class="fas fa-folder"></i> TinyMce
+                          </td>
+                          <td>
+                              <a href="<?= base_url("admin/image/compress_one/".'tinymce'.'/'.$img[$row][0]) ?>" class= "btn btn-default">Nén Ảnh Này</a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
@@ -104,6 +108,9 @@
                           <td>
                               <i class="far fa-folder"></i> Post Singer
                           </td>
+                          <td>
+                              <a href="<?= base_url("admin/image/compress_one/".'image_asset'.'/'.$img2[$row][0]) ?>" class= "btn btn-info">Nén Ảnh Này</a>
+                          </td>
                         </tr>
                         <?php $i += 1; ?>
                     <?php endfor; ?>
@@ -133,6 +140,9 @@
                           </td>
                           <td>
                               <i class="fas fa-folder-open"></i> Post Gallery
+                          </td>
+                          <td>
+                              <a href="<?= base_url("admin/image/compress_one/".'post_images'.'/'.$img3[$row][0]) ?>" class= "btn btn-success">Nén Ảnh Này</a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
@@ -164,6 +174,9 @@
                           <td>
                               <i class="far fa-folder-open"></i> Gallery Image
                           </td>
+                          <td>
+                              <a href="<?= base_url("admin/image/compress_one/".'gallery_asset'.'/'.$img4[$row][0]) ?>" class="btn btn-primary">Nén Ảnh Này</a>
+                          </td>
                         </tr>
                         <?php $i += 1; ?>
                     <?php endfor; ?>
@@ -180,6 +193,7 @@
                     <th>Name Image</th>
                     <th>Dung Lượng</th>
                     <th>Thư Mục Chứa</th>
+                    <th>Nén</th>
                   </tr>
                   </tfoot>
                 </table>

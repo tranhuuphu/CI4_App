@@ -118,3 +118,17 @@ INFO - 2023-09-24 10:47:49 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-09-24 10:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-24 10:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-09-24 10:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-24 16:24:16 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Admin\CompressController.php on line 546.
+ 1 APPPATH\Controllers\Admin\CompressController.php(546): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Admin\\CompressController.php', 546)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\CompressController->compress_one('gallery_asset', 'interview-messi-21.09.2023-KauTZSQthwneCpds.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\CompressController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-24 16:24:30 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Admin\CompressController.php on line 546.
+ 1 APPPATH\Controllers\Admin\CompressController.php(546): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Admin\\CompressController.php', 546)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\CompressController->compress_one('gallery_asset', 'interview-messi-21.09.2023-KauTZSQthwneCpds.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\CompressController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
