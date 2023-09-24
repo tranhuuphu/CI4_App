@@ -28,6 +28,9 @@ class CanvasController extends BaseController
 
         $cate = new CateModel;
 
+        $session = session();
+        $session->set('cate_current', null);
+
         $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*, post.id as p_id')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(5)->find();
 
         $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_type', 'normal')->find();
@@ -105,7 +108,10 @@ class CanvasController extends BaseController
 
     public function postCate($slug, $id){
         // dd($slug);
-        
+        $session = session();
+
+
+
         $post = new PostModel;
 
         $cate = new CateModel;
@@ -115,6 +121,8 @@ class CanvasController extends BaseController
         $gallery = new GalleryModel;
 
         $cate_detail = $cate->where('id', $id)->first();
+
+        $session->set('cate_current', $cate_detail['cate_slug']);
 
         $paginate = 10;
         $paginate_gallery = 16;
@@ -267,7 +275,8 @@ class CanvasController extends BaseController
 
         $postImage = new PostImagesModel();
 
-        
+        $session = session();
+        $session->set('cate_current', 'san-pham');
 
         $paginate = 10;
         $pro_cate = $post->select('cate.*, post.*, post.id as p_id, cate.id as c_id')->where('post_status', 'san-pham')->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate);
@@ -325,11 +334,16 @@ class CanvasController extends BaseController
 
         
         $cate_gallery = $cate->where('cate_slug', $slug2)->first();
+
+        
+
         if($cate_gallery == null){
             return view('front_end/canvas_site/404');
         }
         if($cate_gallery['cate_type'] == "cate_gallery"){
 
+            $session = session();
+            $session->set('cate_current', $cate_gallery['cate_slug']);
             $gallery = new GalleryModel;
             $gallery_img = $gallery->where('id', $id)->first();
             if($gallery_img == null){
@@ -381,6 +395,11 @@ class CanvasController extends BaseController
 
         $post_slug = $post_detail['post_slug'];
         $cate_slug = $cate_detail['cate_slug'];
+
+        $session = session();
+        $session->set('cate_current', $cate_slug);
+
+
         $post_id = $post_detail['id'];
         $tag_all = $tag->where('tag_post_id', $id)->find();
 

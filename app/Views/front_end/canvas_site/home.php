@@ -67,36 +67,9 @@
 	</section>
 <?php endif; ?>
 
-	<div class="row p-0 align-items-stretch">
-    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: var(--cnvs-themecolor);">
-      <div>
-        <h3 class="text-uppercase" style="font-weight: 600;">Why choose Us</h3>
-        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-        <a href="javascript:void(0)" class="button button-border button-light button-rounded text-uppercase m-0"><i class="fas fa-cogs"></i></a>
-        <i class="bi-lightbulb bg-icon"></i>
-      </div>
-    </div>
-    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: #34495e;">
-      <div>
-        <h3 class="text-uppercase" style="font-weight: 600;">Our Mission</h3>
-        <p style="line-height: 1.8;">
-          Frontline respond, visionary collaborative cities advancement overcome injustice, UNHCR public-private partnerships cause. Giving, country educate rights-based approach; leverage disrupt solution.
-        </p>
-        <a href="javascript:void(0)" class="button button-border button-light button-rounded"><i class="fas fa-palette"></i></a>
-        <i class="fas fa-cog bg-icon"></i>
-      </div>
-    </div>
-    <div class="col-lg-4 dark col-padding overflow-hidden" style="background-color: #e74c3c;">
-      <div>
-        <h3 class="text-uppercase" style="font-weight: 600;">What you get</h3>
-        <p style="line-height: 1.8;">
-          Sustainability involvement fundraising campaign connect carbon rights, collaborative cities convener truth. Synthesize change lives treatment fluctuation participatory monitoring underprivileged equal.
-        </p>
-        <a href="javascript:void(0)" class="button button-border button-light button-rounded text-uppercase m-0"><i class="fas fa-snowflake"></i></a>
-        <i class="bi-hand-thumbs-up bg-icon"></i>
-      </div>
-    </div>
-  </div>
+
+
+
   <div class="clear"></div>
   <div class="section parallax scroll-detect m-0 border-0">
     <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" />

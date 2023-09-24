@@ -407,30 +407,30 @@ class GalleryController extends BaseController
         return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
     }
     public function compressGallerryImage(){
-        $imageModel = new GalleryModel();
-        $imageGallery = $imageModel->findAll();
+        // $imageModel = new GalleryModel();
+        // $imageGallery = $imageModel->findAll();
 
 
 
-        foreach($imageGallery as $iG){
-            if($iG['gallery_compress_times'] < 4){
-                $path = 'public/upload/tinymce/gallery_asset'.'/'.$iG['gallery_image'];
-                try {
-                    $source = \Tinify\fromFile($path);
-                    $source->toFile($path);
-                    $data['gallery_compress_times'] = $iG['gallery_compress_times'] + 1;
-                    $imageModel->update($iG['id'], $data);
-                }
-                catch (\Tinify\Exception $e){
-                    session()->setFlashdata('success', "Has Error");
-                    return redirect()->to('admin/gallery')->with('image', "Có Lỗi");
-                }
-            }
-        }
+        // foreach($imageGallery as $iG){
+        //     if($iG['gallery_compress_times'] < 4){
+        //         $path = 'public/upload/tinymce/gallery_asset'.'/'.$iG['gallery_image'];
+        //         try {
+        //             $source = \Tinify\fromFile($path);
+        //             $source->toFile($path);
+        //             $data['gallery_compress_times'] = $iG['gallery_compress_times'] + 1;
+        //             $imageModel->update($iG['id'], $data);
+        //         }
+        //         catch (\Tinify\Exception $e){
+        //             session()->setFlashdata('success', "Has Error");
+        //             return redirect()->to('admin/gallery')->with('image', "Có Lỗi");
+        //         }
+        //     }
+        // }
 
 
-        session()->setFlashdata('success', "Nén ảnh thành công");
-        return redirect()->to('admin/gallery');
+        // session()->setFlashdata('success', "Nén ảnh thành công");
+        // return redirect()->to('admin/gallery');
 
     }
 

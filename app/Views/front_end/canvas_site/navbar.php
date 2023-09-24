@@ -40,8 +40,8 @@
       <div class="header-row primary-menu2 sub-title2">
         <div id="logo">
           <a href="<?= base_url(''); ?>">
-            <img class="logo-default" style="padding: 7px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
-            <img class="logo-dark" style="padding: 7px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
+            <img class="logo-default" style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
+            <img class="logo-dark" style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
           </a>
         </div>
 
@@ -102,8 +102,17 @@
           <ul class="menu-container">
 
 
+            <?php
+              $session = session();
+              $name = $session->get('cate_current');
 
-            <li class="menu-item" data-title2="san-pham">
+            ?>
+
+            <li class="menu-item <?php if($name == null): ?> current <?php endif; ?>" data-title2="san-pham">
+              <a class="menu-link" href="<?= base_url('/'); ?>"><div>Home</div></a>
+            </li>
+
+            <li class="menu-item <?php if($name == 'san-pham'): ?> current <?php endif; ?>" data-title2="san-pham">
               <a class="menu-link" href="<?= base_url('san-pham'); ?>"><div>Sản Phẩm</div></a>
             </li>
 
@@ -119,14 +128,14 @@
 
             <?php foreach($cate as $c): ?>
               <?php if($c['cate_parent_id'] == 0): ?>
-                <li class="menu-item" data-title="<?= $c['cate_slug'].'-'.$c['id'] ?>">
+                <li class="menu-item <?php if($name == $c['cate_slug']): ?> current <?php endif; ?>" data-title="<?= $c['cate_slug'].'-'.$c['id'] ?>">
                   <a class="menu-link" <?php if(in_array($c['id'], $c_t)): ?> class="sub" <?php endif; ?> href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><div <?php if(in_array($c['id'], $c_t)): ?> class="sub" <?php endif; ?>><?= $c['cate_name']; ?></div></a>
                   
                   <?php if(in_array($c['id'], $c_t)): ?>
                     <ul class="sub-menu-container">
                       <?php foreach($cate as $c2): ?>
                         <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                          <li class="menu-item">
+                          <li class="menu-item <?php if($name == $c2['cate_slug']): ?> current <?php endif; ?>">
                             <a class="menu-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title="<?= $c2['cate_name']; ?>"><div><i class="fas fa-minus"></i> <?= $c2['cate_name']; ?></div></a>
                             
                           </li>

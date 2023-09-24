@@ -12,7 +12,7 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?= time(); ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
@@ -127,6 +127,16 @@
             padding-left: 7px;
           }
         }
+
+        .sub-menu button:after{
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f078";
+          padding-left: 7px;
+        }
+        .sub-menu button:before{
+          content: none;
+        }
                 
         .pagination a:focus,
         select:focus,
@@ -179,6 +189,9 @@
 
         .page-link{
           border-radius: 0px !important;
+        }
+        .sticky-header-shrink #logo img{
+          padding: 7px 0 !important;
         }
   
     </style>
@@ -237,6 +250,7 @@
 
 
     <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>
+    
     <script>
       var tpj = jQuery;
 

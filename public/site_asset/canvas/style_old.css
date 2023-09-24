@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/*!* Bootstrap v5.3.0-alpha3 (https://getbootstrap.com/)
-* Copyright 2011-2023 The Bootstrap Authors
-* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)*/
-
 :root,
 [data-bs-theme=light] {
     --bs-blue: #0d6efd;
@@ -12822,7 +12818,6 @@ fieldset:disabled .btn {
     --cnvs-margin-sm: 2rem;
     --cnvs-margin-lg: 5rem;
     --cnvs-content-padding: 1rem;
-    /*--cnvs-content-padding: 5rem;*/
     --cnvs-section-margin: 4rem;
     --cnvs-section-padding: var(--cnvs-section-margin);
     --cnvs-col-padding: var(--cnvs-section-padding);
@@ -16112,7 +16107,6 @@ img.lazy:not([src]) {
 }
 
 .top-links-item:hover {
-/*    background-color: var(--cnvs-contrast-200);*/
     background-color: rgba(255, 255, 255, .2)
 }
 
@@ -18036,8 +18030,6 @@ body:not(.is-expanded-menu) .mobile-menu-floating .menu-container {
 .header-misc-icon {
     margin: 0 8px
 }
-
-
 
 .header-misc-icon>a {
     display: flex;
@@ -20818,7 +20810,6 @@ body:not(.has-plugin-html5video) .video-wrap video {
     --cnvs-post-image-rounded: 3px;
     --cnvs-post-image-mb: 1.5rem;
     --cnvs-post-sm-image: 125px;
-/*    --cnvs-post-sm-image: 64px;*/
     --cnvs-post-title-font-size: 1.75rem;
     --cnvs-post-title-font-weight: 600;
     --cnvs-post-title-font-spacing: 0;
@@ -30493,7 +30484,7 @@ label.radio {
     animation-fill-mode: both;
     -webkit-perspective: 1000
 }
-/*preload icon*/
+
 .css3-spinner {
     --cnvs-loader-color: #2977ff;
     position: relative;
@@ -31998,12 +31989,6 @@ screen and (max-height:300px) {
         padding-right: var(--cnvs-mfp-popup-padding-left-mobile)
     }
 }
-
-/*!* animate.css - https://animate.style/
-* Version - 4.1.1
-* Licensed under the MIT license - http://opensource.org/licenses/MIT
-*
-* Copyright (c) 2020 Animate.css*/
 
 :root {
     --cnvs-animate-duration: 1s;
