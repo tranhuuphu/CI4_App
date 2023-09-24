@@ -18,113 +18,122 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      <div class="row g-5 py-md-5">
-        <div class="col-lg-4 col-xl-6 portfolio-single-image">
-          <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
-            <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
-          </a>
-        </div>
 
-        <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
-          <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
-          <hr>
-          
-
-          <div class="row g-4 mt-4 mb-6">
-            <div class="col-6">
-              <h5 class="mb-2">Phân Loại</h5>
-              <p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p>
-            </div>
-            <div class="col-6">
-              <h5 class="mb-2">Completed on</h5>
-              <p class="text-medium op-08 mb-0">
-                <?php
-                  $datetime = (new \CodeIgniter\I18n\Time);
-                  $yearNow = $datetime::now()->getYear();
-                  $yearMonthsNow = $datetime::now()->getMonth();
-                  $yearPost = $datetime::parse($gallery_img['updated_at'])->getYear();
-                  
-                  $yearMonthsPost = $datetime::parse($gallery_img['updated_at'])->getMonth();
-                  if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                    echo $datetime::parse($gallery_img['updated_at'])->humanize();
-                  }
-                  if(($yearNow - $yearPost) > 1){
-                    echo $datetime::parse($gallery_img['updated_at'])->humanize();
-                  }else{
-                    echo $datetime::parse($gallery_img['updated_at'])->toLocalizedString('dd MMM yyyy');
-                  }
-                  
-
-                ?>
-              </p>
+      <div class="card mb-5" style="background-color: #f2fafc; border-radius: 0;">
+        <div class="card-body">
+        
+          <div class="row g-5 py-md-2">
+            <div class="col-lg-4 col-xl-6 portfolio-single-image">
+              <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
+                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
+              </a>
             </div>
 
-            <div class="col-6">
-              <h5 class="mb-2">Demension</h5>
-              <p class="text-medium op-08 mb-0">
-                <?php
-                  $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
-                  $image_width = $image_info[0];
-                  $image_height = $image_info[1];
-                  echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
-                ?>
-                <hr>
-                <?php
+            <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
+              <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
+              <hr>
+              
 
-                  $img = get_headers(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']), 1);
-                  echo "<i class='fas fa-hdd'></i> ".ceil($img["Content-Length"]/1024)."Kb";
-                ?>
+              <div class="row g-4 mt-4 mb-6">
+                <div class="col-6">
+                  <h5 class="mb-2">Phân Loại</h5>
+                  <p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p>
+                </div>
+                <div class="col-6">
+                  <h5 class="mb-2">Completed on</h5>
+                  <p class="text-medium op-08 mb-0">
+                    <?php
+                      $datetime = (new \CodeIgniter\I18n\Time);
+                      $yearNow = $datetime::now()->getYear();
+                      $yearMonthsNow = $datetime::now()->getMonth();
+                      $yearPost = $datetime::parse($gallery_img['updated_at'])->getYear();
+                      
+                      $yearMonthsPost = $datetime::parse($gallery_img['updated_at'])->getMonth();
+                      if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                        echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                      }
+                      if(($yearNow - $yearPost) > 1){
+                        echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                      }else{
+                        echo $datetime::parse($gallery_img['updated_at'])->toLocalizedString('dd MMM yyyy');
+                      }
+                      
 
-              </p>
-            </div>
+                    ?>
+                  </p>
+                </div>
 
-            <div class="col-6">
-              <h5 class="mb-2">Download Image</h5>
-              <p class="text-medium op-082 mb-0">
-                <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i></a>
-              </p>
-            </div>
-            <?php if($gallery_img['gallery_file_download'] != null): ?>
-              <div class="col-6">
-                <h5 class="mb-2">Download File</h5>
-                <p class="text-medium text-white op-082 mb-0">
-                  <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-info">Download <i class="fas fa-file-download"></i></a>
-                </p>
+                <div class="col-6">
+                  <h5 class="mb-2">Demension</h5>
+                  <p class="text-medium op-08 mb-0">
+                    <?php
+                      $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
+                      $image_width = $image_info[0];
+                      $image_height = $image_info[1];
+                      echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
+                    ?>
+                    <hr>
+                    <?php
+
+                      $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
+                      $fp = fopen($img, "rb");
+                      echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
+                    ?>
+
+                  </p>
+                </div>
+
+                <div class="col-6">
+                  <h5 class="mb-2">Download Image</h5>
+                  <p class="text-medium op-082 mb-0">
+                    <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>"><i class="fas fa-download"></i></a>
+                  </p>
+                </div>
+                <?php if($gallery_img['gallery_file_download'] != null): ?>
+                  <div class="col-6">
+                    <h5 class="mb-2">Download File</h5>
+                    <p class="text-medium text-white op-082 mb-0">
+                      <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-info">Download <i class="fas fa-file-download"></i></a>
+                    </p>
+                  </div>
+                <?php endif; ?>
+                
               </div>
-            <?php endif; ?>
-            
-          </div>
-          <?php if($gallery_img['gallery_post_url'] != null): ?>
-            <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Bài liên quan tới ảnh <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
-          <?php endif; ?>
+              <?php if($gallery_img['gallery_post_url'] != null): ?>
+                <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Bài liên quan tới ảnh <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
+              <?php endif; ?>
 
-          <div class="card mt-6 pt-4 border-0 border-top rounded-0 border-default">
-            <div class="card-body p-0">
-              <div class="d-flex align-items-center justify-content-between">
-                <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
-                <div class="d-flex">
-                  <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share pinterest: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                  </a>
-                  <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $gallery_img['gallery_title']; ?>" target="_blank" title="share facebook: <?= $gallery_img['gallery_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share twitter: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $gallery_img['gallery_title']; ?>" title="share tumblr: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-                    <i class="fab fa-tumblr"></i>
-                    <i class="fab fa-tumblr"></i>
-                  </a>
+              <div class="card mt-6 border-0 p-3 border-top rounded-5 border-default">
+                <div class="card-body p-0">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
+                    <div class="d-flex">
+                      <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share pinterest: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest" title="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                      </a>
+                      <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $gallery_img['gallery_title']; ?>" target="_blank" title="share facebook: <?= $gallery_img['gallery_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/gallery_asset').'/'.$gallery_img['gallery_image'] ?>&description=<?= $gallery_img['gallery_title']; ?>" title="share twitter: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $gallery_img['gallery_title']; ?>" title="share tumblr: <?= $gallery_img['gallery_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+                        <i class="fab fa-tumblr"></i>
+                        <i class="fab fa-tumblr"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+          
 
       <!-- <div class="row justify-content-between py-4 mt-4 mb-6 mx-0 gx-0 border-top border-bottom border-default">
         <div class="col">

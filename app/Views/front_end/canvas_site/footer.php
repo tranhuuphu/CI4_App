@@ -64,7 +64,7 @@
 
   <div id="copyrights">
     <div class="container">
-      <div class="row col-mb-30">
+      <div class="row col-mb-">
         <div class="col-md-6 text-center text-md-start">
           Copyrights &copy; <?= date("Y"); ?> All Rights Reserved by Huu Phu<br /><br />
           <div class="copyright-links"><a href="javascript:void(0)">Terms of Use</a> / <a href="javascript:void(0)">Privacy Policy</a></div>

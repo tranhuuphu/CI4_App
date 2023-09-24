@@ -229,7 +229,7 @@
 
     </div>
 
-    <div id="gotoTop" class="uil uil-angle-up"><i class="fas fa-arrow-up"></i></div>
+    <div id="gotoTop" class="uil uil-angle-up2"><i class="fas fa-arrow-up"></i></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
@@ -334,10 +334,7 @@
 
       
     </script>
-    <script type="text/javascript">
-      // $('.sub-menu-trigger').removeClass('fa-solid');
-      $('.sub-menu-trigger').addClass('fas');
-    </script>
+    
 
   </body>
 </html>

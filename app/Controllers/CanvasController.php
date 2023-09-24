@@ -122,7 +122,7 @@ class CanvasController extends BaseController
 
         $cate_detail = $cate->where('id', $id)->first();
 
-        $session->set('cate_current', $cate_detail['cate_slug']);
+        
 
         $paginate = 10;
         $paginate_gallery = 16;
@@ -131,6 +131,7 @@ class CanvasController extends BaseController
         if(!$cate_detail || $cate_detail == null){
             return view('front_end/canvas_site/404');
         }
+        $session->set('cate_current', $cate_detail['cate_slug']);
         
 
         $cate_id = $cate_detail['id'];
@@ -235,6 +236,8 @@ class CanvasController extends BaseController
 
         $cate_gallery = $cate->where('cate_type', "cate_gallery")->first();
 
+        $session = session();
+        $session->set('cate_current', $cate_gallery['cate_slug']);
 
         $gallery_img  = $gallery->orderBy('id', 'desc')->findAll();
 

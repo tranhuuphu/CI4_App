@@ -71,8 +71,8 @@
 
 
   <div class="clear"></div>
-  <div class="section parallax scroll-detect m-0 border-0">
-    <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" />
+  <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(109.6deg, rgb(252, 255, 26) 34.9%, rgb(66, 240, 233) 82.5%);">
+    <!-- <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" /> -->
     <div class="heading-block text-center border-bottom-0 mb-0">
       <h2>"Everything is designed, but some things are designed well."</h2>
     </div>
@@ -217,7 +217,7 @@
 
 
 
-	<div class="section" style="background-color: #ebf5ff;">
+	<div class="section" style="background: linear-gradient(to right, #74ebd5 0%, #9face6 100%);">
     <div class="container">
       <div id="oc-images2" class="owl-carousel image-carousel carousel-widget posts-md" data-margin="20" data-pagi="false" data-rewind="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
       	<?php if(count($blog) > 0): ?>
