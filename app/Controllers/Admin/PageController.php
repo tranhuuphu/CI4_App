@@ -137,7 +137,7 @@ class PageController extends BaseController
         $img = $this->request->getFile('page_image');
 
         $type = $img->guessExtension();
-        $image_name = $page_slug.'-'.random_string('alnum', 16).'.'.$type;
+        $image_name = $page_slug.'-'.random_string('alnum', 6).'.'.$type;
         $data['page_image']       = $image_name;
 
 
@@ -290,7 +290,7 @@ class PageController extends BaseController
             $img = $this->request->getFile('page_image');
 
             $type = $img->guessExtension();
-            $image_name = $page_slug.'-'.random_string('alnum', 16).'.'.$type;
+            $image_name = $page_slug.'-'.random_string('alnum', 6).'.'.$type;
             $data['page_image']       = $image_name;
         }else{
             $data['page_image'] = $check['page_image'];
@@ -403,7 +403,7 @@ class PageController extends BaseController
             $img = $this->request->getFile('google_image_maps');
             $type = $img->guessExtension();
             
-            $image_name = $page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type;
+            $image_name = $page_detail['page_slug'].'-'.random_string('alnum', 6).'.'.$type;
 
             $data['google_image_maps']       = $image_name;
         }else{
@@ -416,7 +416,7 @@ class PageController extends BaseController
             $img2 = $this->request->getFile('page_favicon');
             $type2 = $img2->guessExtension();
             
-            $image_name2 = 'favicon_'.$page_detail['page_slug'].'-'.random_string('alnum', 16).'.'.$type2;
+            $image_name2 = 'favicon_'.$page_detail['page_slug'].'-'.random_string('alnum', 6).'.'.$type2;
 
             $data['page_favicon']       = $image_name2;
         }else{

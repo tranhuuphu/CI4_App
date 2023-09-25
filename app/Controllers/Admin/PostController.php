@@ -127,7 +127,7 @@ class PostController extends BaseController
         $img = $this->request->getFile('post_image');
 
         $type = $img->guessExtension();
-        $post_image_name = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+        $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
         $data['post_image']       = $post_image_name;
 
 
@@ -178,7 +178,7 @@ class PostController extends BaseController
                     if ($file->isValid() && ! $file->hasMoved())
                     {
                         $type = $file->guessExtension();
-                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
                         $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
                         $data = [
                             'post_image_id'         => $post_id,
@@ -315,7 +315,7 @@ class PostController extends BaseController
             $img = $this->request->getFile('post_image');
             $type = $img->guessExtension();
             
-            $post_image_name = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+            $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
 
             $data['post_image']       = $post_image_name;
         }else{
@@ -389,7 +389,7 @@ class PostController extends BaseController
                     if ($file->isValid() && ! $file->hasMoved())
                     {
                         $type = $file->guessExtension();
-                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
                         $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
                         $data = [
                             'post_image_id'         => $post_id,

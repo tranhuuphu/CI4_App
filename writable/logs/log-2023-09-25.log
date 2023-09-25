@@ -1,0 +1,37 @@
+CRITICAL - 2023-09-25 04:03:25 --> in_array(): Argument #2 ($haystack) must be of type array, string given
+in APPPATH\Views\admin\image_tinify\index_image.php on line 58.
+ 1 APPPATH\Views\admin\image_tinify\index_image.php(58): in_array([...], 'Tap_doan_Tan_Hiep_Phat-168424.jpg')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image_tinify\\index_image.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/image_tinify/index_image', [], true)
+ 5 APPPATH\Controllers\Admin\CompressController.php(78): view('admin/image_tinify/index_image', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\CompressController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\CompressController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-25 04:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-25 04:03:53 --> in_array(): Argument #2 ($haystack) must be of type array, string given
+in APPPATH\Views\admin\image_tinify\index_image.php on line 58.
+ 1 APPPATH\Views\admin\image_tinify\index_image.php(58): in_array([...], 'Tap_doan_Tan_Hiep_Phat-168424.jpg')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\image_tinify\\index_image.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/image_tinify/index_image', [], true)
+ 5 APPPATH\Controllers\Admin\CompressController.php(78): view('admin/image_tinify/index_image', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\CompressController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\CompressController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-09-25 04:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 04:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 05:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 05:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 05:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-25 05:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -13,7 +13,7 @@ use App\Models\GalleryTypeModel;
 class GalleryController extends BaseController
 {   
     public function __construct(){
-        helper(['Url', 'Form', 'text', 'Text_helper']);
+        helper(['Url', 'form', 'text', 'Text_helper']);
     }
     public function index(){
         $galleryModel = new GalleryModel();
@@ -148,7 +148,7 @@ class GalleryController extends BaseController
         $img = $this->request->getFile('gallery_image');
 
         $type = $img->guessExtension();
-        $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+        $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 6).'.'.$type;
         $data['gallery_image']       = $gallery_image_name;
         // dd($data);
 
@@ -313,7 +313,7 @@ class GalleryController extends BaseController
             $img = $this->request->getFile('gallery_image');
 
             $type = $img->guessExtension();
-            $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 16).'.'.$type;
+            $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 6).'.'.$type;
             $data['gallery_image']       = $gallery_image_name;
 
             
@@ -355,7 +355,7 @@ class GalleryController extends BaseController
         }
     
         return redirect()->to('admin/gallery')->with('success', $gallery_title);
-        // return redirect()->to('admin/post');
+
     }
 
 
@@ -363,48 +363,24 @@ class GalleryController extends BaseController
         $postModel = new PostModel();
         
         $postDetail = $postModel->find($id);
-        $data['post_cate_id']   = $postDetail['post_cate_id'];
-        $data['post_cate_slug'] = $postDetail['post_cate_slug'];
-        $data['post_title']     = $postDetail['post_title'];
-        $data['post_slug']      = $postDetail['post_slug'];
-        $data['post_intro']     = $postDetail['post_intro'];
-        $data['post_image']     = $postDetail['post_image'];
-        $data['post_status']    = $postDetail['post_status'];
-        $data['post_featured']  = $postDetail['post_featured'];
-        $data['post_content']   = $postDetail['post_content'];
-        $data['post_price']     = $postDetail['post_price'];
-        $data['post_sale']      = $postDetail['post_sale'];
-        $data['post_view']      = $postDetail['post_view'];
+
         $data['post_show']      = 1;
-        $data['post_meta_desc'] = $postDetail['post_meta_desc'];
-        $data['post_meta_key']  = $postDetail['post_meta_key'];
+
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ được hiển thị trên trang web");
+        return redirect()->to('admin/image')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ được hiển thị trên trang web");
     }
 
     public function hidden($id){
         $postModel = new PostModel();
         
         $postDetail = $postModel->find($id);
-        $data['post_cate_id']   = $postDetail['post_cate_id'];
-        $data['post_cate_slug'] = $postDetail['post_cate_slug'];
-        $data['post_title']     = $postDetail['post_title'];
-        $data['post_slug']      = $postDetail['post_slug'];
-        $data['post_intro']     = $postDetail['post_intro'];
-        $data['post_image']     = $postDetail['post_image'];
-        $data['post_status']    = $postDetail['post_status'];
-        $data['post_featured']  = $postDetail['post_featured'];
-        $data['post_content']   = $postDetail['post_content'];
-        $data['post_price']     = $postDetail['post_price'];
-        $data['post_sale']      = $postDetail['post_sale'];
-        $data['post_view']      = $postDetail['post_view'];
+
         $data['post_show']      = 0;
-        $data['post_meta_desc'] = $postDetail['post_meta_desc'];
-        $data['post_meta_key']  = $postDetail['post_meta_key'];
+
 
         $postModel->update($id, $data);
-        return redirect()->to('admin/post')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
+        return redirect()->to('admin/image')->with("success", "bài viết: "."---".$postDetail['post_title']."---"." sẽ không hiển thị trên trang web");
     }
     public function compressGallerryImage(){
         // $imageModel = new GalleryModel();

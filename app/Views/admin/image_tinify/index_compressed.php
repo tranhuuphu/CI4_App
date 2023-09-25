@@ -50,10 +50,11 @@
               <?php endif; ?>
 
               <h3 class="card-title text-bold">Danh Sách <span class="badge badge-light ml-2">Remain Compress Online: <?= $compressionsThisMonth; ?></span>
-                <a href="<?= base_url('admin/image/again') ?>" class="btn btn-success ml-3"><i class="fas fa-compress-arrows-alt"></i> Compress Again</a>
-                <a href="<?= base_url('admin/image/check_again') ?>" class="btn btn-primary ml-3"><i class="fas fa-sync"></i> Arrange Images</a>
+                <a href="<?= base_url('admin/image/again') ?>" class="btn btn-success ml-3"><i class="fas fa-compress-arrows-alt"></i> Compress All Again</a>
+                <a href="<?= base_url('admin/image/check_again') ?>" class="btn btn-primary ml-3"><i class="fas fa-sync"></i> Arrange Images With Database</a>
 
                 <a href="<?= base_url('admin/image/imageTiny') ?>" class="btn btn-warning ml-3"><i class="fas fa-sync-alt"></i> Reload Page</a>
+                <a href="<?= base_url('admin/image') ?>" class="btn btn-danger ml-3"><i class="fas fa-arrow-left"></i> Ảnh Chưa Nén</a>
               </h3>
 
             </div>
@@ -89,21 +90,21 @@
                         <td>
                           <?php if($value['image_folder'] == 'image_asset'): ?>
 
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60"></div>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60"  width="auto"></div>
 
                           <?php elseif($value['image_folder'] == 'tinymce'): ?>
 
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_TinyCME_name'] ?>" height="60"></div>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_TinyCME_name'] ?>" height="60" width="auto"></div>
                           
 
                           <?php elseif($value['image_folder'] == 'post_images'): ?>
 
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60"></div>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60" width="auto"></div>
                          
 
                           <?php elseif($value['image_folder'] == 'gallery_asset'): ?>
 
-                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60"></div>
+                            <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'] ?>" height="60" width="auto"></div>
 
                           <?php endif; ?>
                         </td>

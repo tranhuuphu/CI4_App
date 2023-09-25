@@ -27,9 +27,9 @@ class CompressController extends BaseController
         $data['image_check'] = $imageModel->select('image_TinyCME_name')->findAll();
         // dd(array_values($data['image_check']));
         foreach($data['image_check'] as $ci){
-            $check[] = $ci['image_TinyCME_name'];
+            $check_img[] = $ci['image_TinyCME_name'];
         }
-        $data['check'] = $check;
+        $data['check_img'] = $check_img;
 
         // Folder TinyMCE
         $path = './public/upload/tinymce/';
@@ -440,7 +440,7 @@ class CompressController extends BaseController
 
     }
 
-    public function single_compress($name){
+    public function single_compress($id){
 
         $imageModel = new ImageModel();
         $image = $imageModel->find($id);

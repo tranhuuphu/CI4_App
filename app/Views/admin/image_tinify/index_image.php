@@ -55,13 +55,13 @@
                     <!-- Folder TinyMCE -->
                     <?php $count = count($img); $i = 1; ?>
                     <?php for ($row = 0; $row < $count; $row++): ?>
-                      <?php //if(in_array($check, $img[$row][0])): ?>
+                      <?php if(!in_array($img[$row][0], $check_img)): ?>
                         <tr>
                           <td>
                               <?= $i ?>
                           </td>
                           <td>
-                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60"></div>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce').'/'.$img[$row][0] ?>" height="60" width="auto"></div>
                           </td>
                           <td>
                               <div class="d-flex align-items-center"><?= $img[$row][0] ?></div>
@@ -75,24 +75,24 @@
                               <i class="fas fa-folder"></i> TinyMce
                           </td>
                           <td>
-                              <a href="<?= base_url("admin/image/compress_one/".'tinymce'.'/'.$img[$row][0]) ?>" class= "btn btn-default">Nén Ảnh Này</a>
+                              <a href="<?= base_url("admin/image/compress_one/".'tinymce'.'/'.$img[$row][0]) ?>" class= "btn btn-default">Compress Now <i class="fas fa-long-arrow-alt-right"></i></a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
-                      <?php //endif; ?>
+                      <?php endif; ?>
                     <?php endfor; ?>
 
 
                     <!-- Folder TinyMCE/image_asset -->
                     <?php $count2 = count($img2); ?>
                     <?php for ($row = 0; $row < $count2; $row++): ?>
-                      
+                      <?php if(!in_array($img2[$row][0], $check_img)): ?>
                         <tr>
                           <td>
                               <?= $i ?>
                           </td>
                           <td>
-                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60"></div>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/image_asset').'/'.$img2[$row][0] ?>" height="60" width="auto"></div>
                           </td>
                           <td>
                               <div class="d-flex align-items-center"><?= $img2[$row][0] ?></div>
@@ -109,23 +109,24 @@
                               <i class="far fa-folder"></i> Post Singer
                           </td>
                           <td>
-                              <a href="<?= base_url("admin/image/compress_one/".'image_asset'.'/'.$img2[$row][0]) ?>" class= "btn btn-info">Nén Ảnh Này</a>
+                              <a href="<?= base_url("admin/image/compress_one/".'image_asset'.'/'.$img2[$row][0]) ?>" class= "btn btn-info">Compress Now <i class="fas fa-long-arrow-alt-right"></i></a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
+                      <?php endif; ?>
                     <?php endfor; ?>
 
 
                     <!-- Folder TinyMCE/post_images -->
                     <?php $count3 = count($img3); ?>
                     <?php for ($row = 0; $row < $count3; $row++): ?>
-                      
+                      <?php if(!in_array($img3[$row][0], $check_img)): ?>
                         <tr>
                           <td>
                               <?= $i ?>
                           </td>
                           <td>
-                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/post_images').'/'.$img3[$row][0] ?>" height="60"></div>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/post_images').'/'.$img3[$row][0] ?>" height="60" width="auto"></div>
                           </td>
                           <td>
                               <div class="d-flex align-items-center"><?= $img3[$row][0] ?></div>
@@ -142,23 +143,24 @@
                               <i class="fas fa-folder-open"></i> Post Gallery
                           </td>
                           <td>
-                              <a href="<?= base_url("admin/image/compress_one/".'post_images'.'/'.$img3[$row][0]) ?>" class= "btn btn-success">Nén Ảnh Này</a>
+                              <a href="<?= base_url("admin/image/compress_one/".'post_images'.'/'.$img3[$row][0]) ?>" class= "btn btn-success">Compress Now <i class="fas fa-long-arrow-alt-right"></i></a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
+                      <?php endif; ?>
                     <?php endfor; ?>
 
 
                     <!-- Folder TinyMCE/gallery_asset -->
                     <?php $count4 = count($img4); ?>
                     <?php for ($row = 0; $row < $count4; $row++): ?>
-                      
+                      <?php if(!in_array($img4[$row][0], $check_img)): ?>
                         <tr>
                           <td>
                               <?= $i ?>
                           </td>
                           <td>
-                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$img4[$row][0] ?>" height="60"></div>
+                              <div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$img4[$row][0] ?>" height="60" width="auto"></div>
                           </td>
                           <td>
                               <div class="d-flex align-items-center"><?= $img4[$row][0] ?></div>
@@ -175,10 +177,11 @@
                               <i class="far fa-folder-open"></i> Gallery Image
                           </td>
                           <td>
-                              <a href="<?= base_url("admin/image/compress_one/".'gallery_asset'.'/'.$img4[$row][0]) ?>" class="btn btn-primary">Nén Ảnh Này</a>
+                              <a href="<?= base_url("admin/image/compress_one/".'gallery_asset'.'/'.$img4[$row][0]) ?>" class="btn btn-primary">Compress Now <i class="fas fa-long-arrow-alt-right"></i></a>
                           </td>
                         </tr>
                         <?php $i += 1; ?>
+                      <?php endif; ?>
                     <?php endfor; ?>
 
   	                

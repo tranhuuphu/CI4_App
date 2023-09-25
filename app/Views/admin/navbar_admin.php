@@ -310,35 +310,7 @@
           </ul>
         </li>
 
-        <li class="nav-item type_gallery_active">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-images"></i>
-            <p>
-              Phân Loại Gallery
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview type_gallery_tree_active">
-            <li class="nav-item">
-              <a href="<?= base_url('admin/type_gallery'); ?>" class="nav-link">
-                <i class="fas fa-list-ul nav-icon"></i>
-                <p>Danh Sách</p>
-              </a>
-            </li>
-            <li class="nav-item type_gallery_tree_active2">
-              <a href="<?= base_url('admin/type_gallery/create_type'); ?>" class="nav-link">
-                <i class="fas fa-plus nav-icon"></i>
-                <p>Thêm Loại Gallery</p>
-              </a>
-            </li>
-            <li class="nav-item type_gallery_tree_active3">
-              <a href="javascript:void(0)" class="nav-link">
-                <i class="fas fa-edit nav-icon"></i>
-                <p>Chỉnh sửa</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+        
 
 
         <li class="nav-item gallery_active">
@@ -385,13 +357,44 @@
             <li class="nav-item">
               <a href="<?= base_url('admin/image'); ?>" class="nav-link">
                 <i class="fas fa-images nav-icon"></i>
-                <p>All Image</p>
+                <p>Ảnh Chưa Nén</p>
               </a>
             </li>
             <li class="nav-item image_tree_active3">
               <a href="<?= base_url('admin/image/imageTiny'); ?>" class="nav-link">
                 <i class="fas fa-compress-alt nav-icon"></i>
                 <p>Image Compressed</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item type_gallery_active">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-images"></i>
+            <p>
+              Phân Loại Gallery
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview type_gallery_tree_active">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/type_gallery'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách</p>
+              </a>
+            </li>
+            <li class="nav-item type_gallery_tree_active2">
+              <a href="<?= base_url('admin/type_gallery/create_type'); ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Thêm Loại Gallery</p>
+              </a>
+            </li>
+            <li class="nav-item type_gallery_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
               </a>
             </li>
           </ul>
