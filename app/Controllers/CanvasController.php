@@ -677,7 +677,7 @@ class CanvasController extends BaseController
         $gallery->update($gallery_detail['id'], $data2);
         $name = base_url().'/public/upload/tinymce/gallery_asset/'.$image;
 
-        return $this->response->download($name, $image);
+        return $this->response->download($name, $image)->setFileName($image);
     }
 
 

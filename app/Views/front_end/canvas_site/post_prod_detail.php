@@ -3,6 +3,17 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><?= $post_detail['post_title']; ?></li>
+    </ol>
+  </nav>
+</div>
+
+
+<!-- <div class="container">
 	<section id="page-title" style="margin-bottom: 25px; margin-top: 30px;">
 	  <div class="container clearfix" style="background-color: #b3e2fc">
 	    
@@ -13,7 +24,7 @@
 	    </ol>
 	  </div>
 	</section>
-</div>
+</div> -->
 
 
 	<div class="container clearfix mt-5">

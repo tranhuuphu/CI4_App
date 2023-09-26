@@ -2,8 +2,17 @@
 
 <?= $this->section('content'); ?>
 
-
 <div class="container">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
+    </ol>
+  </nav>
+</div>
+
+
+<!-- <div class="container">
 
   <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
     <div class="container clearfix">
@@ -14,7 +23,7 @@
       </ol>
     </div>
   </section>
-</div>
+</div> -->
 
 <?php if($post_cate != null): ?>
 <section id="content">

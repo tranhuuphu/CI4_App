@@ -16,9 +16,19 @@
 	}
 
 	
+	
 </style>
 
 <div class="container">
+	<nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+	    <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
+	  </ol>
+	</nav>
+</div>
+
+<!-- <div class="container">
 	<section id="page-title" style="margin-bottom: 15px; margin-top: 30px;">
 	  <div class="container clearfix">
 	    
@@ -28,7 +38,7 @@
 	    </ol>
 	  </div>
 	</section>
-</div>
+</div> -->
 	
 <div class="container clearfix mt-5">
 	<?php

@@ -3,17 +3,17 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-	<section id="page-title" style="margin-bottom: 25px; margin-top: 30px; background-color: #ededed;">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>"><i class="far fa-images"></i></a></li>
-	      <li class="breadcrumb-item active"><?= $gallery_img['gallery_title'] ?></li>
-	    </ol>
-	  </div>
-	</section>
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><?= $gallery_img['gallery_title'] ?></li>
+    </ol>
+  </nav>
 </div>
+
+
+
 
 <section id="content">
   <div class="content-wrap">

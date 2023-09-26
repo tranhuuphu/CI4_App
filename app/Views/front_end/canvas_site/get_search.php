@@ -2,9 +2,16 @@
 
 <?= $this->section('content'); ?>
 
-
-
 <div class="container">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
+      <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <?= $key ?></a></li>
+    </ol>
+  </nav>
+</div>
+
+<!-- <div class="container">
   <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #d5e0f0;">
     <div class="container clearfix">
       
@@ -14,7 +21,7 @@
       </ol>
     </div>
   </section>
-</div>
+</div> -->
 
 
 <style type="text/css">
@@ -119,7 +126,7 @@
 
 
           <?php foreach($gallery_result as $key3): ?>
-            <div class="entry event col-lg-6 col-md-6">
+            <div class="entry event col-lg-4 col-md-4">
               <div class="grid-inner row g-0 p-4 bg-transparent shadow-sm h-shadow all-ts h-translatey-sm card border">
                 <div class="entry-image">
                   <a href="<?= base_url().'/'.$key3['gallery_cate_slug'].'/'.$key3['gallery_title_slug'].'-'.$key3['id'].'.html' ?>" title="<?= $key3['gallery_title']; ?>">
@@ -157,7 +164,7 @@
                       <i class="fas fa-atom"></i> <?= $key3['gallery_type_name']; ?>
                     </li>
                     <li>
-                      <a href="<?= base_url('page/download/'.$key3['gallery_image']) ?>" target= "_blank"><i class="fas fa-download"></i> Image</a>
+                      <a href="<?= base_url('page/download/'.$key3['gallery_image']) ?>"><i class="fas fa-download"></i> Image</a>
                     </li>
                     <?php if($key3['gallery_file_download'] != null): ?>
                       <li>

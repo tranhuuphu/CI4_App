@@ -12,7 +12,7 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?= time(); ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
@@ -218,6 +218,29 @@
         .sticky-header-shrink #logo img{
           padding: 7px 0 !important;
         }
+
+        .breadcrumb li{
+          color: grey;
+          font-size: 16px;
+        }
+
+        .breadcrumb li a{
+          color: #0474c4;
+          /*color: #0474c4;*/
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .breadcrumb li a:hover{
+          color: #0a70ff;
+          
+        }
+        .active a{
+          color: #000 !important;
+        }
+
+        .active a:hover{
+          color: #0a70ff !important;
+        }
   
     </style>
 
@@ -358,8 +381,8 @@
     <script type="text/javascript" class="init">
 
       $('#example').dataTable( {
-        "pageLength": 20,
-        "lengthMenu": [20, 50, 75, 100]
+        "pageLength": 30,
+        "lengthMenu": [30, 50, 75, 100]
       } );
 
       

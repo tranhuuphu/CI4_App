@@ -2,8 +2,16 @@
 
 <?= $this->section('content'); ?>
 
-
 <div class="container">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
+    </ol>
+  </nav>
+</div>
+
+<!-- <div class="container">
 
   <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
     <div class="container clearfix">
@@ -14,7 +22,7 @@
       </ol>
     </div>
   </section>
-</div>
+</div> -->
 
 <?php if($gallery_img != null): ?>
 <section id="content">
@@ -36,6 +44,7 @@
                         <th class="pt-3 pb-3">#</th>
                         <th class="pt-3 pb-3">Ảnh - Image</th>
                         <th class="pt-3 pb-3">Tiêu Đề - Title</th>
+                        <th class="pt-3 pb-3">Thể Loại</th>
                         <th class="pt-3 pb-3">Kích Thước - Demension</th>
                         <th class="pt-3 pb-3">Download Image</th>
                         <th class="pt-3 pb-3">Link Tải File</th>
@@ -50,6 +59,8 @@
                         <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" height="120px" style="border-radius: 7px; border: 3px solid #fcfcfa; padding: 7px"/>
                       </td>
                       <td><strong><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" target="_blank"><?= $key['gallery_title'] ?></a></strong></td>
+                      
+                      <td><strong><?= $key['gallery_type_name'] ?></strong></td>
                       <td>
                         <?php
                           $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
@@ -79,6 +90,7 @@
                         <th>#</th>
                         <th>Ảnh - Image</th>
                         <th>Tiêu Đề - Title</th>
+                        <th class="pt-3 pb-3">Thể Loại</th>
                         <th>Kích Thước - Demension</th>
                         <th>Download Image</th>
                         <th>Link Tải File</th>
