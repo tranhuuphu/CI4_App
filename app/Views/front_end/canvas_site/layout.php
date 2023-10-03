@@ -22,83 +22,81 @@
 
 
 
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/settings.css" media="screen"> -->
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/layers.css">
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/navigation.css"> -->
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css?<?= time(); ?>" media="screen">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
+
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/plugin/news.css">
 
     <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
     
     <!-- Google Analytics -->
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <!-- End Google Analytics -->
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KPGNS8JZ');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPGNS8JZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-XXXXX-Y', 'auto');
+      ga('send', 'pageview');
+      </script>
+      <!-- End Google Analytics -->
+      
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KPGNS8JZ');</script>
+      <!-- End Google Tag Manager -->
+      
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPGNS8JZ"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
 
     <style>
-      .revo-slider-emphasis-text {
-        font-size: 58px;
+      .tp-caption.News-Title {
         font-weight: 700;
-        letter-spacing: 1px;
-        font-family: 'Poppins', sans-serif;
-        padding: 15px 20px;
-        border-top: 2px solid #FFF;
-        border-bottom: 2px solid #FFF;
+        letter-spacing: -1px;
+        font-family: "arial", sans-serif;
       }
 
-      .revo-slider-desc-text {
-        font-size: 20px;
-        font-family: 'Lato', sans-serif;
-        width: 650px;
-        text-align: center;
-        line-height: 1.5;
+      .tp-caption.News-Subtitle {
+        font-family: "arial";
+      }
+      .tp-video-play-button {
+        display: none !important;
       }
 
-      .revo-slider-caps-text {
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 3px;
-        font-family: 'Poppins', sans-serif;
+      .tp-caption {
+        white-space: nowrap;
       }
-
-      .tp-video-play-button { display: none !important; }
-
-      .tp-caption { white-space: nowrap; }
+      .tp-carousel-wrapper {
+        cursor: url(<?= base_url() ?>/public/upload/openhand.cur), move;
+      }
+      .tp-carousel-wrapper.dragged {
+        cursor: url(<?= base_url() ?>/public/upload/closedhand.cur), move;
+      }
 
       
+      .tp-tabs{
+        background: #b6b6b6 !important;
+      }
 
+     .search{
 
-       .search{
+        position: absolute;
+        bottom: 33%;
+        right: 85px;
+        height: auto;
+        width: auto;
+        background: #1f8cff;
+        border-radius: 0;
+        font-weight: bold;
+        border: none;
 
-          position: absolute;
-          bottom: 33%;
-          right: 85px;
-          height: auto;
-          width: auto;
-          background: #1f8cff;
-          border-radius: 0;
-          font-weight: bold;
-          border: none;
-
-       }
+      }
        .sticky-header .search{
 
           position: absolute;
@@ -260,49 +258,166 @@
 
       
 
-      <section id="content">
-        <div class="content-wrap">
+      <!-- <section id="content"> -->
+        <!-- <div class="content-wrap"> -->
           
-          <?php if(!empty(session()->getFlashdata('success'))) : ?>
-            <div class="alert alert-success alert-dismissible">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h5><i class="icon fas fa-check"></i> Alert!</h5>
-              <?= session()->getFlashdata('success'); ?>
-            </div>
-          <?php endif ?>
+          
           
           <?= $this->renderSection('content'); ?>
 
           
 
-        </div>
-      </section>
+        <!-- </div> -->
+      <!-- </section> -->
       <?= $this->include('front_end/canvas_site/footer'); ?>
       
 
     </div>
 
-    <div id="gotoTop" class="uil uil-angle-up2"><i class="fas fa-arrow-up"></i></div>
-
+    <!-- <div id="gotoTop" class="uil uil-angle-up"></div> -->
+    <div id="gotoTop" class="uil uil-angle-up rounded" data-mobile="true" style="--cnvs-gotoTop-bg:var(--cnvs-contrast-800)"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>
 
 
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.tools.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/jquery.themepunch.revolution.min.js"></script>
-    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.video.min.js"></script> -->
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.actions.min.js"></script> -->
-    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.layeranimation.min.js"></script> -->
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/extensions/revolution.extension.parallax.min.js"></script>
+
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.tools.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.video.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.navigation.min.js"></script>
+
+
+
+
+
+
+    <!-- Old -->
+    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/extensions/revolution.extension.video.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.video.min.js"></script> -->
 
 
     <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>
+
+    <!-- Slider -->
+    <script>
+      var tpj = jQuery;
+      var revapi30;
+
+      tpj(document).ready(function () {
+        if (tpj("#rev_slider_30_1").revolution == undefined) {
+          revslider_showDoubleJqueryError("#rev_slider_30_1");
+        } else {
+          revapi30 = tpj("#rev_slider_30_1")
+            .show()
+            .revolution({
+              sliderType: "carousel",
+              jsFileLocation: "<?= base_url('public/public/site_asset/canvas/js/plugin/')?>/",
+              sliderLayout: "fullwidth",
+              dottedOverlay: "none",
+              delay: 9000,
+              navigation: {
+                keyboardNavigation: "off",
+                keyboard_direction: "horizontal",
+                mouseScrollNavigation: "off",
+                onHoverStop: "off",
+                touch: {
+                  touchenabled: "on",
+                  swipe_threshold: 75,
+                  swipe_min_touches: 1,
+                  swipe_direction: "horizontal",
+                  drag_block_vertical: false,
+                },
+                arrows: {
+                  style: "gyges",
+                  enable: true,
+                  hide_onmobile: false,
+                  hide_onleave: false,
+                  tmp: "",
+                  left: {
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: 20,
+                    v_offset: 0,
+                  },
+                  right: {
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: 20,
+                    v_offset: 0,
+                  },
+                },
+                tabs: {
+                  style: "gyges",
+                  enable: true,
+                  width: 250,
+                  height: 80,
+                  min_width: 250,
+                  wrapper_padding: 30,
+                  wrapper_color: "#26292b",
+                  wrapper_opacity: "1",
+                  tmp: '<div class="tp-tab-content">  <span class="tp-tab-date">{{param1}}</span>  <span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>',
+                  visibleAmount: 5,
+                  hide_onmobile: false,
+                  hide_onleave: false,
+                  hide_delay: 200,
+                  direction: "horizontal",
+                  span: true,
+                  position: "outer-bottom",
+                  space: 0,
+                  h_align: "center",
+                  v_align: "bottom",
+                  h_offset: 0,
+                  v_offset: 0,
+                },
+              },
+              carousel: {
+                horizontal_align: "center",
+                vertical_align: "center",
+                fadeout: "on",
+                vary_fade: "on",
+                maxVisibleItems: 3,
+                infinity: "on",
+                space: 0,
+                stretch: "off",
+              },
+              gridwidth: 720,
+              gridheight: 405,
+              lazyType: "none",
+              shadow: 0,
+              spinner: "off",
+              stopLoop: "on",
+              stopAfterLoops: 0,
+              stopAtSlide: 1,
+              shuffle: "off",
+              autoHeight: "off",
+              disableProgressBar: "on",
+              hideThumbsOnMobile: "off",
+              hideSliderAtLimit: 0,
+              hideCaptionAtLimit: 0,
+              hideAllCaptionAtLilmit: 0,
+              debugMode: false,
+              fallbacks: {
+                simplifyAll: "off",
+                nextSlideOnWindowFocus: "off",
+                disableFocusListener: false,
+              },
+            });
+        }
+      }); /*ready*/
+    </script>
     
     <script>
       var tpj = jQuery;
@@ -312,7 +427,7 @@
           .show()
           .revolution({
             sliderType: "standard",
-            jsFileLocation: "include/rs-plugin/js/",
+            jsFileLocation: "<?= base_url('public/site_asset/canvas'); ?>/js/",
             sliderLayout: "fullwidth",
             dottedOverlay: "none",
             delay: 9000,

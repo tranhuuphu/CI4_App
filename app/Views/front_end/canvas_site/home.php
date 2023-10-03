@@ -2,6 +2,106 @@
 
 <?= $this->section('content'); ?>
 
+<section id="slider" class="slider-element revslider-wrap">
+  <div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="media-carousel-autoplay30" style="margin: 0px auto; background: linear-gradient(0deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%); padding: 0px; margin-top: 0px; margin-bottom: 0px;">
+    <div id="rev_slider_30_1" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.0.7">
+      <ul>
+        
+      	<li
+          data-index="rs-120"
+          data-transition="fade"
+          data-slotamount="7"
+          data-easein="default"
+          data-easeout="default"
+          data-masterspeed="300"
+          data-thumb="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1-250x100.jpg"
+          data-rotate="0"
+          data-saveperformance="off"
+          data-title="Real Webdesign 1"
+          data-param1="Regular Image 1"
+          data-description
+
+
+
+
+
+        >
+	        <div
+	            class="tp-caption Video-SubTitle tp-resizeme"
+	            id="slide-121-layer-1"
+	            data-x="10"
+	            data-y="bottom"
+	            data-voffset="50"
+	            data-width="['auto']"
+	            data-height="['auto']"
+	            data-transform_idle="o:1;tO:-20% 50%;"
+	            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
+	            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+	            data-start="200"
+	            data-splitin="none"
+	            data-splitout="none"
+	            data-responsive_offset="on"
+	            data-end=""
+	            style="z-index: 5; white-space: nowrap; font-size: 18px;"
+	          >
+	            <a href="#">PLAYING NOW</a>
+          </div>
+          <div
+            class="tp-caption Video-Title tp-resizeme"
+            id="slide-121-layer-2"
+            data-x="10"
+            data-y="bottom"
+            data-voffset="10"
+            data-width="['auto']"
+            data-height="['auto']"
+            data-transform_idle="o:1;tO:-20% 50%;"
+            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
+            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+            data-start="750"
+            data-splitin="none"
+            data-splitout="none"
+            data-responsive_offset="on"
+            data-end=""
+            style="z-index: 6; white-space: nowrap;"
+          >
+            <a href="#">Real Webdesign 1</a>
+          </div>
+
+          
+
+          <img src="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1.jpg" alt="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
+        </li>
+        
+
+        
+
+        <li
+          data-index="rs-122"
+          data-transition="fade"
+          data-slotamount="7"
+          data-easein="default"
+          data-easeout="default"
+          data-masterspeed="300"
+          data-thumb="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1-250x100.jpg"
+          data-rotate="0"
+          data-saveperformance="off"
+          data-title="Real Webdesign"
+          data-param1="Regular Image"
+          data-description
+
+
+
+
+        >
+          <img src="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1.jpg" alt="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
+        </li>
+
+      </ul>
+      <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+    </div>
+  </div>
+</section>
+
 
 <?php if($featured != null): ?> 
 	<section id="content">
@@ -500,7 +600,7 @@
 		                    data-lightbox="image"
 		                    title="
 		                    <?php
-				                  $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
+				                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
 				                  $image_width = $image_info[0];
 				                  $image_height = $image_info[1];
 				                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';

@@ -113,7 +113,7 @@ class GalleryController extends BaseController
         }
 
         if($this->request->getPost('gallery_file_download') != null){
-            $data['gallery_file_download']       = $this->request->getPost('gallery_post_id');
+            $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
         }else{
             $data['gallery_file_download']       = null;
         }

@@ -67,7 +67,7 @@
                   <h5 class="mb-2">Demension</h5>
                   <p class="text-medium op-08 mb-0">
                     <?php
-                      $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']));
+                      $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
                       $image_width = $image_info[0];
                       $image_height = $image_info[1];
                       echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';

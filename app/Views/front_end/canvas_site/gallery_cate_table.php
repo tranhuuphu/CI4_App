@@ -63,7 +63,7 @@
                       <td><strong><?= $key['gallery_type_name'] ?></strong></td>
                       <td>
                         <?php
-                          $image_info = getimagesize(base_url('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']));
+                          $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
                           $image_width = $image_info[0];
                           $image_height = $image_info[1];
                           echo $image_width.'x'.$image_height.' pixel';
