@@ -81,7 +81,7 @@
 
       
       .tp-tabs{
-        background: #b6b6b6 !important;
+        background: linear-gradient(90deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%) !important;
       }
 
      .search{

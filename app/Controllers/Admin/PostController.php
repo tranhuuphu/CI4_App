@@ -240,7 +240,7 @@ class PostController extends BaseController
 
 
 
-        if($detailPost['post_title'] == $post_title){
+        if($detailPost['post_title'] = $post_title){
             $data['post_title'] = $post_title;
 
         }elseif($detailPost['post_title'] != $post_title){

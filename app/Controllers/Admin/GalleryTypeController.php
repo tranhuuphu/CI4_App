@@ -92,7 +92,7 @@ class GalleryTypeController extends BaseController
 
         $gallery_type_name = $this->request->getPost('gallery_type_name');
 
-        if($type_detail['gallery_type_name'] == $gallery_type_name){
+        if($type_detail['gallery_type_name'] = $gallery_type_name){
             $data['gallery_type_name'] = $gallery_type_name;
 
         }elseif($type_detail['gallery_type_name'] != $gallery_type_name){

@@ -1,177 +1,125 @@
 <?= $this->extend('front_end/canvas_site/layout'); ?>
 
 <?= $this->section('content'); ?>
-
+<style type="text/css">
+	#rev_slider_30_1 ul li .title_cap a:hover{
+		color: #0055ff !important;
+	}
+</style>
+<!-- Feature Slider -->
+<?php if($featured != null): ?> 
 <section id="slider" class="slider-element revslider-wrap">
-  <div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="media-carousel-autoplay30" style="margin: 0px auto; background: linear-gradient(0deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%); padding: 0px; margin-top: 0px; margin-bottom: 0px;">
+  <div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="media-carousel-autoplay30" style="margin: 0px auto; background: linear-gradient(90deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%); padding: 0px; margin-top: 0px; margin-bottom: 0px;">
     <div id="rev_slider_30_1" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.0.7">
       <ul>
-        
-      	<li
-          data-index="rs-120"
-          data-transition="fade"
-          data-slotamount="7"
-          data-easein="default"
-          data-easeout="default"
-          data-masterspeed="300"
-          data-thumb="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1-250x100.jpg"
-          data-rotate="0"
-          data-saveperformance="off"
-          data-title="Real Webdesign 1"
-          data-param1="Regular Image 1"
-          data-description
+        <?php $n = 0; ?>
+        <?php foreach($featured as $key): ?>
+	      	<li
+	          data-index="rs-12<?= $n ?>"
+	          data-transition="fade"
+	          data-slotamount="7"
+	          data-easein="default"
+	          data-easeout="default"
+	          data-masterspeed="200"
+	          data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>"
+	          data-rotate="0"
+	          data-saveperformance="off"
+	          data-title="<i class='fas fa-star'></i> <?= $key['post_title']; ?>"
+	          data-param1=
+	          "
+	          	<i class='fas fa-calendar-alt'></i> 
+            	<?php
+            		$datetime = (new \CodeIgniter\I18n\Time);
+            		$yearNow = $datetime::now()->getYear();
+            		$yearMonthsNow = $datetime::now()->getMonth();
+            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
+            		
+            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
+            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+            			echo $datetime::parse($key['updated_at'])->humanize();
+            		}
+            		if(($yearNow - $yearPost) > 1){
+            			echo $datetime::parse($key['updated_at'])->humanize();
+            		}else{
+            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
+            		}
+            	?>
+          	"
+	          data-description
 
 
 
 
 
-        >
-	        <div
-	            class="tp-caption Video-SubTitle tp-resizeme"
-	            id="slide-121-layer-1"
+	        >
+		        <div
+		            class="tp-caption Video-SubTitle tp-resizeme"
+		            id="slide-121-layer-<?= $n ?>"
+		            data-x="10"
+		            data-y="bottom"
+		            data-voffset="50"
+		            data-width="['auto']"
+		            data-height="['auto']"
+		            data-transform_idle="o:1;tO:-20% 50%;"
+		            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
+		            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+		            data-start="200"
+		            data-splitin="none"
+		            data-splitout="none"
+		            data-responsive_offset="on"
+		            data-end=""
+		            style="z-index: 5; white-space: nowrap; font-size: 18px;"
+		          >
+		            <a href="<?= base_url('').'/'.$key['cate_slug'].'-'.$key['post_cate_id']; ?>"><i class="fas fa-long-arrow-alt-right"></i> <?= $key['cate_name']; ?></a>
+	          </div>
+	          <div
+	            class="tp-caption Video-Title tp-resizeme title_cap"
+	            id="slide-121-layer-<?= $n ?>"
 	            data-x="10"
 	            data-y="bottom"
-	            data-voffset="50"
+	            data-voffset="10"
 	            data-width="['auto']"
 	            data-height="['auto']"
 	            data-transform_idle="o:1;tO:-20% 50%;"
 	            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
 	            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-	            data-start="200"
+	            data-start="750"
 	            data-splitin="none"
 	            data-splitout="none"
 	            data-responsive_offset="on"
 	            data-end=""
-	            style="z-index: 5; white-space: nowrap; font-size: 18px;"
+	            style="z-index: 6; white-space: nowrap;"
 	          >
-	            <a href="#">PLAYING NOW</a>
-          </div>
-          <div
-            class="tp-caption Video-Title tp-resizeme"
-            id="slide-121-layer-2"
-            data-x="10"
-            data-y="bottom"
-            data-voffset="10"
-            data-width="['auto']"
-            data-height="['auto']"
-            data-transform_idle="o:1;tO:-20% 50%;"
-            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
-            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-            data-start="750"
-            data-splitin="none"
-            data-splitout="none"
-            data-responsive_offset="on"
-            data-end=""
-            style="z-index: 6; white-space: nowrap;"
-          >
-            <a href="#">Real Webdesign 1</a>
-          </div>
+	            <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" style="color: yellow; padding: 10px 5px" class=""><?= $key['post_title']; ?></a>
+	          </div>
 
-          
+	          
 
-          <img src="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1.jpg" alt="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
-        </li>
+	          <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" height="auto" data-bgposition="center center" data-bgfit="100% 100%" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
+	        </li>
+	        <?php $n += 1; ?>
+        <?php endforeach; ?>
         
 
         
 
-        <li
-          data-index="rs-122"
-          data-transition="fade"
-          data-slotamount="7"
-          data-easein="default"
-          data-easeout="default"
-          data-masterspeed="300"
-          data-thumb="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1-250x100.jpg"
-          data-rotate="0"
-          data-saveperformance="off"
-          data-title="Real Webdesign"
-          data-param1="Regular Image"
-          data-description
 
-
-
-
-        >
-          <img src="https://canvastemplate.com/include/rs-plugin/demos/assets/images/media1.jpg" alt="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
-        </li>
 
       </ul>
       <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
     </div>
   </div>
 </section>
-
-
-<?php if($featured != null): ?> 
-	<section id="content">
-  	<div class="content-wrap">
-			
-			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget owl-loaded owl-drag" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2" style="margin-top: -10px !important;">
-			  
-				<?php foreach($featured as $key): ?>
-				  <div class="oc-item">
-				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
-				    <div class="bg-overlay">
-				      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-				        <div>
-				          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
-				          <div class="portfolio-desc px-0">
-				            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold fs-4" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
-				            <div class="entry-meta">
-					            <ul>
-		                    <li><i class="fas fa-calendar-alt"></i> 
-		                    	<?php
-						            		$datetime = (new \CodeIgniter\I18n\Time);
-						            		$yearNow = $datetime::now()->getYear();
-						            		$yearMonthsNow = $datetime::now()->getMonth();
-						            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
-						            		
-						            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
-						            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-						            			echo $datetime::parse($key['updated_at'])->humanize();
-						            		}
-						            		if(($yearNow - $yearPost) > 1){
-						            			echo $datetime::parse($key['updated_at'])->humanize();
-						            		}else{
-						            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
-						            		}
-						            	?>
-		                    </li>
-		                    <li><i class="fas fa-star"></i></li>
-		                    <li><i class="fas fa-clock"></i> <?= ceil(strlen($key['post_content'])/700) ?> Minutes Read</li>
-					              <?php if($key['post_status'] == "san-pham"): ?>
-						              <li>
-						              	<a href="<?= site_url('buy').'/'.$key['id']; ?>">
-							                <i class="fa-solid fa-cart-shopping"></i>
-							              </a>
-						              </li>
-						            <?php endif; ?>
-		                  </ul>
-		                </div>
-				          </div>
-				        </div>
-				      </div>
-				      <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(255,255,255,0.4)" data-size="80" data-percent="75" data-width="3" data-animate="3000">7.5</div>
-				    </div>
-				  </div>
-			  <?php endforeach; ?>
-			  
-			  
-			  
-			  
-			</div>
-
-			
-		</div>
-	</section>
 <?php endif; ?>
+<!-- End Slider -->
+
+
 
 
 
 
   <div class="clear"></div>
-  <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(109.6deg, rgb(252, 255, 26) 34.9%, rgb(66, 240, 233) 82.5%);">
+  <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(270deg, rgb(252, 255, 26) 34.9%, rgb(66, 240, 233) 82.5%);">
     <!-- <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" /> -->
     <div class="heading-block text-center border-bottom-0 mb-0">
       <h2>"Everything is designed, but some things are designed well."</h2>
@@ -570,76 +518,88 @@
       </div>
     </div>
   </div>
-  <?php if(count($gallery_home) > 0): ?>
-	  <div class="container mt-5" >
-	  	<div class="fancy-title title-border">
-		    <h3 class="mb-2 ls-1 text-uppercase fw-bold">BỘ SƯU TẬP</h3>
-		  </div>
-		  <section id="content" style="background-color: #f0f1f2">
-		    <div class="content-wrap py-0">
-		      <div id="portfolio" class="portfolio row grid-container portfolio-reveal g-0" data-layout="fitRows">
-		        
+  
 
-		        <?php foreach($gallery_home as $key): ?>
-		        <article class="portfolio-item col-12 col-sm-4 col-md-2 pf-media pf-icons">
-		          <div class="grid-inner">
-		            <div class="portfolio-image">
-		              <a href="<?= $key['gallery_post_url'] ?>">
-		                <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" />
-		              </a>
+<?php if(count($gallery_home) > 0): ?>
+	<section id="content">
+    <div class="content-wrap">
+      <div class="container">
+        <div class="fancy-title title-border">
+			    <h3 class="mb-2 ls-1 text-uppercase fw-bold" style="color: #5089fa">BỘ SƯU TẬP</h3>
+			  </div>
+        
+        <div id="portfolio-ajax-wrap">
+          <div id="portfolio-ajax-container"></div>
+        </div>
+        <div id="portfolio-ajax-loader">
+          <div class="css3-spinner">
+            <div class="css3-spinner-ball-scale-multiple">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
 
-		              <div class="bg-overlay">
-		                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-		                  <a
-		                    href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
-		                    class="overlay-trigger-icon bg-light text-dark text-bold"
-		                    data-hover-animate="fadeInDownSmall"
-		                    data-hover-animate-out="fadeOutUpSmall"
-		                    data-hover-speed="350"
-		                    data-hover-parent=".portfolio-item"
-		                    data-lightbox="image"
-		                    title="
-		                    <?php
+        <div id="portfolio" class="portfolio portfolio-ajax row grid-container g-3" data-layout="fitRows">
+        	<?php $i = 1; ?>
+        	<?php foreach($gallery_home as $key): ?>
+          <article id="portfolio-item-<?= $i ?>" class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+            <div class="grid-inner">
+              <div class="portfolio-image">
+                <a href="javascript:void(0)">
+                  <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
+                </a>
+
+                <div class="bg-overlay">
+                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                    <a
+                      href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
+                      class="overlay-trigger-icon bg-light text-dark"
+                      data-hover-animate="fadeInDownSmall"
+                      data-hover-animate-out="fadeOutUpSmall"
+                      data-hover-speed="350"
+                      data-lightbox="image"
+                      title="
+                      	<?php
+                      		$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
 				                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
 				                  $image_width = $image_info[0];
 				                  $image_height = $image_info[1];
 				                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
 				                ?>
-				                "
-		                  >
-		                    <i class="fas fa-expand-alt"></i>
-		                  </a>
-		                  <a href="<?= base_url('page/download/'.$key['gallery_image'])  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-		                    <i class="fas fa-save"></i>
-		                  </a>
-		                </div>
-		                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
-		              </div>
-		            </div>
+                      "
+                    >
+                      <i class="fas fa-expand-alt"></i>
+                    </a>
+                    
+                  </div>
+                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                </div>
+              </div>
 
-		            <div class="portfolio-desc">
-		              <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold" ><?= $key['gallery_title'] ?></a></h3>
-		              <span>
-		              	<a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"><i class="fas fa-images"></i></a>
+              <div class="portfolio-desc">
+                <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
+                <span>
 
+                	<!-- <a href="javascript:void(0)"><i class="fas fa-image"></i> <?= mime_content_type($image); ?></a> -->
 
+	              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download image</a>
+                </span>
+              </div>
+            </div>
+          </article>
+          <?php $i += 1; ?>
+          <?php endforeach; ?>
 
-		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
-		              </span>
-		            </div>
-		          </div>
-		        </article>
-		        <?php endforeach; ?>
+          
 
-		        
-		      </div>
-		      
-		    </div>
-		  </section>
-
-		</div>
-	<?php endif; ?>
-
+        </div>
+      </div>
+      
+    </div>
+  </section>
+<?php endif; ?>
 
 
 	

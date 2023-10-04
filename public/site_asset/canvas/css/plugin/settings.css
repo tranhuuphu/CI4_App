@@ -62,7 +62,7 @@
 .rtl {
   direction: rtl;
 }
-@font-face {
+/*@font-face {
   font-family: revicons;
   src: url(../fonts/revicons/revicons.eot?5510888);
   src: url(../fonts/revicons/revicons.eot?5510888#iefix) format("embedded-opentype"), url(../fonts/revicons/revicons.woff?5510888) format("woff"), url(../fonts/revicons/revicons.ttf?5510888) format("truetype"),
@@ -214,7 +214,7 @@
 }
 .revicon-popup:before {
   content: "\e828";
-}
+}*/
 .rev_slider_wrapper {
   position: relative;
   z-index: 0;

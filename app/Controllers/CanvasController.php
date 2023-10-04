@@ -69,7 +69,7 @@ class CanvasController extends BaseController
 
 
         $gallery = new GalleryModel;
-        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(12)->findAll();
+        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(12)->find();
 
         // dd($most_view);
         
@@ -335,22 +335,29 @@ class CanvasController extends BaseController
         $cate = new CateModel;
         $tag = new TagModel;
 
-        
+        $gallery = new GalleryModel;
+
+
         $cate_gallery = $cate->where('cate_slug', $slug2)->first();
 
-        
 
-        if($cate_gallery == null){
-            return view('front_end/canvas_site/404');
-        }
-        if($cate_gallery['cate_type'] == "cate_gallery"){
+
+        
+        if($cate_gallery != null && $cate_gallery['cate_type'] == "cate_gallery"){
 
             $session = session();
             $session->set('cate_current', $cate_gallery['cate_slug']);
-            $gallery = new GalleryModel;
-            $gallery_img = $gallery->where('id', $id)->first();
+            
+            $gallery_img = $gallery->find($id);
+
+
             if($gallery_img == null){
                 return view('front_end/canvas_site/404');
+            }
+
+            if($gallery_img['gallery_title_slug'] != $title){
+                
+                return redirect()->to('bo-suu-tap'.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html');
             }
 
             $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->findAll();
@@ -389,11 +396,23 @@ class CanvasController extends BaseController
             return view('front_end/canvas_site/gallery_img_detail', $data);
 
         }
+
         $post_detail = $post->find($id);
 
         if(!$post_detail){
             return view('front_end/canvas_site/404');
         }
+
+        
+        
+
+
+        if($post_detail != null && $cate_gallery == null && $cate_gallery['cate_type'] != "cate_gallery"){
+            $cate_gallery2 = $cate->where('id', $post_detail['post_cate_id'])->first();
+            return redirect()->to($cate_gallery2['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html');
+        }
+
+        
         $cate_detail = $cate->where('id', $post_detail['post_cate_id'])->first();
 
         $post_slug = $post_detail['post_slug'];
@@ -675,9 +694,9 @@ class CanvasController extends BaseController
 
         $data2['gallery_img_download_times'] = $times;
         $gallery->update($gallery_detail['id'], $data2);
-        $name = base_url().'/public/upload/tinymce/gallery_asset/'.$image;
+        $name = ROOTPATH.'/public/upload/tinymce/gallery_asset/'.$image;
 
-        return $this->response->download($name, $image)->setFileName($image);
+        return $this->response->download($name, null)->setFileName($image);
     }
 
 

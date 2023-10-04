@@ -185,7 +185,7 @@ class PageController extends BaseController
 
         $page_name = $this->request->getPost('page_name');
 
-        if($check['page_name'] == $page_name){
+        if($check['page_name'] = $page_name){
             $data['page_name'] = $page_name;
 
         }elseif($check['page_name'] != $page_name){

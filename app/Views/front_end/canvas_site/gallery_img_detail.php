@@ -23,10 +23,14 @@
         <div class="card-body">
         
           <div class="row g-5 py-md-2">
-            <div class="col-lg-4 col-xl-6 portfolio-single-image">
-              <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" target="_blank">
+            <div class="col-lg-4 col-xl-6 portfolio-single-image" data-lightbox="gallery">
+
+              <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" class="col-lg-12 col-md-6" data-lightbox="gallery-item">
                 <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
               </a>
+
+
+              
             </div>
 
             <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
@@ -135,106 +139,79 @@
       </div>
           
 
-      <!-- <div class="row justify-content-between py-4 mt-4 mb-6 mx-0 gx-0 border-top border-bottom border-default">
-        <div class="col">
-          <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><i class="uil uil-angle-left-b fs-3 me-1"></i><span>Previous Project</span></a>
-        </div>
-        <div class="col text-center">
-          <a href="javascript:void(0)" class="d-inline-flex align-items-center text-dark h-text-color"><i class="bi-grid fs-3"></i></a>
-        </div>
-        <div class="col text-end">
-          <a href="#" class="d-inline-flex align-items-center text-dark h-text-color"><span>Next Project</span><i class="uil uil-angle-right-b fs-3 ms-1"></i></a>
-        </div>
-      </div> -->
+
 
       <div class="fancy-title title-border">
-        <h3 class="mb-2 ls-1 text-uppercase fw-bold">Ảnh Liên Quan</h3>
+        <h3 class="mb-2 ls-1 text-uppercase fw-bold" style="color: #1362ff">Ảnh Liên Quan</h3>
       </div>
+
       <div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
 
-        
-
-        <!-- <div class="oc-item">
+        <?php foreach($related_1 as $r1): ?>
+        <div class="oc-item">
           <div class="portfolio-item">
             <div class="portfolio-image">
-              <a href="portfolio-single.html">
-                <img src="images/portfolio/4/2.jpg" alt="Locked Steel Gate" />
+              <a href="javascript:void(0)">
+                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>"/>
               </a>
               <div class="bg-overlay">
                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
-                  <a href="images/portfolio/full/2.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image">
-                    <i class="uil uil-plus"></i>
+                  <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image">
+                    <i class="fas fa-expand-alt"></i>
                   </a>
-                  <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350">
-                    <i class="uil uil-ellipsis-h"></i>
+                  <a href="<?= base_url('page/download/'.$r1['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350">
+                    <i class="fas fa-download"></i>
                   </a>
                 </div>
                 <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
               </div>
             </div>
             <div class="portfolio-desc">
-              <h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
-              <span><a href="#">Illustrations</a></span>
+              <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="fw-bold"><?= $r1['gallery_title'] ?></a></h3>
             </div>
           </div>
-        </div> -->
-
-        
-        <?php foreach($related_1 as $r1): ?>
-          <div class="oc-item">
-            <div class="portfolio-item">
-              <div class="portfolio-image">
-                <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>">
-                  <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" />
-                </a>
-                <div class="bg-overlay" data-lightbox="gallery">
-                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
-                      <i class="fas fa-image"></i>
-                    </a>
-                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>" class="d-none" data-lightbox="gallery-item"></a>
-                    <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                      <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                  </div>
-                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
-                </div>
-              </div>
-              <div class="portfolio-desc">
-                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="fw-bold"><?= $r1['gallery_title'] ?></a></h3>
-                
-              </div>
-            </div>
-          </div>
+        </div>
         <?php endforeach; ?>
 
         <?php foreach($related_2 as $r2): ?>
-          <div class="oc-item">
-            <div class="portfolio-item">
-              <div class="portfolio-image">
-                <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>">
-                  <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" />
-                </a>
-                <div class="bg-overlay" data-lightbox="gallery">
-                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item">
-                      <i class="uil uil-images"></i>
-                    </a>
-                    <a src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>" class="d-none" data-lightbox="gallery-item"></a>
-                    <a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                      <i class="uil uil-ellipsis-h"></i>
-                    </a>
-                  </div>
-                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+        <div class="oc-item">
+          <div class="portfolio-item">
+            <div class="portfolio-image">
+              <a href="javascript:void(0)">
+                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>"/>
+              </a>
+              <div class="bg-overlay">
+                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
+                  <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image">
+                    <i class="fas fa-expand-alt"></i>
+                  </a>
+                  <a href="<?= base_url('page/download/'.$r2['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350">
+                    <i class="fas fa-download"></i>
+                  </a>
                 </div>
-              </div>
-              <div class="portfolio-desc">
-                <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>"><?= $r2['gallery_title'] ?></a></h3>
-                
+                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
               </div>
             </div>
+            <div class="portfolio-desc">
+              <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>" class="fw-bold"><?= $r2['gallery_title'] ?></a></h3>
+            </div>
           </div>
+        </div>
         <?php endforeach; ?>
+
+        
+
+        
+      </div>
+
+
+
+      <div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
+
+        
+
+        
+
 
 
         

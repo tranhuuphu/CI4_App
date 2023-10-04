@@ -134,15 +134,15 @@ class CateController extends BaseController
         $data['cate_gallery']   = $cateModel->where('cate_type', 'cate_gallery')->first();
 
         if($cate_detail['cate_parent_id'] == 0){
-            $cate_sub = $cateModel->where('cate_parent_id', $cate_detail['cate_parent_id'])->findAll();
-            if($cate_sub != null && $this->request->getPost('cate_parent_id') != 0){
+            $cate_sub = $cateModel->where('cate_parent_id', $cate_detail['id'])->findAll();
+            if($cate_sub != null &&){
                 // return view('admin/cate/edit_cate', $data)->with("errors", "có lỗi vì danh mục này chứa danh mục con");
                 return redirect()->to('admin/cate/edit/'.$cate_detail['id'])->with("errors", "Danh mục này chứa danh mục con");
             }
         }
         $data['cate_name'] = $cate_name;
 
-        if($cate_detail['cate_name'] == $cate_name){
+        if($cate_detail['cate_name'] = $cate_name){
             $data['cate_name'] = $cate_name;
 
         }elseif($cate_detail['cate_name'] != $cate_name){
