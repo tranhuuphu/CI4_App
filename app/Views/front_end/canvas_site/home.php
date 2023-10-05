@@ -1,11 +1,7 @@
 <?= $this->extend('front_end/canvas_site/layout'); ?>
 
 <?= $this->section('content'); ?>
-<style type="text/css">
-	#rev_slider_30_1 ul li .title_cap a:hover{
-		color: #0055ff !important;
-	}
-</style>
+
 <!-- Feature Slider -->
 <?php if($featured != null): ?> 
 <section id="slider" class="slider-element revslider-wrap">

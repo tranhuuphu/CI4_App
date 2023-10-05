@@ -66,20 +66,7 @@ class PostController extends BaseController
                 ],
             ],
 
-            // 'post_meta_desc'=>[
-            //     'rules'=>'required',
-            //     'errors' => [
-            //         'required' => 'Nội dung Meta Description này không được để trống.',
-            //     ],
-
-            // ],
-            // 'post_meta_key'=>[
-            //     'rules'=>'required',
-            //     'errors' => [
-            //         'required' => 'Nội dung Meta Key này không được để trống.',
-            //     ],
-
-            // ],
+            
 
         ]);
         if(!$validation){
@@ -93,6 +80,9 @@ class PostController extends BaseController
         $data['post_title'] = $post_title;
 
         $post_title_slug = mb_strtolower(convert_name($post_title));
+
+        $post_title_slug = reduce_multiples($post_title_slug, '-');
+
 
         
 
@@ -145,8 +135,9 @@ class PostController extends BaseController
         $post_id = $postModel->insertID();
 
         $post_tag = $this->request->getPost('taginput');
-        $post_tag = json_decode($post_tag, true);
+        
         if($post_tag != null){
+            $post_tag = json_decode($post_tag, true);
             foreach($post_tag as $t_a){
                 $ta[] = $t_a['value'];
             }
@@ -283,6 +274,7 @@ class PostController extends BaseController
         }
         $data['post_title'] = $post_title;
         $post_title_slug = mb_strtolower(convert_name($post_title));
+        $post_title_slug = reduce_multiples($post_title_slug, '-');
         $post_cate_id           = $this->request->getPost('post_cate_id');
 
         $data['post_slug']      = $post_title_slug;
@@ -328,7 +320,7 @@ class PostController extends BaseController
 
 
         $post_tag = $this->request->getPost('taginput');
-        $post_tag = json_decode($post_tag, true);
+        // $post_tag = json_decode($post_tag, true);
         
         $tagId = $tagModel->where('tag_post_id', $id)->first();
 

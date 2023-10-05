@@ -73,10 +73,11 @@ class CateController extends BaseController
 
         
 
-        $cate_name              = $this->request->getPost('cate_name');
-        $data['cate_name']      = $cate_name;
+        $cate_name                  = $this->request->getPost('cate_name');
+        $data['cate_name']          = $cate_name;
 
         $cate_slug                  = mb_strtolower(convert_name($cate_name));
+        $cate_slug                  = reduce_multiples($cate_slug, '-');
 
         $data['cate_slug']          = $cate_slug;
 
@@ -205,6 +206,7 @@ class CateController extends BaseController
         }
 
         $cate_slug                  = mb_strtolower(convert_name($cate_name));
+        $cate_slug                  = reduce_multiples($cate_slug, '-');
         $data['cate_slug']          = $cate_slug;
         $data['cate_parent_id']     = $this->request->getPost('cate_parent_id');
         $data['cate_status']        = $this->request->getPost('cate_status');

@@ -50,10 +50,10 @@ class CanvasController extends BaseController
             }
             // dd($sub_id);
             if(isset($sub_id) && $sub_id != NULL){
-                $post_cate[$i] = $post->orderBy('post.id', 'DESC')->whereIn('post_cate_id', $sub_id)->limit(5)->findAll();
+                $post_cate[$i] = $post->orderBy('post.id', 'DESC')->whereIn('post_cate_id', $sub_id)->limit(5)->find();
                 unset($sub_id);
             }else{
-                $post_cate[$i] = $post->orderBy('id', 'DESC')->where('post_cate_id', $key['id'])->limit(5)->findAll();
+                $post_cate[$i] = $post->orderBy('id', 'DESC')->where('post_cate_id', $key['id'])->limit(5)->find();
             }
 
         }
@@ -141,8 +141,8 @@ class CanvasController extends BaseController
         if($cate_parent == 0 && $cate_detail['cate_type'] == 'blog'){
             $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate, 'blog');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-            $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
-            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+            $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
+            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();
         }
         // Gallery
         elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery')
@@ -150,7 +150,7 @@ class CanvasController extends BaseController
 
             $post_cate  = $gallery->orderBy('id', 'desc')->paginate($paginate_gallery, 'g');
             $post_count = $gallery->countAllResults();
-            $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
+            $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->find();
             $tag_this = null;
 
         // Other
@@ -163,23 +163,23 @@ class CanvasController extends BaseController
                 $cate_sub_array[] = array_push($cate_sub_array, $cate_id);
                 $post_cate = $post->select('cate.*, post.*, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
-                $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->findAll();
-                $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+                $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->find();
+                $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->find();
 
 
             }else{
                 $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-                $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
-                $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+                $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
+                $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();
 
 
             }
         }else{
             $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-            $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->findAll();
-            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->findAll();
+            $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
+            $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();
             
         }
 
@@ -241,7 +241,7 @@ class CanvasController extends BaseController
 
         $gallery_img  = $gallery->orderBy('id', 'desc')->findAll();
 
-        $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->findAll();
+        $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->find();
 
 
         $link_full = base_url('table_image');
@@ -360,8 +360,8 @@ class CanvasController extends BaseController
                 return redirect()->to('bo-suu-tap'.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html');
             }
 
-            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->findAll();
-            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(3)->findAll();
+            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->find();
+            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(3)->find();
 
             $previous = $gallery->orderBy('id', 'desc')->where('id <', $id)->first();
             $next = $gallery->orderBy('id', 'desc')->where('id >', $id)->first();
@@ -431,14 +431,14 @@ class CanvasController extends BaseController
             return redirect()->to(base_url().'/'.$cate_slug.'/'.$post_slug.'-'.$post_id.'.html');
         }
 
-        $related_1 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id <', $id)->groupEnd()->limit(3)->findAll();
-        $related_2 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id >', $id)->groupEnd()->limit(3)->findAll();
+        $related_1 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id <', $id)->groupEnd()->limit(3)->find();
+        $related_2 = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id >', $id)->groupEnd()->limit(3)->find();
         $related = array_merge($related_1, $related_2);
         
 
         $previous = $post->orderBy('id', 'desc')->where('id <', $id)->first();
         $next = $post->orderBy('id', 'desc')->where('id >', $id)->first();
-        $most_view_this_cate = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.post_view', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id !=', $id)->groupEnd()->limit(6)->findAll();
+        $most_view_this_cate = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.post_view', 'DESC')->select('cate.cate_slug, post.*')->groupStart()->where('post_cate_id', $cate_detail['id'])->where('post.id !=', $id)->groupEnd()->limit(6)->find();
 
         // dd($most_view_this_cate);
 
@@ -486,7 +486,7 @@ class CanvasController extends BaseController
         $postImages = new PostImagesModel();
         if($post_detail['post_status'] == 'san-pham' ){
             if($postImages->where('post_image_id', $id)->findAll()){
-                $data['postImages'] = $postImages->whereIn('post_image_id', $id)->findAll();
+                $data['postImages'] = $postImages->where('post_image_id', $id)->findAll();
             }else{
                 $data['postImages'] = null;
             }

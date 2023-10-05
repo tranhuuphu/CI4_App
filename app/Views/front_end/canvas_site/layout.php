@@ -32,28 +32,35 @@
     
     <!-- Google Analytics -->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      
-      ga('create', 'UA-XXXXX-Y', 'auto');
-      ga('send', 'pageview');
-      </script>
-      <!-- End Google Analytics -->
-      
-      <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KPGNS8JZ');</script>
-      <!-- End Google Tag Manager -->
-      
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPGNS8JZ"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KPGNS8JZ');</script>
+    <!-- End Google Tag Manager -->
+    
+
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ25KGEN2C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-EZ25KGEN2C');
+    </script>
 
     <style>
       .tp-caption.News-Title {
@@ -239,6 +246,10 @@
         .active a:hover{
           color: #0a70ff !important;
         }
+
+        #rev_slider_30_1 ul li .title_cap a:hover{
+          color: #0055ff !important;
+        }
   
     </style>
 
@@ -276,7 +287,7 @@
 
     <!-- <div id="gotoTop" class="uil uil-angle-up"></div> -->
     <div id="gotoTop" class="uil uil-angle-up rounded" data-mobile="true" style="--cnvs-gotoTop-bg:var(--cnvs-contrast-800)"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>

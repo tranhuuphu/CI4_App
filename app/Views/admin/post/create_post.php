@@ -46,19 +46,19 @@
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_title') : '' ?></p>
-	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= set_value('post_title'); ?>">
+	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= old('post_title') ?>">
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1" class="upper">Tóm tắt</label>
-	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?= set_value('post_intro'); ?></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?= old('post_intro') ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
 									      <label class="upper">Nội dung bài viết</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
-									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= set_value('post_content'); ?></textarea>
+									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
 									    </div>
 									  </div>
 	                </div>
@@ -87,12 +87,12 @@
                       <?php foreach($cate as $c): ?>
                         <?php if($c['cate_parent_id'] == 0): ?>
                           <?php if(!(in_array($c['id'], $c_t))): ?>
-                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(set_value('post_cate_id')  == $c['id']){ echo "selected"; } ?> <?php if($c['cate_type'] == 'cate_gallery'){echo "disabled = 'disabled'";}  ?>> <?= $c['cate_name']; ?></option>
+                            <option data-icon="fas fa-circle" value="<?= $c['id'] ?>" <?php if(old('post_cate_id')  == $c['id']){ echo "selected"; } ?> <?php if($c['cate_type'] == 'cate_gallery'){echo "disabled = 'disabled'";}  ?>> <?= $c['cate_name']; ?></option>
                           <?php elseif(in_array($c['id'], $c_t)): ?>
                             <optgroup data-icon="fas fa-circle" label="<?= $c['cate_name'] ?>">
                               <?php foreach($cate as $c2): ?>
                                 <?php if($c2['cate_parent_id'] == $c['id']): ?>
-                                  <option data-icon="fas fa-long-arrow-alt-right" value="<?= $c2['id'] ?>" <?php if(set_value('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
+                                  <option data-icon="fas fa-long-arrow-alt-right" value="<?= $c2['id'] ?>" <?php if(old('post_cate_id')  == $c2['id']){echo "selected";} ?> ><?= $c2['cate_name'] ?></option>
                                 <?php endif; ?>
                               <?php endforeach; ?>
                             </optgroup>
@@ -210,7 +210,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Desc</label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= set_value('post_meta_desc'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= old('post_meta_desc'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_desc') : '' ?></p>
                       </div>
 
@@ -220,7 +220,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Key</label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= set_value('post_meta_key'); ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= old('post_meta_key'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_key') : '' ?></p>
                       </div>
                     </div>
@@ -231,7 +231,7 @@
                       <div class="form-group">
                         <label class="upper">Tag Seo</label>
                         <br>
-                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?= set_value('taginput'); ?>" data-role="tagsinput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?= old('taginput'); ?>" data-role="tagsinput" />
                       </div>
 
                     </div>

@@ -130,6 +130,7 @@ class GalleryController extends BaseController
 
         $gallery_title = $this->request->getPost('gallery_title');
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
+        $gallery_title_slug = reduce_multiples($gallery_title_slug, '-');
 
         $data['gallery_title']          = $gallery_title;
         $data['gallery_title_slug']     = $gallery_title_slug;
@@ -274,6 +275,7 @@ class GalleryController extends BaseController
 
 
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
+        $gallery_title_slug = reduce_multiples($gallery_title_slug, '-');
 
         
 

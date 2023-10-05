@@ -50,7 +50,8 @@ class GalleryTypeController extends BaseController
         $gallery_type_name              = $this->request->getPost('gallery_type_name');
         $data['gallery_type_name']      = $gallery_type_name;
 
-        $gallery_type_slug                  = mb_strtolower(convert_name($gallery_type_name));
+        $gallery_type_slug = mb_strtolower(convert_name($gallery_type_name));
+        $gallery_type_slug = reduce_multiples($gallery_type_slug, '-');
 
         $data['gallery_type_slug']          = $gallery_type_slug;
 
@@ -113,6 +114,7 @@ class GalleryTypeController extends BaseController
         }
         $data['gallery_type_name'] = $gallery_type_name;
         $gallery_type_slug         = mb_strtolower(convert_name($gallery_type_name));
+        $gallery_type_slug          = reduce_multiples($gallery_type_slug, '-');
 
         $data['gallery_type_slug'] = $gallery_type_slug;
 
