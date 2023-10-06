@@ -158,10 +158,27 @@
                         </td>
                         <td>
                           <?php if($value['image_size_compressed_3'] != null): ?>
-                            <?= floor($value['image_size_compressed_3']/1024) ?> Kb
+
+                            <?php if($value['image_folder'] == 'image_asset'): ?>
+                              <?= floor(filesize('public/upload/tinymce'.'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'])/1024) ?> Kb
+                            <?php elseif($value['image_folder'] == 'tinymce'): ?>
+                              <?= floor(filesize('public/upload/tinymce'.'/'.$value['image_TinyCME_name'])/1024) ?> Kb
+
+                            <?php elseif($value['image_folder'] == 'post_images'): ?>
+                              <?= floor(filesize('public/upload/tinymce'.'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'])/1024) ?> Kb
+
+
+                            <?php elseif($value['image_folder'] == 'gallery_asset'): ?>
+
+                              <?= floor(filesize('public/upload/tinymce'.'/'.$value['image_folder'].'/'.$value['image_TinyCME_name'])/1024) ?> Kb
+
+                            <?php endif; ?>
+
                             <p>
                               <i class="fas fa-sort-amount-down"></i> <span class="text-bold text-red"><?php $percent = ($value['image_size_original'] - $value['image_size_compressed_3'])/$value['image_size_original']; echo number_format( $percent * 100, 0 ) .' %'; ?></span>
                             </p>
+
+
                           <?php endif; ?>
                           
 

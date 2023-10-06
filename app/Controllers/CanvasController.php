@@ -69,7 +69,7 @@ class CanvasController extends BaseController
 
 
         $gallery = new GalleryModel;
-        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(12)->find();
+        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(8)->find();
 
         // dd($most_view);
         

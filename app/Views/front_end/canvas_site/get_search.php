@@ -35,9 +35,13 @@
     <div class="fancy-title title-border">
       <h3 class="mb-2 ls-1 text-uppercase fw-bold">Tìm kiếm lại bằng công cụ Google</h3>
     </div>
+
+
+
     
-    <form role="search" method="get" id="searchform" class="revtp-searchform" action="https://google.com/search">
-      <input type="text" value name="q" id="q" placeholder="What are you looking for?" /><input type="submit" id="searchsubmit" value="Find" />
+    <form role="search" method="get" id="searchform" class="revtp-searchform" action="https://google.com/search" target="_blank">
+      <input type="text" name="q" id="q" placeholder="What are you looking for?" /><input type="submit" id="searchsubmit" value="Find" />
+      <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
     </form>
   </div>
   
