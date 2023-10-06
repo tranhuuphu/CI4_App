@@ -12811,7 +12811,8 @@ fieldset:disabled .btn {
     --cnvs-before-heading-font: normal 400 1.0625rem var(--cnvs-secondary-font);
     --cnvs-body-font: "Inter", sans-serif;
     --cnvs-primary-font: "Inter", sans-serif;
-    --cnvs-secondary-font: "Playfair Display", serif;
+    --cnvs-secondary-font: arial;
+    /*--cnvs-secondary-font: "Playfair Display", serif;*/
     --cnvs-line-height-base: 1.5;
     --cnvs-line-height-content: 1.65;
     --cnvs-margin-base: 3rem;

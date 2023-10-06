@@ -407,10 +407,10 @@ class CanvasController extends BaseController
         
 
 
-        if($post_detail != null && $cate_gallery == null && $cate_gallery['cate_type'] != "cate_gallery"){
-            $cate_gallery2 = $cate->where('id', $post_detail['post_cate_id'])->first();
-            return redirect()->to($cate_gallery2['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html');
-        }
+        // if($cate_gallery == null && $cate_gallery['cate_type'] != "cate_gallery"){
+        //     $cate_gallery2 = $cate->where('id', $post_detail['post_cate_id'])->first();
+        //     return redirect()->to($cate_gallery2['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html');
+        // }
 
         
         $cate_detail = $cate->where('id', $post_detail['post_cate_id'])->first();

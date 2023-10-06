@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container clearfix">
-  <div class="row align-items-center col-mb-80">
+  <div class="row align-items-center col-mb-80 mt-5">
     <div class="col-lg-6">
       <div class="error404 center">404</div>
     </div>

@@ -124,7 +124,7 @@
           margin-bottom: 15px;
           border-radius: 20px;
           border: solid #000000 1px;
-          margin-bottom: 10px !important;
+          margin-bottom: 40px !important;
         }
         .mce-toc h2{
             font-weight: bold;
