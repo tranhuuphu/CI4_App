@@ -6,22 +6,12 @@
   <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-      <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <?= $key ?></a></li>
+      <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <span style="color: red;"><?= $key ?></span></a></li>
     </ol>
   </nav>
 </div>
 
-<!-- <div class="container">
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #d5e0f0;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <?= $key ?></a></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
+
 
 
 <style type="text/css">
