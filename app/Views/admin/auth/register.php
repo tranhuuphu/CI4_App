@@ -37,7 +37,7 @@
         <p class="text-left text-bold">Your Full Name</p>
         <div class="input-group mb-3">
 
-          <input type="text" name="name" class="form-control" placeholder="Full name" value="<?= set_value('name'); ?>">
+          <input type="text" name="name" class="form-control" placeholder="Full name" value="<?= old('name'); ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -51,7 +51,7 @@
 
         <p class="text-left text-bold">Email</p>
         <div class="input-group mb-3">
-          <input type="" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
+          <input type="" name="email" class="form-control" placeholder="Email" value="<?= old('email'); ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

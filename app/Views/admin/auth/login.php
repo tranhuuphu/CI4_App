@@ -43,7 +43,7 @@
       <form action="<?= base_url('auth/check/'); ?>" method="post">
         <?= csrf_field(); ?>
         <div class="input-group mb-3">
-          <input type="" name="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
+          <input type="" name="email" class="form-control" placeholder="Email" value="<?= old('email'); ?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
