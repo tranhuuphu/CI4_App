@@ -383,6 +383,18 @@ class PageController extends BaseController
                     'required' => 'Số điện thoại không được để trống.',
                 ],
             ],
+            'address'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Địa chỉ không được để trống.',
+                ],
+            ],
+            'email'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Email không được để trống.',
+                ],
+            ],
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
@@ -396,6 +408,8 @@ class PageController extends BaseController
         $data['f_app']      = $this->request->getPost('f_app');
         $data['g_app']      = $this->request->getPost('g_app');
         $data['phone']      = $this->request->getPost('phone');
+        $data['address']    = $this->request->getPost('address');
+        $data['email']      = $this->request->getPost('email');
 
 
         if($this->request->getFile('google_image_maps')->guessExtension() != null){

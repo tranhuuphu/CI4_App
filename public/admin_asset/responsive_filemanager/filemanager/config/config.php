@@ -68,7 +68,7 @@ $config = array(
     |
     */
     // 'base_url' => ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http"). "://". @$_SERVER['HTTP_HOST'],
-    'base_url' => 'http://localhost/CI4_App',
+    'base_url' => 'http://localhost/CI4_App/',
     /*
     |--------------------------------------------------------------------------
     | path from base_url to base of upload folder

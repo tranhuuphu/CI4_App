@@ -5,7 +5,7 @@
     <div class="row justify-content-between align-items-center">
       <div class="col-12 col-md-auto">
         <p class="mb-0 py-2 text-center text-md-start">
-        <?php if($page_home['phone'] != null): ?>
+          <?php if($page_home['phone'] != null): ?>
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
                 <i class="fas fa-phone-square-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
             </a>

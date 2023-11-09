@@ -69,7 +69,7 @@ class CanvasController extends BaseController
 
 
         $gallery = new GalleryModel;
-        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(8)->find();
+        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(4)->find();
 
         // dd($most_view);
         
@@ -125,7 +125,7 @@ class CanvasController extends BaseController
         
 
         $paginate = 10;
-        $paginate_gallery = 16;
+        $paginate_gallery = 18;
 
 
         if(!$cate_detail || $cate_detail == null){

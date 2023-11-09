@@ -608,6 +608,29 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('link_css'); ?>
+	
+	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css?<?= time(); ?>" media="screen">
+  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
+  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
+
+  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/plugin/news.css">
+
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('script'); ?>
+	
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.tools.min.js"></script>
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.revolution.min.js"></script>
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.video.min.js"></script>
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.carousel.min.js"></script>
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.navigation.min.js"></script>
+
+<?= $this->endSection(); ?>
+
+
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
   <meta rel="canonical" href="<?= base_url() ?>"/>

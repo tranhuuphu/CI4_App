@@ -12,7 +12,8 @@ $routes = Services::routes();
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultController('CanvasController');
+// $routes->setDefaultController('CanvasController');
+$routes->setDefaultController('HatNhuaController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -205,7 +206,44 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
 
 // Canvas Site
-$routes->get('/', 'CanvasController::index');
+
+// $routes->get('/', 'CanvasController::index');
+
+// $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
+
+// $routes->get('sitemap.xml', 'CanvasController::siteMap');
+// $routes->get('table_image', 'CanvasController::table_image');
+
+// $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
+// $routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
+// $routes->get('buy/(:num)', 'CanvasController::buy/$1');
+// $routes->post('buy/(:num)', 'CanvasController::buy/$1');
+// $routes->get('gio-hang/cap-nhat', 'CanvasController::update');
+// $routes->post('gio-hang/cap-nhat', 'CanvasController::update');
+// $routes->get('gio-hang', 'CanvasController::cart');
+// $routes->get('dat-hang', 'CanvasController::order');
+// $routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
+// $routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
+
+
+// $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
+
+// $routes->get('search', 'CanvasController::getSearch');
+
+// $routes->get('san-pham', 'CanvasController::getProd');
+
+
+
+// $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+
+// $routes->get('page/download/(:any)', 'CanvasController::download/$1');
+
+
+
+
+
+// HatNhua
+$routes->get('/', 'HatNhuaController::index');
 
 $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
 
@@ -246,9 +284,6 @@ $routes->get('san-pham', 'CanvasController::getProd');
 
 $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
-$routes->get('page/download/(:any)', 'CanvasController::download/$1');
-
-// $routes->get('(:any)', 'HomeController::catePost/$1');
 
 /*
  * --------------------------------------------------------------------

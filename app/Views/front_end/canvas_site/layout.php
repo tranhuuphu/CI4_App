@@ -22,11 +22,7 @@
 
 
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css?<?= time(); ?>" media="screen">
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
-
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/plugin/news.css">
+    
 
     <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
     
@@ -293,34 +289,9 @@
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>
 
 
-
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.tools.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.video.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.navigation.min.js"></script>
-
-
-
-
-
-
-    <!-- Old -->
-    <!-- <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/extensions/revolution.extension.video.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/js/extensions/revolution.extension.video.min.js"></script> -->
-
-
     <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>
+
+    <?= $this->renderSection('script'); ?>
 
     <!-- Slider -->
     <script>
@@ -502,7 +473,7 @@
 
 
 
-    <?= $this->renderSection('script'); ?>
+    
 
     <script type="text/javascript" class="init">
 

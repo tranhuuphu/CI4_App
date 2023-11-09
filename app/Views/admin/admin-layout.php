@@ -143,7 +143,7 @@
 	    $("#example1").DataTable({
 	      "responsive": true, "lengthChange": false, "autoWidth": false,
 	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],"pageLength": 25,
-        "lengthMenu": [25, 50, 75, 100]
+        "lengthMenu": [40, 50, 75, 100, 200]
 	    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 	    $('#example2').DataTable({
 	      "paging": true,
@@ -153,13 +153,13 @@
 	      "info": true,
 	      "autoWidth": false,
 	      "responsive": true,
-	      "pageLength": 30,
+	      "pageLength": 40,
 	    });
 	  });
 
 	  
 	</script>
-
+	<!-- Trong phần config đổi lại base_url và dòng 1154 trong dialog.php -->
 	<script>
 
     var editor_config = {

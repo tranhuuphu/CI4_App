@@ -42,42 +42,42 @@
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1"><i class="fab fa-facebook"></i> Facebook Page</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'facebook') : '' ?></p>
-	                    <input type="text" name="facebook" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('facebook') != null){echo set_value('facebook');}else{echo $page_detail['facebook'];} ?>">
+	                    <input type="text" name="facebook" class="form-control" id="exampleInputEmail1" placeholder="Nhập Facebook Page" value="<?php if(old('facebook') != null){echo set_value('facebook');}else{echo $page_detail['facebook'];} ?>">
 	                  </div>
 	                  <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fab fa-youtube"></i> Youtube Channel</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'youtube') : '' ?></p>
-                      <input type="text" name="youtube" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('youtube') != null){echo set_value('youtube');}else{echo $page_detail['youtube'];} ?>">
+                      <input type="text" name="youtube" class="form-control" id="exampleInputEmail1" placeholder="Nhập Youtube Channel" value="<?php if(old('youtube') != null){echo set_value('youtube');}else{echo $page_detail['youtube'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fab fa-twitter"></i> Twitter</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'twitter') : '' ?></p>
-                      <input type="text" name="twitter" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('twitter') != null){echo set_value('twitter');}else{echo $page_detail['twitter'];} ?>">
+                      <input type="text" name="twitter" class="form-control" id="exampleInputEmail1" placeholder="Nhập Twitter" value="<?php if(old('twitter') != null){echo set_value('twitter');}else{echo $page_detail['twitter'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fab fa-pinterest"></i> Pinterest</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'pinterest') : '' ?></p>
-                      <input type="text" name="pinterest" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('pinterest') != null){echo set_value('pinterest');}else{echo $page_detail['pinterest'];} ?>">
+                      <input type="text" name="pinterest" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link Pinterest" value="<?php if(old('pinterest') != null){echo set_value('pinterest');}else{echo $page_detail['pinterest'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fas fa-map-marker-alt"></i> Google Maps Link</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'maps') : '' ?></p>
-                      <input type="text" name="maps" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('twimapstter') != null){echo set_value('maps');}else{echo $page_detail['maps'];} ?>">
+                      <input type="text" name="maps" class="form-control" id="exampleInputEmail1" placeholder="Nhập Maps Link Google" value="<?php if(old('twimapstter') != null){echo set_value('maps');}else{echo $page_detail['maps'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fas fa-code"></i> Facebook Code</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'f_app') : '' ?></p>
-                      <input type="text" name="f_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('f_app') != null){echo set_value('f_app');}else{echo $page_detail['f_app'];} ?>">
+                      <input type="text" name="f_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập Code Facebook" value="<?php if(old('f_app') != null){echo set_value('f_app');}else{echo $page_detail['f_app'];} ?>">
                     </div>
                     <hr>
 
@@ -85,15 +85,33 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fas fa-code"></i> Google Code Verification</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'g_app') : '' ?></p>
-                      <input type="text" name="g_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('g_app') != null){echo set_value('g_app');}else{echo $page_detail['g_app'];} ?>">
+                      <input type="text" name="g_app" class="form-control" id="exampleInputEmail1" placeholder="Nhập Code Google" value="<?php if(old('g_app') != null){echo set_value('g_app');}else{echo $page_detail['g_app'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1"><i class="fas fa-phone-alt"></i> Phone</label>
+                      <label for="exampleInputEmail1"><i class="fas fa-phone"></i> Phone</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
-                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Nhập tên Trang" value="<?php if(old('phone') != null){echo set_value('phone');}else{echo $page_detail['phone'];} ?>">
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Nhập SĐT" value="<?php if(old('phone') != null){echo set_value('phone');}else{echo $page_detail['phone'];} ?>">
                     </div>
+
+
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-map-marker-alt"></i> Address</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
+                      <input type="text" name="address" class="form-control" id="exampleInputEmail1" placeholder="Nhập địa chỉ" value="<?php if(old('address') != null){echo set_value('address');}else{echo $page_detail['address'];} ?>">
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-at"></i> Email</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
+                      <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập Email" value="<?php if(old('email') != null){echo set_value('email');}else{echo $page_detail['email'];} ?>">
+                    </div>
+
                     <hr>
 
                     
@@ -178,8 +196,8 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-success">
 	        			<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save This</button>
-	                  <button type="submit" class="btn btn-default float-right"><a href="<?= base_url('admin/page/'); ?>">Cancel</a></button>
+                  <button type="submit" class="btn btn-info"><i class="far fa-save"></i> Save This</button>
+	               <a href="<?= base_url('admin/page/'); ?>"><button type="submit" class="btn btn-danger float-"><i class="fas fa-times"></i> Cancel</button></a>
                 </div>
 	        		</div>
 	        	</div>
