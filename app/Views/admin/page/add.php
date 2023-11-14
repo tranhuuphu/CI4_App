@@ -68,7 +68,7 @@
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1"><i class="fas fa-map-marker-alt"></i> Google Maps Link</label>
+                      <label for="exampleInputEmail1"><i class="fas fa-map-marker-alt"></i> Google Maps Link (Iframe)</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'maps') : '' ?></p>
                       <input type="text" name="maps" class="form-control" id="exampleInputEmail1" placeholder="Nhập Maps Link Google" value="<?php if(old('twimapstter') != null){echo set_value('maps');}else{echo $page_detail['maps'];} ?>">
                     </div>
@@ -90,12 +90,26 @@
                     <hr>
 
                     <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fab fa-confluence"></i> Tên Công Ty Hoặc Cơ Sở</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'name_co') : '' ?></p>
+                      <input type="text" name="name_co" class="form-control" id="exampleInputEmail1" placeholder="Nhập Tên Công Ty hoặc Cơ Sở" value="<?php if(old('name_co') != null){echo set_value('name_co');}else{echo $page_detail['name_co'];} ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-list-ol"></i> Mã Số Thuế</label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
+                      <input type="text" name="tax_code" class="form-control" id="exampleInputEmail1" placeholder="Nhập MST" value="<?php if(old('tax_code') != null){echo set_value('tax_code');}else{echo $page_detail['tax_code'];} ?>">
+                    </div>
+                    <hr>
+
+
+
+                    <div class="form-group">
                       <label for="exampleInputEmail1"><i class="fas fa-phone"></i> Phone</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'phone') : '' ?></p>
                       <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Nhập SĐT" value="<?php if(old('phone') != null){echo set_value('phone');}else{echo $page_detail['phone'];} ?>">
                     </div>
-
-
                     <hr>
 
                     <div class="form-group">

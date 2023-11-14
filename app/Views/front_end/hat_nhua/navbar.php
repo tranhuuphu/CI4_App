@@ -43,6 +43,20 @@
       display: none;
     }
   }
+
+
+  .logo_menu {
+    width: 23%;
+    height: auto;
+    float: left;
+  }
+  @media screen and (max-width: 900px) {
+    .logo_menu {
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+  }
 </style>
 
 <div class="top_contact">
@@ -67,25 +81,12 @@
 <div style="height: auto; margin: auto;">
   <div style="width: 100%; min-height: 88px; background: #e3f2fd; margin: auto;">
     <div class="container">
-      <style>
-        .logo_menu {
-          width: 23%;
-          height: auto;
-          float: left;
-        }
-        @media screen and (max-width: 900px) {
-          .logo_menu {
-            width: 100%;
-            height: auto;
-            text-align: center;
-          }
-        }
-      </style>
+
 
       <div style="width: 100%; background-color: #e3f2fd; height: auto;">
         <div class="logo_menu">
           <div class="logo">
-            <a href="<?= site_url() ?>"><img style="padding-top: 20px; max-width: 250px;" src="logo/1956/lo.png" alt="CÔNG TY TNHH VIỆT TRUNG ĐÀI" /></a>
+            <a href="<?= site_url() ?>"><img style="padding-top: 20px; height: 70px" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="" /></a>
           </div>
         </div>
         <div style="width: 100%; height: auto;">
@@ -106,24 +107,33 @@
                       Sản Phẩm
                     </a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="http://viettrungdai.com/nganh/15701/may-moc-thiet-bi-nganh-duc.html" style="text-transform: uppercase;">MÁY MÓC THIẾT BỊ NGÀNH ĐÚC</a>
+                      <?php foreach($cate as $c): ?>
+                        <?php if($c['cate_type'] == 'normal'): ?>
+                          <a class="dropdown-item" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>" style="text-transform: uppercase;"><?= $c['cate_name'] ?></a>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
 
-                      <a class="dropdown-item" href="http://viettrungdai.com/nganh/15702/linh-phu-kien-nganh-duc.html" style="text-transform: uppercase;">LINH PHỤ KIỆN NGÀNH ĐÚC</a>
 
-                      <a class="dropdown-item" href="http://viettrungdai.com/nganh/15703/nguyen-vat-lieu-nganh-duc.html" style="text-transform: uppercase;">NGUYÊN VẬT LIỆU NGÀNH ĐÚC</a>
                     </div>
                   </li>
-                  <!--end thietlapchung-->
+                  
+                  <?php foreach($cate as $c2): ?>
+                    <?php if($c2['cate_type'] != 'normal'): ?>
+                      <li class="nav-item">
+                        <a style="color: #222222;" class="nav-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title = "<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a>
+                      </li>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
 
-                  <li class="nav-item">
-                    <a style="color: #222222;" class="nav-link" href="http://viettrungdai.com/thuvienanh">Thư Viện Ảnh</a>
-                  </li>
+                  
 
                   <?php foreach($link_page as $pl): ?>
                     <li class="nav-item">
                       <a style="color: #222222;" class="nav-link" href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a>
                     </li>
                   <?php endforeach; ?> 
+
+
                   
 
                   <!-- Dropdown -->

@@ -407,6 +407,9 @@ class PageController extends BaseController
         $data['maps']       = $this->request->getPost('maps');
         $data['f_app']      = $this->request->getPost('f_app');
         $data['g_app']      = $this->request->getPost('g_app');
+
+        $data['name_co']    = $this->request->getPost('name_co');
+        $data['tax_code']   = $this->request->getPost('tax_code');
         $data['phone']      = $this->request->getPost('phone');
         $data['address']    = $this->request->getPost('address');
         $data['email']      = $this->request->getPost('email');
