@@ -21,8 +21,66 @@ class HatNhuaController extends BaseController
     }
     public function index()
     {
+        $pageModel = new PageModel();
+
+        $post = new PostModel;
+
+        $cate = new CateModel;
+
+        $session = session();
+        $session->set('cate_current', null);
+
         
-        return view('front_end/hat_nhua/home');
+
+        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_type', 'normal')->find();
+        // dd($cate_all);
+        $cate_2 = $cate->findAll();
+        $i = 0;
+        foreach($cate_all as $key){
+            $i++;
+            $id = $key['id'];
+            $cate_name[$i] = $key['cate_name'];
+            $cate_slug[$i] = $key['cate_slug'];
+            $id_cate[$i] = $key['id'];
+            foreach($cate_2 as $row){
+                if($row['cate_parent_id'] == $id){
+                    // $sub_id = array();
+                    $sub_id[] = $row['id'];
+                }
+                
+            }
+            // dd($sub_id);
+            if(isset($sub_id) && $sub_id != NULL){
+                $post_cate[$i] = $post->orderBy('post.id', 'DESC')->whereIn('post_cate_id', $sub_id)->limit(5)->find();
+                unset($sub_id);
+            }else{
+                $post_cate[$i] = $post->orderBy('id', 'DESC')->where('post_cate_id', $key['id'])->limit(5)->find();
+            }
+
+        }
+        $page_home = $pageModel->where('page_status', 1)->first();
+
+        $page_home_site = $pageModel->where('page_slug', "about-us")->first();
+
+        $data = [
+            'title'         => $page_home['page_title'],
+            'meta_desc'     => $page_home['page_meta_desc'],
+            'meta_key'      => $page_home['page_meta_key'],
+            'image'         => $page_home['page_image'],
+            'created_at'    => $page_home['created_at'],
+            'updated_at'    => $page_home['updated_at'],
+            'cate_all'      => $cate_all,
+            'cate_2'        => $cate_2,
+            'cate_name'     => $cate_name,
+            'post_cate'     => $post_cate,
+            'i'             => $i,
+            'cate_slug'     => $cate_slug,
+            'id_cate'       => $id_cate,
+            'page_home_site'=> $page_home_site,
+
+        ];
+
+        return view('front_end/hat_nhua/home', $data);
     }
 
     public function postCate($slug, $id){

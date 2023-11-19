@@ -1,23 +1,23 @@
 <div id="contact_truottrai">
-  <a target="_blank" href="https://trangvangvietnam.com/listings/1187974980/thiet-bi-nganh-duc-viet-trung-dai-cong-ty-tnhh-viet-trung-dai.html" style="bottom: 0px;" title="Hãy xem chúng tôi trên Trang Vàng Việt Nam">
+<!--   <a target="_blank" href="#" style="bottom: 0px;" title="Hãy xem chúng tôi trên Trang Vàng Việt Nam">
     <div style="height: 50px; width: 50px; border-radius: 50%; background: #ffcc00;">
       <p style="color: #ffffff; text-align: center; padding-top: 6px;"><i class="fa fa-solid fa-magnifying-glass"></i></p>
     </div>
-  </a>
+  </a> -->
 
-  <a target="_blank" href="mailto:viettrungdai0516@gmail.com" style="bottom: 60px;" title="Hãy gửi Email cho chúng tôi">
+  <a target="_blank" href="mailto:<?= $page_home['email']; ?>" style="bottom: 60px;" title="Hãy gửi Email cho chúng tôi">
     <div style="height: 50px; width: 50px; border-radius: 50%; background: #22e7f9;">
       <p style="color: #ffffff; text-align: center; padding-top: 6px;"><i class="fa fa-regular fa-envelope"></i></p>
     </div>
   </a>
 
-  <a target="_blank" href="https://zalo.me/0913772019" style="bottom: 120px;" title="Hãy kết nối Zalo với chúng tôi">
+  <a target="_blank" href="https://zalo.me/<?= $page_home['phone']; ?>" style="bottom: 120px;" title="Hãy kết nối Zalo với chúng tôi">
     <div style="height: 50px; width: 50px; border-radius: 50%; background: #0d94e4;">
       <p style="color: #ffffff; text-align: center; padding-top: 9px; font-size: 18px; font-weight: 600;">Zalo</p>
     </div>
   </a>
 
-  <a target="_blank" href="tel:0913772019" style="bottom: 180px;" title="Hãy gọi ngay cho chúng tôi">
+  <a target="_blank" href="tel:<?= $page_home['phone']; ?>" style="bottom: 180px;" title="Hãy gọi ngay cho chúng tôi">
     <div style="height: 50px; width: 50px; border-radius: 50%; background: #64bc46;">
       <p style="color: #ffffff; text-align: center; padding-top: 6px;"><i class="fa fa-solid fa-phone"></i></p>
     </div>

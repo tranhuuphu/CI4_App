@@ -12,7 +12,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="<?= base_url() ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link rel="icon" type="image/x-icon" href="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" />
 
     <?= $this->renderSection('yoast_seo'); ?>
@@ -21,7 +21,7 @@
 
     <meta name="robots" content="index, follow" />
 
-    <link href="http://viettrungdai.com/css/phonering_gotop.css" type="text/css" rel="stylesheet" />
+    <link href="<?= base_url('public/site_asset/hatnhua'); ?>/css/phonering_gotop.css" type="text/css" rel="stylesheet" />
     <link href="<?= base_url('public/site_asset/hatnhua'); ?>/css/homecss.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,7 +36,7 @@
     }
   </style>
   <body>
-    <button onClick="topFunction()" id="myBtn" title="On Top"><img style="width: 60%;" src="http://viettrungdai.com/images/go_top_icon.png" /></button>
+    <button onClick="topFunction()" id="myBtn" title="On Top"><img style="width: 100%;" /><i class="fa-solid fa-arrow-up-long fa-2xl"></i></button>
     <script>
       var mybutton = document.getElementById("myBtn");
       window.onscroll = function () {
@@ -151,14 +151,14 @@
           <div class="col-sm-5">
             <div style="height: auto; width: 100%;">
               <div style="height: auto;">
-                <a href="http://viettrungdai.com"><img style="max-width: 250px;" src="logo/1956/lo.png" /></a>
+                <a href="<?= base_url() ?>"><img style="max-width: 250px;" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" /></a>
               </div>
               <div class="div_chantrang_description" style="color: #111111;">
                 <?= $page_home['page_content']; ?>
 
                 <p>
                   <?php if($page_home['maps'] != null): ?>
-                    <?= $page_home['maps']; ?>
+                    <a href="<?= $page_home['maps']; ?>" target="_blank">Click to see Google Maps <i class="fa-solid fa-location-dot"></i></a>
                   <?php endif; ?>
                 </p>
               </div>

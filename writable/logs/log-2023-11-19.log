@@ -1,0 +1,234 @@
+INFO - 2023-11-19 15:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 15:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 15:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 15:52:33 --> Undefined variable $page_home
+in APPPATH\Controllers\HatNhuaController.php on line 61.
+ 1 APPPATH\Controllers\HatNhuaController.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $page_home', 'APPPATH\\Controllers\\HatNhuaController.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 15:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 15:53:06 --> Undefined variable $featured
+in APPPATH\Controllers\HatNhuaController.php on line 67.
+ 1 APPPATH\Controllers\HatNhuaController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $featured', 'APPPATH\\Controllers\\HatNhuaController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 15:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 15:53:19 --> Undefined variable $blog
+in APPPATH\Controllers\HatNhuaController.php on line 71.
+ 1 APPPATH\Controllers\HatNhuaController.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog', 'APPPATH\\Controllers\\HatNhuaController.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 15:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 15:53:27 --> Undefined variable $gallery_home
+in APPPATH\Controllers\HatNhuaController.php on line 72.
+ 1 APPPATH\Controllers\HatNhuaController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $gallery_home', 'APPPATH\\Controllers\\HatNhuaController.php', 72)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 15:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:16:53 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\hat_nhua\home.php on line 86.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(75): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:17:32 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\hat_nhua\home.php on line 86.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(75): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:21:15 --> Array to string conversion
+in APPPATH\Views\front_end\hat_nhua\home.php on line 86.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(79): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:43:36 --> Undefined variable $a
+in APPPATH\Views\front_end\hat_nhua\home.php on line 89.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:44:06 --> Undefined array key 0
+in APPPATH\Views\front_end\hat_nhua\home.php on line 80.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 80)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:44:18 --> Undefined array key 0
+in APPPATH\Views\front_end\hat_nhua\home.php on line 89.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:44:35 --> Undefined variable $a
+in APPPATH\Views\front_end\hat_nhua\home.php on line 89.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $a', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:48:24 --> Undefined array key 2
+in APPPATH\Views\front_end\hat_nhua\home.php on line 141.
+ 1 APPPATH\Views\front_end\hat_nhua\home.php(141): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 2', 'APPPATH\\Views\\front_end\\hat_nhua\\home.php', 141)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\hat_nhua\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 5 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:49:24 --> Cannot use isset() on the result of an expression (you can use "null !== expression" instead)
+in APPPATH\Views\front_end\hat_nhua\home.php on line 140.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-11-19 16:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:49:35 --> Unmatched ')'
+in APPPATH\Views\front_end\hat_nhua\home.php on line 140.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 3 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 16:49:41 --> Unmatched ')'
+in APPPATH\Views\front_end\hat_nhua\home.php on line 140.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/hat_nhua/home', [], true)
+ 3 APPPATH\Controllers\HatNhuaController.php(83): view('front_end/hat_nhua/home', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\HatNhuaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HatNhuaController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-19 16:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:59:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 16:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:12:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 17:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

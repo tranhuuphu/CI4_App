@@ -13,8 +13,9 @@
 	  background-color:#fff;
 	  color: #333;
 	  cursor: pointer;
-	  padding:8px;
+	  padding: 0px 18px 23px 18px;
 	  border-radius: 4px;
+
 	}
 #myBtn:hover {
 	  background-color: #f7f7f7;
