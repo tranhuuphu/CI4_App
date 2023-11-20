@@ -2,6 +2,45 @@
 
 <?= $this->section('content'); ?>
 
+<!---slider section--->
+
+
+
+<?php if($carousel): ?>
+  <?php $count = count($carousel); $m = 1; ?>
+  <div>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <?php for ($n = 0; $n < $count; ++$n): ?>
+          <li data-target="#demo" data-slide-to="<?= $n ?>" <?php if($n == 0){echo 'class="active"';} ?>></li>
+        <?php endfor; ?>
+
+      </ul>
+      <div class="carousel-inner">
+        <?php foreach($carousel as $crs): ?>
+          <div class="carousel-item <?php if($m == 1){echo "active";} ?>" >
+            <img src="<?= base_url('public/upload/tinymce/').'/'.$crs['carousel_image']; ?>" alt="<?= $crs['carousel_title']; ?>" />
+
+            <div class="carousel-caption"></div>
+          </div>
+          <?php  $m += 1; ?>
+        <?php endforeach; ?>
+
+
+
+      </div>
+
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+    <!---close slider section---->
+  </div>
+<?php endif; ?>
+
 
 <div style="background: #ffffff;">
   <div class="container" style="padding-top: 50px; padding-bottom: 38px;">
@@ -33,49 +72,49 @@
         .mce-toc{
           display: none;
         }
+
+        .text_slogan_nganh {
+          text-align: center;
+          font-family: Verdana;
+          padding-bottom: 36px;
+          margin-top: -15px;
+          padding-left: 86px;
+          padding-right: 86px;
+        }
+        @media screen and (max-width: 700px) {
+          .text_slogan_nganh {
+            text-align: center;
+            font-family: Verdana;
+            padding-bottom: 36px;
+            margin-top: -15px;
+            padding-left: 0px;
+            padding-right: 0px;
+          }
+        }
       </style>
-      <?php foreach($cate as $c): ?>
-        <?php if($c['cate_status'] == 1): ?>
-          <div class="col-sm-6">
-            <div class="nganhnghe_show_home">
-              <a href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>">
-                <img src="http://viettrungdai.com/nganh_images/1956/a1.jpg" alt="<?= $c['cate_name']; ?>" />
-              </a>
-              <div class="content">
-                <p style="text-align: center; text-transform: uppercase; padding: 0px; margin: 0px; font-weight: 500;">
-                  <a style="color: #ffffff;" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><?= $c['cate_name']; ?></a>
-                </p>
+        <?php foreach($cate as $c): ?>
+          <?php if($c['cate_status'] == 1): ?>
+            <div class="col-sm-6">
+              <div class="nganhnghe_show_home">
+                <a href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>">
+                  <img src="<?= base_url('public/upload/tinymce/').'/'.$c['cate_image']; ?>" alt="<?= $c['cate_name']; ?>" />
+                </a>
+                <div class="content">
+                  <p style="text-align: center; text-transform: uppercase; padding: 0px; margin: 0px; font-weight: 500;">
+                    <a style="color: #ffffff;" href="<?= base_url('').'/'.$c['cate_slug'].'-'.$c['id']; ?>" title = "<?= $c['cate_name']; ?>"><?= $c['cate_name']; ?></a>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        <?php endif; ?>
-      <?php endforeach; ?>
+          <?php endif; ?>
+        <?php endforeach; ?>
 
       
     </div>
   </div>
 </div>
 <!---cua thietlapchung--->
-<style>
-  .text_slogan_nganh {
-    text-align: center;
-    font-family: Verdana;
-    padding-bottom: 36px;
-    margin-top: -15px;
-    padding-left: 86px;
-    padding-right: 86px;
-  }
-  @media screen and (max-width: 700px) {
-    .text_slogan_nganh {
-      text-align: center;
-      font-family: Verdana;
-      padding-bottom: 36px;
-      margin-top: -15px;
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  }
-</style>
+
 
   <?php if(count($post_cate[1]) > 0): ?>
     <div style="background: #039303; margin: 0px;">
@@ -205,7 +244,7 @@
 <div style="background: #039303;">
   <div class="container" style="padding-top: 50px; padding-bottom: 50px;">
     <div style="width: 100%; padding-bottom: 30px; text-align: center;">
-      <h2><a style="color: #ffffff;" href="gioithieu.asp">VỀ CHÚNG TÔI</a></h2>
+      <h2><a style="color: #ffffff;" href="<?= base_url('').'/'.$page_home_site['page_slug'].'-'.$page_home_site['id'].'.html'; ?>" title = "<?= $c['cate_name']; ?>">VỀ CHÚNG TÔI</a></h2>
 
       <p style="color: #eeeeee;">Chất Lượng Tiên Phong - Uy Tín Lâu Dài</p>
     </div>

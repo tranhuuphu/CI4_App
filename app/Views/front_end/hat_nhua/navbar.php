@@ -147,50 +147,5 @@
     </div>
   </div>
 
-  <!---slider section--->
 
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-
-      <li data-target="#demo" data-slide-to="1"></li>
-
-      <li data-target="#demo" data-slide-to="2"></li>
-
-      <li data-target="#demo" data-slide-to="3"></li>
-    </ul>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="http://viettrungdai.com/slider/1956/Slide11.jpg" alt="CÔNG TY TNHH VIỆT TRUNG ĐÀI" />
-
-        <div class="carousel-caption"></div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="http://viettrungdai.com/slider/1956/Slide22.jpg" alt="CÔNG TY TNHH VIỆT TRUNG ĐÀI" />
-
-        <div class="carousel-caption"></div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="http://viettrungdai.com/slider/1956/Slide33.jpg" alt="CÔNG TY TNHH VIỆT TRUNG ĐÀI" />
-
-        <div class="carousel-caption"></div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="http://viettrungdai.com/slider/1956/Slide44.jpg" alt="CÔNG TY TNHH VIỆT TRUNG ĐÀI" />
-
-        <div class="carousel-caption"></div>
-      </div>
-    </div>
-
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
-  <!---close slider section---->
 </div>

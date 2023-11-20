@@ -144,6 +144,28 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
     });
 
+    $routes->group("carousel", function($routes){
+        //home in get == home in as
+        $routes->get('/',"Admin\CarouselController::index");
+
+        $routes->get('create',"Admin\CarouselController::getCarousel");
+        $routes->post('save',"Admin\CarouselController::saveCarousel");
+
+        $routes->get('edit/(:num)',"Admin\CarouselController::getEdit/$1");
+        $routes->post('edit/(:num)',"Admin\CarouselController::SaveEdit/$1");
+
+        $routes->get('show/(:num)',"Admin\CarouselController::show/$1");
+        $routes->post('show/(:num)',"Admin\CarouselController::show/$1");
+
+        $routes->get('hidden/(:num)',"Admin\CarouselController::hidden/$1");
+        $routes->post('hidden/(:num)',"Admin\CarouselController::hidden/$1");
+
+
+        
+
+
+    });
+
     $routes->group("page", function($routes){
         //home in get == home in as
         $routes->get('/',"Admin\PageController::index");
@@ -245,21 +267,21 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 // HatNhua
 $routes->get('/', 'HatNhuaController::index');
 
-$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
+$routes->get('(:any)/(:any)-(:num).html', 'HatNhuaController::post/$1/$2/$3');
 
-$routes->get('sitemap.xml', 'CanvasController::siteMap');
-$routes->get('table_image', 'CanvasController::table_image');
+$routes->get('sitemap.xml', 'HatNhuaController::siteMap');
+$routes->get('table_image', 'HatNhuaController::table_image');
 
-$routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
-$routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
-$routes->get('buy/(:num)', 'CanvasController::buy/$1');
-$routes->post('buy/(:num)', 'CanvasController::buy/$1');
-$routes->get('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->post('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->get('gio-hang', 'CanvasController::cart');
-$routes->get('dat-hang', 'CanvasController::order');
-$routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
-$routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
+$routes->get('tag/(:any)-(:num)', 'HatNhuaController::tag/$1/$2');
+$routes->get('cart/remove/(:num)', 'HatNhuaController::remove/$1');
+$routes->get('buy/(:num)', 'HatNhuaController::buy/$1');
+$routes->post('buy/(:num)', 'HatNhuaController::buy/$1');
+$routes->get('gio-hang/cap-nhat', 'HatNhuaController::update');
+$routes->post('gio-hang/cap-nhat', 'HatNhuaController::update');
+$routes->get('gio-hang', 'HatNhuaController::cart');
+$routes->get('dat-hang', 'HatNhuaController::order');
+$routes->get('hoan-thanh-dat-hang', 'HatNhuaController::finishOrder');
+$routes->post('hoan-thanh-dat-hang', 'HatNhuaController::finishOrder');
 
 
 
@@ -268,21 +290,21 @@ $routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
 
 // $routes->get('(:any)/(:any).html', 'HomeController::getDetailPost/$1/$2');
 
-$routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
+$routes->get('(:any)-(:num).html', 'HatNhuaController::getPage/$1/$2');
 
 
 
 
-$routes->get('search', 'CanvasController::getSearch');
+$routes->get('search', 'HatNhuaController::getSearch');
 
-$routes->get('san-pham', 'CanvasController::getProd');
+$routes->get('san-pham', 'HatNhuaController::getProd');
 
 
 // $routes->get('site-map.xml', 'HomeController::siteMap');
 
 
 
-$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+$routes->get('(:any)-(:num)', 'HatNhuaController::postCate/$1/$2');
 
 
 /*

@@ -28,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="<?= base_url('public/site_asset/hatnhua'); ?>/css/fontawesome/css/all.min.css" rel="stylesheet" />
+    
   </head>
   <style>
     .carousel-inner img {
@@ -166,7 +167,7 @@
           </div>
           <div class="col-sm-3">
             <div style="height: auto; width: 100%; color: #111111;">
-              <p style="color: #000000; font-weight: 500; font-size: 21px;">VỀ CHÚNG TÔI</p>
+              <p style="color: #000000; font-weight: 500; font-size: 21px;">Danh Mục</p>
 
               <div style="height: auto;">
                 <p><a style="color: #111111; font-weight: 500;" href="<?= base_url() ?>">TRANG CHỦ</a></p>

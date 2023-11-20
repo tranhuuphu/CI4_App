@@ -311,6 +311,37 @@
         </li>
 
         
+        <li class="nav-item carousel_active">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>
+              Slider
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview carousel_tree_active">
+            <li class="nav-item carousel_tree_active">
+              <a href="<?= base_url('admin/carousel'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách</p>
+              </a>
+            </li>
+            <li class="nav-item carousel_tree_active2">
+              <a href="<?= base_url('admin/carousel/create'); ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Thêm mới slide</p>
+              </a>
+            </li>
+
+            <li class="nav-item carousel_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
+              </a>
+            </li>
+            
+          </ul>
+        </li>
 
 
         <li class="nav-item gallery_active">

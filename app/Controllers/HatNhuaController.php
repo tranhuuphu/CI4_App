@@ -11,6 +11,7 @@ use App\Models\GalleryModel;
 use App\Models\PostImagesModel;
 use App\Models\DonHangModel;
 use App\Models\ImageModel;
+use App\Models\CarouselModel;
 
 
 class HatNhuaController extends BaseController
@@ -26,6 +27,9 @@ class HatNhuaController extends BaseController
         $post = new PostModel;
 
         $cate = new CateModel;
+
+        $carouselModel = new CarouselModel();
+        $carousel = $carouselModel->orderBy('id', 'DESC')->findAll();
 
         $session = session();
         $session->set('cate_current', null);
@@ -77,6 +81,7 @@ class HatNhuaController extends BaseController
             'cate_slug'     => $cate_slug,
             'id_cate'       => $id_cate,
             'page_home_site'=> $page_home_site,
+            'carousel'      => $carousel,
 
         ];
 
@@ -190,14 +195,14 @@ class HatNhuaController extends BaseController
         ];
 
         if($cate_detail['cate_type'] == 'blog'){
-            return view('front_end/canvas_site/blog_cate', $data);
+            return view('front_end/hat_nhua/blog_cate', $data);
 
         }elseif($cate_detail['cate_type'] == 'cate_gallery'){
 
-            return view('front_end/canvas_site/gallery_cate', $data);
+            return view('front_end/hat_nhua/gallery_cate', $data);
         }
         else{
-            return view('front_end/canvas_site/post_cate', $data);
+            return view('front_end/hat_nhua/post_cate', $data);
         }
 
         
