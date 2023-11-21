@@ -76,9 +76,9 @@
 		                <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" class="fw-bold" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
 		              </div>
 		              <?php if($key['post_sale']): ?>
-                    <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins> VNĐ<small>VNĐ</small></div>
+                    <div class="product-price"><del><?= number_format($key['post_price'],0,",","."); ?></del> <ins><?= number_format($key['post_sale'],0,",","."); ?></ins> VNĐ<small>VNĐ</small></div>
                   <?php elseif($key['post_price']): ?>
-                    <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins> VNĐ</div>
+                    <div class="product-price"><ins><?= number_format($key['post_price'],0,",","."); ?></ins> VNĐ</div>
                   <?php else: ?>
                   	<div class="product-price text-danger">Liên Hệ</div>
                   <?php endif; ?>
@@ -131,9 +131,9 @@
 				                    <div class="d-flex align-items-center justify-content-between">
 
 				                      <?php if($key['post_sale']): ?>
-                                <div class="product-price"><del><?= $key['post_price']/1000; ?>K</del> <ins><?= $key['post_sale']/1000; ?>K</ins> <small>VNĐ</small></div>
+                                <div class="product-price"><del><?= number_format($key['post_price'],0,",","."); ?> VNĐ</del> <ins><?= number_format($key['post_sale'],0,",","."); ?></ins> <small>VNĐ</small></div>
                               <?php elseif($key['post_price']): ?>
-                                <div class="product-price"><ins><?= $key['post_price']/1000; ?>K</ins></div>
+                                <div class="product-price"><ins><?= number_format($key['post_price'],0,",","."); ?></ins> VNĐ</div>
                               <?php else: ?>
                               	<div class="product-price"><ins>Liên Hệ</ins></div>
                               <?php endif; ?>

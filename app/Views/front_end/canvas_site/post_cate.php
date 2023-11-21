@@ -171,7 +171,7 @@
 		    <?php if($post_count > $paginate): ?>
       
 	        <div class="line line-sm"></div>
-	        <?= $pager->links() ?>
+	        <?= $pager->links('post') ?>
 	      <?php endif; ?>
 
 	      
