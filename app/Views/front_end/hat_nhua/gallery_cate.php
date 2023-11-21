@@ -1,4 +1,4 @@
-<?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/hat_nhua/layout'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -10,114 +10,90 @@
     </ol>
   </nav>
 </div>
+<style type="text/css">
+  body{
+      margin:0;
+      padding:0;
+    }
+    /* .container{
+      width:90%
+      margin:10px auto;
+    } */
+    .portfolio-menu{
+      text-align:center;
+    }
+    .portfolio-menu ul li{
+      display:inline-block;
+      margin:0;
+      list-style:none;
+      padding:10px 15px;
+      cursor:pointer;
+      -webkit-transition:all 05s ease;
+      -moz-transition:all 05s ease;
+      -ms-transition:all 05s ease;
+      -o-transition:all 05s ease;
+      transition:all .5s ease;
+    }
+
+    .portfolio-item{
+      /*width:100%;*/
+    }
+    .portfolio-item .item{
+      /*width:303px;*/
+      float:left;
+      margin-bottom:10px;
+    }
+
+</style>
+<script type="text/javascript">
+  $('.portfolio-menu ul li').click(function(){
+    $('.portfolio-menu ul li').removeClass('active');
+    $(this).addClass('active');
+    
+    var selector = $(this).attr('data-filter');
+      $('.portfolio-item').isotope({
+        filter:selector
+    });
+    return  false;
+   });
+   $(document).ready(function() {
+     var popup_btn = $('.popup-btn');
+     popup_btn.magnificPopup({
+     type : 'image',
+     gallery : {
+      enabled : true
+     }
+   });
+  });
+</script>
+
+<div class="container" style="margin-top: 50px; margin-bottom: 50px">
 
 
-<!-- <div class="container">
-
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>">Bộ Sưu Tập</a></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
-
-<?php if($post_cate != null): ?>
-<section id="content">
-  <div class="content-wrap">
-    <div class="container">
-      <a href="<?= site_url('table_image') ?>" class="btn btn-primary fw-bold button button-3d" style="border-radius: 0; text-transform: uppercase;">Chuyển sang table Tìm Kiếm <i class="fas fa-arrow-right"></i></a>
-
-      <div class="line line-sm"></div>
-      <div id="portfolio" class="portfolio row grid-container gutter-10 mb-5" data-layout="fitRows">
-
-        <?php foreach($post_cate as $key): ?>
-        <article class="portfolio-item col-lg-2 col-md-4 col-sm-4 col-12 pf-media pf-icons">
-          <div class="grid-inner">
-            <div class="portfolio-image">
-              <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
-                <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
-              </a>
-
-              <div class="bg-overlay">
-                <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                  <a
-                    href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
-                    class="overlay-trigger-icon bg-light text-dark"
-                    data-hover-animate="fadeInDownSmall"
-                    data-hover-animate-out="fadeOutUpSmall"
-                    data-hover-speed="350"
-                    data-lightbox="image"
-                    title="<?= $key['gallery_title'] ?>"
-                  >
-                    <i class="fas fa-expand-alt"></i>
-                  </a>
-
-                  <?php if($key['gallery_post_url'] == null): ?>
-                  <?php else: ?>
-                    <a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-                      <i class="uil uil-link"></i>
-                    </a>
-                  <?php endif; ?>
-
-                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                    <i class="fas fa-download"></i>
-                  </a>
-                </div>
-                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
-              </div>
-            </div>
-
-            <div class="portfolio-desc">
-              <h3><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
-
-
-              
-              <span>
-                
-                <?php
-                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-                  $image_width = $image_info[0];
-                  $image_height = $image_info[1];
-                  echo $image_width.'x'.$image_height.' pixel';
-                ?>
-                <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
-                
-                <?php if($key['gallery_file_download'] != null): ?>
-                  <i class="fas fa-grip-lines-vertical"></i>
-                  <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-file-download"></i></a>
-                  
-                <?php endif; ?>
-              </span>
-            </div>
-          </div>
-        </article>
-        <?php endforeach; ?>
-
-        
+  <div class="portfolio-item row">
+    <?php foreach($post_cate as $key): ?>
+      <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+         <a href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" title="<?= $key['gallery_title'] ?>" class="fancylight popup-btn" data-fancybox-group="light"> 
+         <img class="img-fluid" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>">
+         </a>
       </div>
-
-      <div class="line line-sm"></div>
-      <?= $pager->links('g'); ?>
-      
-    </div>
+    <?php endforeach; ?>  
+    
   </div>
-</section>
+</div>
 
-<?php else: ?>
-    <div class="container mt-5">
-      <p>Ảnh đang được cập nhật</p>
-    </div>
-<?php endif; ?>
+
       
 
 
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('link_css'); ?>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+<?= $this->endSection(); ?>
 
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
@@ -173,3 +149,4 @@
 
   
 <?= $this->endSection(); ?>
+

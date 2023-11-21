@@ -39,23 +39,23 @@
       <div class="row justify-content-left col-mb-50 mb-0 pt-2">
 
         <?php foreach($blog_1 as $key2): ?>
-        <div class="col-sm-6 col-lg-4 ">
-          <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm">
-            <div class="fbox-media ">
-              <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>">
-                <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
-              </a>
-            </div>
-
-            <div class="fbox-content" style="background-color: #fcfcfc">
-              <div class="entry-title title-sm">
-                <h2><a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
+          <div class="col-sm-6 col-lg-4 ">
+            <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm">
+              <div class="fbox-media ">
+                <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>">
+                  <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+                </a>
               </div>
 
-              <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px"><?= $key2['post_intro']; ?></h3>
+              <div class="fbox-content" style="background-color: #fcfcfc">
+                <div class="entry-title title-sm">
+                  <h2><a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
+                </div>
+
+                <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px"><?= $key2['post_intro']; ?></h3>
+              </div>
             </div>
           </div>
-        </div>
         <?php endforeach; ?>
 
         

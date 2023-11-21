@@ -17,7 +17,7 @@
 
     <?= $this->renderSection('yoast_seo'); ?>
 
-    <?= $this->renderSection('link_css'); ?>
+    
 
     <meta name="robots" content="index, follow" />
 
@@ -28,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="<?= base_url('public/site_asset/hatnhua'); ?>/css/fontawesome/css/all.min.css" rel="stylesheet" />
+    <?= $this->renderSection('link_css'); ?>
     
   </head>
   <style>

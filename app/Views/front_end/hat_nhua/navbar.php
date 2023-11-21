@@ -103,7 +103,7 @@
                   <!--else thietlapchung-->
 
                   <li class="nav-item dropdown">
-                    <a style="color: #222222;" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <a style="color: #222222; font-weight: bold;" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                       Sản Phẩm
                     </a>
                     <div class="dropdown-menu">
@@ -120,7 +120,7 @@
                   <?php foreach($cate as $c2): ?>
                     <?php if($c2['cate_type'] != 'normal'): ?>
                       <li class="nav-item">
-                        <a style="color: #222222;" class="nav-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title = "<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a>
+                        <a style="color: #222222;  font-weight: bold" class="nav-link" href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title = "<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a>
                       </li>
                     <?php endif; ?>
                   <?php endforeach; ?>
@@ -129,7 +129,7 @@
 
                   <?php foreach($link_page as $pl): ?>
                     <li class="nav-item">
-                      <a style="color: #222222;" class="nav-link" href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a>
+                      <a style="color: #222222; font-weight: bold" class="nav-link" href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a>
                     </li>
                   <?php endforeach; ?> 
 

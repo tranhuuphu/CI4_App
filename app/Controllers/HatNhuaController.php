@@ -474,8 +474,12 @@ class HatNhuaController extends BaseController
             }
             
             return view('front_end/canvas_site/post_prod_detail', $data);
-        }else{
-            return view('front_end/canvas_site/post_detail', $data);
+        }
+        elseif($cate_detail['cate_type'] == "blog"){
+            return view('front_end/hat_nhua/post_detail_blog', $data);
+        }
+        else{
+            return view('front_end/hat_nhua/post_detail', $data);
         }
 
         
