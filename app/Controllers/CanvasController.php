@@ -785,7 +785,7 @@ class CanvasController extends BaseController
 
 
 
-        $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder, updated_at')->orderBy('id', 'DESC')->findAll();
+        // $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder, updated_at')->orderBy('id', 'DESC')->findAll();
 
 
 
@@ -798,7 +798,6 @@ class CanvasController extends BaseController
             'tag_info'              => $tag_info,
             'post_all'              => $post_all,
             'gallery_info'          => $gallery_info,
-            'imgTinyCME_info'       => $imgTinyCME_info,
             'cate_gallery'          => $cate_gallery,
         ];
         header("Content-Type: text/xml;");
