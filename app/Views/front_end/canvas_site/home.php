@@ -563,11 +563,14 @@
                       data-lightbox="image"
                       title="
                       	<?php
-                      		$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-				                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-				                  $image_width = $image_info[0];
-				                  $image_height = $image_info[1];
-				                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
+                      		if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+                      			$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+					                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+					                  $image_width = $image_info[0];
+					                  $image_height = $image_info[1];
+					                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
+                      		}
+                      		
 				                ?>
                       "
                     >
@@ -583,7 +586,7 @@
                 <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
                 <span>
 
-                	<!-- <a href="javascript:void(0)"><i class="fas fa-image"></i> <?= mime_content_type($image); ?></a> -->
+                	<!-- <a href="javascript:void(0)"><i class="fas fa-image"></i> <?= // mime_content_type($image); ?></a> -->
 
 	              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download image</a>
                 </span>

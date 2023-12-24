@@ -1,0 +1,209 @@
+CRITICAL - 2023-03-06 16:09:39 --> Could not check compatibility between App\Controllers\CanvasController::initController(App\Controllers\RequestInterface $request, App\Controllers\ResponseInterface $response, App\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Controllers\RequestInterface is not available
+in APPPATH\Controllers\CanvasController.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-06 16:10:17 --> Could not check compatibility between App\Controllers\CanvasController::initController(App\Controllers\RequestInterface $request, App\Controllers\ResponseInterface $response, App\Controllers\LoggerInterface $logger) and App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger), because class App\Controllers\RequestInterface is not available
+in APPPATH\Controllers\CanvasController.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-06 16:11:02 --> Declaration of App\Controllers\CanvasController::initController() must be compatible with App\Controllers\BaseController::initController(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, Psr\Log\LoggerInterface $logger)
+in APPPATH\Controllers\CanvasController.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-06 16:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-06 16:19:26 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\canvas_site\post_cate.php on line 54.
+ 1 APPPATH\Views\front_end\canvas_site\post_cate.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\canvas_site\\post_cate.php', 54)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/post_cate', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(177): view('front_end/canvas_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-du-lich', '8')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-06 16:20:54 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\canvas_site\post_cate.php on line 54.
+ 1 APPPATH\Views\front_end\canvas_site\post_cate.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\canvas_site\\post_cate.php', 54)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/post_cate', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(177): view('front_end/canvas_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-du-lich', '8')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-06 16:22:25 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\canvas_site\post_cate.php on line 54.
+ 1 APPPATH\Views\front_end\canvas_site\post_cate.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\canvas_site\\post_cate.php', 54)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/post_cate', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(177): view('front_end/canvas_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-du-lich', '8')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:22:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-06 16:24:12 --> Undefined array key "cate_slug"
+in APPPATH\Views\front_end\canvas_site\post_cate.php on line 71.
+ 1 APPPATH\Views\front_end\canvas_site\post_cate.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cate_slug"', 'APPPATH\\Views\\front_end\\canvas_site\\post_cate.php', 71)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/post_cate', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(177): view('front_end/canvas_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-du-lich', '8')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-03-06 16:25:35 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+#7 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+#8 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-06 16:25:35 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` IN :post_cate_id:
+ORDER BY `id` DESC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 APPPATH\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-03-06 16:26:20 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+#7 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+#8 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-06 16:26:20 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` IN :post_cate_id:
+ORDER BY `id` DESC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 APPPATH\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-03-06 16:53:11 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+#7 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+#8 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-06 16:53:11 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` IN :post_cate_id:
+ORDER BY `id` DESC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 APPPATH\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-03-06 16:53:22 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Code\Xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Code\Xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Code\Xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 D:\Code\Xampp\htdocs\CI4_App\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+#7 D:\Code\Xampp\htdocs\CI4_App\app\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+#8 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+#9 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+#10 D:\Code\Xampp\htdocs\CI4_App\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Code\Xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-06 16:53:22 --> Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `post`
+LEFT JOIN `cate` ON `cate`.`id` = `post`.`post_cate_id`
+WHERE `post_cate_id` IN :post_cate_id:
+ORDER BY `id` DESC
+ LIMIT 10', [...], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+ 5 APPPATH\Controllers\CanvasController.php(126): CodeIgniter\BaseModel->paginate(10)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('dich-vu-van-tai', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-06 16:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-06 16:58:03 --> Undefined array key 0
+in APPPATH\Views\front_end\canvas_site\post_cate.php on line 31.
+ 1 APPPATH\Views\front_end\canvas_site\post_cate.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Views\\front_end\\canvas_site\\post_cate.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\canvas_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/post_cate', [], true)
+ 5 APPPATH\Controllers\CanvasController.php(177): view('front_end/canvas_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CanvasController->postCate('danh-muc-moi', '18')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-06 16:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

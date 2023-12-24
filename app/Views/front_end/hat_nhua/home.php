@@ -304,50 +304,7 @@
         </div>
       </div>
 
-      <!-- <div class="col-sm-6" style="padding-top: 13px;">
-        <div class="row">
-          <style>
-            .chitiet_contact2 {
-              width: 50%;
-              padding-left: 15px;
-              padding-right: 15px;
-            }
-            @media screen and (max-width: 700px) {
-              .chitiet_contact2 {
-                width: 50%;
-                padding-left: 15px;
-                padding-right: 15px;
-              }
-            }
-          </style>
 
-          <div class="chitiet_contact2" style="padding-bottom: 30px; color: #111111;">
-            <p style="text-align: center;"><img style="width: 50%; border-radius: 50%;" src="contact_images/1956/4128176.png" alt="Thái Vĩ Trung" /></p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 3px;">Thái Vĩ Trung</p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 6px;">Trợ Lý</p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 3px; font-weight: 500; color: #111111;">
-              <a style="color: #111111;" href="tel:0913772019">0913772019</a>
-            </p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-top: 6px;">
-              <a href="https://zalo.me/0913772019"><img title="CHAT ZALO: 0913772019" style="width: 28px;" src="images/zalo_con.png" alt="Zalo icon" /></a>
-              <a href="mailto:Briantais85@gmail.com"><img title="Email: Briantais85@gmail.com" style="width: 28px;" src="images/email_icon.png" alt="Email icon" /></a>
-            </p>
-          </div>
-
-          <div class="chitiet_contact2" style="padding-bottom: 30px; color: #111111;">
-            <p style="text-align: center;"><img style="width: 50%; border-radius: 50%;" src="contact_images/1956/vbhgftg.jpg" alt="Chung Huệ Linh" /></p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 3px;">Chung Huệ Linh</p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 6px;">Trợ Lý</p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-bottom: 3px; font-weight: 500; color: #111111;">
-              <a style="color: #111111;" href="tel:0906841474">0906841474</a>
-            </p>
-            <p style="text-align: center; margin: 0px; padding: 0px; padding-top: 6px;">
-              <a href="https://zalo.me/0906841474"><img title="CHAT ZALO: 0906841474" style="width: 28px;" src="images/zalo_con.png" alt="Zalo icon" /></a>
-              <a href="mailto:huelinhchung88@gmail.com"><img title="Email: huelinhchung88@gmail.com" style="width: 28px;" src="images/email_icon.png" alt="Email icon" /></a>
-            </p>
-          </div>
-        </div>
-      </div> -->
 
     </div>
   </div>
@@ -431,5 +388,61 @@
 	
 
 
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('yoast_seo'); ?>
+  <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
+  <meta rel="canonical" href="<?= base_url() ?>"/>
+
+  <title><?= $title ?></title>
+
+  
+  <meta name="description" content="<?= $meta_desc ?>" />
+  <meta name="keywords" content="<?= $meta_key ?>" />
+  <meta name="title" content="<?= $title ?>" />
+  
+
+
+  <meta name="copyright" content="<?= base_url() ?>" />
+
+
+
+  <!-- Schema.org markup for Google+ -->
+  
+  <meta itemprop="name" content="<?= $title ?>">
+  <meta itemprop="image" content="<?= $image ?>">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="article">
+  <meta name="twitter:site" content="<?= $title ?>">
+  <meta name="twitter:title" content="<?= $title ?>">
+  <meta name="twitter:description" content="<?= $meta_desc ?>">
+  <meta name="twitter:creator" content="<?= base_url() ?>">
+  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>">
+
+  <!-- Open Graph data -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="<?= $title ?>" />
+  <meta property="og:title" content="<?= $title ?>" />
+  <meta property="og:url" content="<?= base_url() ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta property="og:description" content="<?= $meta_desc ?>" />
+  <meta property="og:locale" content="vi_VN" />
+  
+  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+
+  
+
+
+  <meta content="news" itemprop="genre" name="medium"/>
+  <meta content="vi-VN" itemprop="inLanguage"/>
+  <meta content="" itemprop="articleSection"/>
+  <meta content="<?= $created_at ?>" itemprop="datePublished" name="pubdate"/>
+  <meta content="<?= $updated_at ?>" itemprop="dateModified" name="lastmod"/>
+  <meta content="<?= $created_at ?>" itemprop="dateCreated"/>
+
+  
 <?= $this->endSection(); ?>
 

@@ -79,10 +79,13 @@
               <span>
                 
                 <?php
-                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-                  $image_width = $image_info[0];
-                  $image_height = $image_info[1];
-                  echo $image_width.'x'.$image_height.' pixel';
+                  if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+                    $image_width = $image_info[0];
+                    $image_height = $image_info[1];
+                    echo $image_width.'x'.$image_height.' pixel';
+                  }
+                  
                 ?>
                 <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
                 

@@ -1,0 +1,39 @@
+CRITICAL - 2023-10-03 04:16:39 --> Call to undefined function display_error()
+in APPPATH/Views/admin/post/create_post.php on line 48.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Admin/PostController.php(86): view()
+ 5 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\Admin\PostController->savePost()
+ 6 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-03 04:37:08 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH/Database/BaseBuilder.php on line 926.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(813): CodeIgniter\Database\BaseBuilder->_whereIn()
+ 2 SYSTEMPATH/Model.php(839): CodeIgniter\Database\BaseBuilder->whereIn()
+ 3 APPPATH/Controllers/CanvasController.php(470): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->post()
+ 5 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-03 04:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-03 04:46:46 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH/Database/BaseBuilder.php on line 926.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(813): CodeIgniter\Database\BaseBuilder->_whereIn()
+ 2 SYSTEMPATH/Model.php(839): CodeIgniter\Database\BaseBuilder->whereIn()
+ 3 APPPATH/Controllers/CanvasController.php(470): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->post()
+ 5 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-03 14:59:15 --> Call to undefined function display_error()
+in APPPATH/Views/admin/gallery_type/edit_type.php on line 42.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Admin/GalleryTypeController.php(111): view()
+ 5 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\Admin\GalleryTypeController->PostEditType()
+ 6 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

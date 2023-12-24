@@ -1,0 +1,14 @@
+CRITICAL - 2023-10-12 21:42:13 --> Undefined array key "q"
+in APPPATH/Controllers/CanvasController.php on line 816.
+ 1 APPPATH/Controllers/CanvasController.php(816): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->getSearch()
+ 3 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 21:59:36 --> Undefined array key "q"
+in APPPATH/Controllers/CanvasController.php on line 816.
+ 1 APPPATH/Controllers/CanvasController.php(816): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->getSearch()
+ 3 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

@@ -3,12 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CÔNG TY TNHH</title>
-    <meta
-      name="description"
-      content="Công Ty TNHH Việt Trung Đài là công ty hoạt động trong lĩnh vực bán buôn máy móc, thiết bị và nguyên phụ liệu phục vụ cho nghành sản xuất lò nung như: Lò trung tần, lò nung điện, máy bắn sáp, máy tách sáp,..."
-    />
-    <meta name="keywords" content="Công Ty TNHH Việt Trung Đài, bán buôn, máy móc, thiết bị, nguyên phụ liệu, sản xuất lò nung, Lò trung tần, lò nung điện, máy bắn sáp, máy tách sáp," />
+    
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="<?= base_url() ?>" />
@@ -28,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="<?= base_url('public/site_asset/hatnhua'); ?>/css/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/hatnhua/contact_footer/style_contact.css' type="text/css" media="all" />
     <?= $this->renderSection('link_css'); ?>
     
   </head>
@@ -129,6 +125,32 @@
           padding-top: 20px;
         }
       }
+
+      .call-btn2 {
+          position: fixed;
+          bottom: 60px;
+          left: 25px;
+          background: #345eeb;
+          text-align: center;
+          color: #fff;
+          box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+          z-index: 99;
+          transition: all .3s;
+          font-weight: 700;
+          border-radius: 5px;
+          padding: 1.5px 10px 1.5px 38px;
+          font-size: 18px;
+          line-height: 25px;
+        }
+        .call-btn2 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 5px 7px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 5px 0 0 5px;
+            animation: blinking 1s ease-in-out infinite;
+        }
     </style>
 
     <?= $this->include('front_end/hat_nhua/navbar'); ?>
@@ -226,6 +248,10 @@
         </p>
       </div>
     </div>
+
+    <div id='arcontactus'></div>
+  <a id="<?= $page_home['phone']; ?>" href="tel:<?= $page_home['phone']; ?>"><div class="call-btn2"><noscript><img src="<?= base_url('public'); ?>/upload/phone.svg"/></noscript><img class=" lazyloaded" src="<?= base_url('public'); ?>/upload/phone.svg" data-src="{{url('/')}}/public/public_image/phone.svg"> 0<?= number_format($page_home['phone'], 0, ',', ' ') ?></div></a>
+  <script defer src='<?= base_url('public/site_asset'); ?>/hatnhua/contact_footer/script_contact.js'></script>
 
     
   </body>

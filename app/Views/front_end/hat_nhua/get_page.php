@@ -1,4 +1,4 @@
-<?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/hat_nhua/layout'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -6,24 +6,14 @@
 <div class="container">
   <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= $link_full?>"> <?= $page_info['page_name']; ?> </a></li>
     </ol>
   </nav>
 </div>
 
 
-<div class="container">
-  <section id="page-title" style="margin-bottom: 25px; margin-top: 35px;">
-    <div class="container clearfix" style="background-color: #b3e2fc">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
-      </ol>
-    </div>
-  </section>
-</div>
+
 
 <section id="content">
   <div class="content-wrap">
@@ -43,33 +33,7 @@
                   <h2><?= $page_info['page_title']; ?></h2>
                 </div>
 
-                <div class="entry-meta">
-                  <ul>
-                    <li><i class="fas fa-calendar-alt"></i>
-                      <?php
-                        $datetime = (new \CodeIgniter\I18n\Time);
-                        $yearNow = $datetime::now()->getYear();
-                        $yearMonthsNow = $datetime::now()->getMonth();
-                        $yearPost = $datetime::parse($page_info['updated_at'])->getYear();
-                        
-                        $yearMonthsPost = $datetime::parse($page_info['updated_at'])->getMonth();
-                        if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                          echo $datetime::parse($page_info['updated_at'])->humanize();
-                        }
-                        elseif(($yearNow - $yearPost) > 1){
-                          echo $datetime::parse($page_info['updated_at'])->humanize();
-                        }else{
-                          echo $datetime::parse($page_info['updated_at'])->toLocalizedString('dd MMM yyyy');
-                        }
-                        
-
-                      ?>
-                    </li>
-                    <li>
-                      <i class="fas fa-eye"></i> <?= $page_info['page_view'] + 1; ?>
-                    </li>
-                  </ul>
-                </div>
+                
 
                 <!-- <div class="entry-image">
                   <a href="#"><img src="images/blog/full/1.jpg" alt="Blog Single" /></a>

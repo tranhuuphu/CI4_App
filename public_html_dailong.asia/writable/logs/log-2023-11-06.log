@@ -1,0 +1,8 @@
+CRITICAL - 2023-11-06 01:47:37 --> array_values(): Argument #1 ($array) must be of type array, null given
+in APPPATH/Controllers/CanvasController.php on line 663.
+ 1 APPPATH/Controllers/CanvasController.php(663): array_values()
+ 2 APPPATH/Controllers/CanvasController.php(639): App\Controllers\CanvasController->exists()
+ 3 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->remove()
+ 4 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

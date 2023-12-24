@@ -1,0 +1,169 @@
+CRITICAL - 2023-09-29 09:54:03 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 11:22:02 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 16:50:34 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:05:06 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:05:23 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:05:27 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:05:41 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:35:32 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 17:35:32 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 19:28:28 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 20:33:02 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 21:33:58 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-29 23:04:11 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/tranh-hinh-con-meo-de-dan-kinh-trang-tri---my-lovely-home-yzhkTKgSrvqAFf6l.jpg): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/gallery_img_detail.php on line 70.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/gallery_img_detail.php(70): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/gallery_img_detail.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(389): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->post()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

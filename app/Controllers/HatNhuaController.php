@@ -874,7 +874,7 @@ class HatNhuaController extends BaseController
         $data2['page_view'] = $page_info['page_view'] + 1;
         $page->update($id, $data2);
 
-        return view("front_end/canvas_site/get_page", $data);
+        return view("front_end/hat_nhua/get_page", $data);
     }
 
 

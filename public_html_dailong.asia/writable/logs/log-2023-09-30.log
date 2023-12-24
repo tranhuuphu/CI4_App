@@ -1,0 +1,52 @@
+CRITICAL - 2023-09-30 02:53:12 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/dem-hoi-trang-ram-02-zB2Zy0HMDGdSUP3N.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/gallery_img_detail.php on line 70.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/gallery_img_detail.php(70): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/gallery_img_detail.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(389): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->post()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-30 05:57:56 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-30 11:19:20 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/ca-ro-phi-0jKq9a.png): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/home.php on line 503.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/home.php(503): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/home.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(106): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-30 13:07:48 --> getimagesize(http://dailong.asia/public/upload/tinymce/gallery_asset/bai-test-co-type-LG0cOaVPDqt7U8Hh.jpg): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH/Views/front_end/canvas_site/gallery_img_detail.php on line 70.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/front_end/canvas_site/gallery_img_detail.php(70): getimagesize()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/front_end/canvas_site/gallery_img_detail.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1177): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/CanvasController.php(389): view()
+ 7 SYSTEMPATH/CodeIgniter.php(935): App\Controllers\CanvasController->post()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
