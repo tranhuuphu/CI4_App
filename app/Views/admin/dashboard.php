@@ -2,10 +2,12 @@
 
 <?= $this->section('content'); ?>
 <style type="text/css">
-	.product-title{
+	.overflow-title{
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 </style>
 
@@ -151,7 +153,7 @@
 						                      <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pmv['post_image'] ?>" class="img-size-50" style="height: auto;">
 						                    </div>
 						                    <div class="product-info" style="margin-top: -5px">
-						                      <a href="javascript:void(0)" class="product-title" ><?= $pmv['post_title']; ?></a>
+						                      <a href="javascript:void(0)" class="overflow-title" title="<?= $pmv['post_title']; ?>"><?= $pmv['post_title']; ?></a>
 						                      <span class="product-description">
 						                      	<i class="fas fa-fire"></i> <?= number_format($pmv['post_view'],0); ?>
 						                        <?php if($pmv['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
@@ -315,7 +317,7 @@
 						                      <img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $imv['gallery_image'] ?>" class="img-size-50" style="height: auto;">
 						                    </div>
 						                    <div class="product-info" style="margin-top: -5px">
-						                      <a href="javascript:void(0)" class="product-title text-info"><?= $imv['gallery_title']; ?></a>
+						                      <a href="javascript:void(0)" class="product-title text-info overflow-title" title="<?= $imv['gallery_title']; ?>"><?= $imv['gallery_title']; ?></a>
 						                      <span class="product-description">
 						                      	<i class="fas fa-fire"></i> <?= number_format($imv['gallery_view'],0); ?>
 						                        
@@ -446,7 +448,7 @@
 	            <!-- Info Boxes Style 2 -->
 	            
 	            <!-- /.info-box -->
-	            <div class="info-box mb-3 bg-secondary">
+	            <div class="info-box mb-3 bg-gradient-secondary">
 	              <span class="info-box-icon"><i class="fas fa-coins"></i></span>
 
 	              <div class="info-box-content">
@@ -463,12 +465,12 @@
 
 	          <div class="col-md-6">
 	            <!-- Info Boxes Style 2 -->
-	            <div class="info-box mb-3 bg-warning">
+	            <div class="info-box mb-3 bg-gradient-warning">
 	              <span class="info-box-icon"><i class="fas fa-images"></i></span>
 
 	              <div class="info-box-content">
 	                <span class="info-box-text text-bold">Gallery View Total</span>
-	                <span class="info-box-number"><?= number_format($totalGalleryView[0]['gallery_view'],0) ?></span>
+	                <span class="info-box-number"><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?></span>
 	              </div>
 	              <!-- /.info-box-content -->
 	            </div>
@@ -513,7 +515,7 @@
 			                    		<li class="media">
 														    <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
 														    <div class="media-body">
-														      <h5 class="mt-0 mb-1"><?= $pr['post_title']; ?></h5>
+														      <h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
 														      <p class="pt-2"><?= $pr['post_intro']; ?>.</p>
 														      <i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
 						                        <?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
@@ -670,7 +672,7 @@
 			                    	<?php foreach($imageRecent as $ir): ?>
 				                      <li>
 				                        <img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $ir['gallery_image'] ?>" style="height: 100px;">
-				                        <a class="users-list-name" href="javascript:void(0)"><?= $ir['gallery_title']; ?></a>
+				                        <a class="users-list-name" href="javascript:void(0)" title="<?= $ir['gallery_title']; ?>"><?= $ir['gallery_title']; ?></a>
 				                        <span class="users-list-date">
 				                        	<i class="fas fa-fire"></i> <?= number_format($ir['gallery_view'],0); ?>
 						                        
