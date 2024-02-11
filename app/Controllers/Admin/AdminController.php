@@ -30,6 +30,12 @@ class AdminController extends BaseController
         $data['postRecent'] = $postModel->orderBy('id', 'DESC')->limit(3)->find();
         $data['imageRecent'] = $galleryModel->orderBy('id', 'DESC')->limit(12)->find();
 
+        $data['totalPostView'] = $postModel->selectSum('post_view')->findAll();
+
+        $data['totalGalleryView'] = $galleryModel->selectSum('gallery_view')->findAll();
+        
+        
+
 
         $data['title'] = [
             'pageTitle'=>'Admin Dashboard',

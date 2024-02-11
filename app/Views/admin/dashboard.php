@@ -1,7 +1,13 @@
 <?= $this->extend('admin/admin-layout'); ?>
 
 <?= $this->section('content'); ?>
-
+<style type="text/css">
+	.product-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	}
+</style>
 
 <!-- Content Wrapper. Contains page content -->
 	  <div class="content-wrapper">
@@ -92,6 +98,8 @@
 	          <!-- /.col -->
 	        </div>
 	        <!-- /.row -->
+
+	        
 
 	        <div class="row">
 	          <div class="col-md-12">
@@ -429,6 +437,48 @@
 	        </div>
 	        <!-- /.row -->
 
+
+	        <!-- Main row -->
+	        <div class="row">
+	          
+
+	          <div class="col-md-6">
+	            <!-- Info Boxes Style 2 -->
+	            
+	            <!-- /.info-box -->
+	            <div class="info-box mb-3 bg-secondary">
+	              <span class="info-box-icon"><i class="fas fa-coins"></i></span>
+
+	              <div class="info-box-content">
+	                <span class="info-box-text text-bold">Post View Total</span>
+	                <span class="info-box-number"><?= number_format($totalPostView[0]['post_view'], 0) ?></span>
+	              </div>
+	              <!-- /.info-box-content -->
+	            </div>
+	            <!-- /.info-box -->
+
+	          </div>
+	          <!-- /.col -->
+
+
+	          <div class="col-md-6">
+	            <!-- Info Boxes Style 2 -->
+	            <div class="info-box mb-3 bg-warning">
+	              <span class="info-box-icon"><i class="fas fa-images"></i></span>
+
+	              <div class="info-box-content">
+	                <span class="info-box-text text-bold">Gallery View Total</span>
+	                <span class="info-box-number"><?= number_format($totalGalleryView[0]['gallery_view'],0) ?></span>
+	              </div>
+	              <!-- /.info-box-content -->
+	            </div>
+	            <!-- /.info-box -->
+	            
+
+	          </div>
+	        </div>
+	        <!-- /.row -->
+
 	        <!-- Recent -->
 	        <hr>
 	        <div class="row mt-4">
@@ -738,46 +788,7 @@
 	          <!-- /.col -->
 	        </div>
 
-	        <!-- Main row -->
-	        <div class="row">
-	          
-
-	          <div class="col-md-6">
-	            <!-- Info Boxes Style 2 -->
-	            
-	            <!-- /.info-box -->
-	            <div class="info-box mb-3 bg-info">
-	              <span class="info-box-icon"><i class="far fa-comment"></i></span>
-
-	              <div class="info-box-content">
-	                <a href="<?= base_url('admin/post') ?>" class="text-white"><span class="info-box-text">All Post</span></a>
-	                <span class="info-box-number"><?= $totalPost ?></span>
-	              </div>
-	              <!-- /.info-box-content -->
-	            </div>
-	            <!-- /.info-box -->
-
-	          </div>
-	          <!-- /.col -->
-
-
-	          <div class="col-md-6">
-	            <!-- Info Boxes Style 2 -->
-	            <div class="info-box mb-3 bg-warning">
-	              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
-
-	              <div class="info-box-content">
-	                <a href="<?= base_url('admin/gallery') ?>" class="text-white"><span class="info-box-text">Gallery List</span></a>
-	                <span class="info-box-number"><?= $totalGallery ?></span>
-	              </div>
-	              <!-- /.info-box-content -->
-	            </div>
-	            <!-- /.info-box -->
-	            
-
-	          </div>
-	        </div>
-	        <!-- /.row -->
+	        
 	      </div><!--/. container-fluid -->
 	    </section>
 	    <!-- /.content -->
