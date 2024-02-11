@@ -190,7 +190,7 @@
              with font-awesome or any other icon font library -->
         
 
-        <li class="nav-item">
+        <li class="nav-item dash_active">
           <a href="<?= base_url('admin'); ?>" class="nav-link">
             <i class="nav-icon fas fa-columns"></i>
             <p>
@@ -200,8 +200,8 @@
         </li>
 
         <li class="nav-item" >
-          <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link" style="background-color: #3f6791; font-weight: bold;">
-            <i class="nav-icon fas fa-cloud-sun"></i>
+          <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link" style="background-color: #212529; font-weight: bold;">
+            <i class="nav-icon fas fa-external-link-alt"></i>
             <p>
               Watch Site
             </p>

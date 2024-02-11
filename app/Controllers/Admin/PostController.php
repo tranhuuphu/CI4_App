@@ -17,6 +17,7 @@ class PostController extends BaseController
         $postModel = new PostModel();
         $data['post'] = $postModel->orderBy('id', 'DESC')->findAll();
 
+
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
 

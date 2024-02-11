@@ -10,7 +10,7 @@ class Auth extends BaseController
         helper(['Url', 'Form', 'text', 'Text_helper']);
     }
     public function index(){
-    	return view('admin/dashboard');
+    	return view('admin/');
     }
 
     public function login(){
@@ -126,7 +126,7 @@ class Auth extends BaseController
             }else{
                 $user_id = $user_info['id'];
                 session()->set('loggedUser', $user_id);
-                return redirect()->to('/admin/dashboard/');
+                return redirect()->to('/admin/');
             }
         }
     }

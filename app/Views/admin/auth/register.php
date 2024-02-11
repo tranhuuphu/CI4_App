@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
+  <link rel="icon" type="image/x-icon" href="<?= base_url('public/upload/tinymce/image_asset'); ?>/favicon_admin-FJlfT.png">                                                                                                                                                                                                                                                                                                                                                                                                                            
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
