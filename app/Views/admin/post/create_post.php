@@ -104,11 +104,17 @@
                   <hr>
 	              	<div class="form-group">
                     <label class="upper">Ảnh bài viết</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <br>
+                    <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
 
-                    <img id="output"/ style="width: 100%" class="pt-1">
-                    <script>
+                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Choose Image <i class="fas fa-image"></i></a>
+
+                    <input type="text" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+
+                    <img class="image-prview" src="" style="width: 100%; margin-top: 15px;">
+
+                    <!-- <img id="output"/ style="width: 100%" class="pt-1"> -->
+                    <!-- <script>
                       var loadFile = function(event) {
                         var output = document.getElementById('output');
                         output.src = URL.createObjectURL(event.target.files[0]);
@@ -116,7 +122,7 @@
                           URL.revokeObjectURL(output.src) // free memory
                         }
                       };
-                    </script>
+                    </script> -->
                   </div>
 
 	                <hr>
@@ -183,6 +189,11 @@
 
                     <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
+
+
+                    
+
+
                   </div>
 
 

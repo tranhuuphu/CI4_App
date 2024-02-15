@@ -117,7 +117,9 @@
 
 
 
-<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.pack.js" referrerpolicy="origin"></script>
+<!-- <script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.js" referrerpolicy="origin"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
@@ -275,6 +277,21 @@
 
   <script>
 		$('[name=taginput]').tagify();
+
+
+		$('.iframe-btn').fancybox({	
+			'width'		: 300,
+			'height'	: 200,
+			'type'		: 'iframe',
+      'autoScale'   : false,
+    });
+
+    function responsive_filemanager_callback(field_id){
+			var url=jQuery('#'+field_id).val();
+			$(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
+		}
+
+		
 
 	</script>
 
