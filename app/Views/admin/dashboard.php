@@ -437,47 +437,50 @@
 	        </div>
 	        <!-- /.row -->
 
+	        <!-- Small Box (Stat card) -->
+        <h5 class="mb-2 mt-4">Total Of View</h5>
+        <div class="row">
+          
+          <!-- ./col -->
+          <div class="col-lg-6 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?= number_format($totalPostView[0]['post_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-	        <!-- Main row -->
-	        <div class="row">
-	          
+                <p>Post View</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-signal fa-4x"></i>
+              </div>
+              <a href="javascript:void(0)" class="small-box-footer">
+                 More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- ./col -->
+          <div class="col-lg-6 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-	          <div class="col-md-6">
-	            <!-- Info Boxes Style 2 -->
-	            
-	            <!-- /.info-box -->
-	            <div class="info-box mb-3 bg-gradient-secondary">
-	              <span class="info-box-icon"><i class="fas fa-coins"></i></span>
+                <p>Gallery View</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-images fa-4x"></i>
+              </div>
+              <a href="javascript:void(0)" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
 
-	              <div class="info-box-content">
-	                <span class="info-box-text text-bold">Post View Total</span>
-	                <span class="info-box-number"><?= number_format($totalPostView[0]['post_view'], 0) ?></span>
-	              </div>
-	              <!-- /.info-box-content -->
-	            </div>
-	            <!-- /.info-box -->
-
-	          </div>
-	          <!-- /.col -->
-
-
-	          <div class="col-md-6">
-	            <!-- Info Boxes Style 2 -->
-	            <div class="info-box mb-3 bg-gradient-warning">
-	              <span class="info-box-icon"><i class="fas fa-images"></i></span>
-
-	              <div class="info-box-content">
-	                <span class="info-box-text text-bold">Gallery View Total</span>
-	                <span class="info-box-number"><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?></span>
-	              </div>
-	              <!-- /.info-box-content -->
-	            </div>
-	            <!-- /.info-box -->
-	            
-
-	          </div>
-	        </div>
-	        <!-- /.row -->
+	        
 
 	        <!-- Recent -->
 	        <hr>

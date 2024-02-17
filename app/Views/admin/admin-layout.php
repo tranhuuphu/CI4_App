@@ -113,7 +113,9 @@
 
 
 	<!-- Ekko Lightbox -->
-<script src="<?= base_url('public/admin_asset'); ?>/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+	<script src="<?= base_url('public/admin_asset'); ?>/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+
+	<script src="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
 
 

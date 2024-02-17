@@ -169,14 +169,14 @@
                 </div>
                 <div class="card-body">
                   
-                  
+                  <label class="upper">CO THE DE TRONG PHAN GIA</label>
                   <div class="row">
                     <div class="col-6">
                       <strong>Giá Gốc</strong>
                       <input type="text" name="post_price" value="" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
-                      <strong>Giá Khuyến Mại</strong>
+                      <strong>Giá Khuyến Mai</strong>
                       <input type="text" name="post_sale" class="form-control" value="" placeholder="Giá khuyến mãi">
                     </div>
                   </div>
@@ -187,13 +187,12 @@
                 
                   <div class="form-group">
 
-                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
+                    
 
 
                     <article>
-                        <label for="files">Select multiple files:</label>
-                        <input id="files" type="file" multiple="multiple" />
+                        <label for="files">Images For Product:</label>
+                        <input id="files" type="file" multiple="multiple" name="post_images[]" accept="image"/>
                         <output id="result" />
                     </article>
 

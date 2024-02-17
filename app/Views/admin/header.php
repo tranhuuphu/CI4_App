@@ -25,6 +25,8 @@
 
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/ekko-lightbox/ekko-lightbox.css">
 
+    
+
 
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
