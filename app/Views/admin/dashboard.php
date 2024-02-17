@@ -39,7 +39,7 @@
 	        <!-- Info boxes -->
 	        <div class="row">
 	          <div class="col-12 col-sm-6 col-md-3">
-	            <div class="info-box bg-primary">
+	            <div class="info-box bg-light">
 	              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-images"></i></span>
 
 	              <div class="info-box-content">
@@ -55,7 +55,7 @@
 	          </div>
 	          <!-- /.col -->
 	          <div class="col-12 col-sm-6 col-md-3">
-	            <div class="info-box mb-3 bg-info">
+	            <div class="info-box mb-3 bg-light">
 	              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-chart-pie"></i></span>
 
 	              <div class="info-box-content">
@@ -72,7 +72,7 @@
 	          <div class="clearfix hidden-md-up"></div>
 
 	          <div class="col-12 col-sm-6 col-md-3">
-	            <div class="info-box mb-3 bg-danger">
+	            <div class="info-box mb-3 bg-light">
 	              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
 	              <div class="info-box-content">
@@ -86,7 +86,7 @@
 	          </div>
 	          <!-- /.col -->
 	          <div class="col-12 col-sm-6 col-md-3">
-	            <div class="info-box mb-3 bg-secondary">
+	            <div class="info-box mb-3 bg-light">
 	              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
 	              <div class="info-box-content">
@@ -138,10 +138,8 @@
 	                  <div class="col-md-6">
 
 	                    <div class="card">
-					              <div class="card-header bg-light">
+					              <div class="card-header bg-primary">
 					                <h3 class="card-title">Most View Post</h3>
-
-					                
 					              </div>
 					              <!-- /.card-header -->
 					              <div class="card-body p-0">
@@ -302,7 +300,7 @@
 	                  <div class="col-md-6">
 
 	                    <div class="card">
-					              <div class="card-header bg-secondary">
+					              <div class="card-header bg-primary">
 					                <h3 class="card-title">Most View Image</h3>
 
 					                

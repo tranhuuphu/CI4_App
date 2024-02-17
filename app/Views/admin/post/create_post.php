@@ -191,10 +191,67 @@
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
 
 
+                    <article>
+                        <label for="files">Select multiple files:</label>
+                        <input id="files" type="file" multiple="multiple" />
+                        <output id="result" />
+                    </article>
+
                     
 
 
                   </div>
+
+                  <style type="text/css">
+
+                    #result{
+                      width: 100%;
+                    }
+                    article {
+/*                        margin:auto;*/
+                      margin-top: 20px;
+                    }
+                    article img{
+                      width: 50%;
+                      margin-top: 7px;
+                      
+                    }
+                    
+                    .thumbnail {
+                        
+                      float:left !important;
+
+                    }
+
+
+
+                    
+                  </style>
+                  <script type="text/javascript">
+                    function handleFileSelect() {
+                        if (window.File && window.FileList && window.FileReader) {
+                                    document.getElementById('result').textContent = '';
+                            var files = event.target.files; //FileList object
+                            var output = document.getElementById("result");
+                            for (var i = 0; i < files.length; i++) {
+                                var file = files[i];
+                                if (!file.type.match('image')) continue;
+                                var picReader = new FileReader();
+                                picReader.addEventListener("load", function (event) {
+                                    var picFile = event.target;
+                                    var div = document.createElement("div");
+                                    div.innerHTML = "<img class='thumbnail img-thumbnail rounded float-left' src='" + picFile.result + "'" + "title='" + picFile.name + "'/>";
+                                    console.log(file.name+'::'+file.size);
+                                    output.insertBefore(div, null);
+                                });
+                                picReader.readAsDataURL(file);
+                            }
+                        } else {
+                            console.log("Your browser does not support File API");
+                        }
+                    }
+                    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+                  </script>
 
 
 
