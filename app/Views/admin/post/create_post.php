@@ -17,7 +17,7 @@
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
               <li class="breadcrumb-item"><a href="<?= base_url('admin/post'); ?>">Danh Sách Bài Viết</a></li>
-              <li class="breadcrumb-item active">Add New Post</li>
+              <li class="breadcrumb-item active">Thêm bài viết mới</li>
             </ol>
           </div>
         </div>
@@ -37,14 +37,14 @@
 	            <!-- general form elements -->
 	            <div class="card card-primary">
 	              <div class="card-header">
-	                <h3 class="card-title text-bold">Main Content</h3>
+	                <h3 class="card-title text-bold upper">Nội dung chính</h3>
 	              </div>
 	              <!-- /.card-header -->
 	              <!-- form start -->
 	              
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết</label>
+	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết (*)</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_title') : '' ?></p>
 	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= old('post_title') ?>">
 	                  </div>
@@ -56,7 +56,7 @@
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết</label>
+									      <label class="upper">Nội dung bài viết (*)</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
 									    </div>
@@ -74,7 +74,7 @@
 	            <!-- Form Element sizes -->
 	            <div class="card card-success">
 	              <div class="card-header">
-	                <h3 class="card-title">Nội dung thêm</h3>
+	                <h3 class="card-title upper text-bold">Nội dung thêm</h3>
 	              </div>
 	              <div class="card-body">
                   <?php foreach($cate as $c3): ?>
@@ -105,30 +105,20 @@
 	              	<div class="form-group">
                     <label class="upper">Ảnh bài viết</label>
                     <br>
-                    <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
 
-                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Choose Image <i class="fas fa-image"></i></a>
 
-                    <input type="text" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
+
+                    <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
 
                     <img class="image-prview" src="" style="width: 100%; margin-top: 15px;">
 
-                    <!-- <img id="output"/ style="width: 100%" class="pt-1"> -->
-                    <!-- <script>
-                      var loadFile = function(event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                        output.onload = function() {
-                          URL.revokeObjectURL(output.src) // free memory
-                        }
-                      };
-                    </script> -->
                   </div>
 
 	                <hr>
 
 	                <div class="form-group clearfix">
-                    <label class="upper">Bài viết nổi bật</label>
+                    <label class="upper text-success">Bài viết nổi bật</label>
                     <br>
 
                     <div class="form-group clearfix">
@@ -145,7 +135,7 @@
 
                   <hr>
                   <div class="form-group clearfix ml-2">
-                    <label class="upper">Bài viết thường hay sản phẩm?</label>
+                    <label class="upper text-red">Bài viết thường hay sản phẩm?</label>
                     <br>
 
                     <div class="icheck-danger d-inline">
@@ -163,17 +153,17 @@
 	            </div>
 	            <!-- /.card -->
 
-	            <div class="card card-info">
+	            <div class="card card-danger">
                 <div class="card-header">
-                  <h3 class="card-title" class="upper">Dành Cho Sản Phẩm Bán Hàng</h3>
+                  <h3 class="card-title" class="upper" style="font-weight: bold;">Dành Cho Sản Phẩm Bán Hàng</h3>
                 </div>
                 <div class="card-body">
                   
-                  <label class="upper">CO THE DE TRONG PHAN GIA</label>
+                  <label class="upper text-info">(Giá có thể để trống)</label>
                   <div class="row">
                     <div class="col-6">
                       <strong>Giá Gốc</strong>
-                      <input type="text" name="post_price" value="" class="form-control" placeholder="Giá gốc">
+                      <input type="text" name="post_price" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
                       <strong>Giá Khuyến Mãi</strong>
@@ -181,24 +171,13 @@
                     </div>
                   </div>
                   <hr>
-
-
-
                 
                   <div class="form-group">
-
-                    
-
-
                     <article>
-                        <label for="files">Images For Product:</label>
+                        <label for="files">Bộ Ảnh Cho Sản Phẩm:</label>
                         <input id="files" type="file" multiple="multiple" name="post_images[]" accept="image"/>
                         <output id="result" />
                     </article>
-
-                    
-
-
                   </div>
 
                   <style type="text/css">
@@ -221,10 +200,6 @@
                       float:left !important;
 
                     }
-
-
-
-                    
                   </style>
                   <script type="text/javascript">
                     function handleFileSelect() {

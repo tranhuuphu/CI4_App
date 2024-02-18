@@ -586,7 +586,7 @@
                 <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
                 <span>
 
-                	<!-- <a href="javascript:void(0)"><i class="fas fa-image"></i> <?= // mime_content_type($image); ?></a> -->
+                	
 
 	              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download image</a>
                 </span>

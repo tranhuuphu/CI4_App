@@ -25,6 +25,10 @@
     </div>
   </section>
 </div> -->
+
+
+
+
 <section id="content">
   <div class="content-wrap">
 
@@ -37,32 +41,53 @@
           <div class="">
             <div class="row gx-5 col-mb-80">
               <main class="postcontent col-lg-12">
+
+
+                
+
+
+
                 <div class="single-product">
                   <div class="product">
                     <div class="row gutter-40">
                       <div class="col-md-6">
+                        
+
                         <div class="product-image">
                           <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
                             <div class="flexslider">
                               <div class="slider-wrap" data-lightbox="gallery">
 
-                                <div class="slide"><a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" data-lightbox="gallery-item" title="<?= $post_detail['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>"></a></div>
+                                <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>">
+                                  <a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" title="<?= $post_detail['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>" /></a>
+                                </div>
+
                                 <?php if(isset($postImages)): ?>
                                   <?php foreach($postImages as $p_i): ?>
                                     <?php if($p_i['post_image_id'] == $post_detail['id']): ?>
-                                      <div class="slide"><a href="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>"></a></div>
+
+                                      
+
+                                      <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>">
+                                        <a href="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
+                                      </div>
+
+
                                     <?php endif; ?>
                                   <?php endforeach; ?>
                                 <?php endif; ?>
 
 
+                                
                               </div>
                             </div>
                           </div>
                           <?php if($post_detail['post_sale']): ?>
-                            <div class="sale-flash badge bg-danger p-2">Sale!</div>
+                            <div class="sale-flash badge bg-danger p-2">On Sale!</div>
                           <?php endif; ?>
                         </div>
+
+
                       </div>
                       <div class="col-md-6 product-desc" style="margin-top: 17px !important">
                         <div class="entry-title">
@@ -100,7 +125,7 @@
                           <?php if($post_detail['post_sale']): ?>
                             <div class="product-price"><del><?= number_format($post_detail['post_price'],0,",","."); ?> VNĐ</del> <ins><?= number_format($post_detail['post_sale'],0,",","."); ?></ins> <small>VNĐ</small></div>
                           <?php elseif($post_detail['post_price']): ?>
-                            <div class="product-price"><ins>Giá: <?= number_format($key['post_price'],0,",","."); ?></ins> <small>VNĐ</small></div>
+                            <div class="product-price"><ins>Giá: <?= number_format($post_detail['post_price'],0,",","."); ?></ins> <small>VNĐ</small></div>
                           <?php else: ?>
                             <div class="product-price"><ins>Giá: Liên Hệ</ins></div>
                           <?php endif; ?>

@@ -108,11 +108,20 @@
 				                      <div class="fslider" data-pagi="false">
                                 <div class="flexslider">
                                   <div class="slider-wrap">
-                                  	<div class="slide"><a href="javascript:void(0)" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"></a></div>
+
+                                  	<div class="slide" data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>">
+		                                  <a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" title="<?= $key['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+		                                </div>
+
                                   	<?php if(isset($postImages)): ?>
 	                                  	<?php foreach($postImages as $p_i): ?>
 	                                  		<?php if($p_i['post_image_id'] == $key['p_id']): ?>
-	                                        <div class="slide"><a href="javascript:void(0)" title="<?= $p_i['post_image_title']; ?>"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>"></a></div>
+
+	                                  			<div class="slide" data-thumb="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>">
+					                                  <a href="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
+					                                </div>
+
+
 	                                      <?php endif; ?>
 	                                    <?php endforeach; ?>
                                     <?php endif; ?>

@@ -17,7 +17,6 @@ class PostController extends BaseController
         $postModel = new PostModel();
         $data['post'] = $postModel->orderBy('id', 'DESC')->findAll();
 
-
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
 
@@ -54,18 +53,17 @@ class PostController extends BaseController
                 ],
 
             ],
-            'post_image' => [
-                'label' => 'Image File',
-                'rules' => 'uploaded[post_image]'
-                    . '|is_image[post_image]'
-                    . '|mime_in[post_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-                    . '|max_size[post_image,10000]',
-                    // . '|max_dims[post_image,1024,768]',
-                    'errors' => [
-                    'uploaded' => 'Bạn chưa chọn ảnh cho bài viết.',
-                    'max_size' => 'Kích trước file quá lớn.',
-                ],
-            ],
+            // 'post_image' => [
+            //     'label' => 'Image File',
+            //     'rules' => 'uploaded[post_image]'
+            //         . '|is_image[post_image]'
+            //         . '|mime_in[post_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+            //         . '|max_size[post_image,10000]',
+            //         'errors' => [
+            //         'uploaded' => 'Bạn chưa chọn ảnh cho bài viết.',
+            //         'max_size' => 'Kích trước file quá lớn.',
+            //     ],
+            // ],
 
             
 
@@ -92,11 +90,15 @@ class PostController extends BaseController
         $data['post_slug']      = $post_title_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
+
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
         $data['post_status']    = $this->request->getPost('post_status');
+        $data['post_image']     = $this->request->getPost('post_image');
+
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
+        
         $data['post_view']      = 0;
         $data['post_show']      = 1;
         
@@ -115,23 +117,24 @@ class PostController extends BaseController
             $data['post_sale']      = $this->request->getPost('post_sale');
         }
         
-        $img = $this->request->getFile('post_image');
+        // $img = $this->request->getFile('post_image');
 
-        $type = $img->guessExtension();
-        $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
-        $data['post_image']       = $post_image_name;
+        // $type = $img->guessExtension();
+        // $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
+        // $data['post_image']       = $post_image_name;
 
+        // dd($data);
 
         $postModel->insert($data);
 
-        if($img = $this->request->getFile('post_image'))
-        {
-            if ($img->isValid() && ! $img->hasMoved())
-            {
-                $type = $img->getClientMimeType();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
-            }
-        }
+        // if($img = $this->request->getFile('post_image'))
+        // {
+        //     if ($img->isValid() && ! $img->hasMoved())
+        //     {
+        //         $type = $img->getClientMimeType();
+        //         $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
+        //     }
+        // }
 
         $post_id = $postModel->insertID();
 
