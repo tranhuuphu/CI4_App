@@ -176,7 +176,7 @@
                       <input type="text" name="post_price" value="" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
-                      <strong>Giá Khuyến Mai</strong>
+                      <strong>Giá Khuyến Mãi</strong>
                       <input type="text" name="post_sale" class="form-control" value="" placeholder="Giá khuyến mãi">
                     </div>
                   </div>
