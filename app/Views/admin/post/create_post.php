@@ -2,11 +2,6 @@
 
 <?= $this->section('content'); ?>
 
-<style>
-  .upper{
-    text-transform: uppercase !important;
-  }
-</style>
 
 	<div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -44,7 +39,7 @@
 	              
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết (*)</label>
+	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết <span class="text-red">(*)</span></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_title') : '' ?></p>
 	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?= old('post_title') ?>">
 	                  </div>
@@ -56,7 +51,7 @@
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết (*)</label>
+									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
 									    </div>
@@ -81,7 +76,7 @@
                     <?php $c_t[] = $c3['cate_parent_id']; ?>
                   <?php endforeach; ?>
                   <div class="form-group">
-                    <label class="upper">Thuộc danh mục</label>
+                    <label class="upper">Thuộc danh mục <span class="text-red">(*)</span></label>
                     <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
                       <option value=""> ---Lựa chọn danh mục</option><i class="fas fa-long-arrow-alt-right"></i>
                       <?php foreach($cate as $c): ?>
@@ -179,55 +174,7 @@
                         <output id="result" />
                     </article>
                   </div>
-
-                  <style type="text/css">
-
-                    #result{
-                      width: 100%;
-                    }
-                    article {
-/*                        margin:auto;*/
-                      margin-top: 20px;
-                    }
-                    article img{
-                      width: 50%;
-                      margin-top: 7px;
-                      
-                    }
-                    
-                    .thumbnail {
-                        
-                      float:left !important;
-
-                    }
-                  </style>
-                  <script type="text/javascript">
-                    function handleFileSelect() {
-                        if (window.File && window.FileList && window.FileReader) {
-                                    document.getElementById('result').textContent = '';
-                            var files = event.target.files; //FileList object
-                            var output = document.getElementById("result");
-                            for (var i = 0; i < files.length; i++) {
-                                var file = files[i];
-                                if (!file.type.match('image')) continue;
-                                var picReader = new FileReader();
-                                picReader.addEventListener("load", function (event) {
-                                    var picFile = event.target;
-                                    var div = document.createElement("div");
-                                    div.innerHTML = "<img class='thumbnail img-thumbnail rounded float-left' src='" + picFile.result + "'" + "title='" + picFile.name + "'/>";
-                                    console.log(file.name+'::'+file.size);
-                                    output.insertBefore(div, null);
-                                });
-                                picReader.readAsDataURL(file);
-                            }
-                        } else {
-                            console.log("Your browser does not support File API");
-                        }
-                    }
-                    document.getElementById('files').addEventListener('change', handleFileSelect, false);
-                  </script>
-
-
+                  
 
                 </div>
                 <!-- /.card-body -->
@@ -244,14 +191,14 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-warning">
                 <div class="card-header">
-                  <h3 class="card-title"><strong>Seo Info</strong></h3>
+                  <h3 class="card-title upper"><strong>Seo Info</strong></h3>
                 </div>
                 <div class="card-body">
 
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="upper">Meta Desc</label>
+                        <label class="upper">Meta Desc <span class="text-red">(*)</span></label>
                         <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= old('post_meta_desc'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_desc') : '' ?></p>
                       </div>
@@ -261,7 +208,7 @@
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="upper">Meta Key</label>
+                        <label class="upper">Meta Key <span class="text-red">(*)</span></label>
                         <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= old('post_meta_key'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_key') : '' ?></p>
                       </div>

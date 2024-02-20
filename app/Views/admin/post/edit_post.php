@@ -33,25 +33,25 @@
 	            <!-- general form elements -->
 	            <div class="card card-primary">
 	              <div class="card-header">
-	                <h3 class="card-title text-bold">Main Content</h3>
+	                <h3 class="card-title text-bold upper">Nội dung chính</h3>
 	              </div>
 	              <!-- /.card-header -->
 	              <!-- form start -->
 	              
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1">Tiêu đề bài viết</label>
+	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết <span class="text-red">(*)</span></label>
 	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
-	                    <label for="exampleInputPassword1">Tóm tắt</label>
+	                    <label for="exampleInputPassword1 upper">Tóm tắt</label>
 	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label>Nội dung bài viết</label>
+									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content'];} ?></textarea>
 									    </div>
 									  </div>
@@ -69,14 +69,14 @@
               <!-- Form Element sizes -->
               <div class="card card-success">
                 <div class="card-header">
-                  <h3 class="card-title">Nội dung thêm</h3>
+                  <h3 class="card-title upper text-bold">Nội dung thêm</h3>
                 </div>
                 <div class="card-body">
                   <?php foreach($cate as $c3): ?>
                     <?php $c_t[] = $c3['cate_parent_id']; ?>
                   <?php endforeach; ?>
                   <div class="form-group">
-                    <label class="upper">Thuộc danh mục</label>
+                    <label class="upper">Thuộc danh mục <span class="text-red">(*)</span></label>
                     <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="post_cate_id" style="width: 100%;">
                         <?php foreach($cate as $c): ?>
                           <?php if($c['cate_parent_id'] == 0): ?>
@@ -97,27 +97,22 @@
                   </div>
                   <hr>
                   <div class="form-group">
-                    <label style="color: red;">Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/image_asset/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
+                    <label style="color: red;" class="upper">Ảnh Cũ</label>
+                    <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
                     <hr>
-                    <label>Ảnh Mới (Nếu cập nhật)</label>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-                    <img id="output"/ style="width: 100%" class="pt-1">
-                    <script>
-                      var loadFile = function(event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                        output.onload = function() {
-                          URL.revokeObjectURL(output.src) // free memory
-                        }
-                      };
-                    </script>
+                    <label class="upper">Ảnh Bài Viết (Nếu cập nhật)</label>
+                    <br>
+                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
+
+                    <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+
+                    <img class="image-prview" src="" style="width: 100%; margin-top: 15px;">
                   </div>
 
                   <hr>
 
                   <div class="form-group clearfix">
-                    <label class="upper">Bài viết nổi bật</label>
+                    <label class="upper text-success">Bài viết nổi bật</label>
                     <br>
 
                     <div class="form-group clearfix">
@@ -136,7 +131,7 @@
 
                   <hr>
                   <div class="form-group clearfix ml-2">
-                    <label class="upper">Bài viết thường hay sản phẩm?</label>
+                    <label class="upper text-red">Bài viết thường hay sản phẩm?</label>
                     <br>
 
                     <div class="icheck-danger d-inline">
@@ -158,11 +153,11 @@
 
               <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title" class="upper">Dành Cho Sản Phẩm Bán Hàng</h3>
+                  <h3 class="card-title" class="upper" style="font-weight: bold;">Dành Cho Sản Phẩm Bán Hàng</h3>
                 </div>
                 <div class="card-body">
                   
-                  
+                  <label class="upper text-info">(Giá có thể để trống)</label>
                   <div class="row">
 
                     <div class="col-6">
@@ -179,12 +174,14 @@
                   <hr>
 
 
-
                 
                   <div class="form-group">
 
-                    <label for="exampleInputFile">Upload Bộ Ảnh Cho Sản Phẩm</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="post_images[]" accept="image" multiple>
+                    <article>
+                        <label for="files">Bộ Ảnh Cho Sản Phẩm:</label>
+                        <input id="files" type="file" multiple="multiple" name="post_images[]" accept="image"/>
+                        <output id="result" />
+                    </article>
                   </div>
 
 
@@ -192,42 +189,28 @@
                 <!-- /.card-body -->
               </div>
 
-              
-
-
-              
-
-              <div class="card card-primary">
+              <div class="card card-danger">
                 <div class="card-header">
-                  <h4 class="card-title">Bộ Ảnh Cũ <span>(Chọn để xóa ảnh cũ)</span></h4>
+                  <h4 class="card-title upper text-bold">Bộ Ảnh Cũ <span>(Tick chọn để xóa ảnh)</span></h4>
                 </div>
                 <div class="card-body">
                   <div class="row">
 
-
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <label class="form-check-label">
-                          <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=4" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
-                            <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=4" class="img-fluid mb-2" alt="red sample"/>
-                          </a>
-                      
-                        </label>
+                    <?php foreach($postImages as $img): ?>
+                      <div class="col-sm-4 mt-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="post_images_del[]" value='<?= $img['id'] ?>'>
+                          <label class="form-check-label">
+                            <a href="<?= base_url('public/upload/tinymce/post_images/'.$img['post_image_slug']) ?>" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
+                              <img src="<?= base_url('public/upload/tinymce/post_images/'.$img['post_image_slug']) ?>" class="img-fluid mb-2"/>
+                            </a>
+                        
+                          </label>
+                        </div>
                       </div>
-                    </div>
+                    <?php endforeach; ?>
 
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
-                            <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
-                          </a>
-                      
-                        </label>
-                      </div>
-                    </div>
+                    
 
 
                     
@@ -253,7 +236,7 @@
 	        	<div class="col-md-12">
 	        		<div class="card card-warning">
                 <div class="card-header">
-                  <h3 class="card-title"><strong>Seo Info</strong></h3>
+                  <h3 class="card-title upper"><strong>Seo Info</strong></h3>
                 </div>
                 <div class="card-body">
                   <div class="row">
@@ -322,5 +305,5 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('title'); ?>
-  Chỉnh sửa bài: <?= $post_detail['post_title'] ?> | AdminLTE 3
+  sửa bài: <?= $post_detail['post_title'] ?> | AdminLTE 3
 <?= $this->endSection(); ?>

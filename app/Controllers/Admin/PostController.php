@@ -117,24 +117,9 @@ class PostController extends BaseController
             $data['post_sale']      = $this->request->getPost('post_sale');
         }
         
-        // $img = $this->request->getFile('post_image');
-
-        // $type = $img->guessExtension();
-        // $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
-        // $data['post_image']       = $post_image_name;
-
-        // dd($data);
 
         $postModel->insert($data);
 
-        // if($img = $this->request->getFile('post_image'))
-        // {
-        //     if ($img->isValid() && ! $img->hasMoved())
-        //     {
-        //         $type = $img->getClientMimeType();
-        //         $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
-        //     }
-        // }
 
         $post_id = $postModel->insertID();
 
@@ -188,8 +173,6 @@ class PostController extends BaseController
                 }
             }
         }
-            
-
         
         // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
         return redirect()->to('admin/post')->with('success', $post_title);
@@ -198,42 +181,45 @@ class PostController extends BaseController
 
     // 
     public function getEdit($id){
-        $postModel = new PostModel();
-        $cateModel = new CateModel();
-        $tagModel = new TagModel();
-        $data['cate'] = $cateModel->findAll();
-        $data['post_detail'] = $postModel->find($id);
+        $postModel              = new PostModel();
+        $cateModel              = new CateModel();
+        $tagModel               = new TagModel();
+        $PostImagesModel        = new PostImagesModel();
+
+        $data['cate']           = $cateModel->findAll();
+        $data['post_detail']    = $postModel->find($id);
+        $data['postImages']     = $PostImagesModel->findAll($id);
 
         if($data['post_detail'] == null){
             return view('admin/404_admin');
         }
 
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
-        // dd($data['tagModel']);
+
         return view('admin/post/edit_post', $data);
     }
 
 
     public function SaveEdit($id)
     {
-        // $this->validate();
-        // dd($id);
         $postModel = new PostModel();
         $cateModel = new CateModel();
         $tagModel = new TagModel();
-        $data['cate'] = $cateModel->findAll();
+        $PostImagesModel        = new PostImagesModel();
+
+        $data['cate']           = $cateModel->findAll();
+        $data['postImages']     = $PostImagesModel->findAll($id);
         
         $tagList = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
-        // dd($tagList);
         $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
         $detailPost = $postModel->find($id);
+
         if($detailPost == null){
             return view('admin/404_admin');
         }
+
         $post_title = $this->request->getPost('post_title');
         $data['post_detail'] = $detailPost;
-
-
 
         if($detailPost['post_title'] = $post_title){
             $data['post_title'] = $post_title;
@@ -252,6 +238,7 @@ class PostController extends BaseController
                 return view('admin/post/edit_post', ['validation'=>$this->validator]);
             }
         }
+
         $validation = $this->validate([
             'post_content'=>[
                 'rules'=>'required',
@@ -272,10 +259,12 @@ class PostController extends BaseController
             //     ],
             // ],
         ]);
+
         if(!$validation){
             $data['validation'] = $this->validator;
             return view('admin/post/editPost', $data);
         }
+
         $data['post_title'] = $post_title;
         $post_title_slug = mb_strtolower(convert_name($post_title));
         $post_title_slug = reduce_multiples($post_title_slug, '-');
@@ -287,8 +276,11 @@ class PostController extends BaseController
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
         $data['post_status']    = $this->request->getPost('post_status');
+        
+
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
         $data['post_meta_key']  = $this->request->getPost('post_meta_key');
+
         $data['post_view']      = $detailPost['post_view'];
         $data['post_show']      = $detailPost['post_show'];
 
@@ -306,40 +298,37 @@ class PostController extends BaseController
         }
         
         
-        if($this->request->getFile('post_image')->guessExtension() != null){
-
-            $img = $this->request->getFile('post_image');
-            $type = $img->guessExtension();
-            
-            $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
-
-            $data['post_image']       = $post_image_name;
+        if($this->request->getPost('post_image') != null){
+            $data['post_image']     = $this->request->getPost('post_image');
         }else{
             $data['post_image'] = $detailPost['post_image'];
         }
         
 
+        if(!empty($this->request->getPost('post_images_del'))) {
+            $check_img_del = $this->request->getPost('post_images_del');
+            foreach($check_img_del as $check) {
+                    $check_list[] = $check;
+            }
+        }
 
-        $postModel->update($id, $data);
+        
+
+        // $postModel->update($id, $data);
 
 
         $post_tag = $this->request->getPost('taginput');
-        // $post_tag = json_decode($post_tag, true);
         
         $tagId = $tagModel->where('tag_post_id', $id)->first();
 
 
         if($postModel){
-            
             if($post_tag != null){
-
                 $tagModel->where('tag_post_id', $id)->delete();
                 $post_tag = json_decode($post_tag, true);
-
                 foreach($post_tag as $t_a){
                     $ta[] = $t_a['value'];
                 }
-
                 if($postModel){
                     if($post_tag != null){
                         foreach($ta as $t_a){
@@ -353,30 +342,8 @@ class PostController extends BaseController
             }
         }
 
-        if($img = $this->request->getFile('post_image'))
-        {
-            if ($img->isValid() && ! $img->hasMoved())
-            {
-                // $newName = $img->getRandomName();
-                $type = $img->getClientMimeType();
-                $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
-                // $path2 = ROOTPATH.'/public/upload/tinymce/image_asset/'.$post_image_name;
-                // \Config\Services::image('imagick')
-                // ->withFile($path2)
-                // ->resize(1200, 900, true, 'height')
-                // ->save($path2);
- 
-                // You can continue here to write a code to save the name to database
-                // db_connect() or model format
-                $pathTo = ROOTPATH.'/public/upload/tinymce/image_asset/'.$detailPost['post_image'];
-                $pathTrash = ROOTPATH.'/public/upload/tinymce/image_asset/trash/'.$detailPost['post_image'];
-                if(file_exists($pathTo)){
-                    rename ($pathTo, $pathTrash);
-                }                            
-            }
-        }
 
-        // Upload bộ ảnh nếu là sản phẩm & có ảnh được chọn
+        // Upload bộ ảnh nếu là sản phẩm & có ảnh được up
         if($this->request->getPost('post_status') == 'san-pham'){
             if(count($this->request->getFileMultiple('post_images')) > 0)
             {
@@ -438,12 +405,6 @@ class PostController extends BaseController
         $post = $postModel->find($id);
         if($post == null){
             return view('admin/404_admin');
-        }
-
-        $pathTo = ROOTPATH.'/public/upload/tinymce/image_asset/'.$post['post_image'];
-        $pathTrash = ROOTPATH.'/public/upload/tinymce/image_asset/trash/'.$post['post_image'];
-        if(file_exists($pathTo)){
-            rename ($pathTo, $pathTrash);
         }
 
         $postModel->delete(['id' => $id]);

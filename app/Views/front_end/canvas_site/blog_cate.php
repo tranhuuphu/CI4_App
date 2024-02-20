@@ -11,20 +11,6 @@
   </nav>
 </div>
 
-<!-- <div class="container">
-
-
-
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
 
 
 
@@ -43,7 +29,7 @@
             <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm">
               <div class="fbox-media ">
                 <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>">
-                  <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+                  <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
                 </a>
               </div>
 
@@ -75,7 +61,7 @@
               <div class="grid-inner row">
                 <div class="col-md-4">
                   <div class="entry-image mb-0">
-                    <a href="demo-news-single.html"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/></a>
+                    <a href="demo-news-single.html"><img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/></a>
                   </div>
                 </div>
                 <div class="col-md-8">
@@ -171,7 +157,7 @@
                     <div class="grid-inner row g-0">
                       <div class="col-auto">
                         <div class="entry-image">
-                          <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                          <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
                         </div>
                       </div>
                       <div class="col ps-3">
@@ -206,12 +192,11 @@
                     </div>
                   </div>
                 <?php endforeach; ?>
-
                 
               </div>
             </div>
 
-            <div class="widget clearfix">
+            <div class="widget clearfix mb-3">
               <div class="fancy-title title-border mt-5">
                 <h4>Tag Hot</h4>
               </div>
@@ -323,12 +308,6 @@
               </a>
             </div> -->
 
-            
-    		    
-
-    		    
-
-            
           </div>
         </div>
       </div>

@@ -27,20 +27,6 @@
   </nav>
 </div>
 
-<!-- <div class="container">
-
-
-
-	<section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ebf2fc">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
-	    </ol>
-	  </div>
-	</section>
-</div> -->
 	
 <section id="content">
   <div class="content-wrap">
@@ -96,123 +82,106 @@
 		              </div>
 		              <div class="modal-body">
 
-		              	<div class="single-product">
-				              <div class="product">
-				                <div class="row gutter-40">
-				                  <div class="col-md-6">
+		              	<div class="postcontent">
+			              	<main class="postcontent col-lg-12">
+						            <div class="single-product">
+						              <div class="product">
+						                <div class="row gutter-40">
+						                  <div class="col-md-6">
 
 
-				                    <div class="product-image">
-				                      
-				                    	
-				                      <div class="fslider" data-pagi="false">
-                                <div class="flexslider">
-                                  <div class="slider-wrap">
+						                    <div class="product-image">
+						                      
+						                    	
+						                      <div class="" data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>">
+	                                  <a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" target="_blank" title="<?= $key['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+	                                </div>
 
-                                  	<div class="slide" data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>">
-		                                  <a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" title="<?= $key['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
-		                                </div>
+		                              
+						                      <?php if($key['post_sale']): ?>
+		                              	<div class="sale-flash badge bg-danger p-2">Sale!</div>
+		                              <?php endif; ?>
+						                    </div>
+						                  </div>
+						                  <div class="col-md-6 product-desc">
+						                    <div class="d-flex align-items-center justify-content-between">
 
-                                  	<?php if(isset($postImages)): ?>
-	                                  	<?php foreach($postImages as $p_i): ?>
-	                                  		<?php if($p_i['post_image_id'] == $key['p_id']): ?>
+						                      <?php if($key['post_sale']): ?>
+		                                <div class="product-price"><del><?= number_format($key['post_price'],0,",","."); ?> VNĐ</del> <ins><?= number_format($key['post_sale'],0,",","."); ?></ins> <small>VNĐ</small></div>
+		                              <?php elseif($key['post_price']): ?>
+		                                <div class="product-price"><ins><?= number_format($key['post_price'],0,",","."); ?></ins> VNĐ</div>
+		                              <?php else: ?>
+		                              	<div class="product-price"><ins>Liên Hệ</ins></div>
+		                              <?php endif; ?>
 
-	                                  			<div class="slide" data-thumb="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>">
-					                                  <a href="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
-					                                </div>
+						                      <div class="d-flex align-items-center">
+						                        <div class="product-rating">
+						                          <i class="fas fa-star"></i>
+						                          <i class="fas fa-star"></i>
+						                          <i class="fas fa-star"></i>
+						                          <i class="fas fa-star"></i>
+						                          <i class="fas fa-star-half-alt"></i>
+						                        </div>
+						                        <button type="button" class="btn btn-sm btn-secondary ms-3"><i class="fas fa-heart"></i></button>
+						                      </div>
+						                    </div>
+						                    <div class="line"></div>
 
+						                    <form class="cart mb-0 d-flex justify-content-between align-items-center" action="<?= site_url('buy').'/'.$key['id']; ?>" method="post" enctype="multipart/form-data">
+						                    	<?= csrf_field(); ?>
+						                      <div class="quantity">
+						                        <input type="button" value="-" class="minus" />
+						                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
+						                        <input type="button" value="+" class="plus" />
+						                      </div>
+						                      <button type="submit" class="add-to-cart button m-0"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+						                    </form>
+						                    <div class="line"></div>
 
-	                                      <?php endif; ?>
-	                                    <?php endforeach; ?>
-                                    <?php endif; ?>
-                                  </div>
-                                </div>
-                              </div>
+						                    <p><?= $key['post_intro']; ?></p>
+						                    
 
+						                    <div class="card mt-2 pt-4 border-0 border-top rounded-0 border-default">
+						                      <div class="card-body p-0">
+						                        <div class="d-flex align-items-center justify-content-between">
+						                          <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
+						                          <?php $link_full = base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>
+						                          <div class="d-flex">
+						                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $key['post_title']; ?>" target="_blank" title="share facebook: <?= $key['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
+					                                <i class="fab fa-facebook-f"></i>
+					                                <i class="fab fa-facebook-f"></i>
+					                              </a>
 
-                              
-				                      <?php if($key['post_sale']): ?>
-                              	<div class="sale-flash badge bg-danger p-2">Sale!</div>
-                              <?php endif; ?>
-				                    </div>
-				                  </div>
-				                  <div class="col-md-6 product-desc">
-				                    <div class="d-flex align-items-center justify-content-between">
-
-				                      <?php if($key['post_sale']): ?>
-                                <div class="product-price"><del><?= number_format($key['post_price'],0,",","."); ?> VNĐ</del> <ins><?= number_format($key['post_sale'],0,",","."); ?></ins> <small>VNĐ</small></div>
-                              <?php elseif($key['post_price']): ?>
-                                <div class="product-price"><ins><?= number_format($key['post_price'],0,",","."); ?></ins> VNĐ</div>
-                              <?php else: ?>
-                              	<div class="product-price"><ins>Liên Hệ</ins></div>
-                              <?php endif; ?>
-
-				                      <div class="d-flex align-items-center">
-				                        <div class="product-rating">
-				                          <i class="fas fa-star"></i>
-				                          <i class="fas fa-star"></i>
-				                          <i class="fas fa-star"></i>
-				                          <i class="fas fa-star"></i>
-				                          <i class="fas fa-star-half-alt"></i>
-				                        </div>
-				                        <button type="button" class="btn btn-sm btn-secondary ms-3"><i class="fas fa-heart"></i></button>
-				                      </div>
-				                    </div>
-				                    <div class="line"></div>
-
-				                    <form class="cart mb-0 d-flex justify-content-between align-items-center" action="<?= site_url('buy').'/'.$key['id']; ?>" method="post" enctype="multipart/form-data">
-				                    	<?= csrf_field(); ?>
-				                      <div class="quantity">
-				                        <input type="button" value="-" class="minus" />
-				                        <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty" />
-				                        <input type="button" value="+" class="plus" />
-				                      </div>
-				                      <button type="submit" class="add-to-cart button m-0"><i class="fas fa-shopping-cart"></i> Add to cart</button>
-				                    </form>
-				                    <div class="line"></div>
-
-				                    <p><?= $key['post_intro']; ?></p>
-				                    
-
-				                    <div class="card mt-2 pt-4 border-0 border-top rounded-0 border-default">
-				                      <div class="card-body p-0">
-				                        <div class="d-flex align-items-center justify-content-between">
-				                          <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
-				                          <?php $link_full = base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>
-				                          <div class="d-flex">
-				                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $key['post_title']; ?>" target="_blank" title="share facebook: <?= $key['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
-			                                <i class="fab fa-facebook-f"></i>
-			                                <i class="fab fa-facebook-f"></i>
-			                              </a>
-
-			                              <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share twitter: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
-			                                <i class="fab fa-twitter"></i>
-			                                <i class="fab fa-twitter"></i>
-			                              </a>
-			                              <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share pinterest: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
-			                                <i class="fab fa-pinterest-p"></i>
-			                                <i class="fab fa-pinterest-p"></i>
-			                              </a>
-			                              <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $key['post_intro']; ?>" title="share tumblr: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-			                                <i class="fab fa-tumblr"></i>
-			                                <i class="fab fa-tumblr"></i>
-			                              </a>
-			                              
-			                              <a href="mailto:?subject=<?= $key['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
-			                                <i class="fas fa-envelope"></i>
-			                                <i class="fas fa-envelope"></i>
-			                              </a>
-				                          </div>
-				                        </div>
-				                      </div>
-				                    </div>
-				                  </div>
-				                  
-				                  <!-- <div class="w-100"></div> -->
-				                  
-				                </div>
-				              </div>
-				            </div>
+					                              <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share twitter: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
+					                                <i class="fab fa-twitter"></i>
+					                                <i class="fab fa-twitter"></i>
+					                              </a>
+					                              <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $key['post_intro']; ?>" title="share pinterest: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
+					                                <i class="fab fa-pinterest-p"></i>
+					                                <i class="fab fa-pinterest-p"></i>
+					                              </a>
+					                              <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $key['post_intro']; ?>" title="share tumblr: <?= $key['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
+					                                <i class="fab fa-tumblr"></i>
+					                                <i class="fab fa-tumblr"></i>
+					                              </a>
+					                              
+					                              <a href="mailto:?subject=<?= $key['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
+					                                <i class="fas fa-envelope"></i>
+					                                <i class="fas fa-envelope"></i>
+					                              </a>
+						                          </div>
+						                        </div>
+						                      </div>
+						                    </div>
+						                  </div>
+						                  
+						                  <!-- <div class="w-100"></div> -->
+						                  
+						                </div>
+						              </div>
+						            </div>
+						          </main>
+						        </div>
 
 
 		                

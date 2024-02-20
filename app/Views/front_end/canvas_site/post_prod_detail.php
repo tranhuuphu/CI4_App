@@ -41,12 +41,6 @@
           <div class="">
             <div class="row gx-5 col-mb-80">
               <main class="postcontent col-lg-12">
-
-
-                
-
-
-
                 <div class="single-product">
                   <div class="product">
                     <div class="row gutter-40">
@@ -76,8 +70,6 @@
                                     <?php endif; ?>
                                   <?php endforeach; ?>
                                 <?php endif; ?>
-
-
                                 
                               </div>
                             </div>
