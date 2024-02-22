@@ -98,15 +98,16 @@
                   </div>
                   <hr>
 	              	<div class="form-group">
-                    <label class="upper">Ảnh bài viết</label>
+                    <label class="upper">Ảnh bài viết <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên ảnh để làm ảnh bìa)</small></label>
                     <br>
 
 
                     <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
 
                     <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
-
-                    <img class="image-prview" src="" style="width: 100%; margin-top: 15px;">
+                    <div id="images2" style="float: left" class="mb-3">
+                      
+                    </div>
 
                   </div>
 
@@ -154,27 +155,18 @@
                 </div>
                 <div class="card-body">
                   
-                  <label class="upper text-info">(Giá có thể để trống)</label>
+                  <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là "Sản Phẩm" & không thuộc danh mục blog)</label>
+                  <hr>
                   <div class="row">
                     <div class="col-6">
-                      <strong>Giá Gốc</strong>
+                      <label class="upper">Giá Gốc</label>
                       <input type="text" name="post_price" class="form-control" placeholder="Giá gốc">
                     </div>
                     <div class="col-6">
-                      <strong>Giá Khuyến Mãi</strong>
+                      <label class="upper">Giá Khuyến Mãi</label>
                       <input type="text" name="post_sale" class="form-control" value="" placeholder="Giá khuyến mãi">
                     </div>
                   </div>
-                  <hr>
-                
-                  <div class="form-group">
-                    <article>
-                        <label for="files">Bộ Ảnh Cho Sản Phẩm:</label>
-                        <input id="files" type="file" multiple="multiple" name="post_images[]" accept="image"/>
-                        <output id="result" />
-                    </article>
-                  </div>
-                  
 
                 </div>
                 <!-- /.card-body -->

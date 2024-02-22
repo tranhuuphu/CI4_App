@@ -105,8 +105,10 @@
                     <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
 
                     <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+                    <div id="images2" style="float: left" class="mb-3">
+                      
+                    </div>
 
-                    <img class="image-prview" src="" style="width: 100%; margin-top: 15px;">
                   </div>
 
                   <hr>
@@ -168,60 +170,11 @@
                       <strong>Giá Khuyến Mại</strong>
                       <input type="text" name="post_sale" class="form-control" value="<?= $post_detail['post_sale']; ?>" placeholder="Giá khuyến mãi">
                     </div>
-
-                    
                   </div>
                   <hr>
-
-
-                
-                  <div class="form-group">
-
-                    <article>
-                        <label for="files">Bộ Ảnh Cho Sản Phẩm:</label>
-                        <input id="files" type="file" multiple="multiple" name="post_images[]" accept="image"/>
-                        <output id="result" />
-                    </article>
-                  </div>
-
-
                 </div>
                 <!-- /.card-body -->
               </div>
-
-              <div class="card card-danger">
-                <div class="card-header">
-                  <h4 class="card-title upper text-bold">Bộ Ảnh Cũ <span>(Tick chọn để xóa ảnh)</span></h4>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-
-                    <?php foreach($postImages as $img): ?>
-                      <div class="col-sm-4 mt-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="post_images_del[]" value='<?= $img['id'] ?>'>
-                          <label class="form-check-label">
-                            <a href="<?= base_url('public/upload/tinymce/post_images/'.$img['post_image_slug']) ?>" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
-                              <img src="<?= base_url('public/upload/tinymce/post_images/'.$img['post_image_slug']) ?>" class="img-fluid mb-2"/>
-                            </a>
-                        
-                          </label>
-                        </div>
-                      </div>
-                    <?php endforeach; ?>
-
-                    
-
-
-                    
-                    
-                  </div>
-                </div>
-              </div>
-
-
-
-              
             </div>
             <!--/.col (right) -->
 

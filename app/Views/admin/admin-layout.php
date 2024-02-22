@@ -29,27 +29,46 @@
       #result{
 	      width: 100%;
 	    }
-	    article {
-	      margin-top: 20px;
-	    }
-	    article img{
-	      width: 50%;
-	      margin-top: 7px;
-	      
-	    }
-	    
-	    .thumbnail {
-	        
-	      float:left !important;
 
-    }
+	    .upper{
+		    text-transform: uppercase !important;
+		  }
 
-    .upper{
-	    text-transform: uppercase !important;
-	  }
+			/*	Read More	  */
+		  #module {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
 
-		
-	</style>
+
+      #module #collapseExample.collapse:not(.show) {
+        display: block;
+        height: 8.5rem;
+        overflow: hidden;
+      }
+      .card2{
+      	border: 1px solid;
+      	border-radius: 5px;
+      	padding: 15px;
+      }
+
+      #module #collapseExample.collapsing {
+        height: 3rem;
+      }
+
+      #module a.collapsed::after {
+        content: '+ Show More';
+      }
+
+      #module a:not(.collapsed)::after {
+        content: '- Show Less';
+      }
+      #images2 div{
+        width: 50%;
+        float: left;
+      }
+			
+		</style>
 
 	
 <body class="hold-transition dark-mode2 sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -311,40 +330,40 @@
       'autoScale'   : false,
     });
 
-    function responsive_filemanager_callback(field_id){
-			var url=jQuery('#'+field_id).val();
-			$(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
-		}
+    // function responsive_filemanager_callback(field_id){
+		// 	var url=jQuery('#'+field_id).val();
+		// 	$(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
+		
+		// }
+
+
+		function responsive_filemanager_callback(field_id){
+      var url=jQuery('#'+field_id).val();
+      // $(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
+      var array = url.replace('[', '');
+      var array2 = array.replace(']', '');
+      var array3 = array2.replace(/"/g, '');
+      var arr = array3.split(',');
+      // alert(arr.length);
+      if(arr == null){
+      	let e = document.getElementById("images2");
+	      e.innerHTML = "";
+      }
+	      
+      for (var i = 0; i < arr.length; i++) {
+        
+        const para = document.createElement("div");
+        para.innerHTML = "<img class='image-prview img-thumbnail rounded' src='" + "<?= base_url('public/upload/tinymce/') ?>/" + arr[i] + "'style='width: 100%; margin-top: 15px;'>";
+        // Append to another element:
+        document.getElementById("images2").appendChild(para);
+      }
+    }
 
 		
 
 	</script>
 
-	<script type="text/javascript">
-    function handleFileSelect() {
-        if (window.File && window.FileList && window.FileReader) {
-                    document.getElementById('result').textContent = '';
-            var files = event.target.files; //FileList object
-            var output = document.getElementById("result");
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                if (!file.type.match('image')) continue;
-                var picReader = new FileReader();
-                picReader.addEventListener("load", function (event) {
-                    var picFile = event.target;
-                    var div = document.createElement("div");
-                    div.innerHTML = "<img class='thumbnail img-thumbnail rounded float-left' src='" + picFile.result + "'" + "title='" + picFile.name + "'/>";
-                    console.log(file.name+'::'+file.size);
-                    output.insertBefore(div, null);
-                });
-                picReader.readAsDataURL(file);
-            }
-        } else {
-            console.log("Your browser does not support File API");
-        }
-    }
-    document.getElementById('files').addEventListener('change', handleFileSelect, false);
-  </script>
+
 
 	<?= $this->renderSection('script'); ?>
 

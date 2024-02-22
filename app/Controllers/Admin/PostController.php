@@ -101,6 +101,45 @@ class PostController extends BaseController
         
         $data['post_view']      = 0;
         $data['post_show']      = 1;
+
+        // image
+        $post_image = $this->request->getPost('post_image');
+        dd(array_rand(json_decode($post_image)));
+        if($post_image != "" || $post_image != null){
+            if(gettype($post_image) === 'string' && gettype(json_decode($post_image)) === 'array'){
+                
+
+                // array
+                $image_array = json_decode($post_image);
+
+                foreach ($image_array as $value_img) {
+                    
+                    
+                    $data = [
+                        'post_image_id'         => $id,
+                        'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
+                        'post_image_slug'       => $value_img,
+                        'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
+                        'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
+                    ];
+                    $postImages = new PostImagesModel();
+                    $postImages->insert($data);
+                }
+                
+
+            }else{
+                // null
+                $data = [
+                    'post_image_id'         => $id,
+                    'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
+                    'post_image_slug'       => $post_images,
+                    'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
+                    'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
+                ];
+                $postImages = new PostImagesModel();
+                $postImages->insert($data);
+            }
+        }
         
 
         $cateModel = new CateModel();
@@ -370,6 +409,100 @@ class PostController extends BaseController
     
         return redirect()->to('admin/post')->with('update', $post_title);
         // return redirect()->to('admin/post');
+    }
+
+
+
+    // Product Function
+    public function getProduct(){
+        $postModel = new PostModel();
+        $data['post'] = $postModel->orderBy('id', 'DESC')->where('post_status', 'san-pham')->findAll();
+
+        $cateModel = new CateModel();
+        $data['cate'] = $cateModel->findAll();
+
+        return view('admin/post/index_product', $data);
+    }
+
+    public function getProductEdit($id){
+        $postModel              = new PostModel();
+        $cateModel              = new CateModel();
+        $tagModel               = new TagModel();
+        $PostImagesModel        = new PostImagesModel();
+
+        $data['cate']           = $cateModel->findAll();
+        $data['post_detail']    = $postModel->find($id);
+        $data['postImages']     = $PostImagesModel->findAll($id);
+
+        if($data['post_detail'] == null){
+            return view('admin/404_admin');
+        }
+
+        $data['tagModel'] = $tagModel->where('tag_post_id', $id)->get()->getResultArray();
+
+        return view('admin/post/edit_post_product', $data);
+    }
+
+    public function saveProductEdit($id){
+        $postModel = new PostModel();
+        $PostImagesModel = new PostImagesModel();
+
+        $post_detail    = $postModel->find($id);
+        if($post_detail == null){
+            return view('admin/404_admin');
+        }
+        // delete img
+        $post_images_del = $this->request->getPost('post_images_del');
+        if($post_images_del != null || $post_images_del != ""){
+            foreach($post_images_del as $images){
+                $PostImagesModel->delete($images);
+            }
+        }
+
+        $post_images = $this->request->getPost('post_image');
+
+        if($post_images != "" || $post_images != null){
+            if(gettype($post_images) === 'string' && gettype(json_decode($post_images)) === 'array'){
+                
+
+                // array
+                $i = 1;
+                $image_array = json_decode($post_images);
+                foreach ($image_array as $value_img) {
+                    
+                    
+                    $data = [
+                        'post_image_id'         => $id,
+                        'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
+                        'post_image_slug'       => $value_img,
+                        'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
+                        'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
+                    ];
+                    $postImages = new PostImagesModel();
+                    $postImages->insert($data);
+                    $i += 1;
+                }
+                
+
+            }else{
+                // null
+                $data = [
+                    'post_image_id'         => $id,
+                    'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
+                    'post_image_slug'       => $post_images,
+                    'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
+                    'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
+                ];
+                $postImages = new PostImagesModel();
+                $postImages->insert($data);
+            }
+        }
+            
+
+
+        return redirect()->to('admin/post/product')->with('update', $post_detail['post_title']);
+        
+
     }
 
 

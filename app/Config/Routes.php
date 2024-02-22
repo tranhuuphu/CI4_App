@@ -85,6 +85,10 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
         $routes->get('create',"Admin\PostController::getPost");
         $routes->post('save',"Admin\PostController::savePost");
 
+        $routes->get('product',"Admin\PostController::getProduct");
+        $routes->get('product/edit/(:num)',"Admin\PostController::getProductEdit/$1");
+        $routes->post('product/edit/(:num)',"Admin\PostController::saveProductEdit/$1");
+
         $routes->get('edit/(:num)',"Admin\PostController::getEdit/$1");
         $routes->post('edit/(:num)',"Admin\PostController::SaveEdit/$1");
 
