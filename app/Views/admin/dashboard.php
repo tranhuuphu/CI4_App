@@ -133,7 +133,7 @@
 					                	<?php foreach($postMostView as $pmv): ?>
 						                  <li class="item mt-2">
 						                    <div class="product-img">
-						                      <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pmv['post_image'] ?>" class="img-size-50" style="height: auto;">
+						                      <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" class="img-size-50" style="height: auto;">
 						                    </div>
 						                    <div class="product-info" style="margin-top: -5px">
 						                      <a href="javascript:void(0)" class="overflow-title" title="<?= $pmv['post_title']; ?>"><?= $pmv['post_title']; ?></a>
@@ -202,7 +202,7 @@
 				                                      </tr>
 				                                      <tr>
 				                                        <th scope="row">05. Ảnh</th>
-				                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pmv['post_image'] ?>" style="width:60px" ></td>
+				                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" style="width:60px" ></td>
 				                                      </tr>
 				                                      <tr>
 				                                        <th scope="row">06. Nổi bật</th>
@@ -495,18 +495,18 @@
 		                    	<?php foreach($postRecent as $pr): ?>
 
 			                    		<li class="media">
-															    <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
+															    <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
 															    <div class="media-body">
-															      	<h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
-															      	<p class="pt-2"><?= $pr['post_intro']; ?>.</p>
-															      	<i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
-							                        				<?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
-							                        
-										                        	<button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl3<?=$pr['id']?>" style="margin-bottom: 4px;">
-									                                	<i class="fas fa-eye"></i>
-									                            	</button>
+														      	<h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
+														      	<p class="pt-2"><?= $pr['post_intro']; ?>.</p>
+														      	<i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
+		                        				<?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
+						                        
+					                        	<button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl3<?=$pr['id']?>" style="margin-bottom: 4px;">
+			                                	<i class="fas fa-eye"></i>
+			                            	</button>
 
-							              							<a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
+				              							<a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
 															    </div>
 															    
 															    
@@ -564,7 +564,7 @@
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">05. Ảnh</th>
-		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" style="width:60px" ></td>
+		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" style="width:60px" ></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">06. Nổi bật</th>

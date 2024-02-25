@@ -183,7 +183,7 @@
                                       </tr>
                                       <tr>
                                         <th scope="row">05. Ảnh</th>
-                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $p['post_image'] ?>" style="width: 60% " ></td>
+                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $p['post_image'] ?>" style="width: 60% " ></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">06. Nổi bật</th>
