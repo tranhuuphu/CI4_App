@@ -124,7 +124,7 @@ class CanvasController extends BaseController
 
         
 
-        $paginate = 10;
+        $paginate = 9;
         $paginate_gallery = 18;
 
 
@@ -206,7 +206,7 @@ class CanvasController extends BaseController
             'most_view'     => $most_view,
             'tag_this'      => $tag_this,
 
-            'pager'         => $post->pager,
+            'pager2'         => $post->pager,
             'pager'         => $gallery->pager,
 
 

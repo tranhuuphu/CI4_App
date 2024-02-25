@@ -414,76 +414,77 @@
 	        <hr>
 
 	        <!-- Small Box (Stat card) -->
-        <div class="callout callout-success">
+        <div class="callout callout-warning">
           <h5 class="upper text-bold">TOTAL OF VIEW</h5>
 
           <p>View of all post and image</p>
-        </div>
-        <div class="row">
-          
-          <!-- ./col -->
-          <div class="col-lg-6 col-6">
-            <!-- small card -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3><?= number_format($totalPostView[0]['post_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-                <p>Post View</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-signal fa-4x"></i>
-              </div>
-              <a href="javascript:void(0)" class="small-box-footer">
-                 More info <i class="fas fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- ./col -->
-          <div class="col-lg-6 col-6">
-            <!-- small card -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
+          <div class="row">
+	          <!-- ./col -->
+	          <div class="col-lg-6 col-6">
+	            <!-- small card -->
+	            <div class="small-box bg-success">
+	              <div class="inner">
+	                <h3><?= number_format($totalPostView[0]['post_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-                <p>Gallery View</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-images fa-4x"></i>
-              </div>
-              <a href="javascript:void(0)" class="small-box-footer">
-                More info <i class="fas fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-          <!-- ./col -->
+	                <p>Post View</p>
+	              </div>
+	              <div class="icon">
+	                <i class="fas fa-signal fa-4x"></i>
+	              </div>
+	              <a href="javascript:void(0)" class="small-box-footer">
+	                 More info <i class="fas fa-arrow-circle-right"></i>
+	              </a>
+	            </div>
+	          </div>
+	          
+	          <!-- ./col -->
+	          <div class="col-lg-6 col-6">
+	            <!-- small card -->
+	            <div class="small-box bg-danger">
+	              <div class="inner">
+	                <h3><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
+
+	                <p>Gallery View</p>
+	              </div>
+	              <div class="icon">
+	                <i class="fas fa-images fa-4x"></i>
+	              </div>
+	              <a href="javascript:void(0)" class="small-box-footer">
+	                More info <i class="fas fa-arrow-circle-right"></i>
+	              </a>
+	            </div>
+	          </div>
+	          <!-- ./col -->
+	        </div>
+	        <!-- /.row -->
         </div>
-        <!-- /.row -->
+        
 
 	        
 
-	        <!-- Recent -->
-	        <hr>
-	        <div class="row mt-4">
-	          
+        <!-- Recent -->
+        <hr class="mt-5 mb-5">
+        <div class="row mt-4">
+          
 
-	          <div class="col-md-12">
-	            <div class="card card-default">
-	              
-	              <!-- /.card-header -->
-	              <div class="card-body">
-	                <div class="callout callout-info">
-	                  <h5 class="text-bold">Recent Post & Image Uploaded</h5>
+          <div class="col-md-12">
+            <div class="card card-default">
+              
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="callout callout-info">
+                  <h5 class="text-bold">Recent Post & Image Uploaded</h5>
 
-	                  <p>Show 3 post and 12 images have posted recently</p>
-	                </div>
+                  <p>Show 3 post and 12 images have posted recently</p>
+                </div>
 
-	                <div class="row">
+                <div class="row">
 		              <div class="col-md-7">
 		                <!-- DIRECT CHAT -->
 		                <div class="card">
 		                  <div class="card-header bg-light">
-		                    <h3 class="card-title text-bold">Recent Post</h3>
+		                    <h3 class="card-title text-bold">Recent Post Or Edited</h3>
 
 		                    
 		                  </div>
@@ -493,139 +494,136 @@
 
 		                    	<?php foreach($postRecent as $pr): ?>
 
-		                    		<li class="media">
-													    <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
-													    <div class="media-body">
-													      <h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
-													      <p class="pt-2"><?= $pr['post_intro']; ?>.</p>
-													      <i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
-					                        <?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
-					                        
-				                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl3<?=$pr['id']?>" style="margin-bottom: 4px;">
-			                            <i class="fas fa-eye"></i>
-			                          </button>
+			                    		<li class="media">
+															    <img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
+															    <div class="media-body">
+															      	<h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
+															      	<p class="pt-2"><?= $pr['post_intro']; ?>.</p>
+															      	<i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
+							                        				<?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
+							                        
+										                        	<button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl3<?=$pr['id']?>" style="margin-bottom: 4px;">
+									                                	<i class="fas fa-eye"></i>
+									                            	</button>
 
-			                          <a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
-													    </div>
-													    
-													    
-													  </li>
-													  <hr>
+							              							<a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
+															    </div>
+															    
+															    
+															</li>
+															<hr>
 
-													  <!-- /.modal -->
+															<!-- /.modal -->
 
-	                          <div class="modal fade" id="modal-xl3<?=$pr['id']?>" aria-labelledby="exampleModalScrollableTitle">
-	                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-	                              <div class="modal-content">
+		                          <div class="modal fade" id="modal-xl3<?=$pr['id']?>" aria-labelledby="exampleModalScrollableTitle">
+		                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+		                              <div class="modal-content">
 
-	                                <div class="modal-header bg-light">
-	                                  <h4 class="modal-title text-bold">Rencent Post</h4>
-	                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                                    <span aria-hidden="true">&times;</span>
-	                                  </button>
-	                                </div>
-	                                <div class="modal-body">
-	                                  <table class="table table-striped table-bordered" >
-	                                    <thead>
-	                                      <tr>
-	                                        <th scope="col">#</th>
-	                                        <th scope="col">Nội Dung</th>
-	                                      </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                      <tr>
+		                                <div class="modal-header bg-light">
+		                                  <h4 class="modal-title text-bold">Rencent Post</h4>
+		                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                    <span aria-hidden="true">&times;</span>
+		                                  </button>
+		                                </div>
+		                                <div class="modal-body">
+		                                  <table class="table table-striped table-bordered" >
+		                                    <thead>
+		                                      <tr>
+		                                        <th scope="col">#</th>
+		                                        <th scope="col">Nội Dung</th>
+		                                      </tr>
+		                                    </thead>
+		                                    <tbody>
+		                                      <tr>
 
-	                                        <th scope="row">01. Tiêu Đề</th>
-	                                        <td><?= $pr['post_title']; ?></td>
-	                                      </tr>
+		                                        <th scope="row">01. Tiêu Đề</th>
+		                                        <td><?= $pr['post_title']; ?></td>
+		                                      </tr>
 
-	                                      <tr>
-	                                        
-	                                        <th scope="row">02. Danh Mục</th>
-	                                        <td>
-	                                          <?php 
-	                                            foreach ($cate as $c) {
-	                                              if($c['id'] == $pr['post_cate_id']){
-	                                                echo $c['cate_name'];
-	                                              }
-	                                            } 
-	                                          ?>
-	                                        </td>
-	                                      </tr>
-
-	                                      <tr>
-	                                        <th scope="row">03. Tóm Tắt</th>
-	                                        <td><?= $pr['post_intro'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">04. Lượt Xem</th>
-	                                        <td><?= $pr['post_view'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">05. Ảnh</th>
-	                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" style="width:60px" ></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">06. Nổi bật</th>
-	                                        <td>
-	                                          <?php if($pr['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
-	                                        </td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">07. Sản Phẩm</th>
-	                                        <td>
-	                                          <?php if($pr['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
-	                                        </td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">08. Nội dung</th>
+		                                      <tr>
 		                                        
-	                                        <td>
-	                                        	<?= $pr['post_content'] ?>
-	                                        	
-	                                        		
-	                                    	</td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">09. Meta Desc</th>
-	                                        <td><?= $pr['post_meta_desc'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">10. Meta Key</th>
-	                                        <td><?= $pr['post_meta_key'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">11. Ngày viết bài</th>
-	                                        <td><?= $pr['created_at'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">12. Ngày cap nhat</th>
-	                                        <td><?= $pr['updated_at'] ?></td>
-	                                      </tr>
-	                                    </tbody>
-	                                  </table>
+		                                        <th scope="row">02. Danh Mục</th>
+		                                        <td>
+		                                          <?php 
+		                                            foreach ($cate as $c) {
+		                                              if($c['id'] == $pr['post_cate_id']){
+		                                                echo $c['cate_name'];
+		                                              }
+		                                            } 
+		                                          ?>
+		                                        </td>
+		                                      </tr>
 
-	                                </div>
-	                                <div class="modal-footer justify-content-">
-	                                  <a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Edit Post</button></a>
+		                                      <tr>
+		                                        <th scope="row">03. Tóm Tắt</th>
+		                                        <td><?= $pr['post_intro'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">04. Lượt Xem</th>
+		                                        <td><?= $pr['post_view'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">05. Ảnh</th>
+		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/image_asset/<?= $pr['post_image'] ?>" style="width:60px" ></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">06. Nổi bật</th>
+		                                        <td>
+		                                          <?php if($pr['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                        </td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">07. Sản Phẩm</th>
+		                                        <td>
+		                                          <?php if($pr['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                        </td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">08. Nội dung</th>
+			                                        
+		                                        <td>
+		                                        	<?= $pr['post_content'] ?>
+		                                        	
+		                                        		
+		                                    	</td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">09. Meta Desc</th>
+		                                        <td><?= $pr['post_meta_desc'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">10. Meta Key</th>
+		                                        <td><?= $pr['post_meta_key'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">11. Ngày viết bài</th>
+		                                        <td><?= $pr['created_at'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">12. Ngày cap nhat</th>
+		                                        <td><?= $pr['updated_at'] ?></td>
+		                                      </tr>
+		                                    </tbody>
+		                                  </table>
 
-	                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-	                                  
-	                                </div>
-	                              </div>
-	                              <!-- /.modal-content -->
-	                            </div>
-	                            <!-- /.modal-dialog -->
-	                          </div>
-	                          <!-- /.modal -->
+		                                </div>
+		                                <div class="modal-footer justify-content-">
+		                                  <a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Edit Post</button></a>
+
+		                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+		                                  
+		                                </div>
+		                              </div>
+		                              <!-- /.modal-content -->
+		                            </div>
+		                            <!-- /.modal-dialog -->
+		                          </div>
+		                          <!-- /.modal -->
 
 
-					                  
-					                  <!-- /.item -->
+						                  
+						                  <!-- /.item -->
 					                <?php endforeach; ?>
-
-
-												  
 												  
 												</ul>
 
@@ -642,7 +640,7 @@
 		                <!-- USERS LIST -->
 		                <div class="card">
 		                  <div class="card-header bg-light">
-		                    <h3 class="card-title text-bold">Latest Image</h3>
+		                    <h3 class="card-title text-bold">Latest Image Or Edited</h3>
 
 		                    
 		                  </div>
@@ -758,14 +756,14 @@
 		              <!-- /.col -->
 		            </div>
 		            <!-- /.row -->
-	                
-	              </div>
-	              <!-- /.card-body -->
-	            </div>
-	            <!-- /.card -->
-	          </div>
-	          <!-- /.col -->
-	        </div>
+                
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
 
 	        
 	      </div><!--/. container-fluid -->

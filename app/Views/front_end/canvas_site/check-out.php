@@ -51,7 +51,7 @@
                       <tr class="cart_item">
                         <th scope="row"><?= $i; ?></th>
                         <td class="cart-product-thumbnail">
-                          <a href="#"><img width="64" height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                          <a href="javascript:void(0)"><img width="64" height="64" src="<?= base_url('') ?>/public/upload/tinymce/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
                         </td>
                         <td class="cart-product-name">
                           <a href="#"><?= $item['prod_name'] ?></a>

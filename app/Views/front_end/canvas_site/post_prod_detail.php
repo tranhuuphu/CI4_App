@@ -13,20 +13,6 @@
 </div>
 
 
-<!-- <div class="container">
-  <section id="page-title" style="margin-bottom: 25px; margin-top: 30px;">
-    <div class="container clearfix" style="background-color: #b3e2fc">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-        <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
-        <li class="breadcrumb-item active"><?= $post_detail['post_title']; ?></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
-
-
 
 
 <section id="content">
@@ -52,8 +38,8 @@
                             <div class="flexslider">
                               <div class="slider-wrap" data-lightbox="gallery">
 
-                                <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>">
-                                  <a href="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" title="<?= $post_detail['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>" /></a>
+                                <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>">
+                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" title="<?= $post_detail['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>" /></a>
                                 </div>
 
                                 <?php if(isset($postImages)): ?>
@@ -62,8 +48,8 @@
 
                                       
 
-                                      <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>">
-                                        <a href="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/post_images/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
+                                      <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>">
+                                        <a href="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
                                       </div>
 
 
@@ -179,11 +165,11 @@
                                   <i class="fab fa-facebook-f"></i>
                                 </a>
 
-                                <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
+                                <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
                                   <i class="fab fa-twitter"></i>
                                   <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
+                                <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
                                   <i class="fab fa-pinterest-p"></i>
                                   <i class="fab fa-pinterest-p"></i>
                                 </a>
@@ -326,7 +312,7 @@
                     <div class="grid-inner row g-0 p-4 border rounded bg-white" >
                       <div class="col-lg-5 mb-lg-0">
                         <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
-                          <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+                          <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
                         </a>
                       </div>
                       <div class="col-lg-7 ps-lg-4">
@@ -373,109 +359,6 @@
 
                 
               </div>
-
-              <!-- <div id="comments" class="clearfix">
-                <h3 id="comments-title"><span>3</span> Comments</h3>
-
-                <ol class="commentlist clearfix">
-                  <li class="comment even thread-even depth-1" id="li-comment-1">
-                    <div id="comment-1" class="comment-wrap clearfix">
-                      <div class="comment-meta">
-                        <div class="comment-author vcard">
-                          <span class="comment-avatar clearfix"> <img alt="Image" src="https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60" class="avatar avatar-60 photo avatar-default" height="60" width="60" /></span>
-                        </div>
-                      </div>
-                      <div class="comment-content clearfix">
-                        <div class="comment-author">
-                          John Doe<span><a href="#" title="Permalink to this comment">April 24, 2012 at 10:46 am</a></span>
-                        </div>
-                        <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                        <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-                    <ul class="children">
-                      <li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
-                        <div id="comment-3" class="comment-wrap clearfix">
-                          <div class="comment-meta">
-                            <div class="comment-author vcard">
-                              <span class="comment-avatar clearfix">
-                                <img
-                                  alt="Image"
-                                  src="https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G"
-                                  class="avatar avatar-40 photo"
-                                  height="40"
-                                  width="40"
-                                />
-                              </span>
-                            </div>
-                          </div>
-                          <div class="comment-content clearfix">
-                            <div class="comment-author">
-                              <a href="#" rel="external nofollow" class="url">SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span>
-                            </div>
-                            <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-                          </div>
-                          <div class="clear"></div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="comment byuser comment-author-_smcl_admin even thread-odd thread-alt depth-1" id="li-comment-2">
-                    <div id="comment-2" class="comment-wrap clearfix">
-                      <div class="comment-meta">
-                        <div class="comment-author vcard">
-                          <span class="comment-avatar clearfix">
-                            <img
-                              alt="Image"
-                              src="https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G"
-                              class="avatar avatar-60 photo"
-                              height="60"
-                              width="60"
-                            />
-                          </span>
-                        </div>
-                      </div>
-                      <div class="comment-content clearfix">
-                        <div class="comment-author">
-                          <a href="https://themeforest.net/user/semicolonweb" rel="external nofollow" class="url">SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span>
-                        </div>
-                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                        <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-                  </li>
-                </ol>
-                <div class="clear"></div>
-
-                <div id="respond">
-                  <h3>Leave a <span>Comment</span></h3>
-                  <form class="row" action="#" method="post" id="commentform">
-                    <div class="col-md-4 form-group">
-                      <label for="author">Name</label>
-                      <input type="text" name="author" id="author" value="" size="22" tabindex="1" class="sm-form-control" />
-                    </div>
-                    <div class="col-md-4 form-group">
-                      <label for="email">Email</label>
-                      <input type="text" name="email" id="email" value="" size="22" tabindex="2" class="sm-form-control" />
-                    </div>
-                    <div class="col-md-4 form-group">
-                      <label for="url">Website</label>
-                      <input type="text" name="url" id="url" value="" size="22" tabindex="3" class="sm-form-control" />
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-12 form-group">
-                      <label for="comment">Comment</label>
-                      <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
-                    </div>
-                    <div class="col-12 form-group">
-                      <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d m-0">Submit Comment</button>
-                    </div>
-                  </form>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -498,7 +381,7 @@
                         <div class="grid-inner row g-0">
                           <div class="col-auto">
                             <div class="entry-image">
-                              <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                              <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
                             </div>
                           </div>
                           <div class="col ps-3">
@@ -577,19 +460,19 @@
   <meta name="twitter:title" content="<?= $title ?>">
   <meta name="twitter:description" content="<?= $meta_desc ?>">
   <meta name="twitter:creator" content="<?= base_url() ?>">
-  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>">
+  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>">
 
   <!-- Open Graph data -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="<?= $title ?>" />
   <meta property="og:title" content="<?= $title ?>" />
   <meta property="og:url" content="<?= $link_full ?>" />
-  <meta property="og:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
   <meta property="og:description" content="<?= $meta_desc ?>" />
   <meta property="og:locale" content="vi_VN" />
   
-  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
-  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
 
   
 

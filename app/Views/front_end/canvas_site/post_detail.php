@@ -14,18 +14,6 @@
 </div>
 
 
-<!-- <div class="container">
-	<section id="page-title" style="margin-bottom: 25px; margin-top: 30px;">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-	      <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
-	      <li class="breadcrumb-item active"><?= $post_detail['post_title']; ?></li>
-	    </ol>
-	  </div>
-	</section>
-</div> -->
 
 <section id="content">
   <div class="content-wrap">
@@ -106,11 +94,11 @@
 	                          <i class="fab fa-facebook-f"></i>
 	                        </a>
 
-	                        <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
+	                        <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
 	                          <i class="fab fa-twitter"></i>
 	                          <i class="fab fa-twitter"></i>
 	                        </a>
-	                        <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
+	                        <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
 	                          <i class="fab fa-pinterest-p"></i>
 	                          <i class="fab fa-pinterest-p"></i>
 	                        </a>
@@ -164,7 +152,7 @@
 		                <div class="grid-inner row g-0 p-4 border rounded bg-white">
 		                  <div class="col-lg-5 mb-lg-0">
 		                    <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
-		                      <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+		                      <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
 		                    </a>
 		                  </div>
 		                  <div class="col-lg-7 ps-lg-4">
@@ -346,7 +334,7 @@
 		                    <div class="grid-inner row g-0">
 		                      <div class="col-auto">
 		                        <div class="entry-image">
-		                          <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+		                          <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
 		                        </div>
 		                      </div>
 		                      <div class="col ps-3">
@@ -425,19 +413,19 @@
   <meta name="twitter:title" content="<?= $title ?>">
   <meta name="twitter:description" content="<?= $meta_desc ?>">
   <meta name="twitter:creator" content="<?= base_url() ?>">
-  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>">
+  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>">
 
   <!-- Open Graph data -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="<?= $title ?>" />
   <meta property="og:title" content="<?= $title ?>" />
   <meta property="og:url" content="<?= $link_full ?>" />
-  <meta property="og:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
   <meta property="og:description" content="<?= $meta_desc ?>" />
   <meta property="og:locale" content="vi_VN" />
   
-  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
-  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
 
   
 

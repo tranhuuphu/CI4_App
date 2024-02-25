@@ -100,7 +100,7 @@
                     <label style="color: red;" class="upper">Ảnh Cũ</label>
                     <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
                     <hr>
-                    <label class="upper">Ảnh Bài Viết (Nếu cập nhật)</label>
+                    <label class="upper">Ảnh bài viết <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên 1 ảnh để làm ảnh bìa)</small></label>
                     <br>
                     <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
 
@@ -153,15 +153,14 @@
               </div>
               <!-- /.card -->
 
-              <div class="card card-info">
+              <div class="card card-danger">
                 <div class="card-header">
                   <h3 class="card-title" class="upper" style="font-weight: bold;">Dành Cho Sản Phẩm Bán Hàng</h3>
                 </div>
                 <div class="card-body">
-                  
-                  <label class="upper text-info">(Giá có thể để trống)</label>
+                  <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là <label class="text-red">"Sản Phẩm"</label> & không thuộc <label class="text-red">danh mục blog</label>)</label>
+                  <hr>
                   <div class="row">
-
                     <div class="col-6">
                       <strong>Giá Gốc</strong>
                       <input type="text" name="post_price" value="<?= $post_detail['post_price']; ?>" class="form-control" placeholder="Giá gốc">

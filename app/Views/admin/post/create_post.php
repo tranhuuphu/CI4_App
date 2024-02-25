@@ -98,21 +98,14 @@
                   </div>
                   <hr>
 	              	<div class="form-group">
-                    <label class="upper">Ảnh bài viết <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên ảnh để làm ảnh bìa)</small></label>
+                    <label class="upper">Ảnh bài viết <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên 1 ảnh để làm ảnh bìa)</small></label>
                     <br>
-
-
                     <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
-
                     <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
                     <div id="images2" style="float: left" class="mb-3">
-                      
                     </div>
-
                   </div>
-
 	                <hr>
-
 	                <div class="form-group clearfix">
                     <label class="upper text-success">Bài viết nổi bật</label>
                     <br>
@@ -155,9 +148,9 @@
                 </div>
                 <div class="card-body">
                   
-                  <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là "Sản Phẩm" & không thuộc danh mục blog)</label>
+                  <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là <label class="text-red">"Sản Phẩm"</label> & không thuộc <label class="text-red">danh mục blog</label>)</label>
                   <hr>
-                  <div class="row">
+                  <div class="row mb-3">
                     <div class="col-6">
                       <label class="upper">Giá Gốc</label>
                       <input type="text" name="post_price" class="form-control" placeholder="Giá gốc">

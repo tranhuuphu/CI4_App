@@ -28,17 +28,6 @@
 	</nav>
 </div>
 
-<!-- <div class="container">
-	<section id="page-title" style="margin-bottom: 15px; margin-top: 30px;">
-	  <div class="container clearfix">
-	    
-	    <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-	      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-	      <li class="breadcrumb-item active" ><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
-	    </ol>
-	  </div>
-	</section>
-</div> -->
 	
 <div class="container clearfix mt-5">
 	<?php
@@ -61,7 +50,7 @@
                     <div class="row">
                       <div class="col-md-5 mb-0">
                         <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="entry-image">
-                          <img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
+                          <img src="<?= base_url('public/upload/tinymce/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
                         </a>
                       </div>
                       <div class="col-md-7">
@@ -127,7 +116,7 @@
 		      <div class="entry col-md-6">
 		        <div class="grid-inner">
 		          <div class="entry-image">
-		            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+		            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
 		          </div>
 		          <div class="entry-title title-sm nott">
 		            <h2><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h2>
@@ -170,8 +159,8 @@
 
 		    <?php if($post_count > $paginate): ?>
       
-	        <div class="line line-sm"></div>
-	        <?= $pager->links('post') ?>
+	        <div class="line mb-5"></div>
+	        <?= $pager2->links('post') ?>
 	      <?php endif; ?>
 
 	      
@@ -207,7 +196,7 @@
               <div class="grid-inner row g-0">
                 <div class="col-auto">
                   <div class="entry-image">
-                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/image_asset/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
                   </div>
                 </div>
                 <div class="col ps-3">
@@ -282,19 +271,19 @@
   <meta name="twitter:title" content="<?= $title ?>">
   <meta name="twitter:description" content="<?= $meta_desc ?>">
   <meta name="twitter:creator" content="<?= base_url() ?>">
-  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>">
+  <meta name="twitter:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>">
 
   <!-- Open Graph data -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="<?= $title ?>" />
   <meta property="og:title" content="<?= $title ?>" />
   <meta property="og:url" content="<?= base_url() ?>" />
-  <meta property="og:image" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
   <meta property="og:description" content="<?= $meta_desc ?>" />
   <meta property="og:locale" content="vi_VN" />
   
-  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
-  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce/image_asset').'/'.$image ?>" />
+  <meta name="thumbnail" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
 
   
 

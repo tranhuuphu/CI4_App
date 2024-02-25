@@ -22,7 +22,14 @@
 
     <!-- Main content -->
     <section class="content">
+
+
+
       <div class="container-fluid">
+        <hr>
+        <div class="card card-success">
+          <a href="<?= base_url('admin/post/edit/'.$post_detail['id']); ?>" style="text-transform: capitalize;" class="btn btn-primary float- pt-3 pb-3 text-bold"><i class="fas fa-edit"></i> Edit normal this post without update images Production</a>
+        </div>
       	<form action="<?= base_url('admin/post/product/edit/'.$post_detail['id']); ?>" method="post" enctype="multipart/form-data">
       		<?= csrf_field(); ?>
 	        <div class="row">
@@ -31,7 +38,7 @@
             
 	          <div class="col-md-8">
 	            <!-- general form elements -->
-	            <div class="card card-primary">
+	            <div class="card card-warning">
 	              <div class="card-header">
 	                <h3 class="card-title text-bold upper">Nội dung chính</h3>
 	              </div>
@@ -57,7 +64,7 @@
                         <div id="module" class="container">
                           <a role="button" class="collapsed btn btn-primary mb-1 mt-3" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
                           <button type="button" class="btn btn-success mb-1 mt-3" data-toggle="modal" data-target="#exampleModal">
-                            Watch Now <i class="fas fa-expand-arrows-alt"></i>
+                            See Full Content <i class="fas fa-expand-alt"></i>
                           </button>
                           <hr>
 
@@ -86,8 +93,6 @@
                               </div>
                             </div>
                           </div>
-
-
                           <hr>
                           <a role="button" class="collapsed btn btn-warning mt-1" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
                         </div>
@@ -106,7 +111,7 @@
             <!-- right column -->
             <div class="col-md-4">
               <!-- Form Element sizes -->
-              <div class="card card-success">
+              <div class="card card-warning">
                 <div class="card-header">
                   <h3 class="card-title upper text-bold">Nội dung thêm</h3>
                 </div>
@@ -138,12 +143,8 @@
                   <div class="form-group">
                     <label style="color: red;" class="upper">Ảnh Cũ</label>
                     <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
-                    
-                    
                   </div>
-
                   <hr>
-
                   <div class="form-group clearfix">
                     <label class="upper text-success">Bài viết nổi bật</label>
                     <br>
@@ -175,6 +176,23 @@
                       <input type="radio" name="post_status" disabled id="radioDanger2" value="san-pham" <?php if($post_detail['post_status'] == 'san-pham'){echo "checked";} ?>/>
                       <label for="radioDanger2"> Sản Phẩm</label>
                     </div>
+                    <hr>
+
+                    <label class="upper text-red">Giá sản phẩm</label>
+
+                    <div class="row">
+
+                      <div class="col-6">
+                        <label>Giá Gốc</label>
+                        <input type="text" readonly="readonly" name="post_price" value="<?= $post_detail['post_price']; ?>" class="form-control" placeholder="Giá gốc">
+                      </div>
+                      <div class="col-6">
+                        <label>Giá Khuyến Mãi</label>
+                        <input type="text" readonly="readonly" name="post_sale" class="form-control" value="<?= $post_detail['post_sale']; ?>" placeholder="Giá khuyến mãi">
+                      </div>
+
+                      
+                    </div>
 
                     
                   </div> 
@@ -186,36 +204,21 @@
 
               <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title" class="upper" style="font-weight: bold;">Dành Cho Sản Phẩm Bán Hàng</h3>
+                  <h3 class="card-title" class="upper" style="font-weight: bold; text-transform: uppercase;">Khu Vực Upload ảnh cho sản phẩm</h3>
                 </div>
                 <div class="card-body">
-                  <div class="row">
-
-                    <div class="col-6">
-                      <label>Giá Gốc</label>
-                      <input type="text" readonly="readonly" name="post_price" value="<?= $post_detail['post_price']; ?>" class="form-control" placeholder="Giá gốc">
-                    </div>
-                    <div class="col-6">
-                      <label>Giá Khuyến Mãi</label>
-                      <input type="text" readonly="readonly" name="post_sale" class="form-control" value="<?= $post_detail['post_sale']; ?>" placeholder="Giá khuyến mãi">
-                    </div>
-
-                    
-                  </div>
-                  <hr>
-
 
                 
                   <div class="form-group">
 
                     <div class="form-group">
-                      <label class="upper">Bộ ảnh Sản Phẩm <small class="text-bold text-red" style="text-transform: lowercase;">(chọn 1 hoặc nhiều ảnh)</small></label>
+                      <label class="upper text-primary">Bộ ảnh Sản Phẩm <small class="text-bold text-red" style="text-transform: lowercase;">(chọn 1 hoặc nhiều ảnh)</small></label>
                       <br>
 
 
                       <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
 
-                      <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+                      <input type="hidden" readonly="readonly" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
                       <div id="images2" style="float: left">
                         
                       </div>
@@ -225,9 +228,9 @@
                 <!-- /.card-body -->
               </div>
 
-              <div class="card card-danger">
+              <div class="card card-info">
                 <div class="card-header">
-                  <h4 class="card-title upper text-bold">Bộ Ảnh Cũ <small class="text-bold text-yellow">(Tick chọn để xóa ảnh)</small></h4>
+                  <h4 class="card-title upper text-bold">Bộ Ảnh Cũ <small class="text-bold text-yellow">(Tick chọn để xóa ảnh nếu muốn)</small></h4>
                 </div>
                 <div class="card-body">
                   <div class="row">
@@ -310,7 +313,7 @@
 	        		<div class="card card-success">
 	        			<div class="card-footer">
                   <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Update this</button>
-                  <a href="<?= base_url('admin/post'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
+                  <a href="<?= base_url('admin/post/production'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
 	        		</div>
 	        	</div>

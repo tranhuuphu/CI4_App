@@ -27,8 +27,8 @@ class AdminController extends BaseController
         $data['postMostView'] = $postModel->orderBy('post_view', 'DESC')->limit(5)->find();
         $data['imageMostView'] = $galleryModel->orderBy('gallery_view', 'DESC')->limit(5)->find();
 
-        $data['postRecent'] = $postModel->orderBy('id', 'DESC')->limit(3)->find();
-        $data['imageRecent'] = $galleryModel->orderBy('id', 'DESC')->limit(12)->find();
+        $data['postRecent'] = $postModel->orderBy('updated_at', 'DESC')->limit(3)->find();
+        $data['imageRecent'] = $galleryModel->orderBy('updated_at', 'DESC')->limit(12)->find();
 
         $data['totalPostView'] = $postModel->selectSum('post_view')->findAll();
 

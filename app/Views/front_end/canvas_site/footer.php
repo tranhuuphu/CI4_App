@@ -1,4 +1,4 @@
-<footer id="footer" class="dark">
+<footer id="footer" class="dark mt-5">
   <div class="container">
     <div class="footer-widgets-wrap">
       <div class="row col-mb-50">

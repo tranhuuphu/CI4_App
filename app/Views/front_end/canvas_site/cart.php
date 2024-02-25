@@ -48,7 +48,7 @@
                       <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><?= $item['prod_name'] ?></a>
                     </td>
                     <td class="cart-product-thumbnail">
-                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><img height="64" src="<?= base_url('') ?>/public/upload/tinymce/image_asset/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
+                      <a href="<?= site_url('').$item['cate_slug'].'/'.$item['prod_slug'].'-'.$item['id'].'.html' ?>" target="_blank"><img height="64" src="<?= base_url('') ?>/public/upload/tinymce/<?= $item['prod_image'] ?>" alt="<?= $item['prod_name'] ?>" /></a>
                     </td>
                     
                     <td class="cart-product-price">

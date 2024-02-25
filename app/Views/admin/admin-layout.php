@@ -336,7 +336,6 @@
 		
 		// }
 
-
 		function responsive_filemanager_callback(field_id){
       var url=jQuery('#'+field_id).val();
       // $(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
@@ -345,7 +344,7 @@
       var array3 = array2.replace(/"/g, '');
       var arr = array3.split(',');
       // alert(arr.length);
-      if(arr == null){
+      if(arr != null){
       	let e = document.getElementById("images2");
 	      e.innerHTML = "";
       }

@@ -15,7 +15,7 @@ class PostController extends BaseController
     }
     public function index(){
         $postModel = new PostModel();
-        $data['post'] = $postModel->orderBy('id', 'DESC')->findAll();
+        $data['post'] = $postModel->orderBy('updated_at', 'DESC')->findAll();
 
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
@@ -37,7 +37,6 @@ class PostController extends BaseController
         $data['cate'] = $cateModel->findAll();
 
         $validation = $this->validate([
-
             'post_title'=>[
                 'rules'=>'required|is_unique[post.post_title]',
                 'errors' => [
@@ -53,19 +52,6 @@ class PostController extends BaseController
                 ],
 
             ],
-            // 'post_image' => [
-            //     'label' => 'Image File',
-            //     'rules' => 'uploaded[post_image]'
-            //         . '|is_image[post_image]'
-            //         . '|mime_in[post_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-            //         . '|max_size[post_image,10000]',
-            //         'errors' => [
-            //         'uploaded' => 'Bạn chưa chọn ảnh cho bài viết.',
-            //         'max_size' => 'Kích trước file quá lớn.',
-            //     ],
-            // ],
-
-            
 
         ]);
         if(!$validation){
@@ -102,42 +88,18 @@ class PostController extends BaseController
         $data['post_view']      = 0;
         $data['post_show']      = 1;
 
-        // image
+        // image check
         $post_image = $this->request->getPost('post_image');
-        dd(array_rand(json_decode($post_image)));
-        if($post_image != "" || $post_image != null){
+                if($post_image != "" || $post_image != null){
             if(gettype($post_image) === 'string' && gettype(json_decode($post_image)) === 'array'){
-                
-
                 // array
+                $number_rand = array_rand(json_decode($post_image));
                 $image_array = json_decode($post_image);
-
-                foreach ($image_array as $value_img) {
-                    
-                    
-                    $data = [
-                        'post_image_id'         => $id,
-                        'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
-                        'post_image_slug'       => $value_img,
-                        'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
-                        'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
-                    ];
-                    $postImages = new PostImagesModel();
-                    $postImages->insert($data);
-                }
-                
-
+                $image_array = array_unique($image_array);
+                $data['post_image'] = $image_array[$number_rand];
             }else{
                 // null
-                $data = [
-                    'post_image_id'         => $id,
-                    'post_image_title'      => $post_detail['post_title'].'-'.random_string('alnum', 4),
-                    'post_image_slug'       => $post_images,
-                    'post_image_meta_desc'  => $post_detail['post_meta_desc'].'-'.random_string('alnum', 4),
-                    'post_image_meta_key'   => $post_detail['post_meta_key'].'-'.random_string('alnum', 4),
-                ];
-                $postImages = new PostImagesModel();
-                $postImages->insert($data);
+                $data['post_image'] = $post_image;
             }
         }
         
@@ -189,29 +151,29 @@ class PostController extends BaseController
         }
 
         // Upload bộ ảnh nếu là sản phẩm & có ảnh được chọn
-        if($this->request->getPost('post_status') == 'san-pham'){
-            if(count($this->request->getFileMultiple('post_images')) > 0)
-            {
-                $files = $this->request->getFileMultiple('post_images');
-                foreach ($files as $file) {
-                    if ($file->isValid() && ! $file->hasMoved())
-                    {
-                        $type = $file->guessExtension();
-                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
-                        $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
-                        $data = [
-                            'post_image_id'         => $post_id,
-                            'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
-                            'post_image_slug'       => $post_image_slug,
-                            'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
-                            'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
-                        ];
-                        $postImages = new PostImagesModel();
-                        $postImages->insert($data);
-                    }
-                }
-            }
-        }
+        // if($this->request->getPost('post_status') == 'san-pham'){
+        //     if(count($this->request->getFileMultiple('post_images')) > 0)
+        //     {
+        //         $files = $this->request->getFileMultiple('post_images');
+        //         foreach ($files as $file) {
+        //             if ($file->isValid() && ! $file->hasMoved())
+        //             {
+        //                 $type = $file->guessExtension();
+        //                 $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
+        //                 $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
+        //                 $data = [
+        //                     'post_image_id'         => $post_id,
+        //                     'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
+        //                     'post_image_slug'       => $post_image_slug,
+        //                     'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
+        //                     'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
+        //                 ];
+        //                 $postImages = new PostImagesModel();
+        //                 $postImages->insert($data);
+        //             }
+        //         }
+        //     }
+        // }
         
         // return redirect()->to('admin/post')->with('success', 'Thêm thành công bài viết: '.$post_title);
         return redirect()->to('admin/post')->with('success', $post_title);
@@ -338,29 +300,29 @@ class PostController extends BaseController
         
         
         if($this->request->getPost('post_image') != null){
-            $data['post_image']     = $this->request->getPost('post_image');
+            // image check
+            $post_image = $this->request->getPost('post_image');
+                    if($post_image != "" || $post_image != null){
+                if(gettype($post_image) === 'string' && gettype(json_decode($post_image)) === 'array'){
+                    // array
+                    $number_rand = array_rand(json_decode($post_image));
+                    $image_array = json_decode($post_image);
+                    $image_array = array_unique($image_array);
+                    $data['post_image'] = $image_array[$number_rand];
+                }else{
+                    // null
+                    $data['post_image'] = $post_image;
+                }
+            }
         }else{
             $data['post_image'] = $detailPost['post_image'];
         }
         
-
-        if(!empty($this->request->getPost('post_images_del'))) {
-            $check_img_del = $this->request->getPost('post_images_del');
-            foreach($check_img_del as $check) {
-                    $check_list[] = $check;
-            }
-        }
-
         
 
-        // $postModel->update($id, $data);
-
-
+        $postModel->update($id, $data);
         $post_tag = $this->request->getPost('taginput');
-        
         $tagId = $tagModel->where('tag_post_id', $id)->first();
-
-
         if($postModel){
             if($post_tag != null){
                 $tagModel->where('tag_post_id', $id)->delete();
@@ -377,35 +339,34 @@ class PostController extends BaseController
                         }
                     }
                 }
-                
             }
         }
 
 
         // Upload bộ ảnh nếu là sản phẩm & có ảnh được up
-        if($this->request->getPost('post_status') == 'san-pham'){
-            if(count($this->request->getFileMultiple('post_images')) > 0)
-            {
-                $files = $this->request->getFileMultiple('post_images');
-                foreach ($files as $file) {
-                    if ($file->isValid() && ! $file->hasMoved())
-                    {
-                        $type = $file->guessExtension();
-                        $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
-                        $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
-                        $data = [
-                            'post_image_id'         => $post_id,
-                            'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
-                            'post_image_slug'       => $post_image_slug,
-                            'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
-                            'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
-                        ];
-                        $postImages = new PostImagesModel();
-                        $postImages->insert($data);
-                    }
-                }
-            }
-        }
+        // if($this->request->getPost('post_status') == 'san-pham'){
+        //     if(count($this->request->getFileMultiple('post_images')) > 0)
+        //     {
+        //         $files = $this->request->getFileMultiple('post_images');
+        //         foreach ($files as $file) {
+        //             if ($file->isValid() && ! $file->hasMoved())
+        //             {
+        //                 $type = $file->guessExtension();
+        //                 $post_image_slug = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
+        //                 $file->move(ROOTPATH . 'public/upload/tinymce/post_images', $post_image_slug);
+        //                 $data = [
+        //                     'post_image_id'         => $post_id,
+        //                     'post_image_title'      => $post_title.'-'.random_string('alnum', 4),
+        //                     'post_image_slug'       => $post_image_slug,
+        //                     'post_image_meta_desc'  => $this->request->getPost('post_meta_desc'),
+        //                     'post_image_meta_key'   => $this->request->getPost('post_meta_key'),
+        //                 ];
+        //                 $postImages = new PostImagesModel();
+        //                 $postImages->insert($data);
+        //             }
+        //         }
+        //     }
+        // }
     
         return redirect()->to('admin/post')->with('update', $post_title);
         // return redirect()->to('admin/post');
@@ -416,7 +377,7 @@ class PostController extends BaseController
     // Product Function
     public function getProduct(){
         $postModel = new PostModel();
-        $data['post'] = $postModel->orderBy('id', 'DESC')->where('post_status', 'san-pham')->findAll();
+        $data['post'] = $postModel->orderBy('updated_at', 'DESC')->where('post_status', 'san-pham')->findAll();
 
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->findAll();
