@@ -7,10 +7,10 @@
         <p class="mb-0 py-2 text-center text-md-start">
           <?php if($page_home['phone'] != null): ?>
             <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
-                <i class="fas fa-phone-square-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
+                <i class="fas fa-mobile-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
             </a>
           <?php endif; ?>
-          <i class="far fa-envelope"></i> <strong>phuth.me@gmail.com</strong></p>
+          &nbsp;<i class="fas fa-mail-bulk"></i>  <strong class="ml-2">phuth.me@gmail.com</strong></p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">

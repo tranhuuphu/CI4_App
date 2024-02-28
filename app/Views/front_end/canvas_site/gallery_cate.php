@@ -12,18 +12,6 @@
 </div>
 
 
-<!-- <div class="container">
-
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>">Bộ Sưu Tập</a></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
 
 <?php if($post_cate != null): ?>
 <section id="content">
@@ -51,7 +39,7 @@
                     data-hover-animate-out="fadeOutUpSmall"
                     data-hover-speed="350"
                     data-lightbox="image"
-                    title="<?= $key['gallery_title'] ?>"
+                    title=""
                   >
                     <i class="fas fa-expand-alt"></i>
                   </a>
@@ -63,9 +51,11 @@
                     </a>
                   <?php endif; ?>
 
-                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                    <i class="fas fa-download"></i>
-                  </a>
+                  <?php if($key['gallery_file_download'] == null): ?>
+                    <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                      <i class="fas fa-download"></i>
+                    </a>
+                  <?php endif; ?>
                 </div>
                 <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
               </div>
@@ -77,23 +67,27 @@
 
               
               <span>
-                
-                <?php
+
+
+                <?php if($key['gallery_file_download'] == null)
                   if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
                     $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
                     $image_width = $image_info[0];
                     $image_height = $image_info[1];
-                    echo $image_width.'x'.$image_height.' pixel';
+                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
                   }
-                  
                 ?>
-                <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download</a>
+
+                <?php if($key['gallery_file_download'] == null): ?>
+                  <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
+                <?php endif; ?>
                 
                 <?php if($key['gallery_file_download'] != null): ?>
-                  <i class="fas fa-grip-lines-vertical"></i>
-                  <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-file-download"></i></a>
-                  
+                  <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                 <?php endif; ?>
+                
+                
+
               </span>
             </div>
           </div>

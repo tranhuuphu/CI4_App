@@ -71,14 +71,6 @@ class CanvasController extends BaseController
         $gallery = new GalleryModel;
         $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(4)->find();
 
-        // dd($most_view);
-        
-        // dd($data['recent_post']);
-
-
-
-        // $data['cate_all'] = $cate_all;
-        // $data['post_cate'] = $post_cate;
 
         $page_home = $pageModel->where('page_status', 1)->first();
         // dd($page_home);
@@ -342,7 +334,7 @@ class CanvasController extends BaseController
 
 
 
-        
+        // Gallery
         if($cate_gallery != null && $cate_gallery['cate_type'] == "cate_gallery"){
 
             $session = session();
@@ -388,8 +380,23 @@ class CanvasController extends BaseController
 
             ];
 
-            $data2['gallery_view'] = $gallery_img['gallery_view'] + 1;
-            $gallery->update($id, $data2);
+
+            $sessionKey_g = 'g_' . $id;
+
+            $session2 = session();
+            
+            if (session()->get($sessionKey_g) == null) { //nếu chưa có session
+                $newdata2 = [
+                    $sessionKey_g  => $sessionKey_g,
+                ];
+
+                $session2->set($newdata2);
+                $data2['gallery_view'] = $gallery_img['gallery_view'] + 1;
+                $gallery->update($id, $data2);
+
+            }
+            // $data2['gallery_view'] = $gallery_img['gallery_view'] + 1;
+            // $gallery->update($id, $data2);
 
 
 
@@ -404,14 +411,7 @@ class CanvasController extends BaseController
         }
 
         
-        
-
-
-        // if($cate_gallery == null && $cate_gallery['cate_type'] != "cate_gallery"){
-        //     $cate_gallery2 = $cate->where('id', $post_detail['post_cate_id'])->first();
-        //     return redirect()->to($cate_gallery2['cate_slug'].'/'.$post_detail['post_slug'].'-'.$post_detail['id'].'.html');
-        // }
-
+    
         
         $cate_detail = $cate->where('id', $post_detail['post_cate_id'])->first();
 

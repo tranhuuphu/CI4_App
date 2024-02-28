@@ -33,18 +33,27 @@
               
             </div>
 
-            <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4">
+            <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4" style="margin-top: 20px">
               <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
               <hr>
-              
-
+              <?php if($gallery_img['gallery_file_download'] != null): ?>
+              <div class="card">
+                <div class="card-body text-dark">
+                  <span>Thank for downloading file and visiting my site!</span>
+                  <br>
+                  <span>If you have any question, please contact to me.</span>
+                  <br>
+                  <span>Cám ơn đã tải file và ghé thăm website!</span>
+                </div>
+              </div>
+              <?php endif; ?>
               <div class="row g-4 mt-4 mb-6">
                 <div class="col-6">
-                  <h5 class="mb-2">Phân Loại</h5>
+                  <h5 class="mb-2 text-primary">Phân Loại</h5>
                   <p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p>
                 </div>
                 <div class="col-6">
-                  <h5 class="mb-2">Completed on</h5>
+                  <h5 class="mb-2 text-primary">Completed on</h5>
                   <p class="text-medium op-08 mb-0">
                     <?php
                       $datetime = (new \CodeIgniter\I18n\Time);
@@ -66,38 +75,42 @@
                     ?>
                   </p>
                 </div>
+                <?php if($gallery_img['gallery_file_download'] == null): ?>
+                  
+                  <div class="col-6">
+                    <h5 class="mb-2 text-primary">Demension</h5>
+                    <p class="text-medium op-08 mb-0">
+                      <?php
+                        $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
+                        $image_width = $image_info[0];
+                        $image_height = $image_info[1];
+                        echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
+                      ?>
+                      <br>
+                      <?php
 
-                <div class="col-6">
-                  <h5 class="mb-2">Demension</h5>
-                  <p class="text-medium op-08 mb-0">
-                    <?php
-                      $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
-                      $image_width = $image_info[0];
-                      $image_height = $image_info[1];
-                      echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
-                    ?>
-                    <hr>
-                    <?php
+                        $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
+                        $fp = fopen($img, "rb");
+                        echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
+                      ?>
 
-                      $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
-                      $fp = fopen($img, "rb");
-                      echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
-                    ?>
+                    </p>
+                  </div>
+                <?php endif; ?>
 
-                  </p>
-                </div>
-
-                <div class="col-6">
-                  <h5 class="mb-2">Download Image</h5>
-                  <p class="text-medium op-082 mb-0">
-                    <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>"><i class="fas fa-download"></i></a>
-                  </p>
-                </div>
+                <?php if($gallery_img['gallery_file_download'] == null): ?>
+                  <div class="col-6">
+                    <h5 class="mb-2 text-primary">Save image</h5>
+                    <p class="text-medium op-082 mb-0">
+                      <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" class=" btn btn-danger">Save Now  <i class="fas fa-save"></i></a>
+                    </p>
+                  </div>
+                <?php endif; ?>
                 <?php if($gallery_img['gallery_file_download'] != null): ?>
                   <div class="col-6">
-                    <h5 class="mb-2">Download File</h5>
+                    <h5 class="mb-2 text-danger">Download Premium File</h5>
                     <p class="text-medium text-white op-082 mb-0">
-                      <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-success">Download <i class="fab fa-google-drive"></i></a>
+                      <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-success">Download Now <i class="fab fa-google-drive"></i></a>
                     </p>
                   </div>
                 <?php endif; ?>
@@ -168,6 +181,32 @@
             </div>
             <div class="portfolio-desc">
               <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r1['gallery_title_slug'].'-'.$r1['id'].'.html' ?>" title="<?= $r1['gallery_title'] ?>" class="fw-bold"><?= $r1['gallery_title'] ?></a></h3>
+
+              <span>
+
+
+                <?php if($r1['gallery_file_download'] == null)
+                  if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) != null){
+                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']);
+                    $image_width =$image_info[0];
+                    $image_height = $image_info[1];
+                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
+                  }
+                ?>
+
+                <?php if($r1['gallery_file_download'] == null): ?>
+                  <a href="<?= base_url('page/download/'.$r1['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
+                <?php endif; ?>
+                
+                <?php if($r1['gallery_file_download'] != null): ?>
+                  <a href="<?= $r1['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                <?php endif; ?>
+                
+                
+
+              </span>
+
+
             </div>
           </div>
         </div>
@@ -194,6 +233,30 @@
             </div>
             <div class="portfolio-desc">
               <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>" class="fw-bold"><?= $r2['gallery_title'] ?></a></h3>
+
+              <span>
+
+
+                <?php if($r2['gallery_file_download'] == null)
+                  if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) != null){
+                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']);
+                    $image_width = $image_info[0];
+                    $image_height = $image_info[1];
+                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
+                  }
+                ?>
+
+                <?php if($r2['gallery_file_download'] == null): ?>
+                  <a href="<?= base_url('page/download/'.$r2['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
+                <?php endif; ?>
+                
+                <?php if($r2['gallery_file_download'] != null): ?>
+                  <a href="<?= $r2['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                <?php endif; ?>
+                
+                
+
+              </span>
             </div>
           </div>
         </div>

@@ -1,0 +1,14 @@
+INFO - 2024-02-26 06:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-26 06:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-26 06:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-26 06:41:03 --> Undefined variable $data2
+in APPPATH\Controllers\CanvasController.php on line 395.
+ 1 APPPATH\Controllers\CanvasController.php(395): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data2', 'APPPATH\\Controllers\\CanvasController.php', 395)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\CanvasController->post('bo-suu-tap', 'tuyen-tap-bo-suu-tap-anh-dinh-dang-png-thiet-ke', '163')
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CanvasController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-26 06:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-26 06:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-26 18:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-26 18:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

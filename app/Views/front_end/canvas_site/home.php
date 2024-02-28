@@ -563,13 +563,13 @@
                       data-lightbox="image"
                       title="
                       	<?php
-                      		if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
-                      			$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-					                  $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-					                  $image_width = $image_info[0];
-					                  $image_height = $image_info[1];
-					                  echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
-                      		}
+                      		// if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+                      		// 	$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+					                //   $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+					                //   $image_width = $image_info[0];
+					                //   $image_height = $image_info[1];
+					                //   echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
+                      		// }
                       		
 				                ?>
                       "
@@ -584,11 +584,24 @@
 
               <div class="portfolio-desc">
                 <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
-                <span>
+                <span class="text-italic">
 
-                	
+                	<?php if($key['gallery_file_download'] == null)
+		              	if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+	                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+	                    $image_width = $image_info[0];
+	                    $image_height = $image_info[1];
+	                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
+	                  }
+		              ?>
 
-	              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> download image</a>
+		              <?php if($key['gallery_file_download'] == null): ?>
+		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save image</a>
+	              	<?php endif; ?>
+	              	
+	              	<?php if($key['gallery_file_download'] != null): ?>
+		              	<a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+		              <?php endif; ?>
                 </span>
               </div>
             </div>
@@ -613,7 +626,7 @@
 
 <?= $this->section('link_css'); ?>
 	
-	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css?<?= time(); ?>" media="screen">
+	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css" media="screen">
   <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
   <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
 
