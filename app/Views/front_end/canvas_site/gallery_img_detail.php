@@ -81,17 +81,20 @@
                     <h5 class="mb-2 text-primary">Demension</h5>
                     <p class="text-medium op-08 mb-0">
                       <?php
-                        $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
-                        $image_width = $image_info[0];
-                        $image_height = $image_info[1];
-                        echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
+                        if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) != null){
+                          $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
+                          $image_width = $image_info[0];
+                          $image_height = $image_info[1];
+                          echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
+                        }
                       ?>
                       <br>
                       <?php
-
-                        $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
-                        $fp = fopen($img, "rb");
-                        echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
+                        if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) != null){
+                          $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
+                          $fp = fopen($img, "rb");
+                          echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
+                        }
                       ?>
 
                     </p>
@@ -102,7 +105,7 @@
                   <div class="col-6">
                     <h5 class="mb-2 text-primary">Save image</h5>
                     <p class="text-medium op-082 mb-0">
-                      <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" class=" btn btn-danger">Save Now  <i class="fas fa-save"></i></a>
+                      <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" class=" btn btn-danger">Save Now  &#160;<i class="fas fa-save"></i></a>
                     </p>
                   </div>
                 <?php endif; ?>
