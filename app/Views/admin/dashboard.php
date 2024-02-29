@@ -123,153 +123,153 @@
 	                  <div class="col-md-6">
 
 	                    <div class="card">
-					              <div class="card-header bg-light">
-					                <h3 class="card-title text-bold">Most View Post</h3>
-					              </div>
-					              <!-- /.card-header -->
-					              <div class="card-body p-0">
-					                <ul class="products-list product-list-in-card pl-2 pr-2">
+			              <div class="card-header bg-light">
+			                <h3 class="card-title text-bold">Most View Post</h3>
+			              </div>
+			              <!-- /.card-header -->
+			              <div class="card-body p-0">
+			                <ul class="products-list product-list-in-card pl-2 pr-2">
 
-					                	<?php foreach($postMostView as $pmv): ?>
-						                  <li class="item mt-2">
-						                    <div class="product-img">
-						                      <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" class="img-size-50" style="height: auto;">
-						                    </div>
-						                    <div class="product-info" style="margin-top: -5px">
-						                      <a href="javascript:void(0)" class="overflow-title" title="<?= $pmv['post_title']; ?>"><?= $pmv['post_title']; ?></a>
-						                      <span class="product-description">
-						                      	<i class="fas fa-fire"></i> <?= number_format($pmv['post_view'],0); ?>
-						                        <?php if($pmv['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
-						                        
-						                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl<?=$pmv['id']?>" style="margin-bottom: 4px;">
-					                            <i class="fas fa-eye"></i>
-					                          </button>
+			                	<?php foreach($postMostView as $pmv): ?>
+				                  <li class="item mt-2">
+				                    <div class="product-img">
+				                      <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" class="img-size-50" style="height: auto;">
+				                    </div>
+				                    <div class="product-info" style="margin-top: -5px">
+				                      <a href="javascript:void(0)" class="overflow-title" title="<?= $pmv['post_title']; ?>"><?= $pmv['post_title']; ?></a>
+				                      <span class="product-description">
+				                      	<i class="fas fa-fire"></i> <?= number_format($pmv['post_view'],0); ?>
+				                        <?php if($pmv['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
+				                        
+				                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl<?=$pmv['id']?>" style="margin-bottom: 4px;">
+			                            <i class="fas fa-eye"></i>
+			                          </button>
 
-					                          <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" class = "text-warning"><i class="fas fa-edit"></i> Edit</a>
-						                      </span>
-						                    </div>
-						                  </li>
-						                  <!-- /.item -->
+			                          <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" class = "text-warning"><i class="fas fa-edit"></i> Edit</a>
+				                      </span>
+				                    </div>
+				                  </li>
+				                  <!-- /.item -->
 
-						                  <!-- /.modal -->
+				                  <!-- /.modal -->
 
-				                          <div class="modal fade" id="modal-xl<?=$pmv['id']?>" aria-labelledby="exampleModalScrollableTitle">
-				                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-				                              <div class="modal-content">
+		                          <div class="modal fade" id="modal-xl<?=$pmv['id']?>" aria-labelledby="exampleModalScrollableTitle">
+		                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+		                              <div class="modal-content">
 
-				                                <div class="modal-header bg-light">
-				                                  <h4 class="modal-title text-bold">Recent Post</h4>
-				                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				                                    <span aria-hidden="true">&times;</span>
-				                                  </button>
-				                                </div>
-				                                <div class="modal-body">
-				                                  <table class="table table-striped table-bordered" >
-				                                    <thead>
-				                                      <tr>
-				                                        <th scope="col">#</th>
-				                                        <th scope="col">Nội Dung</th>
-				                                      </tr>
-				                                    </thead>
-				                                    <tbody>
-				                                      <tr>
+		                                <div class="modal-header bg-light">
+		                                  <h4 class="modal-title text-bold">Recent Post</h4>
+		                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                    <span aria-hidden="true">&times;</span>
+		                                  </button>
+		                                </div>
+		                                <div class="modal-body">
+		                                  <table class="table table-striped table-bordered" >
+		                                    <thead>
+		                                      <tr>
+		                                        <th scope="col">#</th>
+		                                        <th scope="col">Nội Dung</th>
+		                                      </tr>
+		                                    </thead>
+		                                    <tbody>
+		                                      <tr>
 
-				                                        <th scope="row">01. Tiêu Đề</th>
-				                                        <td><?= $pmv['post_title']; ?></td>
-				                                      </tr>
+		                                        <th scope="row">01. Tiêu Đề</th>
+		                                        <td><?= $pmv['post_title']; ?></td>
+		                                      </tr>
 
-				                                      <tr>
-				                                        
-				                                        <th scope="row">02. Danh Mục</th>
-				                                        <td>
-				                                          <?php 
-				                                            foreach ($cate as $c) {
-				                                              if($c['id'] == $pmv['post_cate_id']){
-				                                                echo $c['cate_name'];
-				                                              }
-				                                            } 
-				                                          ?>
-				                                        </td>
-				                                      </tr>
+		                                      <tr>
+		                                        
+		                                        <th scope="row">02. Danh Mục</th>
+		                                        <td>
+		                                          <?php 
+		                                            foreach ($cate as $c) {
+		                                              if($c['id'] == $pmv['post_cate_id']){
+		                                                echo $c['cate_name'];
+		                                              }
+		                                            } 
+		                                          ?>
+		                                        </td>
+		                                      </tr>
 
-				                                      <tr>
-				                                        <th scope="row">03. Tóm Tắt</th>
-				                                        <td><?= $pmv['post_intro'] ?></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">04. Lượt Xem</th>
-				                                        <td><?= $pmv['post_view'] ?></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">05. Ảnh</th>
-				                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" style="width:60px" ></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">06. Nổi bật</th>
-				                                        <td>
-				                                          <?php if($pmv['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
-				                                        </td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">07. Sản Phẩm</th>
-				                                        <td>
-				                                          <?php if($pmv['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
-				                                        </td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">08. Nội dung</th>
-					                                        
-				                                        <td>
-				                                        	<?= $pmv['post_content'] ?>
-				                                        	
-				                                        		
-			                                        	</td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">09. Meta Desc</th>
-				                                        <td><?= $pmv['post_meta_desc'] ?></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">10. Meta Key</th>
-				                                        <td><?= $pmv['post_meta_key'] ?></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">11. Ngày viết bài</th>
-				                                        <td><?= $pmv['created_at'] ?></td>
-				                                      </tr>
-				                                      <tr>
-				                                        <th scope="row">12. Ngày cap nhat</th>
-				                                        <td><?= $pmv['updated_at'] ?></td>
-				                                      </tr>
-				                                    </tbody>
-				                                  </table>
+		                                      <tr>
+		                                        <th scope="row">03. Tóm Tắt</th>
+		                                        <td><?= $pmv['post_intro'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">04. Lượt Xem</th>
+		                                        <td><?= $pmv['post_view'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">05. Ảnh</th>
+		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" style="width:60px" ></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">06. Nổi bật</th>
+		                                        <td>
+		                                          <?php if($pmv['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                        </td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">07. Sản Phẩm</th>
+		                                        <td>
+		                                          <?php if($pmv['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                        </td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">08. Nội dung</th>
+			                                        
+		                                        <td>
+		                                        	<?= $pmv['post_content'] ?>
+		                                        	
+		                                        		
+	                                        	</td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">09. Meta Desc</th>
+		                                        <td><?= $pmv['post_meta_desc'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">10. Meta Key</th>
+		                                        <td><?= $pmv['post_meta_key'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">11. Ngày viết bài</th>
+		                                        <td><?= $pmv['created_at'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">12. Ngày cap nhat</th>
+		                                        <td><?= $pmv['updated_at'] ?></td>
+		                                      </tr>
+		                                    </tbody>
+		                                  </table>
 
-				                                </div>
-				                                <div class="modal-footer justify-content-">
-				                                  <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Post</button></a>
+		                                </div>
+		                                <div class="modal-footer justify-content-">
+		                                  <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Post</button></a>
 
-				                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-				                                  
-				                                </div>
-				                              </div>
-				                              <!-- /.modal-content -->
-				                            </div>
-				                            <!-- /.modal-dialog -->
-				                          </div>
-				                          <!-- /.modal -->
+		                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+		                                  
+		                                </div>
+		                              </div>
+		                              <!-- /.modal-content -->
+		                            </div>
+		                            <!-- /.modal-dialog -->
+		                          </div>
+		                          <!-- /.modal -->
 
-						                <?php endforeach; ?>
+				                <?php endforeach; ?>
 
-					                  
-					                </ul>
-					              </div>
-					              <!-- /.card-body -->
-					              <div class="card-footer text-center">
-					              	<a href="<?= base_url("admin/post") ?>" class="btn btn-md btn-danger float-lef">View All Post <i class="fas fa-long-arrow-alt-right"></i></a>
-					                
-					              </div>
-					              <!-- /.card-footer -->
-					            </div>
+			                  
+			                </ul>
+			              </div>
+			              <!-- /.card-body -->
+			              <div class="card-footer text-center">
+			              	<a href="<?= base_url("admin/post") ?>" class="btn btn-md btn-danger float-lef">View All Post <i class="fas fa-long-arrow-alt-right"></i></a>
+			                
+			              </div>
+			              <!-- /.card-footer -->
+			            </div>
 
 	                  </div>
 	                  <!-- End Post Most View -->
@@ -414,113 +414,413 @@
 	        <hr>
 
 	        <!-- Small Box (Stat card) -->
-        <div class="callout callout-warning">
-          <h5 class="upper text-bold">TOTAL OF VIEW</h5>
+	        <div class="callout callout-warning">
+	          <h5 class="upper text-bold">TOTAL OF VIEW</h5>
 
-          <p>View of all post and image</p>
+	          <p>View of all post and image</p>
 
-          <div class="row">
-	          <!-- ./col -->
-	          <div class="col-lg-6 col-6">
-	            <!-- small card -->
-	            <div class="small-box bg-success">
-	              <div class="inner">
-	                <h3><?= number_format($totalPostView[0]['post_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
+	          <div class="row">
+		          <!-- ./col -->
+		          <div class="col-lg-6 col-6">
+		            <!-- small card -->
+		            <div class="small-box bg-success">
+		              <div class="inner">
+		                <h3><?= number_format($totalPostView[0]['post_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-	                <p>Post View</p>
-	              </div>
-	              <div class="icon">
-	                <i class="fas fa-signal fa-4x"></i>
-	              </div>
-	              <a href="javascript:void(0)" class="small-box-footer">
-	                 More info <i class="fas fa-arrow-circle-right"></i>
-	              </a>
-	            </div>
-	          </div>
-	          
-	          <!-- ./col -->
-	          <div class="col-lg-6 col-6">
-	            <!-- small card -->
-	            <div class="small-box bg-danger">
-	              <div class="inner">
-	                <h3><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
+		                <p>Post View</p>
+		              </div>
+		              <div class="icon">
+		                <i class="fas fa-signal fa-4x"></i>
+		              </div>
+		              <a href="javascript:void(0)" class="small-box-footer">
+		                 More info <i class="fas fa-arrow-circle-right"></i>
+		              </a>
+		            </div>
+		          </div>
+		          
+		          <!-- ./col -->
+		          <div class="col-lg-6 col-6">
+		            <!-- small card -->
+		            <div class="small-box bg-danger">
+		              <div class="inner">
+		                <h3><?= number_format($totalGalleryView[0]['gallery_view'], 0) ?><sup style="font-size: 20px"> times</sup></h3>
 
-	                <p>Gallery View</p>
-	              </div>
-	              <div class="icon">
-	                <i class="fas fa-images fa-4x"></i>
-	              </div>
-	              <a href="javascript:void(0)" class="small-box-footer">
-	                More info <i class="fas fa-arrow-circle-right"></i>
-	              </a>
-	            </div>
-	          </div>
-	          <!-- ./col -->
+		                <p>Gallery View</p>
+		              </div>
+		              <div class="icon">
+		                <i class="fas fa-images fa-4x"></i>
+		              </div>
+		              <a href="javascript:void(0)" class="small-box-footer">
+		                More info <i class="fas fa-arrow-circle-right"></i>
+		              </a>
+		            </div>
+		          </div>
+		          <!-- ./col -->
+		        </div>
+		        <!-- /.row -->
 	        </div>
-	        <!-- /.row -->
-        </div>
         
 
 	        
 
-        <!-- Recent -->
-        <hr class="mt-5 mb-5">
-        <div class="row mt-4">
-          
+	        <!-- Recent -->
+	        <hr class="mt-5 mb-5">
+	        <div class="row mt-4">
+	          
 
-          <div class="col-md-12">
-            <div class="card card-default">
-              
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="callout callout-info">
-                  <h5 class="text-bold">Recent Post & Image Uploaded</h5>
+	          <div class="col-md-12">
+	            <div class="card card-default">
+	              
+	              <!-- /.card-header -->
+	              <div class="card-body">
+	                <div class="callout callout-info">
+	                  <h5 class="text-bold">Recent Post & Image Uploaded</h5>
 
-                  <p>Show 3 post and 12 images have posted recently</p>
-                </div>
+	                  <p>Show 3 post and 12 images have posted recently</p>
+	                </div>
 
-                <div class="row">
-		              <div class="col-md-7">
-		                <!-- DIRECT CHAT -->
-		                <div class="card">
-		                  <div class="card-header bg-light">
-		                    <h3 class="card-title text-bold">Recent Post Or Edited</h3>
+	                <div class="row">
+			              <div class="col-md-7">
+			                <!-- DIRECT CHAT -->
+			                <div class="card">
+			                  <div class="card-header bg-light">
+			                    <h3 class="card-title text-bold">Recent Post Or Edited</h3>
 
-		                    
-		                  </div>
-		                  <!-- /.card-header -->
-		                  <div class="card-body">
-		                    <ul class="list-unstyled">
+			                    
+			                  </div>
+			                  <!-- /.card-header -->
+			                  <div class="card-body">
+			                    <ul class="list-unstyled">
 
-		                    	<?php foreach($postRecent as $pr): ?>
+			                    	<?php foreach($postRecent as $pr): ?>
 
 			                    		<li class="media">
-															    <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
-															    <div class="media-body">
-														      	<h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
-														      	<p class="pt-2"><?= $pr['post_intro']; ?>.</p>
-														      	<i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
+										    <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" class="mr-3" style="width: 30%">
+										    <div class="media-body">
+										      	<h5 class="mt-0 mb-1 overflow-title"><?= $pr['post_title']; ?></h5>
+										      	<p class="pt-2"><?= $pr['post_intro']; ?>.</p>
+										      	<i class="fas fa-fire"></i> <?= number_format($pr['post_view'],0); ?>
 		                        				<?php if($pr['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
 						                        
 					                        	<button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl3<?=$pr['id']?>" style="margin-bottom: 4px;">
-			                                	<i class="fas fa-eye"></i>
-			                            	</button>
+				                                	<i class="fas fa-eye"></i>
+				                            	</button>
 
-				              							<a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
-															    </div>
-															    
-															    
-															</li>
-															<hr>
+              									<a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" class="text-info"><i class="far fa-edit"></i> Edit</a>
+										    </div>
+										    
+										    
+										</li>
+										<hr>
 
-															<!-- /.modal -->
+																<!-- /.modal -->
 
-		                          <div class="modal fade" id="modal-xl3<?=$pr['id']?>" aria-labelledby="exampleModalScrollableTitle">
+			                          <div class="modal fade" id="modal-xl3<?=$pr['id']?>" aria-labelledby="exampleModalScrollableTitle">
+			                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+			                              <div class="modal-content">
+
+			                                <div class="modal-header bg-light">
+			                                  <h4 class="modal-title text-bold">Rencent Post</h4>
+			                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                                    <span aria-hidden="true">&times;</span>
+			                                  </button>
+			                                </div>
+			                                <div class="modal-body">
+			                                  <table class="table table-striped table-bordered" >
+			                                    <thead>
+			                                      <tr>
+			                                        <th scope="col">#</th>
+			                                        <th scope="col">Nội Dung</th>
+			                                      </tr>
+			                                    </thead>
+			                                    <tbody>
+			                                      <tr>
+
+			                                        <th scope="row">01. Tiêu Đề</th>
+			                                        <td><?= $pr['post_title']; ?></td>
+			                                      </tr>
+
+			                                      <tr>
+			                                        
+			                                        <th scope="row">02. Danh Mục</th>
+			                                        <td>
+			                                          <?php 
+			                                            foreach ($cate as $c) {
+			                                              if($c['id'] == $pr['post_cate_id']){
+			                                                echo $c['cate_name'];
+			                                              }
+			                                            } 
+			                                          ?>
+			                                        </td>
+			                                      </tr>
+
+			                                      <tr>
+			                                        <th scope="row">03. Tóm Tắt</th>
+			                                        <td><?= $pr['post_intro'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">04. Lượt Xem</th>
+			                                        <td><?= $pr['post_view'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">05. Ảnh</th>
+			                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" style="width:60px" ></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">06. Nổi bật</th>
+			                                        <td>
+			                                          <?php if($pr['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+			                                        </td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">07. Sản Phẩm</th>
+			                                        <td>
+			                                          <?php if($pr['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+			                                        </td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">08. Nội dung</th>
+				                                        
+			                                        <td>
+			                                        	<?= $pr['post_content'] ?>
+			                                        	
+			                                        		
+			                                    	</td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">09. Meta Desc</th>
+			                                        <td><?= $pr['post_meta_desc'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">10. Meta Key</th>
+			                                        <td><?= $pr['post_meta_key'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">11. Ngày viết bài</th>
+			                                        <td><?= $pr['created_at'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">12. Ngày cap nhat</th>
+			                                        <td><?= $pr['updated_at'] ?></td>
+			                                      </tr>
+			                                    </tbody>
+			                                  </table>
+
+			                                </div>
+			                                <div class="modal-footer justify-content-">
+			                                  <a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Edit Post</button></a>
+
+			                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+			                                  
+			                                </div>
+			                              </div>
+			                              <!-- /.modal-content -->
+			                            </div>
+			                            <!-- /.modal-dialog -->
+			                          </div>
+			                          <!-- /.modal -->
+
+
+							                  
+							                  <!-- /.item -->
+						                <?php endforeach; ?>
+													  
+													</ul>
+
+			                    
+			                  </div>
+			                  <!-- /.card-body -->
+			                  
+			                </div>
+			                <!--/.direct-chat -->
+			              </div>
+			              <!-- /.col -->
+
+			              <div class="col-md-5">
+			                <!-- USERS LIST -->
+			                <div class="card">
+			                  <div class="card-header bg-light">
+			                    <h3 class="card-title text-bold">Latest Image Or Edited</h3>
+
+			                    
+			                  </div>
+			                  <!-- /.card-header -->
+			                  <div class="card-body p-0">
+			                    <ul class="users-list clearfix">
+
+			                    	<?php foreach($imageRecent as $ir): ?>
+				                      <li>
+				                        <img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $ir['gallery_image'] ?>" style="height: 100px;">
+				                        <a class="users-list-name" href="javascript:void(0)" title="<?= $ir['gallery_title']; ?>"><?= $ir['gallery_title']; ?></a>
+				                        <span class="users-list-date">
+				                        	<i class="fas fa-fire"></i> <?= number_format($ir['gallery_view'],0); ?>
+						                        
+						                        
+						                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl4<?=$ir['id']?>" style="margin-bottom: 4px;">
+					                            <i class="fas fa-eye"></i>
+					                          </button>
+
+					                          <a href="<?= base_url('admin/gallery/edit/'.$ir['id']) ?>" class="text-danger"><i class="far fa-edit"></i> Edit</a>
+				                        </span>
+				                      </li>
+
+				                      <!-- /.modal -->
+
+		                          <div class="modal fade" id="modal-xl4<?=$ir['id']?>" aria-labelledby="exampleModalScrollableTitle">
 		                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
 		                              <div class="modal-content">
 
 		                                <div class="modal-header bg-light">
-		                                  <h4 class="modal-title text-bold">Rencent Post</h4>
+		                                  <h4 class="modal-title text-bold">Most View Image</h4>
+		                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                    <span aria-hidden="true">&times;</span>
+		                                  </button>
+		                                </div>
+		                                <div class="modal-body">
+		                                  <table class="table table-striped table-bordered">
+		                                    <thead>
+		                                      <tr>
+		                                        <th scope="col">#</th>
+		                                        <th scope="col">Nội Dung</th>
+		                                      </tr>
+		                                    </thead>
+		                                    <tbody>
+		                                      <tr>
+
+		                                        <th scope="row">01. Tiêu Đề</th>
+		                                        <td><?= $ir['gallery_title']; ?></td>
+		                                      </tr>
+
+		                                      <tr>
+		                                        
+		                                        <th scope="row">02. The Loai </th>
+		                                        <td>
+		                                          <?php echo $ir['gallery_type_name']; ?>
+		                                        </td>
+		                                      </tr>
+
+		                                      
+		                                      <tr>
+		                                        <th scope="row">03. Lượt Xem</th>
+		                                        <td><?= $ir['gallery_view']  ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">04. Ảnh</th>
+		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $ir['gallery_image'] ?>" style="width:100%" ></td>
+		                                      </tr>
+		                                      
+		                                      <tr>
+		                                        <th scope="row">05. Meta Desc</th>
+		                                        <td><?= $ir['gallery_meta_desc'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">06. Meta Key</th>
+		                                        <td><?= $ir['gallery_meta_key'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">07. Ngày viết bài</th>
+		                                        <td><?= $ir['created_at'] ?></td>
+		                                      </tr>
+		                                      <tr>
+		                                        <th scope="row">08. Ngày cap nhat</th>
+		                                        <td><?= $ir['updated_at'] ?></td>
+		                                      </tr>
+		                                    </tbody>
+		                                  </table>
+
+		                                </div>
+		                                <div class="modal-footer justify-content-">
+		                                  <a href="<?= base_url('admin/gallery/edit/'.$imv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-secondary"><i class="fas fa-edit"></i> Edit Image</button></a>
+
+		                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+		                                  
+		                                </div>
+		                              </div>
+		                              <!-- /.modal-content -->
+		                            </div>
+		                            <!-- /.modal-dialog -->
+		                          </div>
+		                          <!-- /.modal -->
+			                      <?php endforeach; ?>
+
+			                      
+
+			                    </ul>
+			                    <!-- /.users-list -->
+			                  </div>
+			                  <!-- /.card-body -->
+			                  
+			                </div>
+			                <!--/.card -->
+			              </div>
+			              <!-- /.col -->
+			            </div>
+			            <!-- /.row -->
+	                
+	              </div>
+	              <!-- /.card-body -->
+	            </div>
+	            <!-- /.card -->
+	          </div>
+	          <!-- /.col -->
+	        </div>
+
+	        
+
+
+
+	        <hr>
+
+	        <div class="row">
+	          <div class="col-md-12">
+	            <div class="card">
+	              <div class="card-header bg-info">
+	                <h5 class="card-title text-bold">Newest View Post & Image</h5>
+	              </div>
+	              <!-- /.card-header -->
+	              <div class="card-body">
+	                <div class="row">
+
+	                	<!-- Post Most View -->
+	                  <div class="col-md-6">
+
+	                    <div class="card">
+			              <div class="card-header bg-light">
+			                <h3 class="card-title text-bold">Recent View Post</h3>
+			              </div>
+			              <!-- /.card-header -->
+			              <div class="card-body p-0">
+			                <ul class="products-list product-list-in-card pl-2 pr-2">
+
+			                	<?php foreach($postRecentView as $pmv): ?>
+				                  <li class="item mt-2">
+				                    <div class="product-img">
+				                      <img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" class="img-size-50 rounded " style="height: auto;">
+				                    </div>
+				                    <div class="product-info" style="margin-top: -5px">
+				                      <a href="javascript:void(0)" class="overflow-title" title="<?= $pmv['post_title']; ?>"><?= $pmv['post_title']; ?></a>
+				                      <span class="product-description">
+				                      	<i class="fas fa-fire"></i> <?= number_format($pmv['post_view'],0); ?>
+				                        <?php if($pmv['post_status'] == "san-pham"): ?><i class="fas fa-shopping-cart ml-2"></i><?php else: ?><i class="far fa-clone ml-2"></i><?php endif; ?>
+				                        
+				                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl<?=$pmv['id']?>" style="margin-bottom: 4px;">
+			                            <i class="fas fa-eye"></i>
+			                          </button>
+
+			                          <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" class = "text-warning"><i class="fas fa-edit"></i> Edit</a>
+				                      </span>
+				                    </div>
+				                  </li>
+				                  <!-- /.item -->
+
+				                  <!-- /.modal -->
+
+		                          <div class="modal fade" id="modal-xl<?=$pmv['id']?>" aria-labelledby="exampleModalScrollableTitle">
+		                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+		                              <div class="modal-content">
+
+		                                <div class="modal-header bg-light">
+		                                  <h4 class="modal-title text-bold">Recent Post</h4>
 		                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		                                    <span aria-hidden="true">&times;</span>
 		                                  </button>
@@ -537,7 +837,7 @@
 		                                      <tr>
 
 		                                        <th scope="row">01. Tiêu Đề</th>
-		                                        <td><?= $pr['post_title']; ?></td>
+		                                        <td><?= $pmv['post_title']; ?></td>
 		                                      </tr>
 
 		                                      <tr>
@@ -546,7 +846,7 @@
 		                                        <td>
 		                                          <?php 
 		                                            foreach ($cate as $c) {
-		                                              if($c['id'] == $pr['post_cate_id']){
+		                                              if($c['id'] == $pmv['post_cate_id']){
 		                                                echo $c['cate_name'];
 		                                              }
 		                                            } 
@@ -556,59 +856,59 @@
 
 		                                      <tr>
 		                                        <th scope="row">03. Tóm Tắt</th>
-		                                        <td><?= $pr['post_intro'] ?></td>
+		                                        <td><?= $pmv['post_intro'] ?></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">04. Lượt Xem</th>
-		                                        <td><?= $pr['post_view'] ?></td>
+		                                        <td><?= $pmv['post_view'] ?></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">05. Ảnh</th>
-		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pr['post_image'] ?>" style="width:60px" ></td>
+		                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $pmv['post_image'] ?>" style="width:60px" ></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">06. Nổi bật</th>
 		                                        <td>
-		                                          <?php if($pr['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                          <?php if($pmv['post_featured'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
 		                                        </td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">07. Sản Phẩm</th>
 		                                        <td>
-		                                          <?php if($pr['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
+		                                          <?php if($pmv['post_status'] == 1){ echo "Yes"; }else{ echo "No"; } ?>
 		                                        </td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">08. Nội dung</th>
 			                                        
 		                                        <td>
-		                                        	<?= $pr['post_content'] ?>
+		                                        	<?= $pmv['post_content'] ?>
 		                                        	
 		                                        		
-		                                    	</td>
+	                                        	</td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">09. Meta Desc</th>
-		                                        <td><?= $pr['post_meta_desc'] ?></td>
+		                                        <td><?= $pmv['post_meta_desc'] ?></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">10. Meta Key</th>
-		                                        <td><?= $pr['post_meta_key'] ?></td>
+		                                        <td><?= $pmv['post_meta_key'] ?></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">11. Ngày viết bài</th>
-		                                        <td><?= $pr['created_at'] ?></td>
+		                                        <td><?= $pmv['created_at'] ?></td>
 		                                      </tr>
 		                                      <tr>
 		                                        <th scope="row">12. Ngày cap nhat</th>
-		                                        <td><?= $pr['updated_at'] ?></td>
+		                                        <td><?= $pmv['updated_at'] ?></td>
 		                                      </tr>
 		                                    </tbody>
 		                                  </table>
 
 		                                </div>
 		                                <div class="modal-footer justify-content-">
-		                                  <a href="<?= base_url('admin/post/edit/'.$pr['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> Edit Post</button></a>
+		                                  <a href="<?= base_url('admin/post/edit/'.$pmv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Post</button></a>
 
 		                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
 		                                  
@@ -620,150 +920,159 @@
 		                          </div>
 		                          <!-- /.modal -->
 
+				                <?php endforeach; ?>
 
-						                  
-						                  <!-- /.item -->
-					                <?php endforeach; ?>
-												  
-												</ul>
+			                  
+			                </ul>
+			              </div>
+			              <!-- /.card-body -->
+			              <div class="card-footer text-center">
+			              	<a href="<?= base_url("admin/post") ?>" class="btn btn-md btn-danger float-lef">View All Post <i class="fas fa-long-arrow-alt-right"></i></a>
+			                
+			              </div>
+			              <!-- /.card-footer -->
+			            </div>
 
-		                    
-		                  </div>
-		                  <!-- /.card-body -->
-		                  
-		                </div>
-		                <!--/.direct-chat -->
-		              </div>
-		              <!-- /.col -->
+	                  </div>
+	                  <!-- End Post Most View -->
 
-		              <div class="col-md-5">
-		                <!-- USERS LIST -->
-		                <div class="card">
-		                  <div class="card-header bg-light">
-		                    <h3 class="card-title text-bold">Latest Image Or Edited</h3>
+	                  <div class="col-md-6">
 
-		                    
-		                  </div>
-		                  <!-- /.card-header -->
-		                  <div class="card-body p-0">
-		                    <ul class="users-list clearfix">
+	                    <div class="card">
+			              <div class="card-header bg-light">
+			                <h3 class="card-title text-bold">Recent View Image</h3>
+			              </div>
+			              <!-- /.card-header -->
+			              <div class="card-body p-0">
+			                <ul class="products-list product-list-in-card pl-2 pr-2">
 
-		                    	<?php foreach($imageRecent as $ir): ?>
-			                      <li>
-			                        <img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $ir['gallery_image'] ?>" style="height: 100px;">
-			                        <a class="users-list-name" href="javascript:void(0)" title="<?= $ir['gallery_title']; ?>"><?= $ir['gallery_title']; ?></a>
-			                        <span class="users-list-date">
-			                        	<i class="fas fa-fire"></i> <?= number_format($ir['gallery_view'],0); ?>
-					                        
-					                        
-					                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl4<?=$ir['id']?>" style="margin-bottom: 4px;">
-				                            <i class="fas fa-eye"></i>
-				                          </button>
+			                	<?php foreach($imageRecentView as $imv): ?>
+				                  <li class="item mt-2">
+				                    <div class="product-img">
+				                      <img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $imv['gallery_image'] ?>" class="img-size-50 rounded" style="height: auto;">
+				                    </div>
+				                    <div class="product-info" style="margin-top: -5px">
+				                      <a href="javascript:void(0)" class="product-title text-info overflow-title" title="<?= $imv['gallery_title']; ?>"><?= $imv['gallery_title']; ?></a>
+				                      <span class="product-description">
+				                      	<i class="fas fa-fire"></i> <?= number_format($imv['gallery_view'],0); ?>
+				                        
+				                        
+				                        <button type="button" class="btn btn-" data-toggle="modal" data-target="#modal-xl2<?=$imv['id']?>" style="margin-bottom: 4px;">
+			                            <i class="fas fa-eye"></i>
+			                          </button>
 
-				                          <a href="<?= base_url('admin/gallery/edit/'.$ir['id']) ?>" class="text-danger"><i class="far fa-edit"></i> Edit</a>
-			                        </span>
-			                      </li>
+			                          <a href="<?= base_url('admin/gallery/edit/'.$imv['id']) ?>" class="text-danger"><i class="far fa-edit"></i> Edit</a>
 
-			                      <!-- /.modal -->
+			                          <!-- /.modal -->
 
-	                          <div class="modal fade" id="modal-xl4<?=$ir['id']?>" aria-labelledby="exampleModalScrollableTitle">
-	                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-	                              <div class="modal-content">
+			                          <div class="modal fade" id="modal-xl2<?=$imv['id']?>" aria-labelledby="exampleModalScrollableTitle">
+			                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+			                              <div class="modal-content">
 
-	                                <div class="modal-header bg-light">
-	                                  <h4 class="modal-title text-bold">Most View Image</h4>
-	                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                                    <span aria-hidden="true">&times;</span>
-	                                  </button>
-	                                </div>
-	                                <div class="modal-body">
-	                                  <table class="table table-striped table-bordered">
-	                                    <thead>
-	                                      <tr>
-	                                        <th scope="col">#</th>
-	                                        <th scope="col">Nội Dung</th>
-	                                      </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                      <tr>
+			                                <div class="modal-header bg-light">
+			                                  <h4 class="modal-title text-bold">Most View Image</h4>
+			                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                                    <span aria-hidden="true">&times;</span>
+			                                  </button>
+			                                </div>
+			                                <div class="modal-body">
+			                                  <table class="table table-striped table-bordered">
+			                                    <thead>
+			                                      <tr>
+			                                        <th scope="col">#</th>
+			                                        <th scope="col">Nội Dung</th>
+			                                      </tr>
+			                                    </thead>
+			                                    <tbody>
+			                                      <tr>
 
-	                                        <th scope="row">01. Tiêu Đề</th>
-	                                        <td><?= $ir['gallery_title']; ?></td>
-	                                      </tr>
+			                                        <th scope="row">01. Tiêu Đề</th>
+			                                        <td><?= $imv['gallery_title']; ?></td>
+			                                      </tr>
 
-	                                      <tr>
-	                                        
-	                                        <th scope="row">02. The Loai </th>
-	                                        <td>
-	                                          <?php echo $ir['gallery_type_name']; ?>
-	                                        </td>
-	                                      </tr>
+			                                      <tr>
+			                                        
+			                                        <th scope="row">02. The Loai </th>
+			                                        <td>
+			                                          <?php echo $imv['gallery_type_name']; ?>
+			                                        </td>
+			                                      </tr>
 
-	                                      
-	                                      <tr>
-	                                        <th scope="row">03. Lượt Xem</th>
-	                                        <td><?= $ir['gallery_view']  ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">04. Ảnh</th>
-	                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $ir['gallery_image'] ?>" style="width:100%" ></td>
-	                                      </tr>
-	                                      
-	                                      <tr>
-	                                        <th scope="row">05. Meta Desc</th>
-	                                        <td><?= $ir['gallery_meta_desc'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">06. Meta Key</th>
-	                                        <td><?= $ir['gallery_meta_key'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">07. Ngày viết bài</th>
-	                                        <td><?= $ir['created_at'] ?></td>
-	                                      </tr>
-	                                      <tr>
-	                                        <th scope="row">08. Ngày cap nhat</th>
-	                                        <td><?= $ir['updated_at'] ?></td>
-	                                      </tr>
-	                                    </tbody>
-	                                  </table>
+			                                      
+			                                      <tr>
+			                                        <th scope="row">03. Lượt Xem</th>
+			                                        <td><?= $imv['gallery_view']  ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">04. Ảnh</th>
+			                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $imv['gallery_image'] ?>" style="width:100%" ></td>
+			                                      </tr>
+			                                      
+			                                      <tr>
+			                                        <th scope="row">05. Meta Desc</th>
+			                                        <td><?= $imv['gallery_meta_desc'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">06. Meta Key</th>
+			                                        <td><?= $imv['gallery_meta_key'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">07. Ngày viết bài</th>
+			                                        <td><?= $imv['created_at'] ?></td>
+			                                      </tr>
+			                                      <tr>
+			                                        <th scope="row">08. Ngày cap nhat</th>
+			                                        <td><?= $imv['updated_at'] ?></td>
+			                                      </tr>
+			                                    </tbody>
+			                                  </table>
 
-	                                </div>
-	                                <div class="modal-footer justify-content-">
-	                                  <a href="<?= base_url('admin/gallery/edit/'.$imv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-secondary"><i class="fas fa-edit"></i> Edit Image</button></a>
+			                                </div>
+			                                <div class="modal-footer justify-content-">
+			                                  <a href="<?= base_url('admin/gallery/edit/'.$imv['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Image</button></a>
 
-	                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
-	                                  
-	                                </div>
-	                              </div>
-	                              <!-- /.modal-content -->
-	                            </div>
-	                            <!-- /.modal-dialog -->
-	                          </div>
-	                          <!-- /.modal -->
-		                      <?php endforeach; ?>
+			                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+			                                  
+			                                </div>
+			                              </div>
+			                              <!-- /.modal-content -->
+			                            </div>
+			                            <!-- /.modal-dialog -->
+			                          </div>
+			                          <!-- /.modal -->
 
-		                      
 
-		                    </ul>
-		                    <!-- /.users-list -->
-		                  </div>
-		                  <!-- /.card-body -->
-		                  
-		                </div>
-		                <!--/.card -->
-		              </div>
-		              <!-- /.col -->
-		            </div>
-		            <!-- /.row -->
-                
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
+				                      </span>
+				                    </div>
+				                  </li>
+				                  <!-- /.item -->
+				                <?php endforeach; ?>
+
+			                  
+			                </ul>
+			              </div>
+			              <!-- /.card-body -->
+			              <div class="card-footer text-center">
+			              	<a href="<?= base_url("admin/gallery") ?>" class="btn btn-md btn-success float-lef">View All Gallery <i class="fas fa-long-arrow-alt-right"></i></a>
+			                
+			              </div>
+			              <!-- /.card-footer -->
+			            </div>
+
+	                  </div>
+	                  
+
+	                </div>
+	                <!-- /.row -->
+	              </div>
+	              <!-- ./card-body -->
+	              
+	            </div>
+	            <!-- /.card -->
+	          </div>
+	          <!-- /.col -->
+	        </div>
+	        <!-- /.row -->
 
 	        
 	      </div><!--/. container-fluid -->

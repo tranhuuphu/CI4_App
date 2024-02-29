@@ -30,6 +30,11 @@ class AdminController extends BaseController
         $data['postRecent'] = $postModel->orderBy('updated_at', 'DESC')->limit(3)->find();
         $data['imageRecent'] = $galleryModel->orderBy('updated_at', 'DESC')->limit(12)->find();
 
+        
+        $data['postRecentView'] = $postModel->orderBy('time_view_newest', 'DESC')->limit(3)->find();
+        $data['imageRecentView'] = $galleryModel->orderBy('time_view_newest', 'DESC')->limit(12)->find();
+
+
         $data['totalPostView'] = $postModel->selectSum('post_view')->findAll();
 
         $data['totalGalleryView'] = $galleryModel->selectSum('gallery_view')->findAll();

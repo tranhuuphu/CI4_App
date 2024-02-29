@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 40px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>

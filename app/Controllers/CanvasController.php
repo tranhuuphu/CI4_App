@@ -379,7 +379,7 @@ class CanvasController extends BaseController
 
 
             ];
-
+            // dd(date('Y-m-d h:i:s', time()));
 
             $sessionKey_g = 'g_' . $id;
 
@@ -392,6 +392,9 @@ class CanvasController extends BaseController
 
                 $session2->set($newdata2);
                 $data2['gallery_view'] = $gallery_img['gallery_view'] + 1;
+                $data2['updated_at'] = $gallery_img['updated_at'];
+                $data2['time_view_newest'] = date('Y-m-d h:i:s', time());
+                // dd(now());
                 $gallery->update($id, $data2);
 
             }
