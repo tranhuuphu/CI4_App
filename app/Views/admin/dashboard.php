@@ -103,6 +103,49 @@
 
 	        <hr>
 
+	        <!-- Info boxes -->
+	        <div class="row">
+	          <div class="col-12 col-sm-6 col-md-6">
+	          	<a href="<?= base_url('admin/post/create') ?>">
+		          	<div class="small-box bg-" style="background-color: #ffd894">
+		              <div class="inner ml-2">
+		                <h3>Create</h3>
+		                <h4>New Post <i class="fas fa-warehouse"></i></h4>
+		              </div>
+		              <div class="icon mr-2">
+		                <i class="fas fa-plus"></i>
+		              </div>
+		            </div>
+		        </a>
+
+
+	            
+	          </div>
+	          <!-- /.col -->
+	          <div class="col-12 col-sm-6 col-md-6">
+	          	<a href="<?= base_url('admin/gallery/create') ?>">
+		          	<div class="small-box bg-" style="background-color: #e8ff3d">
+		              <div class="inner ml-2">
+		                <h3>Create</h3>
+		                <h4>New Image <i class="fas fa-image"></i></h4>
+		              </div>
+		              <div class="icon mr-2">
+		                <i class="fas fa-plus"></i>
+		              </div>
+		            </div>
+		        </a>
+	          </div>
+	          <!-- /.col -->
+
+	          <!-- fix for small devices only -->
+	          <div class="clearfix hidden-md-up"></div>
+
+	        </div>
+	        <!-- /.row -->
+
+
+	        <hr>
+
 	        <div class="row">
 	          <div class="col-md-12">
 	            <div class="card">

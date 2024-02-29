@@ -149,7 +149,7 @@
             </li>
             <li class="nav-item post_tree_active4">
               <a href="<?= base_url('admin/post/product'); ?>" class="nav-link">
-                <i class="fas fa-truck-monster nav-icon"></i>
+                <i class="fas fa-shapes"></i>
                 <p>Danh Sách Sản Phẩm</p>
               </a>
             </li>
@@ -322,25 +322,25 @@
         
 
         
-        <!-- <li class="nav-header">LABELS</li>
+        <li class="nav-header">LABELS</li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon far fa-circle text-danger"></i>
             <p class="text">Important</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon far fa-circle text-warning"></i>
             <p>Warning</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon far fa-circle text-info"></i>
             <p>Informational</p>
           </a>
-        </li> -->
+        </li>
         
       </ul>
     </nav>

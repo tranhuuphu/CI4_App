@@ -93,8 +93,18 @@
 	  <aside class="control-sidebar control-sidebar-dark">
 	    <!-- Control sidebar content goes here -->
 	  </aside>
+	  <style type="text/css">
+      .back-to-top{
+        bottom: 5rem !important;
+        position: fixed;
+        right: 1.25rem;
+        z-index: 1032;
+      }
+    </style>
 	  <!-- /.control-sidebar -->
-
+	  <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
 	  <!-- Main Footer -->
 	  <footer class="main-footer" style="background-color: #343a40;">
 	    <strong>Copyright &copy; <?= date("Y"); ?> <a href="<?= base_url('admin'); ?>">AdminLTE.io</a>.</strong>
