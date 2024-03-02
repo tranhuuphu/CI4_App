@@ -74,6 +74,7 @@
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
                       <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_file_download'); ?>">
                     </div>
+                    <hr>
                     
 	                </div>
 	                <!-- /.card-body -->

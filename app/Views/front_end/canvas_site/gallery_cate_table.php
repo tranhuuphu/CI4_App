@@ -77,7 +77,7 @@
                           
                           
 
-                          <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fab fa-google-drive"></i> Download file</a>
+                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fab fa-google-drive"></i> Download file</a>
                           
                         <?php endif; ?>
                       </td>

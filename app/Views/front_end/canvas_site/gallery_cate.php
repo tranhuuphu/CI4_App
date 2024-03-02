@@ -83,7 +83,7 @@
                 <?php endif; ?>
                 
                 <?php if($key['gallery_file_download'] != null): ?>
-                  <a href="<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                  <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                 <?php endif; ?>
                 
                 

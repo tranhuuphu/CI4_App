@@ -478,8 +478,11 @@ class CanvasController extends BaseController
             ];
 
             $session->set($newdata);
-            $post_view = $post_detail['post_view'] + 1;
-            $post->set('post_view', $post_view)->where('id', $id)->update();
+            $data4['post_view'] = $post_detail['post_view'] + 1;
+            $data4['updated_at'] = $post_detail['updated_at'];
+            $data4['time_view_newest'] = date('Y-m-d h:i:s', time());
+            // $post->set('post_view', $post_view)->where('id', $id)->update();
+            $post->update($id, $data4);
 
         }
         // dd(session()->get('sessionView'));

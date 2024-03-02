@@ -113,7 +113,7 @@
                   <div class="col-6">
                     <h5 class="mb-2 text-danger">Download Premium File</h5>
                     <p class="text-medium text-white op-082 mb-0">
-                      <a href="<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-success">Download Now <i class="fab fa-google-drive"></i></a>
+                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-success">Download Now <i class="fab fa-google-drive"></i></a>
                     </p>
                   </div>
                 <?php endif; ?>

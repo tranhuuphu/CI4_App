@@ -149,7 +149,7 @@
             </li>
             <li class="nav-item post_tree_active4">
               <a href="<?= base_url('admin/post/product'); ?>" class="nav-link">
-                <i class="fas fa-shapes"></i>
+                <i class="fas fa-shapes nav-icon"></i>
                 <p>Danh Sách Sản Phẩm</p>
               </a>
             </li>
