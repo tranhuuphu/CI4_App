@@ -39,10 +39,22 @@
 	              <!-- form start -->
 	              
 	                <div class="card-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết <span class="text-red">(*)</span></label>
+                      <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
+                    </div>
+                    <hr>
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết <span class="text-red">(*)</span></label>
-	                    <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
+	                    <label for="exampleInputEmail1" class="upper text-primary">alias - slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
+	                    <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
+
+                      <label for="exampleInputEmail1" class="upper mt-3 text-primary">alias Cũ</span></label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_alias']; ?>">
+
+                      <label for="exampleInputEmail1" class="upper mt-3">alias - slug Cũ</span></label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_slug']; ?>">
 	                  </div>
+                    <p id="slug-text" class="text-red"></p>
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1 upper">Tóm tắt</label>

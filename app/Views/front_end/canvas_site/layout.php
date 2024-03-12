@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="<?= base_url() ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-1259040705079233">
     <link rel="icon" type="image/x-icon" href="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>">
 
     <?= $this->renderSection('yoast_seo'); ?>
@@ -12,14 +13,16 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?= time(); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
 
 
-
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 
 
     
@@ -33,7 +36,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     
-    ga('create', 'UA-XXXXX-Y', 'auto');
+
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
@@ -57,6 +60,11 @@
     
       gtag('config', 'G-EZ25KGEN2C');
     </script>
+
+
+    <!-- Adsen -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1259040705079233"
+     crossorigin="anonymous"></script>
 
     <style>
       .tp-caption.News-Title {
@@ -269,7 +277,7 @@
         <!-- <div class="content-wrap"> -->
           
           
-          
+          <amp-auto-ads type="adsense" data-ad-client="ca-pub-1259040705079233"></amp-auto-ads>
           <?= $this->renderSection('content'); ?>
 
           

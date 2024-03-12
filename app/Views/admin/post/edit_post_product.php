@@ -51,6 +51,15 @@
 	                    <input type="text" readonly="readonly" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
 	                  </div>
 	                  <hr>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper text-primary">alias - slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
+                      <input type="text" name="post_alias" readonly class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
+
+
+                      <label for="exampleInputEmail1" class="upper mt-3">alias - slug</span></label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_slug']; ?>">
+                    </div>
+
 	                  <div class="form-group">
 	                    <label class="upper">Tóm tắt</label>
 	                    <textarea readonly="readonly" class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>

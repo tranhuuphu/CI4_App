@@ -371,6 +371,30 @@
 		
 
 	</script>
+	<script type="text/javascript">
+		function convertToSlug( str ) {
+			var from = "ăàáäâèéẽẹẻëêìíïîòóỏõọöôùúüûủũụưứừữửựñçảãạấầẩẫậắằẳẵặếểễệềỉĩịốỗồỗộớờỡởợơđ·/_,:;";
+		  var to   = "aaaaaeeeeeeeiiiiooooooouuuuuuuuuuuuuncaaaaaaaaaaaaaeeeeeiiioooooooooood------";
+		  for (var i=0, l=from.length ; i<l ; i++) {
+		    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i)).toLowerCase();
+		  }
+		    
+			  //replace all special characters | symbols with a space
+			  str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ')
+			           .toLowerCase();
+			    
+			  // trim spaces at start and end of string
+			  str = str.replace(/^\s+|\s+$/gm,'');
+			    
+			  // replace space with dash/hyphen
+			  str = str.replace(/\s+/g, '-');   
+			  document.getElementById("slug-text").innerHTML = str;
+
+			  var input = document.getElementById('slug-text2');
+        input.value = input.value +str;
+			  //return str;
+			}
+	</script>
 
 
 

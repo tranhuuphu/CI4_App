@@ -70,9 +70,16 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
                       <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_file_download'); ?>">
+                    </div>
+                    <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
+                      <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_link_file_origin'); ?>">
                     </div>
                     <hr>
                     

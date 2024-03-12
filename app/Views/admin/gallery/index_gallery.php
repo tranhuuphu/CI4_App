@@ -66,9 +66,109 @@
                         
 		                    <td><?= $g['gallery_title']; ?></td>
                         <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
-                        <td><strong><?= $g['gallery_type_name']; ?></strong></td>
+                        <td>
+                          <strong><?= $g['gallery_type_name']; ?></strong>
+                          <br>
+                          <button type="button" class="btn btn-warning mt-1 mb-1" data-toggle="modal" data-target="#modal-xl<?=$g['id']?>">
+                            <i class="fas fa-eye"></i> View Article
+                          </button>
+                          <!-- /.modal -->
+                          <div class="modal fade" id="modal-xl<?=$g['id']?>" aria-labelledby="exampleModalScrollableTitle">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title text-bold">Toàn bộ thông tin bài viết</h4>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nội Dung</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+
+                                        <th scope="row">01. Danh Mục Ảnh</th>
+                                        <td><?= $g['gallery_type_name']; ?></td>
+                                      </tr>
+
+                                      <tr>
+                                        
+                                        <th scope="row">02. Tiêu Đề Ảnh</th>
+                                        <td>
+                                          <?= $g['gallery_title']; ?>
+                                        </td>
+                                      </tr>
+
+                                      
+                                      <tr>
+                                        <th scope="row">03. Lượt Xem</th>
+                                        <td><?= $g['gallery_view'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">04. Ảnh</th>
+                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $g['gallery_image'] ?>" style="width: 60% " ></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">05. Lượt tải</th>
+                                        <td>
+                                          <?= $g['gallery_img_download_times'] ?>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">06. Bài Viết Liên Quan</th>
+                                        <td>
+                                          <?= $g['gallery_post_url'] ?>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">07. Link Short</th>
+                                        <td><?php echo $g['gallery_file_download'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">08. Link Origin</th>
+                                        <td><?= $g['gallery_link_file_origin'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">09. Ngày truy cập gần nhất</th>
+                                        <td><?= $g['time_view_newest'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">10. Ngày viết bài</th>
+                                        <td><?= $g['created_at'] ?></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">11. Ngày cập nhật</th>
+                                        <td><?= $g['updated_at'] ?></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                </div>
+                                <div class="modal-footer justify-content-">
+                                  <a href="<?= base_url('admin/gallery/edit/'.$g['id']) ?>" style="color: #000000;"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit Image</button></a>
+
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>  Close</button>
+                                  
+                                </div>
+                              </div>
+                              <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                          </div>
+                          <!-- /.modal -->
+                        </td>
 		                    
-                        <td><?php if($g['gallery_file_download'] != null): ?> <a href="<?= $g['gallery_file_download']; ?>" target="_blank"><button type="button" class="btn btn-info"><i class="fas fa-link"></i> Link File</button></a> <?php endif; ?></td>
+                        <td>
+                          <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt-1 mb-1"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Short</a></button> <?php endif; ?>
+
+                          <?php if($g['gallery_link_file_origin'] != null): ?> <button type="button" class="btn btn-secondary mt-1 mb-1"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Origin</a></button> <?php endif; ?>
+                        </td>
 		                    <td>
                           <?php if($g['gallery_post_url'] != null): ?>
                             
@@ -79,10 +179,29 @@
 
                         </td>
 		                    <td>
+                          </button> 
+                          
 
-                          <a href="<?= base_url('admin/gallery/edit/'.$g['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="<?= base_url('admin/gallery/del/'.$g['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this image?')"><i class="fas fa-trash"></i> Delete</a></td>
+                          <button type="button" class="btn btn-info mt-1 mb-1">
+                            <a href="<?= base_url('admin/gallery/edit/'.$g['id']) ?>" class="text-white"><i class="fas fa-edit"></i> Edit</a>
+                          </button>
+
+                          <button type="button" class="btn btn-danger mt-1 mb-1">
+                            <a href="<?= base_url('admin/gallery/del/'.$g['id']) ?>" class="text-white" onclick="return confirm('are you sure delete this image?')"><i class="fas fa-trash"></i> Delete</a>
+                          </button>
+
+                          
+
+
+                           
+
+                          
+                        </td>
+
+
 		                  </tr>
+
+
 	                  <?php endforeach; ?>
                   
                   

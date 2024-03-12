@@ -1,0 +1,53 @@
+CRITICAL - 2024-03-04 18:34:14 --> Class "Locale" not found
+in SYSTEMPATH\CodeIgniter.php on line 195.
+ 1 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+INFO - 2024-03-04 17:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-04 17:35:09 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4-app' in E:\Code Seo\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'ci4-app', 3306, '', 0)
+#1 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Code Seo\xampp\htdocs\CI4_App\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Code Seo\xampp\htdocs\CI4_App\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#6 E:\Code Seo\xampp\htdocs\CI4_App\app\Controllers\BaseController.php(65): CodeIgniter\BaseModel->find(NULL)
+#7 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(908): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(491): CodeIgniter\CodeIgniter->createController()
+#9 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Code Seo\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4-app' in E:\Code Seo\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\Code Seo\xampp\htdocs\CI4_App\system\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\Code Seo\xampp\htdocs\CI4_App\system\BaseModel.php(557): CodeIgniter\Model->doFind(false, NULL)
+#5 E:\Code Seo\xampp\htdocs\CI4_App\app\Controllers\BaseController.php(65): CodeIgniter\BaseModel->find(NULL)
+#6 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(908): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(491): CodeIgniter\CodeIgniter->createController()
+#8 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Code Seo\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-03-04 17:35:09 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4-app'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`', [], false)
+ 3 SYSTEMPATH\Model.php(202): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\BaseController.php(65): CodeIgniter\BaseModel->find(null)
+ 6 SYSTEMPATH\CodeIgniter.php(908): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(491): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-04 17:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-04 17:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

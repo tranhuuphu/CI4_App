@@ -117,6 +117,12 @@ class GalleryController extends BaseController
         }else{
             $data['gallery_file_download']       = null;
         }
+
+        if($this->request->getPost('gallery_link_file_origin') != null){
+            $data['gallery_link_file_origin']       = $this->request->getPost('gallery_link_file_origin');
+        }else{
+            $data['gallery_link_file_origin']       = null;
+        }
         
 
         
@@ -304,6 +310,12 @@ class GalleryController extends BaseController
             $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
         }else{
             $data['gallery_file_download']       = null;
+        }
+
+        if($this->request->getPost('gallery_file_download') != null){
+            $data['gallery_link_file_origin']       = $this->request->getPost('gallery_link_file_origin');
+        }else{
+            $data['gallery_link_file_origin']       = null;
         }
 
 

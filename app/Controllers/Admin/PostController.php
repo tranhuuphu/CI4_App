@@ -61,19 +61,21 @@ class PostController extends BaseController
 
         $postModel = new PostModel();
 
+        $post_alias = $this->request->getPost('post_alias');
+
         $post_title = $this->request->getPost('post_title');
-        $data['post_title'] = $post_title;
 
         $post_title_slug = mb_strtolower(convert_name($post_title));
-
         $post_title_slug = reduce_multiples($post_title_slug, '-');
 
-
-        
+        $post_alias_slug = mb_strtolower(convert_name($post_alias));
+        $post_alias_slug = reduce_multiples($post_alias_slug, '-');
 
         $post_cate_id = $this->request->getPost('post_cate_id');
-        
-        $data['post_slug']      = $post_title_slug;
+
+        $data['post_title']     = $post_title;
+        $data['post_alias']     = $post_alias;
+        $data['post_slug']      = $post_alias_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
 
@@ -247,18 +249,18 @@ class PostController extends BaseController
                     'required' => 'Nội dung bài viết không được để trống.',
                 ],
             ],
-            // 'post_meta_desc'=>[
-            //     'rules'=>'required',
-            //     'errors' => [
-            //         'required' => 'Nội dung Meta Description này không được để trống.',
-            //     ],
-            // ],
-            // 'post_meta_key'=>[
-            //     'rules'=>'required',
-            //     'errors' => [
-            //         'required' => 'Nội dung Meta Key này không được để trống.',
-            //     ],
-            // ],
+            'post_meta_desc'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Description này không được để trống.',
+                ],
+            ],
+            'post_meta_key'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Nội dung Meta Key này không được để trống.',
+                ],
+            ],
         ]);
 
         if(!$validation){
@@ -266,12 +268,22 @@ class PostController extends BaseController
             return view('admin/post/editPost', $data);
         }
 
+        $post_alias = $this->request->getPost('post_alias');
+        $post_alias_slug = mb_strtolower(convert_name($post_alias));
+        $post_alias_slug = reduce_multiples($post_alias_slug, '-');
+
+
         $data['post_title'] = $post_title;
+
+        $post_title     = $this->request->getPost('post_title');
         $post_title_slug = mb_strtolower(convert_name($post_title));
         $post_title_slug = reduce_multiples($post_title_slug, '-');
+
         $post_cate_id           = $this->request->getPost('post_cate_id');
 
-        $data['post_slug']      = $post_title_slug;
+        $data['post_title']     = $post_title;
+        $data['post_alias']     = $post_alias;
+        $data['post_slug']      = $post_alias_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
         $data['post_cate_id']   = $post_cate_id;
