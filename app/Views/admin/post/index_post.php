@@ -135,7 +135,7 @@
                         </td>
 		                    <td>
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
-                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-eye"></i> View
                           </button>
 
                           <!-- /.modal -->
