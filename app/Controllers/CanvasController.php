@@ -198,7 +198,7 @@ class CanvasController extends BaseController
             'most_view'     => $most_view,
             'tag_this'      => $tag_this,
 
-            'pager2'         => $post->pager,
+            'pager2'        => $post->pager,
             'pager'         => $gallery->pager,
 
 
@@ -352,11 +352,24 @@ class CanvasController extends BaseController
                 return redirect()->to('bo-suu-tap'.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html');
             }
 
-            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(3)->find();
-            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(3)->find();
+            // $same_topic = $gallery->orderBy('id', 'desc')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id !=', $id)->limit(6)->find();
+
+            $same_topic_1 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id <', $id)->where('id !=', $id)->limit(3)->find();
+            $same_topic_2 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id >', $id)->where('id !=', $id)->limit(3)->find();
+            $same_topic = array_merge($same_topic_1, $same_topic_2);
+
+            foreach($same_topic as $same){
+                $id_same[] = $same['id'];
+            }
+
+            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->whereNotIn('id', $id_same)->limit(3)->find();
+            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->whereNotIn('id', $id_same)->limit(3)->find();
+            $related = array_merge($related_1, $related_2);
 
             $previous = $gallery->orderBy('id', 'desc')->where('id <', $id)->first();
             $next = $gallery->orderBy('id', 'desc')->where('id >', $id)->first();
+
+            
             
             $link_full = base_url().'/'.$slug2.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html';
             $data = [
@@ -367,10 +380,10 @@ class CanvasController extends BaseController
                 'created_at'    => $gallery_img['created_at'],
                 'updated_at'    => $gallery_img['updated_at'],
 
-                'related_1'       => $related_1,
-                'related_2'       => $related_2,
+                'related'     => $related,
                 'previous'      => $previous,
                 'next'          => $next,
+                'same_topic'    => $same_topic,
                 'cate_detail'   => $cate_gallery,
 
                 'gallery_img'   => $gallery_img,

@@ -42,7 +42,7 @@
 	                <div class="card-body">
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1" class="upper">Tiêu đề Ảnh</label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></p>
+                      <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></span>
 	                    <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?= set_value('gallery_title'); ?>">
 	                  </div>
                     <hr>
@@ -50,13 +50,38 @@
                       <label for="exampleInputEmail1" class="upper" style="color: red">Lựa chọn phân loại cho ảnh</label>
                       <div class="form-group">
                         <select class="selectpicker show-tick form-control select2 select2-danger" data-style="btn-default" data-live-search="true" name="gallery_type_id" style="width: 100%;">
-                          <?php foreach($gellary_type as $gt): ?>
+                          <?php foreach($gallery_type as $gt): ?>
                             <option data-icon="fas fa-long-arrow-alt-right" value="<?= $gt['id']; ?>"> <?= $gt['gallery_type_name']; ?></option>
                           <?php endforeach; ?>
                         </select>
                       </div>
                     </div>
 	                  <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                      <div class="form-group">
+                        <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
+
+                        <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?= set_value('gallery_topic'); ?>">
+                      </div>
+
+                      <?php if($topic_name != null): ?>
+                        <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
+                        <div id='buttons' class="mt-">
+                          <?php foreach($topic_name as $key_name): ?>
+                            <input id='qty2' type="button" class="btn btn-info" data-value='<?= $key_name ?>' value="<?= $key_name ?>">
+                          <?php endforeach; ?>
+                        </div>
+                      <?php endif; ?>
+
+                      
+                    </div>
+
+                    
+
+                    <hr>
+
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
                       <div class="form-group">
@@ -101,7 +126,7 @@
 	              <div class="card-body">
                   
                   <div class="form-group">
-                    <label class="upper">Thuộc danh mục</label>
+                    <label class="upper">Thuộc phân loại ảnh</label>
                     <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="false" name="gallery_cate_id" style="width: 100%;">
                       <option data-icon="fas fa-circle" value="<?= $cate['id'] ?>"> <?= $cate['cate_name'] ?></option><i class="fas fa-long-arrow-alt-right"></i>
                       

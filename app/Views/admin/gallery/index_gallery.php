@@ -24,10 +24,18 @@
           <div class="col-12">
             
             <?php if(!empty(session()->getFlashdata('success'))) : ?>
+              <div class="alert alert-primary alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Thông Báo</h5>
+                Bạn vừa thêm mới thành công nội dung: <strong><?= session()->getFlashdata('success'); ?></strong>
+              </div>
+            <?php endif ?>
+
+            <?php if(!empty(session()->getFlashdata('update'))) : ?>
               <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fas fa-check"></i> Alert!</h5>
-                Bạn vừa thêm mới hoặc chỉnh sửa nội dung: <strong><?= session()->getFlashdata('success'); ?></strong>
+                Bạn vừa chỉnh sửa thành công nội dung: <strong><?= session()->getFlashdata('update'); ?></strong>
               </div>
             <?php endif ?>
 
@@ -57,7 +65,12 @@
                   	<?php foreach($gallery as $g): ?>
                         
                       
-		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $g['gallery_title'] ): ?> class="table-primary" <?php endif; ?>>
+		                  <tr
+                      <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $g['gallery_title'] ): ?> class="table-success" <?php endif; ?>
+
+                      <?php if(!empty(session()->getFlashdata('update')) && session()->getFlashdata('update') == $g['gallery_title'] ): ?> class="table-primary" <?php endif; ?>
+
+                      >
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
 
@@ -70,7 +83,7 @@
                           <strong><?= $g['gallery_type_name']; ?></strong>
                           <br>
                           <button type="button" class="btn btn-warning mt-1 mb-1" data-toggle="modal" data-target="#modal-xl<?=$g['id']?>">
-                            <i class="fas fa-eye"></i> View Article
+                            <i class="fas fa-eye"></i> View
                           </button>
                           <!-- /.modal -->
                           <div class="modal fade" id="modal-xl<?=$g['id']?>" aria-labelledby="exampleModalScrollableTitle">
@@ -102,6 +115,14 @@
                                         <th scope="row">02. Tiêu Đề Ảnh</th>
                                         <td>
                                           <?= $g['gallery_title']; ?>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        
+                                        <th scope="row">03. Chủ Đề Ảnh</th>
+                                        <td>
+                                          <?= $g['gallery_topic']; ?>
                                         </td>
                                       </tr>
 

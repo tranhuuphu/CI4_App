@@ -29,11 +29,18 @@ class GalleryController extends BaseController
     {   
         $cateModel      = new CateModel();
         $post           = new PostModel();
-        $gellaryType    = new GalleryTypeModel();
+        $galleryType    = new GalleryTypeModel();
+        $galleryModel = new GalleryModel();
+
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        foreach($galleryTopic as $key){
+            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        }
+        $data['topic_name'] = array_unique($topic_name);
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
-        $data['gellary_type'] = $gellaryType->findAll();
+        $data['gallery_type'] = $galleryType->findAll();
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
         // dd($data);
@@ -47,12 +54,19 @@ class GalleryController extends BaseController
         $galleryModel = new GalleryModel();
         $cateModel = new CateModel();
         $post = new PostModel();
-        $gellaryType    = new GalleryTypeModel();
+        $galleryType    = new GalleryTypeModel();
 
         $cate = $cateModel->where('cate_type', 'cate_gallery')->first();
-        $gellary_type = $gellaryType->findAll();
+        $gallery_type = $galleryType->findAll();
 
         $post_url = $post->select('post.id, post.post_title')->findAll();
+
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        foreach($galleryTopic as $key){
+            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        }
+        $topic_name = array_unique($topic_name);
+
 
 
         $validation = $this->validate([
@@ -95,7 +109,7 @@ class GalleryController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url, 'gellary_type'=> $gellary_type]);
+            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url, 'gallery_type'=> $gallery_type, 'topic_name'=>$topic_name]);
         }
 
         
@@ -124,14 +138,20 @@ class GalleryController extends BaseController
             $data['gallery_link_file_origin']       = null;
         }
         
+        $topic = $this->request->getPost('gallery_topic');
 
+        $topic_slug = mb_strtolower(convert_name($topic));
+        $topic_slug = reduce_multiples($topic_slug, '-');
         
 
         $gallery_id = $this->request->getPost('gallery_type_id');
-        $gellary_type = $gellaryType->find($gallery_id);
+        $gallery_type = $galleryType->find($gallery_id);
         $data['gallery_type_id']        = $gallery_id;
-        $data['gallery_type_name']      = $gellary_type['gallery_type_name'];
-        $data['gallery_type_slug']      = $gellary_type['gallery_type_slug'];
+        $data['gallery_type_name']      = $gallery_type['gallery_type_name'];
+        $data['gallery_type_slug']      = $gallery_type['gallery_type_slug'];
+
+        $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
+        $data['gallery_topic_slug']     = $topic_slug;
 
 
         $gallery_title = $this->request->getPost('gallery_title');
@@ -190,7 +210,8 @@ class GalleryController extends BaseController
         $cateModel = new CateModel();
         $post = new PostModel();
         $galleryModel = new GalleryModel();
-        $gellaryType    = new GalleryTypeModel();
+        $galleryType    = new GalleryTypeModel();
+
 
         $data['gallery'] = $galleryModel->find($id);
 
@@ -198,7 +219,14 @@ class GalleryController extends BaseController
             return view('admin/404_admin');
         }
 
-        $data['gellary_type'] = $gellaryType->findAll();
+
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        foreach($galleryTopic as $key){
+            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        }
+        $data['topic_name'] = array_unique($topic_name);
+
+        $data['gallery_type'] = $galleryType->findAll();
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
@@ -214,7 +242,7 @@ class GalleryController extends BaseController
         $post = new PostModel();
         $cateModel = new CateModel();
         $galleryModel = new GalleryModel();
-        $gellaryType    = new GalleryTypeModel();
+        $galleryType    = new GalleryTypeModel();
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
@@ -226,6 +254,12 @@ class GalleryController extends BaseController
         if($gallery_detail == null){
             return view('admin/404_admin');
         }
+
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        foreach($galleryTopic as $key){
+            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        }
+        $data['topic_name'] = array_unique($topic_name);
 
         $data['gallery'] = $gallery_detail;
         $gallery_title = $this->request->getPost('gallery_title');
@@ -273,11 +307,19 @@ class GalleryController extends BaseController
         }
 
         $gallery_id = $this->request->getPost('gallery_type_id');
-        $gellary_type = $gellaryType->find($gallery_id);
+        $gallery_type = $galleryType->find($gallery_id);
+
+
+        $topic = $this->request->getPost('gallery_topic');
+
+        $topic_slug = mb_strtolower(convert_name($topic));
+        $topic_slug = reduce_multiples($topic_slug, '-');
+        
+
 
         $data['gallery_type_id']        = $gallery_id;
-        $data['gallery_type_name']      = $gellary_type['gallery_type_name'];
-        $data['gallery_type_slug']      = $gellary_type['gallery_type_slug'];
+        $data['gallery_type_name']      = $gallery_type['gallery_type_name'];
+        $data['gallery_type_slug']      = $gallery_type['gallery_type_slug'];
 
 
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
@@ -288,6 +330,10 @@ class GalleryController extends BaseController
         $data['gallery_title']          = $gallery_title;
         $data['gallery_title_slug']     = $gallery_title_slug;
         $data['gallery_cate_id']        = $this->request->getPost('gallery_cate_id');
+
+
+        $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
+        $data['gallery_topic_slug']     = $topic_slug;
         
         $data['gallery_meta_desc']      = $this->request->getPost('gallery_meta_desc');
         $data['gallery_meta_key']       = $this->request->getPost('gallery_meta_key');
@@ -368,7 +414,7 @@ class GalleryController extends BaseController
             }
         }
     
-        return redirect()->to('admin/gallery')->with('success', $gallery_title);
+        return redirect()->to('admin/gallery')->with('update', $gallery_title);
 
     }
 

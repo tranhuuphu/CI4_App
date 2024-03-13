@@ -432,6 +432,22 @@
 </section>
 <?= $this->endSection(); ?>
 
+<?= $this->section('link_css'); ?>
+  
+  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/IMAGG_default.css">
+
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+  
+  <script src="<?= base_url('public/site_asset/canvas'); ?>/js/IMAGG.js"></script>
+  <script type="text/javascript">
+    $(".tab-content img").addClass('triggerIMAGG');
+  </script>
+
+<?= $this->endSection(); ?>
+
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= $link_full ?>" hreflang="vi-vn"/>
   <meta rel="canonical" href="<?= $link_full ?>"/>

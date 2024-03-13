@@ -395,7 +395,18 @@
 			  //return str;
 			}
 	</script>
+	
+<script type="text/javascript">
+  $(document).ready(function () {
+      $('#buttons input[type=button]').on('click', function () {
+          var qty = $(this).data('value');
 
+          $('#value').val(qty);
+
+      });
+
+  });
+</script>
 
 
 	<?= $this->renderSection('script'); ?>

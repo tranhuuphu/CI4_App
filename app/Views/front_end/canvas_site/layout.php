@@ -13,7 +13,7 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?php echo time(); ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
@@ -313,6 +313,8 @@
 
       
     </script>
+
+    
     
 
   </body>

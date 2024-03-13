@@ -19,20 +19,52 @@
     background: #72bdf7 !important;
     border:  #fefefe solid;
   }
+
 </style>
 <div class="container clearfix mt-5 mb-2">
   <div class="row">
     <div class="fancy-title title-border">
-      <h3 class="mb-2 ls-1 text-uppercase fw-bold">Tìm kiếm lại bằng công cụ Google</h3>
+      <h3 class="mb-2 ls-1 text-uppercase fw-bold">Tìm kiếm lại bằng công cụ Google Search</h3>
     </div>
 
+    <style type="text/css">
+      .form-control-borderless {
+          border: none;
+      }
 
-
+      .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+          border: none;
+          outline: none;
+          box-shadow: none;
+      }
+    </style>
     
-    <form role="search" method="get" id="searchform" class="revtp-searchform" action="https://google.com/search" target="_blank">
-      <input type="text" name="q" id="q" placeholder="What are you looking for?" /><input type="submit" id="searchsubmit" value="Find" />
-      <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
-    </form>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-12 col-lg-12">
+        <form class="card card-sm" role="search" method="get" id="searchform" action="https://google.com/search" target="_blank">
+          <div class="card-body row no-gutters align-items-center">
+            <div class="col-auto">
+                <i class="fab fa-google fa-2x text-body"></i>
+            </div>
+            <!--end of col-->
+            <div class="col">
+                <input type="text" name="q" class="form-control form-control-lg form-control-borderless" id="q" placeholder="What are you looking for with google search?" />
+            </div>
+            <!--end of col-->
+            <div class="col-auto">
+                <button class="btn btn-lg btn-primary" type="submit"> <i class="fas fa-search"></i></button>
+                <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
+            </div>
+            <!--end of col-->
+          </div>
+        </form>
+      </div>
+      <!--end of col-->
+    </div>
+    
+
+
+
   </div>
   
   <?php if($result != null): ?>

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 :root,
 [data-bs-theme=light] {
     --bs-blue: #0d6efd;
@@ -26867,18 +26867,21 @@ td.actions {
 .owl-carousel .owl-nav {
     text-align: center;
     -webkit-tap-highlight-color: transparent;
-    line-height: 1
+    line-height: 1;
+
 }
 
 .owl-carousel .owl-nav [class*=owl-] {
     position: absolute;
     top: 50%;
+
     zoom: 1;
     border: var(--cnvs-owl-nav-border);
     color: var(--cnvs-owl-nav-color);
     background-color: var(--cnvs-owl-nav-background);
     border-radius: var(--cnvs-owl-nav-border-radius);
-    opacity: 0;
+    opacity: 1;
+/*    opacity: 0;*/
     left: calc(var(--cnvs-owl-nav-sizes) * -1);
     transition: all .3s ease
 }
@@ -27122,7 +27125,8 @@ td.actions {
     height: var(--cnvs-owl-nav-sizes);
     line-height: calc(-1 * var(--cnvs-owl-nav-sizes) - 4px);
     font-size: calc(var(--cnvs-owl-nav-sizes)/2);
-    margin-top: var(--cnvs-owl-nav-margin)
+    margin-top: var(--cnvs-owl-nav-margin);
+    border: 2px solid #59cbff;
 }
 
 .owl-carousel.with-carousel-dots .owl-nav [class*=owl-] {

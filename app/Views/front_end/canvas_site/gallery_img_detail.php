@@ -153,17 +153,105 @@
 
         </div>
       </div>
+
+      <?php if($same_topic != null): ?>
+        <div class="fancy-title title-border mt-5">
+          <h3 class="mb-2 ls-1 text-uppercase fw-bold" style="color: #395dfa">Ảnh Cùng Chủ Đề</h3>
+        </div>
+
+
+        <style>
+          .block-expand-categories h1,
+          .block-expand-categories h2,
+          .block-expand-categories h3 {
+            font-family: Playfair Display, serif !important;
+          }
+
+          .block-expand-categories .expand-category {
+            --height: 50vh;
+            --responsive-height: 60px;
+            --hover-flex: 10;
+
+            position: relative;
+            background-position: center center;
+            background-size: cover;
+            border-radius: 20px;
+            margin: 10px 0;
+            min-height: var(--responsive-height);
+            cursor: pointer;
+          }
+
+          .block-expand-categories .expand-category h4 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0;
+            transform: translateY(-50%);
+          }
+
+          /* Larger Device */
+          @media (min-width: 992px) {
+            .block-expand-categories .expand-category {
+              height: var(--height);
+              flex: 1;
+              margin: 0 10px;
+              transition: flex 1s ease;
+              -webkit-backface-visibility: hidden;
+              transform: translate3d(0, 0, 0);
+            }
+
+            .block-expand-categories:not(.on-click) .expand-category:hover,
+            .block-expand-categories.on-click .expand-category.active {
+              flex: var(--hover-flex);
+            }
+
+            .block-expand-categories .expand-category h4 {
+              opacity: 1;
+              top: auto;
+              bottom: 10px;
+              transform: none;
+              transition: opacity 0.4s ease;
+              text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+            }
+
+            .block-expand-categories:hover .expand-category:not(.active):not(:hover) h4,
+            .block-expand-categories.on-click .expand-category:not(.active) h4 {
+              opacity: 0;
+            }
+          }
+        </style>  
+
+        <div class="content-wrap" style="margin-top: 20px 0px 30px 0px !important; background-color: #c8dbfa;">
+          <div class="container">
+            <h2 class="text-center">Click to Expand Image</h2>
+            <div class="block-expand-categories flex-column flex-lg-row d-flex justify-content-center on-click">
+              <?php foreach($same_topic as $s_t): ?>
+                <div class="expand-category bg-light" style="background-image: url('<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$s_t['gallery_image']) ?> ?>');">
+                  <h4><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$s_t['gallery_title_slug'].'-'.$s_t['id'].'.html' ?>" title="<?= $s_t['gallery_title'] ?>" class="text-light"><?= $s_t['gallery_title'] ?></a></h4>
+                </div>
+              <?php endforeach; ?>
+
+
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
+
+
           
 
 
 
-      <div class="fancy-title title-border">
+      <div class="fancy-title title-border mt-5">
         <h3 class="mb-2 ls-1 text-uppercase fw-bold" style="color: #1362ff">Ảnh Liên Quan</h3>
       </div>
 
       <div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
 
-        <?php foreach($related_1 as $r1): ?>
+        <?php foreach($related as $r1): ?>
         <div class="oc-item">
           <div class="portfolio-item">
             <div class="portfolio-image">
@@ -215,56 +303,6 @@
         </div>
         <?php endforeach; ?>
 
-        <?php foreach($related_2 as $r2): ?>
-        <div class="oc-item">
-          <div class="portfolio-item">
-            <div class="portfolio-image">
-              <a href="javascript:void(0)">
-                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" alt="<?= $r2['gallery_title'] ?>"/>
-              </a>
-              <div class="bg-overlay">
-                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
-                  <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image">
-                    <i class="fas fa-expand-alt"></i>
-                  </a>
-                  <a href="<?= base_url('page/download/'.$r2['gallery_image']) ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350">
-                    <i class="fas fa-download"></i>
-                  </a>
-                </div>
-                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
-              </div>
-            </div>
-            <div class="portfolio-desc">
-              <h3><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$r2['gallery_title_slug'].'-'.$r2['id'].'.html' ?>" title="<?= $r2['gallery_title'] ?>" class="fw-bold"><?= $r2['gallery_title'] ?></a></h3>
-
-              <span>
-
-
-                <?php if($r2['gallery_file_download'] == null)
-                  if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']) != null){
-                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$r2['gallery_image']);
-                    $image_width = $image_info[0];
-                    $image_height = $image_info[1];
-                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
-                  }
-                ?>
-
-                <?php if($r2['gallery_file_download'] == null): ?>
-                  <a href="<?= base_url('page/download/'.$r2['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
-                <?php endif; ?>
-                
-                <?php if($r2['gallery_file_download'] != null): ?>
-                  <a href="<?= $r2['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
-                <?php endif; ?>
-                
-                
-
-              </span>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-
         
 
         
@@ -288,6 +326,22 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('script'); ?>
+<script>
+      $(document).ready(function () {
+        jQuery(".block-expand-categories")
+          .find(".expand-category")
+          .on("click", function () {
+            let category = $(this);
+
+            category.siblings().removeClass("active");
+            category.addClass("active");
+          });
+      });
+      $(".block-expand-categories .expand-category").first().addClass('active');
+    </script>
+
+<?= $this->endSection(); ?>
 
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>

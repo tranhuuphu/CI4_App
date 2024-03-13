@@ -47,13 +47,34 @@
                       <label for="exampleInputEmail1" class="upper" style="color: red">Lựa chọn phân loại cho ảnh</label>
                       <div class="form-group">
                         <select class="selectpicker show-tick form-control select2 select2-danger" data-style="btn-default" data-live-search="true" name="gallery_type_id" style="width: 100%;">
-                          <?php foreach($gellary_type as $gt): ?>
+                          <?php foreach($gallery_type as $gt): ?>
                             <option data-icon="fas fa-long-arrow-alt-right" value="<?= $gt['id']; ?>" <?php if($gallery['gallery_type_id']  == $gt['id']){echo "selected";} ?>> <?= $gt['gallery_type_name']; ?></option>
                           <?php endforeach; ?>
                         </select>
                       </div>
                     </div>
                     <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                      <div class="form-group">
+                        <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
+
+                        <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?php if(old('gallery_topic') != null){echo set_value('gallery_topic');}else{echo $gallery['gallery_topic'];} ?>">
+                      </div>
+
+                      <?php if($topic_name != null): ?>
+                        <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
+                        <div id='buttons' class="mt-">
+                          <?php foreach($topic_name as $key_name): ?>
+                            <input id='qty2' type="button" class="btn btn-info" data-value='<?= $key_name ?>' value="<?= $key_name ?>">
+                          <?php endforeach; ?>
+                        </div>
+                      <?php endif; ?>
+
+                      
+                    </div>
+                    
 
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có) <i class="fas fa-link"></i></label>
