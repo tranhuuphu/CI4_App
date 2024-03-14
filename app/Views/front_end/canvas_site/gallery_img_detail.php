@@ -229,7 +229,7 @@
             <h2 class="text-center">Click to Expand Image</h2>
             <div class="block-expand-categories flex-column flex-lg-row d-flex justify-content-center on-click">
               <?php foreach($same_topic as $s_t): ?>
-                <div class="expand-category bg-light" style="background-image: url('<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$s_t['gallery_image']) ?> ?>');">
+                <div class="expand-category bg-light" style="background-image: url('<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$s_t['gallery_image']) ?>');">
                   <h4><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'/'.$s_t['gallery_title_slug'].'-'.$s_t['id'].'.html' ?>" title="<?= $s_t['gallery_title'] ?>" class="text-light"><?= $s_t['gallery_title'] ?></a></h4>
                 </div>
               <?php endforeach; ?>

@@ -55,8 +55,8 @@
                       <th>Tiêu Đề</th>
 	                    <th>Ảnh</th>
 	                    <th>Thuộc Phân Loại</th>
-                      <th>Link File</th>
-	                    <th>Bài Viết Liên Quan</th>
+                      <th>Link File & Related Link</th>
+	                    <th>ID Gallery</th>
                       <th>Option</th>
 	                  </tr>
                   </thead>
@@ -189,15 +189,14 @@
                           <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt-1 mb-1"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Short</a></button> <?php endif; ?>
 
                           <?php if($g['gallery_link_file_origin'] != null): ?> <button type="button" class="btn btn-secondary mt-1 mb-1"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Origin</a></button> <?php endif; ?>
-                        </td>
-		                    <td>
                           <?php if($g['gallery_post_url'] != null): ?>
                             
                             <a href="<?= $g['gallery_post_url']; ?>" target="_blank"><button type="button" class="btn btn-success"><i class="fas fa-eye"></i> View Detail</button></a>
                             
                           <?php endif; ?>
-
-
+                        </td>
+		                    <td>
+                          <?= $g['id']?>
                         </td>
 		                    <td>
                           </button> 

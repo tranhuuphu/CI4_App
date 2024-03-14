@@ -354,16 +354,22 @@ class CanvasController extends BaseController
 
             // $same_topic = $gallery->orderBy('id', 'desc')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id !=', $id)->limit(6)->find();
 
-            $same_topic_1 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id <', $id)->where('id !=', $id)->limit(3)->find();
-            $same_topic_2 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id >', $id)->where('id !=', $id)->limit(3)->find();
-            $same_topic = array_merge($same_topic_1, $same_topic_2);
+            if($gallery_img['gallery_topic_slug'] != null || $gallery_img['gallery_topic_slug'] != ""){
+                $same_topic_1 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id <', $id)->where('id !=', $id)->limit(3)->find();
+                $same_topic_2 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id >', $id)->where('id !=', $id)->limit(3)->find();
+                $same_topic = array_merge($same_topic_1, $same_topic_2);
 
-            foreach($same_topic as $same){
-                $id_same[] = $same['id'];
+                foreach($same_topic as $same){
+                    $id_same[] = $same['id'];
+                }
+                
+            }else{
+                $same_topic = null;
+                $id_same[] = "";
             }
 
-            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->whereNotIn('id', $id_same)->limit(3)->find();
-            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->whereNotIn('id', $id_same)->limit(3)->find();
+            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->whereNotIn('id', $id_same)->limit(5)->find();
+            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->whereNotIn('id', $id_same)->limit(5)->find();
             $related = array_merge($related_1, $related_2);
 
             $previous = $gallery->orderBy('id', 'desc')->where('id <', $id)->first();

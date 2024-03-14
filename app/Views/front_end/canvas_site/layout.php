@@ -13,11 +13,13 @@
 
     <meta name="format-detection" content="telephone=0974953600">
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/style.css">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/font-icons.css">
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/admin_asset/plugins/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
 
 
     <script async custom-element="amp-auto-ads"
@@ -27,17 +29,17 @@
 
     
 
-    <link rel="stylesheet" id="bootstrap-css" href='<?= base_url('public/site_asset'); ?>/contact_footer/style_contact.css' type="text/css" media="all" />
+    
     
     <!-- Google Analytics -->
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-
-    ga('send', 'pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
     
@@ -67,193 +69,7 @@
      crossorigin="anonymous"></script>
 
     <style>
-      .tp-caption.News-Title {
-        font-weight: 700;
-        letter-spacing: -1px;
-        font-family: "arial", sans-serif;
-      }
-
-      .tp-caption.News-Subtitle {
-        font-family: "arial";
-      }
-      .tp-video-play-button {
-        display: none !important;
-      }
-
-      .tp-caption {
-        white-space: nowrap;
-      }
-      .tp-carousel-wrapper {
-        cursor: url(<?= base_url() ?>/public/upload/openhand.cur), move;
-      }
-      .tp-carousel-wrapper.dragged {
-        cursor: url(<?= base_url() ?>/public/upload/closedhand.cur), move;
-      }
-
-      
-      .tp-tabs{
-        background: linear-gradient(90deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%) !important;
-      }
-
-     .search{
-
-        position: absolute;
-        bottom: 33%;
-        right: 85px;
-        height: auto;
-        width: auto;
-        background: #1f8cff;
-        border-radius: 0;
-        font-weight: bold;
-        border: none;
-
-      }
-       .sticky-header .search{
-
-          position: absolute;
-          bottom: 22% !important;
-          right: 85px;
-          height: auto;
-          width: auto;
-          background: #1f8cff;
-          border-radius: 0;
-          font-weight: bold;
-          border: none;
-
-       }
-
-       .mce-toc{
-          background-color: #ffffff;
-          padding: 20px 20px 0px 20px;
-          margin-bottom: 15px;
-          border-radius: 20px;
-          border: solid #000000 1px;
-          margin-bottom: 40px !important;
-        }
-        .mce-toc h2{
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 25px;
-            margin-bottom: 10px !important;
-          }
-        .mce-toc li {
-          list-style: none;
-          position: relative;
-          padding: 0 0 0 20px;
-          margin-bottom: 10px !important;
-        }
-        .mce-toc li::before {
-          content: ""; 
-          position: absolute; 
-          left: 2px; 
-          top: 5px; 
-          width: 6px;
-          height: 10px;
-          border: solid #000000;
-          border-width: 0 2px 2px 0;
-          transform: rotate(45deg);
-        }
-        @media(min-width:992px) {
-          .sub::after {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            content: "\f078";
-            padding-left: 7px;
-          }
-        }
-
-        .sub-menu button:after{
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          content: "\f078";
-          padding-left: 7px;
-        }
-        .sub-menu button:before{
-          content: none;
-        }
-                
-        .pagination a:focus,
-        select:focus,
-        textarea:focus, 
-        textarea.form-control:focus, 
-        input.form-control:focus, 
-        input[type=text]:focus, 
-        input[type=password]:focus, 
-        input[type=email]:focus, 
-        input[type=number]:focus, 
-        [type=text].form-control:focus, 
-        [type=password].form-control:focus, 
-        [type=email].form-control:focus, 
-        [type=tel].form-control:focus, 
-        [contenteditable].form-control:focus {
-          box-shadow: inset 0 -0px 0 #ddd !important;
-        }
-
-        .postcontent .button{margin-left: 0px !important;}
-
-        .call-btn2 {
-          position: fixed;
-          bottom: 60px;
-          left: 25px;
-          background: #345eeb;
-          text-align: center;
-          color: #fff;
-          box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-          z-index: 99;
-          transition: all .3s;
-          font-weight: 700;
-          border-radius: 5px;
-          padding: 1.5px 10px 1.5px 38px;
-          font-size: 18px;
-          line-height: 25px;
-        }
-        .call-btn2 img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            padding: 5px 7px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 5px 0 0 5px;
-            animation: blinking 1s ease-in-out infinite;
-        }
-        .postcontent img{
-          margin: 0 0 15px 0;
-          border-radius: 7px;
-        }
-
-        .page-link{
-          border-radius: 0px !important;
-        }
-        .sticky-header-shrink #logo img{
-          padding: 7px 0 !important;
-        }
-
-        .breadcrumb li{
-          color: grey;
-          font-size: 16px;
-        }
-
-        .breadcrumb li a{
-          color: #0474c4;
-          /*color: #0474c4;*/
-          font-size: 16px;
-          font-weight: bold;
-        }
-        .breadcrumb li a:hover{
-          color: #0a70ff;
-          
-        }
-        .active a{
-          color: #000 !important;
-        }
-
-        .active a:hover{
-          color: #0a70ff !important;
-        }
-
-        #rev_slider_30_1 ul li .title_cap a:hover{
-          color: #0055ff !important;
-        }
+      .mce-toc h2,.mce-toc li{margin-bottom:10px!important}.tp-caption.News-Title{font-weight:700;letter-spacing:-1px;font-family:arial,sans-serif}.tp-caption.News-Subtitle{font-family:arial}.tp-video-play-button{display:none!important}.tp-caption{white-space:nowrap}.tp-carousel-wrapper{cursor:url(<?= base_url() ?>/public/upload/openhand.cur),move}.tp-carousel-wrapper.dragged{cursor:url(<?= base_url() ?>/public/upload/closedhand.cur),move}.tp-tabs{background:linear-gradient(90deg,#2e69ff 0,#32ffc3 100%)!important}.search,.sticky-header .search{position:absolute;right:85px;height:auto;width:auto;background:#1f8cff;font-weight:700}.search{bottom:33%;border-radius:0;border:none}.sticky-header .search{bottom:22%!important;border-radius:0;border:none}.mce-toc{background-color:#fff;padding:20px 20px 0;border-radius:20px;border:1px solid #000;margin-bottom:40px!important}.mce-toc h2{font-weight:700;text-transform:uppercase;font-size:25px}.mce-toc li{list-style:none;position:relative;padding:0 0 0 20px}.mce-toc li::before{content:"";position:absolute;left:2px;top:5px;width:6px;height:10px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}@media(min-width:992px){.sub::after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:7px}}.sub-menu button:after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:7px}.sub-menu button:before{content:none}.pagination a:focus,[contenteditable].form-control:focus,[type=email].form-control:focus,[type=password].form-control:focus,[type=tel].form-control:focus,[type=text].form-control:focus,input.form-control:focus,input[type=email]:focus,input[type=number]:focus,input[type=password]:focus,input[type=text]:focus,select:focus,textarea.form-control:focus,textarea:focus{box-shadow:inset 0 0 0 #ddd!important}.postcontent .button{margin-left:0!important}.call-btn2{position:fixed;bottom:60px;left:25px;background:#345eeb;text-align:center;color:#fff;box-shadow:0 3px 5px rgba(0,0,0,.2);z-index:99;transition:.3s;font-weight:700;border-radius:5px;padding:1.5px 10px 1.5px 38px;font-size:18px;line-height:25px}.call-btn2 img{position:absolute;left:0;top:0;padding:5px 7px;background:rgba(0,0,0,.3);border-radius:5px 0 0 5px;animation:1s ease-in-out infinite blinking}.postcontent img{margin:0 0 15px;border-radius:7px}.page-link{border-radius:0!important}.sticky-header-shrink #logo img{padding:7px 0!important}.breadcrumb li{color:grey;font-size:16px}.breadcrumb li a{color:#0474c4;font-size:16px;font-weight:700}.breadcrumb li a:hover{color:#0a70ff}.active a{color:#000!important}.active a:hover{color:#0a70ff!important}#rev_slider_30_1 ul li .title_cap a:hover{color:#05f!important}
   
     </style>
 

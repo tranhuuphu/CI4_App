@@ -32,7 +32,7 @@ class GalleryController extends BaseController
         $galleryType    = new GalleryTypeModel();
         $galleryModel = new GalleryModel();
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
         foreach($galleryTopic as $key){
             $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
         }
@@ -61,7 +61,7 @@ class GalleryController extends BaseController
 
         $post_url = $post->select('post.id, post.post_title')->findAll();
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
         foreach($galleryTopic as $key){
             $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
         }
@@ -139,9 +139,17 @@ class GalleryController extends BaseController
         }
         
         $topic = $this->request->getPost('gallery_topic');
+        if($topic == ""){
+            $data['gallery_topic']          = null;
+            $data['gallery_topic_slug']     = null;
+        }else{
+            $topic_slug = mb_strtolower(convert_name($topic));
+            $topic_slug = reduce_multiples($topic_slug, '-');
+            $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
+            $data['gallery_topic_slug']     = $topic_slug;
+        }
 
-        $topic_slug = mb_strtolower(convert_name($topic));
-        $topic_slug = reduce_multiples($topic_slug, '-');
+        
         
 
         $gallery_id = $this->request->getPost('gallery_type_id');
@@ -150,8 +158,7 @@ class GalleryController extends BaseController
         $data['gallery_type_name']      = $gallery_type['gallery_type_name'];
         $data['gallery_type_slug']      = $gallery_type['gallery_type_slug'];
 
-        $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
-        $data['gallery_topic_slug']     = $topic_slug;
+        
 
 
         $gallery_title = $this->request->getPost('gallery_title');
@@ -220,7 +227,7 @@ class GalleryController extends BaseController
         }
 
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
         foreach($galleryTopic as $key){
             $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
         }
@@ -255,7 +262,7 @@ class GalleryController extends BaseController
             return view('admin/404_admin');
         }
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
         foreach($galleryTopic as $key){
             $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
         }
@@ -311,9 +318,16 @@ class GalleryController extends BaseController
 
 
         $topic = $this->request->getPost('gallery_topic');
+        if($topic == ""){
+            $data['gallery_topic']          = null;
+            $data['gallery_topic_slug']     = null;
+        }else{
+            $topic_slug = mb_strtolower(convert_name($topic));
+            $topic_slug = reduce_multiples($topic_slug, '-');
+            $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
+            $data['gallery_topic_slug']     = $topic_slug;
+        }
 
-        $topic_slug = mb_strtolower(convert_name($topic));
-        $topic_slug = reduce_multiples($topic_slug, '-');
         
 
 
@@ -331,9 +345,6 @@ class GalleryController extends BaseController
         $data['gallery_title_slug']     = $gallery_title_slug;
         $data['gallery_cate_id']        = $this->request->getPost('gallery_cate_id');
 
-
-        $data['gallery_topic']          = mb_convert_case($topic, MB_CASE_TITLE, 'UTF-8');
-        $data['gallery_topic_slug']     = $topic_slug;
         
         $data['gallery_meta_desc']      = $this->request->getPost('gallery_meta_desc');
         $data['gallery_meta_key']       = $this->request->getPost('gallery_meta_key');

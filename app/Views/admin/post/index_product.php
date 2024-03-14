@@ -127,9 +127,6 @@
                             <a href="javascript:void(0)" class="ml-3 text-secondary"><i class="fas fa-eye"></i></i> Hiện</a>
                             <a href="<?= base_url('admin/post/hidden/'.$p['id']) ?>" class="ml-3"><i class="fas fa-eye-slash"></i> Ẩn</a>
                           <?php endif; ?>
-                          
-                        </td>
-	                    <td>
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xl<?=$p['id']?>">
                             <i class="fas fa-eye"></i>
                           </button>
@@ -229,7 +226,11 @@
                             <!-- /.modal-dialog -->
                           </div>
                           <!-- /.modal -->
-
+                          
+                        </td>
+	                    <td>
+                          
+                        <?=$p['id']?>
 
 
                         </td>
