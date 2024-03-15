@@ -116,7 +116,7 @@ class CanvasController extends BaseController
 
         
 
-        $paginate = 9;
+        $paginate = 12;
         $paginate_gallery = 18;
 
 
@@ -198,20 +198,19 @@ class CanvasController extends BaseController
             'most_view'     => $most_view,
             'tag_this'      => $tag_this,
 
-            'pager2'        => $post->pager,
-            'pager'         => $gallery->pager,
-
 
         ];
 
         if($cate_detail['cate_type'] == 'blog'){
+            $data['pager'] = $post->pager;
             return view('front_end/canvas_site/blog_cate', $data);
 
         }elseif($cate_detail['cate_type'] == 'cate_gallery'){
-
+            $data['pager'] = $gallery->pager;
             return view('front_end/canvas_site/gallery_cate', $data);
         }
         else{
+            $data['pager'] = $post->pager;
             return view('front_end/canvas_site/post_cate', $data);
         }
 
@@ -329,6 +328,10 @@ class CanvasController extends BaseController
 
         $gallery = new GalleryModel;
 
+        if($id == null || $id == ""){
+            return view('front_end/canvas_site/404');
+        }
+
 
         $cate_gallery = $cate->where('cate_slug', $slug2)->first();
 
@@ -352,24 +355,29 @@ class CanvasController extends BaseController
                 return redirect()->to('bo-suu-tap'.'/'.$gallery_img['gallery_title_slug'].'-'.$gallery_img['id'].'.html');
             }
 
+            $id_same[] = "";
             // $same_topic = $gallery->orderBy('id', 'desc')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id !=', $id)->limit(6)->find();
-
             if($gallery_img['gallery_topic_slug'] != null || $gallery_img['gallery_topic_slug'] != ""){
                 $same_topic_1 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id <', $id)->where('id !=', $id)->limit(3)->find();
                 $same_topic_2 = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $gallery_img['gallery_topic_slug'])->where('id >', $id)->where('id !=', $id)->limit(3)->find();
                 $same_topic = array_merge($same_topic_1, $same_topic_2);
-
                 foreach($same_topic as $same){
                     $id_same[] = $same['id'];
                 }
                 
             }else{
                 $same_topic = null;
-                $id_same[] = "";
+                $id_same[] = null;
             }
-
-            $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->whereNotIn('id', $id_same)->limit(5)->find();
-            $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->whereNotIn('id', $id_same)->limit(5)->find();
+            
+            
+            if($gallery_img['gallery_topic_slug'] != null || $gallery_img['gallery_topic_slug'] != ""){
+                $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->whereNotIn('id', $id_same)->limit(7)->find();
+                $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->whereNotIn('id', $id_same)->limit(7)->find();
+            }else{
+                $related_1 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id <', $id)->limit(7)->find();
+                $related_2 = $gallery->orderBy('id', 'DESC')->where('gallery_type_id', $gallery_img['gallery_type_id'])->where('id >', $id)->limit(7)->find();
+            }
             $related = array_merge($related_1, $related_2);
 
             $previous = $gallery->orderBy('id', 'desc')->where('id <', $id)->first();
@@ -524,6 +532,106 @@ class CanvasController extends BaseController
         
     }
 
+    public function class_gallery($slug_gallery, $slug_topic){
+
+        $cate = new CateModel;
+        $gallery = new GalleryModel;
+
+        $g_title = null;
+        $id_child = null;
+
+
+        // dd($slug_gallery);
+        // $slug_topic
+
+
+        // Lấy query của slug truyền vào
+        $gallery_child = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $slug_topic)->first();
+        $gallery_parent = $gallery->orderBy('id', 'DESC')->where('gallery_type_slug', $slug_topic)->first();
+
+
+        if($gallery_parent == null && $gallery_child == null){
+            return view('front_end/canvas_site/404');
+        }
+
+        
+
+        // Xem trong lớp ảnh lớn có phân loại chi tiết hay không?
+        if($gallery_parent != null || $gallery_parent != ""){
+            $id_child = $gallery->select("gallery_topic, gallery_topic_slug")->where('gallery_type_slug', $slug_topic)->where('gallery_topic_slug !=', null)->find();
+            $id_child = array_unique($id_child, SORT_REGULAR);
+        }
+        // dd($id_child);
+
+        // đặt session cho bộ sưu tập
+        $cate_gallery = $cate->where("cate_type", "cate_gallery")->first();
+        $session = session();
+        $session->set('cate_current', $cate_gallery['cate_slug']);
+
+        // Lấy tên phân loại, ưu tiên phân loại chi tiết
+        if($gallery_child){
+            $gallery_name = $gallery->where('gallery_topic_slug', $slug_topic)->first();
+            $gallery_title = $gallery_name['gallery_topic'];
+        }else{
+            $gallery_name = $gallery->where('gallery_type_slug', $slug_topic)->first();
+            $gallery_title = $gallery_name['gallery_type_name'];
+        }
+        
+        
+
+        // dd($gallery_child);
+
+
+        // lấy dữ liệu theo phân loại, lấy chi tiết trước sau đó mới tới phân loại, kiểm tra theo phân loại chi tiết
+        $pagi_num = 20;
+        if($gallery_child != null){
+            $gallery_class = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $slug_topic)->paginate($pagi_num);
+            $gallery_count = $gallery->where('gallery_topic_slug', $slug_topic)->countAllResults();
+
+
+        }elseif($gallery_parent != null){
+            $gallery_class = $gallery->orderBy('id', 'DESC')->where('gallery_type_slug', $slug_topic)->paginate($pagi_num);
+            $gallery_count = $gallery->where('gallery_topic_slug', $slug_topic)->countAllResults();
+        }
+
+        
+        
+
+        // Kiểm tra url truyền vào có đúng hay không
+        if($slug_gallery != "bo-suu-tap"){
+                
+            return redirect()->to('bo-suu-tap'.'/'.$slug_topic);
+        }
+        $link_full = base_url().'/'.'bo-suu-tap'.'/'.$slug_topic;
+
+        $data = [
+            'title'         => 'bộ sưu tập - '.$gallery_title,
+            'meta_desc'     => 'bộ sưu tập - '.$gallery_title,
+            'meta_key'      => 'bộ sưu tập - '.$gallery_title,
+
+            'image'         => $gallery_name['gallery_image'],
+            'created_at'    => $gallery_name['created_at'],
+            'updated_at'    => $gallery_name['updated_at'],
+            'cate_gallery'  => $cate_gallery,
+            'gallery_class' => $gallery_class,
+
+            'gallery_count' => $gallery_count,
+            'pagi_num'      => $pagi_num,
+
+            'link_full'     => $link_full,
+            'gallery_name'  => $gallery_name,
+            'gallery_title' => $gallery_title,
+            'id_child'      => $id_child,
+            'pager'         => $gallery->pager,
+
+
+
+        ];
+
+
+        return view('front_end/canvas_site/gallery_img_class', $data);
+    }
+
 
 
 
@@ -616,7 +724,7 @@ class CanvasController extends BaseController
         if($this->request->getPost('quantity') != null){
             $quantity  = $this->request->getPost('quantity');
             $item = array(
-                'id'            => $post_prod['id'],
+            'id'            => $post_prod['id'],
             'prod_name'     => $post_prod['post_title'],
             'prod_image'    => $post_prod['post_image'],
             'prod_price'    => (int)$post_prod['post_price'],

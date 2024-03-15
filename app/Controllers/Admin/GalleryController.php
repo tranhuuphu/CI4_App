@@ -32,11 +32,16 @@ class GalleryController extends BaseController
         $galleryType    = new GalleryTypeModel();
         $galleryModel = new GalleryModel();
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        foreach($galleryTopic as $key){
-            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        // dd($galleryTopic);
+        if(count($galleryTopic)>0){
+            foreach($galleryTopic as $key){
+                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+            }
+            $data['topic_name'] = array_unique($topic_name);
+        }else{
+            $data['topic_name'] = null;
         }
-        $data['topic_name'] = array_unique($topic_name);
 
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
@@ -62,10 +67,16 @@ class GalleryController extends BaseController
         $post_url = $post->select('post.id, post.post_title')->findAll();
 
         $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        foreach($galleryTopic as $key){
-            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        if(count($galleryTopic)>0){
+            foreach($galleryTopic as $key){
+                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+            }
+            $data['topic_name'] = array_unique($topic_name);
+        }else{
+            $data['topic_name'] = null;
         }
-        $topic_name = array_unique($topic_name);
+
+        
 
 
 
@@ -228,10 +239,14 @@ class GalleryController extends BaseController
 
 
         $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        foreach($galleryTopic as $key){
-            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        if(count($galleryTopic)>0){
+            foreach($galleryTopic as $key){
+                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+            }
+            $data['topic_name'] = array_unique($topic_name);
+        }else{
+            $data['topic_name'] = null;
         }
-        $data['topic_name'] = array_unique($topic_name);
 
         $data['gallery_type'] = $galleryType->findAll();
 
@@ -263,10 +278,14 @@ class GalleryController extends BaseController
         }
 
         $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        foreach($galleryTopic as $key){
-            $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        if(count($galleryTopic)>0){
+            foreach($galleryTopic as $key){
+                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+            }
+            $data['topic_name'] = array_unique($topic_name);
+        }else{
+            $data['topic_name'] = null;
         }
-        $data['topic_name'] = array_unique($topic_name);
 
         $data['gallery'] = $gallery_detail;
         $gallery_title = $this->request->getPost('gallery_title');

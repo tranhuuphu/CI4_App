@@ -116,7 +116,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                <?= $pager->links() ?>
+                <?= $pager->links('blog') ?>
               </div>
             </div>
           <?php endif; ?>

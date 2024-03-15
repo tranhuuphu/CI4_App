@@ -160,7 +160,7 @@
 		    <?php if($post_count > $paginate): ?>
       
 	        <div class="line mb-5"></div>
-	        <?= $pager2->links('post') ?>
+	        <?= $pager->links('post') ?>
 	      <?php endif; ?>
 
 	      

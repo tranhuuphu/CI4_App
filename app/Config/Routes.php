@@ -261,6 +261,7 @@ $routes->get('san-pham', 'CanvasController::getProd');
 
 
 $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+$routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$1/$2');
 
 $routes->get('page/download/(:any)', 'CanvasController::download/$1');
 
