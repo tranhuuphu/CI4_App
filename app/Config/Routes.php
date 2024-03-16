@@ -235,7 +235,8 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
 $routes->get('/', 'CanvasController::index');
 
-$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3');
+$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
+
 
 $routes->get('sitemap.xml', 'CanvasController::siteMap');
 $routes->get('table_image', 'CanvasController::table_image');
@@ -251,7 +252,7 @@ $routes->get('dat-hang', 'CanvasController::order');
 $routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
 $routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
 
-
+$routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$2', ['as' => 'class_topic']);
 $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
 $routes->get('search', 'CanvasController::getSearch');
@@ -260,8 +261,9 @@ $routes->get('san-pham', 'CanvasController::getProd');
 
 
 
+
 $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
-$routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$1/$2');
+
 
 $routes->get('page/download/(:any)', 'CanvasController::download/$1');
 

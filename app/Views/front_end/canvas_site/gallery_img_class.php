@@ -7,6 +7,9 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'-'.$cate_gallery['id'] ?>" class="fw-bold"><?= $cate_gallery['cate_name'] ?></a></li>
+      <?php if($id_child == null || $id_child == ""): ?>
+        <li class="breadcrumb-item"><a href="<?= base_url().'/'.'bo-suu-tap-topic'.'/'.$gallery_name['gallery_type_slug'] ?>" class="fw-bold"><?= $gallery_name['gallery_type_name'] ?></a></li>
+      <?php endif; ?>
       <li class="breadcrumb-item active" aria-current="page" style="text-transform: capitalize;"><?= $gallery_title ?></li>
     </ol>
   </nav>
@@ -21,7 +24,7 @@
           
             <li class="activeFilter"><a href="javascript:void(0)" style="text-transform: capitalize; font-weight: bold;"><?= $gallery_name['gallery_type_name'] ?></a></li>
             <?php foreach($id_child  as $child): ?>
-              <li><a href="<?= base_url().'/'.'bo-suu-tap'.'/'.$child['gallery_topic_slug'] ?>" data-filter=".pf-icons"><i class="fas fa-chevron-circle-right"></i> <?= $child['gallery_topic'] ?></a></li>
+              <li><a href="<?= base_url().'/'.'bo-suu-tap-topic'.'/'.$child['gallery_topic_slug'] ?>" data-filter=".pf-icons"><i class="fas fa-chevron-circle-right"></i> <?= $child['gallery_topic'] ?></a></li>
             <?php endforeach; ?>
           
 
@@ -61,15 +64,16 @@
                   </div>
                 </div>
                 <style type="text/css">
-                  .portfolio-desc2{
+                  .portfolio-desc2 a{
+                    display: block;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     
                   }
                 </style>
-                <div class="portfolio-desc portfolio-desc2">
-                  <h3><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$g_class['gallery_title_slug'].'-'.$g_class['id'].'.html' ?>" title="<?= $g_class['gallery_title'] ?>"><?= $g_class['gallery_title'] ?></a></h3>
+                <div class="portfolio-desc">
+                  <h3 style="font-weight: bold;" class="portfolio-desc2"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$g_class['gallery_title_slug'].'-'.$g_class['id'].'.html' ?>" title="<?= $g_class['gallery_title'] ?>"><?= $g_class['gallery_title'] ?></a></h3>
                   <span>
                     <a href="javascript:void(0)" class="ml-5" style="margin-right: 5px !important;"><i class="fab fa-hotjar"></i> <?= $g_class['gallery_view'] ?></a>
                     <?php if($g_class['gallery_file_download'] == null): ?>

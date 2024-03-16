@@ -50,7 +50,7 @@
               <div class="row g-4 mt-4 mb-6">
                 <div class="col-6">
                   <h5 class="mb-2 text-primary">Phân Loại</h5>
-                  <a href="<?= base_url('bo-suu-tap').'/'.$gallery_img['gallery_type_slug'] ?>"><p class="text-medium text-bold op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p></a>
+                  <a href="<?= base_url('bo-suu-tap-topic').'/'.$gallery_img['gallery_type_slug'] ?>"><p class="text-medium text-bold op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p></a>
                 </div>
                 
                 <div class="col-6">
@@ -80,7 +80,7 @@
                 <?php if($gallery_img['gallery_topic'] != null || $gallery_img['gallery_topic'] != ""): ?>
                   <div class="col-6">
                     <h5 class="mb-2 text-primary">Phân Loại Chi Tiết</h5>
-                    <a href="<?= base_url('bo-suu-tap').'/'.$gallery_img['gallery_topic_slug'] ?>"><p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_topic'] ?></p></a>
+                    <a href="<?= base_url('bo-suu-tap-topic').'/'.$gallery_img['gallery_topic_slug'] ?>"><p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_topic'] ?></p></a>
                   </div>
                 <?php endif; ?>
                 

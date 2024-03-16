@@ -99,7 +99,6 @@ class CanvasController extends BaseController
     }
 
     public function postCate($slug, $id){
-        // dd($slug);
         $session = session();
 
 
@@ -112,17 +111,28 @@ class CanvasController extends BaseController
 
         $gallery = new GalleryModel;
 
-        $cate_detail = $cate->where('id', $id)->first();
+        if($slug == ""){
 
+            return view('front_end/canvas_site/404_error/404_post_cate');
+        }
+
+
+        $cate_detail = $cate->where('id', $id)->first();
+        
+        if(!$cate_detail || $cate_detail == null){
+            return view('front_end/canvas_site/404_error/404_post_cate');
+        }
+
+        if($slug != $cate_detail['cate_slug'] && $cate_detail != null){
+            return redirect()->to($cate_detail['cate_slug'].'-'.$cate_detail['id']);
+        }
         
 
         $paginate = 12;
         $paginate_gallery = 18;
 
 
-        if(!$cate_detail || $cate_detail == null){
-            return view('front_end/canvas_site/404');
-        }
+        
         $session->set('cate_current', $cate_detail['cate_slug']);
         
 
@@ -269,6 +279,12 @@ class CanvasController extends BaseController
 
         $postImage = new PostImagesModel();
 
+        $slug_cate =  $this->request->uri->getSegments();
+
+
+        $slug_gallery = $slug_cate[0];
+        // dd($slug_cate);
+
         $session = session();
         $session->set('cate_current', 'san-pham');
 
@@ -329,7 +345,8 @@ class CanvasController extends BaseController
         $gallery = new GalleryModel;
 
         if($id == null || $id == ""){
-            return view('front_end/canvas_site/404');
+            // đặt gallery topic
+            return view('front_end/canvas_site/404_error/404_post_detail');
         }
 
 
@@ -347,7 +364,7 @@ class CanvasController extends BaseController
 
 
             if($gallery_img == null){
-                return view('front_end/canvas_site/404');
+                return view('front_end/canvas_site/404_error/404_img_detail');
             }
 
             if($gallery_img['gallery_title_slug'] != $title){
@@ -437,7 +454,7 @@ class CanvasController extends BaseController
         $post_detail = $post->find($id);
 
         if(!$post_detail){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_post_detail');
         }
 
         
@@ -532,16 +549,18 @@ class CanvasController extends BaseController
         
     }
 
-    public function class_gallery($slug_gallery, $slug_topic){
+    public function class_gallery($slug_topic){
 
         $cate = new CateModel;
         $gallery = new GalleryModel;
 
-        $g_title = null;
         $id_child = null;
 
+        $slug_cate =  $this->request->uri->getSegments();
 
-        // dd($slug_gallery);
+
+        $slug_gallery = $slug_cate[0];
+        
         // $slug_topic
 
 
@@ -549,10 +568,21 @@ class CanvasController extends BaseController
         $gallery_child = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $slug_topic)->first();
         $gallery_parent = $gallery->orderBy('id', 'DESC')->where('gallery_type_slug', $slug_topic)->first();
 
+        // dd($gallery_child);
+        // dd($gallery_parent);
 
-        if($gallery_parent == null && $gallery_child == null){
-            return view('front_end/canvas_site/404');
+        if($slug_gallery != "bo-suu-tap-topic" && $slug_topic != null){
+            // dd(2);
+            return redirect()->to('bo-suu-tap-topic'.'/'.$slug_topic);
         }
+
+        if($gallery_child == "" && $gallery_parent == ""){
+            return view('front_end/canvas_site/404_error/404_class_gallery');
+        }
+
+        // Kiểm tra url truyền vào có đúng hay không
+        // dd($gallery_parent);
+        
 
         
 
@@ -569,11 +599,13 @@ class CanvasController extends BaseController
         $session->set('cate_current', $cate_gallery['cate_slug']);
 
         // Lấy tên phân loại, ưu tiên phân loại chi tiết
-        if($gallery_child){
+        if($gallery->where('gallery_topic_slug', $slug_topic)->first() != null){
             $gallery_name = $gallery->where('gallery_topic_slug', $slug_topic)->first();
             $gallery_title = $gallery_name['gallery_topic'];
+            
         }else{
             $gallery_name = $gallery->where('gallery_type_slug', $slug_topic)->first();
+            // dd($gallery_name);
             $gallery_title = $gallery_name['gallery_type_name'];
         }
         
@@ -584,25 +616,18 @@ class CanvasController extends BaseController
 
         // lấy dữ liệu theo phân loại, lấy chi tiết trước sau đó mới tới phân loại, kiểm tra theo phân loại chi tiết
         $pagi_num = 20;
-        if($gallery_child != null){
+        if($gallery_child != ""){
             $gallery_class = $gallery->orderBy('id', 'DESC')->where('gallery_topic_slug', $slug_topic)->paginate($pagi_num);
             $gallery_count = $gallery->where('gallery_topic_slug', $slug_topic)->countAllResults();
 
-
-        }elseif($gallery_parent != null){
+        }elseif($gallery_parent != ""){
             $gallery_class = $gallery->orderBy('id', 'DESC')->where('gallery_type_slug', $slug_topic)->paginate($pagi_num);
-            $gallery_count = $gallery->where('gallery_topic_slug', $slug_topic)->countAllResults();
+            $gallery_count = $gallery->where('gallery_type_slug', $slug_topic)->countAllResults();
         }
 
         
         
-
-        // Kiểm tra url truyền vào có đúng hay không
-        if($slug_gallery != "bo-suu-tap"){
-                
-            return redirect()->to('bo-suu-tap'.'/'.$slug_topic);
-        }
-        $link_full = base_url().'/'.'bo-suu-tap'.'/'.$slug_topic;
+        $link_full = base_url().'/'.'bo-suu-tap-topic'.'/'.$slug_topic;
 
         $data = [
             'title'         => 'bộ sưu tập - '.$gallery_title,
@@ -649,7 +674,7 @@ class CanvasController extends BaseController
 
     public function order(){    
         if(session('cart') == null){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_cart');
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
@@ -658,7 +683,7 @@ class CanvasController extends BaseController
 
     public function finishOrder(){
         if(session('cart') == null){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_cart');
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
@@ -717,7 +742,7 @@ class CanvasController extends BaseController
 
         $post_prod = $post->find($id);
         if(!$post_prod){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_post_detail');
         }
         $cate = new CateModel;
         $cate_detail = $cate->where("id", $post_prod['post_cate_id'])->first();
@@ -767,7 +792,7 @@ class CanvasController extends BaseController
 
         $post_prod = $post->find($id);
         if(!$post_prod){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_post_detail');
         }
         $index = $this->exists($id);
         
@@ -820,7 +845,7 @@ class CanvasController extends BaseController
         $gallery_detail = $gallery->where('gallery_image', $image)->first();
 
         if($gallery_detail == null){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_img_detail');
         }
 
         $times = $gallery_detail['gallery_img_download_times'] + 1;
@@ -848,7 +873,7 @@ class CanvasController extends BaseController
 
         if(!isset($tag_detail) || $tag_detail == null){
             $data['error'] = "Tag không tồn tại hoặc không đúng hoặc không liên kết với bài viết nào";
-            return view('front_end/canvas_site/404', $data);
+            return view('front_end/canvas_site/404_error/404_post_cate', $data);
         }
 
         foreach($tag_detail as $key5){
@@ -864,7 +889,7 @@ class CanvasController extends BaseController
         // dd($post_count);
 
         if(!$post_tag && $post_tag == NULL){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_post_cate', $data);
         }
 
         $link_full = base_url().'/tag/'.$tag_slug;
@@ -1000,7 +1025,7 @@ class CanvasController extends BaseController
         $page = new PageModel;
         $page_info = $page->find($id);
         if($page_info == null){
-            return view('front_end/canvas_site/404');
+            return view('front_end/canvas_site/404_error/404_post_cate', $data);
         }
 
         $link_full = base_url().'/'.$page_info['page_slug'].'-'.$page_info['id'].'.html';

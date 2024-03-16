@@ -85,6 +85,7 @@
                 <?php if($key['gallery_file_download'] != null): ?>
                   <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                 <?php endif; ?>
+                <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_type_slug'] ?>" class="ml-5"><i class="fas fa-star-of-life"></i> <?= $key['gallery_type_name'] ?></a>
                 
                 
 
