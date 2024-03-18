@@ -109,7 +109,7 @@
     <div id="gotoTop" class="uil uil-angle-up rounded" data-mobile="true" style="--cnvs-gotoTop-bg:var(--cnvs-contrast-800)"></div>
     <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugins.min.js"></script>
-    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js?<?= time() ?>"></script>
+    <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.bundle.js2?<?= time() ?>"></script>
     <script src="<?= base_url('public/site_asset/canvas'); ?>/js/functions.js"></script>
 
 
