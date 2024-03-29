@@ -12,8 +12,8 @@ $routes = Services::routes();
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultController('CanvasController');
-// $routes->setDefaultController('HatNhuaController');
+// $routes->setDefaultController('CanvasController');
+$routes->setDefaultController('MayMocController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -233,88 +233,77 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
 // Canvas Site
 
-$routes->get('/', 'CanvasController::index');
+// $routes->get('/', 'CanvasController::index');
 
-$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
-
-
-$routes->get('sitemap.xml', 'CanvasController::siteMap');
-$routes->get('table_image', 'CanvasController::table_image');
-
-$routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
-$routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
-$routes->get('buy/(:num)', 'CanvasController::buy/$1');
-$routes->post('buy/(:num)', 'CanvasController::buy/$1');
-$routes->get('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->post('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->get('gio-hang', 'CanvasController::cart');
-$routes->get('dat-hang', 'CanvasController::order');
-$routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
-$routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
-
-$routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$2', ['as' => 'class_topic']);
-$routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
-
-$routes->get('search', 'CanvasController::getSearch');
-
-$routes->get('san-pham', 'CanvasController::getProd');
+// $routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
 
 
+// $routes->get('sitemap.xml', 'CanvasController::siteMap');
+// $routes->get('table_image', 'CanvasController::table_image');
 
+// $routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
+// $routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
+// $routes->get('buy/(:num)', 'CanvasController::buy/$1');
+// $routes->post('buy/(:num)', 'CanvasController::buy/$1');
+// $routes->get('gio-hang/cap-nhat', 'CanvasController::update');
+// $routes->post('gio-hang/cap-nhat', 'CanvasController::update');
+// $routes->get('gio-hang', 'CanvasController::cart');
+// $routes->get('dat-hang', 'CanvasController::order');
+// $routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
+// $routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
+// $routes->get('page/download/(:any)', 'CanvasController::download/$1');
 
-$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+// $routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$2', ['as' => 'class_topic']);
+// $routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
 
+// $routes->get('search', 'CanvasController::getSearch');
 
-$routes->get('page/download/(:any)', 'CanvasController::download/$1');
+// $routes->get('san-pham', 'CanvasController::getProd');
 
 
 
 
-
-// HatNhua
-// $routes->get('/', 'HatNhuaController::index');
-
-// $routes->get('(:any)/(:any)-(:num).html', 'HatNhuaController::post/$1/$2/$3');
-
-// $routes->get('sitemap.xml', 'HatNhuaController::siteMap');
-// $routes->get('table_image', 'HatNhuaController::table_image');
-
-// $routes->get('tag/(:any)-(:num)', 'HatNhuaController::tag/$1/$2');
-// $routes->get('cart/remove/(:num)', 'HatNhuaController::remove/$1');
-// $routes->get('buy/(:num)', 'HatNhuaController::buy/$1');
-// $routes->post('buy/(:num)', 'HatNhuaController::buy/$1');
-// $routes->get('gio-hang/cap-nhat', 'HatNhuaController::update');
-// $routes->post('gio-hang/cap-nhat', 'HatNhuaController::update');
-// $routes->get('gio-hang', 'HatNhuaController::cart');
-// $routes->get('dat-hang', 'HatNhuaController::order');
-// $routes->get('hoan-thanh-dat-hang', 'HatNhuaController::finishOrder');
-// $routes->post('hoan-thanh-dat-hang', 'HatNhuaController::finishOrder');
+// $routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
 
 
 
 
 
 
-// $routes->get('/', 'HomeController::index');
 
 
-// $routes->get('(:any)/(:any).html', 'HomeController::getDetailPost/$1/$2');
+// MayMoc
+$routes->get('/', 'MayMocController::index');
 
-// $routes->get('(:any)-(:num).html', 'HatNhuaController::getPage/$1/$2');
-
-
-
-
-// $routes->get('search', 'HatNhuaController::getSearch');
-
-// $routes->get('san-pham', 'HatNhuaController::getProd');
+$routes->get('(:any)/(:any)-(:num).html', 'MayMocController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
 
 
-// $routes->get('site-map.xml', 'HomeController::siteMap');
+$routes->get('sitemap.xml', 'MayMocController::siteMap');
+$routes->get('table_image', 'MayMocController::table_image');
+
+$routes->get('tag/(:any)-(:num)', 'MayMocController::tag/$1/$2');
+$routes->get('cart/remove/(:num)', 'MayMocController::remove/$1');
+$routes->get('buy/(:num)', 'MayMocController::buy/$1');
+$routes->post('buy/(:num)', 'MayMocController::buy/$1');
+$routes->get('gio-hang/cap-nhat', 'MayMocController::update');
+$routes->post('gio-hang/cap-nhat', 'MayMocController::update');
+$routes->get('gio-hang', 'MayMocController::cart');
+$routes->get('dat-hang', 'MayMocController::order');
+$routes->get('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
+$routes->post('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
+$routes->get('page/download/(:any)', 'MayMocController::download/$1');
+
+$routes->get('(:any)/(:any)', 'MayMocController::class_gallery/$2', ['as' => 'class_topic']);
+$routes->get('(:any)-(:num).html', 'MayMocController::getPage/$1/$2');
+
+$routes->get('search', 'MayMocController::getSearch');
+
+$routes->get('san-pham', 'MayMocController::getProd');
 
 
 
-// $routes->get('(:any)-(:num)', 'HatNhuaController::postCate/$1/$2');
+
+$routes->get('(:any)-(:num)', 'MayMocController::postCate/$1/$2');
 
 
 /*

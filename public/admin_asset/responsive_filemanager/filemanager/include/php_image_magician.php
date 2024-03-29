@@ -2788,7 +2788,7 @@ class imageLib {
 	{
 
 		// *** Perform a check or two.
-		if ( ! is_resource($this->imageResized) && !($this->imageResized instanceof \GdImage))
+		if ( ! is_resource($this->imageResized))
 		{
 			if ($this->debug)
 			{
@@ -2899,7 +2899,7 @@ class imageLib {
 		#
 	{
 
-		if ( ! is_resource($this->imageResized) && !($this->imageResized instanceof \GdImage))
+		if ( ! is_resource($this->imageResized))
 		{
 			if ($this->debug)
 			{
@@ -3718,7 +3718,7 @@ class imageLib {
 
 	public function __destruct()
 	{
-		if ( ! is_resource($this->imageResized) && !($this->imageResized instanceof \GdImage))
+		if (is_resource($this->imageResized))
 		{
 			imagedestroy($this->imageResized);
 		}

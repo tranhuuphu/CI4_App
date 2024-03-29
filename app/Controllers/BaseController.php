@@ -75,7 +75,7 @@ abstract class BaseController extends Controller
         
         
 
-        return view('front_end/canvas_site/layout', $data2).view('admin/admin-layout', $dataLogin);
+        return view('front_end/maymocnganhduc_site/layout_maymoc', $data2).view('admin/admin-layout', $dataLogin);
 
 
         

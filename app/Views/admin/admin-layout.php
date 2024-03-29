@@ -142,7 +142,7 @@
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/pages/dashboard.js"></script>
 
 	<script src="<?= base_url('public/admin_asset'); ?>/bootstrap-select/bootstrap-select.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+	
 
 	<!-- Tag Input -->
 	<script src="<?= base_url('public/admin_asset'); ?>/tagify-input/jQuery.tagify.min.js" referrerpolicy="origin"></script>
@@ -172,6 +172,8 @@
 
 
 <!-- <script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.js" referrerpolicy="origin"></script> -->
+
+<script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -228,7 +230,7 @@
       oninit : "setPlainText",
 
       plugins: 'print preview importcss searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap emoticons template paste responsivefilemanager file-manager2',
-      fontsize_formats: '8px 10px 12px 14px 16px 18px 24px 36px 48px 72px',
+      fontsize_formats: '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 48px 72px',
       
       menubar: 'file edit view insert format tools table tc',
       default_link_target: '_blank',
@@ -247,18 +249,6 @@
 		  automatic_uploads: true,
 		  image_advtab: true ,
 
-		  // Flmngr: {
-	    //     apiKey: "gIWDSnWf",
-	    //     urlFileManager: '/public/upload/tinymce/',
-  		// 		urlFiles: '/public/upload/tinymce/'
-	    // },
-	    // setup: (editor) => {
-	    //     editor.on('init', (event) => {
-	    //         editor.getFlmngr((Flmngr) => {
-	    //             attachOnClickListenerToButton(Flmngr);
-	    //         });
-	    //     });
-	    // },
    
 			external_filemanager_path:"<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/",
 			filemanager_title:"Quản Lý Ảnh & File" ,
@@ -268,7 +258,7 @@
 				"filemanager": "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js",
 			},
 			filemanager_access_key:"tranhuuphu",
-      content_style: ".mce-content-body {font-size:16px;font-family: arial;}",
+      content_style: ".mce-content-body {font-size:18px;font-family: arial;}",
       contextmenu_never_use_native: true,
     };
 

@@ -652,6 +652,8 @@ class CanvasController extends BaseController
 
 
         ];
+        $session = session();
+        $session->set('cate_current', $cate_gallery['cate_slug']);
 
 
         return view('front_end/canvas_site/gallery_img_class', $data);
@@ -737,6 +739,7 @@ class CanvasController extends BaseController
 
 
     public function buy($id){
+
         $post = new PostModel;
 
 
@@ -860,6 +863,8 @@ class CanvasController extends BaseController
 
 
     public function tag($tag_slug, $tag_id){
+        $session = session();
+        $session->set('cate_current', null);
 
 
         $post = new PostModel;
@@ -966,6 +971,8 @@ class CanvasController extends BaseController
     }
 
     public function getSearch(){
+        $session = session();
+        $session->set('cate_current', null);
 
         $post = new PostModel;
         $gallery = new GalleryModel;
@@ -1021,7 +1028,8 @@ class CanvasController extends BaseController
 
     public function getPage($page_slug, $id){
 
-
+        $session = session();
+        $session->set('cate_current', $page_slug);
         $page = new PageModel;
         $page_info = $page->find($id);
         if($page_info == null){
