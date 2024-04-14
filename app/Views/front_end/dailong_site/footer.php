@@ -70,37 +70,44 @@
           <div class="copyright-links"><a href="javascript:void(0)">Terms of Use</a> / <a href="javascript:void(0)">Privacy Policy</a></div>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <div class="d-flex justify-content-center justify-content-md-end mb-2">
-            
+          <div class="d-flex justify-content-center justify-content-md-end">
+
             <?php if(isset($page_home['facebook'])): ?>
-            <a href="<?= $page_home['facebook']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-facebook">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon si-small si-borderless si-facebook">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+              </a>
             <?php endif; ?>
+
+            
+
             <?php if(isset($page_home['youtube'])): ?>
-            <a href="<?= $page_home['youtube']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-youtube">
-              <i class="fab fa-youtube"></i>
-              <i class="fab fa-youtube"></i>
-            </a>
+              <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon si-small si-borderless si-youtube">
+                <i class="icon-youtube"></i>
+                <i class="icon-youtube"></i>
+              </a>
             <?php endif; ?>
             <?php if(isset($page_home['twitter'])): ?>
-            <a href="<?= $page_home['twitter']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-twitter">
-              <i class="fab fa-google"></i>
-              <i class="fab fa-google"></i>
-            </a>
+              <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon si-small si-borderless si-twitter">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+              </a>
             <?php endif; ?>
+
             <?php if(isset($page_home['pinterest'])): ?>
-            <a href="<?= $page_home['pinterest']; ?>" target="_blank" class="social-icon border-transparent si-small h-bg-pinterest">
-              <i class="fab fa-pinterest-p"></i>
-              <i class="fab fa-pinterest-p"></i>
-            </a>
+              <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon si-small si-borderless si-pinterest">
+                <i class="icon-pinterest"></i>
+                <i class="icon-pinterest"></i>
+              </a>
             <?php endif; ?>
-            
+
             
           </div>
-          
+
         </div>
+
+
+        
       </div>
     </div>
   </div>

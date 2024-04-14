@@ -202,39 +202,16 @@ class Auth extends BaseController
 
             $password = $this->request->getPost('password');
             if($password != null){
-                
-
-                $validation = $this->validate([
-                    
-                    'password'=>[
-                        'rules'=>'required|min_length[5]',
-                        'errors'=>[
-                            'required'=>'Password is required',
-                            'min_length'=>'Password must be atleast 5 characters',
-                        ]
-                    ],
-                    're_password'=>[
-                        'rules'=>'required|min_length[5]|matches[password]',
-                        'errors'=>[
-                            'required'=>'re_password is required',
-                            'min_length'=>'re_password must be atleast 5 characters',
-                            'matches'=>'Confirm password not match to password'
-                        ]
-                    ],
-
-                ]);
-                if(!$validation){
-                    return view('admin/auth/detail', ['validation'=>$this->validator, 'userInfo'=>$userInfo]);
-                    // return view('admin/auth/detail', ['validation'=>$this->validator]);
-                }
                 $data['password'] = Hash::make($password);
                 session()->setFlashdata('password', 'Bạn đã cập nhật Password mới');
                 
+            }else{
+                $data['password'] = $userInfo['password'];
             }
 
-            if($userInfo['name'] == $this->request->getPost('name') && $this->request->getPost('password') == null && $this->request->getPost('re_password') == null && empty($this->request->getFile('user_image')) && empty($this->request->getFile('favicon_image'))){
-                return redirect()->back()->with('fail', 'Bạn chưa cập nhật thông tin');
-            }
+            // if($userInfo['name'] == $this->request->getPost('name') && $this->request->getPost('password') == null && $this->request->getPost('re_password') == null && empty($this->request->getFile('user_image')) && empty($this->request->getFile('favicon_image'))){
+            //     return redirect()->back()->with('fail', 'Bạn chưa cập nhật thông tin');
+            // }
 
             
             

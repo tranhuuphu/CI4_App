@@ -4,28 +4,26 @@
   $name = $session->get('cate_current');
 
 ?>
-<div id="top-bar" class="bg-color dark">
+<div id="top-bar" style="background-color: #badfff">
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-12 col-md-auto">
         <p class="mb-0 py-2 text-center text-md-start">
           <?php if($page_home['phone'] != null): ?>
-            <a href="tel: <?= $page_home['phone']; ?>" target="_blank" class="si-call" style="color: #ffffff;">
-                <i class="fas fa-mobile-alt"></i> <span class="ts-text fw-bold">0<?= number_format($page_home['phone'], 0, ',', ' '); ?></span>
-            </a>
+            <strong><i class="fas fa-mobile-alt"></i> 0<?= number_format($page_home['phone'], 0, ',', ' '); ?></strong> 
           <?php endif; ?>
-          &nbsp;<i class="fas fa-mail-bulk"></i>  <strong class="ml-2">phuth.me@gmail.com</strong></p>
+          &nbsp;<i class="fas fa-mail-bulk"></i>  <strong class="ml-2">phuth.me@gmail.com</strong>
+        </p>
       </div>
       <div class="col-12 col-md-auto">
         <div class="top-links on-click">
           <ul class="top-links-container">
-            
-
             <?php foreach($link_page as $pl): ?>
               <li class="top-links-item <?php if($name == $pl['page_slug']): ?> active <?php endif; ?>">
-                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><i class="fas fa-dot-circle"></i> <?= $pl['page_name']; ?></a>
+                <a href="<?= base_url('').'/'.$pl['page_slug'].'-'.$pl['id']; ?>.html" title="<?= $pl['page_name']; ?>"><?= $pl['page_name']; ?></a>
               </li>
-            <?php endforeach; ?>            
+            <?php endforeach; ?> 
+
           </ul>
         </div>
       </div>
@@ -33,26 +31,20 @@
   </div>
 </div>
 
-
-
-
-
-
-<header id="header" class="header dark2" style="background-color: #e0efff">
+<header id="header">
   <div id="header-wrap">
     <div class="container">
-      <div class="header-row primary-menu2 sub-title2">
+      <div class="header-row">
         <div id="logo">
-          <a href="<?= base_url(''); ?>">
-            <!-- <img class="logo-default" style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/> -->
-            <img class="logo-dark" style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
+
+          <a href="<?= base_url(''); ?>" class="standard-logo" data-dark-logo="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>">
+            <img style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
           </a>
+
         </div>
-
-
         <div class="header-misc">
           <div id="top-search" class="header-misc-icon">
-            <a href="javascript:void(0)" id="top-search-trigger"><i class="fas fa-search"></i><i class="fas fa-times"></i></a>
+            <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
           </div>
 
           <?php if($items != null): ?>
@@ -94,31 +86,22 @@
 
 
         </div>
-
-
-        <div class="primary-menu-trigger">
-          <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
-            <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
-          </button>
+        <div id="primary-menu-trigger">
+          <svg class="svg-trigger" viewBox="0 0 100 100">
+            <path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
+            <path d="m 30,50 h 40"></path>
+            <path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
+          </svg>
         </div>
 
         <nav class="primary-menu">
           <ul class="menu-container">
-
-
-            
-
             <li class="menu-item <?php if($name == null): ?> current <?php endif; ?>">
-              <a class="menu-link" href="<?= base_url('/'); ?>"><div>Home</div></a>
+              <a class="menu-link" href="<?= base_url(''); ?>"><div>Home</div></a>
             </li>
-
             <li class="menu-item <?php if($name == 'san-pham'): ?> current <?php endif; ?>" data-title2="san-pham">
               <a class="menu-link" href="<?= base_url('san-pham'); ?>"><div>Sản Phẩm</div></a>
             </li>
-
-
-
-
 
             <?php foreach($cate as $c3): ?>
               <?php $c_t[] = $c3['cate_parent_id']; ?>
@@ -147,40 +130,18 @@
                 </li>
               <?php endif; ?>
             <?php endforeach; ?>
-
             
           </ul>
         </nav>
-
         <form class="top-search-form" id="searchform" action="<?= base_url('/'); ?>/search" method="get">
           
-          <input type="text" name="q" class="form-control " id="top-search-trigger" value placeholder="Type &amp; Hit Enter.." autocomplete="off" />
+          <input type="text" name="q" class="form-control " id="top-search-trigger" value placeholder="What are you finding?" autocomplete="off" />
           <button type="submit" class="btn btn-primary search" ><i class="fas fa-search"></i></button>
           
         </form>
 
-
-        
-
-
-                    
-
-        
       </div>
     </div>
   </div>
   <div class="header-wrap-clone"></div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-

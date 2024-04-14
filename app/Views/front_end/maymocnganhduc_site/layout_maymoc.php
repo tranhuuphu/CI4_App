@@ -33,6 +33,22 @@
     <?= $this->renderSection('yoast_seo'); ?>
 
     <?= $this->renderSection('link_css'); ?>
+    <style>
+      .mce-toc h2,.mce-toc li{margin-bottom:10px!important}.tp-caption.News-Title{font-weight:700;letter-spacing:-1px;font-family:arial,sans-serif}.tp-caption.News-Subtitle{font-family:arial}.tp-video-play-button{display:none!important}.tp-caption{white-space:nowrap}.tp-carousel-wrapper{cursor:url(<?= base_url() ?>/public/upload/openhand.cur),move}.tp-carousel-wrapper.dragged{cursor:url(<?= base_url() ?>/public/upload/closedhand.cur),move}.tp-tabs{background:linear-gradient(90deg,#2e69ff 0,#32ffc3 100%)!important}.search,.sticky-header .search{position:absolute;right:85px;height:auto;width:auto;background:#1f8cff;font-weight:700}.search{bottom:33%;border-radius:0;border:none}.sticky-header .search{bottom:22%!important;border-radius:0;border:none}.mce-toc{background-color:#fff;padding:20px 20px 0;border-radius:20px;border:1px solid #000;margin-bottom:40px!important}.mce-toc h2{font-weight:700;text-transform:uppercase;font-size:25px}.mce-toc li{list-style:none;position:relative;padding:0 0 0 20px}.mce-toc li::before{content:"";position:absolute;left:2px;top:5px;width:6px;height:10px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}.sub-menu button:before{content:none}.pagination a:focus,[contenteditable].form-control:focus,[type=email].form-control:focus,[type=password].form-control:focus,[type=tel].form-control:focus,[type=text].form-control:focus,input.form-control:focus,input[type=email]:focus,input[type=number]:focus,input[type=password]:focus,input[type=text]:focus,select:focus,textarea.form-control:focus,textarea:focus{box-shadow:inset 0 0 0 #ddd!important}.postcontent .button{margin-left:0!important}.call-btn2{position:fixed;bottom:60px;left:25px;background:#345eeb;text-align:center;color:#fff;box-shadow:0 3px 5px rgba(0,0,0,.2);z-index:99;transition:.3s;font-weight:700;border-radius:5px;padding:1.5px 10px 1.5px 38px;font-size:18px;line-height:25px}.call-btn2 img{position:absolute;left:0;top:0;padding:5px 7px;background:rgba(0,0,0,.3);border-radius:5px 0 0 5px;animation:1s ease-in-out infinite blinking}.postcontent img{margin:0 0 15px;border-radius:7px}.page-link{border-radius:0!important}.sticky-header-shrink #logo img{padding:7px 0!important}.breadcrumb li{color:grey;font-size:16px}.breadcrumb li a{color:#0474c4;font-size:16px;font-weight:700}.breadcrumb li a:hover{color:#0a70ff}.active a{color:#000!important}.active a:hover{color:#0a70ff!important}#rev_slider_30_1 ul li .title_cap a:hover{color:#05f!important}
+        .tp-tab-content .tp-tab-title{
+            display: -webkit-box;
+            max-width: 100%;
+            margin: 0 auto;
+            -webkit-line-clamp: 2;
+            /* autoprefixer: off */
+            -webkit-box-orient: vertical;
+            /* autoprefixer: on */
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+  
+    </style>
     
 
     
@@ -114,7 +130,7 @@
 
     <!-- <div id="gotoTop" class="uil uil-angle-up"></div> -->
     <!-- <div id="gotoTop" class="rounded border border-primary" data-mobile="true" style="--cnvs-gotoTop-bg:var(--cnvs-contrast-800)"><i class="fas fa-arrow-up"></i></div> -->
-    <div id="gotoTop" class="uil uil-angle-up rounded-circle"><i class="fas fa-arrow-up"></i></div>
+    <div id="gotoTop" class="uil uil-angle-up rounded-circle" style="margin-right: 10px"><i class="fas fa-arrow-up"></i></div>
 
 
     <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script>

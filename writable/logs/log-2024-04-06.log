@@ -1,0 +1,276 @@
+INFO - 2024-04-06 07:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:07:27 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:07:28 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:10:14 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:10:15 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:10:39 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:10:39 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:11:11 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:11:11 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:11:22 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:11:22 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:12:41 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:12:42 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:13:33 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:13:34 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:14:24 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:14:24 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:20:44 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:20:45 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:21:32 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:21:32 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:21:39 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:21:40 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-06 07:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:23:08 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('deskwork.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-06 07:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-06 07:23:08 --> Invalid file: "front_end/canvas_site/404_error/404_class_gallery.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front_end/canvas_site/404_error/404_class_gallery.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/canvas_site/404_error/404_class_gallery', [], true)
+ 3 APPPATH\Controllers\MayMocController.php(580): view('front_end/canvas_site/404_error/404_class_gallery')
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\MayMocController->class_gallery('cnvsswitcher.js')
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MayMocController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

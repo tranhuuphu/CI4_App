@@ -64,8 +64,8 @@ class MayMocController extends BaseController
             $blog = $post->orderBy('id', 'DESC')->where('post_cate_id', $cate_blog['id'])->limit(8)->find();
         }
 
-        $recent_post = $post->orderBy('id', 'DESC')->limit(8)->find();
-        $most_view = $post->orderBy('post_view', 'DESC')->limit(4)->find();
+        $recent_post = $post->orderBy('id', 'DESC')->limit(6)->find();
+        $most_view = $post->orderBy('post_view', 'DESC')->limit(6)->find();
 
 
         $gallery = new GalleryModel;

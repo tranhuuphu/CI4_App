@@ -95,7 +95,7 @@ class CanvasController extends BaseController
         ];
 
         // dd($data);
-        return view('front_end/canvas_site/home', $data);
+        return view('front_end/dailong_site/home', $data);
     }
 
     public function postCate($slug, $id){
@@ -113,14 +113,14 @@ class CanvasController extends BaseController
 
         if($slug == ""){
 
-            return view('front_end/canvas_site/404_error/404_post_cate');
+            return view('front_end/dailong_site/404_error/404_post_cate');
         }
 
 
         $cate_detail = $cate->where('id', $id)->first();
         
         if(!$cate_detail || $cate_detail == null){
-            return view('front_end/canvas_site/404_error/404_post_cate');
+            return view('front_end/dailong_site/404_error/404_post_cate');
         }
 
         if($slug != $cate_detail['cate_slug'] && $cate_detail != null){
@@ -213,19 +213,19 @@ class CanvasController extends BaseController
 
         if($cate_detail['cate_type'] == 'blog'){
             $data['pager'] = $post->pager;
-            return view('front_end/canvas_site/blog_cate', $data);
+            return view('front_end/dailong_site/blog_cate', $data);
 
         }elseif($cate_detail['cate_type'] == 'cate_gallery'){
             $data['pager'] = $gallery->pager;
-            return view('front_end/canvas_site/gallery_cate', $data);
+            return view('front_end/dailong_site/gallery_cate', $data);
         }
         else{
             $data['pager'] = $post->pager;
-            return view('front_end/canvas_site/post_cate', $data);
+            return view('front_end/dailong_site/post_cate', $data);
         }
 
         
-        // return view('front_end/canvas_site/post_cate');
+        // return view('front_end/dailong_site/post_cate');
     }
     public function table_image(){
 
@@ -269,7 +269,7 @@ class CanvasController extends BaseController
 
         ];
 
-        return view('front_end/canvas_site/gallery_cate_table', $data);
+        return view('front_end/dailong_site/gallery_cate_table', $data);
     }
 
     public function getProd(){
@@ -330,7 +330,7 @@ class CanvasController extends BaseController
 
 
         ];
-        return view("front_end/canvas_site/prod_cate", $data);
+        return view("front_end/dailong_site/prod_cate", $data);
 
 
     }
@@ -346,7 +346,7 @@ class CanvasController extends BaseController
 
         if($id == null || $id == ""){
             // đặt gallery topic
-            return view('front_end/canvas_site/404_error/404_post_detail');
+            return view('front_end/dailong_site/404_error/404_post_detail');
         }
 
 
@@ -364,7 +364,7 @@ class CanvasController extends BaseController
 
 
             if($gallery_img == null){
-                return view('front_end/canvas_site/404_error/404_img_detail');
+                return view('front_end/dailong_site/404_error/404_img_detail');
             }
 
             if($gallery_img['gallery_title_slug'] != $title){
@@ -447,14 +447,14 @@ class CanvasController extends BaseController
 
 
 
-            return view('front_end/canvas_site/gallery_img_detail', $data);
+            return view('front_end/dailong_site/gallery_img_detail', $data);
 
         }
 
         $post_detail = $post->find($id);
 
         if(!$post_detail){
-            return view('front_end/canvas_site/404_error/404_post_detail');
+            return view('front_end/dailong_site/404_error/404_post_detail');
         }
 
         
@@ -541,9 +541,9 @@ class CanvasController extends BaseController
                 $data['postImages'] = null;
             }
             
-            return view('front_end/canvas_site/post_prod_detail', $data);
+            return view('front_end/dailong_site/post_prod_detail', $data);
         }else{
-            return view('front_end/canvas_site/post_detail', $data);
+            return view('front_end/dailong_site/post_detail', $data);
         }
 
         
@@ -577,7 +577,7 @@ class CanvasController extends BaseController
         }
 
         if($gallery_child == "" && $gallery_parent == ""){
-            return view('front_end/canvas_site/404_error/404_class_gallery');
+            return view('front_end/dailong_site/404_error/404_class_gallery');
         }
 
         // Kiểm tra url truyền vào có đúng hay không
@@ -656,7 +656,7 @@ class CanvasController extends BaseController
         $session->set('cate_current', $cate_gallery['cate_slug']);
 
 
-        return view('front_end/canvas_site/gallery_img_class', $data);
+        return view('front_end/dailong_site/gallery_img_class', $data);
     }
 
 
@@ -666,26 +666,26 @@ class CanvasController extends BaseController
         if(session('cart') == null){
             $data['items'] = null;
             $data['total'] = null;
-            return view('front_end/canvas_site/cart', $data);
+            return view('front_end/dailong_site/cart', $data);
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
         // dd(array_values(session('cart')));
-        return view('front_end/canvas_site/cart', $data);
+        return view('front_end/dailong_site/cart', $data);
     }
 
     public function order(){    
         if(session('cart') == null){
-            return view('front_end/canvas_site/404_error/404_cart');
+            return view('front_end/dailong_site/404_error/404_cart');
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
-        return view('front_end/canvas_site/check-out', $data);
+        return view('front_end/dailong_site/check-out', $data);
     }
 
     public function finishOrder(){
         if(session('cart') == null){
-            return view('front_end/canvas_site/404_error/404_cart');
+            return view('front_end/dailong_site/404_error/404_cart');
         }
         $data['items'] = array_values(session('cart'));
         $data['total'] = $this->total();
@@ -716,7 +716,7 @@ class CanvasController extends BaseController
         ]);
         if(!$validation){
             
-            return view('front_end/canvas_site/check-out', ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
+            return view('front_end/dailong_site/check-out', ['validation'=>$this->validator, 'items'=>$data['items'], 'total'=>$data['total']]);
         }
 
 
@@ -745,7 +745,7 @@ class CanvasController extends BaseController
 
         $post_prod = $post->find($id);
         if(!$post_prod){
-            return view('front_end/canvas_site/404_error/404_post_detail');
+            return view('front_end/dailong_site/404_error/404_post_detail');
         }
         $cate = new CateModel;
         $cate_detail = $cate->where("id", $post_prod['post_cate_id'])->first();
@@ -795,7 +795,7 @@ class CanvasController extends BaseController
 
         $post_prod = $post->find($id);
         if(!$post_prod){
-            return view('front_end/canvas_site/404_error/404_post_detail');
+            return view('front_end/dailong_site/404_error/404_post_detail');
         }
         $index = $this->exists($id);
         
@@ -848,7 +848,7 @@ class CanvasController extends BaseController
         $gallery_detail = $gallery->where('gallery_image', $image)->first();
 
         if($gallery_detail == null){
-            return view('front_end/canvas_site/404_error/404_img_detail');
+            return view('front_end/dailong_site/404_error/404_img_detail');
         }
 
         $times = $gallery_detail['gallery_img_download_times'] + 1;
@@ -878,7 +878,7 @@ class CanvasController extends BaseController
 
         if(!isset($tag_detail) || $tag_detail == null){
             $data['error'] = "Tag không tồn tại hoặc không đúng hoặc không liên kết với bài viết nào";
-            return view('front_end/canvas_site/404_error/404_post_cate', $data);
+            return view('front_end/dailong_site/404_error/404_post_cate', $data);
         }
 
         foreach($tag_detail as $key5){
@@ -894,7 +894,7 @@ class CanvasController extends BaseController
         // dd($post_count);
 
         if(!$post_tag && $post_tag == NULL){
-            return view('front_end/canvas_site/404_error/404_post_cate', $data);
+            return view('front_end/dailong_site/404_error/404_post_cate', $data);
         }
 
         $link_full = base_url().'/tag/'.$tag_slug;
@@ -917,7 +917,7 @@ class CanvasController extends BaseController
 
             'pager'         => $post->pager,
         ];
-        return view("front_end/canvas_site/getTag", $data);
+        return view("front_end/dailong_site/getTag", $data);
 
     }
 
@@ -981,7 +981,7 @@ class CanvasController extends BaseController
         $paginate = 10;
         // dd($key);
         if(!isset($key) || $key == null || $key == '+' || $key == '++'){
-            return view('front_end/canvas_site/404');
+            return view('front_end/dailong_site/404');
         }
 
 
@@ -1022,7 +1022,7 @@ class CanvasController extends BaseController
 
         ];
         
-        return view("front_end/canvas_site/get_search", $data);
+        return view("front_end/dailong_site/get_search", $data);
     }
 
 
@@ -1033,7 +1033,7 @@ class CanvasController extends BaseController
         $page = new PageModel;
         $page_info = $page->find($id);
         if($page_info == null){
-            return view('front_end/canvas_site/404_error/404_post_cate', $data);
+            return view('front_end/dailong_site/404_error/404_post_cate', $data);
         }
 
         $link_full = base_url().'/'.$page_info['page_slug'].'-'.$page_info['id'].'.html';
@@ -1053,7 +1053,7 @@ class CanvasController extends BaseController
         $data2['page_view'] = $page_info['page_view'] + 1;
         $page->update($id, $data2);
 
-        return view("front_end/canvas_site/get_page", $data);
+        return view("front_end/dailong_site/get_page", $data);
     }
 
 

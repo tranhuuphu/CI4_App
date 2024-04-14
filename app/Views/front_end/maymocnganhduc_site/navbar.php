@@ -27,7 +27,7 @@
           </button>
         </div>
         <style type="text/css">
-          @media(min-width:992px){.sub::after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:-20px}}.sub-menu button:after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:-20px}.sub-menu button:before{content:none}
+/*          @media(min-width:992px){.sub::after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:-20px}}.sub-menu button:after{font-family:"Font Awesome 5 Free";font-weight:900;content:"\f078";padding-left:-20px}.sub-menu button:before{content:none}*/
             .search, .sticky-header .search {
               position: absolute;
               right: 85px;

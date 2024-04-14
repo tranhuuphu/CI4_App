@@ -5,147 +5,106 @@
 
 
 
+<style type="text/css">
+  .contour-text h1, .lead {
+      /* 1 pixel black shadow to left, top, right and bottom */
+      text-shadow: -2px 0 white, 0 1px white, 2px 0 white, 0 -1px white;
 
+      font-family: sans; color: black;
+  }
+</style>
 
-<section class="slider-element bg-contrast-200 include-header">
-  <img src="https://canvastemplate.com/demos/drone/images/drone-2.jpg" alt="Image" class="object-fit-cover min-vh-75 w-100 h-100" />
-  <div class="position-absolute z-2 w-100 h-100 top-0">
+<section class="slider-element bg-contrast- include-header bg-info">
+  <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[0]['post_image']; ?>" alt="Image" class="object-fit-cover min-vh-75 w-100 h-100" />
+  <div class="position-absolute z-2 w-100 h-100 top-0 contour-text">
     <div class="text-center mt-lg-6 pt-5 pt-lg-6">
-      <h1 class="display-4 mb-3 fw-medium text-uppercase" style="letter-spacing: -2px;">Hawkeye from the Sky</h1>
+      <h1 class="display-4 mb-3 fw-medium text-uppercase" style="letter-spacing: -2px;"><?= $featured[0]['post_title'] ?></h1>
       <p class="lead">
-        Empowering Innovation through Aerial Excellence. <br />
-        Taking Flight, Unleashing Possibilities.
+        <?= $featured[0]['post_intro'] ?>
       </p>
-      <a href="#" class="button color button-border border-color h-text-light border-width-2 button-large button-offset rounded">View All Drones</a>
+      <a href="<?= base_url('').'/'.$featured[0]['cate_slug'].'/'.$featured[0]['post_slug'].'-'.$featured[0]['id'].'.html'; ?>" class="button color button-border border-color h-text-light border-width-2 button-large button-offset rounded">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
     </div>
   </div>
 </section>
 
+
 <section id="content">
   <div class="content-wrap">
+
+      <style> 
+        .tab-title {
+          white-space: nowrap; 
+          width: 100px; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .tab-title:hover {
+/*          overflow: visible;*/
+          z-index: 1000;
+        }
+      </style>
     <div class="container pt-lg-4">
       <div class="row justify-content-center">
         <div class="col-md-10 text-center">
-          <h3 class="display-6 mb-3 fw-medium text-uppercase">Our Latest Products</h3>
-          <p class="mb-5">
-            Unlock the Sky's Potential with our Cutting-Edge Drone Technology. <br />
-            Revolutionizing Flight with Innovative Drones.
-          </p>
+          <h3 class="display-6 mb-3 fw-medium text-uppercase">Bài Viết & SP Mới</h3>
+
           <ul class="nav nav-tabs nav-fill" id="demo-drone-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="canvas-tab-1" data-bs-toggle="pill" data-bs-target="#tab-1" type="button" role="tab" aria-controls="canvas-home" aria-selected="true">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/1.png" alt=".." height="70" />
-                <div class="my-4 small tab-title">Canvas Mini 2 SE</div>
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="canvas-tab-2" data-bs-toggle="pill" data-bs-target="#tab-2" type="button" role="tab" aria-controls="canvas-profile" aria-selected="false">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/2.png" alt=".." height="70" />
-                <div class="my-4 small tab-title">Integro Auto Robotics</div>
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="canvas-tab-3" data-bs-toggle="pill" data-bs-target="#tab-3" type="button" role="tab" aria-controls="canvas-contact" aria-selected="false">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/3.png" alt=".." height="70" />
-                <div class="my-4 small tab-title">Air Sky Pro</div>
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="canvas-tab-4" data-bs-toggle="pill" data-bs-target="#tab-4" type="button" role="tab" aria-controls="canvas-about" aria-selected="false">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/4.png" alt=".." height="70" />
-                <div class="my-4 small tab-title">HawkEye SE 2</div>
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="canvas-tab-5" data-bs-toggle="pill" data-bs-target="#tab-5" type="button" role="tab" aria-controls="canvas-about" aria-selected="false">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/5.png" alt=".." height="70" />
-                <div class="my-4 small tab-title">Remotes &amp; Others</div>
-              </button>
-            </li>
+            <?php $i = 1; ?>
+            <?php foreach($recent_post as $pr): ?>
+              <?php foreach($cate_2 as $ct): ?>
+                <?php if($pr['post_cate_id'] == $ct['id']): ?>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link <?php if($i == 1){echo 'active';} ?>" id="canvas-tab-<?= $i ?>" data-bs-toggle="pill" data-bs-target="#tab-<?= $i ?>" type="button" role="tab" aria-controls="canvas-home" aria-selected="true">
+                      <img src="<?= base_url('public/upload/tinymce/').'/'.$pr['post_image']; ?>" alt="<?= $pr['post_title']; ?>" height="70" />
+                      <div class="my-4 small tab-title"><?= $pr['post_title']; ?></div>
+                    </button>
+                  </li>
+                  
+                <?php endif; ?>
+              <?php endforeach; ?>
+              <?php $i += 1; ?>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>
     </div>
+          
+
     <div class="bg-contrast-300 py-5 py-lg-6">
       <div class="container">
         <div class="tab-content">
-          <div class="tab-pane show active" role="tabpanel" aria-labelledby="tab-1-justify-tab" tabindex="0" id="tab-1">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-5">
-                <h2>Canvas Mini 2 SE</h2>
-                <p>Primis blandit justo, odio. Sint aliquid sagittis distinctio tellus! Fringilla porttitor, quia, magnam libero dolorum pellentesque. Aut proin molestiae.</p>
-                <p class="fw-bold">4/3 CMOS Hasselblad Camera | Dual Tele Cameras | Cine Only Tri-Camera Apple ProRes Support | 43-Min Max Flight Time | Omnidirectional Obstacle Sensing | 15km HD Video Transmission.</p>
-                <a href="#" class="button button-dark button-offset rounded">Learn More</a>
-              </div>
-              <div class="col-md-5">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/slide-1.png" alt="..." />
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" role="tabpanel" aria-labelledby="tab-2-justify-tab" tabindex="0" id="tab-2">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-5">
-                <h2>Integro Auto Robotics</h2>
-                <p>Dictum ratione quam cupidatat ab purus. Quas. Semper porro aptent occaecat faucibus hac pretium dignissim sapiente, porro repellendus, saepe, atque. Quis aut tempus quam aliquet.</p>
-                <p class="fw-bold">4/3 CMOS Hasselblad Camera | Dual Tele Cameras | Cine Only Tri-Camera Apple ProRes Support | 43-Min Max Flight Time | Omnidirectional Obstacle Sensing | 15km HD Video Transmission.</p>
-                <a href="#" class="button button-dark button-offset rounded">Learn More</a>
-              </div>
-              <div class="col-md-5">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/slide-2.png" alt="..." />
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" role="tabpanel" aria-labelledby="tab-3-justify-tab" tabindex="0" id="tab-3">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-5">
-                <h2>Air Sky Pro</h2>
-                <p>
-                  Dicta mauris. Nisl praesent ipsam eveniet ipsa aperiam vel eos pulvinar laudantium magni pellentesque, nonummy nam! Voluptate voluptate iusto? Animi ullamcorper, accusantium ante sem, rerum urna. Molestiae
-                  exercitation diamlorem ornare.
-                </p>
-                <p class="fw-bold">4/3 CMOS Hasselblad Camera | Dual Tele Cameras | Cine Only Tri-Camera Apple ProRes Support | 43-Min Max Flight Time | Omnidirectional Obstacle Sensing | 15km HD Video Transmission.</p>
-                <a href="#" class="button button-dark button-offset rounded">Learn More</a>
-              </div>
-              <div class="col-md-5">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/slide-3.png" alt="..." />
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" role="tabpanel" aria-labelledby="tab-4-justify-tab" tabindex="0" id="tab-4">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-5">
-                <h2>HawkEye SE 2</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet iure dignissimos incidunt! Sint sunt adipisci dolor.</p>
-                <p class="fw-bold">4/3 CMOS Hasselblad Camera | Dual Tele Cameras | Cine Only Tri-Camera Apple ProRes Support | 43-Min Max Flight Time | Omnidirectional Obstacle Sensing | 15km HD Video Transmission.</p>
-                <a href="#" class="button button-dark button-offset rounded">Learn More</a>
-              </div>
-              <div class="col-md-5">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/slide-4.png" alt="..." />
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" role="tabpanel" aria-labelledby="tab-5-justify-tab" tabindex="0" id="tab-5">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-5">
-                <h2>Remotes &amp; Others</h2>
-                <p>
-                  Montes, nulla do eros labore voluptates, pariatur gravida varius incidunt fusce dapibus nisi! Cupidatat platea! Magni lobortis elementum! Lorem dictum? Phasellus malesuada odio quas officiis dui laboris laoreet,
-                  reiciendis hendrerit.
-                </p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet iure dignissimos incidunt! Sint sunt adipisci dolor.</p>
-                <p class="fw-bold">4/3 CMOS Hasselblad Camera | Dual Tele Cameras | Cine Only Tri-Camera Apple ProRes Support | 43-Min Max Flight Time | Omnidirectional Obstacle Sensing | 15km HD Video Transmission.</p>
-                <a href="#" class="button button-dark button-offset rounded">Learn More</a>
-              </div>
-              <div class="col-md-5">
-                <img src="https://canvastemplate.com/demos/drone/images/drones/slide-5.png" alt="..." />
-              </div>
-            </div>
-          </div>
+
+          <?php $n = 1; ?>
+            <?php foreach($recent_post as $pr): ?>
+              <?php foreach($cate_2 as $ct): ?>
+                <?php if($pr['post_cate_id'] == $ct['id']): ?>
+                  <div class="tab-pane show <?php if($n == 1){echo 'active';} ?>" role="tabpanel" aria-labelledby="tab-<?= $n ?>-justify-tab" tabindex="0" id="tab-<?= $n ?>">
+                    <div class="row justify-content-center align-items-center">
+                      <div class="row justify-content-center align-items-center">
+                      <div class="col-md-5">
+                        <h2><?= $pr['post_title']; ?></h2>
+                        <p><?= $pr['post_intro']; ?></p>
+                        <a href="<?= base_url('').'/'.$pr['post_cate_slug'].'/'.$pr['post_slug'].'-'.$pr['id'].'.html'; ?>" title="<?= $pr['post_title']; ?>" class="button button-success button-offset rounded">Chi tiết <i class="fas fa-long-arrow-alt-right"></i></a>
+                      </div>
+                      <div class="col-md-5">
+                        <img src="<?= base_url('public/upload/tinymce/').'/'.$pr['post_image']; ?>" alt="<?= $pr['post_title']; ?>"/>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php $n += 1; ?>
+            <?php endforeach; ?>
+
+
         </div>
       </div>
     </div>
     <div class="clear"></div>
-    <div class="section dark m-0 border-0 mt-0">
+
+    <!-- <div class="section dark m-0 border-0 mt-0">
       <div class="container d-flex justify-content-center align-items-end" style="min-height: 450px;">
         <div class="row g-5 justify-content-between">
           <div class="col-md-4">
@@ -168,126 +127,100 @@
         </video>
         <div class="position-absolute w-100 h-100 top-0 start-0 z-1 bg-dark bg-opacity-10"></div>
       </div>
-    </div>
+    </div> -->
+
     <div class="container my-6">
       <div class="row g-4 align-items-stretch">
-        <div class="col-md-4">
-          <div class="card text-center border-0">
-            <div class="card-body px-5 py-4 dark" style="background: url('https://canvastemplate.com/demos/drone/images/cards/1.jpg') no-repeat center bottom / cover; min-height: 600px; border-radius: 20px;">
-              <p class="text-uppercase small op-06 ls-1 mb-2">Popular Drone</p>
-              <h3 class="mb-1 fs-3">Canvas Mini 2 SE</h3>
-              <p class="mb-4">Starting $79.99</p>
-              <a href="#" class="button button-small button-offset button-light bg-white text-dark rounded">View Now</a>
+        <?php if($most_view != null): ?>
+          <?php foreach($most_view as $mv): ?>
+
+            <div class="col-md-4">
+              <div class="card text-center border-0" style="border: 1px solid black !important; border-radius: 20px; background: #25cfbb">
+                <div class="card-body px-5 py-4 dark" style="background: url('<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>') no-repeat center bottom / cover; min-height: 600px; border-radius: 20px; background-size: 100% auto">
+                  <p class="text-uppercase small op-06 ls-1 mb-2">Popular Post</p>
+                  <h3 class="mb-1 fs-3" style="color: black"><?= $mv['post_title']; ?></h3>
+                  <p class="mb-4" style="color: black">
+                    <i class="far fa-calendar-alt"></i>
+                    <?php
+                      $datetime = (new \CodeIgniter\I18n\Time);
+                      $yearNow = $datetime::now()->getYear();
+                      $yearMonthsNow = $datetime::now()->getMonth();
+                      $yearPost = $datetime::parse($mv['updated_at'])->getYear();
+                      
+                      $yearMonthsPost = $datetime::parse($mv['updated_at'])->getMonth();
+                      if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                        echo $datetime::parse($mv['updated_at'])->humanize();
+                      }
+                      if(($yearNow - $yearPost) > 1){
+                        echo $datetime::parse($mv['updated_at'])->humanize();
+                      }else{
+                        echo $datetime::parse($mv['updated_at'])->toLocalizedString('dd MMM yyyy');
+                      }
+                      
+
+                    ?>
+                  </p>
+                  <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>" class="button button-small button-offset button-light bg-info text-dark rounded">View Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center border-0">
-            <div class="card-body px-5 py-4 dark" style="background: url('https://canvastemplate.com/demos/drone/images/cards/2.jpg') no-repeat center bottom / cover; min-height: 600px; border-radius: 20px;">
-              <p class="text-uppercase small op-06 ls-1 mb-2">Featured</p>
-              <h3 class="mb-1 fs-3">Air Sky Pro</h3>
-              <p class="mb-4">Starting $59.99</p>
-              <a href="#" class="button button-small button-offset button-light bg-white text-dark rounded">View Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center border-0">
-            <div class="card-body px-5 py-4" style="background: url('https://canvastemplate.com/demos/drone/images/cards/3.jpg') no-repeat center bottom / cover; min-height: 600px; border-radius: 20px;">
-              <p class="text-uppercase small op-06 ls-1 mb-2">Others</p>
-              <h3 class="mb-1 fs-3">Controllers</h3>
-              <p class="mb-4">Starting $29.99</p>
-              <a href="#" class="button button-small button-offset button-light bg-white text-dark rounded">View Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="card text-center border-0">
-            <div class="card-body p-0 dark">
-              <img src="https://canvastemplate.com/demos/drone/images/drone-features.jpg" alt=".." style="border-radius: 20px;" />
+          <?php endforeach; ?>
+        <?php endif; ?>
+
+        <div class="clear"></div>
+        
+        <div class="col-12 ">
+          <div class="card text-center border-0" style="background: #d3e9f2">
+            <div class="card-body p-0 dark p-3">
+              <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[1]['post_image']; ?>" alt="<?= $featured[1]['post_intro'] ?>" style="border-radius: 20px;" />
               <div class="position-absolute top-0 pos-x-center mt-3 mt-lg-5">
-                <h3 class="mb-1 fs-3">What's New in v3</h3>
-                <p class="mb-3 d-none d-lg-block">More Better, More Harder</p>
-                <a href="#" class="button button-small button-offset button-light bg-white text-dark rounded d-none d-lg-inline-block">View Now</a>
+                <h3 class="mb-1 fs-3 lead" style="color: blue; font-weight: bold;"><?= $featured[1]['post_title'] ?></h3>
+                <p class="mb-3 d-none d-lg-block lead"><?= $featured[1]['post_intro'] ?></p>
+                <a href="<?= base_url('').'/'.$featured[1]['cate_slug'].'/'.$featured[1]['post_slug'].'-'.$featured[1]['id'].'.html'; ?>" title="<?= $featured[1]['post_title'] ?>" class="button button-small button-offset button-light bg-white text-dark rounded d-none d-lg-inline-block">View Now <i class="fas fa-long-arrow-alt-right"></i></a>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
       <div class="clear mb-5 mb-lg-6"></div>
       <div class="row g-3 justify-content-center text-center">
         <div class="col-md-3">
-          <img class="mb-4" src="https://canvastemplate.com/demos/drone/images/icons/logo-1.svg" alt="..." height="40" />
-          <h3 class="fs-5 mb-3">Popular camera Company from for end.</h3>
-          <p class="op-07">Change the color scheme of the Theme in a flash just by changing the 6-digit HEX code.</p>
+          <i class="fas fa-vector-square fa-2x"></i>
+          <h3 class="fs-5 mb-3">Chính Xác Cao</h3>
+          <p class="op-07">Sản Phẩm Gia Công Cơ Khí Với Độ Chính Xác Cao, Tỉ Mỉ</p>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-3">
-          <img class="mb-4" src="https://canvastemplate.com/demos/drone/images/icons/logo-2.svg" alt="..." height="40" />
-          <h3 class="fs-5 mb-3">Best Third-party Mobile App for our Drone.</h3>
-          <p class="op-07">Ipsam eveniet per posuere, aspernatur Voluptate. Minus sed cubilia exercitation posuere itaque? Tempus soluta, modi.</p>
+          <i class="fas fa-thumbs-up fa-2x"></i>
+          <h3 class="fs-5 mb-3">Giá Cạnh Tranh</h3>
+          <p class="op-07">Luôn có mức giá cạnh tranh nhất đối với sản phẩm được bán ra, và hậu mãi tốt.</p>
         </div>
       </div>
-      <div class="card border-0 mt-5">
-        <div class="card-body p-0 dark">
-          <img src="https://canvastemplate.com/demos/drone/images/reviews.jpg" alt=".." style="border-radius: 20px;" class="position-absolute top-0 start-0 w-100 h-100 object-cover" />
-          <div class="row flex-column p-5 p-lg-6 g-5">
-            <div class="col-lg-4">
-              <div class="text-warning">
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-              </div>
-              <h3 class="my-2">“Best Drone I ever used. Awesome Camera Quality.”</h3>
-              <img src="https://canvastemplate.com/demos/drone/images/reviews/amazon.svg" alt="..." height="35" class="op-05" />
-            </div>
-            <div class="col-lg-4">
-              <div class="text-warning">
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-              </div>
-              <h3 class="my-2">“Very good Quailty and Quick Service.”</h3>
-              <img src="https://canvastemplate.com/demos/drone/images/reviews/google.svg" alt="..." height="50" class="op-05" />
-            </div>
-            <div class="col-lg-4">
-              <div class="text-warning">
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-                <i class="bi-star-fill"></i>
-              </div>
-              <h3 class="my-2">“Long Battery-life and Work for Long Range.”</h3>
-              <img src="https://canvastemplate.com/demos/drone/images/reviews/vimeo.svg" alt="..." height="50" class="op-05" />
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
     <div class="clear"></div>
-    <div class="section mt-3 footer-stick dark py-4">
+
+    <div class="section mt-3 footer-stick dark py-4" style="margin-bottom: -80px !important">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-4 d-flex align-items-center">
             <i class="me-3 fs-4 bi-globe"></i>
-            <span>Worldwide Shipping</span>
+            <span>Giao Hàng Nhanh</span>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-lg-center">
             <i class="me-3 fs-4 bi-clock"></i>
-            <span>24hrs Helpline Available</span>
+            <span>Sản Phẩm Có Sẵn</span>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-lg-end">
             <i class="me-3 fs-4 bi-truck"></i>
-            <span>24hrs Helpline Available</span>
+            <span>Hỗ Trợ 24/7</span>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 	

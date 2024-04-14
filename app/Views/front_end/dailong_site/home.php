@@ -1,113 +1,69 @@
-<?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/dailong_site/layout'); ?>
 
 <?= $this->section('content'); ?>
 
-<!-- Feature Slider -->
-<?php if($featured != null): ?> 
-<section id="slider" class="slider-element revslider-wrap">
-  <div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="media-carousel-autoplay30" style="margin: 0px auto; background: linear-gradient(90deg, rgba(46,105,255,1) 0%, rgba(50,255,195,1) 100%); padding: 0px; margin-top: 0px; margin-bottom: 0px;">
-    <div id="rev_slider_30_1" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.0.7">
-      <ul>
-        <?php $n = 0; ?>
+<?php if($featured != null): ?>
+	<section id="content">
+	  <div class="content-wrap" style="padding-bottom: 0px !important;">
+			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+			  
+
         <?php foreach($featured as $key): ?>
-	      	<li
-	          data-index="rs-12<?= $n ?>"
-	          data-transition="fade"
-	          data-slotamount="7"
-	          data-easein="default"
-	          data-easeout="default"
-	          data-masterspeed="200"
-	          data-thumb="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>"
-	          data-rotate="0"
-	          data-saveperformance="off"
-	          data-title="<i class='fas fa-star'></i> <?= $key['post_title']; ?>"
-	          data-param1=
-	          "
-	          	<i class='fas fa-calendar-alt'></i> 
-            	<?php
-            		$datetime = (new \CodeIgniter\I18n\Time);
-            		$yearNow = $datetime::now()->getYear();
-            		$yearMonthsNow = $datetime::now()->getMonth();
-            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
-            		
-            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
-            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-            			echo $datetime::parse($key['updated_at'])->humanize();
-            		}
-            		if(($yearNow - $yearPost) > 1){
-            			echo $datetime::parse($key['updated_at'])->humanize();
-            		}else{
-            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
-            		}
-            	?>
-          	"
-	          data-description
+				  <div class="oc-item">
+				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>">
+				    	<img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"/></a>
+				    <div class="bg-overlay">
+				      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
+				        <div>
+				          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
+				          <div class="portfolio-desc px-0">
+				            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
+				            <span>
+				            	<i class='fas fa-calendar-alt'></i> 
+				            	<?php
+				            		$datetime = (new \CodeIgniter\I18n\Time);
+				            		$yearNow = $datetime::now()->getYear();
+				            		$yearMonthsNow = $datetime::now()->getMonth();
+				            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
+				            		
+				            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
+				            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+				            			echo $datetime::parse($key['updated_at'])->humanize();
+				            		}
+				            		if(($yearNow - $yearPost) > 1){
+				            			echo $datetime::parse($key['updated_at'])->humanize();
+				            		}else{
+				            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
+				            		}
+				            	?>
+				            </span>
+				          </div>
+				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
+				        </div>
+				      </div>
 
-
-
-
-
-	        >
-		        <div
-		            class="tp-caption Video-SubTitle tp-resizeme"
-		            id="slide-121-layer-<?= $n ?>"
-		            data-x="10"
-		            data-y="bottom"
-		            data-voffset="50"
-		            data-width="['auto']"
-		            data-height="['auto']"
-		            data-transform_idle="o:1;tO:-20% 50%;"
-		            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
-		            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-		            data-start="200"
-		            data-splitin="none"
-		            data-splitout="none"
-		            data-responsive_offset="on"
-		            data-end=""
-		            style="z-index: 5; white-space: nowrap; font-size: 18px;"
-		          >
-		            <a href="<?= base_url('').'/'.$key['cate_slug'].'-'.$key['post_cate_id']; ?>"><i class="fas fa-long-arrow-alt-right"></i> <?= $key['cate_name']; ?></a>
-	          </div>
-	          <div
-	            class="tp-caption Video-Title tp-resizeme title_cap"
-	            id="slide-121-layer-<?= $n ?>"
-	            data-x="10"
-	            data-y="bottom"
-	            data-voffset="10"
-	            data-width="['auto']"
-	            data-height="['auto']"
-	            data-transform_idle="o:1;tO:-20% 50%;"
-	            data-transform_in="y:bottom;rZ:90deg;sX:2;sY:2;s:1500;e:Power3.easeInOut;"
-	            data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-	            data-start="750"
-	            data-splitin="none"
-	            data-splitout="none"
-	            data-responsive_offset="on"
-	            data-end=""
-	            style="z-index: 6; white-space: nowrap;"
-	          >
-	            <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" style="color: yellow; padding: 10px 5px" class=""><?= $key['post_title']; ?></a>
-	          </div>
-
-	          
-
-	          <img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" height="auto" data-bgposition="center center" data-bgfit="100% 100%" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina />
-	        </li>
-	        <?php $n += 1; ?>
+				    </div>
+				  </div>
         <?php endforeach; ?>
-        
 
-        
+			</div>
+		</div>
 
-
-
-      </ul>
-      <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-    </div>
-  </div>
-</section>
+	</section>
 <?php endif; ?>
 <!-- End Slider -->
+
+<div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(90deg, rgba(50,40,217,1) 0%, rgba(96,96,249,1) 35%, rgba(0,212,255,1) 100%);">
+  <div class="heading-block text-center border-bottom-0 mb-0">
+    <h2>"Everything is designed, but some things are designed well."</h2>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="bottommargin-lg">
+</div>
+
+
 
 
 
@@ -115,12 +71,7 @@
 	
 
   <div class="clear"></div>
-  <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(180deg, rgba(255,245,0,1) 0%, rgba(30,255,95,1) 100%)">
-    <!-- <img src="https://canvastemplate.com/images/parallax/3.jpg" class="parallax-bg" alt="Parallax Image" /> -->
-    <div class="heading-block text-center border-bottom-0 mb-0">
-      <h2>"Everything is designed, but some things are designed well."</h2>
-    </div>
-  </div>
+
 
 
 	
@@ -468,44 +419,54 @@
 		          </div>
 
 
-		          <div class="widget">
-		            <div class="row gutter-20 col-mb-30">
 
-		            	<?php if(isset($page_home['facebook'])): ?>
-		              <div class="col-3">
-		                <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon bg-warning h-bg-facebook float-none mb-3">
-		                  <i class="fab fa-facebook-f"></i>
-		                  <i class="fab fa-facebook-f"></i>
-		                </a>
-		              </div>
-		              <?php endif; ?>
+		            <div class="row gutter-20 col-mb-30 col-mt-30 mt-5">
 
-		              <?php if(isset($page_home['youtube'])): ?>
-		              <div class="col-3">
-		                <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon bg-warning h-bg-youtube float-none mb-3">
-		                  <i class="fab fa-youtube"></i>
-		                  <i class="fab fa-youtube"></i>
-		                </a>
-		              </div>
-		              <?php endif; ?>
 
-		              <?php if(isset($page_home['twitter'])): ?>
-		              <div class="col-3">
-		                <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon bg-warning h-bg-twitter float-none mb-3">
-		                  <i class="fab fa-twitter"></i>
-		                  <i class="fab fa-twitter"></i>
-		                </a>
-		              </div>
-		              <?php endif; ?>
 
-		              <?php if(isset($page_home['pinterest'])): ?>
-		              <div class="col-3">
-		                <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon bg-warning h-bg-pinterest float-none mb-3">
-		                  <i class="fab fa-pinterest"></i>
-		                  <i class="fab fa-pinterest"></i>
-		                </a>
-		              </div>
-		              <?php endif; ?>
+		            	<div class="widget">
+				          	<div class="col-sm-12 col-lg-12">
+			                <div class="fancy-title title-border">
+			                  <h4>Connect with Us</h4>
+			                </div>
+
+
+		              		<?php if(isset($page_home['facebook'])): ?>
+			                <a href="<?= $page_home['facebook'] ?>" target="_blank" class="social-icon si-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
+			                  <i class="icon-facebook"></i>
+			                  <i class="icon-facebook"></i>
+			                </a>
+			                <?php endif; ?>
+
+			                
+
+				              <?php if(isset($page_home['youtube'])): ?>
+				                <a href="<?= $page_home['youtube'] ?>" target="_blank" class="social-icon si-youtube" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube">
+				                  <i class="icon-youtube"></i>
+				                  <i class="icon-youtube"></i>
+				                </a>
+			                <?php endif; ?>
+			                <?php if(isset($page_home['twitter'])): ?>
+				                <a href="<?= $page_home['twitter'] ?>" target="_blank" class="social-icon si-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter">
+				                  <i class="icon-twitter"></i>
+				                  <i class="icon-twitter"></i>
+				                </a>
+			                <?php endif; ?>
+
+			                <?php if(isset($page_home['pinterest'])): ?>
+				                <a href="<?= $page_home['pinterest'] ?>" target="_blank" class="social-icon si-pinterest" data-bs-toggle="tooltip" data-bs-placement="top" title="Pinterest">
+				                  <i class="icon-pinterest"></i>
+				                  <i class="icon-pinterest"></i>
+				                </a>
+			                <?php endif; ?>
+
+
+			                
+			                
+			              </div>
+			            </div>
+
+		            	
 		            </div>
 		          </div>
 
@@ -624,205 +585,7 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('link_css'); ?>
-	
-	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css" media="screen">
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
 
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/plugin/news.css">
-
-<?= $this->endSection(); ?>
-
-
-<?= $this->section('script'); ?>
-	
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.tools.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.revolution.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.video.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.carousel.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.navigation.min.js"></script>
-
-	<!-- Slider -->
-	<script>
-	  var tpj = jQuery;
-	  var revapi30;
-
-	  tpj(document).ready(function () {
-	    if (tpj("#rev_slider_30_1").revolution == undefined) {
-	      revslider_showDoubleJqueryError("#rev_slider_30_1");
-	    } else {
-	      revapi30 = tpj("#rev_slider_30_1")
-	        .show()
-	        .revolution({
-	          sliderType: "carousel",
-	          jsFileLocation: "<?= base_url('public/public/site_asset/canvas/js/plugin/')?>/",
-	          sliderLayout: "fullwidth",
-	          dottedOverlay: "none",
-	          delay: 9000,
-	          navigation: {
-	            keyboardNavigation: "off",
-	            keyboard_direction: "horizontal",
-	            mouseScrollNavigation: "off",
-	            onHoverStop: "off",
-	            touch: {
-	              touchenabled: "on",
-	              swipe_threshold: 75,
-	              swipe_min_touches: 1,
-	              swipe_direction: "horizontal",
-	              drag_block_vertical: false,
-	            },
-	            arrows: {
-	              style: "gyges",
-	              enable: true,
-	              hide_onmobile: false,
-	              hide_onleave: false,
-	              tmp: "",
-	              left: {
-	                h_align: "left",
-	                v_align: "center",
-	                h_offset: 20,
-	                v_offset: 0,
-	              },
-	              right: {
-	                h_align: "right",
-	                v_align: "center",
-	                h_offset: 20,
-	                v_offset: 0,
-	              },
-	            },
-	            tabs: {
-	              style: "gyges",
-	              enable: true,
-	              width: 250,
-	              height: 80,
-	              min_width: 250,
-	              wrapper_padding: 30,
-	              wrapper_color: "#26292b",
-	              wrapper_opacity: "1",
-	              tmp: '<div class="tp-tab-content">  <span class="tp-tab-date">{{param1}}</span>  <span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>',
-	              visibleAmount: 5,
-	              hide_onmobile: false,
-	              hide_onleave: false,
-	              hide_delay: 200,
-	              direction: "horizontal",
-	              span: true,
-	              position: "outer-bottom",
-	              space: 0,
-	              h_align: "center",
-	              v_align: "bottom",
-	              h_offset: 0,
-	              v_offset: 0,
-	            },
-	          },
-	          carousel: {
-	            horizontal_align: "center",
-	            vertical_align: "center",
-	            fadeout: "on",
-	            vary_fade: "on",
-	            maxVisibleItems: 3,
-	            infinity: "on",
-	            space: 0,
-	            stretch: "off",
-	          },
-	          gridwidth: 720,
-	          gridheight: 405,
-	          lazyType: "none",
-	          shadow: 0,
-	          spinner: "off",
-	          stopLoop: "on",
-	          stopAfterLoops: 0,
-	          stopAtSlide: 1,
-	          shuffle: "off",
-	          autoHeight: "off",
-	          disableProgressBar: "on",
-	          hideThumbsOnMobile: "off",
-	          hideSliderAtLimit: 0,
-	          hideCaptionAtLimit: 0,
-	          hideAllCaptionAtLilmit: 0,
-	          debugMode: false,
-	          fallbacks: {
-	            simplifyAll: "off",
-	            nextSlideOnWindowFocus: "off",
-	            disableFocusListener: false,
-	          },
-	        });
-	    }
-	  }); /*ready*/
-	</script>
-
-	<script>
-	  var tpj = jQuery;
-
-	  tpj(document).ready(function () {
-	    var apiRevoSlider = tpj("#rev_slider_ishop")
-	      .show()
-	      .revolution({
-	        sliderType: "standard",
-	        jsFileLocation: "<?= base_url('public/site_asset/canvas'); ?>/js/",
-	        sliderLayout: "fullwidth",
-	        dottedOverlay: "none",
-	        delay: 9000,
-	        navigation: {},
-	        responsiveLevels: [1200, 992, 768, 480, 320],
-	        gridwidth: 1140,
-	        gridheight: 300,
-	        lazyType: "none",
-	        shadow: 0,
-	        spinner: "off",
-	        autoHeight: "off",
-	        disableProgressBar: "on",
-	        hideThumbsOnMobile: "off",
-	        hideSliderAtLimit: 0,
-	        hideCaptionAtLimit: 0,
-	        hideAllCaptionAtLilmit: 0,
-	        debugMode: false,
-	        fallbacks: {
-	          simplifyAll: "off",
-	          disableFocusListener: false,
-	        },
-	        navigation: {
-	          keyboardNavigation: "off",
-	          keyboard_direction: "horizontal",
-	          mouseScrollNavigation: "off",
-	          onHoverStop: "off",
-	          touch: {
-	            touchenabled: "on",
-	            swipe_threshold: 75,
-	            swipe_min_touches: 1,
-	            swipe_direction: "horizontal",
-	            drag_block_vertical: false,
-	          },
-	          arrows: {
-	            style: "ares",
-	            enable: true,
-	            hide_onmobile: false,
-	            hide_onleave: false,
-	            tmp: '<div class="tp-title-wrap"> <span class="tp-arr-titleholder">{{title}}</span> </div>',
-	            left: {
-	              h_align: "left",
-	              v_align: "center",
-	              h_offset: 10,
-	              v_offset: 0,
-	            },
-	            right: {
-	              h_align: "right",
-	              v_align: "center",
-	              h_offset: 10,
-	              v_offset: 0,
-	            },
-	          },
-	        },
-	      });
-
-	    apiRevoSlider.on("revolution.slide.onloaded", function (e) {
-	      SEMICOLON.Base.sliderDimensions();
-	    });
-	  }); //ready
-	</script>
-
-<?= $this->endSection(); ?>
 
 
 <?= $this->section('yoast_seo'); ?>

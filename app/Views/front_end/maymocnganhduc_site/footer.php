@@ -1,4 +1,4 @@
-<footer id="footer" class="dark mt-5">
+<footer id="footer" class="dark">
   <div class="container">
     <div class="footer-widgets-wrap">
       <div class="row col-mb-50">
@@ -108,4 +108,5 @@
 
 
 <div id='arcontactus'></div>
+
 <a id="<?= $page_home['phone']; ?>" href="tel:<?= $page_home['phone']; ?>"><div class="call-btn2"><noscript><img src="<?= base_url('public'); ?>/upload/phone.svg"/></noscript><img class=" lazyloaded" src="<?= base_url('public'); ?>/upload/phone.svg" data-src="{{url('/')}}/public/public_image/phone.svg"> 0<?= number_format($page_home['phone'], 0, ',', ' ') ?></div></a>

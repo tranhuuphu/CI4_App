@@ -1,15 +1,18 @@
-<?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/dailong_site/layout'); ?>
 
 <?= $this->section('content'); ?>
+<section>
+  <div class="container">
+    <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+        <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
 
-<div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
-    </ol>
-  </nav>
-</div>
+
 
 
 
