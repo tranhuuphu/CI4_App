@@ -129,7 +129,7 @@ class CanvasController extends BaseController
         
 
         $paginate = 12;
-        $paginate_gallery = 18;
+        $paginate_gallery = 24;
 
 
         
@@ -149,11 +149,12 @@ class CanvasController extends BaseController
         // Gallery
         elseif($cate_parent == 0 && $cate_detail['cate_type'] == 'cate_gallery')
         {
-
+            
             $post_cate  = $gallery->orderBy('id', 'desc')->paginate($paginate_gallery, 'g');
             $post_count = $gallery->countAllResults();
-            $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(4)->find();
+            $most_view  = $gallery->orderBy('gallery_view', 'DESC')->limit(6)->find();
             $tag_this = null;
+
 
         // Other
         }elseif($cate_parent == 0 && $cate_detail['cate_type'] != 'blog' && $cate_detail['cate_type'] != 'cate_gallery'){
@@ -216,6 +217,7 @@ class CanvasController extends BaseController
             return view('front_end/dailong_site/blog_cate', $data);
 
         }elseif($cate_detail['cate_type'] == 'cate_gallery'){
+            $data['most_view_post'] = $post->orderBy('post_view', 'DESC')->limit(4)->find();
             $data['pager'] = $gallery->pager;
             return view('front_end/dailong_site/gallery_cate', $data);
         }

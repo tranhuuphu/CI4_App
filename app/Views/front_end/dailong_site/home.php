@@ -53,7 +53,8 @@
 <?php endif; ?>
 <!-- End Slider -->
 
-<div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(90deg, rgba(50,40,217,1) 0%, rgba(96,96,249,1) 35%, rgba(0,212,255,1) 100%);">
+
+<div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(to right, #96DEDA, #50C9C3);">
   <div class="heading-block text-center border-bottom-0 mb-0">
     <h2>"Everything is designed, but some things are designed well."</h2>
   </div>

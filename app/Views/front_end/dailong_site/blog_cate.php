@@ -132,16 +132,20 @@
         <div class="sidebar col-lg-4">
           <div class="sidebar-widgets-wrap">
 
-          	<div class="fancy-title title-border mt-5">
-              <h4>Opening Hours</h4>
+            <div class="card overflow-hidden">
+              <div class="card-body">
+                <h4>Opening Hours</h4>
+                <p>Regular time working from monday to saturday and sunday.</p>
+                <ul class="iconlist mb-0">
+                  <li><i class="icon-time color"></i> <strong>Mondays-Fridays:&nbsp;</strong> 8AM to 7PM</li>
+                  <li><i class="icon-time color"></i> <strong>Saturdays:&nbsp;</strong> 8AM to 7PM</li>
+                  <li><i class="icon-time text-danger"></i> <strong>Sundays:&nbsp;</strong> Maybe Closed</li>
+                </ul>
+                <i class="icon-time bgicon"></i>
+              </div>
             </div>
-            <div class="position-relative overflow-hidden pb-4">
-              <ul class="iconlist mb-0">
-                <li><i class="far fa-clock"></i> <strong class="me-2">Mondays-Fridays:</strong> 10AM to 7PM</li>
-                <li><i class="far fa-clock"></i> <strong class="me-2">Saturdays:</strong> 11AM to 5PM</li>
-                <li><i class="far fa-clock text-danger"></i> <strong class="me-2">Sundays:</strong> Closed</li>
-              </ul>
-              <i class="far fa-clock bg-icon" style="bottom: -70px;"></i>
+            
+            <div class="bottommargin-lg">
             </div>
 
 
