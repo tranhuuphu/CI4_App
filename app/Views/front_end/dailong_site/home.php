@@ -54,11 +54,11 @@
 <!-- End Slider -->
 
 
-<div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(to right, #96DEDA, #50C9C3);">
+<!-- <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(to right, #96DEDA, #50C9C3);">
   <div class="heading-block text-center border-bottom-0 mb-0">
     <h2>"Everything is designed, but some things are designed well."</h2>
   </div>
-</div>
+</div> -->
 
 <div class="clearfix"></div>
 <div class="bottommargin-lg">
@@ -213,7 +213,7 @@
 
 
 
-	<div class="section" style="background: linear-gradient(180deg, rgba(89,255,229,1) 0%, rgba(0,158,255,1) 100%);" style="margin: 0px">
+	<div class="section" style="background: #F3F5F6;" style="margin: 0px">
     <div class="container">
       <div id="oc-images2" class="owl-carousel image-carousel carousel-widget posts-md" data-margin="20" data-pagi="false" data-rewind="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
       	<?php if(count($blog) > 0): ?>

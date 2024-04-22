@@ -942,6 +942,12 @@ class DaiLongController extends BaseController
 
         $cate_gallery  = $cate->select('cate_slug, updated_at')->where('cate_type', 'cate_gallery')->first();
 
+        $gallery_type   = $gallery->select('gallery_type_slug')->orderBy('id', 'DESC')->findAll();
+        $gallery_type = array_unique($gallery_type, SORT_REGULAR);
+
+        $gallery_topic = $gallery->select("gallery_topic_slug")->where('gallery_topic_slug !=', null)->findAll();
+        $gallery_topic = array_unique($gallery_topic, SORT_REGULAR);
+        // dd($gallery_topic);
 
 
         // $imgTinyCME_info   = $image->select('image_TinyCME_name, image_folder, updated_at')->orderBy('id', 'DESC')->findAll();
@@ -958,12 +964,14 @@ class DaiLongController extends BaseController
             'post_all'              => $post_all,
             'gallery_info'          => $gallery_info,
             'cate_gallery'          => $cate_gallery,
+            'gallery_type'          => $gallery_type,
+            'gallery_topic'         => $gallery_topic,
         ];
-        header("Content-Type: text/xml;");
+        // header("Content-Type: text/xml;");
 
         // $data = $this->response->setXML($data2);
         return $this->response->setXML(view('front_end/sitemap', $data));
-        // return view('front_end/sitemap', $data2);
+        // return view('front_end/sitemap', $data);
     }
 
     public function getSearch(){
