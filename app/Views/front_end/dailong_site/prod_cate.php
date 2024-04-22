@@ -19,7 +19,7 @@
 </style>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>

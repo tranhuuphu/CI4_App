@@ -12,7 +12,7 @@ $routes = Services::routes();
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultController('CanvasController');
+$routes->setDefaultController('DaiLongController');
 // $routes->setDefaultController('MayMocController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
@@ -233,37 +233,37 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 
 // Canvas Site
 
-$routes->get('/', 'CanvasController::index');
+$routes->get('/', 'DaiLongController::index');
 
-$routes->get('(:any)/(:any)-(:num).html', 'CanvasController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
-
-
-$routes->get('sitemap.xml', 'CanvasController::siteMap');
-$routes->get('table_image', 'CanvasController::table_image');
-
-$routes->get('tag/(:any)-(:num)', 'CanvasController::tag/$1/$2');
-$routes->get('cart/remove/(:num)', 'CanvasController::remove/$1');
-$routes->get('buy/(:num)', 'CanvasController::buy/$1');
-$routes->post('buy/(:num)', 'CanvasController::buy/$1');
-$routes->get('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->post('gio-hang/cap-nhat', 'CanvasController::update');
-$routes->get('gio-hang', 'CanvasController::cart');
-$routes->get('dat-hang', 'CanvasController::order');
-$routes->get('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
-$routes->post('hoan-thanh-dat-hang', 'CanvasController::finishOrder');
-$routes->get('page/download/(:any)', 'CanvasController::download/$1');
-
-$routes->get('(:any)/(:any)', 'CanvasController::class_gallery/$2', ['as' => 'class_topic']);
-$routes->get('(:any)-(:num).html', 'CanvasController::getPage/$1/$2');
-
-$routes->get('search', 'CanvasController::getSearch');
-
-$routes->get('san-pham', 'CanvasController::getProd');
+$routes->get('(:any)/(:any)-(:num).html', 'DaiLongController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
 
 
+$routes->get('sitemap.xml', 'DaiLongController::siteMap');
+$routes->get('table_image', 'DaiLongController::table_image');
+
+$routes->get('tag/(:any)-(:num)', 'DaiLongController::tag/$1/$2');
+$routes->get('cart/remove/(:num)', 'DaiLongController::remove/$1');
+$routes->get('buy/(:num)', 'DaiLongController::buy/$1');
+$routes->post('buy/(:num)', 'DaiLongController::buy/$1');
+$routes->get('gio-hang/cap-nhat', 'DaiLongController::update');
+$routes->post('gio-hang/cap-nhat', 'DaiLongController::update');
+$routes->get('gio-hang', 'DaiLongController::cart');
+$routes->get('dat-hang', 'DaiLongController::order');
+$routes->get('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
+$routes->post('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
+$routes->get('page/download/(:any)', 'DaiLongController::download/$1');
+
+$routes->get('(:any)/(:any)', 'DaiLongController::class_gallery/$2', ['as' => 'class_topic']);
+$routes->get('(:any)-(:num).html', 'DaiLongController::getPage/$1/$2');
+
+$routes->get('search', 'DaiLongController::getSearch');
+
+$routes->get('san-pham', 'DaiLongController::getProd');
 
 
-$routes->get('(:any)-(:num)', 'CanvasController::postCate/$1/$2');
+
+
+$routes->get('(:any)-(:num)', 'DaiLongController::postCate/$1/$2');
 
 
 

@@ -184,47 +184,8 @@
             <?php endforeach; ?>
           <?php endif; ?>
 
-          <div class="line line-sm"></div>
-
-          <div id="portfolio" class="portfolio row g-0 portfolio-reveal grid-container">
-            <?php if($most_view != null): ?>
-              <?php foreach($most_view as $mv): ?>
-                <article class="portfolio-item col-4 col-md-4 col-lg-4 pf-media pf-icons">
-                  <div class="grid-inner">
-                    <div class="portfolio-image">
-                      <a href="portfolio-single.html">
-                        <img src="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$mv['gallery_image']; ?>" alt="<?= $mv['gallery_title']; ?>"/>
-                      </a>
-                      <div class="bg-overlay">
-                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                          <a
-                            href="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$mv['gallery_image']; ?>"
-                            class="overlay-trigger-icon bg-light text-dark"
-                            data-hover-animate="fadeInDownSmall"
-                            data-hover-animate-out="fadeOutUpSmall"
-                            data-hover-speed="350"
-                            data-hover-parent=".portfolio-item"
-                            data-lightbox="image"
-                            title="<?= $mv['gallery_title']; ?>"
-                          >
-                            <i class="fas fa-expand-alt"></i>
-                          </a>
-                        </div>
-                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn2" data-hover-parent=".portfolio-item"></div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </article>
-              <?php endforeach; ?>
-            <?php endif; ?>
-            
-
-
-          </div>
-
-                  
-
+          
+          
         </div>
       </div>
 
@@ -309,22 +270,6 @@
 
         
       </div>
-
-      
-      <style type="text/css">
-        .portfolio-desc2 a{
-          display: -webkit-box;
-          max-width: 100%;
-          margin: 0 auto;
-          -webkit-line-clamp: 2;
-          /* autoprefixer: off */
-          -webkit-box-orient: vertical;
-          /* autoprefixer: on */
-          overflow: hidden;
-          text-overflow: ellipsis;
-          
-        }
-      </style>
 
       <div class="line line-sm"></div>
       <?= $pager->links('g'); ?>

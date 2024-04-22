@@ -1,4 +1,4 @@
-<?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/dailong_site/layout'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -73,7 +73,7 @@
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
   <meta rel="canonical" href="<?= base_url() ?>"/>
 
-  <title>Error 404</title>
+  <title>Error 404 chi tiết bài viết</title>
 
   
 

@@ -203,7 +203,7 @@
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/jquery.js"></script>
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/plugins.min.js"></script>
 
-    <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js"></script>
+    <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js?<?= time(); ?>"></script>
 
 
     <!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script> -->

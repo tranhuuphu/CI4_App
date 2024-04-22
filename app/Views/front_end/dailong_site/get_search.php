@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 60px; background-color: #b3e2fe; padding: 30px 15px 7px 15px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= base_url().'/search?q='.$key ?>">Search result with Key: <span style="color: red;"><?= $key ?></span></a></li>
@@ -68,7 +68,7 @@
   </div>
   
   <?php if($result != null): ?>
-    <hr>
+
 
     <div class="row align-items-center mw-sm mx-auto g-0 mt-5">
 

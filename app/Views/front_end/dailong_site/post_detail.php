@@ -4,7 +4,7 @@
 
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px; background-color: #d1f0ff; padding: 30px 15px 7px 15px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
@@ -75,7 +75,7 @@
 			            <?= $post_detail['post_content']; ?>
 			            <hr class="mb-5">
 			            <?php if($tag_all): ?>
-				            <div class="tagcloud mb-3"><span>Tag:&nbsp;</span>
+				            <div class="tagcloud mb-3">
 				            	<?php foreach($tag_all as $tag): ?>
 		                  	<a href="<?= base_url().'/tag/'.$tag['tag_post_slug'].'-'.$tag['id'] ?>" title="Tag: <?= $tag['tag_post_title'] ?>"><?= $tag['tag_post_title'] ?></a>
 		                  <?php endforeach; ?>
@@ -83,34 +83,42 @@
 		              <?php endif; ?>
 			            
 			            <div class="clear"></div>
-			            <div class="card my-2 border rounded border-default">
+
+			            
+
+			            <div class="card my-2 border rounded border-default mt-3">
 	                  <div class="card-body p-3">
 	                    <div class="d-flex align-items-center justify-content-between">
 	                      <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
 	                      <div class="d-flex">
+	                      	<a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-borderless si-facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                          </a>
 
-	                        <a href="http://www.facebook.com/sharer/sharer.php?u=<?= $link_full ?>&text=<?= $post_detail['post_title']; ?>" target="_blank" title="share facebook: <?= $post_detail['post_title']; ?>" class="social-icon si-small text-white border-transparent rounded-circle bg-facebook" >
-	                          <i class="fab fa-facebook-f"></i>
-	                          <i class="fab fa-facebook-f"></i>
-	                        </a>
+                          <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-twitter">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                          </a>
 
-	                        <a href="https://twitter.com/intent/tweet?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share twitter: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-twitter">
-	                          <i class="fab fa-twitter"></i>
-	                          <i class="fab fa-twitter"></i>
-	                        </a>
-	                        <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-pinterest">
-	                          <i class="fab fa-pinterest-p"></i>
-	                          <i class="fab fa-pinterest-p"></i>
-	                        </a>
-	                        <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-small text-white border-transparent rounded-circle bg-tumblr">
-	                          <i class="fab fa-tumblr"></i>
-	                          <i class="fab fa-tumblr"></i>
-	                        </a>
+                          <a href="https://pinterest.com/pin/create/button/?url=<?= $link_full ?>&media=<?= base_url('public/upload/tinymce').'/'.$image ?>&description=<?= $post_detail['post_intro']; ?>" title="share pinterest: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-pinterest">
+                            <i class="icon-pinterest"></i>
+                            <i class="icon-pinterest"></i>
+                          </a>
+
+                          <a href="http://www.tumblr.com/share?v=3&u=<?= $link_full ?>&t=<?= $post_detail['post_intro']; ?>" title="share tumblr: <?= $post_detail['post_title']; ?>" target="_blank" class="social-icon si-borderless si-tumblr">
+                            <i class="icon-tumblr"></i>
+                            <i class="icon-tumblr"></i>
+                          </a>
+
+                          <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-borderless si-email3">
+                            <i class="icon-email3"></i>
+                            <i class="icon-email3"></i>
+                          </a>
+
+
+
 	                        
-	                        <a href="mailto:?subject=<?= $post_detail['post_title']; ?>&amp;body=<?= $link_full ?>" title="Share by Email" class="social-icon si-small text-white border-transparent rounded-circle bg-email3 me-0">
-	                          <i class="fas fa-envelope"></i>
-	                          <i class="fas fa-envelope"></i>
-	                        </a>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -210,108 +218,7 @@
 			          
 			        </div>
 
-			        <!-- <div id="comments" class="clearfix">
-			          <h3 id="comments-title"><span>3</span> Comments</h3>
 
-			          <ol class="commentlist clearfix">
-			            <li class="comment even thread-even depth-1" id="li-comment-1">
-			              <div id="comment-1" class="comment-wrap clearfix">
-			                <div class="comment-meta">
-			                  <div class="comment-author vcard">
-			                    <span class="comment-avatar clearfix"> <img alt="Image" src="https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60" class="avatar avatar-60 photo avatar-default" height="60" width="60" /></span>
-			                  </div>
-			                </div>
-			                <div class="comment-content clearfix">
-			                  <div class="comment-author">
-			                    John Doe<span><a href="#" title="Permalink to this comment">April 24, 2012 at 10:46 am</a></span>
-			                  </div>
-			                  <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-			                  <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-			                </div>
-			                <div class="clear"></div>
-			              </div>
-			              <ul class="children">
-			                <li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
-			                  <div id="comment-3" class="comment-wrap clearfix">
-			                    <div class="comment-meta">
-			                      <div class="comment-author vcard">
-			                        <span class="comment-avatar clearfix">
-			                          <img
-			                            alt="Image"
-			                            src="https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G"
-			                            class="avatar avatar-40 photo"
-			                            height="40"
-			                            width="40"
-			                          />
-			                        </span>
-			                      </div>
-			                    </div>
-			                    <div class="comment-content clearfix">
-			                      <div class="comment-author">
-			                        <a href="#" rel="external nofollow" class="url">SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span>
-			                      </div>
-			                      <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			                      <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-			                    </div>
-			                    <div class="clear"></div>
-			                  </div>
-			                </li>
-			              </ul>
-			            </li>
-			            <li class="comment byuser comment-author-_smcl_admin even thread-odd thread-alt depth-1" id="li-comment-2">
-			              <div id="comment-2" class="comment-wrap clearfix">
-			                <div class="comment-meta">
-			                  <div class="comment-author vcard">
-			                    <span class="comment-avatar clearfix">
-			                      <img
-			                        alt="Image"
-			                        src="https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G"
-			                        class="avatar avatar-60 photo"
-			                        height="60"
-			                        width="60"
-			                      />
-			                    </span>
-			                  </div>
-			                </div>
-			                <div class="comment-content clearfix">
-			                  <div class="comment-author">
-			                    <a href="https://themeforest.net/user/semicolonweb" rel="external nofollow" class="url">SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span>
-			                  </div>
-			                  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-			                  <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
-			                </div>
-			                <div class="clear"></div>
-			              </div>
-			            </li>
-			          </ol>
-			          <div class="clear"></div>
-
-			          <div id="respond">
-			            <h3>Leave a <span>Comment</span></h3>
-			            <form class="row" action="#" method="post" id="commentform">
-			              <div class="col-md-4 form-group">
-			                <label for="author">Name</label>
-			                <input type="text" name="author" id="author" value="" size="22" tabindex="1" class="sm-form-control" />
-			              </div>
-			              <div class="col-md-4 form-group">
-			                <label for="email">Email</label>
-			                <input type="text" name="email" id="email" value="" size="22" tabindex="2" class="sm-form-control" />
-			              </div>
-			              <div class="col-md-4 form-group">
-			                <label for="url">Website</label>
-			                <input type="text" name="url" id="url" value="" size="22" tabindex="3" class="sm-form-control" />
-			              </div>
-			              <div class="w-100"></div>
-			              <div class="col-12 form-group">
-			                <label for="comment">Comment</label>
-			                <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
-			              </div>
-			              <div class="col-12 form-group">
-			                <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d m-0">Submit Comment</button>
-			              </div>
-			            </form>
-			          </div>
-			        </div> -->
 			      </div>
 		      </div>
 		    </div>
@@ -323,6 +230,7 @@
 		        <div class="widget clearfix">
 		          <div class="tabs mb-0 clearfix" id="sidebar-tabs">
 		            
+
 		            <div class="fancy-title title-border">
 								    <h4 class="mb-2 ls-1 text- fw-bold">Popular</h4>
 								  </div>
@@ -378,6 +286,58 @@
 		        </div>
 		        
 		      </div>
+
+		      
+
+          <div class="tabs mb-4 clearfix mt-5" id="sidebar-tabs">
+            <ul class="tab-nav clearfix">
+              <li><a href="#tabs-1">Ảnh Xem Nhiều <i class="fas fa-images"></i></a></li>
+            </ul>
+          </div>
+
+          <div id="portfolio" class="portfolio row grid-container g-0 text-center" data-layout="fitRows">
+            <?php if($most_view_g != null): ?>
+              <?php foreach($most_view_g as $mv): ?>
+                <article class="portfolio-item col-lg-4 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+                  <div class="grid-inner">
+                    <div class="portfolio-image">
+                      <a href="portfolio-single.html">
+                        <img src="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$mv['gallery_image']; ?>" alt="<?= $mv['gallery_title']; ?>"/>
+                      </a>
+
+                      <div class="bg-overlay">
+                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                          <a
+                            href="<?= base_url('public/upload/tinymce/gallery_asset').'/'.$mv['gallery_image']; ?>"
+                            class="overlay-trigger-icon bg-light text-dark"
+                            data-hover-animate="fadeInDownSmall"
+                            data-hover-animate-out="fadeOutUpSmall"
+                            data-hover-speed="350"
+                            data-lightbox="image"
+                            title="<?= $mv['gallery_title']; ?>"
+                          >
+                            <i class="fas fa-expand-alt"></i>
+                          </a>
+                        </div>
+                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                      </div>
+                    </div>
+
+                    <div class="portfolio-desc" style="margin-top: 3px !important; padding-top: 3px !important;">
+                      <h6><a href="<?= base_url('').'/'.$cate_gallery_slug['cate_slug'].'/'.$mv['gallery_title_slug'].'-'.$mv['id'].'.html' ?>"><?= $mv['gallery_title']; ?></a></h6>
+                    </div>
+                  </div>
+                </article>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </div>
+          <div class="col-md-12 d-grid gap-2">
+            <a href="<?= base_url('').'/'.$cate_gallery_slug['cate_slug'].'-'.$cate_gallery_slug['id'] ?>" class="btn btn-secondary">Watch More <i class="fas fa-long-arrow-alt-right"></i></a>
+          </div>
+
+		      
+
+
 		    </div>
 		  </div>
 		</div>
@@ -387,14 +347,14 @@
 
 <?= $this->section('link_css'); ?>
 	
-	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/IMAGG_default.css">
+	<link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/IMAGG_default.css">
 
 
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
 	
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/IMAGG.js"></script>
+	<script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/IMAGG.js"></script>
 	<script type="text/javascript">
 		$(".entry-content img").addClass('triggerIMAGG');
 	</script>

@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
@@ -16,7 +16,7 @@
 
 <section id="content">
   <div class="content-wrap">
-    <div class="container clearfix mt-5">
+    <div class="container clearfix mt-2">
       <?php
       	$blog_1 = array_slice($post_cate, 0, 3);
       	$blog_2 = array_slice($post_cate, 3);
@@ -144,63 +144,60 @@
                 <i class="icon-time bgicon"></i>
               </div>
             </div>
-            
-            <div class="bottommargin-lg">
-            </div>
+
 
 
             
             
-            <div class="widget clearfix">
-              <div class="fancy-title title-border mt-5">
-                <h4>Bài viết mới</h4>
-              </div>
-              <div class="posts-sm row col-mb-30" id="post-list-sidebar">
-              	<?php foreach($most_view as $key3): ?>
-                  <div class="entry col-12">
-                    <div class="grid-inner row g-0">
-                      <div class="col-auto">
-                        <div class="entry-image">
-                          <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+              <div class="widget clearfix">
+                <div class="fancy-title title-border mt-">
+                  <h4>Bài viết mới</h4>
+                </div>
+                <div class="posts-sm row col-mb-30" id="post-list-sidebar">
+                	<?php foreach($most_view as $key3): ?>
+                    <div class="entry col-12">
+                      <div class="grid-inner row g-0">
+                        <div class="col-auto">
+                          <div class="entry-image">
+                            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col ps-3">
-                        <div class="entry-title">
-                          <h4><a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><?= $key3['post_title']; ?></a></h4>
-                        </div>
-                        <div class="entry-meta">
-                          <ul>
-                            <li><i class="far fa-calendar-alt"></i>
-                            	<?php
-      					            		$datetime = (new \CodeIgniter\I18n\Time);
-      					            		$yearNow = $datetime::now()->getYear();
-      					            		$yearMonthsNow = $datetime::now()->getMonth();
-      					            		$yearPost = $datetime::parse($key3['updated_at'])->getYear();
-      					            		
-      					            		$yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
-      					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-      					            			echo $datetime::parse($key3['updated_at'])->humanize();
-      					            		}
-      					            		if(($yearNow - $yearPost) > 1){
-      					            			echo $datetime::parse($key3['updated_at'])->humanize();
-      					            		}else{
-      					            			echo $datetime::parse($key3['updated_at'])->toDateString();
-      					            		}
-      					            		
+                        <div class="col ps-3">
+                          <div class="entry-title">
+                            <h4><a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><?= $key3['post_title']; ?></a></h4>
+                          </div>
+                          <div class="entry-meta">
+                            <ul>
+                              <li><i class="far fa-calendar-alt"></i>
+                              	<?php
+        					            		$datetime = (new \CodeIgniter\I18n\Time);
+        					            		$yearNow = $datetime::now()->getYear();
+        					            		$yearMonthsNow = $datetime::now()->getMonth();
+        					            		$yearPost = $datetime::parse($key3['updated_at'])->getYear();
+        					            		
+        					            		$yearMonthsPost = $datetime::parse($key3['updated_at'])->getMonth();
+        					            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+        					            			echo $datetime::parse($key3['updated_at'])->humanize();
+        					            		}
+        					            		if(($yearNow - $yearPost) > 1){
+        					            			echo $datetime::parse($key3['updated_at'])->humanize();
+        					            		}else{
+        					            			echo $datetime::parse($key3['updated_at'])->toDateString();
+        					            		}
+        					            		
 
-      					            	?>
-                            </li>
-                          </ul>
+        					            	?>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                <?php endforeach; ?>
-                
+                  <?php endforeach; ?>
+                  
+                </div>
               </div>
-            </div>
 
-            <div class="widget clearfix mb-3">
               <div class="fancy-title title-border mt-5">
                 <h4>Tag Hot</h4>
               </div>

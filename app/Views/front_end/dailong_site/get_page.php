@@ -4,7 +4,7 @@
 
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 60px; background-color: #b3e2fc; padding: 30px 15px 7px 15px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= $link_full?>"> <?= $page_info['page_name']; ?> </a></li>
@@ -13,17 +13,6 @@
 </div>
 
 
-<div class="container">
-  <section id="page-title" style="margin-bottom: 25px; margin-top: 35px;">
-    <div class="container clearfix" style="background-color: #b3e2fc">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: 500;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $page_info['page_name']; ?></a></li>
-      </ol>
-    </div>
-  </section>
-</div>
 
 <section id="content">
   <div class="content-wrap">

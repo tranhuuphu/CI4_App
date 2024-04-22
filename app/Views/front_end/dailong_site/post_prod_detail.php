@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 30px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 60px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>
@@ -434,14 +434,14 @@
 
 <?= $this->section('link_css'); ?>
   
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/IMAGG_default.css">
+  <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/IMAGG_default.css">
 
 
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
   
-  <script src="<?= base_url('public/site_asset/canvas'); ?>/js/IMAGG.js"></script>
+  <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/IMAGG.js"></script>
   <script type="text/javascript">
     $(".tab-content img").addClass('triggerIMAGG');
   </script>
