@@ -67,7 +67,7 @@
                         <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
                         <div id='buttons' class="mt-">
                           <?php foreach($topic_name as $key_name): ?>
-                            <input id='qty2' type="button" class="btn btn-info" data-value='<?= $key_name ?>' value="<?= $key_name ?>">
+                            <input id='qty2' type="button" class="btn btn-info mt-1" data-value='<?= $key_name ?>' value="<?= $key_name ?>">
                           <?php endforeach; ?>
                         </div>
                       <?php endif; ?>

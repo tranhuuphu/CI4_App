@@ -140,6 +140,73 @@
             </div>
           </div>
           <div class="line line-sm"></div>
+
+          <div class="row col-mb-50 mb-0">
+
+            <div class="entry col-12 mb-0">
+              <div class="grid-inner row">
+                <div class="col-md-5">
+                  <div class="entry-image mb-0">
+                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="entry-title title-sm mt-3 mt-md-0">
+                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
+                  </div>
+                  <div class="entry-meta">
+                    <ul>
+                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry col-12 mb-0">
+              <div class="grid-inner row">
+                <div class="col-md-5">
+                  <div class="entry-image mb-0">
+                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="entry-title title-sm mt-3 mt-md-0">
+                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
+                  </div>
+                  <div class="entry-meta">
+                    <ul>
+                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="entry col-12 mb-0">
+              <div class="grid-inner row">
+                <div class="col-md-5">
+                  <div class="entry-image mb-0">
+                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="entry-title title-sm mt-3 mt-md-0">
+                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
+                  </div>
+                  <div class="entry-meta">
+                    <ul>
+                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+
+          </div>
+
+
           <?php if($most_view_post != null): ?>
             <?php foreach($most_view_post as $mv): ?>
             <div class="entry col-12">

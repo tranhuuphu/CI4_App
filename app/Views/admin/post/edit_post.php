@@ -112,14 +112,29 @@
                     <label style="color: red;" class="upper">Ảnh Cũ</label>
                     <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
                     <hr>
-                    <label class="upper">Ảnh bài viết <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên 1 ảnh để làm ảnh bìa)</small></label>
+                    <label class="upper">Ảnh mới thay thế nếu có <small  style="text-transform: lowercase; color: red; font-style: ; font-weight: bold; font-size: 16px;">(Kích thước: 750x450px)</small> <small style="text-transform: lowercase; color: blue; font-style: italic; font-weight: bold;">(Chọn 1 ảnh, nếu chọn từ 2 ảnh thì hệ thống sẽ lấy ngẫu nhiên 1 ảnh để làm ảnh bìa)</small></label>
                     <br>
-                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
+                    <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" disabled type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
 
                     <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
                     <div id="images2" style="float: left" class="mb-3">
                       
                     </div>
+                    <hr>
+
+                    <!-- Sử dụng ảnh upload thay thế khi rfm không hoạt động đúng -->
+                    <label>Ảnh Mới (nếu cập nhật) <small  style="text-transform: lowercase; color: red; font-style: ; font-weight: bold; font-size: 16px;">(Kích thước: 750x450px)</small></label>
+                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <img id="output"/ style="width: 100%" class="pt-1">
+                    <script>
+                      var loadFile = function(event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function() {
+                          URL.revokeObjectURL(output.src) // free memory
+                        }
+                      };
+                    </script>
 
                   </div>
 

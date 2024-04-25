@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=<?= $page_home['phone']; ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css?<?= time(); ?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/dark.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/animate.css" type="text/css" />
@@ -203,11 +203,7 @@
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/jquery.js"></script>
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/plugins.min.js"></script>
 
-    <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js?<?= time(); ?>"></script>
-
-
-    <!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery/jquery.min.js"></script> -->
-
+    <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js"></script>
 
 
     <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>

@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <?php if($featured != null): ?>
-	<section id="content">
+	<section id="content mt-5">
 	  <div class="content-wrap" style="padding-bottom: 0px !important;">
 			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
 			  

@@ -329,10 +329,26 @@ class PostController extends BaseController
         }else{
             $data['post_image'] = $detailPost['post_image'];
         }
+
+
+        // Upload using upload normal without using rfm
+        // if($this->request->getFile('post_image')->guessExtension() != null){
+
+        //     $img = $this->request->getFile('post_image');
+        //     $type = $img->guessExtension();
+            
+        //     $post_image_name = $post_title_slug.'-'.random_string('alnum', 6).'.'.$type;
+
+        //     $data['post_image']       = $post_image_name;
+        // }else{
+        //     $data['post_image'] = $detailPost['post_image'];
+        // }
         
         
 
         $postModel->update($id, $data);
+
+
         $post_tag = $this->request->getPost('taginput');
         $tagId = $tagModel->where('tag_post_id', $id)->first();
         if($postModel){
@@ -353,6 +369,21 @@ class PostController extends BaseController
                 }
             }
         }
+
+        // save image after update field image
+        // if($img = $this->request->getFile('post_image'))
+        // {
+        //     if ($img->isValid() && ! $img->hasMoved())
+        //     {
+        //         $type = $img->getClientMimeType();
+        //         $img->move(ROOTPATH . 'public/upload/tinymce/image_asset', $post_image_name);
+        //         $pathTo = ROOTPATH.'/public/upload/tinymce/image_asset/'.$detailPost['post_image'];
+        //         $pathTrash = ROOTPATH.'/public/upload/tinymce/image_asset/trash/'.$detailPost['post_image'];
+        //         if(file_exists($pathTo)){
+        //             rename ($pathTo, $pathTrash);
+        //         }                            
+        //     }
+        // }
 
 
         // Upload bộ ảnh nếu là sản phẩm & có ảnh được up

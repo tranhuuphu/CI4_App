@@ -69,7 +69,7 @@
       }
 			
 		</style>
-
+		<!-- Thay đổi thành Url domain ở đây, change url domain here line 1154 dialog.php responsive -->
 	
 <body class="hold-transition dark-mode2 sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 	<div class="wrapper mb-5">
