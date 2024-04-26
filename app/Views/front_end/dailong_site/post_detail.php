@@ -298,7 +298,7 @@
           <div id="portfolio" class="portfolio row grid-container g-0 text-center" data-layout="fitRows">
             <?php if($most_view_g != null): ?>
               <?php foreach($most_view_g as $mv): ?>
-                <article class="portfolio-item col-lg-4 col-md-4 col-sm-6 col-12 pf-media pf-icons">
+                <article class="portfolio-item col-lg-4 col-md-4 col-sm-3 col-sx-6 col-12 pf-media pf-icons">
                   <div class="grid-inner">
                     <div class="portfolio-image">
                       <a href="portfolio-single.html">

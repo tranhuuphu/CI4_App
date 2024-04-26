@@ -120,7 +120,7 @@
             <div class="widget subscribe-widget2 clearfix">
               <div class="dark" style="padding: 25px; background-color: #5cadff; border-radius: 2px;">
                 <div class="fancy-title title-border">
-                  <h4>Search Google</h4>
+                  <h4>Search Image by Google</h4>
                 </div>
 
 
@@ -142,114 +142,52 @@
           <div class="line line-sm"></div>
 
           <div class="row col-mb-50 mb-0">
+            <?php if($most_view_post != null): ?>
+              <?php foreach($most_view_post as $mv): ?>
+                <div class="entry col-12 mb-0">
+                  <div class="grid-inner row">
+                    <div class="col-md-5">
+                      <div class="entry-image mb-0">
+                        <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" alt="<?= $mv['post_title']; ?>"/></a>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="entry-title title-sm mt-3 mt-md-0">
+                        <h3 class="mb-1" style="font-size: 12px"><a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><?= $mv['post_title']; ?></a></h3>
+                      </div>
+                      <div class="entry-meta">
+                        <ul>
+                          <li>
+                            <i class="far fa-calendar-alt"></i>
+                            <?php
+                              $datetime = (new \CodeIgniter\I18n\Time);
+                              $yearNow = $datetime::now()->getYear();
+                              $yearMonthsNow = $datetime::now()->getMonth();
+                              $yearPost = $datetime::parse($mv['updated_at'])->getYear();
+                              
+                              $yearMonthsPost = $datetime::parse($mv['updated_at'])->getMonth();
+                              if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                                echo $datetime::parse($mv['updated_at'])->humanize();
+                              }
+                              if(($yearNow - $yearPost) > 1){
+                                echo $datetime::parse($mv['updated_at'])->humanize();
+                              }else{
+                                echo $datetime::parse($mv['updated_at'])->toLocalizedString('dd MMM yyyy');
+                              }
+                              
 
-            <div class="entry col-12 mb-0">
-              <div class="grid-inner row">
-                <div class="col-md-5">
-                  <div class="entry-image mb-0">
-                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
+                            ?>
+                        </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-7">
-                  <div class="entry-title title-sm mt-3 mt-md-0">
-                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
-                  </div>
-                  <div class="entry-meta">
-                    <ul>
-                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="entry col-12 mb-0">
-              <div class="grid-inner row">
-                <div class="col-md-5">
-                  <div class="entry-image mb-0">
-                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div class="entry-title title-sm mt-3 mt-md-0">
-                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
-                  </div>
-                  <div class="entry-meta">
-                    <ul>
-                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="entry col-12 mb-0">
-              <div class="grid-inner row">
-                <div class="col-md-5">
-                  <div class="entry-image mb-0">
-                    <a href="demo-news-single.html"><img src="https://themes.semicolonweb.com/html/canvas/v6/demos/news/images/posts/sports/2.jpg" alt="Image" /></a>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div class="entry-title title-sm mt-3 mt-md-0">
-                    <h3 class="mb-1" style="font-size: 12px"><a href="demo-news-single.html">Papers: Real Madrid plot Pogba bid</a></h3>
-                  </div>
-                  <div class="entry-meta">
-                    <ul>
-                      <li><i class="icon-line-clock"></i>11 Mar 2021</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>  
+              <?php endforeach; ?>
+            <?php endif; ?> 
 
 
           </div>
-
-
-          <?php if($most_view_post != null): ?>
-            <?php foreach($most_view_post as $mv): ?>
-            <div class="entry col-12">
-              <div class="grid-inner row g-0">
-                <div class="col-auto">
-                  <div class="entry-image">
-                    <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" alt="<?= $mv['post_title']; ?>"/></a>
-                  </div>
-                </div>
-                <div class="col ps-3">
-                  <div class="entry-title">
-                    <h4><a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><?= $mv['post_title']; ?></a></h4>
-                  </div>
-                  <div class="entry-meta">
-                    <ul>
-                      <li><i class="far fa-calendar-alt"></i>
-                        <?php
-                          $datetime = (new \CodeIgniter\I18n\Time);
-                          $yearNow = $datetime::now()->getYear();
-                          $yearMonthsNow = $datetime::now()->getMonth();
-                          $yearPost = $datetime::parse($mv['updated_at'])->getYear();
-                          
-                          $yearMonthsPost = $datetime::parse($mv['updated_at'])->getMonth();
-                          if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                            echo $datetime::parse($mv['updated_at'])->humanize();
-                          }
-                          if(($yearNow - $yearPost) > 1){
-                            echo $datetime::parse($mv['updated_at'])->humanize();
-                          }else{
-                            echo $datetime::parse($mv['updated_at'])->toLocalizedString('dd MMM yyyy');
-                          }
-                          
-
-                        ?>
-                      </li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <?php endforeach; ?>
-          <?php endif; ?>
 
           
           

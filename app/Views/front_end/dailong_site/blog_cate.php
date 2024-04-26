@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 0px; margin-top: 60px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
       <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
@@ -16,19 +16,36 @@
 
 <section id="content">
   <div class="content-wrap">
-    <div class="container clearfix mt-2">
+    <div class="container clearfix mt-">
       <?php
       	$blog_1 = array_slice($post_cate, 0, 3);
       	$blog_2 = array_slice($post_cate, 3);
       ?>
+      <style type="text/css">
+        .col-container { 
+          display: flex; 
+          flex-flow: row wrap;
+        }
 
-      <div class="row justify-content-left col-mb-50 mb-0 pt-2">
+        .col-card {
+          flex: 0 0 33.333%;
+          display: flex;
+          padding: 10px; /* gutter width */
+        }
+
+        .card {
+          box-shadow: 0 0 4px rgba(0,0,0,0.4);
+          flex: 0 0 100%;
+        }
+        }
+      </style>
+      <div class="row justify-content-left col-mb-50 mb-0 pt-2 col-container">
 
         <?php foreach($blog_1 as $key2): ?>
-          <div class="col-sm-6 col-lg-4 ">
+          <div class="col-sm-6 col-lg-4 col col-card">
             <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm">
-              <div class="fbox-media ">
-                <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>">
+              <div class="fbox-media">
+                <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="img2">
                   <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
                 </a>
               </div>
@@ -38,7 +55,7 @@
                   <h2><a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>"><?= $key2['post_title']; ?></a></h2>
                 </div>
 
-                <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px"><?= $key2['post_intro']; ?></h3>
+                <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px; text-transform: lowercase"><?= $key2['post_intro']; ?></h3>
               </div>
             </div>
           </div>

@@ -3,13 +3,13 @@
 <?= $this->section('content'); ?>
 
 <?php if($featured != null): ?>
-	<section id="content mt-5">
-	  <div class="content-wrap" style="padding-bottom: 0px !important;">
+	<section id="content mt-5" style="margin-top:px;">
+	  <div class="content-wrap">
 			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
 			  
 
         <?php foreach($featured as $key): ?>
-				  <div class="oc-item">
+				  <div class="oc-item" style="margin-top: 50px;">
 				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>">
 				    	<img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"/></a>
 				    <div class="bg-overlay">
@@ -586,8 +586,22 @@
 
 <?= $this->endSection(); ?>
 
-
-
+<?= $this->section('link_css'); ?>
+	<style type="text/css">
+		.oc-item .bg-overlay .portfolio-desc h3 a {
+	      opacity: 1;
+	      top: auto;
+	      bottom: 10px;
+	      transform: none;
+	      transition: opacity 0.4s ease;
+	      text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+	       1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+	    }
+	    .btn-outline-light {
+	    	background: #c9f0ff;
+	    }
+	</style>
+<?= $this->endSection(); ?>
 
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>
