@@ -2,14 +2,16 @@
 
 <?= $this->section('content'); ?>
 
+
+
 <?php if($featured != null): ?>
 	<section id="content mt-5" style="margin-top:px;">
 	  <div class="content-wrap">
-			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+			<div id="oc-images row" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
 			  
 
         <?php foreach($featured as $key): ?>
-				  <div class="oc-item" style="margin-top: 50px;">
+				  <div class="oc-item col-sm-12" style="margin-top: 50px;">
 				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>">
 				    	<img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"/></a>
 				    <div class="bg-overlay">
@@ -38,7 +40,7 @@
 				            	?>
 				            </span>
 				          </div>
-				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
+				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light btn-outline-light2 mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
 				        </div>
 				      </div>
 
@@ -597,10 +599,30 @@
 	      text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
 	       1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 	    }
-	    .btn-outline-light {
+	    .btn-outline-light2 {
 	    	background: #c9f0ff;
 	    }
 	</style>
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+	<script type="text/javascript">
+		if (window.matchMedia("(max-width: 768px)").matches) {
+		  $('.owl-carousel').owlCarousel({
+			    loop:true,
+			    margin:10,
+			    responsive:{
+			        0:{
+			            items:1,
+			            nav:true,
+			            loop:true
+			        },
+			    },
+			    navText : ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+			});
+		}
+		
+	</script>
 <?= $this->endSection(); ?>
 
 <?= $this->section('yoast_seo'); ?>

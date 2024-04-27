@@ -14,8 +14,11 @@
     <meta name="format-detection" content="telephone=<?= $page_home['phone']; ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css?<?= time() ?>" type="text/css" />
+
+
+    
+    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/dark.css" type="text/css" /> -->
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/magnific-popup.css" type="text/css" />
@@ -80,6 +83,7 @@
     <!-- Adsen -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1259040705079233"
      crossorigin="anonymous"></script> -->
+
 
     <style>
       .mce-toc h2,.mce-toc li{margin-bottom:10px!important}
@@ -202,7 +206,7 @@
 
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/jquery.js"></script>
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/plugins.min.js"></script>
-
+    <script src="https://themes.semicolonweb.com/html/canvas/v6/js/jquery.hotspot.js"></script>
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js"></script>
 
 
