@@ -46,6 +46,6 @@ class AdminController extends BaseController
             'pageTitle'=>'Admin Dashboard',
         ];
 
-        return view('admin/dashboard', $data);
+        return view('admin', $data);
     }
 }

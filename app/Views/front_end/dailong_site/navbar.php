@@ -4,6 +4,9 @@
   $name = $session->get('cate_current');
 
 ?>
+
+
+
 <div id="top-bar" style="background-color: #badfff">
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -37,9 +40,8 @@
       <div class="header-row">
         <div id="logo">
 
-          <a href="<?= base_url(''); ?>" class="standard-logo" data-dark-logo="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>">
-            <img style="padding: 13px 0" srcset="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo"/>
-          </a>
+          <a href="<?= base_url(''); ?>" class="standard-logo" data-dark-logo="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>"><img src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Đại Long Logo" style="padding: 13px 0 10px 0"/></a>
+          <a href="<?= base_url(''); ?>" class="retina-logo" data-dark-logo="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>"><img src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Đại Long Logo" style="padding: 13px 0 10px 0"/></a>
 
         </div>
         <div class="header-misc">

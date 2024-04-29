@@ -29,16 +29,17 @@
 
       <div class="row col-mb-50 mb-0">
 
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-md-8 col-sm-12">
 
-          <div id="portfolio" class="portfolio row grid-container gutter-10 mb-5" data-layout="fitRows">
-
+          <div class="row row-cols-1 row-cols-md-3 g-3 portfolio" id="portfolio">
             <?php foreach($gallery_cate_1 as $key): ?>
-              <article class="portfolio-item col-lg-4 col-md-4 col-sm-4 col-12 pf-media pf-icons">
-                <div class="grid-inner">
-                  <div class="portfolio-image">
-                    <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
-                      <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
+              <div class="col col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 shadow-sm">
+                  <div class="grid-inner portfolio-image">
+                    <a href="" title="">
+                      <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
+                        <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
+                      </a>
                     </a>
 
                     <div class="bg-overlay">
@@ -55,10 +56,12 @@
                           <i class="fas fa-expand-alt"></i>
                         </a>
 
-                        <?php if($key['gallery_post_url'] == null): ?>
-                        <?php else: ?>
-                          <a href="<?php if($key['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key['gallery_post_url'];}  ?>" <?php if($key['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-                            <i class="uil uil-link"></i>
+                        <?php if($key['gallery_post_url'] != null): ?>
+                        
+                          
+
+                          <a href="<?= $key['gallery_post_url'] ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                            <i class="fas fa-anchor"></i>
                           </a>
                         <?php endif; ?>
 
@@ -70,48 +73,46 @@
                       </div>
                       <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
                     </div>
+
                   </div>
+                  <div class="card-body shadow-sm">
+                    <div class="portfolio-desc portfolio-desc2 card-body" style="padding: 0px">
+                      <h3 class="card-title"><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
+                      <span>
+                        <?php if($key['gallery_file_download'] == null)
+                          if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+                            $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+                            $image_width = $image_info[0];
+                            $image_height = $image_info[1];
+                            echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
+                          }
+                        ?>
 
-                  <div class="portfolio-desc portfolio-desc2">
-                    <h3><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
+                        <?php if($key['gallery_file_download'] == null): ?>
+                          <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
+                        <?php endif; ?>
+                        
+                        <?php if($key['gallery_file_download'] != null): ?>
+                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                        <?php endif; ?>
+                        <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_type_slug'] ?>" class="ml-5"><i class="fas fa-star-of-life"></i> <?= $key['gallery_type_name'] ?></a>
 
-
-                    
-                    <span>
-
-
-                      <?php if($key['gallery_file_download'] == null)
-                        if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
-                          $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-                          $image_width = $image_info[0];
-                          $image_height = $image_info[1];
-                          echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
-                        }
-                      ?>
-
-                      <?php if($key['gallery_file_download'] == null): ?>
-                        <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
-                      <?php endif; ?>
-                      
-                      <?php if($key['gallery_file_download'] != null): ?>
-                        <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
-                      <?php endif; ?>
-                      <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_type_slug'] ?>" class="ml-5"><i class="fas fa-star-of-life"></i> <?= $key['gallery_type_name'] ?></a>
-
-                      <?php if($key['gallery_topic'] != null): ?>
-                      <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_topic_slug'] ?>" class="ml-5"><i class="fas fa-long-arrow-alt-right"></i> <?= $key['gallery_topic'] ?></a>
-                      <?php endif; ?>
-                      
-                      
-
-                    </span>
+                        <?php if($key['gallery_topic'] != null): ?>
+                        <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_topic_slug'] ?>" class="ml-5"><i class="fas fa-long-arrow-alt-right"></i> <?= $key['gallery_topic'] ?></a>
+                        <?php endif; ?>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </article>
+              </div>
             <?php endforeach; ?>
 
             
           </div>
+          
+
+
+          
           <!-- Google ads -->
           <ins class="adsbygoogle"
                style="display:block"
@@ -123,31 +124,23 @@
           </script>
           <!-- End Google ads -->
         </div>
-        <div class="col-lg-3">
 
-          <div class="sidebar-widgets-wrap mb-3">
-            <div class="widget subscribe-widget2 clearfix">
-              <div class="dark" style="padding: 25px; background-color: #5cadff; border-radius: 2px;">
-                <div class="fancy-title title-border">
-                  <h4>Search Image by Google</h4>
+        <div class="col-lg-3 col-md-4 col-sm-12">
+
+          <div class="card bg-white">
+            <div class="card-body p-4" style="background-color: #5cadff; border-radius: 2px;">
+              <h4>Search Image by Google</h4>
+              <form method="get" action="https://google.com/search" target="_blank">
+                <div class="col-12 form-group">
+                  <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
+                  <button type="submit" class="button button-3d w-100 m-0 fw-bold" style="margin-top: 25px !important;" type="submit">FIND <i class="fas fa-search"></i></button>
+                  <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
                 </div>
-
-
-                <form method="get" action="https://google.com/search" target="_blank">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
-                    <button type="submit" class="button button-3d w-100 button-small m-0 fw-bold" style="margin-top: 25px !important;" type="submit">FIND <i class="fas fa-search"></i></button>
-                    <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
-                  </div>
-
-                </form>
-              
-
-                
-
-              </div>
+              </form>
             </div>
           </div>
+
+
           <div class="line line-sm"></div>
 
           <div class="row col-mb-50 mb-0">
@@ -227,10 +220,9 @@
                     <i class="fas fa-expand-alt"></i>
                   </a>
 
-                  <?php if($key2['gallery_post_url'] == null): ?>
-                  <?php else: ?>
-                    <a href="<?php if($key2['gallery_post_url'] == null){ echo "javascript:void(0)";}else{echo $key2['gallery_post_url'];}  ?>" <?php if($key2['gallery_post_url'] == null){ }else{echo "target='_blank'";}  ?> class="overlay-trigger-icon bg-light text-dark text-bold" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item">
-                      <i class="uil uil-link"></i>
+                  <?php if($key2['gallery_post_url'] != null): ?>
+                    <a href="<?= $key2['gallery_post_url'] ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key2['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                      <i class="fas fa-anchor"></i>
                     </a>
                   <?php endif; ?>
 
@@ -302,6 +294,7 @@
 
 
 <?= $this->endSection(); ?>
+
 
 
 <?= $this->section('yoast_seo'); ?>

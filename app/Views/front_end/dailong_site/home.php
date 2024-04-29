@@ -2,16 +2,14 @@
 
 <?= $this->section('content'); ?>
 
-
-
 <?php if($featured != null): ?>
-	<section id="content mt-5" style="margin-top:px;">
-	  <div class="content-wrap">
-			<div id="oc-images row" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+	<section id="content">
+	  <div class="content-wrap" style="padding-bottom: 0px !important;">
+			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
 			  
 
         <?php foreach($featured as $key): ?>
-				  <div class="oc-item col-sm-12" style="margin-top: 50px;">
+				  <div class="oc-item" style="margin-top: 50px">
 				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>">
 				    	<img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"/></a>
 				    <div class="bg-overlay">
@@ -40,7 +38,7 @@
 				            	?>
 				            </span>
 				          </div>
-				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light btn-outline-light2 mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
+				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
 				        </div>
 				      </div>
 
@@ -62,10 +60,6 @@
   </div>
 </div> -->
 
-<div class="clearfix"></div>
-<div class="bottommargin-lg">
-</div>
-
 
 
 
@@ -80,12 +74,6 @@
 	
 
 	<div class="container clearfix mt-5">
-
-		
-
-	  <!-- <div class="bottommargin-lg">
-	    <img src="https://canvastemplate.com/images/magazine/ad.jpg" alt="Ad" class="aligncenter my-0" />
-	  </div> -->
 
 	  <?php for($a = 1; $a <= $i; $a++): ?>
 	  	<?php if(count($post_cate[$a]) > 0): ?>
@@ -204,13 +192,6 @@
 			  </div>
 		  <?php endif; ?>
 		<?php endfor; ?>
-
-
-
-	  <!-- <div class="fancy-title title-border title-center">
-	    <h3>Featured Video</h3>
-	  </div>
-	  <iframe src="https://player.vimeo.com/video/99895335" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
 	</div>
 
 
@@ -230,7 +211,7 @@
 		            </div>
 		            <div class="entry-meta">
 		              <ul>
-		                <li style="color: #fff"><i class="far fa-calendar-alt"></i>
+		                <li style="color:"><i class="far fa-calendar-alt"></i>
 		                	<?php
 				            		$datetime = (new \CodeIgniter\I18n\Time);
 				            		$yearNow = $datetime::now()->getYear();
@@ -274,7 +255,7 @@
 			<div class="container clearfix" style="margin-top: 30px !important">
 		      
 		    <div class="row gutter-20 col-mb-80">
-		      <div class="postcontent col-lg-9">
+		      <div class="postcontent col-lg-9 mt-5">
 		        <div id="posts" class="row grid-container gutter-40">
 		          <?php foreach($recent_post as $pr): ?>
 		            <?php foreach($cate_2 as $ct): ?>
@@ -338,29 +319,22 @@
 
 		      </div>
 
-		      <div class="sidebar col-lg-3">
-		        <div class="sidebar-widgets-wrap">
-		          <div class="widget subscribe-widget2 clearfix">
-		            <div class="dark" style="padding: 25px; background-color: #5cadff; border-radius: 2px;">
-		              <div class="fancy-title title-border">
-		                <h4>Search Google</h4>
-		              </div>
+		      <div class="sidebar col-lg-3" style="margin-top: 0px !important">
+		      	<div class="card bg-white" style="margin-top: 0px !important">
+	            <div class="card-body p-4" style="background-color: #5cadff; border-radius: 2px;">
+	              <h4>Search by Google</h4>
+	              <form method="get" action="https://google.com/search" target="_blank">
+	                <div class="col-12 form-group">
+	                  <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
+	                  <button type="submit" class="button button-3d w-100 m-0 fw-bold" style="margin-top: 25px !important;" type="submit">FIND <i class="fas fa-search"></i></button>
+	                  <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
+	                </div>
+	              </form>
+	            </div>
+	          </div>
 
-
-		              <form method="get" action="https://google.com/search" target="_blank">
-		                <div class="form-group">
-		                  <input type="text" class="form-control" placeholder="Google site search" name="q" size="25">
-		                  <button type="submit" class="button button-3d w-100 button-small m-0 fw-bold" style="margin-top: 25px !important;" type="submit">FIND <i class="fas fa-search"></i></button>
-		                  <input type="hidden" name="sitesearch" value="<?= base_url('/'); ?>" />
-		                </div>
-
-		              </form>
-		            
-
-		              
-
-		            </div>
-		          </div>
+		        <div class="sidebar-widgets-wrap mt-5">
+		          
 
 
 		          <div class="widget clearfix2">
@@ -599,12 +573,11 @@
 	      text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
 	       1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 	    }
-	    .btn-outline-light2 {
+	    .btn-outline-light {
 	    	background: #c9f0ff;
 	    }
 	</style>
 <?= $this->endSection(); ?>
-
 <?= $this->section('script'); ?>
 	<script type="text/javascript">
 		if (window.matchMedia("(max-width: 768px)").matches) {

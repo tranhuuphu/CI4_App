@@ -21,29 +21,12 @@
       	$blog_1 = array_slice($post_cate, 0, 3);
       	$blog_2 = array_slice($post_cate, 3);
       ?>
-      <style type="text/css">
-        .col-container { 
-          display: flex; 
-          flex-flow: row wrap;
-        }
 
-        .col-card {
-          flex: 0 0 33.333%;
-          display: flex;
-          padding: 10px; /* gutter width */
-        }
-
-        .card {
-          box-shadow: 0 0 4px rgba(0,0,0,0.4);
-          flex: 0 0 100%;
-        }
-        }
-      </style>
-      <div class="row justify-content-left col-mb-50 mb-0 pt-2 col-container">
+      <div class="row justify-content-left col-mb-50 mb-0 pt-2">
 
         <?php foreach($blog_1 as $key2): ?>
-          <div class="col-sm-6 col-lg-4 col col-card">
-            <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm">
+          <div class="col-sm-6 col-lg-4 col equal-height x-column">
+            <div class="feature-box text-left media-box fbox-bg bg-transparent shadow-sm h-shadow all-ts h-translatey-sm x-column">
               <div class="fbox-media">
                 <a href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="img2">
                   <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
@@ -63,6 +46,7 @@
 
         
       </div>
+      
 
 
 
@@ -340,6 +324,22 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('script'); ?>
+  <script type="text/javascript">
+    jQuery(document).ready(equalHeight);
+    jQuery(window).on('resize',equalHeight);
+
+    function equalHeight(){
+      var max = 0;
+      jQuery(".equal-height .x-column").each(function() {
+        if( jQuery(this).height() > max ){
+          max = jQuery(this).height();
+        }
+      });
+      jQuery(".equal-height .x-column").css('height', max);
+    }
+  </script>
+<?= $this->endSection(); ?>
 
 <?= $this->section('yoast_seo'); ?>
   <link rel="alternate" href="<?= base_url() ?>" hreflang="vi-vn"/>

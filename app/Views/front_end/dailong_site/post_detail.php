@@ -4,7 +4,7 @@
 
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px; background-color: #d1f0ff; padding: 30px 15px 7px 15px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 15px; margin-top: 60px; padding: 30px 15px 7px 15px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_detail['cate_slug'].'-'.$cate_detail['id'] ?>" class="fw-bold"><?= $cate_detail['cate_name'] ?></a></li>

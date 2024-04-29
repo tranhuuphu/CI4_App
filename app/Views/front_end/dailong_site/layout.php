@@ -14,11 +14,11 @@
     <meta name="format-detection" content="telephone=<?= $page_home['phone']; ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css?<?= time() ?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css" type="text/css" />
 
 
     
-    <!-- <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/dark.css" type="text/css" /> -->
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/dark.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/magnific-popup.css" type="text/css" />
