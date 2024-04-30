@@ -141,9 +141,9 @@ class DaiLongController extends BaseController
 
         // Blog
         if($cate_parent == 0 && $cate_detail['cate_type'] == 'blog'){
-            $post_cate  = $post->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate, 'blog');
+            $post_cate  = $post->select('id, post_cate_id, post_title, post_slug, post_intro, post_view, post_image, updated_at')->where('post_cate_id', $cate_id)->orderBy('id', 'desc')->paginate($paginate, 'blog');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
-            $most_view  = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
+            $most_view  = $post->select('id, post_cate_id, post_title, post_slug, post_intro, post_view, post_image, updated_at')->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();
         }
         // Gallery
@@ -164,14 +164,14 @@ class DaiLongController extends BaseController
                     $cate_sub_array[] = $c_s['id'];
                 }
                 $cate_sub_array[] = array_push($cate_sub_array, $cate_id);
-                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
+                $post_cate = $post->select('cate.*, post.post_cate_id, post.post_title, post.post_slug, post.post_intro, post.post_view, post.post_image, post.updated_at,post.post_content, post.post_status, post.id as p_id')->whereIn('post_cate_id', $cate_sub_array)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->whereIn('post_cate_id', $cate_sub_array)->countAllResults();
                 $most_view = $post->whereIn('post_cate_id', $cate_sub_array)->orderBy('post_view', 'DESC')->limit(4)->find();
                 $tag_this   = $tag->whereIn('tag_cate_id', $cate_sub_array)->orderBy('tag_view', 'DESC')->limit(10)->find();
 
 
             }else{
-                $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
+                $post_cate = $post->select('cate.*, post.post_cate_id, post.post_title, post.post_slug, post.post_intro, post.post_view, post.post_image, post.updated_at,post.post_content, post.post_status, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
                 $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
                 $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
                 $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();
@@ -179,7 +179,7 @@ class DaiLongController extends BaseController
 
             }
         }else{
-            $post_cate = $post->select('cate.*, post.*, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
+            $post_cate = $post->select('cate.*, post.post_cate_id, post.post_title, post.post_slug, post.post_intro, post.post_view, post.post_image, post.updated_at,post.post_content, post.post_status, post.id as p_id')->where('post_cate_id', $cate_id)->join('cate', 'cate.id = post.post_cate_id', 'left')->orderBy('post.id', 'desc')->paginate($paginate, 'post');
             $post_count = $post->where('post_cate_id', $cate_id)->countAllResults();
             $most_view = $post->where('post_cate_id', $cate_id)->orderBy('post_view', 'DESC')->limit(4)->find();
             $tag_this   = $tag->where('tag_cate_id', $cate_id)->orderBy('tag_view', 'DESC')->limit(10)->find();

@@ -1,0 +1,187 @@
+INFO - 2024-04-30 14:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 14:09:20 --> Invalid file: "admin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin', [], true)
+ 3 APPPATH\Controllers\Admin\AdminController.php(49): view('admin', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 14:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 14:10:53 --> Invalid file: "dashboard.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('dashboard', [], true)
+ 3 APPPATH\Controllers\Admin\AdminController.php(49): view('dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 14:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 14:10:55 --> Invalid file: "dashboard.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('dashboard', [], true)
+ 3 APPPATH\Controllers\Admin\AdminController.php(49): view('dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 14:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 14:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 15:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 15:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:57:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 16:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:00:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:06:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:11:05 --> Undefined array key "post_image"
+in APPPATH\Views\front_end\dailong_site\blog_cate.php on line 29.
+ 1 APPPATH\Views\front_end\dailong_site\blog_cate.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_image"', 'APPPATH\\Views\\front_end\\dailong_site\\blog_cate.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\blog_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/blog_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(217): view('front_end/dailong_site/blog_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('blog', '14')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:11:23 --> Undefined array key "id"
+in APPPATH\Views\front_end\dailong_site\blog_cate.php on line 33.
+ 1 APPPATH\Views\front_end\dailong_site\blog_cate.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Views\\front_end\\dailong_site\\blog_cate.php', 33)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\blog_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/blog_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(217): view('front_end/dailong_site/blog_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('blog', '14')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:15:20 --> Undefined array key "post_content"
+in APPPATH\Views\front_end\dailong_site\post_cate.php on line 85.
+ 1 APPPATH\Views\front_end\dailong_site\post_cate.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_content"', 'APPPATH\\Views\\front_end\\dailong_site\\post_cate.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/post_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(226): view('front_end/dailong_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('in-ky-thuat-so', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:15:35 --> Undefined array key "post_status"
+in APPPATH\Views\front_end\dailong_site\post_cate.php on line 86.
+ 1 APPPATH\Views\front_end\dailong_site\post_cate.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_status"', 'APPPATH\\Views\\front_end\\dailong_site\\post_cate.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/post_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(226): view('front_end/dailong_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('in-ky-thuat-so', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:15:37 --> Undefined array key "post_status"
+in APPPATH\Views\front_end\dailong_site\post_cate.php on line 86.
+ 1 APPPATH\Views\front_end\dailong_site\post_cate.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_status"', 'APPPATH\\Views\\front_end\\dailong_site\\post_cate.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/post_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(226): view('front_end/dailong_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('in-ky-thuat-so', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 17:15:40 --> Undefined array key "post_status"
+in APPPATH\Views\front_end\dailong_site\post_cate.php on line 86.
+ 1 APPPATH\Views\front_end\dailong_site\post_cate.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "post_status"', 'APPPATH\\Views\\front_end\\dailong_site\\post_cate.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\dailong_site\\post_cate.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/dailong_site/post_cate', [], true)
+ 5 APPPATH\Controllers\DaiLongController.php(226): view('front_end/dailong_site/post_cate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('in-ky-thuat-so', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-30 17:19:36 --> mysqli_sql_exception: Unknown column 'post_cate_id' in 'field list' in E:\Code Seo\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `id`, `p...', 0)
+#1 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `p...')
+#2 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `p...')
+#3 E:\Code Seo\xampp\htdocs\CI4_App\system\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `p...', Array, false)
+#4 E:\Code Seo\xampp\htdocs\CI4_App\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Code Seo\xampp\htdocs\CI4_App\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(24, 0)
+#6 E:\Code Seo\xampp\htdocs\CI4_App\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(24, 0)
+#7 E:\Code Seo\xampp\htdocs\CI4_App\app\Controllers\DaiLongController.php(153): CodeIgniter\BaseModel->paginate(24, 'g')
+#8 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('bo-suu-tap', '26')
+#9 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+#10 E:\Code Seo\xampp\htdocs\CI4_App\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Code Seo\xampp\htdocs\CI4_App\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-04-30 17:19:36 --> Unknown column 'post_cate_id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1602): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `post_cate_id`, `post_title`, `post_slug`, `post_intro`, `post_view`, `post_image`, `updated_at`
+FROM `gallery_image`
+ORDER BY `id` DESC
+ LIMIT 24', [], false)
+ 2 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(24, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(24, 0)
+ 5 APPPATH\Controllers\DaiLongController.php(153): CodeIgniter\BaseModel->paginate(24, 'g')
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\DaiLongController->postCate('bo-suu-tap', '26')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DaiLongController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 17:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 17:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
