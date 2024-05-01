@@ -261,6 +261,45 @@
       content_style: ".mce-content-body {font-size:18px;font-family: arial;}",
       contextmenu_never_use_native: true,
     };
+    tinymce.init({
+	    selector: 'textarea#content2',
+	    height: 500,
+      relative_urls: false,
+      remove_script_host: false,
+
+      oninit : "setPlainText",
+
+      plugins: 'print preview importcss searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap emoticons template paste responsivefilemanager file-manager2',
+      fontsize_formats: '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 48px 72px',
+      
+      default_link_target: '_blank',
+      
+      toolbar: 'undo redo | formatselect fontselect fontsizeselect | bold italic underline strikethrough image toc |  alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | media template link anchor codesample | responsivefilemanager',
+      toolbar_sticky: true,
+      autosave_ask_before_unload: true,
+      autosave_interval: '30s',
+      autosave_prefix: '{path}{query}-{id}-',
+      autosave_restore_when_empty: false,
+      autosave_retention: '2m',
+      image_advtab: true,
+      toolbar_mode: 'wrap',
+      paste_text_sticky : true,
+      image_title: true,
+		  automatic_uploads: true,
+		  image_advtab: true ,
+
+   
+			external_filemanager_path:"<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/",
+			filemanager_title:"Quản Lý Ảnh & File" ,
+
+			external_plugins: {
+				"responsivefilemanager": "<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/plugins/responsivefilemanager/plugin.min.js",
+				"filemanager": "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js",
+			},
+			filemanager_access_key:"tranhuuphu",
+      content_style: ".mce-content-body {font-size:18px;font-family: arial;}",
+      contextmenu_never_use_native: true,
+	  });
 
     tinymce.init(editor_config);
 

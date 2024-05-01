@@ -3,60 +3,72 @@
 <?= $this->section('content'); ?>
 
 
+
 <div class="container">
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 60px; background-color: #FE9603;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fa-light fa-house"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= base_url().'/tag/'.$tag_slug ?>">Tag Result: <?= $tag_name ?></a></li>
-      </ol>
-    </div>
-  </section>
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 60px; background-color: #40edd3    ; padding: 30px 15px 7px 15px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="<?= base_url().'/tag/'.$tag_slug ?>">Tag Result: <?= $tag_name ?></a></li>
+    </ol>
+  </nav>
 </div>
 
 
+<?php if(count($post_tag)>0): ?>
+  <section id="content">
+    <div class="content-wrap">
+      <div class="container clearfix">
+        <div class="row justify-content-center gutter-50 col-mb-50">
+          <?php foreach($post_tag as $key2): ?>
+            <div class="col-lg-12">
+              <div class="card imagescalein">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-4 d-flex align-self-stretch overflow-hidden">
+                    <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="rounded-start"/>
+                  </div>
+                  <div class="col-md-8 p-2">
+                    <div class="card-body">
+                      <h3 class="card-title"><a href=""><?= $key2['post_title']; ?></a></h3>
+                      <p class="card-text mb-2"><?= $key2['post_intro']; ?></p>
+                      <p class="card-text">
+                        <small class="text-muted">
+                          <i class="far fa-calendar-alt"></i>
+                          <?php
+                            $datetime = (new \CodeIgniter\I18n\Time);
+                            $yearNow = $datetime::now()->getYear();
+                            $yearMonthsNow = $datetime::now()->getMonth();
+                            $yearPost = $datetime::parse($key2['updated_at'])->getYear();
+                            
+                            $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
+                            if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                              echo $datetime::parse($key2['updated_at'])->humanize();
+                            }
+                            if(($yearNow - $yearPost) > 1){
+                              echo $datetime::parse($key2['updated_at'])->humanize();
+                            }else{
+                              echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
+                            }
+                            
 
-<div class="container clearfix mt-5">
-  <div class="row align-items-center mw-sm mx-auto g-0">
-    <?php foreach($post_tag as $key2): ?>
-    <div class="col-12">
-      <div class="feature-box fbox-effect fbox-xl">
-        <div class="fbox-content">
-          <h3 class="fw-bold"><?= $key2['post_title']; ?></h3>
-          <p>
-            <i class="fa-solid fa-calendar-days"></i>
-            <?php
-              $datetime = (new \CodeIgniter\I18n\Time);
-              $yearNow = $datetime::now()->getYear();
-              $yearMonthsNow = $datetime::now()->getMonth();
-              $yearPost = $datetime::parse($key2['updated_at'])->getYear();
-              
-              $yearMonthsPost = $datetime::parse($key2['updated_at'])->getMonth();
-              if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                echo $datetime::parse($key2['updated_at'])->humanize();
-              }
-              if(($yearNow - $yearPost) > 1){
-                echo $datetime::parse($key2['updated_at'])->humanize();
-              }else{
-                echo $datetime::parse($key2['updated_at'])->toLocalizedString('dd MMM yyyy');
-              }
-              
+                          ?>
+                          <i class="fas fa-solid fa-clock"></i>
+                          <?= ceil(strlen($key2['post_content'])/700) ?> Minutes Read
+                        </small>
+                      </p>
+                      <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="btn btn-primary">Read More <i class="icon-line-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
 
-            ?>
-            <i class="fa-sharp fa-solid fa-clock"></i>
-            <?= ceil(strlen($key2['post_content'])/700) ?> Minutes Read
-          </p>
-          <p><?= $key2['post_intro']; ?></p>
-          <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="more-link fst-normal mt-3 button button-large button-rounded m-0">Read More <i class="icon-line-arrow-right"></i></a>
+
         </div>
       </div>
     </div>
-    <div class="line my-5"></div>
-    <?php endforeach; ?>
-    
-  </div>
-</div>
+  </section>
+<?php endif; ?>
 
 	
 

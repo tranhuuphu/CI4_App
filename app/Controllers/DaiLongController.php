@@ -858,7 +858,7 @@ class DaiLongController extends BaseController
 
 
 
-    public function tag($tag_slug, $tag_id){
+    public function tag($tag_slug){
         $session = session();
         $session->set('cate_current', null);
 
@@ -890,7 +890,7 @@ class DaiLongController extends BaseController
         // dd($post_count);
 
         if(!$post_tag && $post_tag == NULL){
-            return view('front_end/dailong_site/404_error/404_post_cate', $data);
+            return view('front_end/dailong_site/404_error/404_post_cate');
         }
 
         $link_full = base_url().'/tag/'.$tag_slug;
@@ -990,7 +990,7 @@ class DaiLongController extends BaseController
 
 
 
-        $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like('post_title', $key)->orLike('post_intro', $key)->orLike('post_content', $key)->paginate($paginate,'post');
+        $result = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content, post.post_image')->like('post_title', $key)->orLike('post_intro', $key)->orLike('post_content', $key)->paginate($paginate,'post');
         $post_count = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_slug, post.post_slug, post.id, post.post_title, post.post_intro, post.updated_at, post.created_at, post.post_content')->like('post_title', $key)->orLike('post_intro', $key)->orLike('post_content', $key)->countAllResults();
 
         // dd($post_count);

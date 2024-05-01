@@ -67,6 +67,15 @@
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
 									    </div>
 									  </div>
+
+                    <hr>
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
+                        <textarea class="form-control" id="content2" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
+                      </div>
+                    </div>
 	                </div>
 	                <!-- /.card-body -->
 	            </div>

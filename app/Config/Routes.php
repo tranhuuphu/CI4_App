@@ -241,7 +241,7 @@ $routes->get('(:any)/(:any)-(:num).html', 'DaiLongController::post/$1/$2/$3', ['
 $routes->get('sitemap.xml', 'DaiLongController::siteMap');
 $routes->get('table_image', 'DaiLongController::table_image');
 
-$routes->get('tag/(:any)-(:num)', 'DaiLongController::tag/$1/$2');
+$routes->get('tag/(:any)', 'DaiLongController::tag/$1');
 $routes->get('cart/remove/(:num)', 'DaiLongController::remove/$1');
 $routes->get('buy/(:num)', 'DaiLongController::buy/$1');
 $routes->post('buy/(:num)', 'DaiLongController::buy/$1');

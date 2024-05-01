@@ -2,11 +2,13 @@
 
 <?= $this->section('content'); ?>
 
+
+
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 0px; margin-top: 60px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 60px; background-color: #dbe9ff; padding: 30px 15px 7px 15px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-      <li class="breadcrumb-item active"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="<?= $link_full?>"><?= $cate_name ?></a></li>
     </ol>
   </nav>
 </div>
@@ -83,7 +85,7 @@
 
               <?php foreach($blog_2 as $key2): ?>
               <div class="entry col-12 mb-0">
-                <div class="grid-inner row">
+                <div class="grid-inner row mb-5">
                   <div class="col-md-4">
                     <div class="entry-image mb-0">
                       <a href="demo-news-single.html"><img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/></a>
@@ -130,7 +132,9 @@
                     </div>
                   </div>
                 </div>
+                <hr>
               </div>
+              
               <?php endforeach; ?>
 
 
