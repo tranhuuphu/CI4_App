@@ -47,8 +47,119 @@
                 </div>
               </div>
               <?php endif; ?>
-              <div class="row g-4 mt-4 mb-6">
-                <div class="col-6">
+
+              <style type="text/css">
+                .hidden_span{
+                  display: none;
+                }
+                #second, #third {
+                 display: none
+                }
+              </style>
+
+
+              <div class="row g-4 mt-4 mb-1">
+
+                <table class="table table-hover table-bordered">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">#</th>
+                      <th scope="col">#</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Phân Loại</th>
+                      <td><a href="<?= base_url('bo-suu-tap-topic').'/'.$gallery_img['gallery_type_slug'] ?>"><p class="text-medium text-bold op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p></a></td>
+                    </tr>
+                    
+                    <?php if($gallery_img['gallery_topic'] != null || $gallery_img['gallery_topic'] != ""): ?>
+                      <tr>
+                        <th scope="row">Phân Loại Chi Tiết</th>
+                        <td colspan="2">
+                          <a href="<?= base_url('bo-suu-tap-topic').'/'.$gallery_img['gallery_topic_slug'] ?>"><p class="text-medium op-08 mb-0"><?= $gallery_img['gallery_topic'] ?></p></a>
+                        </td>
+                      </tr>
+                    <?php endif; ?>
+
+                    <tr>
+                      <th scope="row">Recent View On</th>
+                      <td>
+                        <?php
+                          $datetime = (new \CodeIgniter\I18n\Time);
+                          $yearNow = $datetime::now()->getYear();
+                          $yearMonthsNow = $datetime::now()->getMonth();
+                          $yearPost = $datetime::parse($gallery_img['updated_at'])->getYear();
+                          
+                          $yearMonthsPost = $datetime::parse($gallery_img['updated_at'])->getMonth();
+                          if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
+                            echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                          }
+                          if(($yearNow - $yearPost) > 1){
+                            echo $datetime::parse($gallery_img['updated_at'])->humanize();
+                          }else{
+                            echo $datetime::parse($gallery_img['updated_at'])->toLocalizedString('dd MMM yyyy');
+                          }
+                          
+
+                        ?>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Demension</th>
+                      <td colspan="2">
+                        <?php
+                          if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) != null){
+                            $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']);
+                            $image_width = $image_info[0];
+                            $image_height = $image_info[1];
+                            echo "<i class='fas fa-ruler-vertical'></i> ".' '.$image_width.'x'.$image_height.' pixel';
+                          }
+                        ?>
+                        <br>
+                        <?php
+                          if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) != null){
+                            $img = 'public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image'];
+                            $fp = fopen($img, "rb");
+                            echo "<i class='fas fa-hdd'></i> ".ceil(filesize($img)/1024)."Kb";
+                          }
+                        ?>
+                      </td>
+                    </tr>
+                    <?php if($gallery_img['gallery_post_url'] != null): ?>
+                      <tr>
+                        <th scope="row">Related Post</th>
+                        <td colspan="2">
+                          <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium btn btn-primary">Read Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </td>
+                      </tr>
+                    <?php endif; ?>
+
+                    <tr>
+                      <th scope="row">Save Image</th>
+                      <td colspan="2">
+                        <a href="javascript:setTimeout(()=>{window.location = '<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>' },4000);" class=" btn btn-danger" id="startClock">Save Now  &#160;<i class="fas fa-save"></i></a>
+                      </td>
+                    </tr>
+
+                    <?php if($gallery_img['gallery_file_download'] != null): ?>
+                      <tr>
+                        <th scope="row">Download Premium File</th>
+                        <td colspan="2">
+                          <button class="btn btn-secondary col-12" id="first">Get Link <i class="fas fa-link"></i> <i class="fab fa-google-drive"></i></button>
+
+                          <span id="second">.... Wait 5s Get Link</span>
+
+                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $gallery_img['gallery_file_download'] ?>" id="third" target="_blank" class= "btn btn-info" >Download Now <i class="fas fa-download"></i></a>
+
+                        </td>
+                      </tr>
+                    <?php endif; ?>
+                  </tbody>
+                </table>
+
+                <!-- <div class="col-6">
                   <h5 class="mb-2 text-primary">Phân Loại</h5>
                   <a href="<?= base_url('bo-suu-tap-topic').'/'.$gallery_img['gallery_type_slug'] ?>"><p class="text-medium text-bold op-08 mb-0"><?= $gallery_img['gallery_type_name'] ?></p></a>
                 </div>
@@ -109,30 +220,37 @@
                     </p>
                   </div>
                 <?php endif; ?>
-
+                
                 <?php if($gallery_img['gallery_file_download'] == null): ?>
                   <div class="col-6">
                     <h5 class="mb-2 text-primary">Save image</h5>
                     <p class="text-medium op-082 mb-0">
-                      <a href="<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>" class=" btn btn-danger">Save Now  &#160;<i class="fas fa-save"></i></a>
+                      <a href="javascript:setTimeout(()=>{window.location = '<?= base_url('page/download/'.$gallery_img['gallery_image']) ?>' },4000);" class=" btn btn-danger" id="startClock">Save Now  &#160;<i class="fas fa-save"></i></a>
                     </p>
                   </div>
-                <?php endif; ?>
-                <?php if($gallery_img['gallery_file_download'] != null): ?>
-                  <div class="col-6">
-                    <h5 class="mb-2 text-danger">Download Premium File</h5>
-                    <p class="text-medium text-white op-082 mb-0">
-                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $gallery_img['gallery_file_download'] ?>" target= "_blank" class= "btn btn-success">Download Now <i class="fab fa-google-drive"></i></a>
-                    </p>
-                  </div>
-                <?php endif; ?>
+                <?php  endif; ?>
                 
-              </div>
-              <?php if($gallery_img['gallery_post_url'] != null): ?>
-                <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium">Bài liên quan tới ảnh <i class="bi-arrow-up-right-circle-fill ms-1 align-middle fs-5 position-relative" style="top: -2px;"></i></a>
-              <?php endif; ?>
+              
+                <?php if($gallery_img['gallery_post_url'] != null): ?>
+                  <div class="col-6">
+                    <h5 class="mb-2 text-primary">Related Post</h5>
+                    
+                      <a href="<?= $gallery_img['gallery_post_url'] ?>" target="_blank" class="text-medium btn btn-primary">Read Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                    
+                  </div>
+                <?php endif; ?> -->
 
-              <div class="card mt-6 border-0 p-3 border-top rounded-5 border-default">
+              </div>
+
+              <div class="row g-1 mt-3 find_span hidden_span">
+                <div class="col-lg-12">
+                  <div class="alert alert-success" role="alert">
+                    Waiting for <span id="count" class="text-danger" style="font-weight: bold; font-size: 20px;">5</span> seconds to download resourse
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-3 border-0 p-3 border-top rounded-5 border-default">
                 <div class="card-body p-0">
                   <div class="d-flex align-items-center justify-content-between">
                     <h6 class="fs-6 fw-semibold mb-0">Share:</h6>
@@ -358,6 +476,7 @@
       });
       $(".block-expand-categories .expand-category").first().addClass('active');
     </script>
+
 
 <?= $this->endSection(); ?>
 

@@ -226,6 +226,49 @@
 
       
     </script>
+    <script type="text/javascript">
+      jQuery(function($){
+         $('#startClock').on('click', doCount);
+      });
+
+      function doCount(){
+         var counter = 5;
+         setInterval(function() {
+            counter--;
+            if (counter >= 0) {
+              $('.find_span').removeClass("hidden_span");
+               span = document.getElementById("count");
+               span.innerHTML = counter;
+            }
+            if (counter === 0) {
+              // alert('sorry, out of time');
+              $('.find_span').addClass("hidden_span");
+              $(".attribute_a p a").setAttribute("target", "_blank");
+              clearInterval(counter);
+
+            }
+         }, 1000);
+      }
+
+
+    </script>
+    <script type="text/javascript">
+      first.onclick = (function(){
+
+      first.style.display = "none"
+      
+      second.style.display = "block"
+      
+      setTimeout(function(){
+      
+         second.style.display = "none"
+        
+         third.style.display = "block"
+        
+      }, 5000)
+      
+    })
+    </script>
 
     
     
