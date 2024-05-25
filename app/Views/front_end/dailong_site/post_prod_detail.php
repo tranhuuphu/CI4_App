@@ -200,6 +200,16 @@
                           </ul>
 
                           <div id="canvas-tab-alt-content" class="tab-content">
+
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-format="autorelaxed"
+                                 data-ad-client="ca-pub-1259040705079233"
+                                 data-ad-slot="1628099131"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+
                             <div class="tab-pane fade show active" id="tabs-1" role="tabpanel" aria-labelledby="canvas-tabs-1-tab" tabindex="0">
                               <?= $post_detail['post_content']; ?>
                             </div>

@@ -78,6 +78,7 @@ class PostController extends BaseController
         $data['post_slug']      = $post_alias_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
+        $data['post_content2']  = $this->request->getPost('post_content2');
 
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
@@ -286,6 +287,8 @@ class PostController extends BaseController
         $data['post_slug']      = $post_alias_slug;
         $data['post_intro']     = $this->request->getPost('post_intro');
         $data['post_content']   = $this->request->getPost('post_content');
+        $data['post_content2']  = $this->request->getPost('post_content2');
+        
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
         $data['post_status']    = $this->request->getPost('post_status');

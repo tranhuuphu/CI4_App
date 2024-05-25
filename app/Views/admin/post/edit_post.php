@@ -63,10 +63,20 @@
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
+									      <label class="upper">Nội dung bài viết 1/2 <span class="text-red">(*)</span></label>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content'];} ?></textarea>
 									    </div>
 									  </div>
+
+                    <hr>
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="upper text-red">Nội dung bài viết 2/2 <span class="text-red">(*)</span></label>
+                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content2'];} ?></textarea>
+                      </div>
+                    </div>
+
+
 	                </div>
 	                <!-- /.card-body -->
 	            </div>

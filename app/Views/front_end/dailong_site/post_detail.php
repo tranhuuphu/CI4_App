@@ -73,6 +73,21 @@
 			          <div class="entry-content mt-0">
 
 			            <?= $post_detail['post_content']; ?>
+			            <hr>
+			            <!-- Google ads -->
+									<ins class="adsbygoogle"
+									     style="display:block; text-align:center;"
+									     data-ad-layout="in-article"
+									     data-ad-format="fluid"
+									     data-ad-client="ca-pub-1259040705079233"
+									     data-ad-slot="3651284368"></ins>
+									<script>
+									     (adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
+				          <!-- End Google ads -->
+
+			            <?= $post_detail['post_content2']; ?>
+
 			            <hr class="mb-5">
 			            <?php if($tag_all): ?>
 				            <div class="tagcloud mb-3">
@@ -284,6 +299,16 @@
 		            </div>
 		          </div>
 		        </div>
+
+		        <ins class="adsbygoogle"
+						     style="display:block"
+						     data-ad-format="fluid"
+						     data-ad-layout-key="-3x+cj+71-em-60"
+						     data-ad-client="ca-pub-1259040705079233"
+						     data-ad-slot="3408084668"></ins>
+						<script>
+						     (adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 		        
 		      </div>
 
@@ -334,6 +359,16 @@
           <div class="col-md-12 d-grid gap-2">
             <a href="<?= base_url('').'/'.$cate_gallery_slug['cate_slug'].'-'.$cate_gallery_slug['id'] ?>" class="btn btn-light">Watch More <i class="fas fa-long-arrow-alt-right"></i></a>
           </div>
+
+
+					<ins class="adsbygoogle"
+					     style="display:block"
+					     data-ad-format="autorelaxed"
+					     data-ad-client="ca-pub-1259040705079233"
+					     data-ad-slot="7155757980"></ins>
+					<script>
+					     (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
 
 		      
 

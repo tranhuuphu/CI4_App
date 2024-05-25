@@ -62,7 +62,7 @@
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
+									      <label class="upper">Nội dung bài viết 1/2 <span class="text-red">(*)</span></label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
 									    </div>
@@ -71,9 +71,9 @@
                     <hr>
                     <div class="form-group">
                       <div class="form-group">
-                        <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
-                        <textarea class="form-control" id="content2" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
+                        <label class="upper text-red">Nội dung bài viết 2/2 <span class="text-red">(*)</span></label>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content2') : '' ?></p>
+                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?= old('post_content') ?></textarea>
                       </div>
                     </div>
 	                </div>
@@ -164,7 +164,7 @@
 
 	            <div class="card card-danger">
                 <div class="card-header">
-                  <h3 class="card-title" class="upper" style="font-weight: bold;">Dành Cho Sản Phẩm Bán Hàng</h3>
+                  <h3 class="card-title" class="upper" style="font-weight: bold;">GIÁ CHO SẢN PHẨM</h3>
                 </div>
                 <div class="card-body">
                   
