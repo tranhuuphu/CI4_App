@@ -90,18 +90,26 @@ class GalleryController extends BaseController
                 ],
 
             ],
-            
-            'gallery_image' => [
-                'label' => 'Image File',
-                'rules' => 'uploaded[gallery_image]'
-                    . '|is_image[gallery_image]'
-                    . '|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-                    . '|max_size[gallery_image,10000]',
-                    'errors' => [
-                    'uploaded' => 'Bạn chưa chọn ảnh/sai định dạng ảnh cho bài viết.',
-                    'max_size' => 'Kích trước file quá lớn.',
+            'gallery_alias'=>[
+                'rules'=>'required|is_unique[gallery_image.gallery_alias]',
+                'errors' => [
+                    'required' => 'Alias không được để trống.',
+                    'is_unique' => 'Alias trùng với alias bài viết khác.',
                 ],
+
             ],
+            
+            // 'gallery_image' => [
+            //     'label' => 'Image File',
+            //     'rules' => 'uploaded[gallery_image]'
+            //         . '|is_image[gallery_image]'
+            //         . '|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+            //         . '|max_size[gallery_image,10000]',
+            //         'errors' => [
+            //         'uploaded' => 'Bạn chưa chọn ảnh/sai định dạng ảnh cho bài viết.',
+            //         'max_size' => 'Kích trước file quá lớn.',
+            //     ],
+            // ],
 
             'gallery_meta_desc'=>[
                 'rules'=>'required',
@@ -176,8 +184,14 @@ class GalleryController extends BaseController
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
         $gallery_title_slug = reduce_multiples($gallery_title_slug, '-');
 
+        $gallery_alias = $this->request->getPost('gallery_alias');
+        $gallery_alias_slug = mb_strtolower(convert_name($gallery_alias));
+        $gallery_alias_slug = reduce_multiples($gallery_alias_slug, '-');
+
         $data['gallery_title']          = $gallery_title;
-        $data['gallery_title_slug']     = $gallery_title_slug;
+        $data['gallery_alias']          = $gallery_alias;
+        $data['gallery_title_slug']     = $gallery_alias_slug;
+
         $data['gallery_cate_id']        = $this->request->getPost('gallery_cate_id');
         $data['gallery_cate_slug']      = $cate['cate_slug'];
         
@@ -358,10 +372,15 @@ class GalleryController extends BaseController
         $gallery_title_slug = mb_strtolower(convert_name($gallery_title));
         $gallery_title_slug = reduce_multiples($gallery_title_slug, '-');
 
+        $gallery_alias = $this->request->getPost('gallery_alias');
+        $gallery_alias_slug = mb_strtolower(convert_name($gallery_alias));
+        $gallery_alias_slug = reduce_multiples($gallery_alias_slug, '-');
+
         
 
         $data['gallery_title']          = $gallery_title;
-        $data['gallery_title_slug']     = $gallery_title_slug;
+        $data['gallery_alias']          = $gallery_alias;
+        $data['gallery_title_slug']     = $gallery_alias_slug;
         $data['gallery_cate_id']        = $this->request->getPost('gallery_cate_id');
 
         

@@ -55,8 +55,9 @@
                       <th>Tiêu Đề</th>
 	                    <th>Ảnh</th>
 	                    <th>Thuộc Phân Loại</th>
+                      <th>id</th>
+                      <th>View</th>
                       <th>Link File & Related Link</th>
-	                    <th>ID Gallery</th>
                       <th>Option</th>
 	                  </tr>
                   </thead>
@@ -77,8 +78,23 @@
                         
 
                         
-		                    <td><?= $g['gallery_title']; ?></td>
-                        <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" height="60"></div></td>
+		                    <td>
+                          <?= $g['gallery_title']; ?>
+                          <br>
+                          
+                          
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Tiêu Đề</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Link</button>
+
+                          
+                        </td>
+                        <td>
+                          
+                          <a data-fancybox data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>">
+                            <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" width="200" height="auto" class="img_fancy" />
+                          </a>
+
+                        </td>
                         <td>
                           <strong><?= $g['gallery_type_name']; ?></strong>
                           <br>
@@ -184,6 +200,12 @@
                           </div>
                           <!-- /.modal -->
                         </td>
+                        <td>
+                          <?= $g['id']?>
+                        </td>
+                        <td>
+                          <?= $g['gallery_view']?>
+                        </td>
 		                    
                         <td>
                           <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt-1 mb-1"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Short</a></button> <?php endif; ?>
@@ -195,9 +217,7 @@
                             
                           <?php endif; ?>
                         </td>
-		                    <td>
-                          <?= $g['id']?>
-                        </td>
+		                    
 		                    <td>
                           </button> 
                           
@@ -232,8 +252,9 @@
                     <th>Tiêu Đề</th>
                     <th>Ảnh</th>
                     <th>Thuộc Phân Loại</th>
+                    <th>id</th>
+                    <th>View</th>
                     <th>Link File</th>
-                    <th>Bài Viết Liên Quan</th>
                     <th>Option</th>
                   </tr>
                   </tfoot>

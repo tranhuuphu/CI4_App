@@ -51,14 +51,14 @@
 	                  <article class="col-12">
 	                    <div class="row">
 	                      <div class="col-md-5 mb-0">
-	                        <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="entry-image">
+	                        <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['p_id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="entry-image">
 	                          <img src="<?= base_url('public/upload/tinymce/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
 	                        </a>
 	                      </div>
 	                      <div class="col-md-7">
 	                        <div class="entry-title mt-lg-0 mt-3">
 	                          
-	                          <h3><a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="color-underline stretched-link"><?= $post_cate_1[0]['post_title'] ?></a></h3>
+	                          <h3><a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['p_id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="color-underline stretched-link"><?= $post_cate_1[0]['post_title'] ?></a></h3>
 	                        </div>
 	                        <div class="entry-meta">
 	                          <ul>
@@ -119,10 +119,10 @@
 			      <div class="entry col-md-6">
 			        <div class="grid-inner">
 			          <div class="entry-image">
-			            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+			            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['p_id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
 			          </div>
 			          <div class="entry-title title-sm nott">
-			            <h2><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h2>
+			            <h2><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['p_id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h2>
 			          </div>
 			          <div class="entry-meta">
 			            <ul>

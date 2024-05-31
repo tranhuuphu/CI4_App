@@ -59,23 +59,34 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $uri = service('uri');
+        if($uri->getSegment(1) === "admin" || $uri->getSegment(1) === "auth"){
+            $usersModel = new usersModel();
+            $loggerUserID = session()->get('loggedUser');
+            $userInfo = $usersModel->find($loggerUserID);
+            $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];
+            $cateModel = new \App\Models\CateModel();
+            $dataLogin['cate'] = $cateModel->orderBy('cate_type', 'DESC')->findAll();
+            return view('admin/admin-layout', $dataLogin);
+        }else{
 
-        $usersModel = new usersModel();
-        $loggerUserID = session()->get('loggedUser');
-        $userInfo = $usersModel->find($loggerUserID);
-        $dataLogin = ['userinfo'=> $userInfo, 'loggerUserID' => $loggerUserID];
-        $cateModel = new \App\Models\CateModel();
-        $data2['cate'] = $cateModel->orderBy('cate_type', 'DESC')->findAll();
-        $pageModel = new PageModel();
-        $data2['page_home'] = $pageModel->where('page_status', 1)->first();
-        $data2['link_page'] = $pageModel->where('page_status !=', 1)->where('page_show', 1)->findAll();
-        // dd($data['link_page']);
-        $data2['items'] = $session->get('cart');
+            $cateModel = new \App\Models\CateModel();
+            $data2['cate'] = $cateModel->orderBy('cate_type', 'DESC')->findAll();
+            $pageModel = new PageModel();
+            $data2['page_home'] = $pageModel->where('page_status', 1)->first();
+            $data2['link_page'] = $pageModel->where('page_status !=', 1)->where('page_show', 1)->findAll();
+            // dd($data['link_page']);
+            $data2['items'] = $session->get('cart');
+            return view('front_end/dailong_site/layout', $data2);
+
+        }
+        
+        
         
         
         
 
-        return view('front_end/maymocnganhduc_site/layout_maymoc', $data2).view('admin/admin-layout', $dataLogin);
+        
 
 
         

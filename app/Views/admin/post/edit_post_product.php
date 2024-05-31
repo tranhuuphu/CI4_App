@@ -149,9 +149,19 @@
                       </select>
                   </div>
                   <hr>
+
                   <div class="form-group">
                     <label style="color: red;" class="upper">Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3">
+                    <br>
+                    <a
+                      data-fancybox
+                      data-src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>"
+                    >
+                      <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="200" height="auto" class="img_fancy" />
+                    </a>
+
+                    <!-- <label style="color: red;" class="upper">Ảnh Cũ</label> -->
+                    <!-- <img src="<?= base_url('public/upload/tinymce/'.$post_detail['post_image']) ?>" width="30%" class="ml-3"> -->
                   </div>
                   <hr>
                   <div class="form-group clearfix">
@@ -186,6 +196,9 @@
                       <label for="radioDanger2"> Sản Phẩm</label>
                     </div>
                     <hr>
+
+                    
+
 
                     <label class="upper text-red">Giá sản phẩm</label>
 

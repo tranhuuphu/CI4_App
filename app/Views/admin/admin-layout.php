@@ -30,6 +30,10 @@
 	      width: 100%;
 	    }
 
+	    .img_fancy:hover{
+          cursor: pointer;
+        }
+
 	    .upper{
 		    text-transform: uppercase !important;
 		  }
@@ -171,11 +175,13 @@
 
 
 
-<!-- <script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox-1.3.4.js" referrerpolicy="origin"></script> -->
+<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox3.js" referrerpolicy="origin"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 <script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 
 
@@ -391,6 +397,7 @@
       for (var i = 0; i < arr.length; i++) {
         
         const para = document.createElement("div");
+
         para.innerHTML = "<img class='image-prview img-thumbnail rounded' src='" + "<?= base_url('public/upload/tinymce/') ?>/" + arr[i] + "'style='width: 100%; margin-top: 15px;'>";
         // Append to another element:
         document.getElementById("images2").appendChild(para);
@@ -435,6 +442,65 @@
       });
 
   });
+</script>
+<script type="text/javascript">
+	$('.copyboard').on('click', function(e) {
+	  e.preventDefault();
+
+	  var copyText = $(this).attr('data-text');
+
+	  var textarea = document.createElement("textarea");
+	  textarea.textContent = copyText;
+	  textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in MS Edge.
+	  document.body.appendChild(textarea);
+	  textarea.select();
+	  document.execCommand("copy"); 
+
+	  document.body.removeChild(textarea);
+	});
+	$(document).ready(function() {
+	  // initilizing Tooltip
+	  $('[data-toggle="tooltip"]').tooltip();
+
+	  // Get the Tooltip
+	  var btn_tooltip = $('#my-btn');
+
+	  // Change Tooltip Text on mouse enter
+	  btn_tooltip.mouseenter(function () {
+	    btn_tooltip.attr('title', 'Click to copy').tooltip('dispose');
+	    btn_tooltip.tooltip('show');
+	  });
+
+	  // Update Tooltip Text on click
+	  // btn_tooltip.click(function () {
+	  //   btn_tooltip.attr('title', 'Copied Tiêu Đề').tooltip('dispose');
+	  //   btn_tooltip.tooltip('show');
+	  // });
+	  
+	});
+</script>
+
+<script>
+	// const buttons = document.querySelectorAll('.copy');
+
+	// 	buttons.forEach(button => {
+	// 	  button.addEventListener('click', handleClick);
+	// 	});
+
+	// 	function handleClick() {
+
+	// 	  const input = this.previousElementSibling;
+		  
+	// 	  input.select();
+	// 	  input.setSelectionRange(0, 99999);
+		  
+	// 	  navigator.clipboard.writeText(input.value);
+
+	// 	  this.textContent = 'Text copied';
+		  
+	// 	  setTimeout(() => this.textContent = 'Copy text to clipboard', 3000);
+
+	// 	}
 </script>
 
 

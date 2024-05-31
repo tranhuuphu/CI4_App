@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Libraries\Hash;
+use App\Models\UsersModel;
 
 class Auth extends BaseController
 {
@@ -14,7 +15,9 @@ class Auth extends BaseController
     }
 
     public function login(){
-        return view('admin/auth/login');
+        $usersModel = new usersModel();
+        $data = $usersModel->select('favicon_image')->where('power_admin', 1)->first();
+        return view('admin/auth/login', $data);
     }
 
     public function register(){

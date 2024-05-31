@@ -103,7 +103,13 @@
                       >
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
-		                    <td><?= $p['post_title']; ?></td>
+		                    <td>
+                          <?= $p['post_title']; ?>
+                          <br>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $p['post_title']; ?>" class="copyboard btn btn-warning mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Tiêu Đề</button>
+
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/'.$p['post_cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html' ?>" class="copyboard btn btn-primary mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Link</button>
+                        </td>
 		                    <td>
                           <?php 
                             foreach ($cate as $c) {

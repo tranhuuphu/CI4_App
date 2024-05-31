@@ -46,6 +46,15 @@
 	                    <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?= set_value('gallery_title'); ?>">
 	                  </div>
                     <hr>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper">alias - image slug (Link Slug On Site - hạn chế thay đổi)  <span class="text-red">(*)</span></label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_alias') : '' ?></p>
+                      <input type="text" name="gallery_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" value="<?= old('gallery_alias') ?>" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
+                    </div>
+                    <p id="slug-text" class="text-red"></p>
+                    <hr>
+
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper" style="color: red">Lựa chọn phân loại cho ảnh</label>
                       <div class="form-group">

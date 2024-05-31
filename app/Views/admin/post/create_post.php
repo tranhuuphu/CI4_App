@@ -122,8 +122,10 @@
                     <br>
                     <a href="<?= base_url("public/admin_asset") ?>/responsive_filemanager/filemanager/dialog.php?relative_url=1&type=1&field_id=image_input&akey=tranhuuphu" class="btn btn-primary iframe-btn mt-2" type="button">Chọn Ảnh <i class="fas fa-image"></i></a>
                     <input type="hidden" name="post_image" id="image_input" class="form-control" style="border-radius: 0; margin-top: 15px;">
+
                     <div id="images2" style="float: left" class="mb-3">
                     </div>
+                    
                   </div>
 	                <hr>
 	                <div class="form-group clearfix">
@@ -161,28 +163,36 @@
 	              <!-- /.card-body -->
 	            </div>
 	            <!-- /.card -->
+              <div class="accordion" id="accordionExample">
+  	            <div class="card card-danger">
+                  <div class="card-header">
+                    <!-- <h3 class="card-title" class="upper" style="font-weight: bold;">GIÁ CHO SẢN PHẨM</h3> -->
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <h3 class="card-title text-white" class="upper" style="font-weight: bold;">ĐẶT GIÁ CHO SẢN PHẨM   <i class="fa fa-plus"></i></h3>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      
+                      <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là <label class="text-red">"Sản Phẩm"</label> & không thuộc <label class="text-red">danh mục blog</label>)</label>
+                      <hr>
+                      <div class="row mb-3">
+                        <div class="col-6">
+                          <label class="upper">Giá Gốc</label>
+                          <input type="text" name="post_price" class="form-control" placeholder="Giá gốc">
+                        </div>
+                        <div class="col-6">
+                          <label class="upper">Giá Khuyến Mãi</label>
+                          <input type="text" name="post_sale" class="form-control" value="" placeholder="Giá khuyến mãi">
+                        </div>
+                      </div>
 
-	            <div class="card card-danger">
-                <div class="card-header">
-                  <h3 class="card-title" class="upper" style="font-weight: bold;">GIÁ CHO SẢN PHẨM</h3>
-                </div>
-                <div class="card-body">
-                  
-                  <label class="upper text-info mb-2">(Giá có thể để trống, và sẽ được ghi nhận nếu lựa chọn vào ô là <label class="text-red">"Sản Phẩm"</label> & không thuộc <label class="text-red">danh mục blog</label>)</label>
-                  <hr>
-                  <div class="row mb-3">
-                    <div class="col-6">
-                      <label class="upper">Giá Gốc</label>
-                      <input type="text" name="post_price" class="form-control" placeholder="Giá gốc">
-                    </div>
-                    <div class="col-6">
-                      <label class="upper">Giá Khuyến Mãi</label>
-                      <input type="text" name="post_sale" class="form-control" value="" placeholder="Giá khuyến mãi">
                     </div>
                   </div>
-
+                  <!-- /.card-body -->
                 </div>
-                <!-- /.card-body -->
               </div>
 
 	            
@@ -266,7 +276,28 @@
     $(".post_active").addClass("menu-open");
     $(".post_active a:first").addClass("active");
     $(".post_active .post_tree_active2 a:first").addClass("active");
+
   </script>
+  <script>
+        $(document).ready(function () {
+            // Add minus icon for collapse element which
+            // is open by default
+            $(".collapse.show").each(function () {
+                $(this).prev(".card-header").find(".fas")
+                    .addClass("fa-minus").removeClass("fa-plus");
+            });
+            // Toggle plus minus icon on show hide
+            // of collapse element
+            $(".collapse").on('show.bs.collapse', function () {
+                $(this).prev(".card-header").find(".fa")
+                    .removeClass("fa-plus").addClass("fa-minus");
+            }).on('hide.bs.collapse', function () {
+                $(this).prev(".card-header").find(".fa")
+                    .removeClass("fa-minus").addClass("fa-plus");
+            });
+        });
+    </script>
+
 
 <?= $this->endSection(); ?>
 

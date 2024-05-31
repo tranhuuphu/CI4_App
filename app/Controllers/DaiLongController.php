@@ -343,6 +343,7 @@ class DaiLongController extends BaseController
         
         $cate = new CateModel;
         $tag = new TagModel;
+        $post = new PostModel;
 
         $gallery = new GalleryModel;
 
@@ -444,9 +445,9 @@ class DaiLongController extends BaseController
             return view('front_end/dailong_site/gallery_img_detail', $data);
 
         }
-        $post2 = new PostModel;
-        $post_detail = $post2->find($id);
-        dd($post_detail);
+        
+        $post_detail = $post->find($id);
+        // dd($post_detail);
         if($post_detail == null){
             return view('front_end/dailong_site/404_error/404_post_detail');
         }

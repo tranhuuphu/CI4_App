@@ -102,9 +102,58 @@
 
                         
                       >
+                      <style>
+                        .tooltip {
+                          position: relative;
+                          display: inline-block;
+                        }
+
+                        .tooltip .tooltiptext {
+                          visibility: hidden;
+                          width: 140px;
+                          background-color: #555;
+                          color: #fff;
+                          text-align: center;
+                          border-radius: 6px;
+                          padding: 5px;
+                          position: absolute;
+                          z-index: 1;
+                          bottom: 150%;
+                          left: 50%;
+                          margin-left: -75px;
+                          opacity: 0;
+                          transition: opacity 0.3s;
+                        }
+
+                        .tooltip .tooltiptext::after {
+                          content: "";
+                          position: absolute;
+                          top: 100%;
+                          left: 50%;
+                          margin-left: -5px;
+                          border-width: 5px;
+                          border-style: solid;
+                          border-color: #555 transparent transparent transparent;
+                        }
+
+                        .tooltip:hover .tooltiptext {
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                      </style>
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
-		                    <td><?= $p['post_title']; ?></td>
+		                    <td>
+                          <?= $p['post_title']; ?>
+                          <br>
+                          
+                          
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $p['post_title']; ?>" class="copyboard btn btn-warning mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Tiêu Đề</button>
+
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/'.$p['post_cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html' ?>" class="copyboard btn btn-primary mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Link</button>
+
+                          
+                        </td>
 		                    <td>
                           <?php 
                             foreach ($cate as $c) {
@@ -113,6 +162,7 @@
                               }
                             } 
                           ?>
+
                         </td>
 
                         
