@@ -2,6 +2,7 @@
 <html lang="en">
 	<?= $this->include('admin/header'); ?>
 	<title><?= $this->renderSection('title'); ?></title>
+	<?= $this->renderSection('style'); ?>
 	<style>
 		.content-wrapper{
 			background-color: #ffffff !important;
@@ -127,18 +128,18 @@
 	<!-- Bootstrap -->
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- overlayScrollbars -->
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
 	<!-- AdminLTE App -->
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/adminlte.js"></script>
 
 	<!-- PAGE PLUGINS -->
 	<!-- jQuery Mapael -->
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/raphael/raphael.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mousewheel/jquery.mousewheel.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/raphael/raphael.min.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mapael/jquery.mapael.min.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jquery-mapael/maps/usa_states.min.js"></script> -->
 	<!-- ChartJS -->
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/chart.js/Chart.min.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/chart.js/Chart.min.js"></script> -->
 
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?= base_url('public/admin_asset'); ?>/dist/js/demo.js"></script>
@@ -160,26 +161,25 @@
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/jszip/jszip.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/pdfmake/pdfmake.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/pdfmake/vfs_fonts.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/jszip/jszip.min.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/pdfmake/pdfmake.min.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/pdfmake/vfs_fonts.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script> -->
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script> -->
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-	<!-- Ekko Lightbox -->
+	<!-- Ekko Lightbox Của Bộ Sưu Tập -->
 	<script src="<?= base_url('public/admin_asset'); ?>/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
 
-	<script src="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<!-- <script src="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
 
 
 
-<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox3.js" referrerpolicy="origin"></script>
+	<script src="<?= base_url('public/admin_asset'); ?>/fancybox/jquery.fancybox3.js" referrerpolicy="origin"></script>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-<script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
 
 
@@ -267,45 +267,7 @@
       content_style: ".mce-content-body {font-size:18px;font-family: arial;}",
       contextmenu_never_use_native: true,
     };
-    // tinymce.init({
-	  //   selector: 'textarea#content2',
-	  //   height: 500,
-    //   relative_urls: false,
-    //   remove_script_host: false,
-
-    //   oninit : "setPlainText",
-
-    //   plugins: 'print preview importcss searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap emoticons template paste responsivefilemanager file-manager2',
-    //   fontsize_formats: '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 48px 72px',
-      
-    //   default_link_target: '_blank',
-      
-    //   toolbar: 'undo redo | formatselect fontselect fontsizeselect | bold italic underline strikethrough image toc |  alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | media template link anchor codesample | responsivefilemanager',
-    //   toolbar_sticky: true,
-    //   autosave_ask_before_unload: true,
-    //   autosave_interval: '30s',
-    //   autosave_prefix: '{path}{query}-{id}-',
-    //   autosave_restore_when_empty: false,
-    //   autosave_retention: '2m',
-    //   image_advtab: true,
-    //   toolbar_mode: 'wrap',
-    //   paste_text_sticky : true,
-    //   image_title: true,
-		//   automatic_uploads: true,
-		//   image_advtab: true ,
-
-   
-		// 	external_filemanager_path:"<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/",
-		// 	filemanager_title:"Quản Lý Ảnh & File" ,
-
-		// 	external_plugins: {
-		// 		"responsivefilemanager": "<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/plugins/responsivefilemanager/plugin.min.js",
-		// 		"filemanager": "<?= base_url('public/admin_asset/responsive_filemanager'); ?>/filemanager/plugin.min.js",
-		// 	},
-		// 	filemanager_access_key:"tranhuuphu",
-    //   content_style: ".mce-content-body {font-size:18px;font-family: arial;}",
-    //   contextmenu_never_use_native: true,
-	  // });
+    
 
     tinymce.init(editor_config);
 
@@ -358,11 +320,8 @@
 		        el.appendChild(elP);
 		    }
 		} 
-
-
-
-
   </script>
+
 
   <script>
 		$('[name=taginput]').tagify();
@@ -375,11 +334,6 @@
       'autoScale'   : false,
     });
 
-    // function responsive_filemanager_callback(field_id){
-		// 	var url=jQuery('#'+field_id).val();
-		// 	$(".image-prview").attr('src', '<?= base_url('public/upload/tinymce/') ?>/'+url);
-		
-		// }
 
 		function responsive_filemanager_callback(field_id){
       var url=jQuery('#'+field_id).val();
@@ -403,10 +357,8 @@
         document.getElementById("images2").appendChild(para);
       }
     }
-
-		
-
 	</script>
+
 	<script type="text/javascript">
 		function convertToSlug( str ) {
 			var from = "ăàáäâèéẽẹẻëêìíïîòóỏõọöôùúüûủũụưứừữửựñçảãạấầẩẫậắằẳẵặếểễệềỉĩịốỗồỗổộớờỡởợơđ·/_,:;";
@@ -432,76 +384,51 @@
 			}
 	</script>
 	
-<script type="text/javascript">
-  $(document).ready(function () {
-      $('#buttons input[type=button]').on('click', function () {
-          var qty = $(this).data('value');
+	<script type="text/javascript">
+	  $(document).ready(function () {
+	      $('#buttons input[type=button]').on('click', function () {
+	          var qty = $(this).data('value');
+	          $('#value').val(qty);
 
-          $('#value').val(qty);
-
-      });
-
-  });
-</script>
-<script type="text/javascript">
-	$('.copyboard').on('click', function(e) {
-	  e.preventDefault();
-
-	  var copyText = $(this).attr('data-text');
-
-	  var textarea = document.createElement("textarea");
-	  textarea.textContent = copyText;
-	  textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in MS Edge.
-	  document.body.appendChild(textarea);
-	  textarea.select();
-	  document.execCommand("copy"); 
-
-	  document.body.removeChild(textarea);
-	});
-	$(document).ready(function() {
-	  // initilizing Tooltip
-	  $('[data-toggle="tooltip"]').tooltip();
-
-	  // Get the Tooltip
-	  var btn_tooltip = $('#my-btn');
-
-	  // Change Tooltip Text on mouse enter
-	  btn_tooltip.mouseenter(function () {
-	    btn_tooltip.attr('title', 'Click to copy').tooltip('dispose');
-	    btn_tooltip.tooltip('show');
+	          // add color to input and to square FAS
+	          var color = $(this).data('bgcolor');
+	          document.getElementById('bg_topic').value= color;
+	          document.getElementById("bg_fas").style.color = color;
+	      });
 	  });
+	</script>
 
-	  // Update Tooltip Text on click
-	  // btn_tooltip.click(function () {
-	  //   btn_tooltip.attr('title', 'Copied Tiêu Đề').tooltip('dispose');
-	  //   btn_tooltip.tooltip('show');
-	  // });
-	  
-	});
-</script>
+	<script type="text/javascript">
+		$('.copyboard').on('click', function(e) {
+		  e.preventDefault();
+		  var copyText = $(this).attr('data-text');
 
-<script>
-	// const buttons = document.querySelectorAll('.copy');
+		  var textarea = document.createElement("textarea");
+		  textarea.textContent = copyText;
+		  textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in MS Edge.
+		  document.body.appendChild(textarea);
+		  textarea.select();
+		  document.execCommand("copy"); 
 
-	// 	buttons.forEach(button => {
-	// 	  button.addEventListener('click', handleClick);
-	// 	});
+		  document.body.removeChild(textarea);
+		});
+		$(document).ready(function() {
+		  // initilizing Tooltip
+		  $('[data-toggle="tooltip"]').tooltip();
 
-	// 	function handleClick() {
+		  // Get the Tooltip
+		  var btn_tooltip = $('#my-btn');
 
-	// 	  const input = this.previousElementSibling;
+		  // Change Tooltip Text on mouse enter
+		  btn_tooltip.mouseenter(function () {
+		    btn_tooltip.attr('title', 'Click to Copy').tooltip('dispose');
+		    btn_tooltip.tooltip('show');
+		  });
 		  
-	// 	  input.select();
-	// 	  input.setSelectionRange(0, 99999);
-		  
-	// 	  navigator.clipboard.writeText(input.value);
+		});
+	</script>
 
-	// 	  this.textContent = 'Text copied';
-		  
-	// 	  setTimeout(() => this.textContent = 'Copy text to clipboard', 3000);
 
-	// 	}
-</script>
 
 
 	<?= $this->renderSection('script'); ?>

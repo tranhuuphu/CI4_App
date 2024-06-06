@@ -212,6 +212,8 @@
 
                             <div class="tab-pane fade show active" id="tabs-1" role="tabpanel" aria-labelledby="canvas-tabs-1-tab" tabindex="0">
                               <?= $post_detail['post_content']; ?>
+
+                              <?= $post_detail['post_content2']; ?>
                             </div>
 
                             

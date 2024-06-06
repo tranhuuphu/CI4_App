@@ -15,7 +15,7 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/fontawesome-free/css/all.min.css">
 
-    <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> -->
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/dist/css/adminlte.min.css">
 

@@ -32,17 +32,19 @@ class GalleryController extends BaseController
         $galleryType    = new GalleryTypeModel();
         $galleryModel = new GalleryModel();
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        $galleryTopic = array_map("unserialize", array_unique(array_map("serialize", $galleryTopic)));
         // dd($galleryTopic);
-        if(count($galleryTopic)>0){
-            foreach($galleryTopic as $key){
-                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
-            }
-            $data['topic_name'] = array_unique($topic_name);
-        }else{
-            $data['topic_name'] = null;
-        }
-
+        // if(count($galleryTopic)>0){
+        //     foreach($galleryTopic as $key){
+        //         $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        //     }
+        //     $data['topic_name'] = array_unique($topic_name);
+        // }else{
+        //     $data['topic_name'] = null;
+        // }
+        $data['topic_name'] = $galleryTopic;
+        
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
         $data['gallery_type'] = $galleryType->findAll();
@@ -66,7 +68,8 @@ class GalleryController extends BaseController
 
         $post_url = $post->select('post.id, post.post_title')->findAll();
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
+
         if(count($galleryTopic)>0){
             foreach($galleryTopic as $key){
                 $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
@@ -99,17 +102,6 @@ class GalleryController extends BaseController
 
             ],
             
-            // 'gallery_image' => [
-            //     'label' => 'Image File',
-            //     'rules' => 'uploaded[gallery_image]'
-            //         . '|is_image[gallery_image]'
-            //         . '|mime_in[gallery_image,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-            //         . '|max_size[gallery_image,10000]',
-            //         'errors' => [
-            //         'uploaded' => 'Bạn chưa chọn ảnh/sai định dạng ảnh cho bài viết.',
-            //         'max_size' => 'Kích trước file quá lớn.',
-            //     ],
-            // ],
 
             'gallery_meta_desc'=>[
                 'rules'=>'required',
@@ -155,6 +147,20 @@ class GalleryController extends BaseController
             $data['gallery_link_file_origin']       = $this->request->getPost('gallery_link_file_origin');
         }else{
             $data['gallery_link_file_origin']       = null;
+        }
+
+        // Color
+        if($this->request->getPost('gallery_bg_topic') != null){
+            $data['gallery_bg_topic']       = $this->request->getPost('gallery_bg_topic');
+        }else{
+            $data['gallery_bg_topic']       = null;
+        }
+
+        // Account
+        if($this->request->getPost('gallery_account') != null){
+            $data['gallery_account']       = $this->request->getPost('gallery_account');
+        }else{
+            $data['gallery_account']       = null;
         }
         
         $topic = $this->request->getPost('gallery_topic');

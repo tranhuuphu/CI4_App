@@ -55,7 +55,8 @@ class PostController extends BaseController
 
         ]);
         if(!$validation){
-            return view('admin/post/create_post', ['validation'=>$this->validator, 'cate'=>$data['cate']]);
+            $data['validation'] = $this->validator;
+            return view('admin/post/create_post', $data);
         }
 
 

@@ -73,7 +73,7 @@
 			          <div class="entry-content mt-0">
 
 			            <?= $post_detail['post_content']; ?>
-			            <hr>
+			            
 			            <!-- Google ads -->
 									<ins class="adsbygoogle"
 									     style="display:block; text-align:center;"
@@ -88,7 +88,7 @@
 
 			            <?= $post_detail['post_content2']; ?>
 
-			            <hr class="mb-5">
+			            
 			            <?php if($tag_all): ?>
 				            <div class="tagcloud mb-3">
 				            	<?php foreach($tag_all as $tag): ?>
@@ -432,7 +432,9 @@
   <meta property="og:site_name" content="<?= $title ?>" />
   <meta property="og:title" content="<?= $title ?>" />
   <meta property="og:url" content="<?= $link_full ?>" />
-  <meta property="og:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
+  <meta property="og:image" content="<?= base_url('public/upload/tinymce').'/'.$image ?>"/>
+  <meta property="og:image:secure_url" content="<?= base_url('public/upload/tinymce').'/'.$image ?>" />
+	<meta property="og:image:type" content="image/jpeg" />
   <meta property="og:description" content="<?= $meta_desc ?>" />
   <meta property="og:locale" content="vi_VN" />
   

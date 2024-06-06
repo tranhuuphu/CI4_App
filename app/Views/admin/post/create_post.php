@@ -48,7 +48,7 @@
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">alias - slug (Link Slug On Site - hạn chế thay đổi)  <span class="text-red">(*)</span></label>
+                      <label for="exampleInputEmail1" class="upper">alias - slug <span class="text-red">(*)</span></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_alias') : '' ?></p>
                       <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" value="<?= old('post_alias') ?>" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
                     </div>

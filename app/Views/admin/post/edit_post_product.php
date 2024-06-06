@@ -95,6 +95,7 @@
                                 </div>
                                 <div class="modal-body">
                                   <?= $post_detail['post_content']; ?>
+                                  <?= $post_detail['post_content2']; ?>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
