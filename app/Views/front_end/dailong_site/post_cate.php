@@ -83,6 +83,13 @@
 									            	?>
 	                            </li>
 	                            <li><i class="fas fa-clock"></i> <?= ceil(strlen($post_cate_1[0]['post_content'])/700) ?> Minutes Read</li>
+
+	                            <?php if($post_cate_1[0]['post_finish'] == 'updating'): ?>
+	                            <li>
+								                <i class="fas fa-stream"></i> Updating
+								              </li>
+								              <?php endif; ?>
+
 								              <?php if($post_cate_1[0]['post_status'] == "san-pham"): ?>
 									              <li>
 									              	<a href="<?= site_url('buy').'/'.$post_cate_1[0]['id']; ?>">
@@ -146,6 +153,11 @@
 
 				            	?>
 			              </li>
+			              <?php if($key['post_finish'] == 'updating'): ?>
+                      <li>
+				                <i class="fas fa-stream"></i> Updating
+				              </li>
+			              <?php endif; ?>
 			              <?php if($key['post_status'] == "san-pham"): ?>
 				              <li>
 				                <a href="<?= site_url('buy').'/'.$key['id']; ?>"><i class="fas fa-shopping-cart"></i></a>

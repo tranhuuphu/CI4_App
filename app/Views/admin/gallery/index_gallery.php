@@ -51,13 +51,14 @@
                 <table id="example1" class="table table-bordered table-hover" style="width:100%">
                   <thead>
 	                  <tr class="thead-dark">
-                      <th>Thứ tự</th>
+                      <th>Order</th>
+                      <th>ID</th>
                       <th>Tiêu Đề</th>
 	                    <th>Ảnh</th>
-	                    <th>Thuộc Phân Loại</th>
-                      <th>id</th>
+	                    <th>Phân Loại</th>
+                      <th>Chủ Đề</th>
                       <th>View</th>
-                      <th>Link File & Related Link</th>
+                      <th>Related Link</th>
                       <th>Option</th>
 	                  </tr>
                   </thead>
@@ -76,15 +77,17 @@
                         <?php $i = $i + 1; ?>
 
                         
-
+                        <td>
+                          <?= $g['id']?>
+                        </td>
                         
 		                    <td>
                           <?= $g['gallery_title']; ?>
                           <br>
                           
                           
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Tiêu Đề</button>
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Link</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy">Tiêu Đề</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy">Link</button>
 
                           
                         </td>
@@ -95,6 +98,8 @@
                           </a>
 
                         </td>
+
+                        
                         <td>
                           <strong><?= $g['gallery_type_name']; ?></strong>
                           <br>
@@ -141,46 +146,54 @@
                                           <?= $g['gallery_topic']; ?>
                                         </td>
                                       </tr>
+                                      <tr>
+                                        
+                                        <th scope="row">04. Tài Khoản Google Drive</th>
+                                        <td>
+                                          <?= $g['gallery_account']; ?>
+                                        </td>
+                                      </tr>
+
 
                                       
                                       <tr>
-                                        <th scope="row">03. Lượt Xem</th>
+                                        <th scope="row">05. Lượt Xem</th>
                                         <td><?= $g['gallery_view'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">04. Ảnh</th>
+                                        <th scope="row">06. Ảnh</th>
                                         <td><img src="<?= base_url('/') ?>/public/upload/tinymce/gallery_asset/<?= $g['gallery_image'] ?>" style="width: 60% " ></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">05. Lượt tải</th>
+                                        <th scope="row">07. Lượt tải</th>
                                         <td>
                                           <?= $g['gallery_img_download_times'] ?>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">06. Bài Viết Liên Quan</th>
+                                        <th scope="row">08. Bài Viết Liên Quan</th>
                                         <td>
                                           <?= $g['gallery_post_url'] ?>
                                         </td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">07. Link Short</th>
+                                        <th scope="row">09. Link Short</th>
                                         <td><?php echo $g['gallery_file_download'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">08. Link Origin</th>
+                                        <th scope="row">10. Link Origin</th>
                                         <td><?= $g['gallery_link_file_origin'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">09. Ngày truy cập gần nhất</th>
+                                        <th scope="row">11. Ngày truy cập gần nhất</th>
                                         <td><?= $g['time_view_newest'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">10. Ngày viết bài</th>
+                                        <th scope="row">12. Ngày viết bài</th>
                                         <td><?= $g['created_at'] ?></td>
                                       </tr>
                                       <tr>
-                                        <th scope="row">11. Ngày cập nhật</th>
+                                        <th scope="row">13. Ngày cập nhật</th>
                                         <td><?= $g['updated_at'] ?></td>
                                       </tr>
                                     </tbody>
@@ -200,22 +213,35 @@
                           </div>
                           <!-- /.modal -->
                         </td>
-                        <td>
-                          <?= $g['id']?>
+                        <td class="input_text_stroke">
+                          <?php if($g['gallery_bg_topic'] != null): ?>
+                            <button type="button" class="btn btn-primary topic_stroke border-0" style="background: <?= $g['gallery_bg_topic'] ?>;">
+                              <?= $g['gallery_topic']; ?>
+                            </button>
+                          <?php endif; ?>
+                          
+
                         </td>
+
+                        
                         <td>
-                          <?= $g['gallery_view']?>
+                          <strong><?= $g['gallery_view']?></strong>
                         </td>
 		                    
                         <td>
-                          <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt-1 mb-1"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Short</a></button> <?php endif; ?>
+                          <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt- mb-2"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Short</a></button> <?php endif; ?>
 
-                          <?php if($g['gallery_link_file_origin'] != null): ?> <button type="button" class="btn btn-secondary mt-1 mb-1"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Link Origin</a></button> <?php endif; ?>
+                          <?php if($g['gallery_link_file_origin'] != null): ?> <button type="button" class="btn btn-secondary mt- mb-2"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Origin</a></button> <?php endif; ?>
                           <?php if($g['gallery_post_url'] != null): ?>
                             
-                            <a href="<?= $g['gallery_post_url']; ?>" target="_blank"><button type="button" class="btn btn-success"><i class="fas fa-eye"></i> View Detail</button></a>
+                            <a href="<?= $g['gallery_post_url']; ?>" target="_blank"><button type="button" class="btn btn-success mb-2"><i class="fas fa-eye"></i> Related</button></a>
                             
                           <?php endif; ?>
+
+                          <?php if($g['gallery_account'] != null): ?>
+                            <button type="button" class="btn btn-primary"><?= $g['gallery_account']; ?></button>
+                          <?php endif; ?>
+
                         </td>
 		                    
 		                    <td>
@@ -248,13 +274,14 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Thứ tự</th>
+                    <th>Order</th>
+                    <th>ID</th>
                     <th>Tiêu Đề</th>
                     <th>Ảnh</th>
-                    <th>Thuộc Phân Loại</th>
-                    <th>id</th>
+                    <th>Phân Loại</th>
+                    <th>Chủ Đề</th>
                     <th>View</th>
-                    <th>Link File</th>
+                    <th>Related Link</th>
                     <th>Option</th>
                   </tr>
                   </tfoot>

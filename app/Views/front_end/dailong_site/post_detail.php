@@ -63,6 +63,13 @@
 			              <li>
 			                <i class="fas fa-clock"></i> <?= ceil(strlen($post_detail['post_content'])/700) ?> Minutes Read
 			              </li>
+			              <?php if($post_detail['post_finish'] == 'updating'): ?>
+				              <li>
+				              	
+					                <i class="fas fa-stream"></i> Updating
+					              
+				              </li>
+				            <?php endif; ?>
 			            </ul>
 			          </div>
 

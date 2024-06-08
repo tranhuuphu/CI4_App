@@ -143,6 +143,23 @@
                       </div>
                     </div>
                   </div>
+                  <hr>
+
+                  <div class="form-group clearfix">
+                    <label class="upper text-info">Tình Trạng Bài Viết</label>
+                    <br>
+
+                    <div class="form-group clearfix">
+                      <div class="icheck-success d-inline">
+                        <input type="radio" name="post_finish" value="finish" checked id="radioSuccess3" />
+                        <label for="radioSuccess3"> Hoàn Chỉnh</label>
+                      </div>
+                      <div class="icheck-success d-inline ml-2 text-warning">
+                        <input type="radio" name="post_finish" value="updating" id="radioSuccess4" />
+                        <label for="radioSuccess4" class=""> Đang Cập Nhật</label>
+                      </div>
+                    </div>
+                  </div>
 
                   <hr>
                   <div class="form-group clearfix ml-2">

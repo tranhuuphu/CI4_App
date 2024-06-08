@@ -76,11 +76,13 @@
                   <thead>
 	                  <tr class="thead-dark">
                       <th>Order</th>
-	                    <th width="30%">Tiêu đề bài viết</th>
+                      <th>ID</th>
+	                    <th>Tiêu Đề</th>
 	                    <th>Danh Mục</th>
-	                    <th>Trạng thái</th>
+                      <th>Status</th>
+	                    <th>Finish</th>
+                      <th>View</th>
                       <th>Ẩn/Hiện</th>
-	                    <th>ID Post</th>
 	                    <th>Option</th>
 	                  </tr>
                   </thead>
@@ -102,55 +104,23 @@
 
                         
                       >
-                      <style>
-                        .tooltip {
-                          position: relative;
-                          display: inline-block;
-                        }
-
-                        .tooltip .tooltiptext {
-                          visibility: hidden;
-                          width: 140px;
-                          background-color: #555;
-                          color: #fff;
-                          text-align: center;
-                          border-radius: 6px;
-                          padding: 5px;
-                          position: absolute;
-                          z-index: 1;
-                          bottom: 150%;
-                          left: 50%;
-                          margin-left: -75px;
-                          opacity: 0;
-                          transition: opacity 0.3s;
-                        }
-
-                        .tooltip .tooltiptext::after {
-                          content: "";
-                          position: absolute;
-                          top: 100%;
-                          left: 50%;
-                          margin-left: -5px;
-                          border-width: 5px;
-                          border-style: solid;
-                          border-color: #555 transparent transparent transparent;
-                        }
-
-                        .tooltip:hover .tooltiptext {
-                          visibility: visible;
-                          opacity: 1;
-                        }
-                      </style>
+                      
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
+                        <td>
+                          
+                          <?=$p['id']?>
+
+
+                        </td>
 		                    <td>
                           <?= $p['post_title']; ?>
                           <br>
                           
                           
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $p['post_title']; ?>" class="copyboard btn btn-warning mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Tiêu Đề</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $p['post_title']; ?>" class="copyboard btn btn-warning mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Tiêu Đề</button>
 
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/'.$p['post_cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html' ?>" class="copyboard btn btn-primary mt-2" data-toggle="tooltip" data-placement="top" title="Click to copy">Copy Link</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/'.$p['post_cate_slug'].'/'.$p['post_slug'].'-'.$p['id'].'.html' ?>" class="copyboard btn btn-primary mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy">Link</button>
 
                           
                         </td>
@@ -168,8 +138,15 @@
                         
 
                         <td >
-                          <?php if($p['post_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "Bài viết thường"; } ?>
+                          <?php if($p['post_featured'] == 1){echo "<span class='text-bold'>Bài viết nổi bật</span>"; }else{echo "<span class='text-primary'>Bài viết thường</span>"; } ?>
                           <p class="text-bold text-red"><?php if($p['post_show'] == 0){echo "Đang Ẩn";} ?></p>
+                        </td>
+                        <td >
+                          <?php if($p['post_finish'] == 'updating'){echo "<span class='text-bold text-danger'>Đang Cập Nhật</span>"; }else{echo "Bài viết hoàn thành"; } ?>
+                        </td>
+
+                        <td >
+                          <strong><?= $p['post_view'] ?></strong>
                         </td>
                         
                         <td>
@@ -284,12 +261,7 @@
                           <!-- /.modal -->
                           
                         </td>
-		                    <td>
-                          
-                          <?=$p['id']?>
-
-
-                        </td>
+		                    
 		                    <td>
 
                           <a href="<?= base_url('admin/post/edit/'.$p['id']) ?>" class="btn btn-danger ml-3"><i class="fas fa-edit"></i> Edit</a>
@@ -305,11 +277,13 @@
                   <tfoot>
                   <tr>
                     <th>Order</th>
-                    <th>Tên</th>
+                    <th>ID</th>
+                    <th>Tiêu đề</th>
                     <th>Danh Mục</th>
-                    <th>Trạng thái</th>
-                    <th>Ẩn/Hiện</th>
+                    <th>Status</th>
+                    <th>Finish</th>
                     <th>View</th>
+                    <th>Ẩn/Hiện</th>
                     <th>Option</th>
                   </tr>
                   </tfoot>

@@ -64,24 +64,19 @@ class GalleryController extends BaseController
         $galleryType    = new GalleryTypeModel();
 
         $cate = $cateModel->where('cate_type', 'cate_gallery')->first();
+        $data['cate'] = $cate;
+
         $gallery_type = $galleryType->findAll();
+        $data['gallery_type'] = $gallery_type;
 
         $post_url = $post->select('post.id, post.post_title')->findAll();
-
-        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-
-        if(count($galleryTopic)>0){
-            foreach($galleryTopic as $key){
-                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
-            }
-            $data['topic_name'] = array_unique($topic_name);
-        }else{
-            $data['topic_name'] = null;
-        }
-
+        $data['post_url'] = $post_url;
         
 
-
+        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        $galleryTopic = array_map("unserialize", array_unique(array_map("serialize", $galleryTopic)));
+        $data['topic_name'] = $galleryTopic;
+        
 
         $validation = $this->validate([
 
@@ -93,14 +88,7 @@ class GalleryController extends BaseController
                 ],
 
             ],
-            'gallery_alias'=>[
-                'rules'=>'required|is_unique[gallery_image.gallery_alias]',
-                'errors' => [
-                    'required' => 'Alias không được để trống.',
-                    'is_unique' => 'Alias trùng với alias bài viết khác.',
-                ],
-
-            ],
+            
             
 
             'gallery_meta_desc'=>[
@@ -119,8 +107,11 @@ class GalleryController extends BaseController
             ],
 
         ]);
+
+
         if(!$validation){
-            return view('admin/gallery/create_gallery', ['validation'=>$this->validator, 'cate'=>$cate, 'post_url'=>$post_url, 'gallery_type'=> $gallery_type, 'topic_name'=>$topic_name]);
+            $data['validation'] = $this->validator;
+            return view('admin/gallery/create_gallery', $data);
         }
 
         
@@ -258,15 +249,19 @@ class GalleryController extends BaseController
         }
 
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        if(count($galleryTopic)>0){
-            foreach($galleryTopic as $key){
-                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
-            }
-            $data['topic_name'] = array_unique($topic_name);
-        }else{
-            $data['topic_name'] = null;
-        }
+        // $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
+        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        $galleryTopic = array_map("unserialize", array_unique(array_map("serialize", $galleryTopic)));
+        $data['topic_name'] = $galleryTopic;
+
+        // if(count($galleryTopic)>0){
+        //     foreach($galleryTopic as $key){
+        //         $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
+        //     }
+        //     $data['topic_name'] = array_unique($topic_name);
+        // }else{
+        //     $data['topic_name'] = null;
+        // }
 
         $data['gallery_type'] = $galleryType->findAll();
 
@@ -368,7 +363,19 @@ class GalleryController extends BaseController
         }
 
         
+        // Color
+        if($this->request->getPost('gallery_bg_topic') != null){
+            $data['gallery_bg_topic']       = $this->request->getPost('gallery_bg_topic');
+        }else{
+            $data['gallery_bg_topic']       = null;
+        }
 
+        // Account
+        if($this->request->getPost('gallery_account') != null){
+            $data['gallery_account']       = $this->request->getPost('gallery_account');
+        }else{
+            $data['gallery_account']       = null;
+        }
 
         $data['gallery_type_id']        = $gallery_id;
         $data['gallery_type_name']      = $gallery_type['gallery_type_name'];

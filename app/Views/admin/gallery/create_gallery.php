@@ -48,9 +48,9 @@
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">alias - image slug (Link Slug On Site - hạn chế thay đổi)  <span class="text-red">(*)</span></label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_alias') : '' ?></p>
-                      <input type="text" name="gallery_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" value="<?= old('gallery_alias') ?>" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
+                      <label for="exampleInputEmail1" class="upper">Alias - Link Slug <span class="text-red">(*)</span></label>
+                      
+                      <input type="text" name="gallery_alias" value="<?= set_value('gallery_alias') ?>" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
                     </div>
                     <p id="slug-text" class="text-red"></p>
                     <hr>
@@ -68,27 +68,37 @@
 	                  <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
-                      <div class="form-group">
-                        <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
 
-                        <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?= set_value('gallery_topic'); ?>">
-                      </div>
-                      <hr>
-                      <label>Background Color Topic</label>
-                      <div class="input-group my-colorpicker2">
-                        <input type="text" name="gallery_bg_topic" id="bg_topic" class="form-control" />
-                        <div class="input-group-append">
-                          <span class="input-group-text"><i class="fas fa-square" id="bg_fas"></i></span>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                          <div class="form-group">
+                            <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
+
+                            <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?= set_value('gallery_topic'); ?>">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label>Background Color Topic</label>
+                          <div class="input-group my-colorpicker2">
+                            <input type="text" name="gallery_bg_topic" id="bg_topic" class="form-control" />
+                            <div class="input-group-append">
+                              <span class="input-group-text"><i class="fas fa-square" id="bg_fas"></i></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
+
+                          
+                          
+                          
                       <hr>
 
                       <?php if($topic_name != null): ?>
                         <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
-                        <div id='buttons' class="mt-">
+                        <div id='buttons' class="input_text_stroke">
                           <?php foreach($topic_name as $key_name=>$value): ?>
-                            <input id='qty2' type="button" class="btn btn-secondary mt-1" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
+                            <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
                           <?php endforeach; ?>
                         </div>
                       <?php endif; ?>
@@ -96,6 +106,7 @@
                       
                     </div>
                     <hr>
+
 
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
@@ -110,7 +121,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Lần 2</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
                       <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_file_download'); ?>">
                     </div>

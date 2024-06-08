@@ -70,18 +70,35 @@
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
-                      <div class="form-group">
-                        <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                          <div class="form-group">
+                            <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
 
-                        <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?php if(old('gallery_topic') != null){echo set_value('gallery_topic');}else{echo $gallery['gallery_topic'];} ?>">
+                            <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?php if(old('gallery_topic') != null){echo set_value('gallery_topic');}else{echo $gallery['gallery_topic'];} ?>">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <label>Background Color Topic</label>
+                          <div class="input-group my-colorpicker2">
+                            <input type="text" name="gallery_bg_topic" id="bg_topic" class="form-control" value="<?php if(old('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>"/>
+                            <div class="input-group-append">
+                              <span class="input-group-text"><i class="fas fa-square" style="color: <?php if(old('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>" id="bg_fas"></i></span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
+                          
+
+                          
+                      <hr>
 
                       <?php if($topic_name != null): ?>
                         <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
-                        <div id='buttons' class="mt-">
-                          <?php foreach($topic_name as $key_name): ?>
-                            <input id='qty2' type="button" class="btn btn-info mt-1" data-value='<?= $key_name ?>' value="<?= $key_name ?>">
+                        <div id='buttons' class="input_text_stroke">
+                          <?php foreach($topic_name as $key_name=>$value): ?>
+                            <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
                           <?php endforeach; ?>
                         </div>
                       <?php endif; ?>
@@ -105,7 +122,7 @@
                     <hr>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Hoặc Link Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
                       <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(old('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
                     </div>
@@ -146,8 +163,20 @@
                   </div>
                   <hr>
                   <div class="form-group">
+                    <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
+                    <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
+                    <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(old('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
+                  </div>
+                  <hr>
+
+                  <div class="form-group">
                     <label style="color: red; margin-right: 7px;">Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/gallery_asset/'.$gallery['gallery_image']) ?>" width="30%">
+                    <br>
+                    <a data-fancybox data-src="<?= base_url('public/upload/tinymce/gallery_asset/'.$gallery['gallery_image']) ?>">
+                      <img src="<?= base_url('public/upload/tinymce/gallery_asset/'.$gallery['gallery_image']) ?>" width="100%" height="auto" class="img_fancy" />
+                    </a>
+
+                    
                     <hr>
                     <label class="upper">Ảnh mới (nếu muốn thay đổi)</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
@@ -227,7 +256,27 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('style'); ?>
+
+  <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+<?= $this->endSection(); ?>
+
+
 <?= $this->section('script'); ?>
+  <script src="<?= base_url('public/admin_asset'); ?>/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+  
+
+  <script>
+      $(function () {
+        //color picker with addon
+        $(".my-colorpicker2").colorpicker();
+
+        $(".my-colorpicker2").on("colorpickerChange", function (event) {
+          $(".my-colorpicker2 .fa-square").css("color", event.color.toString());
+        });
+
+      });
+  </script>
   <script type="text/javascript">
     $(".gallery_active").addClass("menu-open");
     $(".gallery_active a:first").addClass("active");

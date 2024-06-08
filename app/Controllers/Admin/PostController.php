@@ -30,6 +30,8 @@ class PostController extends BaseController
         return view('admin/post/create_post', $data);
     }
 
+
+
     public function savePost()
     {
         // $this->validate();
@@ -84,6 +86,7 @@ class PostController extends BaseController
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
         $data['post_status']    = $this->request->getPost('post_status');
+        $data['post_finish']    = $this->request->getPost('post_finish');
         $data['post_image']     = $this->request->getPost('post_image');
 
         $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
@@ -292,6 +295,7 @@ class PostController extends BaseController
         
         $data['post_cate_id']   = $post_cate_id;
         $data['post_featured']  = $this->request->getPost('post_featured');
+        $data['post_finish']    = $this->request->getPost('post_finish');
         $data['post_status']    = $this->request->getPost('post_status');
         
 

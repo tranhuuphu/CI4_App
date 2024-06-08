@@ -62,6 +62,11 @@
                             <i class="far fa-star"></i>
                           </li>
                         <?php endif; ?>
+                        <?php if($key2['post_finish'] == 'updating'): ?>
+                          <li>
+                            <i class="fas fa-stream"></i> Updating
+                          </li>
+                        <?php endif; ?>
                       </ul>
                     </div>
                     <h3 class="mb-0 text-secondary fst-italic fw-lighter" style="margin-top: 7px; text-transform: lowercase"><?= $key2['post_intro']; ?></h3>
@@ -123,6 +128,11 @@
                         <?php if($key2['post_view'] > 1000): ?>
                           <li>
                             <i class="far fa-star"></i>
+                          </li>
+                        <?php endif; ?>
+                        <?php if($key2['post_finish'] == 'updating'): ?>
+                          <li>
+                            <i class="fas fa-stream"></i> Updating
                           </li>
                         <?php endif; ?>
                       </ul>
