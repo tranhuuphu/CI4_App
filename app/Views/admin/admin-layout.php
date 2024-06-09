@@ -406,7 +406,7 @@
 	<script type="text/javascript">
 		function convertToSlug( str ) {
 			var from = "ăàáäâèéẽẹẻëêìíïîòóỏõọöôùúüûủũụưứừữửựñçảãạấầẩẫậắằẳẵặếểễệềỉĩịốỗồỗổộớờỡởợơđ·/_,:;";
-		  var to   = "aaaaaeeeeeeeiiiiooooooouuuuuuuuuuuuuncaaaaaaaaaaaaaeeeeeiiioooooooooood------";
+		  var to   = "aaaaaeeeeeeeiiiiooooooouuuuuuuuuuuuuncaaaaaaaaaaaaaeeeeeiiiooooooooooood------";
 		  for (var i=0, l=from.length ; i<l ; i++) {
 		    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i)).toLowerCase();
 		  }

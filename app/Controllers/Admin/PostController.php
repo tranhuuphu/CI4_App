@@ -47,6 +47,14 @@ class PostController extends BaseController
                 ],
 
             ],
+            'post_alias'=>[
+                'rules'=>'required|is_unique[post.post_alias]',
+                'errors' => [
+                    'required' => 'Alias không được để trống.',
+                    'is_unique' => 'Alias trùng với alias của bài viết khác.',
+                ],
+
+            ],
             'post_content'=>[
                 'rules'=>'required',
                 'errors' => [
