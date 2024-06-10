@@ -45,15 +45,18 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper text-primary">alias - image slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_alias') : '' ?></p>
                       <input type="text" name="gallery_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('gallery_alias') != null){echo set_value('post_alias');}else{echo $gallery['gallery_alias'];} ?>">
+                      <p id="slug-text" class="text-red mt-2 mb-1"></p>
+                      <hr>
 
-                      <label for="exampleInputEmail1" class="upper mt-3 text-primary">alias Cũ</span></label>
+                      <label for="exampleInputEmail1" class="upper mt-1 text-primary">alias Cũ</span></label>
                       <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $gallery['gallery_alias']; ?>">
-
-                      <label for="exampleInputEmail1" class="upper mt-3">alias - slug Cũ</span></label>
+                      <hr>
+                      <label for="exampleInputEmail1" class="upper mt-1">alias - slug Cũ</span></label>
                       <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $gallery['gallery_title_slug']; ?>">
                     </div>
-                    <p id="slug-text" class="text-red"></p>
+                    
                     <hr>
 
 
@@ -82,9 +85,9 @@
                         <div class="col-md-4">
                           <label>Background Color Topic</label>
                           <div class="input-group my-colorpicker2">
-                            <input type="text" name="gallery_bg_topic" id="bg_topic" class="form-control" value="<?php if(old('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>"/>
+                            <input type="text" name="gallery_bg_topic" id="bg_topic" class="form-control" value="<?php if(set_value('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>"/>
                             <div class="input-group-append">
-                              <span class="input-group-text"><i class="fas fa-square" style="color: <?php if(old('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>" id="bg_fas"></i></span>
+                              <span class="input-group-text"><i class="fas fa-square" style="color: <?php if(set_value('gallery_bg_topic') != null){echo set_value('gallery_bg_topic');}else{echo $gallery['gallery_bg_topic'];} ?>" id="bg_fas"></i></span>
                             </div>
                           </div>
                         </div>
@@ -133,6 +136,12 @@
                       <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(old('gallery_link_file_origin') != null){echo set_value('gallery_link_file_origin');}else{echo $gallery['gallery_link_file_origin'];} ?>">
                     </div>
                     <hr>
+                    <hr>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
+                      <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
+                      <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(old('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
+                    </div>
 
 
                     
@@ -161,12 +170,7 @@
                       
                     </select>
                   </div>
-                  <hr>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
-                    <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
-                    <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(old('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
-                  </div>
+                  
                   <hr>
 
                   <div class="form-group">

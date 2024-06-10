@@ -49,7 +49,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Alias - Link Slug <span class="text-red">(*)</span></label>
-                      
+                      <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_alias') : '' ?></span>
                       <input type="text" name="gallery_alias" value="<?= set_value('gallery_alias') ?>" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
                     </div>
                     <p id="slug-text" class="text-red"></p>
@@ -133,6 +133,12 @@
                       <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_link_file_origin'); ?>">
                     </div>
                     <hr>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
+                      <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
+                      <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?= set_value('gallery_account '); ?>">
+                    </div>
+                    <hr>
                     
 	                </div>
 	                <!-- /.card-body -->
@@ -159,12 +165,7 @@
                     </select>
                   </div>
                   <hr>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
-                    <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
-                    <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?= set_value('gallery_account '); ?>">
-                  </div>
-                  <hr>
+                  
 	              	<div class="form-group">
                     <label class="upper">Chọn Ảnh</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
@@ -201,7 +202,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Desc</label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></p>
+                        <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></span>
                         <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?= set_value('gallery_meta_desc'); ?></textarea>
                         
                       </div>
@@ -209,7 +210,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Key</label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></p>
+                        <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></span>
                         <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?= set_value('gallery_meta_key'); ?></textarea>
                         
                       </div>

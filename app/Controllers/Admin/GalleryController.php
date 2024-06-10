@@ -89,7 +89,13 @@ class GalleryController extends BaseController
 
             ],
             
-            
+            'gallery_alias'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Alias không được để trống.',
+                ],
+
+            ],
 
             'gallery_meta_desc'=>[
                 'rules'=>'required',
@@ -284,6 +290,13 @@ class GalleryController extends BaseController
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
 
         $data['post_url'] = $post->select('post.id, post.post_title')->findAll();
+
+        $data['gallery_type'] = $galleryType->findAll();
+
+        $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
+        $galleryTopic = array_map("unserialize", array_unique(array_map("serialize", $galleryTopic)));
+        // dd($galleryTopic);
+        $data['topic_name'] = $galleryTopic;
         
 
         $gallery_detail = $galleryModel->find($id);
@@ -292,15 +305,7 @@ class GalleryController extends BaseController
             return view('admin/404_admin');
         }
 
-        $galleryTopic = $galleryModel->select('gallery_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->findAll();
-        if(count($galleryTopic)>0){
-            foreach($galleryTopic as $key){
-                $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
-            }
-            $data['topic_name'] = array_unique($topic_name);
-        }else{
-            $data['topic_name'] = null;
-        }
+        
 
         $data['gallery'] = $gallery_detail;
         $gallery_title = $this->request->getPost('gallery_title');
@@ -327,6 +332,13 @@ class GalleryController extends BaseController
         }
         $validation = $this->validate([
             
+            'gallery_alias'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Alias không được để trống.',
+                ],
+
+            ],
             'gallery_meta_desc'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -334,6 +346,7 @@ class GalleryController extends BaseController
                 ],
 
             ],
+
             'gallery_meta_key'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -344,7 +357,7 @@ class GalleryController extends BaseController
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
-            return view('admin/gallery/editGallery', $data);
+            return view('admin/gallery/edit_gallery', $data);
         }
 
         $gallery_id = $this->request->getPost('gallery_type_id');

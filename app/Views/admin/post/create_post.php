@@ -232,8 +232,9 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Desc <span class="text-red">(*)</span></label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= set_value('post_meta_desc'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_desc') : '' ?></p>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?= set_value('post_meta_desc'); ?></textarea>
+                        
                       </div>
 
                       
@@ -242,8 +243,9 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="upper">Meta Key <span class="text-red">(*)</span></label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= set_value('post_meta_key'); ?></textarea>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_key') : '' ?></p>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?= set_value('post_meta_key'); ?></textarea>
+                        
                       </div>
                     </div>
                     <hr>

@@ -62,6 +62,20 @@ class PostController extends BaseController
                 ],
 
             ],
+            'post_meta_desc'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Meta Desc không được để trống.',
+                ],
+
+            ],
+            'post_meta_key'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Meta Key không được để trống.',
+                ],
+
+            ],
 
         ]);
         if(!$validation){
@@ -256,6 +270,12 @@ class PostController extends BaseController
         }
 
         $validation = $this->validate([
+            'post_alias'=>[
+                'rules'=>'required',
+                'errors' => [
+                    'required' => 'Alias không được để trống.',
+                ],
+            ],
             'post_content'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -278,7 +298,7 @@ class PostController extends BaseController
 
         if(!$validation){
             $data['validation'] = $this->validator;
-            return view('admin/post/editPost', $data);
+            return view('admin/post/edit_post', $data);
         }
 
         $post_alias = $this->request->getPost('post_alias');

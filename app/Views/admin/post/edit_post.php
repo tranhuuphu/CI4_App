@@ -41,12 +41,14 @@
 	                <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết <span class="text-red">(*)</span></label>
-                      <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_title') : '' ?></p>
+                      <input type="text" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(set_value('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
                     </div>
                     <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1" class="upper text-primary">alias - slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
-	                    <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_alias') : '' ?></p>
+	                    <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(set_value('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
 
                       <label for="exampleInputEmail1" class="upper mt-3 text-primary">alias Cũ</span></label>
                       <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_alias']; ?>">
@@ -58,13 +60,14 @@
 	                  <hr>
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1 upper">Tóm tắt</label>
-	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(set_value('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
 									      <label class="upper">Nội dung bài viết 1/2 <span class="text-red">(*)</span></label>
-									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content'];} ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
+									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(set_value('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content'];} ?></textarea>
 									    </div>
 									  </div>
 
@@ -72,7 +75,7 @@
                     <div class="form-group">
                       <div class="form-group">
                         <label class="upper text-red">Nội dung bài viết 2/2 <span class="text-red">(*)</span></label>
-                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?php if(old('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content2'];} ?></textarea>
+                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?php if(set_value('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content2'];} ?></textarea>
                       </div>
                     </div>
 
@@ -137,19 +140,6 @@
                     </div>
                     <hr>
 
-                    <!-- Sử dụng ảnh upload thay thế khi rfm không hoạt động đúng -->
-                    <!-- <label>Ảnh Mới (nếu cập nhật) <small  style="text-transform: lowercase; color: red; font-style: ; font-weight: bold; font-size: 16px;">(Kích thước: 750x450px)</small></label>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-                    <img id="output"/ style="width: 100%" class="pt-1">
-                    <script>
-                      var loadFile = function(event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                        output.onload = function() {
-                          URL.revokeObjectURL(output.src) // free memory
-                        }
-                      };
-                    </script> -->
 
                   </div>
 
@@ -266,14 +256,16 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Meta Desc</label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(old('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $post_detail['post_meta_desc'];} ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_desc') : '' ?></p>
+                        <textarea class="form-control" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(set_value('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $post_detail['post_meta_desc'];} ?></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Meta Key</label>
-                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?php if(old('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $post_detail['post_meta_key'];} ?></textarea>
+                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_meta_key') : '' ?></p>
+                        <textarea class="form-control" style="height:120px" name="post_meta_key" maxlength="255"><?php if(set_value('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $post_detail['post_meta_key'];} ?></textarea>
                       </div>
                     </div>
                     <hr>
@@ -283,7 +275,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(old('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(set_value('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
                       </div>
 
                     </div>
