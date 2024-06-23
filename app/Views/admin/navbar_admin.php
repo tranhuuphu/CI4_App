@@ -90,12 +90,16 @@
           </a>
         </li>
 
+        <?php
+          $session = session();
+          $cart_qty = $session->get('cart_qty');
 
+        ?>
         <li class="nav-item cart_active">
           <a href="<?= base_url('admin/don-hang'); ?>" class="nav-link" style="font-weight: bold;">
             <i class="nav-icon fas fa-cart-arrow-down"></i>
             <p>
-              Đơn Hàng
+              Đơn Hàng <span class="badge badge-info right"><?= $cart_qty ?></span>
             </p>
           </a>
         </li>
@@ -130,6 +134,35 @@
               </a>
             </li>
             
+          </ul>
+        </li>
+        <li class="nav-item gallery_active">
+          <a href="#" class="nav-link">
+            <i class="nav-icon far fa-image"></i>
+            <p>
+              Bộ Sưu Tập
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview gallery_tree_active">
+            <li class="nav-item">
+              <a href="<?= base_url('admin/gallery'); ?>" class="nav-link">
+                <i class="fas fa-list-ul nav-icon"></i>
+                <p>Danh Sách Ảnh</p>
+              </a>
+            </li>
+            <li class="nav-item gallery_tree_active2">
+              <a href="<?= base_url('admin/gallery/create'); ?>" class="nav-link">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Thêm Ảnh</p>
+              </a>
+            </li>
+            <li class="nav-item gallery_tree_active3">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-edit nav-icon"></i>
+                <p>Chỉnh sửa</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item post_active">
@@ -232,35 +265,7 @@
         </li>
 
 
-        <li class="nav-item gallery_active">
-          <a href="#" class="nav-link">
-            <i class="nav-icon far fa-image"></i>
-            <p>
-              Bộ Sưu Tập
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview gallery_tree_active">
-            <li class="nav-item">
-              <a href="<?= base_url('admin/gallery'); ?>" class="nav-link">
-                <i class="fas fa-list-ul nav-icon"></i>
-                <p>Danh Sách Ảnh</p>
-              </a>
-            </li>
-            <li class="nav-item gallery_tree_active2">
-              <a href="<?= base_url('admin/gallery/create'); ?>" class="nav-link">
-                <i class="fas fa-plus nav-icon"></i>
-                <p>Thêm Ảnh</p>
-              </a>
-            </li>
-            <li class="nav-item gallery_tree_active3">
-              <a href="javascript:void(0)" class="nav-link">
-                <i class="fas fa-edit nav-icon"></i>
-                <p>Chỉnh sửa</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+        
         
         
         

@@ -48,12 +48,12 @@
 	                <div class="card-body">
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1" class="upper">Tiêu đề bài viết</label>
-	                    <input type="text" readonly="readonly" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(old('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
+	                    <input type="text" readonly="readonly" name="post_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" value="<?php if(set_value('post_title') != null){echo set_value('post_title');}else{echo $post_detail['post_title'];} ?>">
 	                  </div>
 	                  <hr>
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper text-primary">alias - slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
-                      <input type="text" name="post_alias" readonly class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
+                      <input type="text" name="post_alias" readonly class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(set_value('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
 
 
                       <label for="exampleInputEmail1" class="upper mt-3">alias - slug</span></label>
@@ -62,7 +62,7 @@
 
 	                  <div class="form-group">
 	                    <label class="upper">Tóm tắt</label>
-	                    <textarea readonly="readonly" class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(old('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
+	                    <textarea readonly="readonly" class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(set_value('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
@@ -320,14 +320,14 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Meta Desc</label>
-                        <textarea class="form-control" readonly="readonly" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(old('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $post_detail['post_meta_desc'];} ?></textarea>
+                        <textarea class="form-control" readonly="readonly" style="height:120px" name="post_meta_desc" maxlength="255"><?php if(set_value('post_meta_desc') != null){echo set_value('post_meta_desc');}else{echo $post_detail['post_meta_desc'];} ?></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Meta Key</label>
-                        <textarea class="form-control" readonly="readonly" style="height:120px" name="post_meta_key" maxlength="255"><?php if(old('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $post_detail['post_meta_key'];} ?></textarea>
+                        <textarea class="form-control" readonly="readonly" style="height:120px" name="post_meta_key" maxlength="255"><?php if(set_value('post_meta_key') != null){echo set_value('post_meta_key');}else{echo $post_detail['post_meta_key'];} ?></textarea>
                       </div>
                     </div>
                     <hr>
@@ -337,7 +337,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" disabled class="form-control-file" id="taginput" name="taginput" value="<?php if(old('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
+                          <input type="text" disabled class="form-control-file" id="taginput" name="taginput" value="<?php if(set_value('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
                       </div>
 
                     </div>

@@ -17,7 +17,7 @@ class DaiLongController extends BaseController
 {
 
     public function __construct(){
-        helper(['url', 'form', 'Text_helper', 'xml']);
+        helper(['Url', 'form', 'Text_helper', 'xml']);
     }
     public function index()
     {

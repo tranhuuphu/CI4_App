@@ -41,7 +41,7 @@
 	              <!-- form start -->
 	                <div class="card-body">
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1" class="upper">Tiêu đề Ảnh</label>
+	                    <label for="exampleInputEmail1" class="upper">Tiêu đề Ảnh <span class="text-red">(*)</span></label>
                       <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></span>
 	                    <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?= set_value('gallery_title'); ?>">
 	                  </div>
@@ -94,14 +94,36 @@
                           
                       <hr>
 
-                      <?php if($topic_name != null): ?>
-                        <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
-                        <div id='buttons' class="input_text_stroke">
-                          <?php foreach($topic_name as $key_name=>$value): ?>
-                            <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
-                          <?php endforeach; ?>
+                      <div class="card direct-chat direct-chat-primary">
+                        <div class="card-header bg-light">
+                          <label for="exampleInputEmail1" class="upper card-title" style="color: #000">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                          <div class="card-tools">
+                            <span title="3 New Messages" class="badge badge-danger"><?= count($topic_name) ?></span>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </div>
                         </div>
-                      <?php endif; ?>
+
+                        <div class="card-body">
+                          <?php if($topic_name != null): ?>
+                            <div class="direct-chat-messages">
+                              <div class="form-group">
+                                <div id='buttons' class="input_text_stroke">
+                                  <?php foreach($topic_name as $key_name=>$value): ?>
+                                    <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
+                                  <?php endforeach; ?>
+                                </div>
+                              </div>
+                            </div>
+                              
+                          <?php endif; ?>
+                        </div>
+
+                        
+                      </div>
+
+                      
 
                       
                     </div>
@@ -201,7 +223,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="upper">Meta Desc</label>
+                        <label class="upper">Meta Desc <span class="text-red">(*)</span></label>
                         <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></span>
                         <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?= set_value('gallery_meta_desc'); ?></textarea>
                         
@@ -209,7 +231,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="upper">Meta Key</label>
+                        <label class="upper">Meta Key <span class="text-red">(*)</span></label>
                         <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></span>
                         <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?= set_value('gallery_meta_key'); ?></textarea>
                         

@@ -39,14 +39,14 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Tiêu đề Ảnh</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></p>
-                      <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?php if(old('gallery_title') != null){echo set_value('gallery_title');}else{echo $gallery['gallery_title'];} ?>">
+                      <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?php if(set_value('gallery_title') != null){echo set_value('gallery_title');}else{echo $gallery['gallery_title'];} ?>">
                     </div>
                     <hr>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper text-primary">alias - image slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_alias') : '' ?></p>
-                      <input type="text" name="gallery_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(old('gallery_alias') != null){echo set_value('post_alias');}else{echo $gallery['gallery_alias'];} ?>">
+                      <input type="text" name="gallery_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(set_value('gallery_alias') != null){echo set_value('post_alias');}else{echo $gallery['gallery_alias'];} ?>">
                       <p id="slug-text" class="text-red mt-2 mb-1"></p>
                       <hr>
 
@@ -79,7 +79,7 @@
                           <div class="form-group">
                             <span class="text-left text-danger mt"><?= isset($validation) ? display_error($validation, 'gallery_topic') : '' ?></span>
 
-                            <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?php if(old('gallery_topic') != null){echo set_value('gallery_topic');}else{echo $gallery['gallery_topic'];} ?>">
+                            <input type="text" id="value" name="gallery_topic" class="form-control" id="exampleInputEmail1" placeholder="Nhập chủ đề Ảnh" value="<?php if(set_value('gallery_topic') != null){echo set_value('gallery_topic');}else{echo $gallery['gallery_topic'];} ?>">
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -97,14 +97,37 @@
                           
                       <hr>
 
-                      <?php if($topic_name != null): ?>
-                        <label for="exampleInputEmail1" class="upper mt-" style="color: blue">Các chủ đề đã tạo</label>
-                        <div id='buttons' class="input_text_stroke">
-                          <?php foreach($topic_name as $key_name=>$value): ?>
-                            <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
-                          <?php endforeach; ?>
+                      <div class="card direct-chat direct-chat-primary">
+                        <div class="card-header bg-light">
+                          <label for="exampleInputEmail1" class="upper card-title" style="color: #000">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
+                          <div class="card-tools">
+                            <span title="3 New Messages" class="badge badge-danger"><?= count($topic_name) ?></span>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </div>
                         </div>
-                      <?php endif; ?>
+
+                        <div class="card-body">
+                          <?php if($topic_name != null): ?>
+                            <div class="direct-chat-messages">
+                              <div class="form-group">
+                                <div id='buttons' class="input_text_stroke">
+                                  <?php foreach($topic_name as $key_name=>$value): ?>
+                                    <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
+                                  <?php endforeach; ?>
+                                </div>
+                              </div>
+                            </div>
+                              
+                          <?php endif; ?>
+                        </div>
+
+                        
+                      </div>
+
+
+                      
 
                       
                     </div>
@@ -127,20 +150,20 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Hoặc Link Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
-                      <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(old('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
+                      <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
                     </div>
                     <hr>
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
-                      <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(old('gallery_link_file_origin') != null){echo set_value('gallery_link_file_origin');}else{echo $gallery['gallery_link_file_origin'];} ?>">
+                      <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_link_file_origin') != null){echo set_value('gallery_link_file_origin');}else{echo $gallery['gallery_link_file_origin'];} ?>">
                     </div>
                     <hr>
                     <hr>
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
                       <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
-                      <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(old('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
+                      <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(set_value('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
                     </div>
 
 
@@ -218,7 +241,7 @@
                       <div class="form-group">
                         <label class="upper">Meta Desc</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?php if(old('gallery_meta_desc') != null){echo set_value('gallery_meta_desc');}else{echo $gallery['gallery_meta_desc'];} ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?php if(set_value('gallery_meta_desc') != null){echo set_value('gallery_meta_desc');}else{echo $gallery['gallery_meta_desc'];} ?></textarea>
                         
                       </div>
                     </div>
@@ -226,7 +249,7 @@
                       <div class="form-group">
                         <label class="upper">Meta Key</label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?php if(old('gallery_meta_key') != null){echo set_value('gallery_meta_key');}else{echo $gallery['gallery_meta_key'];} ?></textarea>
+                        <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?php if(set_value('gallery_meta_key') != null){echo set_value('gallery_meta_key');}else{echo $gallery['gallery_meta_key'];} ?></textarea>
                         
                       </div>
                     </div>

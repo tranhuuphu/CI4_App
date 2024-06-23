@@ -8,11 +8,16 @@ use App\Models\DonHangModel;
 class DonHangController extends BaseController
 {   
     public function __construct(){
-        helper(['url', 'form', 'Text_helper']);
+        helper(['Url', 'form', 'Text_helper']);
     }
     public function index(){
+        $session = session();
+
         $donHang = new DonHangModel();
         $data['cart'] = $donHang->orderBy('id', 'DESC')->findAll();
+        $cart2 = $donHang->orderBy('id', 'DESC')->where('checked_order', 0)->find();
+        $cart2 = count($cart2);
+        $session->set('cart_qty', $cart2);
         return view('admin/donHang/index_donhang', $data);
     }
 

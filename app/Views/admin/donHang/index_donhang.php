@@ -1,6 +1,8 @@
 <?= $this->extend('admin/admin-layout'); ?>
 
 <?= $this->section('content'); ?>
+
+
 	<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -62,7 +64,7 @@
                                 <div class="card mb-3" style="max-width: 540px;">
                                   <div class="row g-0">
                                     <div class="col-md-4">
-                                      <img src="<?= base_url('public/upload/tinymce/image_asset').'/'.$ord['prod_image'] ?>" class="img-fluid rounded-start" style="height: 100%;">
+                                      <img src="<?= base_url('public/upload/tinymce').'/'.$ord['prod_image'] ?>" class="img-fluid rounded-start" style="height: auto; width: auto;">
                                     </div>
                                     <div class="col-md-8">
                                       <div class="card-body">
@@ -97,7 +99,7 @@
                             <hr>
                             <a href="<?= base_url('admin/don-hang/edit/'.$c['id'].'/'.'1') ?>" class="btn btn-success mt-1"><i class="fas fa-check"></i> Đã xử lý</a>
                             <hr>
-                            <a href="<?= base_url('admin/don-hang/del/'.$c['id']) ?>" class="btn btn-danger mt-1" onclick="return confirm('are you sure?')"><i class="fa-solid fa-trash"></i> Xóa đơn hàng</a>
+                            <a href="<?= base_url('admin/don-hang/del/'.$c['id']) ?>" class="btn btn-danger mt-1" onclick="return confirm('are you sure?')"><i class="fas fa-trash"></i> Xóa đơn hàng</a>
                           <?php elseif($c['checked_order'] == 1): ?>
                             <strong>Đơn hàng đã được xử lý</strong>
                             <hr>
@@ -107,7 +109,7 @@
                             <hr>
                             <span  class="btn btn-warning mt-1"><i class="fas fa-ban"></i> Đã hủy đơn trên HT</span>
                             <hr>
-                            <a href="<?= base_url('admin/don-hang/del/'.$c['id']) ?>" class="btn btn-danger mt-1" onclick="return confirm('are you sure?')"><i class="fa-solid fa-trash"></i> Xóa đơn hàng</a>
+                            <a href="<?= base_url('admin/don-hang/del/'.$c['id']) ?>" class="btn btn-danger mt-1" onclick="return confirm('are you sure?')"> Xóa đơn hàng</a>
                           <?php endif; ?>
                         </td>
                         
