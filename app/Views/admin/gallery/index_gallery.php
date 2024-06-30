@@ -48,7 +48,7 @@
 
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover" style="width:100%">
+                <table id="example1" class="table table-bordered table-hover table-data" style="width:100%">
                   <thead>
 	                  <tr class="thead-dark">
                       <th>Order</th>
@@ -94,7 +94,8 @@
                         <td>
                           
                           <a data-fancybox data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>">
-                            <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" width="200" height="auto" class="img_fancy" />
+
+                            <img class="lazyload img_fancy" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" width="200" height="auto">
                           </a>
 
                         </td>

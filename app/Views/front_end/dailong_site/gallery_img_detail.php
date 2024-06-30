@@ -26,7 +26,7 @@
             <div class="col-lg-4 col-xl-6 portfolio-single-image" data-lightbox="gallery">
 
               <a href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" class="col-lg-12 col-md-6" data-lightbox="gallery-item">
-                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
+                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$gallery_img['gallery_image']) ?>" alt="<?= $gallery_img['gallery_title'] ?>" class="rounded-6" />
               </a>
 
 
@@ -392,7 +392,7 @@
           <div class="portfolio-item">
             <div class="portfolio-image">
               <a href="javascript:void(0)">
-                <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>"/>
+                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) ?>" alt="<?= $r1['gallery_title'] ?>"/>
               </a>
               <div class="bg-overlay">
                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">

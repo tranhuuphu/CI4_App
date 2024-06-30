@@ -24,7 +24,7 @@
               <div class="card imagescalein">
                 <div class="row g-0 align-items-center">
                   <div class="col-md-4 d-flex align-self-stretch overflow-hidden">
-                    <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="rounded-start"/>
+                    <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="rounded-start"/>
                   </div>
                   <div class="col-md-8 p-2">
                     <div class="card-body">

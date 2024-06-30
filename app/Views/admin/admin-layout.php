@@ -127,9 +127,9 @@
 
 
 	  <!-- Preloader -->
-	  <div class="preloader flex-column justify-content-center align-items-center">
+	  <!-- <div class="preloader flex-column justify-content-center align-items-center">
 	    <img class="animation__wobble" src="<?= base_url('public/admin_asset'); ?>/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-	  </div>
+	  </div> -->
 
 	  <!-- navbar -->
 	  <?= $this->include('admin/navbar_admin'); ?>
@@ -225,7 +225,8 @@
 
 	<script src="<?= base_url('public/admin_asset'); ?>/tinymce_5/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
-
+	<!-- Lazy load image -->
+  <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/lazyload.min.js"></script>
 
 
 
@@ -249,13 +250,13 @@
 	<script>
 	  $(function () {
 	    $("#example1").DataTable({
-	      "responsive": true, "lengthChange": false, "autoWidth": false,
-	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],"pageLength": 25,
-        "lengthMenu": [40, 50, 75, 100, 200]
+	      "responsive": true, "lengthChange": false, "autoWidth": false,"paging": false,
+	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
 	    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 	    $('#example2').DataTable({
 	      "paging": true,
 	      "lengthChange": false,
+          "paging": false,
 	      "searching": false,
 	      "ordering": true,
 	      "info": true,
@@ -265,6 +266,11 @@
 	    });
 	  });
 
+		$(document).ready(function() {
+      $("img.lazyload").lazyload();
+    });
+
+	  
 	  
 	</script>
 	<!-- Trong phần config đổi lại base_url và dòng 1154 trong dialog.php -->

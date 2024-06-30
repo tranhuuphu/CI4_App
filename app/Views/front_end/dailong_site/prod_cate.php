@@ -110,7 +110,7 @@
 	          <div class="grid-inner row g-0 p-4 border rounded shadow-sm">
 	            <div class="col-lg-5 mb-lg-0">
 	              <a href="#" class="entry-image overflow-hidden">
-	                <img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" class="rounded" />
+	                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" class="rounded" />
 	                <!-- <div class="entry-date"><i class="fas fa-store"></i></div> -->
 	              </a>
 	            </div>
@@ -175,7 +175,7 @@
 					                      
 					                    	
 					                      <div class="" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>">
-                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" target="_blank" title="<?= $key['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" target="_blank" title="<?= $key['post_title']; ?>" data-lightbox="gallery-item"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
                                 </div>
 
 	                              
@@ -292,7 +292,7 @@
 					  <div class="col">
 					    <div class="grid-inner row g-0 p-3 bg-transparent shadow-sm h-shadow all-ts h-translatey-sm card h-100 border">
 					    	<a href="javascript:void(0)">
-						      <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="card-img-top rounded">
+						      <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="card-img-top rounded">
 						    </a>
 					      <div class="card-body" style="padding: 10px 0px !important">
 					        <div class="entry-title title-sm">
@@ -341,7 +341,7 @@
 						                      
 						                    	
 						                      <div class="" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>">
-	                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" target="_blank" title="<?= $key2['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" /></a>
+	                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" target="_blank" title="<?= $key2['post_title']; ?>" data-lightbox="gallery-item"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" /></a>
 	                                </div>
 
 		                              

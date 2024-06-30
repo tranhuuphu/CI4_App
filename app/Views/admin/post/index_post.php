@@ -213,7 +213,9 @@
                                       </tr>
                                       <tr>
                                         <th scope="row">05. Ảnh</th>
-                                        <td><img src="<?= base_url('/') ?>/public/upload/tinymce/<?= $p['post_image'] ?>" style="width: 60% " ></td>
+                                        <td>
+                                          <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('/') ?>/public/upload/tinymce/<?= $p['post_image'] ?>" width="60%" height="auto">
+                                        </td>
                                       </tr>
                                       <tr>
                                         <th scope="row">06. Nổi bật</th>

@@ -33,13 +33,12 @@
 
           <div class="row row-cols-1 row-cols-md-3 g-3 portfolio" id="portfolio">
             <?php foreach($gallery_cate_1 as $key): ?>
-              <div class="col col-lg-4 col-md-6 col-sm-12">
+              <div class="col col-lg-4 col-md-3 col-sm-6">
                 <div class="card h-100 shadow-sm">
                   <div class="grid-inner portfolio-image">
-                    <a href="" title="">
-                      <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
-                        <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
-                      </a>
+                    
+                    <a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
+                      <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
                     </a>
 
                     <div class="bg-overlay">
@@ -106,8 +105,6 @@
                 </div>
               </div>
             <?php endforeach; ?>
-
-            
           </div>
           
 
@@ -150,7 +147,9 @@
                   <div class="grid-inner row">
                     <div class="col-md-5">
                       <div class="entry-image mb-0">
-                        <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" alt="<?= $mv['post_title']; ?>"/></a>
+                        <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>">
+                          <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" alt="<?= $mv['post_title']; ?>"/>
+                        </a>
                       </div>
                     </div>
                     <div class="col-md-7">
@@ -203,7 +202,7 @@
           <div class="grid-inner">
             <div class="portfolio-image">
               <a href="<?= base_url().'/'.$cate_slug.'/'.$key2['gallery_title_slug'].'-'.$key2['id'].'.html' ?>" title="<?= $key2['gallery_title'] ?>">
-                <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key2['gallery_image'] ?>" alt="<?= $key2['gallery_title'] ?>"/>
+                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key2['gallery_image'] ?>" alt="<?= $key2['gallery_title'] ?>"/>
               </a>
 
               <div class="bg-overlay">

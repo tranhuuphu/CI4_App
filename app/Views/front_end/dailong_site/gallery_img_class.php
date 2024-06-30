@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-bottom: 30px; margin-top: 40px;">
+  <nav aria-label="breadcrumb" style="margin-bottom: 20px; margin-top: 40px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="far fa-home"></i></a></li>
       <li class="breadcrumb-item"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'-'.$cate_gallery['id'] ?>" class="fw-bold"><?= $cate_gallery['cate_name'] ?></a></li>
@@ -15,99 +15,117 @@
   </nav>
 </div>
 
+
+
 <section id="content">
   <div class="content-wrap">
     <div class="container">
-      <?php if($id_child != null || $id_child != ""): ?>
-      <div class="grid-filter-wrap mt-4">
-        <ul class="grid-filter" data-container="#">
-          
-            <li class="activeFilter"><a href="javascript:void(0)" style="text-transform: capitalize; font-weight: bold;"><?= $gallery_name['gallery_type_name'] ?></a></li>
-            <?php foreach($id_child  as $child): ?>
-              <li><a href="<?= base_url().'/'.'bo-suu-tap-topic'.'/'.$child['gallery_topic_slug'] ?>" data-filter=".pf-icons"><i class="fas fa-chevron-circle-right"></i> <?= $child['gallery_topic'] ?></a></li>
-            <?php endforeach; ?>
-          
+        <div class="grid-filter-wrap mt-" style="border: none;">
+          <ul class="grid-filter" data-container="#">
+              <li class="activeFilter"><a href="<?= base_url().'/'.'bo-suu-tap-topic'.'/'.$gallery_name['gallery_type_slug'] ?>" style="text-transform: capitalize; font-weight: bold; border-radius: 0px !important;"><i class="fas fa-exchange-alt"></i> <?= $gallery_name['gallery_type_name'] ?></a></li>
+              <?php if( $gallery_name['gallery_type_name'] != $gallery_title ): ?>
+                <li class="activeFilter"><a href="javascript:void(0)" style="text-transform: capitalize; font-weight: bold; border-radius: 0px !important;"><i class="fas fa-chevron-circle-right"></i> <?= $gallery_title ?></a></li>
+              <?php endif; ?>
 
-        </ul>
-      </div>
-      <?php endif; ?>
+              <?php if($id_child != null || $id_child != ""): ?>
+                <?php foreach($id_child  as $child): ?>
+                  <li class="bg-light"><a href="<?= base_url().'/'.'bo-suu-tap-topic'.'/'.$child['gallery_topic_slug'] ?>" style="border-radius: 0px !important;"><i class="fas fa-chevron-circle-right"></i> <?= $child['gallery_topic'] ?></a></li>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            
 
+          </ul>
+        </div>
       
-        <div id="portfolio" class="portfolio row grid-container g-0" data-layout="fitRows">
 
-          <?php foreach($gallery_class  as $g_class): ?>
-            <article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
-              <div class="grid-inner">
-                <div class="portfolio-image">
-                  <a href="portfolio-single.html">
-                    <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$g_class['gallery_image']) ?>" alt="<?= $g_class['gallery_title'] ?>"/>
-                  </a>
+      <div class="row row-cols-1 row-cols-md-3 g-3 portfolio" id="portfolio">
+        <?php foreach($gallery_class as $key): ?>
+          <div class="col col-lg-3 col-md-3 col-sm-6">
+            <div class="card h-100 shadow-sm">
+              <div class="grid-inner portfolio-image">
+                
+                <a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>">
+                  
+                  <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
+                  
+                </a>
+                
 
-                  <div class="bg-overlay">
-                    <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                      <a
-                        href="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$g_class['gallery_image']) ?>"
-                        class="overlay-trigger-icon bg-light text-dark"
-                        data-hover-animate="fadeInDownSmall"
-                        data-hover-animate-out="fadeOutUpSmall"
-                        data-hover-speed="350"
-                        data-lightbox="image"
-                        title="<?= $g_class['gallery_title'] ?>"
-                      >
-                        <i class="fas fa-expand-alt"></i>
+                <div class="bg-overlay">
+                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                    <a
+                      href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
+                      class="overlay-trigger-icon bg-light text-dark"
+                      data-hover-animate="fadeInDownSmall"
+                      data-hover-animate-out="fadeOutUpSmall"
+                      data-hover-speed="350"
+                      data-lightbox="image"
+                      title=""
+                    >
+                      <i class="fas fa-expand-alt"></i>
+                    </a>
+
+                    <?php if($key['gallery_post_url'] != null): ?>
+                    
+                      
+
+                      <a href="<?= $key['gallery_post_url'] ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                        <i class="fas fa-anchor"></i>
                       </a>
-                      <a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$g_class['gallery_title_slug'].'-'.$g_class['id'].'.html' ?>" title="<?= $g_class['gallery_title'] ?>" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
-                        <i class="fas fa-ellipsis-h"></i>
+                    <?php endif; ?>
+
+                    <?php if($key['gallery_file_download'] == null): ?>
+                      <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                        <i class="fas fa-download"></i>
                       </a>
-                    </div>
-                    <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                    <?php endif; ?>
                   </div>
+                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
                 </div>
-                <style type="text/css">
-                  .portfolio-desc2 a{
-                    display: -webkit-box;
-                    max-width: 100%;
-                    margin: 0 auto;
-                    -webkit-line-clamp: 2;
-                    /* autoprefixer: off */
-                    -webkit-box-orient: vertical;
-                    /* autoprefixer: on */
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    
-                  }
-                </style>
-                <div class="portfolio-desc">
-                  <h3 style="font-weight: bold;" class="portfolio-desc2"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$g_class['gallery_title_slug'].'-'.$g_class['id'].'.html' ?>" title="<?= $g_class['gallery_title'] ?>"><?= $g_class['gallery_title'] ?></a></h3>
+
+              </div>
+              <div class="card-body shadow-sm">
+                <div class="portfolio-desc portfolio-desc2 card-body" style="padding: 0px">
+                  <h3 class="card-title"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
                   <span>
-                    <a href="javascript:void(0)" class="ml-5" style="margin-right: 5px !important;"><i class="fab fa-hotjar"></i> <?= $g_class['gallery_view'] ?></a>
-                    <?php if($g_class['gallery_file_download'] == null): ?>
-                      <a href="<?= base_url('page/download/'.$g_class['gallery_image']) ?>" class="ml"><i class="fas fa-save"></i> save image</a>
-                    <?php endif; ?>
+                    <?php if($key['gallery_file_download'] == null)
+                      if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
+                        $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
+                        $image_width = $image_info[0];
+                        $image_height = $image_info[1];
+                        echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
+                      }
+                    ?>
 
-                    <?php if($g_class['gallery_topic'] != $gallery_title): ?>
-                      <a href="<?= base_url('bo-suu-tap-topic').'/'.$g_class['gallery_topic_slug'] ?>" class="ml-5"><i class="fas fa-long-arrow-alt-right"></i> <?= $g_class['gallery_topic'] ?></a>
+                    <?php if($key['gallery_file_download'] == null): ?>
+                      <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
                     <?php endif; ?>
                     
-                    <?php if($g_class['gallery_file_download'] != null): ?>
-                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $g_class['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i> download file</a>
+                    <?php if($key['gallery_file_download'] != null): ?>
+                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                     <?php endif; ?>
+                    <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_type_slug'] ?>" class="ml-5"><i class="fas fa-star-of-life"></i> <?= $key['gallery_type_name'] ?></a>
 
-                    
-
+                    <?php if($key['gallery_topic'] != null): ?>
+                    <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_topic_slug'] ?>" class="ml-5"><i class="fas fa-long-arrow-alt-right"></i> <?= $key['gallery_topic'] ?></a>
+                    <?php endif; ?>
                   </span>
                 </div>
               </div>
-            </article>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
 
-          <?php endforeach; ?>
 
-          <?php if($gallery_count > $pagi_num): ?>
-            <?= $pager->links(); ?>
-          <?php endif; ?>
+      <div id="portfolio" class="portfolio row grid-container row-cols-1 row-cols-md-3 g-3 mt-5" data-layout="fitRows">
 
-        </div>
-      
+        <?php if($gallery_count > $pagi_num): ?>
+          <?= $pager->links(); ?>
+        <?php endif; ?>
+
+      </div>
+    
 
     </div>
   </div>

@@ -39,7 +39,7 @@
                               <div class="slider-wrap" data-lightbox="gallery">
 
                                 <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>">
-                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" title="<?= $post_detail['post_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>" /></a>
+                                  <a href="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" title="<?= $post_detail['post_title']; ?>" data-lightbox="gallery-item"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$post_detail['post_image']; ?>" alt="<?= $post_detail['post_title']; ?>" /></a>
                                 </div>
 
                                 <?php if(isset($postImages)): ?>
@@ -49,7 +49,7 @@
                                       
 
                                       <div class="slide" data-thumb="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>">
-                                        <a href="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img src="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
+                                        <a href="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" title="<?= $p_i['post_image_title']; ?>" data-lightbox="gallery-item"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$p_i['post_image_slug']; ?>" alt="<?= $p_i['post_image_title']; ?>" /></a>
                                       </div>
 
 
@@ -324,7 +324,7 @@
                     <div class="grid-inner row g-0 p-4 border rounded bg-white" >
                       <div class="col-lg-5 mb-lg-0">
                         <a href="<?= base_url('').'/'.$key2['cate_slug'].'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>" class="entry-image overflow-hidden">
-                          <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+                          <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
                         </a>
                       </div>
                       <div class="col-lg-7 ps-lg-4">
@@ -393,7 +393,7 @@
                         <div class="grid-inner row g-0">
                           <div class="col-auto">
                             <div class="entry-image">
-                              <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                              <a href="<?= base_url('').'/'.$key3['cate_slug'].'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="rounded-0" class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
                             </div>
                           </div>
                           <div class="col ps-3">

@@ -28,7 +28,7 @@
           <?php foreach($blog_1 as $key2): ?>
             <div class="col col-lg-4 col-md-4 col-sm-12">
               <div class="card h-100 shadow-sm h-shadow all-ts h-translatey-sm">
-                <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="card-img-top">
+                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="card-img-top"/>
                 <div class="card-body">
                   <div class="fbox-content" style="padding: 15px !important;">
                     <div class="entry-title title-sm">
@@ -93,7 +93,9 @@
                 <div class="grid-inner row mb-5">
                   <div class="col-md-4">
                     <div class="entry-image mb-0">
-                      <a href="demo-news-single.html"><img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/></a>
+                      <a class="lazy_load_image" href="<?= base_url('').'/'.$cate_slug.'/'.$key2['post_slug'].'-'.$key2['id'].'.html'; ?>" title="<?= $key2['post_title']; ?>">
+                        <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>"/>
+                      </a>
                     </div>
                   </div>
                   <div class="col-md-8">
@@ -203,7 +205,10 @@
                         <div class="grid-inner row g-0">
                           <div class="col-auto">
                             <div class="entry-image">
-                              <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+                              <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>">
+
+                                <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/>
+                              </a>
                             </div>
                           </div>
                           <div class="col ps-3">

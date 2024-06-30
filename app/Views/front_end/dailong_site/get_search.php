@@ -86,7 +86,7 @@
               <div class="card border-default bg-light h-shadow-sm shadow-ts">
                 <div class="row g-0 align-items-center">
                   <div class="col-md-3 d-flex align-self-stretch overflow-hidden">
-                    <img src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="rounded-start"/>
+                    <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key2['post_image']; ?>" alt="<?= $key2['post_title']; ?>" class="rounded-start"/>
                   </div>
                   <div class="col-md-9 p-2">
                     <div class="card-body">
@@ -149,7 +149,7 @@
           <?php foreach($gallery_result as $key3): ?>
           <div class="col">
             <div class="card h-100 shadow-sm h-shadow all-ts h-translatey-sm">
-              <img src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$key3['gallery_image']) ?>" alt="<?= $key3['gallery_title'] ?>" class="card-img-top">
+              <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset'.'/'.$key3['gallery_image']) ?>" alt="<?= $key3['gallery_title'] ?>" class="card-img-top">
               <div class="card-body">
                 <div class="entry-meta">
                   <ul>

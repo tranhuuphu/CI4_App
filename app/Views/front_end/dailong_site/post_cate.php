@@ -52,7 +52,7 @@
 	                    <div class="row">
 	                      <div class="col-md-5 mb-0">
 	                        <a href="<?= base_url('').'/'.$post_cate_1[0]['cate_slug'].'/'.$post_cate_1[0]['post_slug'].'-'.$post_cate_1[0]['p_id'].'.html'; ?>" title="<?= $post_cate_1[0]['post_title']; ?>" class="entry-image">
-	                          <img src="<?= base_url('public/upload/tinymce/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
+	                          <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$post_cate_1[0]['post_image']; ?>" alt="<?= $post_cate_1[0]['post_title']; ?>"/>
 	                        </a>
 	                      </div>
 	                      <div class="col-md-7">
@@ -126,7 +126,7 @@
 			      <div class="entry col-md-6">
 			        <div class="grid-inner">
 			          <div class="entry-image">
-			            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['p_id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
+			            <a href="<?= base_url('').'/'.$cate_slug.'/'.$key['post_slug'].'-'.$key['p_id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>" /></a>
 			          </div>
 			          <div class="entry-title title-sm nott">
 			            <h2><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['p_id'].'.html'; ?>" title="<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h2>
@@ -213,7 +213,7 @@
 	              <div class="grid-inner row g-0">
 	                <div class="col-auto">
 	                  <div class="entry-image">
-	                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
+	                    <a href="<?= base_url('').'/'.$cate_slug.'/'.$key3['post_slug'].'-'.$key3['id'].'.html'; ?>" title="<?= $key3['post_title']; ?>"><img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/').'/'.$key3['post_image']; ?>" alt="<?= $key3['post_title']; ?>"/></a>
 	                  </div>
 	                </div>
 	                <div class="col ps-3">

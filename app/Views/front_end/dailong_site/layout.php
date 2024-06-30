@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=<?= $page_home['phone']; ?>">
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/dailong_asset'); ?>/style.css?<?= time(); ?>" type="text/css" />
 
 
     
@@ -171,7 +171,7 @@
 
     
   </head>
-  <body class="stretched page-transition">
+  <body class="stretched page-transition2">
       
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPGNS8JZ"
@@ -209,28 +209,23 @@
     <script src="https://themes.semicolonweb.com/html/canvas/v6/js/jquery.hotspot.js"></script>
     <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/functions.js"></script>
 
+    <!-- Lazy load image -->
+    <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/lazyload.min.js"></script>
+
 
     <script defer src='<?= base_url('public/site_asset'); ?>/contact_footer/script_contact.js'></script>
 
     <?= $this->renderSection('script'); ?>
 
-  
-    
-
-    <script type="text/javascript" class="init">
-
-      $('#example').dataTable( {
-        "pageLength": 30,
-        "lengthMenu": [30, 50, 75, 100]
-      } );
-
-      
-    </script>
     <script type="text/javascript">
+      $(document).ready(function() {
+        // $("#wrapper img").addClass("lazyload");
+        $("img.lazyload").lazyload();
+      });
+
       jQuery(function($){
          $('#startClock').on('click', doCount);
       });
-
       function doCount(){
          var counter = 5;
          setInterval(function() {
@@ -252,6 +247,7 @@
 
 
     </script>
+
     <script type="text/javascript">
       first.onclick = (function(){
 

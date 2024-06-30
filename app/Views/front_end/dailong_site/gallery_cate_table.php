@@ -11,18 +11,6 @@
   </nav>
 </div>
 
-<!-- <div class="container">
-
-  <section id="page-title" style="margin-bottom: 15px; margin-top: 30px; background-color: #ededed;">
-    <div class="container clearfix">
-      
-      <ol class="breadcrumb" style="padding: 20px 0; font-size: 18px; font-weight: bold;">
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="fas fa-home"></i></a></li>
-        <li class="breadcrumb-item active"><a href="<?= $link_full?>">Bộ Sưu Tập</a></li>
-      </ol>
-    </div>
-  </section>
-</div> -->
 
 <?php if($gallery_img != null): ?>
 <section id="content">
@@ -55,8 +43,8 @@
                   <?php foreach($gallery_img as $key): ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td>
-                        <img src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" height="120px" style="border-radius: 7px; border: 3px solid #fcfcfa; padding: 7px"/>
+                      <td class="lazy_load_image">
+                        <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>" style="border-radius: 2px; width: 100%; height: auto;"/>
                       </td>
                       <td><strong><a href="<?= base_url().'/'.$cate_slug.'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" target="_blank"><?= $key['gallery_title'] ?></a></strong></td>
                       
@@ -127,12 +115,22 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('link_css'); ?>
-  <link rel="stylesheet" type="text/css" href="<?= base_url('public/'); ?>/site_asset/canvas/data_table/datatables.min.css">
+  <link rel="stylesheet" href="<?= base_url('public/admin_asset'); ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-  <script src="<?= base_url('public/'); ?>/site_asset/canvas/data_table/datatables.min.js"></script>
+  <script src="<?= base_url('public/admin_asset'); ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+
+  <script type="text/javascript" class="init">
+
+    $('#example').dataTable( {
+      "paging": false,
+    } );
+
+    
+  </script>
+
 
 <?= $this->endSection(); ?>
 
