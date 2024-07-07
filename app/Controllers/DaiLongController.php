@@ -69,7 +69,7 @@ class DaiLongController extends BaseController
 
 
         $gallery = new GalleryModel;
-        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(4)->find();
+        $gallery_home  = $gallery->orderBy('id', 'DESC')->limit(8)->find();
 
 
         $page_home = $pageModel->where('page_status', 1)->first();
