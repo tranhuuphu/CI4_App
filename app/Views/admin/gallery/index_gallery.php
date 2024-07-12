@@ -86,8 +86,10 @@
                           <br>
                           
                           
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy">Tiêu Đề</button>
-                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy">Link</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-clone"></i> Title</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-link"></i> Link</button>
+                          <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= 'To download, please click link to see and download this file/image '.$g['gallery_title'].' (high resolution at link site dailong.asia). '.'Để tải file/ảnh '.$g['gallery_title'].' chất lượng cao vui lòng truy cập link trong bài viết.
+Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="far fa-copy"></i> Intro</button>
 
                           
                         </td>
