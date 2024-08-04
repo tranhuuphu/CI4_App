@@ -130,7 +130,7 @@
 
                       <div id="accordion" class="myaccordion">
                         <div class="card">
-                          <div class="card-header bg-light" id="headingOne">
+                          <div class="card-header bg-info" id="headingOne">
                             
                               <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne">
                                 Topic Chủ Đề Ảnh
