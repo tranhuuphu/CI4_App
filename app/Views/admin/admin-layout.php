@@ -116,6 +116,40 @@
         font-weight: bold;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;}
       .input_text_stroke > input:hover{background: #55D0FF !important; color: yellow}
+
+
+
+			.myaccordion {
+			  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+			}
+
+			.myaccordion .card,
+			.myaccordion .card:last-child .card-header {
+			  border: none;
+			}
+
+			.myaccordion .card-header {
+			  border-bottom-color: #EDEFF0;
+			  background: transparent;
+			}
+
+			.myaccordion .fa-stack {
+			  font-size: 18px;
+			}
+
+			.myaccordion .btn2 {
+			  width: 100%;
+			  font-weight: bold;
+			  color: #004987;
+			  padding: 0;
+			}
+
+			.myaccordion .btn-link:hover,
+			.myaccordion .btn-link:focus {
+			  text-decoration: none;
+			}
+
+			
 			
 		</style>
 		<!-- Thay đổi thành Url domain ở đây, change url domain here line 1154 dialog.php responsive -->
@@ -475,6 +509,12 @@
 		    btn_tooltip.tooltip('show');
 		  });
 		  
+		});
+		$("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
+		  $(e.target)
+		    .prev()
+		    .find("i:last-child")
+		    .toggleClass("fa-minus fa-plus");
 		});
 	</script>
 

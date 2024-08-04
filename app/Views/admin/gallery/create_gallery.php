@@ -69,6 +69,9 @@
 
                     <div class="form-group">
 
+                      
+
+
                       <div class="row">
                         <div class="col-md-8">
                           <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
@@ -120,7 +123,45 @@
                           <?php endif; ?>
                         </div>
 
+
+
                         
+                      </div>
+
+                      <div id="accordion" class="myaccordion">
+                        <div class="card">
+                          <div class="card-header bg-light" id="headingOne">
+                            
+                              <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne">
+                                Topic Chủ Đề Ảnh
+                                <span class="fa-stack fa-sm">
+                                  <i class="fas fa-circle fa-stack-2x"></i>
+                                  <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                              </button>
+                            
+                          </div>
+                          <div class="card-body" style="padding: 0px 0px !important">
+                            <div id="collapseOne2" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div class="card-body">
+                                
+                                <?php if($topic_name != null): ?>
+                                  
+                                    <div class="form-group">
+                                      <div id='buttons' class="input_text_stroke">
+                                        <?php foreach($topic_name as $key_name=>$value): ?>
+                                          <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
+                                        <?php endforeach; ?>
+                                      </div>
+                                    </div>
+                                  
+                                    
+                                <?php endif; ?>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       
