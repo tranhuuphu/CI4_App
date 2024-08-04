@@ -72,7 +72,13 @@
                     </div>
                     <hr>
 
+
+                    <!-- Topic -->
                     <div class="form-group">
+
+                      
+
+
                       <div class="row">
                         <div class="col-md-8">
                           <label for="exampleInputEmail1" class="upper" style="color: blue">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
@@ -92,79 +98,109 @@
                           </div>
                         </div>
                       </div>
-                          
 
+                          
+                          
                           
                       <hr>
+                      <div id="accordion" class="myaccordion">
+                        <div class="card">
+                          <div class="card-header bg-light border-bottom" id="headingOne">
+                            <h2 class="mb-0">
+                              <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Topic Chủ Đề Ảnh Sẵn Có
+                                <span class="fa-stack fa-sm">
+                                  <i class="fas fa-circle fa-stack-2x"></i>
+                                  <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                              
+                              <?php if($topic_name != null): ?>
+                                  
+                                  <div class="form-group">
+                                    <div id='buttons' class="input_text_stroke">
+                                      <?php foreach($topic_name as $key_name=>$value): ?>
+                                        <input id='qty2' type="button" class="btn btn-primary mt-2 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
+                                      <?php endforeach; ?>
+                                    </div>
+                                  </div>
+                                
+                                  
+                              <?php endif; ?>
 
-                      <div class="card direct-chat direct-chat-primary">
-                        <div class="card-header bg-light">
-                          <label for="exampleInputEmail1" class="upper card-title" style="color: #000">Topic Chủ Đề Ảnh <small>(để phân loại chi tiết bộ ảnh)</small></label>
-                          <div class="card-tools">
-                            <span title="3 New Messages" class="badge badge-danger"><?= count($topic_name) ?></span>
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                              <i class="fas fa-minus"></i>
-                            </button>
+                            </div>
                           </div>
                         </div>
 
-                        <div class="card-body">
-                          <?php if($topic_name != null): ?>
-                            <div class="direct-chat-messages">
+                      </div>
+                    </div>
+                    <hr>
+
+                    
+                    <!-- Link URL -->
+                    <div class="form-group">
+
+
+                      <div id="accordion" class="myaccordion">
+                        <div class="card">
+                          <div class="card-header bg-success border-bottom" id="headingTwo">
+                            <h2 class="mb-0">
+                              <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Link File & URL Liên Quan
+                                <span class="fa-stack fa-sm">
+                                  <i class="fas fa-circle fa-stack-2x"></i>
+                                  <i class="fas fa-chevron-down fa-stack-1x fa-inverse"></i>
+                                </span>
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
                               <div class="form-group">
-                                <div id='buttons' class="input_text_stroke">
-                                  <?php foreach($topic_name as $key_name=>$value): ?>
-                                    <input id='qty2' type="button" class="btn btn-primary mt-1 border-0" style="background: <?= $value['gallery_bg_topic'] ?>;" data-value='<?= $value['gallery_topic'] ?>' data-bgcolor='<?= $value['gallery_bg_topic'] ?>' value="<?= $value['gallery_topic'] ?>">
-                                  <?php endforeach; ?>
+                                <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
+                                <div class="form-group">
+                                  <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
+                                    <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
+                                    <?php foreach($post_url as $p): ?>
+                                      
+                                      <option data-icon="fas fa-circle" value="<?= $p['id'] ?>" <?php if($gallery['gallery_post_id']  == $p['id']){echo "selected";} ?>> <?= $p['post_title']; ?></option>
+                                    <?php endforeach; ?>
+                                  </select>
                                 </div>
                               </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Hoặc Link Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
+                                <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
+                              </div>
+                              <hr>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
+                                <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_link_file_origin') != null){echo set_value('gallery_link_file_origin');}else{echo $gallery['gallery_link_file_origin'];} ?>">
+                              </div>
+                              <hr>
+                              <hr>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
+                                <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
+                                <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(set_value('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
+                              </div>
+
                             </div>
-                              
-                          <?php endif; ?>
+                          </div>
                         </div>
 
-                        
                       </div>
-
-
-                      
-
-                      
                     </div>
+
+
                     
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có) <i class="fas fa-link"></i></label>
-                      <div class="form-group">
-                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
-                          <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
-                          <?php foreach($post_url as $p): ?>
-                            
-                            <option data-icon="fas fa-circle" value="<?= $p['id'] ?>" <?php if($gallery['gallery_post_id']  == $p['id']){echo "selected";} ?>> <?= $p['post_title']; ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                      </div>
-                    </div>
-                    <hr>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Hoặc Link Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
-                      <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
-                      <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(set_value('gallery_link_file_origin') != null){echo set_value('gallery_link_file_origin');}else{echo $gallery['gallery_link_file_origin'];} ?>">
-                    </div>
-                    <hr>
-                    <hr>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
-                      <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
-                      <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?php if(set_value('gallery_account') != null){echo set_value('gallery_account');}else{echo $gallery['gallery_account'];} ?>">
-                    </div>
 
 
                     

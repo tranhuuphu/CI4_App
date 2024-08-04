@@ -510,6 +510,9 @@
 		  });
 		  
 		});
+		
+	</script>
+	<script type="text/javascript">
 		$("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
 		  $(e.target)
 		    .prev()
