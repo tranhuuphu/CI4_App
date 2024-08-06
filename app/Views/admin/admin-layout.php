@@ -178,7 +178,44 @@
           padding: 7px 10px;
       }
 
-			
+			#button {
+			  display: inline-block;
+			  background-color: #1b86f7;
+			  width: 50px;
+			  height: 50px;
+			  text-align: center;
+			  border-radius: 4px;
+			  position: fixed;
+			  bottom: 80px;
+			  right: 30px;
+			  transition: background-color .3s, 
+			    opacity .5s, visibility .5s;
+			  opacity: 0;
+			  visibility: hidden;
+			  z-index: 1000;
+			}
+			#button::after {
+			  content: "\f077";
+			  font-family: "Font Awesome 5 Free";
+			  font-weight: normal;
+			  font-style: normal;
+			  font-size: 2em;
+			  line-height: 50px;
+			  color: #fff;
+			}
+			#button:hover {
+			  cursor: pointer;
+			  background-color: #333;
+			}
+			#button:active {
+			  background-color: #555;
+			}
+			#button.show {
+			  opacity: 1;
+			  visibility: visible;
+			}
+
+
 			
 		</style>
 		<!-- Thay đổi thành Url domain ở đây, change url domain here line 1154 dialog.php responsive -->
@@ -190,9 +227,9 @@
 
 
 	  <!-- Preloader -->
-	  <div class="preloader flex-column justify-content-center align-items-center">
+	  <!-- <div class="preloader flex-column justify-content-center align-items-center">
 	    <img class="animation__wobble" src="<?= base_url('public/admin_asset'); ?>/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-	  </div>
+	  </div> -->
 
 	  <!-- navbar -->
 	  <?= $this->include('admin/navbar_admin'); ?>
@@ -214,9 +251,7 @@
       }
     </style>
 	  <!-- /.control-sidebar -->
-	  <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
-      <i class="fas fa-chevron-up"></i>
-    </a>
+	  <a id="button"></a>
 	  <!-- Main Footer -->
 	  <footer class="main-footer" style="background-color: #343a40;">
 	    <strong>Copyright &copy; <?= date("Y"); ?> <a href="<?= base_url('admin'); ?>">AdminLTE.io</a>.</strong>
@@ -571,6 +606,23 @@
           filenames+=files[i].name+"\n";
       }
     }
+    // Back to top
+    var btn = $('#button');
+
+		$(window).scroll(function() {
+		  if ($(window).scrollTop() > 200) {
+		    btn.addClass('show');
+		  } else {
+		    btn.removeClass('show');
+		  }
+		});
+
+		btn.on('click', function(e) {
+		  e.preventDefault();
+		  $('html, body').animate({scrollTop:0}, '300');
+		});
+
+
 	            
 	</script>
 
