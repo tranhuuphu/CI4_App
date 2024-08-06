@@ -3,13 +3,13 @@
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      <a class="nav-link" data-widget="pushmenu" href="javascript:void(0)" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
       <a href="<?= base_url('admin'); ?>" class="nav-link">Home</a>
     </li>
     <!-- <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">Contact</a>
+      <a href="javascript:void(0)" class="nav-link">Contact</a>
     </li> -->
   </ul>
 
@@ -19,12 +19,12 @@
     
 
     <li class="nav-item">
-      <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+      <a class="nav-link" data-widget="fullscreen" href="javascript:void(0)" role="button">
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="javascript:void(0)" role="button">
         <i class="fas fa-th-large"></i>
       </a>
     </li>
@@ -106,7 +106,7 @@
         
         
         <li class="nav-item cate_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-tree"></i>
             <p>
               Danh Mục
@@ -137,7 +137,7 @@
           </ul>
         </li>
         <li class="nav-item gallery_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon far fa-image"></i>
             <p>
               Bộ Sưu Tập
@@ -166,7 +166,7 @@
           </ul>
         </li>
         <li class="nav-item post_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
               Bài Viết
@@ -202,7 +202,7 @@
         </li>
         
         <li class="nav-item page_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
               Trang
@@ -233,7 +233,7 @@
 
         
         <li class="nav-item carousel_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-tree"></i>
             <p>
               Slider
@@ -270,7 +270,7 @@
         
         
         <li class="nav-item image_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-compress-arrows-alt"></i>
             <p>
               Nén Ảnh
@@ -295,7 +295,7 @@
 
 
         <li class="nav-item type_gallery_active">
-          <a href="#" class="nav-link">
+          <a href="javascript:void(0)" class="nav-link">
             <i class="nav-icon fas fa-images"></i>
             <p>
               Phân Loại Gallery

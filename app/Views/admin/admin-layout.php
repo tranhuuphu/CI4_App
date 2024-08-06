@@ -150,7 +150,33 @@
 			}
 
 
-			
+			.upload-container {
+          position: relative;
+      }
+      .upload-container input {
+          border: 1px solid #92b0b3;
+          background: #f1f1f1;
+          outline: 2px dashed #92b0b3;
+          outline-offset: -10px;
+          padding: 70px 20px 50px 20px;
+          text-align: center !important;
+          width: 100%;
+      }
+      .upload-container input:hover {
+          background: #ddd;
+      }   
+      .upload-container:before {
+          position: absolute;
+          top: 30px;
+          left: 20px;
+          content: "Drag and Drop Image";
+          color: #3f8188;
+          font-weight: 900;
+      }   
+      .upload-btn {
+          margin-left: 300px;
+          padding: 7px 10px;
+      }
 
 			
 			
@@ -164,9 +190,9 @@
 
 
 	  <!-- Preloader -->
-	  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+	  <div class="preloader flex-column justify-content-center align-items-center">
 	    <img class="animation__wobble" src="<?= base_url('public/admin_asset'); ?>/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-	  </div> -->
+	  </div>
 
 	  <!-- navbar -->
 	  <?= $this->include('admin/navbar_admin'); ?>
@@ -523,12 +549,30 @@
 		    .toggleClass("fa-minus fa-plus");
 		});
 
+		$("#accordion2").on("hide.bs.collapse show.bs.collapse", e => {
+		  $(e.target)
+		    .prev()
+		    .find("i:last-child")
+		    .toggleClass("fa-chevron-right fa-chevron-down");
+		});
+
 
 	</script>
-
-
-
-
+	<script>
+	             
+    function uploadFiles() {
+      var files = document.getElementById('file_upload').files;
+      if(files.length==0){
+          alert("Please first choose or drop any file(s)...");
+          return;
+      }
+      var filenames="";
+      for(var i=0;i<files.length;i++){
+          filenames+=files[i].name+"\n";
+      }
+    }
+	            
+	</script>
 
 
 	<?= $this->renderSection('script'); ?>

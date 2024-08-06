@@ -145,9 +145,9 @@
                     <div class="form-group">
 
 
-                      <div id="accordion" class="myaccordion">
+                      <div id="accordion2" class="myaccordion">
                         <div class="card">
-                          <div class="card-header bg-success border-bottom" id="headingTwo">
+                          <div class="card-header bg-light border-bottom rounded-0" id="headingTwo">
                             <h2 class="mb-0">
                               <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Link File & URL Liên Quan
@@ -241,9 +241,17 @@
 
                     
                     <hr>
-                    <label class="upper">Ảnh mới (nếu muốn thay đổi)</label>
+                    <label class="upper">Chọn Ảnh mới (nếu muốn thay đổi)</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
+
+                    <!-- Drag and Drop -->
+                    <div class="upload-container">
+                        <input type="file" id="file_upload" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"/>
+                    </div>
+                    <br>
+                    <img id="output"/ style="width: 100%" class="pt-1">
+
 
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>

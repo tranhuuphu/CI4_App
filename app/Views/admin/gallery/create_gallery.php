@@ -98,7 +98,7 @@
                       <hr>
                       <div id="accordion" class="myaccordion">
                         <div class="card">
-                          <div class="card-header bg-light border-bottom" id="headingOne">
+                          <div class="card-header bg-light border-bottom rounded-0" id="headingOne">
                             <h2 class="mb-0">
                               <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                 Topic Chủ Đề Ảnh Sẵn Có
@@ -137,9 +137,9 @@
                     <div class="form-group">
 
 
-                      <div id="accordion" class="myaccordion">
+                      <div id="accordion2" class="myaccordion">
                         <div class="card">
-                          <div class="card-header bg-success border-bottom" id="headingTwo">
+                          <div class="card-header bg-light border-bottom rounded-0" id="headingTwo">
                             <h2 class="mb-0">
                               <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Link File & URL Liên Quan
@@ -220,40 +220,13 @@
                     <label class="upper">Chọn Ảnh</label>
 
 
-                    <!-- <div class="main">
-
-                      <div class="file-upload-container">
-                          <div class="file-upload">
-
-                              <form class="file-upload-form" id="fileUploadForm">
-                                  <label for="file" class="file-upload-label" id="fileUploadLabel">
-                                      <div class="file-upload-design">
-                                          <svg viewBox="0 0 640 512" height="1em">
-                                              <path
-                                              d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
-                                              ></path>
-                                          </svg>
-                                          <p>Drag & Drop</p>
-                                          <span class="browse-button">Browse file</span>
-                                      </div>
-                                      <input id="file" type="file" multiple/>
-                                  </label>
-                              </form>
-                          </div>
-                          <img id="output"/ style="width: 100%" class="pt-1">
-                          <div class="files-uploaded" id="filesUploaded">
-
-                          </div>
-                              
-                      </div>
-
-                  </div> -->
+                    
 
 
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
 
-                    <img id="output"/ style="width: 100%" class="pt-1">
+                    
                     <script>
                       var loadFile = function(event) {
                         var output = document.getElementById('output');
@@ -263,164 +236,15 @@
                         }
                       };
                     </script>
-                    <!-- <script type="text/javascript">
-                      const fileInput = document.getElementById('file');
-                      const fileUploadLabel = document.getElementById('fileUploadLabel');
-                      const filesUploadedContainer = document.getElementById('filesUploaded');
 
-                      fileUploadLabel.addEventListener('dragover', (e) => {
-                          e.preventDefault();
-                          fileUploadLabel.classList.add('drag-over');
-                      });
+                    <!-- Drag and Drop -->
+                    <div class="upload-container">
+                        <input type="file" id="file_upload" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"/>
+                    </div>
+                    <br>
+                    <img id="output"/ style="width: 100%" class="pt-1">
 
-                      fileUploadLabel.addEventListener('dragleave', () => {
-                          fileUploadLabel.classList.remove('drag-over');
-                      });
-
-                      fileUploadLabel.addEventListener('drop', (e) => {
-                          e.preventDefault();
-                          fileUploadLabel.classList.remove('drag-over');
-                          const files = e.dataTransfer.files;
-                          handleFiles(files);
-                      });
-
-                      fileInput.addEventListener('change', () => {
-                          const files = fileInput.files;
-                          handleFiles(files);
-                      });
-
-                      function handleFiles(files) {
-                          const fileList = Array.from(files);
-                          
-                          fileList.forEach((file) => {
-                              const fileName = truncateFileName(file.name);
-                              const fileSize = formatFileSize(file.size);
-                              
-                              const fileItem = document.createElement('div');
-                              fileItem.classList.add('file-item');
-                              fileItem.innerHTML = `
-                                  <div class= "file">
-                                      
-                                      <span class="file-name">${fileName}</span>
-                                      <span class="file-size">${fileSize}</span>
-                                      
-                                  </div>
-                              `;
-
-                              filesUploadedContainer.appendChild(fileItem);
-                          });
-                      }
-
-                      function truncateFileName(name, maxLength) {
-                          return name.length > 10 ? name.substring(0, maxLength) + '...' : name;
-                      }
-
-                      function formatFileSize(size) {
-                          if (size === 0) return '0 Bytes';
-                          const k = 1024;
-                          const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-                          const i = parseInt(Math.floor(Math.log(size) / Math.log(k)));
-                          return Math.round(100 * (size / Math.pow(k, i))) / 100 + ' ' + sizes[i];
-                      }
-                    </script> -->
-                    <!-- <style type="text/css">
-                      .main {
-                        
-                        align-items: center;
-                        background-color: #d9d9d9;
-                        background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
-                        width: 100%;
-                        border-radius: 10px;
-                        padding: 30px;
-                      }
-
-                      .file-upload-container {
-                          display: flex;
-                          flex-direction: column;
-                          justify-content: center;
-                          align-items: center;
-                      }
-
-                      .file-upload-container h1 {
-                          font-size: 35px;
-                          margin-bottom: 20px;
-                      }
-
-                      .file-upload-form {
-                          width: fit-content;
-                          height: fit-content;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                      }
-                      .file-upload-label input {
-                          display: none;
-                      }
-                      .file-upload-label svg {
-                          height: 50px;
-                          fill: rgb(82, 82, 82);
-                          margin-bottom: 20px;
-                      }
-                      .file-upload-label {
-                          cursor: pointer;
-                          background-color: #ffffff;
-                          padding: 30px 100px;
-                          border-radius: 20px;
-                          border: 2px dashed rgb(82, 82, 82);
-                          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-                      }
-                      .file-upload-design {
-                          display: flex;
-                          flex-direction: column;
-                          align-items: center;
-                          justify-content: center;
-                          gap: 5px;
-                          font-size: 25px;
-                      }
-                      .browse-button {
-                          background-color: rgb(82, 82, 82);
-                          padding: 5px 15px;
-                          border-radius: 10px;
-                          color: white;
-                          transition: all 0.3s;
-                          font-size: 17px;
-                      }
-                      .browse-button:hover {
-                          background-color: rgb(14, 14, 14);
-                      }
-
-                      .files-uploaded {
-                          margin-top: 20px;
-                      }
-
-                      .file {
-                          display: flex;
-                          align-items: center;
-                          width: 100%;
-                          padding: 10px;
-                          background-color: #ffffff;
-                          border-radius: 10px;
-                          margin: 10px;
-                          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-                          font-size: 15px;
-                      }
-
-                      .file img {
-                          width: 30px;
-                          margin: 10px;
-                      }
-
-                      .uploaded {
-                          display: flex;
-                          align-items: center;
-                          margin-left: auto;
-                      }
-
-                      .uploaded img {
-                          width: 20px;
-                          margin: 5px;
-                      }
-                    </style> -->
+                    
                   </div>
 	              </div>
 	              <!-- /.card-body -->
