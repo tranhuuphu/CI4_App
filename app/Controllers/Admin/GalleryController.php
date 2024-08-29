@@ -34,15 +34,7 @@ class GalleryController extends BaseController
 
         $galleryTopic = $galleryModel->select('gallery_topic, gallery_bg_topic')->where('gallery_topic !=', null)->where('gallery_topic !=', "")->find();
         $galleryTopic = array_map("unserialize", array_unique(array_map("serialize", $galleryTopic)));
-        // dd($galleryTopic);
-        // if(count($galleryTopic)>0){
-        //     foreach($galleryTopic as $key){
-        //         $topic_name[] = mb_convert_case($key['gallery_topic'], MB_CASE_TITLE, 'UTF-8');
-        //     }
-        //     $data['topic_name'] = array_unique($topic_name);
-        // }else{
-        //     $data['topic_name'] = null;
-        // }
+
         $data['topic_name'] = $galleryTopic;
         
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();
@@ -78,47 +70,47 @@ class GalleryController extends BaseController
         $data['topic_name'] = $galleryTopic;
         
 
-        $validation = $this->validate([
+        // $validation = $this->validate([
 
-            'gallery_title'=>[
-                'rules'=>'required|is_unique[gallery_image.gallery_title]',
-                'errors' => [
-                    'required' => 'Tiêu đề không được để trống.',
-                    'is_unique' => 'Tiêu đề trùng với bài viết khác.',
-                ],
+        //     'gallery_title'=>[
+        //         'rules'=>'required|is_unique[gallery_image.gallery_title]',
+        //         'errors' => [
+        //             'required' => 'Tiêu đề không được để trống.',
+        //             'is_unique' => 'Tiêu đề trùng với bài viết khác.',
+        //         ],
 
-            ],
+        //     ],
             
-            'gallery_alias'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Alias không được để trống.',
-                ],
+        //     'gallery_alias'=>[
+        //         'rules'=>'required',
+        //         'errors' => [
+        //             'required' => 'Alias không được để trống.',
+        //         ],
 
-            ],
+        //     ],
 
-            'gallery_meta_desc'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Meta Desc không được để trống.',
-                ],
+        //     'gallery_meta_desc'=>[
+        //         'rules'=>'required',
+        //         'errors' => [
+        //             'required' => 'Meta Desc không được để trống.',
+        //         ],
 
-            ],
-            'gallery_meta_key'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Meta Key không được để trống.',
-                ],
+        //     ],
+        //     'gallery_meta_key'=>[
+        //         'rules'=>'required',
+        //         'errors' => [
+        //             'required' => 'Meta Key không được để trống.',
+        //         ],
 
-            ],
+        //     ],
 
-        ]);
+        // ]);
 
 
-        if(!$validation){
-            $data['validation'] = $this->validator;
-            return view('admin/gallery/create_gallery', $data);
-        }
+        // if(!$validation){
+        //     $data['validation'] = $this->validator;
+        //     return view('admin/gallery/create_gallery', $data);
+        // }
 
         
         
@@ -135,13 +127,17 @@ class GalleryController extends BaseController
         }
 
         if($this->request->getPost('gallery_file_download') != null){
+            $file_download = $this->request->getPost('gallery_file_download');
             $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
         }else{
             $data['gallery_file_download']       = null;
         }
 
         if($this->request->getPost('gallery_link_file_origin') != null){
-            $data['gallery_link_file_origin']       = $this->request->getPost('gallery_link_file_origin');
+            $gallery_link_file_origin      = $this->request->getPost('gallery_link_file_origin');
+            $gallery_link_file_origin2 = explode('/', $gallery_link_file_origin);
+            $data['gallery_link_file_origin']  = "https://drive.usercontent.google.com/download?id=".$gallery_link_file_origin2['5']."&export=download";
+            dd($data['gallery_link_file_origin']);
         }else{
             $data['gallery_link_file_origin']       = null;
         }
@@ -212,9 +208,9 @@ class GalleryController extends BaseController
         $type = $img->guessExtension();
         $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 6).'.'.$type;
         $data['gallery_image']       = $gallery_image_name;
-        // dd($data);
+        dd($data);
 
-        $galleryModel->insert($data);
+        // $galleryModel->insert($data);
 
         if($img = $this->request->getFile('gallery_image'))
         {
