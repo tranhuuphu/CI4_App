@@ -126,21 +126,32 @@ class GalleryController extends BaseController
             $data['gallery_post_id']        = null; 
         }
 
-        if($this->request->getPost('gallery_file_download') != null){
-            $file_download = $this->request->getPost('gallery_file_download');
-            $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
-        }else{
-            $data['gallery_file_download']       = null;
-        }
+        
 
         if($this->request->getPost('gallery_link_file_origin') != null){
             $gallery_link_file_origin      = $this->request->getPost('gallery_link_file_origin');
-            $gallery_link_file_origin2 = explode('/', $gallery_link_file_origin);
-            $data['gallery_link_file_origin']  = "https://drive.usercontent.google.com/download?id=".$gallery_link_file_origin2['5']."&export=download";
-            dd($data['gallery_link_file_origin']);
+            $check_link = "download";
+            if(strpos($gallery_link_file_origin, $check_link) == false){
+                $gallery_link_file_origin2 = explode('/', $gallery_link_file_origin);
+                $data['gallery_link_file_origin']  = "https://drive.usercontent.google.com/download?id=".$gallery_link_file_origin2['5']."&export=download";
+            }else{
+                $data['gallery_link_file_origin'] = $gallery_link_file_origin ;
+            }
+            
         }else{
             $data['gallery_link_file_origin']       = null;
         }
+
+
+        if($this->request->getPost('gallery_link_file_short') != null){
+            $file_download = $this->request->getPost('gallery_link_file_short');
+            $data['gallery_link_file_short']       = $this->request->getPost('gallery_link_file_short');
+            // https://drive.usercontent.google.com/download?id=1zk3f8n6eQqFQMxifFyTmquW2OlboQSLm&export=download&authuser=0
+        }else{
+            $data['gallery_link_file_short']       = null;
+        }
+
+        $data['gallery_type_file']          = $this->request->getPost('gallery_type_file');
 
         // Color
         if($this->request->getPost('gallery_bg_topic') != null){
@@ -208,9 +219,9 @@ class GalleryController extends BaseController
         $type = $img->guessExtension();
         $gallery_image_name = $gallery_title_slug.'-'.random_string('alnum', 6).'.'.$type;
         $data['gallery_image']       = $gallery_image_name;
-        dd($data);
+        // dd($data);
 
-        // $galleryModel->insert($data);
+        $galleryModel->insert($data);
 
         if($img = $this->request->getFile('gallery_image'))
         {
@@ -423,17 +434,32 @@ class GalleryController extends BaseController
             $data['gallery_post_id']        = null; 
         }
 
-        if($this->request->getPost('gallery_file_download') != null){
-            $data['gallery_file_download']       = $this->request->getPost('gallery_file_download');
-        }else{
-            $data['gallery_file_download']       = null;
-        }
+        
 
-        if($this->request->getPost('gallery_file_download') != null){
-            $data['gallery_link_file_origin']       = $this->request->getPost('gallery_link_file_origin');
+        if($this->request->getPost('gallery_link_file_origin') != null){
+            $gallery_link_file_origin      = $this->request->getPost('gallery_link_file_origin');
+            $check_link = "download";
+            if(strpos($gallery_link_file_origin, $check_link) == false){
+                $gallery_link_file_origin2 = explode('/', $gallery_link_file_origin);
+                $data['gallery_link_file_origin']  = "https://drive.usercontent.google.com/download?id=".$gallery_link_file_origin2['5']."&export=download";
+            }else{
+                $data['gallery_link_file_origin'] = $gallery_link_file_origin ;
+            }
+            
         }else{
             $data['gallery_link_file_origin']       = null;
         }
+
+
+        if($this->request->getPost('gallery_link_file_short') != null){
+            $file_download = $this->request->getPost('gallery_link_file_short');
+            $data['gallery_link_file_short']       = $this->request->getPost('gallery_link_file_short');
+            // https://drive.usercontent.google.com/download?id=1zk3f8n6eQqFQMxifFyTmquW2OlboQSLm&export=download&authuser=0
+        }else{
+            $data['gallery_link_file_short']       = null;
+        }
+
+        $data['gallery_type_file']          = $this->request->getPost('gallery_type_file');
 
 
         

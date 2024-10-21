@@ -87,6 +87,7 @@
                           
                           
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-clone"></i> Title</button>
+
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= 'To download, please click link to see and download this file/image '.$g['gallery_title'].' (high resolution at link site dailong.asia). '.'Để tải file/ảnh '.$g['gallery_title'].' chất lượng cao vui lòng truy cập link trong bài viết.
 Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="far fa-copy"></i> Intro</button>
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-link"></i> Link</button>
@@ -182,11 +183,11 @@ Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-p
                                       </tr>
                                       <tr>
                                         <th scope="row">09. Link Short</th>
-                                        <td><?php echo $g['gallery_file_download'] ?></td>
+                                        <td><?php echo $g['gallery_link_file_origin'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">10. Link Origin</th>
-                                        <td><?= $g['gallery_link_file_origin'] ?></td>
+                                        <td><?= $g['gallery_link_file_short'] ?></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">11. Ngày truy cập gần nhất</th>
@@ -233,9 +234,16 @@ Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-p
                         </td>
 		                    
                         <td>
-                          <?php if($g['gallery_file_download'] != null): ?> <button type="button" class="btn btn-info mt- mb-2"><a href="<?= $g['gallery_file_download']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Short</a></button> <?php endif; ?>
 
-                          <?php if($g['gallery_link_file_origin'] != null): ?> <button type="button" class="btn btn-secondary mt- mb-2"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> Origin</a></button> <?php endif; ?>
+                          
+
+
+                          <?php if($g['gallery_link_file_origin'] != null): ?> <button id="my-btn" type="button" onclick="myFunction()" data-text="<?= $g['gallery_link_file_origin']; ?>" class="copyboard btn btn-info mt- mb-2" title="Click to Copy"><a href="<?= $g['gallery_link_file_origin']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> File Origin</a></button> <?php endif; ?>
+
+                          <?php if($g['gallery_link_file_short'] != null): ?> <button type="button" class="btn btn-secondary mt- mb-2"><a href="<?= $g['gallery_link_file_short']; ?>" class="text-white" target="_blank" ><i class="fas fa-link"></i> File Short</a></button> <?php endif; ?>
+
+                          <?php if($g['gallery_type_file'] == "premium"): ?> <button type="button" class="btn btn-danger mt- mb-2"><i class="fas fa-thumbtack"></i> File Premium</button> <?php endif; ?>
+
                           <?php if($g['gallery_post_url'] != null): ?>
                             
                             <a href="<?= $g['gallery_post_url']; ?>" target="_blank"><button type="button" class="btn btn-success mb-2"><i class="fas fa-eye"></i> Related</button></a>

@@ -223,6 +223,8 @@
         $("img.lazyload").lazyload();
       });
 
+      $("table").addClass("table table-bordered table-responsive table-hover");
+
       jQuery(function($){
          $('#startClock').on('click', doCount);
       });

@@ -525,7 +525,7 @@
                 <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
                 <span class="text-italic">
 
-                	<?php if($key['gallery_file_download'] == null)
+                	<?php if($key['gallery_link_file_origin'] == null && $key['gallery_link_file_short'] == null)
 		              	if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
 	                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
 	                    $image_width = $image_info[0];
@@ -534,12 +534,14 @@
 	                  }
 		              ?>
 
-		              <?php if($key['gallery_file_download'] == null): ?>
+		              <?php if($key['gallery_link_file_origin'] == null && $key['gallery_link_file_short'] == null): ?>
 		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save image</a>
 	              	<?php endif; ?>
 	              	
-	              	<?php if($key['gallery_file_download'] != null): ?>
-		              	<a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+	              	<?php if($key['gallery_link_file_short'] != null): ?>
+		              	<a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_short'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+		              <?php elseif($key['gallery_link_file_origin'] != null): ?>
+		              	<a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_origin'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
 		              <?php endif; ?>
                 </span>
               </div>

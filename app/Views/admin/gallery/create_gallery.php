@@ -141,7 +141,7 @@
                         <div class="card">
                           <div class="card-header bg-light border-bottom rounded-0" id="headingTwo">
                             <h2 class="mb-0">
-                              <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <button type="button" class="d-flex align-items-center justify-content-between btn btn2 btn-link collapsed text-info" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Link File & URL Liên Quan
                                 <span class="fa-stack fa-sm">
                                   <i class="fas fa-circle fa-stack-2x"></i>
@@ -152,6 +152,47 @@
                           </div>
                           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
+                              
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Link <span class="text-primary">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
+                                <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_link_file_origin'); ?>">
+                              </div>
+                              <hr>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
+                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_short') : '' ?></p>
+                                <input type="text" name="gallery_link_file_short" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_link_file_short'); ?>">
+                              </div>
+                              <hr>
+
+                              <div class="form-group clearfix">
+                                <label class="upper text-info">File Premium?</label>
+                                <br>
+
+                                <div class="form-group clearfix">
+                                  <div class="icheck-success d-inline">
+                                    <input type="radio" name="gallery_type_file" value="normal" checked id="radioSuccess3" />
+                                    <label for="radioSuccess3"> File thường</label>
+                                  </div>
+                                  <div class="icheck-success d-inline ml-2 text-danger">
+                                    <input type="radio" name="gallery_type_file" value="premium" id="radioSuccess4" />
+                                    <label for="radioSuccess4" class=""> File Premium</label>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <hr>
+
+                              
+                              <div class="form-group">
+                                <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
+                                <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
+                                <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?= set_value('gallery_account '); ?>">
+                              </div>
+
                               <div class="form-group">
                                 <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có)</label>
                                 <div class="form-group">
@@ -164,24 +205,6 @@
                                 </div>
                               </div>
 
-                              <div class="form-group">
-                                <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Rút Gọn Lần 2</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
-                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
-                                <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_file_download'); ?>">
-                              </div>
-                              <hr>
-
-                              <div class="form-group">
-                                <label for="exampleInputEmail1" class="upper">Link <span class="text-red">Gốc</span> File Download (Nếu Có) <i class="fas fa-link"></i></label>
-                                <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_link_file_origin') : '' ?></p>
-                                <input type="text" name="gallery_link_file_origin" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?= set_value('gallery_link_file_origin'); ?>">
-                              </div>
-                              <hr>
-                              <div class="form-group">
-                                <label for="exampleInputEmail1" class="upper">Tài Khoản Google Lưu File <small>(Nếu Là File)</small></label>
-                                <span class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_account') : '' ?></span>
-                                <input type="text" name="gallery_account" class="form-control" id="exampleInputEmail1" placeholder="Nhập tài khoản" value="<?= set_value('gallery_account '); ?>">
-                              </div>
 
                             </div>
                           </div>
@@ -215,6 +238,8 @@
                     </select>
                   </div>
                   <hr>
+
+                  
                   
 	              	<div class="form-group">
                     <label class="upper">Chọn Ảnh</label>
