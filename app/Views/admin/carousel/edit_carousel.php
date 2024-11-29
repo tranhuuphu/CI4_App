@@ -12,8 +12,8 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
-              <li class="breadcrumb-item"><a href="<?= base_url('admin/gallery'); ?>">Danh Sách Gallery</a></li>
-              <li class="breadcrumb-item active">Edit Post Ảnh: <span class="text-red text-bold"><?= $gallery['gallery_title'] ?></span></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('admin/carousel'); ?>">Danh Sách Slide</a></li>
+              <li class="breadcrumb-item active">Edit Post Ảnh: <span class="text-red text-bold"><?= $carousel['carousel_title'] ?></span></li>
             </ol>
           </div>
         </div>
@@ -23,7 +23,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <form action="<?= base_url('admin/gallery/edit/'.$gallery['id']); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/carousel/edit/'.$carousel['id']); ?>" method="post" enctype="multipart/form-data">
           <?= csrf_field(); ?>
           <div class="row">
             <!-- left column -->
@@ -38,43 +38,9 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">Tiêu đề Ảnh</label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_title') : '' ?></p>
-                      <input type="text" name="gallery_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?php if(old('gallery_title') != null){echo set_value('gallery_title');}else{echo $gallery['gallery_title'];} ?>">
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'carousel_title') : '' ?></p>
+                      <input type="text" name="carousel_title" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề Ảnh" value="<?php if(set_value('carousel_title') != null){echo set_value('carousel_title');}else{echo $carousel['carousel_title'];} ?>">
                     </div>
-                    <hr>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper" style="color: red">Lựa chọn phân loại cho ảnh</label>
-                      <div class="form-group">
-                        <select class="selectpicker show-tick form-control select2 select2-danger" data-style="btn-default" data-live-search="true" name="gallery_type_id" style="width: 100%;">
-                          <?php foreach($gellary_type as $gt): ?>
-                            <option data-icon="fas fa-long-arrow-alt-right" value="<?= $gt['id']; ?>" <?php if($gallery['gallery_type_id']  == $gt['id']){echo "selected";} ?>> <?= $gt['gallery_type_name']; ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                      </div>
-                    </div>
-                    <hr>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Url Liên Quan (Nếu có) <i class="fas fa-link"></i></label>
-                      <div class="form-group">
-                        <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="true" name="gallery_post_id" style="width: 100%;">
-                          <option value=""> ---Tiêu đề URL Liên Quan</option><i class="fas fa-long-arrow-alt-right"></i>
-                          <?php foreach($post_url as $p): ?>
-                            
-                            <option data-icon="fas fa-circle" value="<?= $p['id'] ?>" <?php if($gallery['gallery_post_id']  == $p['id']){echo "selected";} ?>> <?= $p['post_title']; ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                      </div>
-                    </div>
-                    <hr>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="upper">Link File Download (Nếu Có) <i class="fas fa-link"></i></label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_file_download') : '' ?></p>
-                      <input type="text" name="gallery_file_download" class="form-control" id="exampleInputEmail1" placeholder="Nhập Link File" value="<?php if(old('gallery_file_download') != null){echo set_value('gallery_file_download');}else{echo $gallery['gallery_file_download'];} ?>">
-                    </div>
-
                   </div>
                   <!-- /.card-body -->
               </div>
@@ -93,20 +59,24 @@
                 <div class="card-body">
                   
                   <div class="form-group">
-                    <label class="upper">Thuộc danh mục</label>
-                    <select class="selectpicker show-tick form-control select2 select2-danger " data-style="btn-default" data-live-search="false" name="gallery_cate_id" style="width: 100%;">
-                      <option data-icon="fas fa-circle" value="<?= $cate['id'] ?>"> <?= $cate['cate_name'] ?></option><i class="fas fa-long-arrow-alt-right"></i>
-                      
-                    </select>
-                  </div>
-                  <hr>
-                  <div class="form-group">
                     <label style="color: red; margin-right: 7px;">Ảnh Cũ</label>
-                    <img src="<?= base_url('public/upload/tinymce/gallery_asset/'.$gallery['gallery_image']) ?>" width="30%">
+                    <br>
+                    <a data-fancybox data-src="<?= base_url('public/upload/tinymce/carousel_asset/'.$carousel['carousel_image']) ?>">
+                      <img src="<?= base_url('public/upload/tinymce/carousel_asset/'.$carousel['carousel_image']) ?>" width="100%" height="auto" class="img_fancy" />
+                    </a>
+
+                    
                     <hr>
-                    <label class="upper">Ảnh mới (nếu muốn thay đổi)</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <label class="upper">Chọn Ảnh mới (nếu muốn thay đổi)</label>
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'carousel_image') : '' ?></p>
+
+                    <!-- Drag and Drop -->
+                    <div class="upload-container">
+                        <input type="file" id="file_upload" class="form-control-file mb-2" id="exampleFormControlFile1" name="carousel_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"/>
+                    </div>
+                    <br>
+                    <img id="output"/ style="width: 100%" class="pt-1">
+
 
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>
@@ -127,45 +97,14 @@
             <!--/.col (right) -->
           </div>
 
-          <!-- Seo -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-warning">
-                <div class="card-header">
-                  <h3 class="card-title"><strong>Seo Info Image</strong></h3>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="upper">Meta Desc</label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_desc') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_desc" maxlength="255"><?php if(old('gallery_meta_desc') != null){echo set_value('gallery_meta_desc');}else{echo $gallery['gallery_meta_desc'];} ?></textarea>
-                        
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label class="upper">Meta Key</label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_meta_key') : '' ?></p>
-                        <textarea class="form-control" style="height:120px" name="gallery_meta_key" maxlength="255"><?php if(old('gallery_meta_key') != null){echo set_value('gallery_meta_key');}else{echo $gallery['gallery_meta_key'];} ?></textarea>
-                        
-                      </div>
-                    </div>
-                    <hr>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.row -->
+         
 
           <div class="row">
             <div class="col-md-12">
               <div class="card card-success">
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Save This</button>
-                  <a href="<?= base_url('admin/gallery'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
+                  <a href="<?= base_url('admin/carousel'); ?>" class="btn btn-danger float- ml-3"><i class="far fa-times"></i> Cancel</a>
                 </div>
               </div>
             </div>
@@ -184,13 +123,13 @@
 
 <?= $this->section('script'); ?>
   <script type="text/javascript">
-    $(".gallery_active").addClass("menu-open");
-    $(".gallery_active a:first").addClass("active");
-    $(".gallery_active .gallery_tree_active3 a:first").addClass("active");
+    $(".carousel_active").addClass("menu-open");
+    $(".carousel_active a:first").addClass("active");
+    $(".carousel_active .carousel_tree_active3 a:first").addClass("active");
   </script>
 
 <?= $this->endSection(); ?>
 
 <?= $this->section('title'); ?>
-  Chỉnh sửa ảnh: <?= $gallery['gallery_title'] ?> | Bộ Sưu Tập
+  Chỉnh sửa ảnh: <?= $carousel['carousel_title'] ?> | Bộ Sưu Tập
 <?= $this->endSection(); ?>

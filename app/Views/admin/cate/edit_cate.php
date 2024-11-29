@@ -123,26 +123,7 @@
                   </div>
 
                   <hr>
-                  <div class="form-group">
-                    <label class="upper">Ảnh hiện tại (500x350px)</label>
-                    <br>
-                    <img src="<?= base_url('public/upload/tinymce/'.$cate['cate_image']) ?>" width="30%">
-                    <hr>
-                    <label class="upper">Nếu muốn thay ảnh vui lòng chọn ảnh mới (500x350px)</label>
-                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="cate_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
-
-                    <img id="output"/ style="width: 100%" class="pt-1">
-                    <script>
-                      var loadFile = function(event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                        output.onload = function() {
-                          URL.revokeObjectURL(output.src) // free memory
-                        }
-                      };
-                    </script>
-                  </div>
+                  
 
                 </div>
 	                <!-- /.card-body -->

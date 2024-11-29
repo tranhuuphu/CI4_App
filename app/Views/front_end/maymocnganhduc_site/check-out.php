@@ -1,4 +1,4 @@
- <?= $this->extend('front_end/canvas_site/layout'); ?>
+<?= $this->extend('front_end/maymocnganhduc_site/layout_maymoc'); ?>
 
 <?= $this->section('content'); ?>
 

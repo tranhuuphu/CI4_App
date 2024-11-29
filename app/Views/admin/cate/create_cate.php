@@ -90,7 +90,7 @@
                     </div>
                   </div>
                   <hr>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label class="upper">Ảnh (500x350px)</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'cate_image') : '' ?></p>
                     <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="cate_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
@@ -101,11 +101,11 @@
                         var output = document.getElementById('output');
                         output.src = URL.createObjectURL(event.target.files[0]);
                         output.onload = function() {
-                          URL.revokeObjectURL(output.src) // free memory
+                          URL.revokeObjectURL(output.src)
                         }
                       };
                     </script>
-                  </div>
+                  </div> -->
 
                 </div>
 	                <!-- /.card-body -->

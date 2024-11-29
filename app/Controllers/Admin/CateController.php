@@ -88,37 +88,12 @@ class CateController extends BaseController
         $data['cate_meta_key']      = $this->request->getPost('cate_meta_key');
         // dd($data);
 
-        if($this->request->getFile('cate_image')){
-            $img = $this->request->getFile('cate_image');
-
-            $type = $img->guessExtension();
-            $cate_image_name = $cate_slug.'-'.random_string('alnum', 6).'.'.$type;
-            $data['cate_image']       = $cate_image_name;
-        }else{
-            $data['cate_image']       = null;
-        }
+        
         
 
         $cateModel->insert($data);
 
-        if($img = $this->request->getFile('cate_image'))
-        {
-            if ($img->isValid() && ! $img->hasMoved())
-            {
-                
-                // $newName = $img->getRandomName();
-                $type = $img->getClientMimeType();
-
-                $img->move(ROOTPATH . 'public/upload/tinymce/', $cate_image_name);
-
- 
-                // You can continue here to write a code to save the name to database
-                // db_connect() or model format
-                            
-            }
-
-            
-        }
+        
 
         return redirect()->to('admin/cate')->with('success', $cate_name);
     }
@@ -244,17 +219,9 @@ class CateController extends BaseController
         $data['cate_status']        = $this->request->getPost('cate_status');
         $data['cate_meta_desc']     = $this->request->getPost('cate_meta_desc');
         $data['cate_meta_key']      = $this->request->getPost('cate_meta_key');
-        // dd($this->request->getFile('cate_image'));
 
-        if($this->request->getFile('cate_image')->guessExtension() != null){
-            $img = $this->request->getFile('cate_image');
 
-            $type = $img->guessExtension();
-            $cate_image_name = $cate_slug.'-'.random_string('alnum', 6).'.'.$type;
-            $data['cate_image']       = $cate_image_name;
-        }else{
-            $data['cate_image']       = $cate_detail['cate_image'];
-        }
+        
 
         $cateModel->update($cate_id, $data);
 
@@ -287,26 +254,6 @@ class CateController extends BaseController
             }
             
         }
-
-        if($img = $this->request->getFile('cate_image'))
-        {
-            if ($img->isValid() && ! $img->hasMoved())
-            {
-                
-                // $newName = $img->getRandomName();
-                $type = $img->getClientMimeType();
-
-                $img->move(ROOTPATH . 'public/upload/tinymce/', $cate_image_name);
-
- 
-                // You can continue here to write a code to save the name to database
-                // db_connect() or model format
-                            
-            }
-
-            
-        }
-
 
 
         return redirect()->to('admin/cate')->with('update', $cate_name);

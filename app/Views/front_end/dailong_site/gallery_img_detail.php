@@ -36,7 +36,7 @@
             <div class="col-lg-8 col-xl-6 portfolio-single-content px-5 ps-xl-5 pt-xl-4" style="margin-top: 20px">
               <h2 class="fs-3 fw-bold"><?= $gallery_img['gallery_title'] ?></h2>
               <hr>
-              <?php if($gallery_img['gallery_file_download'] != null): ?>
+              <?php if($gallery_img['gallery_link_file_origin'] != null): ?>
               <div class="card">
                 <div class="card-body text-dark">
                   <span>Thank for downloading file and visiting my site!</span>
@@ -143,7 +143,7 @@
                       </td>
                     </tr>
 
-                    <?php if($gallery_img['gallery_file_download'] != null): ?>
+                    <?php if($gallery_img['gallery_link_file_origin'] != null): ?>
                       <tr>
                         <th scope="row">Download Premium File</th>
                         <td colspan="2">
@@ -151,7 +151,7 @@
 
                           <span id="second">.... Wait 5s Get Link</span>
 
-                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $gallery_img['gallery_file_download'] ?>" id="third" target="_blank" class= "btn btn-info" >Download Now <i class="fas fa-download"></i></a>
+                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $gallery_img['gallery_link_file_origin'] ?>" id="third" target="_blank" class= "btn btn-info" >Download Now <i class="fas fa-download"></i></a>
 
                         </td>
                       </tr>
@@ -195,7 +195,7 @@
                   </div>
                 <?php endif; ?>
                 
-                <?php if($gallery_img['gallery_file_download'] == null): ?>
+                <?php if($gallery_img['gallery_link_file_origin'] == null): ?>
                   
                   <div class="col-6">
                     <h5 class="mb-2 text-primary">Demension</h5>
@@ -221,7 +221,7 @@
                   </div>
                 <?php endif; ?>
                 
-                <?php if($gallery_img['gallery_file_download'] == null): ?>
+                <?php if($gallery_img['gallery_link_file_origin'] == null): ?>
                   <div class="col-6">
                     <h5 class="mb-2 text-primary">Save image</h5>
                     <p class="text-medium op-082 mb-0">
@@ -412,7 +412,7 @@
               <span>
 
 
-                <?php if($r1['gallery_file_download'] == null)
+                <?php if($r1['gallery_link_file_origin'] == null)
                   if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']) != null){
                     $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$r1['gallery_image']);
                     $image_width =$image_info[0];
@@ -421,12 +421,12 @@
                   }
                 ?>
 
-                <?php if($r1['gallery_file_download'] == null): ?>
+                <?php if($r1['gallery_link_file_origin'] == null): ?>
                   <a href="<?= base_url('page/download/'.$r1['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
                 <?php endif; ?>
                 
-                <?php if($r1['gallery_file_download'] != null): ?>
-                  <a href="<?= $r1['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                <?php if($r1['gallery_link_file_origin'] != null): ?>
+                  <a href="<?= $r1['gallery_link_file_origin'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                 <?php endif; ?>
                 
                 

@@ -2,7 +2,44 @@
 
 <?= $this->section('content'); ?>
 
+<style>
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
 
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    swiper-container {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+  </style>
+
+
+<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false" loop="true">
+  <?php foreach($carousel_all as $ca): ?>
+    <swiper-slide>
+      <img src="<?= base_url('public/upload/tinymce/carousel_asset/').'/'.$ca['carousel_image']; ?>" alt="<?= $ca['carousel_title'] ?>">
+    </swiper-slide>
+  <?php endforeach; ?>
+</swiper-container>
 
 
 <style type="text/css">
@@ -14,8 +51,8 @@
   }
 </style>
 
-<section class="slider-element bg-contrast- include-header bg-info">
-  <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[0]['post_image']; ?>" alt="Image" class="object-fit-cover min-vh-75 w-100 h-100" />
+<section class="slider-element bg-contrast- include-header bg-info mt-5" style="margin-top: 200px;">
+  <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[0]['post_image']; ?>" alt="<?= $featured[0]['post_title'] ?>" class="object-fit-cover min-vh-75 w-100 h-100" />
   <div class="position-absolute z-2 w-100 h-100 top-0 contour-text">
     <div class="text-center mt-lg-6 pt-5 pt-lg-6">
       <h1 class="display-4 mb-3 fw-medium text-uppercase" style="letter-spacing: -2px;"><?= $featured[0]['post_title'] ?></h1>
@@ -104,30 +141,7 @@
     </div>
     <div class="clear"></div>
 
-    <!-- <div class="section dark m-0 border-0 mt-0">
-      <div class="container d-flex justify-content-center align-items-end" style="min-height: 450px;">
-        <div class="row g-5 justify-content-between">
-          <div class="col-md-4">
-            <h3 class="mb-3">&middot; Motor &amp; Blades</h3>
-            <p>Sapien quis consectetur iste, quis inceptos hendrerit? Luctus erat tristique incidunt nunc quo possimus perferendis.</p>
-          </div>
-          <div class="col-md-4">
-            <h3 class="mb-3">&middot; 4K Video</h3>
-            <p>Penatibus ornare commodi tempus varius! Neque voluptatum congue laboris! Autem earum voluptas nemo.</p>
-          </div>
-          <div class="col-md-4">
-            <h3 class="mb-3">&middot; 36Hrs Battery Life</h3>
-            <p>Dis blanditiis faucibus, quibusdam proin similique, leo porro, eius, corporis aperiam ipsum exercitationem dis lorem.</p>
-          </div>
-        </div>
-      </div>
-      <div class="video-wrap no-placeholder">
-        <video poster="images/videos/deskwork.jpg" preload="auto" loop autoplay muted playsinline>
-          <source src="https://canvastemplate.com/demos/drone/images/video.mp4" type="video/mp4" />
-        </video>
-        <div class="position-absolute w-100 h-100 top-0 start-0 z-1 bg-dark bg-opacity-10"></div>
-      </div>
-    </div> -->
+
 
     <div class="container my-6">
       <div class="row g-4 align-items-stretch">
@@ -244,203 +258,35 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('link_css'); ?>
-	
-	<link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/settings.css" media="screen">
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/layers.css">
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/css/plugin/navigation.css">
 
-  <link rel="stylesheet" href="<?= base_url('public/site_asset/canvas'); ?>/plugin/news.css">
+
+
 
 <?= $this->endSection(); ?>
 
 
 <?= $this->section('script'); ?>
 	
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.tools.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/jquery.themepunch.revolution.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.video.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.carousel.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script src="<?= base_url('public/site_asset/canvas'); ?>/js/plugin/extensions/revolution.extension.navigation.min.js"></script>
-
-	<!-- Slider -->
-	<script>
-	  var tpj = jQuery;
-	  var revapi30;
-
-	  tpj(document).ready(function () {
-	    if (tpj("#rev_slider_30_1").revolution == undefined) {
-	      revslider_showDoubleJqueryError("#rev_slider_30_1");
-	    } else {
-	      revapi30 = tpj("#rev_slider_30_1")
-	        .show()
-	        .revolution({
-	          sliderType: "carousel",
-	          jsFileLocation: "<?= base_url('public/public/site_asset/canvas/js/plugin/')?>/",
-	          sliderLayout: "fullwidth",
-	          dottedOverlay: "none",
-	          delay: 9000,
-	          navigation: {
-	            keyboardNavigation: "off",
-	            keyboard_direction: "horizontal",
-	            mouseScrollNavigation: "off",
-	            onHoverStop: "off",
-	            touch: {
-	              touchenabled: "on",
-	              swipe_threshold: 75,
-	              swipe_min_touches: 1,
-	              swipe_direction: "horizontal",
-	              drag_block_vertical: false,
-	            },
-	            arrows: {
-	              style: "gyges",
-	              enable: true,
-	              hide_onmobile: false,
-	              hide_onleave: false,
-	              tmp: "",
-	              left: {
-	                h_align: "left",
-	                v_align: "center",
-	                h_offset: 20,
-	                v_offset: 0,
-	              },
-	              right: {
-	                h_align: "right",
-	                v_align: "center",
-	                h_offset: 20,
-	                v_offset: 0,
-	              },
-	            },
-	            tabs: {
-	              style: "gyges",
-	              enable: true,
-	              width: 250,
-	              height: 80,
-	              min_width: 250,
-	              wrapper_padding: 30,
-	              wrapper_color: "#26292b",
-	              wrapper_opacity: "1",
-	              tmp: '<div class="tp-tab-content">  <span class="tp-tab-date">{{param1}}</span>  <span class="tp-tab-title">{{title}}</span></div><div class="tp-tab-image"></div>',
-	              visibleAmount: 5,
-	              hide_onmobile: false,
-	              hide_onleave: false,
-	              hide_delay: 200,
-	              direction: "horizontal",
-	              span: true,
-	              position: "outer-bottom",
-	              space: 0,
-	              h_align: "center",
-	              v_align: "bottom",
-	              h_offset: 0,
-	              v_offset: 0,
-	            },
-	          },
-	          carousel: {
-	            horizontal_align: "center",
-	            vertical_align: "center",
-	            fadeout: "on",
-	            vary_fade: "on",
-	            maxVisibleItems: 3,
-	            infinity: "on",
-	            space: 0,
-	            stretch: "off",
-	          },
-	          gridwidth: 720,
-	          gridheight: 405,
-	          lazyType: "none",
-	          shadow: 0,
-	          spinner: "off",
-	          stopLoop: "on",
-	          stopAfterLoops: 0,
-	          stopAtSlide: 1,
-	          shuffle: "off",
-	          autoHeight: "off",
-	          disableProgressBar: "on",
-	          hideThumbsOnMobile: "off",
-	          hideSliderAtLimit: 0,
-	          hideCaptionAtLimit: 0,
-	          hideAllCaptionAtLilmit: 0,
-	          debugMode: false,
-	          fallbacks: {
-	            simplifyAll: "off",
-	            nextSlideOnWindowFocus: "off",
-	            disableFocusListener: false,
-	          },
-	        });
-	    }
-	  }); /*ready*/
-	</script>
-
-	<script>
-	  var tpj = jQuery;
-
-	  tpj(document).ready(function () {
-	    var apiRevoSlider = tpj("#rev_slider_ishop")
-	      .show()
-	      .revolution({
-	        sliderType: "standard",
-	        jsFileLocation: "<?= base_url('public/site_asset/canvas'); ?>/js/",
-	        sliderLayout: "fullwidth",
-	        dottedOverlay: "none",
-	        delay: 9000,
-	        navigation: {},
-	        responsiveLevels: [1200, 992, 768, 480, 320],
-	        gridwidth: 1140,
-	        gridheight: 300,
-	        lazyType: "none",
-	        shadow: 0,
-	        spinner: "off",
-	        autoHeight: "off",
-	        disableProgressBar: "on",
-	        hideThumbsOnMobile: "off",
-	        hideSliderAtLimit: 0,
-	        hideCaptionAtLimit: 0,
-	        hideAllCaptionAtLilmit: 0,
-	        debugMode: false,
-	        fallbacks: {
-	          simplifyAll: "off",
-	          disableFocusListener: false,
-	        },
-	        navigation: {
-	          keyboardNavigation: "off",
-	          keyboard_direction: "horizontal",
-	          mouseScrollNavigation: "off",
-	          onHoverStop: "off",
-	          touch: {
-	            touchenabled: "on",
-	            swipe_threshold: 75,
-	            swipe_min_touches: 1,
-	            swipe_direction: "horizontal",
-	            drag_block_vertical: false,
-	          },
-	          arrows: {
-	            style: "ares",
-	            enable: true,
-	            hide_onmobile: false,
-	            hide_onleave: false,
-	            tmp: '<div class="tp-title-wrap"> <span class="tp-arr-titleholder">{{title}}</span> </div>',
-	            left: {
-	              h_align: "left",
-	              v_align: "center",
-	              h_offset: 10,
-	              v_offset: 0,
-	            },
-	            right: {
-	              h_align: "right",
-	              v_align: "center",
-	              h_offset: 10,
-	              v_offset: 0,
-	            },
-	          },
-	        },
-	      });
-
-	    apiRevoSlider.on("revolution.slide.onloaded", function (e) {
-	      SEMICOLON.Base.sliderDimensions();
-	    });
-	  }); //ready
-	</script>
-
+	 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+	
+   <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 <?= $this->endSection(); ?>
 
 

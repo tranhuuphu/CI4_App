@@ -12,8 +12,8 @@ $routes = Services::routes();
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultController('DaiLongController');
-// $routes->setDefaultController('MayMocController');
+// $routes->setDefaultController('DaiLongController');
+$routes->setDefaultController('MayMocController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -231,39 +231,39 @@ $routes->group("admin", ['filter'=>'AuthCheck'], function($routes){
 });
 
 
-// Canvas Site
+// DaiLong Site
 
-$routes->get('/', 'DaiLongController::index');
+// $routes->get('/', 'DaiLongController::index');
 
-$routes->get('(:any)/(:any)-(:num).html', 'DaiLongController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
-
-
-$routes->get('sitemap.xml', 'DaiLongController::siteMap');
-$routes->get('table_image', 'DaiLongController::table_image');
-
-$routes->get('tag/(:any)', 'DaiLongController::tag/$1');
-$routes->get('cart/remove/(:num)', 'DaiLongController::remove/$1');
-$routes->get('buy/(:num)', 'DaiLongController::buy/$1');
-$routes->post('buy/(:num)', 'DaiLongController::buy/$1');
-$routes->get('gio-hang/cap-nhat', 'DaiLongController::update');
-$routes->post('gio-hang/cap-nhat', 'DaiLongController::update');
-$routes->get('gio-hang', 'DaiLongController::cart');
-$routes->get('dat-hang', 'DaiLongController::order');
-$routes->get('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
-$routes->post('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
-$routes->get('page/download/(:any)', 'DaiLongController::download/$1');
-
-$routes->get('(:any)/(:any)', 'DaiLongController::class_gallery/$2', ['as' => 'class_topic']);
-$routes->get('(:any)-(:num).html', 'DaiLongController::getPage/$1/$2');
-
-$routes->get('search', 'DaiLongController::getSearch');
-
-$routes->get('san-pham', 'DaiLongController::getProd');
+// $routes->get('(:any)/(:any)-(:num).html', 'DaiLongController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
 
 
+// $routes->get('sitemap.xml', 'DaiLongController::siteMap');
+// $routes->get('table_image', 'DaiLongController::table_image');
+
+// $routes->get('tag/(:any)', 'DaiLongController::tag/$1');
+// $routes->get('cart/remove/(:num)', 'DaiLongController::remove/$1');
+// $routes->get('buy/(:num)', 'DaiLongController::buy/$1');
+// $routes->post('buy/(:num)', 'DaiLongController::buy/$1');
+// $routes->get('gio-hang/cap-nhat', 'DaiLongController::update');
+// $routes->post('gio-hang/cap-nhat', 'DaiLongController::update');
+// $routes->get('gio-hang', 'DaiLongController::cart');
+// $routes->get('dat-hang', 'DaiLongController::order');
+// $routes->get('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
+// $routes->post('hoan-thanh-dat-hang', 'DaiLongController::finishOrder');
+// $routes->get('page/download/(:any)', 'DaiLongController::download/$1');
+
+// $routes->get('(:any)/(:any)', 'DaiLongController::class_gallery/$2', ['as' => 'class_topic']);
+// $routes->get('(:any)-(:num).html', 'DaiLongController::getPage/$1/$2');
+
+// $routes->get('search', 'DaiLongController::getSearch');
+
+// $routes->get('san-pham', 'DaiLongController::getProd');
 
 
-$routes->get('(:any)-(:num)', 'DaiLongController::postCate/$1/$2');
+
+
+// $routes->get('(:any)-(:num)', 'DaiLongController::postCate/$1/$2');
 
 
 
@@ -273,37 +273,37 @@ $routes->get('(:any)-(:num)', 'DaiLongController::postCate/$1/$2');
 
 
 // MayMoc
-// $routes->get('/', 'MayMocController::index');
+$routes->get('/', 'MayMocController::index');
 
-// $routes->get('(:any)/(:any)-(:num).html', 'MayMocController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
-
-
-// $routes->get('sitemap.xml', 'MayMocController::siteMap');
-// $routes->get('table_image', 'MayMocController::table_image');
-
-// $routes->get('tag/(:any)-(:num)', 'MayMocController::tag/$1/$2');
-// $routes->get('cart/remove/(:num)', 'MayMocController::remove/$1');
-// $routes->get('buy/(:num)', 'MayMocController::buy/$1');
-// $routes->post('buy/(:num)', 'MayMocController::buy/$1');
-// $routes->get('gio-hang/cap-nhat', 'MayMocController::update');
-// $routes->post('gio-hang/cap-nhat', 'MayMocController::update');
-// $routes->get('gio-hang', 'MayMocController::cart');
-// $routes->get('dat-hang', 'MayMocController::order');
-// $routes->get('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
-// $routes->post('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
-// $routes->get('page/download/(:any)', 'MayMocController::download/$1');
-
-// $routes->get('(:any)/(:any)', 'MayMocController::class_gallery/$2', ['as' => 'class_topic']);
-// $routes->get('(:any)-(:num).html', 'MayMocController::getPage/$1/$2');
-
-// $routes->get('search', 'MayMocController::getSearch');
-
-// $routes->get('san-pham', 'MayMocController::getProd');
+$routes->get('(:any)/(:any)-(:num).html', 'MayMocController::post/$1/$2/$3', ['as' => 'post_blog_gallery']);
 
 
+$routes->get('sitemap.xml', 'MayMocController::siteMap');
+$routes->get('table_image', 'MayMocController::table_image');
+
+$routes->get('tag/(:any)-(:num)', 'MayMocController::tag/$1/$2');
+$routes->get('cart/remove/(:num)', 'MayMocController::remove/$1');
+$routes->get('buy/(:num)', 'MayMocController::buy/$1');
+$routes->post('buy/(:num)', 'MayMocController::buy/$1');
+$routes->get('gio-hang/cap-nhat', 'MayMocController::update');
+$routes->post('gio-hang/cap-nhat', 'MayMocController::update');
+$routes->get('gio-hang', 'MayMocController::cart');
+$routes->get('dat-hang', 'MayMocController::order');
+$routes->get('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
+$routes->post('hoan-thanh-dat-hang', 'MayMocController::finishOrder');
+$routes->get('page/download/(:any)', 'MayMocController::download/$1');
+
+$routes->get('(:any)/(:any)', 'MayMocController::class_gallery/$2', ['as' => 'class_topic']);
+$routes->get('(:any)-(:num).html', 'MayMocController::getPage/$1/$2');
+
+$routes->get('search', 'MayMocController::getSearch');
+
+$routes->get('san-pham', 'MayMocController::getProd');
 
 
-// $routes->get('(:any)-(:num)', 'MayMocController::postCate/$1/$2');
+
+
+$routes->get('(:any)-(:num)', 'MayMocController::postCate/$1/$2');
 
 
 /*

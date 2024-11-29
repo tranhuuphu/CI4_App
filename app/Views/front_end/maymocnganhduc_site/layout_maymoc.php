@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/maymocnganhduc_asset'); ?>/style.css?<?= time() ?>" />
 
-    <link rel="stylesheet" href="<?= base_url('public/site_asset/maymocnganhduc_asset'); ?>/css/font-icons.css" />
+    <link rel="stylesheet" href="<?= base_url('public/site_asset/maymocnganhduc_asset'); ?>/css/font-icons.css2?<?= time() ?>" />
 
     <link rel="stylesheet" href="<?= base_url('public/site_asset/maymocnganhduc_asset'); ?>/css/drone.css?<?= time() ?>" />
 

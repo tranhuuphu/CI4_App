@@ -180,9 +180,9 @@
                     <li>
                       <a href="<?= base_url('page/download/'.$key3['gallery_image']) ?>"><i class="fas fa-download"></i> Image</a>
                     </li>
-                    <?php if($key3['gallery_file_download'] != null): ?>
+                    <?php if($key3['gallery_link_file_origin'] != null): ?>
                       <li>
-                        <a href="<?= $key3['gallery_file_download'] ?>" target= "_blank"><i class="fas fa-file-download"></i> File</a>
+                        <a href="<?= $key3['gallery_link_file_origin'] ?>" target= "_blank"><i class="fas fa-file-download"></i> File</a>
                       </li>
                     <?php endif; ?>
                   </ul>

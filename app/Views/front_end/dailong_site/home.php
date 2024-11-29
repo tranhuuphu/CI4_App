@@ -272,6 +272,7 @@
 		                        <h2><a href="<?= base_url('').'/'.$pr['post_cate_slug'].'/'.$pr['post_slug'].'-'.$pr['id'].'.html'; ?>" title="<?= $pr['post_title']; ?>"><?= $pr['post_title']; ?></a></h2>
 		                      </div>
 		                      <div class="entry-meta">
+
 		                        <ul>
 		                          <li><i class="far fa-calendar-alt"></i>
 		                          	<?php

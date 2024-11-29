@@ -9,7 +9,7 @@
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>">Home</a></li>
-              <li class="breadcrumb-item active">Danh Sách Slider</li>
+              <li class="breadcrumb-item active">Danh Sách Slide</li>
             </ol>
           </div>
         </div>
@@ -46,7 +46,6 @@
                       <th>Thứ tự</th>
                       <th>Tiêu Đề</th>
 	                    <th>Ảnh</th>
-	                    <th>Thuộc Phân Loại</th>
                       <th>Option</th>
 	                  </tr>
                   </thead>
@@ -58,19 +57,23 @@
 		                  <tr <?php if(!empty(session()->getFlashdata('success')) && session()->getFlashdata('success') == $g['carousel_title'] ): ?> class="table-primary" <?php endif; ?>>
                         <td style="text-align: center;" class="text-bold"><?= $i; ?></td>
                         <?php $i = $i + 1; ?>
-
                         
-
-                        
-		                    <td><?= $g['carousel_title']; ?></td>
-                        <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/').'/'.'/'.$g['carousel_image'] ?>" height="60"></div></td>
-                        <td><strong><?= $g['carousel_title']; ?></strong></td>
-		                    
-                        
-		                    
 		                    <td>
+                          <?= $g['carousel_title']; ?>
+                          <br>
+                          <?php if($g['carousel_status'] == 1 ): ?><small class="text-danger">Đang Hiển Thị </small><?php else: ?><small class="text-secondary">Đang Bị Ẩn </small><?php endif; ?>  
+                        </td>
 
+                        <td><div class="d-flex align-items-center"><img class="rounded-circle2" src="<?= base_url('public/upload/tinymce/carousel_asset/').'/'.$g['carousel_image'] ?>" height="60"></div></td>
+		                    <td>
                           <a href="<?= base_url('admin/carousel/edit/'.$g['id']) ?>" class="ml-3"><i class="fas fa-edit"></i> Edit</a>
+
+                          <?php if($g['carousel_status'] == 1 ): ?>
+                            <a href="<?= base_url('admin/carousel/hidden/'.$g['id']) ?>" class="ml-3 text-success" ><i class="fas fa-eye-slash"></i> Hidden</a>
+                          <?php else: ?>
+                            <a href="<?= base_url('admin/carousel/show/'.$g['id']) ?>" class="ml-3 text-info" ><i class="fas fa-eye"></i> Show</a>
+                          <?php endif; ?>
+
                           <a href="<?= base_url('admin/carousel/del/'.$g['id']) ?>" class="ml-3 text-red" onclick="return confirm('are you sure delete this image?')"><i class="fas fa-trash"></i> Delete</a></td>
 		                  </tr>
 	                  <?php endforeach; ?>
@@ -82,7 +85,6 @@
                     <th>Thứ tự</th>
                     <th>Tiêu Đề</th>
                     <th>Ảnh</th>
-                    <th>Thuộc Phân Loại</th>
                     <th>Option</th>
                   </tr>
                   </tfoot>

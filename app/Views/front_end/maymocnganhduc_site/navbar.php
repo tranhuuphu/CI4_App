@@ -9,7 +9,7 @@
     <div class="container" data-class="up-lg:border up-lg:shadow-sm">
       <div class="header-row">
         <div id="logo" class="me-lg-4">
-          <a href="index.html">
+          <a href="<?= base_url() ?>">
             <img class="py-2 animated2 infinite2" src="<?= base_url(''); ?>/public/upload/tinymce/image_asset/<?= $page_home['page_favicon']; ?>" alt="Logo" style=";" />
           </a>
         </div>

@@ -71,7 +71,13 @@
 	              	<div class="form-group">
                     <label class="upper">Ảnh (1856x650px)</label>
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'carousel_image') : '' ?></p>
-                    <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="carousel_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;">
+                    <!-- Drag and Drop -->
+                    <div class="upload-container">
+                        <input type="file" id="file_upload" class="form-control-file mb-2" id="exampleFormControlFile1" name="carousel_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"/>
+                    </div>
+                    <br>
+                    <img id="output"/ style="width: 100%" class="pt-1">
+
 
                     <img id="output"/ style="width: 100%" class="pt-1">
                     <script>

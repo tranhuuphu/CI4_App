@@ -1,4 +1,4 @@
-<?= $this->extend('front_end/hat_nhua/layout'); ?>
+<?= $this->extend('front_end/maymocnganhduc_site/layout_maymoc'); ?>
 
 <?= $this->section('content'); ?>
 

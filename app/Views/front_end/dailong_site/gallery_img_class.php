@@ -74,7 +74,7 @@
                       </a>
                     <?php endif; ?>
 
-                    <?php if($key['gallery_file_download'] == null): ?>
+                    <?php if($key['gallery_link_file_origin'] == null): ?>
                       <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" target= "_blank" class="overlay-trigger-icon bg-light text-dark" title="<?= $key['gallery_title'] ?>" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
                         <i class="fas fa-download"></i>
                       </a>
@@ -88,7 +88,7 @@
                 <div class="portfolio-desc portfolio-desc2 card-body" style="padding: 0px">
                   <h3 class="card-title"><a href="<?= base_url().'/'.$cate_gallery['cate_slug'].'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html' ?>" title="<?= $key['gallery_title'] ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
                   <span>
-                    <?php if($key['gallery_file_download'] == null)
+                    <?php if($key['gallery_link_file_origin'] == null)
                       if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
                         $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
                         $image_width = $image_info[0];
@@ -97,12 +97,12 @@
                       }
                     ?>
 
-                    <?php if($key['gallery_file_download'] == null): ?>
+                    <?php if($key['gallery_link_file_origin'] == null): ?>
                       <a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save</a>
                     <?php endif; ?>
                     
-                    <?php if($key['gallery_file_download'] != null): ?>
-                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
+                    <?php if($key['gallery_link_file_origin'] != null): ?>
+                      <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_origin'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;<i class="fab fa-google-drive"></i> download file</a>
                     <?php endif; ?>
                     <a href="<?= base_url('bo-suu-tap-topic').'/'.$key['gallery_type_slug'] ?>" class="ml-5"><i class="fas fa-star-of-life"></i> <?= $key['gallery_type_name'] ?></a>
 

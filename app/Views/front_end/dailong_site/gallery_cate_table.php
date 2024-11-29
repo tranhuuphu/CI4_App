@@ -61,11 +61,11 @@
                       </td>
                       <td><a href="<?= base_url('page/download/'.$key['gallery_image']) ?>"><i class="fas fa-download"></i> Download now</a></td>
                       <td>
-                        <?php if($key['gallery_file_download'] != null): ?>
+                        <?php if($key['gallery_link_file_origin'] != null): ?>
                           
                           
 
-                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_file_download'] ?>" target="_blank"><i class="fab fa-google-drive"></i> Download file</a>
+                          <a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_origin'] ?>" target="_blank"><i class="fab fa-google-drive"></i> Download file</a>
                           
                         <?php endif; ?>
                       </td>
