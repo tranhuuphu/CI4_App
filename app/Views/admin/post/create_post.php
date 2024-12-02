@@ -146,6 +146,35 @@
                   </div>
                   <hr>
 
+                  <div class="form-group">
+                    <label class="upper">Chọn Ảnh Nền Nếu Là Bài Viết Nổi Bật <small>(KT: 1920x900)</small></label>
+
+
+                    <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_background') : '' ?></p>
+                    <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
+
+                    
+                    <script>
+                      var loadFile = function(event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function() {
+                          URL.revokeObjectURL(output.src) // free memory
+                        }
+                      };
+                    </script>
+
+                    <!-- Drag and Drop -->
+                    <div class="upload-container">
+                        <input type="file" id="file_upload" class="form-control-file mb-2" id="exampleFormControlFile1" name="post_background" accept="image" onchange="loadFile(event)" style="overflow: hidden;"/>
+                    </div>
+                    <br>
+                    <img id="output"/ style="width: 100%" class="pt-1">
+
+                    
+                  </div>
+                  <hr>
+
                   <div class="form-group clearfix">
                     <label class="upper text-info">Tình Trạng Bài Viết</label>
                     <br>
@@ -253,7 +282,7 @@
                       <hr>
 
                       <div class="form-group">
-                        <label class="upper">Tag Seo</label>
+                        <label class="upper">Tag Seo <small>(Cách Nhau Bởi Dấu Phẩy)</small></label>
                         <br>
                           <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?= set_value('taginput'); ?>" data-role="tagsinput" />
                       </div>

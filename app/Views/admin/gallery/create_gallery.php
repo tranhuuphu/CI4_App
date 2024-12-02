@@ -245,9 +245,6 @@
                     <label class="upper">Chọn Ảnh</label>
 
 
-                    
-
-
                     <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'gallery_image') : '' ?></p>
                     <!-- <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="gallery_image" accept="image" onchange="loadFile(event)" style="overflow: hidden;"> -->
 

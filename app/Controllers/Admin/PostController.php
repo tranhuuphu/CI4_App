@@ -119,7 +119,7 @@ class PostController extends BaseController
 
         // image check
         $post_image = $this->request->getPost('post_image');
-                if($post_image != "" || $post_image != null){
+        if($post_image != "" || $post_image != null){
             if(gettype($post_image) === 'string' && gettype(json_decode($post_image)) === 'array'){
                 // array
                 $number_rand = array_rand(json_decode($post_image));
@@ -146,9 +146,30 @@ class PostController extends BaseController
             $data['post_price']     = $this->request->getPost('post_price');
             $data['post_sale']      = $this->request->getPost('post_sale');
         }
-        
 
+        // image Post background
+        if($this->request->getFile('post_background')->guessExtension() != null){
+            $img = $this->request->getFile('post_background');
+            $type = $img->guessExtension();
+            $post_background = $post_alias_slug.'-'.random_string('alnum', 6).'.'.$type;
+            $data['post_background'] = $post_background;
+        }else{
+            $data['post_background'] = null;
+        }
+        
+        // Save to Database
         $postModel->insert($data);
+
+        if($img = $this->request->getFile('post_background'))
+        {
+            if ($img->isValid() && ! $img->hasMoved())
+            {
+                // $newName = $img->getRandomName();
+                $type = $img->getClientMimeType();
+                $img->move(ROOTPATH . 'public/upload/tinymce/post_background', $post_background);
+                            
+            }
+        }
 
 
         $post_id = $postModel->insertID();

@@ -1,58 +1,205 @@
-<?= $this->extend('front_end/dailong_site/layout'); ?>
+<?= $this->extend('front_end/vavo_oto/layout_vavo'); ?>
 
 <?= $this->section('content'); ?>
 
-<?php if($featured != null): ?>
-	<section id="content">
-	  <div class="content-wrap" style="padding-bottom: 0px !important;">
-			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg2 carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
-			  
 
-        <?php foreach($featured as $key): ?>
-				  <div class="oc-item" style="margin-top: 50px">
-				    <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>">
+<!-- Slider ============================================= -->
 
-				    	<img class="lazyload" data-src="<?= base_url('public/upload/tinymce/').'/'.$key['post_image']; ?>" alt="<?= $key['post_title']; ?>"/></a>
-				    <div class="bg-overlay">
-				      <div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start p-4">
-				        <div>
-				          <span class="badge bg-danger"><?= $key['cate_name']; ?></span>
-				          <div class="portfolio-desc px-0">
-				            <h3><a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>"><?= $key['post_title']; ?></a></h3>
-				            <span>
-				            	<i class='fas fa-calendar-alt'></i> 
-				            	<?php
-				            		$datetime = (new \CodeIgniter\I18n\Time);
-				            		$yearNow = $datetime::now()->getYear();
-				            		$yearMonthsNow = $datetime::now()->getMonth();
-				            		$yearPost = $datetime::parse($key['updated_at'])->getYear();
-				            		
-				            		$yearMonthsPost = $datetime::parse($key['updated_at'])->getMonth();
-				            		if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-				            			echo $datetime::parse($key['updated_at'])->humanize();
-				            		}
-				            		if(($yearNow - $yearPost) > 1){
-				            			echo $datetime::parse($key['updated_at'])->humanize();
-				            		}else{
-				            			echo $datetime::parse($key['updated_at'])->toLocalizedString('dd MMM yyyy');
-				            		}
-				            	?>
-				            </span>
-				          </div>
-				          <a href="<?= base_url('').'/'.$key['cate_slug'].'/'.$key['post_slug'].'-'.$key['id'].'.html'; ?>" title = "<?= $key['post_title']; ?>" class="btn btn-sm btn-outline-light mx-0 mb-2"><i class="fas fa-long-arrow-alt-right"></i> Read</a>
-				        </div>
-				      </div>
+<?php
+	$featured_i = array_slice($featured, 0, 2);
+	$featured_ii = array_slice($featured, 3);
+?>
 
-				    </div>
-				  </div>
-        <?php endforeach; ?>
+<section id="slider" class="slider-element swiper_wrapper min-vh-60 min-vh-md-100" data-dots="true" data-loop="true" data-grab="false">
 
+	<div class="swiper swiper-parent">
+		<div class="swiper-wrapper">
+
+
+      <?php foreach($featured_i as $key_featured_i): ?>
+				<div class="swiper-slide dark">
+					<div class="container">
+						<div class="slider-caption slider-caption-center">
+							<div>
+								<h2 class="font-primary text-transform-none"><?= $key_featured_i['post_title']; ?></h2>
+								<p class="fw-light font-primary d-none d-sm-block"><?= $key_featured_i['post_intro']; ?></p>
+								<a href="demo-car-dealers.html" class="button button-rounded button-border button-white button-light text-transform-none">View Details</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide-bg" style="background-image: url('<?= base_url('public/upload/tinymce/post_background/').'/'.$key_featured_i['post_background']; ?>');"></div>
+				</div>
+			<?php endforeach; ?>
+
+			
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+
+</section>
+<!-- #Slider End -->
+
+<!-- Content============================================= -->
+<section id="content">
+
+	<div class="content-wrap pb-0" style="padding-top: 1px">
+
+		<!-- Masonry Thums
+		============================================= -->
+		<div class="row m-0 dark" data-height-xs="500" data-height-sm="500" data-height-md="350" data-height-lg="350" data-height-xl="350">
+			<?php foreach($featured_ii as $key_featured_ii): ?>
+			<a href="demo-car-dealers.html" class="col-md-4 image_fade border-right" style="background: url('<?= base_url('public/upload/tinymce/').'/'.$key_featured_ii['post_image']; ?>') no-repeat center center / cover;">
+				<div class="bg-overlay">
+					<div class="bg-overlay-content text-overlay-mask dark align-items-end justify-content-start">
+						<div class="portfolio-desc py-0">
+							<h3><?= $key_featured_i['post_title']; ?></h3>
+							<span>Xem thêm &rarr;</span>
+						</div>
+					</div>
+				</div>
+			</a>
+			<?php endforeach; ?>
+
+		</div>
+
+		<!-- Moving car on scroll
+		============================================= -->
+		<div class="section mt-0" style="padding: 100px 0">
+			<div class="running-car mt-6">
+				<img class="car" src="https://canvastemplate.com/demos/car/images/moving-car/car.jpg" alt="Image">
+			</div>
+			<div class="container">
+				<div class="row" style="position: relative;">
+					<div class="col-lg-6 offset-lg-6">
+						<div class="heading-block h-large">
+							<h3>Our Fleet<br>Your Fleet</h3>
+						</div>
+						<p>Assertively iterate enterprise-wide portals through synergistic products. Efficiently build adaptive schemas after transparent quality vectors. Phosfluorescently optimize competitive resources after extensive convergence. Rapidiously optimize high-quality meta-services via distributed architectures. Credibly deliver 24/365.</p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Moving car on scroll End -->
+
+
+
+
+
+
+		<div class="section m-0 bg-transparent" style="padding: 40px 0;">
+			<div class="container">
+				<div class="heading-block text-center">
+					<h3 class="fw-bold">Featured</h3>
+				</div>
+
+
+
+				<!-- Portfolio Items
+				============================================= -->
+				<div id="portfolio" class="portfolio row grid-container gutter-20 col-mb-30" data-layout="fitRows">
+
+					<!-- Car 1 -->
+					<article class="portfolio-item col-12 col-sm-6 col-lg-4 cf-sedan">
+						<div class="grid-inner">
+							<div class="portfolio-image">
+								<a href="demo-car-dealers.html">
+									<img src="https://canvastemplate.com/demos/car/images/filter-cars/1.jpg" alt="Open Imagination">
+									<!-- <div class="filter-p-pricing">
+										<span class="p-price fw-bold ls-1">$32,568</span>
+										<span class="p-price-msrp">MSRP : <strong>$35,698</strong></span>
+									</div> -->
+								</a>
+							</div>
+							<div class="portfolio-desc">
+								<h3><a href="demo-car-dealers.html">Ford Mustang - White</a></h3>
+								<span>Dramatically synthesize parallel applications vis-a-vis revolutionary e-tailers. Monotonectally incubate cooperative partnerships.</span>
+							</div>
+
+						</div>
+					</article>
+
+
+
+				</div>
+
+			</div>
+		</div> <!-- Filter Car lists end -->
+
+
+		<!-- Counter Area
+		============================================= -->
+		<div class="section counter-section m-0 dark">
+			<div class="container align-items-stretch">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 text-center">
+						<div>
+							<i class="i-plain i-large mx-auto color icon-car-fulltime"></i>
+							<div class="counter"><span data-from="10" data-to="11365" data-refresh-interval="50" data-speed="1000"></span></div>
+							<h5>Happy Customers</h5>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 text-center">
+						<div>
+							<i class="i-plain i-large mx-auto color icon-car-money"></i>
+							<div class="counter"><span data-from="10" data-to="145" data-refresh-interval="50" data-speed="700"></span></div>
+							<h5>Cars in Stock</h5>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 text-center">
+						<div>
+							<i class="i-plain i-large mx-auto color icon-car-fan"></i>
+							<div class="counter"><span data-from="10" data-to="50" data-refresh-interval="85" data-speed="1200"></span></div>
+							<h5>Showrooms</h5>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 text-center">
+						<div>
+							<i class="i-plain i-large mx-auto color icon-car-fuel2"></i>
+							<div class="counter"><span data-from="10" data-to="7664" data-refresh-interval="30" data-speed="900"></span></div>
+							<h5>Awwards</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- Counter Area end -->
+
+
+		<!-- Buy And Sell Section
+		============================================= -->
+		<div class="section m-0 p-0">
+			<div class="row align-items-stretch">
+				<!-- Half Section 1 -->
+				<div class="col-lg-6 dark bg-color" style="background: url('https://canvastemplate.com/demos/car/images/5.jpg') center center no-repeat; background-size: cover;">
+					<div class="col-padding">
+						<i class="i-plain i-xlarge icon-car-service inline-block" style="margin-bottom: 20px;"></i>
+						<div class="heading-block border-0" style="margin-bottom: 20px;">
+							<h3>Are You Looking for a New Car?</h3>
+						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur, doloribus. Aspernatur, maiores earum eaque quas temporibus eius dolore dicta.</p>
+						<a href="#" class="button button-rounded button-white button-light m-0">Know More</a>
+					</div>
+				</div>
+				<!-- Half Section 2 -->
+				<div class="col-lg-6 bg-color" style="background: url('https://canvastemplate.com/demos/car/images/6.jpg') center center no-repeat; background-size: cover;">
+					<div class="col-padding">
+						<i class="i-plain i-xlarge icon-car-care inline-block" style="margin-bottom: 20px;"></i>
+						<div class="heading-block border-0" style="margin-bottom: 20px;">
+							<h3>Want to sell a used car?</h3>
+						</div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur, doloribus. Aspernatur, maiores earum eaque quas temporibus eius dolore dicta.</p>
+						<a href="#" class="button button-large button-dark button-black button-rounded m-0">Know More</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
-	</section>
-<?php endif; ?>
-<!-- End Slider -->
+
+	</div>
+</section><!-- #content end -->
+
+
 
 
 <!-- <div class="section parallax scroll-detect m-0 border-0" style="background: linear-gradient(to right, #96DEDA, #50C9C3);">
@@ -460,105 +607,6 @@
 		</div>
 	</section>
   
-
-<?php if(count($gallery_home) > 0): ?>
-	<section id="content">
-    <div class="content-wrap">
-      <div class="container">
-        <div class="fancy-title title-border">
-			    <h3 class="mb-2 ls-1 text-uppercase fw-bold" style="color: #5089fa">BỘ SƯU TẬP</h3>
-			  </div>
-        
-        <div id="portfolio-ajax-wrap">
-          <div id="portfolio-ajax-container"></div>
-        </div>
-        <div id="portfolio-ajax-loader">
-          <div class="css3-spinner">
-            <div class="css3-spinner-ball-scale-multiple">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-
-        <div id="portfolio" class="portfolio portfolio-ajax row grid-container g-3" data-layout="fitRows">
-        	<?php $i = 1; ?>
-        	<?php foreach($gallery_home as $key): ?>
-          <article id="portfolio-item-<?= $i ?>" class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-media pf-icons">
-            <div class="grid-inner">
-              <div class="portfolio-image">
-                <a href="javascript:void(0)">
-                  <img class="lazyload" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>" alt="<?= $key['gallery_title'] ?>"/>
-                </a>
-
-                <div class="bg-overlay">
-                  <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                    <a
-                      href="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.$key['gallery_image'] ?>"
-                      class="overlay-trigger-icon bg-light text-dark"
-                      data-hover-animate="fadeInDownSmall"
-                      data-hover-animate-out="fadeOutUpSmall"
-                      data-hover-speed="350"
-                      data-lightbox="image"
-                      title="
-                      	<?php
-                      		// if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
-                      		// 	$image = ('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-					                //   $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-					                //   $image_width = $image_info[0];
-					                //   $image_height = $image_info[1];
-					                //   echo "Kích thước ảnh: ".' '.$image_width.'x'.$image_height.' pixel';
-                      		// }
-                      		
-				                ?>
-                      "
-                    >
-                      <i class="fas fa-expand-alt"></i>
-                    </a>
-                    
-                  </div>
-                  <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
-                </div>
-              </div>
-
-              <div class="portfolio-desc">
-                <h3><a href="<?= base_url('bo-suu-tap').'/'.$key['gallery_title_slug'].'-'.$key['id'].'.html'  ?>" class="fw-bold"><?= $key['gallery_title'] ?></a></h3>
-                <span class="text-italic">
-
-                	<?php if($key['gallery_link_file_origin'] == null && $key['gallery_link_file_short'] == null)
-		              	if(file_exists('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']) != null){
-	                    $image_info = getimagesize('public/upload/tinymce/gallery_asset'.'/'.$key['gallery_image']);
-	                    $image_width = $image_info[0];
-	                    $image_height = $image_info[1];
-	                    echo $image_width.'x'.$image_height.' (pixel)&nbsp;';
-	                  }
-		              ?>
-
-		              <?php if($key['gallery_link_file_origin'] == null && $key['gallery_link_file_short'] == null): ?>
-		              	<a href="<?= base_url('page/download/'.$key['gallery_image']) ?>" class="ml-5"><i class="fas fa-save"></i> save image</a>
-	              	<?php endif; ?>
-	              	
-	              	<?php if($key['gallery_link_file_short'] != null): ?>
-		              	<a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_short'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
-		              <?php elseif($key['gallery_link_file_origin'] != null): ?>
-		              	<a href="http://ouo.io/qs/iVlhUpN8?s=<?= $key['gallery_link_file_origin'] ?>" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;<i class="fab fa-google-drive"></i> download file</a>
-		              <?php endif; ?>
-                </span>
-              </div>
-            </div>
-          </article>
-          <?php $i += 1; ?>
-          <?php endforeach; ?>
-
-          
-
-        </div>
-      </div>
-      
-    </div>
-  </section>
-<?php endif; ?>
 
 
 	
