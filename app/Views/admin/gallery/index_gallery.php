@@ -89,7 +89,7 @@
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= $g['gallery_title']; ?>" class="copyboard btn btn-success mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-clone"></i> Title</button>
 
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= 'To download, please click link to see and download this file/image '.$g['gallery_title'].' (high resolution at link site dailong.asia). '.'Để tải file/ảnh '.$g['gallery_title'].' chất lượng cao vui lòng truy cập link trong bài viết.
-Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="far fa-copy"></i> Intro</button>
+                            Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="far fa-copy"></i> Intro</button>
                           <button type="button" id="my-btn" onclick="myFunction()" data-text="<?= base_url('/').'/bo-suu-tap/'.$g['gallery_title_slug'].'-'.$g['id'].'.html' ?>" class="copyboard btn btn-danger mt-2" data-toggle="tooltip" data-placement="top" title="Click to Copy"><i class="fas fa-link"></i> Link</button>
                           
 
@@ -99,7 +99,8 @@ Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-p
                           
                           <a data-fancybox data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>">
 
-                            <img class="lazyload img_fancy" src="<?= base_url('public/upload') ?>/loader.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" width="200" height="auto">
+                            <img class="lazy lazyload img_fancy" src="<?= base_url('public/upload') ?>/loading_2.gif" data-src="<?= base_url('public/upload/tinymce/gallery_asset/').'/'.'/'.$g['gallery_image'] ?>" width="200" height="auto">
+                            
                           </a>
 
                         </td>
@@ -267,16 +268,7 @@ Thank all!' ?>" class="copyboard btn btn-info mt-2" data-toggle="tooltip" data-p
                           <button type="button" class="btn btn-danger mt-1 mb-1">
                             <a href="<?= base_url('admin/gallery/del/'.$g['id']) ?>" class="text-white" onclick="return confirm('are you sure delete this image?')"><i class="fas fa-trash"></i> Delete</a>
                           </button>
-
-                          
-
-
-                           
-
-                          
                         </td>
-
-
 		                  </tr>
 
 

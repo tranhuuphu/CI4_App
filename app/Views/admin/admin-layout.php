@@ -326,6 +326,9 @@
 	<!-- Lazy load image -->
   <script src="<?= base_url('public/site_asset/dailong_asset'); ?>/js/lazyload.min.js"></script>
 
+  <script type="text/javascript" src="<?= base_url('public/admin_asset'); ?>/jquery.lazy.min.js"></script>
+  <script type="text/javascript" src="<?= base_url('public/admin_asset'); ?>/jquery.lazy.plugins.min.js"></script>
+
 
 
 <script>
@@ -345,32 +348,56 @@
   })
 </script>
 
-	<script>
-	  $(function () {
-	    $("#example1").DataTable({
-	      "responsive": true, "lengthChange": false, "autoWidth": false,"paging": false,
-	      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-	    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-	    $('#example2').DataTable({
-	      "paging": true,
-	      "lengthChange": false,
-          "paging": false,
-	      "searching": false,
-	      "ordering": true,
-	      "info": true,
-	      "autoWidth": false,
-	      "responsive": true,
-	      "pageLength": 40,
-	    });
-	  });
+<script>
 
-		$(document).ready(function() {
-      $("img.lazyload").lazyload();
+
+
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],"pageLength": 25,
+      "lengthMenu": [40, 50, 75, 100, 200]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "pageLength": 40,
     });
+  });
 
-	  
-	  
-	</script>
+
+	$(document).ready(function() {
+    $("img.lazyload").lazyload();
+  });
+
+  $('.lazy').Lazy({
+      customLoaderName: function(element) {
+          element.html('element handled by "customLoaderName"');
+          element.load();
+      },
+      asyncLoader: function(element, response) {
+          setTimeout(function() {
+              element.html('element handled by "asyncLoader"');
+              response(true);
+          }, 1000);
+      },
+      effect: "fadeIn",
+      effectTime: 2000,
+      threshold: 0,
+      placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
+  });
+
+  
+  
+</script>
+
+
+
 	<!-- Trong phần config đổi lại base_url và dòng 1154 trong dialog.php -->
 	<script>
 

@@ -38,19 +38,24 @@
 
 	        <!-- Info boxes -->
 	        <div class="row">
-	          <div class="col-12 col-sm-6 col-md-3">
-	            <div class="info-box bg-light">
-	              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-images"></i></span>
 
-	              <div class="info-box-content">
-	                <span class="info-box-text text-bold">Gallery</span>
-	                <span class="info-box-number">
-	                  <?= $totalGallery ?>
-	                  <small>images</small>
-	                </span>
-	              </div>
-	              <!-- /.info-box-content -->
-	            </div>
+	          <div class="col-12 col-sm-6 col-md-3">
+	          	<a href="<?= base_url('admin/gallery'); ?>">
+	          		<div class="info-box bg-light">
+		              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-images"></i></span>
+
+		              <div class="info-box-content">
+		                <span class="info-box-text text-bold">Gallery</span>
+		                <span class="info-box-number">
+		                  <?= $totalGallery ?>
+		                  <small>images</small>
+		                </span>
+		              </div>
+		              <!-- /.info-box-content -->
+		            </div>
+
+	            </a>
+	            
 	            <!-- /.info-box -->
 	          </div>
 	          <!-- /.col -->
