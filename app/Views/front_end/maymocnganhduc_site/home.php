@@ -49,8 +49,83 @@
 
       font-family: sans; color: black;
   }
+  a{
+    color: black;
+  }
+  a:hover{
+    color: blue;
+  }
 </style>
 
+
+<!-- Content
+============================================= -->
+<section id="content">
+  <div class="content-wrap">
+    <div class="container">
+
+      <div class="row gx-5 col-mb-80">
+        <!-- Post Content
+        ============================================= -->
+        <main class="postcontent col-lg-9 order-lg-last">
+          <div class="card mb-3" style="background-color: #018f59; border-radius: 0px;">
+            <div class="card-body text-bold" style="font-weight: bold; color:#ffffff; font-size: 18px;">
+              Nổi Bật
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php if($most_view != null): ?>
+              <?php foreach($most_view as $mv): ?>
+
+                <div class="col">
+                  <div class="card h-100 shadow">
+                    <img src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" class="card-img-top" alt="<?= $mv['post_title']; ?>">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href=""><?= $mv['post_title']; ?></a></h5>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            <?php endif; ?>
+
+
+            
+
+            
+
+
+          </div>
+
+        </main><!-- .postcontent end -->
+
+        <!-- Sidebar
+        ============================================= -->
+        <aside class="sidebar col-lg-3">
+          <div class="sidebar-widgets-wrap">
+
+            <div class="widget widget_links">
+              <h4>Danh Mục Sản Phẩm</h4>
+              <ul>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Tshirts</a></li>
+                <li><a href="#">Sunglasses</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Watches</a></li>
+              </ul>
+
+            </div>
+
+
+          </div>
+        </aside><!-- .sidebar end -->
+      </div>
+
+    </div>
+  </div>
+</section><!-- #content end -->
 <section class="slider-element bg-contrast- include-header bg-info mt-5" style="margin-top: 200px;">
   <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[0]['post_image']; ?>" alt="<?= $featured[0]['post_title'] ?>" class="object-fit-cover min-vh-75 w-100 h-100" />
   <div class="position-absolute z-2 w-100 h-100 top-0 contour-text">
@@ -77,14 +152,13 @@
         }
 
         .tab-title:hover {
-/*          overflow: visible;*/
           z-index: 1000;
         }
       </style>
     <div class="container pt-lg-4">
       <div class="row justify-content-center">
         <div class="col-md-10 text-center">
-          <h3 class="display-6 mb-3 fw-medium text-uppercase">Bài Viết & SP Mới</h3>
+          <h3 class="display-6 mb-3 fw-medium text-uppercase">Bài Viết & SP Mới 2</h3>
 
           <ul class="nav nav-tabs nav-fill" id="demo-drone-tab" role="tablist">
             <?php $i = 1; ?>
