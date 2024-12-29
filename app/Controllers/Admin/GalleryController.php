@@ -17,7 +17,9 @@ class GalleryController extends BaseController
     }
     public function index(){
         $galleryModel = new GalleryModel();
-        $data['gallery'] = $galleryModel->orderBy('updated_at', 'DESC')->findAll();
+        $gallery = $galleryModel->orderBy('id', 'DESC')->paginate(25);
+        $data['gallery'] = $gallery;
+        $data['pager'] = $galleryModel->pager;
 
         $cateModel = new CateModel();
         $data['cate'] = $cateModel->where('cate_type', 'cate_gallery')->first();

@@ -68,8 +68,8 @@
         <!-- Post Content
         ============================================= -->
         <main class="postcontent col-lg-9 order-lg-last">
-          <div class="card mb-3" style="background-color: #018f59; border-radius: 0px;">
-            <div class="card-body text-bold" style="font-weight: bold; color:#ffffff; font-size: 18px;">
+          <div class="card mb-3" style="background-color: #ffce1b; border-radius: 0px;">
+            <div class="card-body text-bold" style="font-weight: bold; color: #000; font-size: 18px;">
               Nổi Bật
             </div>
           </div>
@@ -82,7 +82,7 @@
                   <div class="card h-100 shadow">
                     <img src="<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>" class="card-img-top" alt="<?= $mv['post_title']; ?>">
                     <div class="card-body">
-                      <h5 class="card-title"><a href=""><?= $mv['post_title']; ?></a></h5>
+                      <h5 class="card-title"><a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>"><?= $mv['post_title']; ?></a></h5>
                     </div>
                   </div>
                 </div>
@@ -90,8 +90,7 @@
             <?php endif; ?>
 
 
-            
-
+          
             
 
 
@@ -105,15 +104,29 @@
           <div class="sidebar-widgets-wrap">
 
             <div class="widget widget_links">
-              <h4>Danh Mục Sản Phẩm</h4>
+              <h4 style="color: #ffce1b;">Danh Mục Sản Phẩm</h4>
+              <?php foreach($cate as $c3): ?>
+                <?php $c_t[] = $c3['cate_parent_id']; ?>
+              <?php endforeach; ?>
               <ul>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="#">Tshirts</a></li>
-                <li><a href="#">Sunglasses</a></li>
-                <li><a href="#">Shoes</a></li>
-                <li><a href="#">Bags</a></li>
-                <li><a href="#">Watches</a></li>
+                <?php foreach($cate as $c): ?>
+                  <?php if($c['cate_parent_id'] == 0): ?>
+                    
+                      
+                      <?php if(in_array($c['id'], $c_t)): ?>
+                          <?php foreach($cate as $c2): ?>
+                            <?php if($c2['cate_parent_id'] == $c['id']): ?>
+                              
+                                <li><a href="<?= base_url('').'/'.$c2['cate_slug'].'-'.$c2['id']; ?>" title="<?= $c2['cate_name']; ?>"><?= $c2['cate_name']; ?></a></li>
+                              
+                            <?php endif; ?>
+                          <?php endforeach; ?>
+                        
+                      <?php endif; ?>
+
+                    
+                  <?php endif; ?>
+                <?php endforeach; ?>
               </ul>
 
             </div>
@@ -216,78 +229,6 @@
     <div class="clear"></div>
 
 
-
-    <div class="container my-6">
-      <div class="row g-4 align-items-stretch">
-        <?php if($most_view != null): ?>
-          <?php foreach($most_view as $mv): ?>
-
-            <div class="col-md-4">
-              <div class="card text-center border-0" style="border: 1px solid black !important; border-radius: 20px; background: #25cfbb">
-                <div class="card-body px-5 py-4 dark" style="background: url('<?= base_url('public/upload/tinymce/').'/'.$mv['post_image']; ?>') no-repeat center bottom / cover; min-height: 600px; border-radius: 20px; background-size: 100% auto">
-                  <p class="text-uppercase small op-06 ls-1 mb-2">Popular Post</p>
-                  <h3 class="mb-1 fs-3" style="color: black"><?= $mv['post_title']; ?></h3>
-                  <p class="mb-4" style="color: black">
-                    <i class="far fa-calendar-alt"></i>
-                    <?php
-                      $datetime = (new \CodeIgniter\I18n\Time);
-                      $yearNow = $datetime::now()->getYear();
-                      $yearMonthsNow = $datetime::now()->getMonth();
-                      $yearPost = $datetime::parse($mv['updated_at'])->getYear();
-                      
-                      $yearMonthsPost = $datetime::parse($mv['updated_at'])->getMonth();
-                      if(($yearNow - $yearPost) == 1 && $yearMonthsNow >= $yearMonthsPost){
-                        echo $datetime::parse($mv['updated_at'])->humanize();
-                      }
-                      if(($yearNow - $yearPost) > 1){
-                        echo $datetime::parse($mv['updated_at'])->humanize();
-                      }else{
-                        echo $datetime::parse($mv['updated_at'])->toLocalizedString('dd MMM yyyy');
-                      }
-                      
-
-                    ?>
-                  </p>
-                  <a href="<?= base_url('').'/'.$mv['post_cate_slug'].'/'.$mv['post_slug'].'-'.$mv['id'].'.html'; ?>" title="<?= $mv['post_title']; ?>" class="button button-small button-offset button-light bg-info text-dark rounded">View Now <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        <?php endif; ?>
-
-        <div class="clear"></div>
-        
-        <div class="col-12 ">
-          <div class="card text-center border-0" style="background: #d3e9f2">
-            <div class="card-body p-0 dark p-3">
-              <img src="<?= base_url('public/upload/tinymce/').'/'.$featured[1]['post_image']; ?>" alt="<?= $featured[1]['post_intro'] ?>" style="border-radius: 20px;" />
-              <div class="position-absolute top-0 pos-x-center mt-3 mt-lg-5">
-                <h3 class="mb-1 fs-3 lead" style="color: blue; font-weight: bold;"><?= $featured[1]['post_title'] ?></h3>
-                <p class="mb-3 d-none d-lg-block lead"><?= $featured[1]['post_intro'] ?></p>
-                <a href="<?= base_url('').'/'.$featured[1]['cate_slug'].'/'.$featured[1]['post_slug'].'-'.$featured[1]['id'].'.html'; ?>" title="<?= $featured[1]['post_title'] ?>" class="button button-small button-offset button-light bg-white text-dark rounded d-none d-lg-inline-block">View Now <i class="fas fa-long-arrow-alt-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="clear mb-5 mb-lg-6"></div>
-      <div class="row g-3 justify-content-center text-center">
-        <div class="col-md-3">
-          <i class="fas fa-vector-square fa-2x"></i>
-          <h3 class="fs-5 mb-3">Chính Xác Cao</h3>
-          <p class="op-07">Sản Phẩm Gia Công Cơ Khí Với Độ Chính Xác Cao, Tỉ Mỉ</p>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">
-          <i class="fas fa-thumbs-up fa-2x"></i>
-          <h3 class="fs-5 mb-3">Giá Cạnh Tranh</h3>
-          <p class="op-07">Luôn có mức giá cạnh tranh nhất đối với sản phẩm được bán ra, và hậu mãi tốt.</p>
-        </div>
-      </div>
-
-    </div>
     <div class="clear"></div>
 
     <div class="section mt-3 footer-stick dark py-4" style="margin-bottom: -80px !important">

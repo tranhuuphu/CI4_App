@@ -1,4 +1,4 @@
-<footer id="footer" class="dark">
+<footer id="footer" class="dark2" style="background-color: #ffce1b; border-radius: 0px;">
   <div class="container">
     <div class="footer-widgets-wrap">
       <div class="row col-mb-50">

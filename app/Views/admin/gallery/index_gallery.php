@@ -289,6 +289,7 @@
                     <th>Option</th>
                   </tr>
                   </tfoot>
+                  <?= $pager->links() ?>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -303,6 +304,7 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <?= $pager->links() ?>
       </div>
       <!-- /.container-fluid -->
     </section>
