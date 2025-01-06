@@ -39,6 +39,12 @@
 	              <!-- form start -->
 	              
 	                <div class="card-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="fas fa-home"></i> Hiển thị trên trang chủ và giới thiệu</label>
+                      <textarea class="form-control" style="height:120px" name="page_home_content" maxlength="255"><?= set_value('page_home_content'); ?></textarea>
+                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'page_home_content') : '' ?></p>
+                    </div>
+
 	                  <div class="form-group">
 	                    <label for="exampleInputEmail1"><i class="fab fa-facebook"></i> Facebook Page</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'facebook') : '' ?></p>
@@ -239,5 +245,5 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('title'); ?>
-Thêm Trang
+Link Social và giới thiệu của trang chủ
 <?= $this->endSection(); ?>

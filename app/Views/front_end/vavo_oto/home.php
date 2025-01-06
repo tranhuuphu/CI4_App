@@ -66,63 +66,22 @@
 		============================================= -->
 		<div class="section mt-0" style="padding: 100px 0">
 			<div class="running-car mt-6">
-				<img class="car" src="https://canvastemplate.com/demos/car/images/moving-car/car.jpg" alt="Image">
+				<img class="car" src="<?= base_url('public/upload/vavo68/') ?>/car.jpg" alt="Image">
+				<img class="wheel" src="<?= base_url('public/upload/vavo68/') ?>/car-tier.png" alt="Image">
 			</div>
 			<div class="container">
 				<div class="row" style="position: relative;">
 					<div class="col-lg-6 offset-lg-6">
 						<div class="heading-block h-large">
-							<h3>Our Fleet<br>Your Fleet</h3>
+							<h4>Vá Vỏ Xe Lưu Động Bình Dương</h4>
 						</div>
-						<p>Assertively iterate enterprise-wide portals through synergistic products. Efficiently build adaptive schemas after transparent quality vectors. Phosfluorescently optimize competitive resources after extensive convergence. Rapidiously optimize high-quality meta-services via distributed architectures. Credibly deliver 24/365.</p>
+						<p><?= $page_home['page_home_content'] ?>.</p>
 					</div>
 				</div>
 			</div>
 		</div> <!-- Moving car on scroll End -->
 
 
-
-
-
-
-		<div class="section m-0 bg-transparent" style="padding: 40px 0;">
-			<div class="container">
-				<div class="heading-block text-center">
-					<h3 class="fw-bold">Featured</h3>
-				</div>
-
-
-
-				<!-- Portfolio Items
-				============================================= -->
-				<div id="portfolio" class="portfolio row grid-container gutter-20 col-mb-30" data-layout="fitRows">
-
-					<!-- Car 1 -->
-					<article class="portfolio-item col-12 col-sm-6 col-lg-4 cf-sedan">
-						<div class="grid-inner">
-							<div class="portfolio-image">
-								<a href="demo-car-dealers.html">
-									<img src="https://canvastemplate.com/demos/car/images/filter-cars/1.jpg" alt="Open Imagination">
-									<!-- <div class="filter-p-pricing">
-										<span class="p-price fw-bold ls-1">$32,568</span>
-										<span class="p-price-msrp">MSRP : <strong>$35,698</strong></span>
-									</div> -->
-								</a>
-							</div>
-							<div class="portfolio-desc">
-								<h3><a href="demo-car-dealers.html">Ford Mustang - White</a></h3>
-								<span>Dramatically synthesize parallel applications vis-a-vis revolutionary e-tailers. Monotonectally incubate cooperative partnerships.</span>
-							</div>
-
-						</div>
-					</article>
-
-
-
-				</div>
-
-			</div>
-		</div> <!-- Filter Car lists end -->
 
 
 		<!-- Counter Area
@@ -132,33 +91,33 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-6 text-center">
 						<div>
-							<i class="i-plain i-large mx-auto color icon-car-fulltime"></i>
-							<div class="counter"><span data-from="10" data-to="11365" data-refresh-interval="50" data-speed="1000"></span></div>
-							<h5>Happy Customers</h5>
+							<i class="fas fa-car fa-4x"></i>
+							<div class="counter"><span data-from="10" data-to="635" data-refresh-interval="50" data-speed="1000"></span></div>
+							<h5>Khách Hàng Hài Lòng</h5>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-6 text-center">
 						<div>
-							<i class="i-plain i-large mx-auto color icon-car-money"></i>
-							<div class="counter"><span data-from="10" data-to="145" data-refresh-interval="50" data-speed="700"></span></div>
-							<h5>Cars in Stock</h5>
+							<i class="fas fa-tools fa-4x"></i>
+							<div class="counter"><span data-from="10" data-to="28" data-refresh-interval="418" data-speed="700"></span></div>
+							<h5>Xe Mỗi Ngày</h5>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-6 text-center">
 						<div>
-							<i class="i-plain i-large mx-auto color icon-car-fan"></i>
-							<div class="counter"><span data-from="10" data-to="50" data-refresh-interval="85" data-speed="1200"></span></div>
-							<h5>Showrooms</h5>
+							<i class="fas fa-store fa-4x"></i>
+							<div class="counter"><span data-from="1" data-to="3" data-refresh-interval="85" data-speed="1200"></span></div>
+							<h5>Cửa Hàng</h5>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-6 text-center">
 						<div>
-							<i class="i-plain i-large mx-auto color icon-car-fuel2"></i>
-							<div class="counter"><span data-from="10" data-to="7664" data-refresh-interval="30" data-speed="900"></span></div>
-							<h5>Awwards</h5>
+							<i class="fas fa-phone-volume fa-4x"></i>
+							<div class="counter"><span data-from="10" data-to="38" data-refresh-interval="30" data-speed="900"></span></div>
+							<h5>Cuộc Gọi/Ngày</h5>
 						</div>
 					</div>
 				</div>
@@ -166,34 +125,7 @@
 		</div><!-- Counter Area end -->
 
 
-		<!-- Buy And Sell Section
-		============================================= -->
-		<div class="section m-0 p-0">
-			<div class="row align-items-stretch">
-				<!-- Half Section 1 -->
-				<div class="col-lg-6 dark bg-color" style="background: url('https://canvastemplate.com/demos/car/images/5.jpg') center center no-repeat; background-size: cover;">
-					<div class="col-padding">
-						<i class="i-plain i-xlarge icon-car-service inline-block" style="margin-bottom: 20px;"></i>
-						<div class="heading-block border-0" style="margin-bottom: 20px;">
-							<h3>Are You Looking for a New Car?</h3>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur, doloribus. Aspernatur, maiores earum eaque quas temporibus eius dolore dicta.</p>
-						<a href="#" class="button button-rounded button-white button-light m-0">Know More</a>
-					</div>
-				</div>
-				<!-- Half Section 2 -->
-				<div class="col-lg-6 bg-color" style="background: url('https://canvastemplate.com/demos/car/images/6.jpg') center center no-repeat; background-size: cover;">
-					<div class="col-padding">
-						<i class="i-plain i-xlarge icon-car-care inline-block" style="margin-bottom: 20px;"></i>
-						<div class="heading-block border-0" style="margin-bottom: 20px;">
-							<h3>Want to sell a used car?</h3>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur, doloribus. Aspernatur, maiores earum eaque quas temporibus eius dolore dicta.</p>
-						<a href="#" class="button button-large button-dark button-black button-rounded m-0">Know More</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 
 
 	</div>

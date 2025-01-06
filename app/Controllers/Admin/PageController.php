@@ -351,18 +351,18 @@ class PageController extends BaseController
         $data['page_detail'] = $page_detail;
 
         $validation = $this->validate([
-            'facebook'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Facebook Page không được để trống.',
-                ],
-            ],
-            'youtube'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Youtube Channel không được để trống.',
-                ],
-            ],
+            // 'facebook'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Facebook Page không được để trống.',
+            //     ],
+            // ],
+            // 'youtube'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Youtube Channel không được để trống.',
+            //     ],
+            // ],
             'maps'=>[
                 'rules'=>'required',
                 'errors' => [
@@ -370,12 +370,12 @@ class PageController extends BaseController
                 ],
             ],
 
-            'g_app'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Google Verification không được để trống.',
-                ],
-            ],
+            // 'g_app'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Google Verification không được để trống.',
+            //     ],
+            // ],
 
             'phone'=>[
                 'rules'=>'required',
@@ -389,17 +389,18 @@ class PageController extends BaseController
                     'required' => 'Địa chỉ không được để trống.',
                 ],
             ],
-            'email'=>[
-                'rules'=>'required',
-                'errors' => [
-                    'required' => 'Email không được để trống.',
-                ],
-            ],
+            // 'email'=>[
+            //     'rules'=>'required',
+            //     'errors' => [
+            //         'required' => 'Email không được để trống.',
+            //     ],
+            // ],
         ]);
         if(!$validation){
             $data['validation'] = $this->validator;
             return view('admin/page/add', $data);
         }
+        $data['page_home_content']   = $this->request->getPost('page_home_content');
         $data['facebook']   = $this->request->getPost('facebook');
         $data['youtube']    = $this->request->getPost('youtube');
         $data['twitter']    = $this->request->getPost('twitter');
