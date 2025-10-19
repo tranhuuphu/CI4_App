@@ -93,7 +93,7 @@
 									</script>
 				          <!-- End Google ads -->
 
-			            <?= $post_detail['post_content2']; ?>
+
 
 			            
 			            <?php if($tag_all): ?>
@@ -363,9 +363,7 @@
               <?php endforeach; ?>
             <?php endif; ?>
           </div>
-          <div class="col-md-12 d-grid gap-2">
-            <a href="<?= base_url('').'/'.$cate_gallery_slug['cate_slug'].'-'.$cate_gallery_slug['id'] ?>" class="btn btn-light">Watch More <i class="fas fa-long-arrow-alt-right"></i></a>
-          </div>
+          
 
 
 					<ins class="adsbygoogle"

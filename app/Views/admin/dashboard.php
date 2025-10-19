@@ -276,8 +276,6 @@
 			                                        
 		                                        <td>
 		                                        	<?= $pmv['post_content'] ?>
-
-		                                        	<?= $pmv['post_content2'] ?>
 		                                        	
 		                                        		
 	                                        	</td>
@@ -654,7 +652,6 @@
 				                                        
 			                                        <td>
 			                                        	<?= $pr['post_content'] ?>
-			                                        	<?= $pr['post_content2'] ?>
 			                                    	</td>
 			                                      </tr>
 			                                      <tr>
@@ -974,7 +971,6 @@
 		                                        
 	                                        <td>
 	                                        	<?= $pr['post_content'] ?>
-	                                        	<?= $pr['post_content2'] ?>
 	                                    	</td>
 	                                      </tr>
 	                                      <tr>

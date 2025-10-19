@@ -33,7 +33,8 @@ class VaVoController extends BaseController
 
         $featured = $post->join('cate', 'cate.id = post.post_cate_id', 'left')->select('cate.cate_name, cate.id, cate.cate_slug, post.*, post.id as p_id')->orderBy('post.id', 'DESC')->where('post_featured', 1)->limit(6)->find();
 
-        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_type', 'normal')->find();
+        $cate_all = $cate->where('cate_parent_id', 0)->where('cate_type', 'normal')->find();
+        // $cate_all = $cate->where('cate_parent_id', 0)->where('cate_status', 1)->where('cate_type', 'normal')->find();
         // dd($cate_all);
         $cate_2 = $cate->findAll();
         $i = 0;

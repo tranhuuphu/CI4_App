@@ -9,7 +9,12 @@
 	$featured_i = array_slice($featured, 0, 2);
 	$featured_ii = array_slice($featured, 3);
 ?>
+<style type="text/css">
+	.stroke {
 
+  text-shadow: 2px 0 20px red !important;
+}
+</style>
 <section id="slider" class="slider-element swiper_wrapper min-vh-60 min-vh-md-100" data-dots="true" data-loop="true" data-grab="false">
 
 	<div class="swiper swiper-parent">
@@ -21,9 +26,9 @@
 					<div class="container">
 						<div class="slider-caption slider-caption-center">
 							<div>
-								<h2 class="font-primary text-transform-none"><?= $key_featured_i['post_title']; ?></h2>
+								<h2 class="stroke font-primary text-transform-none text-border"><?= $key_featured_i['post_title']; ?></h2>
 								<p class="fw-light font-primary d-none d-sm-block"><?= $key_featured_i['post_intro']; ?></p>
-								<a href="demo-car-dealers.html" class="button button-rounded button-border button-white button-light text-transform-none">View Details</a>
+								<a href="<?= base_url('').'/'.$key_featured_i['post_cate_slug'].'/'.$key_featured_i['post_slug'].'-'.$key_featured_i['id'].'.html'; ?>" class="button button-rounded button-border button-white button-light text-transform-none">View Details</a>
 							</div>
 						</div>
 					</div>

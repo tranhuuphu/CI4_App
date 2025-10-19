@@ -219,6 +219,7 @@ class CateController extends BaseController
         $data['cate_status']        = $this->request->getPost('cate_status');
         $data['cate_meta_desc']     = $this->request->getPost('cate_meta_desc');
         $data['cate_meta_key']      = $this->request->getPost('cate_meta_key');
+        $data['cate_type']          = $this->request->getPost('cate_type');
 
 
         

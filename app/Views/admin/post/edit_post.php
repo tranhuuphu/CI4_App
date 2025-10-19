@@ -46,38 +46,18 @@
                     </div>
                     <hr>
 	                  <div class="form-group">
-	                    <label for="exampleInputEmail1" class="upper text-primary">alias - slug (Link Slug On Site - hạn chế thay đổi) <span class="text-red">(*)</span></label>
-                      <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_alias') : '' ?></p>
-	                    <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập tiêu đề bài viết" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)" value="<?php if(set_value('post_alias') != null){echo set_value('post_alias');}else{echo $post_detail['post_alias'];} ?>">
-
-                      <label for="exampleInputEmail1" class="upper mt-3 text-primary">alias Cũ</span></label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_alias']; ?>">
-
-                      <label for="exampleInputEmail1" class="upper mt-3">alias - slug Cũ</span></label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" readonly value="<?php echo $post_detail['post_slug']; ?>">
-	                  </div>
-                    <p id="slug-text" class="text-red"></p>
-	                  <hr>
-	                  <div class="form-group">
 	                    <label for="exampleInputPassword1 upper">Tóm tắt</label>
-	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?php if(set_value('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="250"><?php if(set_value('post_intro') != null){echo set_value('post_intro');}else{echo $post_detail['post_intro'];} ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết 1/2 <span class="text-red">(*)</span></label>
+									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?php if(set_value('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content'];} ?></textarea>
 									    </div>
 									  </div>
 
-                    <hr>
-                    <div class="form-group">
-                      <div class="form-group">
-                        <label class="upper text-red">Nội dung bài viết 2/2 <span class="text-red">(*)</span></label>
-                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?php if(set_value('post_content') != null){echo set_value('post_content');}else{echo $post_detail['post_content2'];} ?></textarea>
-                      </div>
-                    </div>
 
 
 	                </div>
@@ -275,7 +255,7 @@
                       <div class="form-group">
                         <label><strong>Tag Seo:</strong></label>
                         <br>
-                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(set_value('taginput') != null){echo olset_valued('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
+                          <input type="text" class="form-control-file" id="taginput" name="taginput" value="<?php if(set_value('taginput') != null){echo set_value('taginput');}else{ foreach($tagModel as $tag){echo $tag['tag_post_title'].',';}} ?>" data-role="taginput" />
                       </div>
 
                     </div>

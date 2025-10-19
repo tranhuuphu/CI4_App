@@ -86,36 +86,31 @@ class PostController extends BaseController
 
         $postModel = new PostModel();
 
-        $post_alias = $this->request->getPost('post_alias');
-
         $post_title = $this->request->getPost('post_title');
 
         $post_title_slug = mb_strtolower(convert_name($post_title));
         $post_title_slug = reduce_multiples($post_title_slug, '-');
 
-        $post_alias_slug = mb_strtolower(convert_name($post_alias));
-        $post_alias_slug = reduce_multiples($post_alias_slug, '-');
 
         $post_cate_id = $this->request->getPost('post_cate_id');
 
-        $data['post_title']     = $post_title;
-        $data['post_alias']     = $post_alias;
-        $data['post_slug']      = $post_alias_slug;
-        $data['post_intro']     = $this->request->getPost('post_intro');
-        $data['post_content']   = $this->request->getPost('post_content');
-        $data['post_content2']  = $this->request->getPost('post_content2');
+        $data['post_title']         = $post_title;
+        $data['post_title_slug']    = $post_title_slug;
+        $data['post_slug']          = $post_alias_slug;
+        $data['post_intro']         = $this->request->getPost('post_intro');
+        $data['post_content']       = $this->request->getPost('post_content');
 
-        $data['post_cate_id']   = $post_cate_id;
-        $data['post_featured']  = $this->request->getPost('post_featured');
-        $data['post_status']    = $this->request->getPost('post_status');
-        $data['post_finish']    = $this->request->getPost('post_finish');
-        $data['post_image']     = $this->request->getPost('post_image');
+        $data['post_cate_id']       = $post_cate_id;
+        $data['post_featured']      = $this->request->getPost('post_featured');
+        $data['post_status']        = $this->request->getPost('post_status');
+        $data['post_finish']        = $this->request->getPost('post_finish');
+        $data['post_image']         = $this->request->getPost('post_image');
 
-        $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
-        $data['post_meta_key']  = $this->request->getPost('post_meta_key');
+        $data['post_meta_desc']     = $this->request->getPost('post_meta_desc');
+        $data['post_meta_key']      = $this->request->getPost('post_meta_key');
         
-        $data['post_view']      = 0;
-        $data['post_show']      = 1;
+        $data['post_view']          = 0;
+        $data['post_show']          = 1;
 
         // image check
         $post_image = $this->request->getPost('post_image');
@@ -322,9 +317,6 @@ class PostController extends BaseController
             return view('admin/post/edit_post', $data);
         }
 
-        $post_alias = $this->request->getPost('post_alias');
-        $post_alias_slug = mb_strtolower(convert_name($post_alias));
-        $post_alias_slug = reduce_multiples($post_alias_slug, '-');
 
 
         $data['post_title'] = $post_title;
@@ -333,26 +325,26 @@ class PostController extends BaseController
         $post_title_slug = mb_strtolower(convert_name($post_title));
         $post_title_slug = reduce_multiples($post_title_slug, '-');
 
-        $post_cate_id           = $this->request->getPost('post_cate_id');
+        $post_cate_id               = $this->request->getPost('post_cate_id');
 
-        $data['post_title']     = $post_title;
-        $data['post_alias']     = $post_alias;
-        $data['post_slug']      = $post_alias_slug;
-        $data['post_intro']     = $this->request->getPost('post_intro');
-        $data['post_content']   = $this->request->getPost('post_content');
-        $data['post_content2']  = $this->request->getPost('post_content2');
+        $data['post_title']         = $post_title;
+        $data['post_title_slug']    = $post_title_slug;
+        $data['post_slug']          = $post_alias_slug;
+        $data['post_intro']         = $this->request->getPost('post_intro');
+        $data['post_content']       = $this->request->getPost('post_content');
+        $data['post_content2']      = $this->request->getPost('post_content2');
         
-        $data['post_cate_id']   = $post_cate_id;
-        $data['post_featured']  = $this->request->getPost('post_featured');
-        $data['post_finish']    = $this->request->getPost('post_finish');
-        $data['post_status']    = $this->request->getPost('post_status');
+        $data['post_cate_id']       = $post_cate_id;
+        $data['post_featured']      = $this->request->getPost('post_featured');
+        $data['post_finish']        = $this->request->getPost('post_finish');
+        $data['post_status']        = $this->request->getPost('post_status');
         
 
-        $data['post_meta_desc'] = $this->request->getPost('post_meta_desc');
-        $data['post_meta_key']  = $this->request->getPost('post_meta_key');
+        $data['post_meta_desc']     = $this->request->getPost('post_meta_desc');
+        $data['post_meta_key']      = $this->request->getPost('post_meta_key');
 
-        $data['post_view']      = $detailPost['post_view'];
-        $data['post_show']      = $detailPost['post_show'];
+        $data['post_view']          = $detailPost['post_view'];
+        $data['post_show']          = $detailPost['post_show'];
 
         $cate_slug = $cateModel->where('id', $this->request->getPost('post_cate_id'))->first();
 

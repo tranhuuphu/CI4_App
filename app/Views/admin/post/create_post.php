@@ -47,36 +47,29 @@
                     </div>
                     <hr>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="exampleInputEmail1" class="upper">alias - slug <span class="text-red">(*)</span></label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_alias') : '' ?></p>
-                      <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" value="<?= set_value('post_alias') ?>" onload="convertToSlug(this.value)" onkeyup="convertToSlug(this.value)">
+                      <input type="text" name="post_alias" class="form-control" id="exampleInputEmail1" placeholder="Nhập Alias" value="<?= set_value('post_alias') ?>" >
                     </div>
-                    <p id="slug-text" class="text-red"></p>
-                    <hr>
+                    Alias: <p id="slug-text" class="text-red"></p>
+                    <hr> -->
 
 	                  <div class="form-group">
 	                    <label for="exampleInputPassword1" class="upper">Tóm tắt</label>
                       <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_intro') : '' ?></p>
-	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="160"><?= set_value('post_intro') ?></textarea>
+	                    <textarea class="form-control" style="height:100px" name="post_intro" maxlength="250"><?= set_value('post_intro') ?></textarea>
 	                  </div>
 	                  <hr>
 	                  <div class="form-group">
 									    <div class="form-group">
-									      <label class="upper">Nội dung bài viết 1/2 <span class="text-red">(*)</span></label>
+									      <label class="upper">Nội dung bài viết <span class="text-red">(*)</span></label>
                         <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content') : '' ?></p>
 									      <textarea class="form-control" id="content" name="post_content" rows="3" placeholder="Enter ..." height="800px"><?= set_value('post_content') ?></textarea>
 									    </div>
 									  </div>
 
-                    <hr>
-                    <div class="form-group">
-                      <div class="form-group">
-                        <label class="upper text-red">Nội dung bài viết 2/2 <span class="text-red">(*)</span></label>
-                        <p class="text-left text-danger mt-1"><?= isset($validation) ? display_error($validation, 'post_content2') : '' ?></p>
-                        <textarea class="form-control" id="content2" name="post_content2" rows="3" placeholder="Enter ..." height="800px"><?= set_value('post_content2') ?></textarea>
-                      </div>
-                    </div>
+                    
 	                </div>
 	                <!-- /.card-body -->
 	            </div>

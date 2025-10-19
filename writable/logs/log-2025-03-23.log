@@ -1,0 +1,142 @@
+INFO - 2025-03-23 14:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 14:41:52 --> Undefined variable $cate_name
+in APPPATH\Controllers\VaVoController.php on line 89.
+ 1 APPPATH\Controllers\VaVoController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate_name', 'APPPATH\\Controllers\\VaVoController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 14:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 14:47:26 --> Undefined variable $post_cate
+in APPPATH\Controllers\VaVoController.php on line 90.
+ 1 APPPATH\Controllers\VaVoController.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $post_cate', 'APPPATH\\Controllers\\VaVoController.php', 90)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 14:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-03-23 14:48:13 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\admin\dashboard.php on line 512.
+ 1 APPPATH\Views\admin\dashboard.php(512): number_format(null, 0)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin\AdminController.php(49): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\AdminController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 14:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 14:53:27 --> Undefined variable $cate_name
+in APPPATH\Controllers\VaVoController.php on line 89.
+ 1 APPPATH\Controllers\VaVoController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate_name', 'APPPATH\\Controllers\\VaVoController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 14:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 14:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 14:59:08 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\gallery\create_gallery.php on line 236.
+ 1 APPPATH\Views\admin\gallery\create_gallery.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\admin\\gallery\\create_gallery.php', 236)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\gallery\\create_gallery.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/gallery/create_gallery', [], true)
+ 5 APPPATH\Controllers\Admin\GalleryController.php(48): view('admin/gallery/create_gallery', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\Admin\GalleryController->getGallery()
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\GalleryController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:00:10 --> Undefined variable $cate_name
+in APPPATH\Controllers\VaVoController.php on line 89.
+ 1 APPPATH\Controllers\VaVoController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cate_name', 'APPPATH\\Controllers\\VaVoController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:02:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:02:54 --> Undefined variable $blog
+in APPPATH\Controllers\VaVoController.php on line 92.
+ 1 APPPATH\Controllers\VaVoController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog', 'APPPATH\\Controllers\\VaVoController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:03:33 --> Undefined variable $blog
+in APPPATH\Controllers\VaVoController.php on line 92.
+ 1 APPPATH\Controllers\VaVoController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog', 'APPPATH\\Controllers\\VaVoController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:03:36 --> Undefined variable $blog
+in APPPATH\Controllers\VaVoController.php on line 92.
+ 1 APPPATH\Controllers\VaVoController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $blog', 'APPPATH\\Controllers\\VaVoController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 4 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:06:40 --> Trying to access array offset on value of type null
+in APPPATH\Views\front_end\vavo_oto\post_detail.php on line 367.
+ 1 APPPATH\Views\front_end\vavo_oto\post_detail.php(367): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\front_end\\vavo_oto\\post_detail.php', 367)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\vavo_oto\\post_detail.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/vavo_oto/post_detail', [], true)
+ 5 APPPATH\Controllers\VaVoController.php(545): view('front_end/vavo_oto/post_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->post('va-vo-xe-luu-dong', 'va-vo-xe-luu-dong-tai-binh-duong', '89')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-23 15:07:59 --> Trying to access array offset on value of type null
+in APPPATH\Views\front_end\vavo_oto\post_detail.php on line 367.
+ 1 APPPATH\Views\front_end\vavo_oto\post_detail.php(367): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\front_end\\vavo_oto\\post_detail.php', 367)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\front_end\\vavo_oto\\post_detail.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('front_end/vavo_oto/post_detail', [], true)
+ 5 APPPATH\Controllers\VaVoController.php(545): view('front_end/vavo_oto/post_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(935): App\Controllers\VaVoController->post('va-vo-xe-luu-dong', 'va-vo-xe-luu-dong-tai-binh-duong', '89')
+ 7 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VaVoController))
+ 8 SYSTEMPATH\CodeIgniter.php(369): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2025-03-23 15:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-23 15:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
